@@ -1,0 +1,1475 @@
+{
+  "exchanges": [],
+  "facilities": [
+    {
+      "id": 35,
+      "name": "Digital Realty London LHR17",
+      "city": "West Drayton",
+      "lat": 51.482248,
+      "lng": -0.460224
+    },
+    {
+      "id": 40,
+      "name": "Digital Realty London LHR20",
+      "city": "London",
+      "lat": 51.499819,
+      "lng": -0.010775
+    },
+    {
+      "id": 43,
+      "name": "Digital Realty London LHR19",
+      "city": "London",
+      "lat": 51.496902,
+      "lng": -0.018933
+    },
+    {
+      "id": 45,
+      "name": "Equinix LD8 - London, Docklands",
+      "city": "London",
+      "lat": 51.498842,
+      "lng": -0.014327
+    },
+    {
+      "id": 46,
+      "name": "Digital Realty London LON1-3",
+      "city": "London",
+      "lat": 51.520397,
+      "lng": -0.073777
+    },
+    {
+      "id": 47,
+      "name": "Global Switch London East",
+      "city": "London",
+      "lat": 51.510985,
+      "lng": -0.003494
+    },
+    {
+      "id": 48,
+      "name": "Global Switch London North",
+      "city": "London",
+      "lat": 51.511364,
+      "lng": -0.010634
+    },
+    {
+      "id": 76,
+      "name": "Equinix MA1 - Manchester, Williams/Kilburn",
+      "city": "Manchester",
+      "lat": 53.463112,
+      "lng": -2.236869
+    },
+    {
+      "id": 78,
+      "name": "Reynolds House, Manchester",
+      "city": "Manchester",
+      "lat": 53.464393,
+      "lng": -2.247633
+    },
+    {
+      "id": 79,
+      "name": "Digital Realty London LHR21 (closed)",
+      "city": "London",
+      "lat": 51.500621,
+      "lng": -0.011758
+    },
+    {
+      "id": 91,
+      "name": "COLT DC London",
+      "city": "London",
+      "lat": 51.799899,
+      "lng": -0.183762
+    },
+    {
+      "id": 243,
+      "name": "Pulsant Newcastle NE-1 (Central)",
+      "city": "Newcastle upon Tyne",
+      "lat": 54.972886,
+      "lng": -1.603213
+    },
+    {
+      "id": 248,
+      "name": "Level(3) London (Braham Street)",
+      "city": "London",
+      "lat": 51.513915,
+      "lng": -0.0725
+    },
+    {
+      "id": 254,
+      "name": "Redcentric London Data Centre",
+      "city": "London",
+      "lat": 51.522955,
+      "lng": -0.082993
+    },
+    {
+      "id": 271,
+      "name": "Pulsant Edinburgh SC-1 (South Gyle)",
+      "city": "Edinburgh",
+      "lat": 55.930562,
+      "lng": -3.295901
+    },
+    {
+      "id": 305,
+      "name": "iomart DC1 Glasgow",
+      "city": "Glasgow",
+      "lat": 55.851165,
+      "lng": -4.283217
+    },
+    {
+      "id": 334,
+      "name": "Pulsant Maidenhead SE-2",
+      "city": "Maidenhead",
+      "lat": 51.500351,
+      "lng": -0.708278
+    },
+    {
+      "id": 335,
+      "name": "The Bunker (Ash)",
+      "city": "Sandwich",
+      "lat": 51.271106,
+      "lng": 1.295809
+    },
+    {
+      "id": 352,
+      "name": "London Hosting Centre",
+      "city": "London",
+      "lat": 51.494644,
+      "lng": -0.018318
+    },
+    {
+      "id": 354,
+      "name": "Level(3) London (Goswell Road)",
+      "city": "London",
+      "lat": 51.528721,
+      "lng": -0.100964
+    },
+    {
+      "id": 398,
+      "name": "Equinix LD3 - London, Park Royal",
+      "city": "London",
+      "lat": 51.528788,
+      "lng": -0.27746
+    },
+    {
+      "id": 399,
+      "name": "Equinix LD4 - London, Slough",
+      "city": "Slough",
+      "lat": 51.523805,
+      "lng": -0.635545
+    },
+    {
+      "id": 418,
+      "name": "TATA Communications Stratford",
+      "city": "London",
+      "lat": 51.542392,
+      "lng": 0.002415
+    },
+    {
+      "id": 534,
+      "name": "Equinix LD9 - London, Powergate",
+      "city": "London",
+      "lat": 51.530547,
+      "lng": -0.257425
+    },
+    {
+      "id": 565,
+      "name": "Kent Science Park",
+      "city": "Kent",
+      "lat": 51.312671,
+      "lng": 0.725281
+    },
+    {
+      "id": 571,
+      "name": "SloughIX",
+      "city": "Slough",
+      "lat": 51.511977,
+      "lng": -0.588081
+    },
+    {
+      "id": 601,
+      "name": "Teledata Manchester - Delta House",
+      "city": "Manchester",
+      "lat": 53.37912,
+      "lng": -2.258538
+    },
+    {
+      "id": 631,
+      "name": "Rackspace Slough",
+      "city": "Slough",
+      "lat": 51.520432,
+      "lng": -0.618277
+    },
+    {
+      "id": 633,
+      "name": "Pulsant Reading SE-4 (East)",
+      "city": "Reading",
+      "lat": 51.457714,
+      "lng": -0.943472
+    },
+    {
+      "id": 656,
+      "name": "The Bunker (Newbury)",
+      "city": "Thatcham",
+      "lat": 51.373297,
+      "lng": -1.277122
+    },
+    {
+      "id": 676,
+      "name": "iomart DC3 Nottingham",
+      "city": "Nottingham",
+      "lat": 52.950916,
+      "lng": -1.138982
+    },
+    {
+      "id": 745,
+      "name": "Gigastream Oxford 1",
+      "city": "Oxford",
+      "lat": 51.749144,
+      "lng": -1.268159
+    },
+    {
+      "id": 764,
+      "name": "The UK Grid Network LTD (Greenheys DC)",
+      "city": "Manchester",
+      "lat": 53.463125,
+      "lng": -2.238537
+    },
+    {
+      "id": 832,
+      "name": "Equinix LD5 - London, Slough",
+      "city": "Slough",
+      "lat": 51.522463,
+      "lng": -0.62905
+    },
+    {
+      "id": 896,
+      "name": "aql Salem Church",
+      "city": "Leeds",
+      "lat": 53.793329,
+      "lng": -1.54109
+    },
+    {
+      "id": 990,
+      "name": "4D Surrey",
+      "city": "Byfleet",
+      "lat": 51.347292,
+      "lng": -0.480173
+    },
+    {
+      "id": 1074,
+      "name": "Options IT - Park Royal Datacenter (PRDC)",
+      "city": "London",
+      "lat": 51.534768,
+      "lng": -0.26086
+    },
+    {
+      "id": 1206,
+      "name": "ARO DC2 Kilby House (AIMES)",
+      "city": "Liverpool",
+      "lat": 53.408775,
+      "lng": -2.933413
+    },
+    {
+      "id": 1207,
+      "name": "Bournemouth Data Centre",
+      "city": "Bournemouth",
+      "lat": 50.724058,
+      "lng": -1.906308
+    },
+    {
+      "id": 1243,
+      "name": "iomart DC6 Turing House",
+      "city": "Manchester",
+      "lat": 53.464408,
+      "lng": -2.246272
+    },
+    {
+      "id": 1263,
+      "name": "LDeX1",
+      "city": "London",
+      "lat": 51.567301,
+      "lng": -0.231872
+    },
+    {
+      "id": 1264,
+      "name": "iomart DC7 The Server Hotel Reynolds",
+      "city": "Manchester",
+      "lat": 53.464423,
+      "lng": -2.246751
+    },
+    {
+      "id": 1265,
+      "name": "Greenheys",
+      "city": "Manchester",
+      "lat": 53.461255,
+      "lng": -2.24141
+    },
+    {
+      "id": 1267,
+      "name": "QiComm Tutis Point",
+      "city": "London",
+      "lat": 51.494644,
+      "lng": -0.018318
+    },
+    {
+      "id": 1300,
+      "name": "ANS - MAN4",
+      "city": "Manchester",
+      "lat": 53.460851,
+      "lng": -2.326922
+    },
+    {
+      "id": 1331,
+      "name": "ServerChoice  SC-2",
+      "city": "Welwyn Garden City",
+      "lat": 51.797555,
+      "lng": -0.203813
+    },
+    {
+      "id": 1372,
+      "name": "Neos Networks Hampshire",
+      "city": "Hampshire",
+      "lat": 50.86838,
+      "lng": -1.248006
+    },
+    {
+      "id": 1388,
+      "name": "Rackspace London Slough (LON3)",
+      "city": "Slough",
+      "lat": 51.520432,
+      "lng": -0.618277
+    },
+    {
+      "id": 1403,
+      "name": "Equinix MA3 - Manchester, Joule House",
+      "city": "Manchester",
+      "lat": 53.468674,
+      "lng": -2.310421
+    },
+    {
+      "id": 1547,
+      "name": "Verne London",
+      "city": "London",
+      "lat": 51.523353,
+      "lng": -0.101245
+    },
+    {
+      "id": 1621,
+      "name": "Amatis Newbury",
+      "city": "Newbury",
+      "lat": 51.410224,
+      "lng": -1.304674
+    },
+    {
+      "id": 1680,
+      "name": "brightsolid Dundee Data Centre",
+      "city": "Dundee",
+      "lat": 56.463688,
+      "lng": -3.0551
+    },
+    {
+      "id": 1683,
+      "name": "ANS - MAN5",
+      "city": "Manchester",
+      "lat": 53.46052,
+      "lng": -2.32326
+    },
+    {
+      "id": 1684,
+      "name": "ANS - MAN6",
+      "city": "Manchester",
+      "lat": 53.46052,
+      "lng": -2.32326
+    },
+    {
+      "id": 1699,
+      "name": "ServerChoice SC-1",
+      "city": "Stevenage",
+      "lat": 51.888344,
+      "lng": -0.204682
+    },
+    {
+      "id": 1702,
+      "name": "Reliance House",
+      "city": "Newcastle upon Tyne",
+      "lat": 54.960971,
+      "lng": -1.632163
+    },
+    {
+      "id": 1728,
+      "name": "Safehosts Cheltenham",
+      "city": "Cheltenham",
+      "lat": 51.89431,
+      "lng": -2.059132
+    },
+    {
+      "id": 1740,
+      "name": "iomart DC9 Gosport",
+      "city": "Gosport",
+      "lat": 50.825506,
+      "lng": -1.163042
+    },
+    {
+      "id": 1753,
+      "name": "Wavenet Reading",
+      "city": "Reading",
+      "lat": 51.425844,
+      "lng": -0.97543
+    },
+    {
+      "id": 1792,
+      "name": "Digital Realty London LHR13",
+      "city": "Chessington",
+      "lat": 51.512487,
+      "lng": -0.112216
+    },
+    {
+      "id": 1802,
+      "name": "Pulsant Edinburgh SC-3 (Newbridge)",
+      "city": "Edinburgh",
+      "lat": 55.929394,
+      "lng": -3.41002
+    },
+    {
+      "id": 1817,
+      "name": "BT Empire Exchange / Stadium House",
+      "city": "Cardiff",
+      "lat": 51.478187,
+      "lng": -3.180582
+    },
+    {
+      "id": 1827,
+      "name": "Legend Bradford",
+      "city": "Bradford",
+      "lat": 53.79512,
+      "lng": -1.762407
+    },
+    {
+      "id": 1843,
+      "name": "nLighten Milton Keynes LTN1",
+      "city": "Milton Keynes",
+      "lat": 52.041813,
+      "lng": -0.821027
+    },
+    {
+      "id": 1848,
+      "name": "ASK4 DC1 - Sheffield",
+      "city": "Sheffield",
+      "lat": 53.398917,
+      "lng": -1.429056
+    },
+    {
+      "id": 1934,
+      "name": "Arelion London HEX",
+      "city": "London",
+      "lat": 51.499234,
+      "lng": -0.014255
+    },
+    {
+      "id": 1959,
+      "name": "Bytemark YO26 DC1",
+      "city": "York",
+      "lat": 53.979611,
+      "lng": -1.130668
+    },
+    {
+      "id": 1963,
+      "name": "Digital Realty London LGW14",
+      "city": "Woking",
+      "lat": 51.323497,
+      "lng": -0.587003
+    },
+    {
+      "id": 2009,
+      "name": "Brighton Digital Exchange BTN1",
+      "city": "Brighton",
+      "lat": 50.832243,
+      "lng": -0.138645
+    },
+    {
+      "id": 2090,
+      "name": "LINX Wales - BT Stadium House",
+      "city": "Cardiff",
+      "lat": 51.478416,
+      "lng": -3.180046
+    },
+    {
+      "id": 2117,
+      "name": "ServerHouse P1",
+      "city": "Fareham",
+      "lat": 50.848112,
+      "lng": -1.166397
+    },
+    {
+      "id": 2168,
+      "name": "Midlands Technology Centre",
+      "city": "Wolverhampton",
+      "lat": 52.637244,
+      "lng": -2.120423
+    },
+    {
+      "id": 2192,
+      "name": "Pulsant Reading SE-3 (South)",
+      "city": "Reading",
+      "lat": 51.427755,
+      "lng": -0.97925
+    },
+    {
+      "id": 2229,
+      "name": "Nasstar GBTEL01 Datapoint House",
+      "city": "Telford",
+      "lat": 52.718606,
+      "lng": -2.482159
+    },
+    {
+      "id": 2230,
+      "name": "Entanet Telford DC3",
+      "city": "Telford, Shropshire",
+      "lat": 52.679153,
+      "lng": -2.415104
+    },
+    {
+      "id": 2244,
+      "name": "Stream Networks - Newbury",
+      "city": "Newbury",
+      "lat": 51.401257,
+      "lng": -1.314798
+    },
+    {
+      "id": 2262,
+      "name": "Equinix LD6 - London, Slough",
+      "city": "Slough",
+      "lat": 51.524335,
+      "lng": -0.63804
+    },
+    {
+      "id": 2277,
+      "name": "Datum",
+      "city": "Farnborough",
+      "lat": 51.279501,
+      "lng": -0.792355
+    },
+    {
+      "id": 2345,
+      "name": "Chubb Buildings",
+      "city": "Wolverhampton",
+      "lat": 52.587498,
+      "lng": -2.123162
+    },
+    {
+      "id": 2360,
+      "name": "LDeX2",
+      "city": "Manchester",
+      "lat": 53.466919,
+      "lng": -2.294242
+    },
+    {
+      "id": 2429,
+      "name": "Ark Data Centres - Spring Park - SQ17, P1, P2, P3, P4, P5",
+      "city": "Corsham",
+      "lat": 51.419688,
+      "lng": -2.215918
+    },
+    {
+      "id": 2628,
+      "name": "Centersquare London (LHR2)",
+      "city": "London",
+      "lat": 51.494704,
+      "lng": -0.018699
+    },
+    {
+      "id": 2631,
+      "name": "Centersquare London (LHR3)",
+      "city": "Wokingham",
+      "lat": 51.439042,
+      "lng": -0.881352
+    },
+    {
+      "id": 2682,
+      "name": "Custodian CDC Maidstone 1",
+      "city": "Maidstone",
+      "lat": 51.279882,
+      "lng": 0.549373
+    },
+    {
+      "id": 2683,
+      "name": "CSD Network Services Ltd",
+      "city": "Braintree",
+      "lat": 51.873218,
+      "lng": 0.509738
+    },
+    {
+      "id": 2807,
+      "name": "DC01 -Baltic Creative",
+      "city": "Liverpool",
+      "lat": 53.395362,
+      "lng": -2.980006
+    },
+    {
+      "id": 2894,
+      "name": "iomart DC5 Maidenhead",
+      "city": "Maidenhead",
+      "lat": 51.528789,
+      "lng": -0.725424
+    },
+    {
+      "id": 2907,
+      "name": "Equinix MA4 - Manchester, Synergy House",
+      "city": "Manchester",
+      "lat": 53.461506,
+      "lng": -2.238131
+    },
+    {
+      "id": 2992,
+      "name": "DataVita DV1 Lanarkshire",
+      "city": "Glasgow",
+      "lat": 55.834442,
+      "lng": -3.95252
+    },
+    {
+      "id": 3150,
+      "name": "VeloxServ DC1 - Wolverhampton",
+      "city": "Wolverhampton",
+      "lat": 52.601611,
+      "lng": -2.110311
+    },
+    {
+      "id": 3152,
+      "name": "Equinix LD10 - London, Slough",
+      "city": "Slough",
+      "lat": 51.522042,
+      "lng": -0.623736
+    },
+    {
+      "id": 3226,
+      "name": "HA Hosting DC1",
+      "city": "Sheffield",
+      "lat": 53.333519,
+      "lng": -1.33988
+    },
+    {
+      "id": 3399,
+      "name": "Digital Realty London LHR18",
+      "city": "London",
+      "lat": 51.524422,
+      "lng": -0.086892
+    },
+    {
+      "id": 3631,
+      "name": "VIRTUS LONDON4 (Slough)",
+      "city": "Slough",
+      "lat": 51.523143,
+      "lng": -0.622406
+    },
+    {
+      "id": 4027,
+      "name": "Nigsun Data Centre NCS1",
+      "city": "Stevenage",
+      "lat": 51.896858,
+      "lng": -0.205451
+    },
+    {
+      "id": 4088,
+      "name": "AtlasEdge DC London LYC001",
+      "city": "London",
+      "lat": 51.508518,
+      "lng": -0.057772
+    },
+    {
+      "id": 4089,
+      "name": "COLT DC London II",
+      "city": "London",
+      "lat": 51.530547,
+      "lng": -0.257425
+    },
+    {
+      "id": 4149,
+      "name": "CyrusOne London 1",
+      "city": "Slough",
+      "lat": 51.523367,
+      "lng": -0.621986
+    },
+    {
+      "id": 4150,
+      "name": "CyrusOne London 2",
+      "city": "West Drayton",
+      "lat": 51.503731,
+      "lng": -0.44782
+    },
+    {
+      "id": 4231,
+      "name": "Netwise London Central (NLC)",
+      "city": "Bermondsey",
+      "lat": 51.49748,
+      "lng": -0.07058
+    },
+    {
+      "id": 4343,
+      "name": "4D Gatwick (Crawley)",
+      "city": "Crawley",
+      "lat": 51.132895,
+      "lng": -0.17656
+    },
+    {
+      "id": 4404,
+      "name": "VIRTUS LONDON2 (Hayes)",
+      "city": "Hayes",
+      "lat": 51.515786,
+      "lng": -0.140295
+    },
+    {
+      "id": 4405,
+      "name": "VIRTUS LONDON3 (Slough)",
+      "city": "Slough",
+      "lat": 51.523143,
+      "lng": -0.622406
+    },
+    {
+      "id": 4462,
+      "name": "Elstree Customer Hosting Centre",
+      "city": "Borehamwood",
+      "lat": 51.653994,
+      "lng": -0.280006
+    },
+    {
+      "id": 4463,
+      "name": "Bolton Customer Hosting Centre",
+      "city": "Bolton",
+      "lat": 53.585077,
+      "lng": -2.526218
+    },
+    {
+      "id": 4487,
+      "name": "Keppel Data Centres | GV7 Data Centre",
+      "city": "London",
+      "lat": 51.494644,
+      "lng": -0.018318
+    },
+    {
+      "id": 4545,
+      "name": "ServerHouse F2",
+      "city": "Fareham",
+      "lat": 50.867745,
+      "lng": -1.24561
+    },
+    {
+      "id": 4762,
+      "name": "DC02 - The Tapestry",
+      "city": "Liverpool",
+      "lat": 53.410527,
+      "lng": -2.971513
+    },
+    {
+      "id": 4885,
+      "name": "VIRTUS LONDON5 (Stockley Park)",
+      "city": "Stockley Park",
+      "lat": 51.503731,
+      "lng": -0.44782
+    },
+    {
+      "id": 4974,
+      "name": "Epsilon Global Hubs London",
+      "city": "London",
+      "lat": 51.525318,
+      "lng": -0.08416
+    },
+    {
+      "id": 5149,
+      "name": "Vision247 - Chiswick Datacenter",
+      "city": "London",
+      "lat": 51.494725,
+      "lng": -0.274793
+    },
+    {
+      "id": 5238,
+      "name": "CentriLogic Arlington (ARL)",
+      "city": "Bracknell",
+      "lat": 51.416021,
+      "lng": -0.758164
+    },
+    {
+      "id": 5279,
+      "name": "Internet For Business Limited",
+      "city": "Aberdeen",
+      "lat": 57.115441,
+      "lng": -2.078678
+    },
+    {
+      "id": 5993,
+      "name": "Indectron GCR1 - Gloucester, Shield House",
+      "city": "Gloucester",
+      "lat": 51.863706,
+      "lng": -2.197019
+    },
+    {
+      "id": 6347,
+      "name": "Iron Mountain Data Center - London (LON-1)",
+      "city": "Slough",
+      "lat": 51.527327,
+      "lng": -0.631104
+    },
+    {
+      "id": 6462,
+      "name": "VeloxServ DC2 - Wolverhampton",
+      "city": "Wolverhampton",
+      "lat": 52.601611,
+      "lng": -2.110311
+    },
+    {
+      "id": 6482,
+      "name": "Pulsant Fareham SE-5",
+      "city": "Fareham",
+      "lat": 50.86838,
+      "lng": -1.248006
+    },
+    {
+      "id": 6483,
+      "name": "Pulsant Croydon LN-1",
+      "city": "Croydon",
+      "lat": 51.35347,
+      "lng": -0.11879
+    },
+    {
+      "id": 6535,
+      "name": "Equinix LD7 -  London, Slough",
+      "city": "Slough",
+      "lat": 51.525866,
+      "lng": -0.634279
+    },
+    {
+      "id": 6750,
+      "name": "Docklands Data Centre",
+      "city": "London",
+      "lat": 51.4946,
+      "lng": -0.018273
+    },
+    {
+      "id": 6767,
+      "name": "Exascale - Telford (TEL0)",
+      "city": "Telford",
+      "lat": 52.707425,
+      "lng": -2.46746
+    },
+    {
+      "id": 6893,
+      "name": "ServerHouse F1",
+      "city": "Hampshire",
+      "lat": 50.846154,
+      "lng": -1.168462
+    },
+    {
+      "id": 6894,
+      "name": "ServerHouse P2",
+      "city": "Hampshire",
+      "lat": 50.848702,
+      "lng": -1.165861
+    },
+    {
+      "id": 6923,
+      "name": "DataGrid Network London",
+      "city": "London",
+      "lat": 51.5145,
+      "lng": -0.150212
+    },
+    {
+      "id": 7216,
+      "name": "ChunkyChips Data Centre",
+      "city": "Basildon",
+      "lat": 51.583632,
+      "lng": 0.465743
+    },
+    {
+      "id": 7500,
+      "name": "Sungard AS London Technology Centre",
+      "city": "Hounslow",
+      "lat": 51.467366,
+      "lng": -0.399428
+    },
+    {
+      "id": 8034,
+      "name": "DC14-Leeds",
+      "city": "Leeds",
+      "lat": 53.82752,
+      "lng": -1.458812
+    },
+    {
+      "id": 8035,
+      "name": "Creslow Park",
+      "city": "Aylesbury",
+      "lat": 51.889468,
+      "lng": -0.822904
+    },
+    {
+      "id": 8381,
+      "name": "IP House Data Centre",
+      "city": "London",
+      "lat": 51.515332,
+      "lng": 0.002497
+    },
+    {
+      "id": 8389,
+      "name": "Stellium 1",
+      "city": "Newcastle",
+      "lat": 55.016869,
+      "lng": -1.500107
+    },
+    {
+      "id": 8390,
+      "name": "Stellium 2 & 3",
+      "city": "Newcastle",
+      "lat": 55.016869,
+      "lng": -1.500107
+    },
+    {
+      "id": 8445,
+      "name": "Timico - Telford (TEL)",
+      "city": "Telford",
+      "lat": 52.719444,
+      "lng": -2.456604
+    },
+    {
+      "id": 8447,
+      "name": "Timico - Newport (NPT)",
+      "city": "Newport",
+      "lat": 52.762453,
+      "lng": -2.364986
+    },
+    {
+      "id": 8628,
+      "name": "Datacenta DIP",
+      "city": "Winfrith Newburgh",
+      "lat": 50.681852,
+      "lng": -2.256535
+    },
+    {
+      "id": 8825,
+      "name": "aql DC3 Leeds",
+      "city": "Leeds",
+      "lat": 53.792351,
+      "lng": -1.540763
+    },
+    {
+      "id": 8872,
+      "name": "DataBank London (LHR1)",
+      "city": "Feltham",
+      "lat": 51.447068,
+      "lng": -0.453265
+    },
+    {
+      "id": 8983,
+      "name": "Netwise London East (NLE)",
+      "city": "Canning Town",
+      "lat": 51.520561,
+      "lng": -0.00121
+    },
+    {
+      "id": 9031,
+      "name": "NTT Hemel Hempstead 1 Data Center (HH1)",
+      "city": "Hemel Hempstead",
+      "lat": 51.764199,
+      "lng": -0.434502
+    },
+    {
+      "id": 9032,
+      "name": "NTT Hemel Hempstead 2 Data Center (HH2)",
+      "city": "Hemel Hempstead",
+      "lat": 51.764983,
+      "lng": -0.442118
+    },
+    {
+      "id": 9033,
+      "name": "NTT Hemel Hempstead 3 Data Center (HH3)",
+      "city": "Hemel Hempstead",
+      "lat": 51.761875,
+      "lng": -0.436678
+    },
+    {
+      "id": 9034,
+      "name": "NTT Slough 2 Data Center (SL2)",
+      "city": "Slough",
+      "lat": 51.516811,
+      "lng": -0.615687
+    },
+    {
+      "id": 9035,
+      "name": "NTT Slough 3 Data Center (SL3)",
+      "city": "Slough",
+      "lat": 51.517091,
+      "lng": -0.616027
+    },
+    {
+      "id": 9234,
+      "name": "Legend Data Centres",
+      "city": "Bradford",
+      "lat": 53.795297,
+      "lng": -1.762567
+    },
+    {
+      "id": 9310,
+      "name": "Prescient Data Centres Northern Ireland",
+      "city": "Coleraine",
+      "lat": 55.146682,
+      "lng": -6.676148
+    },
+    {
+      "id": 9361,
+      "name": "UK Servers Coventry",
+      "city": "Coventry",
+      "lat": 52.397623,
+      "lng": -1.578236
+    },
+    {
+      "id": 9362,
+      "name": "ABStation",
+      "city": "Greenwich",
+      "lat": 51.491884,
+      "lng": 0.035515
+    },
+    {
+      "id": 9751,
+      "name": "Keppel Data Centres | Cardiff Data Centre",
+      "city": "Cardiff",
+      "lat": 51.452221,
+      "lng": -3.185821
+    },
+    {
+      "id": 9888,
+      "name": "Sungard AS Elland TC4",
+      "city": "Elland",
+      "lat": 53.693287,
+      "lng": -1.821861
+    },
+    {
+      "id": 10105,
+      "name": "Lincoln Rackhouse London",
+      "city": "Camberley",
+      "lat": 51.33263,
+      "lng": -0.768148
+    },
+    {
+      "id": 10333,
+      "name": "CyrusOne London 3",
+      "city": "Slough",
+      "lat": 51.525984,
+      "lng": -0.626992
+    },
+    {
+      "id": 10334,
+      "name": "CyrusOne London 4",
+      "city": "Slough",
+      "lat": 51.516766,
+      "lng": -0.627562
+    },
+    {
+      "id": 10335,
+      "name": "CyrusOne London 5",
+      "city": "Slough",
+      "lat": 51.516766,
+      "lng": -0.627562
+    },
+    {
+      "id": 10342,
+      "name": "China Mobile International - London DC",
+      "city": "Slough",
+      "lat": 51.519879,
+      "lng": -0.628506
+    },
+    {
+      "id": 10409,
+      "name": "Cogent London CDC",
+      "city": "London",
+      "lat": 51.499713,
+      "lng": -0.021387
+    },
+    {
+      "id": 10595,
+      "name": "SDC Colchester1",
+      "city": "Colchester",
+      "lat": 51.923805,
+      "lng": 0.921661
+    },
+    {
+      "id": 10831,
+      "name": "Navisite Woking UK",
+      "city": "Woking Surrey",
+      "lat": 51.323239,
+      "lng": -0.586281
+    },
+    {
+      "id": 10832,
+      "name": "Navisite Redhill UK",
+      "city": "Redhill, Surrey",
+      "lat": 51.24757,
+      "lng": -0.157112
+    },
+    {
+      "id": 11078,
+      "name": "HA Hosting DC2",
+      "city": "Sheffield",
+      "lat": 53.333519,
+      "lng": -1.33988
+    },
+    {
+      "id": 11090,
+      "name": "HA Hosting DC3",
+      "city": "Wolverhampton",
+      "lat": 52.601611,
+      "lng": -2.110311
+    },
+    {
+      "id": 11296,
+      "name": "NTT Hemel Hempstead 4 Data Center (HH4)",
+      "city": "Hemel Hempstead",
+      "lat": 51.757909,
+      "lng": -0.43108
+    },
+    {
+      "id": 11352,
+      "name": "MyHostingSpace - Peterborough",
+      "city": "Peterborough",
+      "lat": 52.55425,
+      "lng": -0.390896
+    },
+    {
+      "id": 11551,
+      "name": "The Portal Data Centre (Flexiscale DC 1)",
+      "city": "Nottingham",
+      "lat": 52.943818,
+      "lng": -1.15762
+    },
+    {
+      "id": 11676,
+      "name": "EXA Datacenter Bracknell",
+      "city": "Bracknell",
+      "lat": 51.413006,
+      "lng": -0.765381
+    },
+    {
+      "id": 11678,
+      "name": "nLighten London STN1",
+      "city": "Hoddesdon",
+      "lat": 51.759766,
+      "lng": -0.002959
+    },
+    {
+      "id": 11865,
+      "name": "AtlasEdge DC Leeds LBA001",
+      "city": "Leeds",
+      "lat": 53.779555,
+      "lng": -1.583439
+    },
+    {
+      "id": 11969,
+      "name": "EXA Datacenter London (Citi)",
+      "city": "London",
+      "lat": 51.504002,
+      "lng": -0.017775
+    },
+    {
+      "id": 11970,
+      "name": "EXA Datacenter London (GS2 London East)",
+      "city": "London",
+      "lat": 51.510985,
+      "lng": -0.003494
+    },
+    {
+      "id": 11977,
+      "name": "EXA Edge DC Peterborough",
+      "city": "Peterborough",
+      "lat": 52.553511,
+      "lng": -0.265878
+    },
+    {
+      "id": 11978,
+      "name": "EXA Edge DC Wherstead",
+      "city": "Wherstead",
+      "lat": 52.019447,
+      "lng": 1.142731
+    },
+    {
+      "id": 11979,
+      "name": "EXA Edge DC Wickford",
+      "city": "Wickford",
+      "lat": 51.656531,
+      "lng": 0.534204
+    },
+    {
+      "id": 12045,
+      "name": "Telehouse - London (Docklands South)",
+      "city": "London",
+      "lat": 51.507041,
+      "lng": -0.00339
+    },
+    {
+      "id": 12309,
+      "name": "Equinix MA5 - Manchester",
+      "city": "Swinton",
+      "lat": 53.504022,
+      "lng": -2.296669
+    },
+    {
+      "id": 12371,
+      "name": "LCRDC - King Edward",
+      "city": "Liverpool",
+      "lat": 53.411744,
+      "lng": -2.998568
+    },
+    {
+      "id": 12372,
+      "name": "IX Liverpool - MICT",
+      "city": "Liverpool",
+      "lat": 53.396344,
+      "lng": -2.980623
+    },
+    {
+      "id": 12506,
+      "name": "Servacus DC02",
+      "city": "Kettering",
+      "lat": 52.422201,
+      "lng": -0.802249
+    },
+    {
+      "id": 12820,
+      "name": "SDC Hosting and Support Colchester1",
+      "city": "Colchester",
+      "lat": 51.923512,
+      "lng": 0.921634
+    },
+    {
+      "id": 12997,
+      "name": "Custodian CDC Dartford DA2",
+      "city": "Dartford",
+      "lat": 51.453326,
+      "lng": 0.257853
+    },
+    {
+      "id": 13073,
+      "name": "nLighten Nottingham EMA1",
+      "city": "Nottingham",
+      "lat": 53.006759,
+      "lng": -1.213003
+    },
+    {
+      "id": 13074,
+      "name": "nLighten Chester MAN1",
+      "city": "Chester",
+      "lat": 53.245819,
+      "lng": -2.935048
+    },
+    {
+      "id": 13075,
+      "name": "nLighten Bristol BRS1",
+      "city": "Bristol",
+      "lat": 51.541255,
+      "lng": -2.578778
+    },
+    {
+      "id": 13091,
+      "name": "VeloxServ DC3 - Redditch",
+      "city": "Redditch",
+      "lat": 52.310787,
+      "lng": -1.936793
+    },
+    {
+      "id": 13340,
+      "name": "Pulsant Manchester NW-1",
+      "city": "Manchester",
+      "lat": 53.46131,
+      "lng": -2.324106
+    },
+    {
+      "id": 13421,
+      "name": "Redcentric Harrogate Data Centre",
+      "city": "Harrogate",
+      "lat": 53.978867,
+      "lng": -1.567075
+    },
+    {
+      "id": 13691,
+      "name": "Getronics, The Babbage Centre",
+      "city": "Runcorn",
+      "lat": 53.324842,
+      "lng": -2.733435
+    },
+    {
+      "id": 13900,
+      "name": "Croydon",
+      "city": "Croydon",
+      "lat": 51.384888,
+      "lng": -0.137056
+    },
+    {
+      "id": 14086,
+      "name": "VeloxServ Wolverhampton Central",
+      "city": "Wolverhampton",
+      "lat": 52.587498,
+      "lng": -2.123163
+    },
+    {
+      "id": 14316,
+      "name": "nLighten Leeds LBA1",
+      "city": "Normanton",
+      "lat": 53.699308,
+      "lng": -1.397674
+    },
+    {
+      "id": 14472,
+      "name": "Vinters Connect",
+      "city": "Maidstone",
+      "lat": 51.279898,
+      "lng": 0.549469
+    },
+    {
+      "id": 14555,
+      "name": "AtlasEdge DC Manchester MAN001",
+      "city": "Salford",
+      "lat": 53.476918,
+      "lng": -2.308577
+    },
+    {
+      "id": 14752,
+      "name": "nLighten Liverpool LPL1",
+      "city": "Wirral",
+      "lat": 53.343085,
+      "lng": -2.973762
+    },
+    {
+      "id": 14753,
+      "name": "nLighten Swindon BRS2",
+      "city": "Swindon",
+      "lat": 51.602125,
+      "lng": -1.729365
+    },
+    {
+      "id": 14902,
+      "name": "CWCS DCN3",
+      "city": "Nottingham",
+      "lat": 52.9272,
+      "lng": -1.199699
+    },
+    {
+      "id": 15068,
+      "name": "London Technology Centre",
+      "city": "Hounslow",
+      "lat": 51.467283,
+      "lng": -0.399244
+    },
+    {
+      "id": 15069,
+      "name": "Elland DC",
+      "city": "Elland",
+      "lat": 53.695271,
+      "lng": -1.82825
+    },
+    {
+      "id": 15135,
+      "name": "Pulsant Edinburgh SC-2 (Medway)",
+      "city": "Edinburgh",
+      "lat": 55.925691,
+      "lng": -3.296296
+    },
+    {
+      "id": 15137,
+      "name": "Pulsant Rotherham YH-1",
+      "city": "Rotherham",
+      "lat": 53.502566,
+      "lng": -1.314919
+    },
+    {
+      "id": 15202,
+      "name": "DataVita DV2 Glasgow",
+      "city": "Glasgow",
+      "lat": 55.861579,
+      "lng": -4.265281
+    },
+    {
+      "id": 15214,
+      "name": "Ada Infrastructure (Docklands)",
+      "city": "London",
+      "lat": 51.502756,
+      "lng": 0.018048
+    },
+    {
+      "id": 15328,
+      "name": "Grid Hosting Limited",
+      "city": "Derby",
+      "lat": 52.935295,
+      "lng": -1.466669
+    },
+    {
+      "id": 15752,
+      "name": "Tarisu Limited",
+      "city": "London",
+      "lat": 51.514841,
+      "lng": -0.123552
+    },
+    {
+      "id": 15769,
+      "name": "Exascale - Wolverhampton (WLV0)",
+      "city": "Wolverhampton",
+      "lat": 52.720818,
+      "lng": -2.468688
+    },
+    {
+      "id": 15781,
+      "name": "Fast2host - Fast4networks Ltd",
+      "city": "Cambridge",
+      "lat": 52.301428,
+      "lng": -0.089194
+    },
+    {
+      "id": 16182,
+      "name": "Blynx AIM Ltd",
+      "city": "Cheltenham",
+      "lat": 51.894348,
+      "lng": -2.059144
+    },
+    {
+      "id": 16183,
+      "name": "Blynx AIM Ltd.",
+      "city": "Cheltenham",
+      "lat": 51.894309,
+      "lng": -2.059127
+    },
+    {
+      "id": 16360,
+      "name": "Lumo Cloud",
+      "city": "London",
+      "lat": 51.514756,
+      "lng": -0.12357
+    },
+    {
+      "id": 16722,
+      "name": "Pulsant Birmingham WM-1",
+      "city": "Birmingham",
+      "lat": 52.451493,
+      "lng": -1.853175
+    },
+    {
+      "id": 16926,
+      "name": "Data Vault - Bournemouth (BCP01)",
+      "city": "Bournemouth",
+      "lat": 50.721853,
+      "lng": -1.874887
+    },
+    {
+      "id": 16994,
+      "name": "Digital Realty London LHR26",
+      "city": "Slough",
+      "lat": 51.516457,
+      "lng": -0.617929
+    },
+    {
+      "id": 16995,
+      "name": "Digital Realty London LHR27",
+      "city": "Slough",
+      "lat": 51.517694,
+      "lng": -0.620224
+    },
+    {
+      "id": 16997,
+      "name": "Aptum Portsmouth",
+      "city": "Havant",
+      "lat": 50.847008,
+      "lng": -0.990582
+    }
+  ]
+}
