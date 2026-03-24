@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DC Site Finder — UK Data Centre Land Intelligence</title>
+  <link href="https://api.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.css" rel="stylesheet" />
+  <script src="https://api.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.js"></script>
+  <script src="config.js"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <aside id="sidebar">
+
+    <div class="sidebar-header">
+      <div class="logo">
+        <span class="logo-icon">⚡</span>
+        <div>
+          <div class="logo-title">DC Site Finder</div>
+          <div class="logo-sub">UK Data Centre Land Intelligence</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="stats-bar">
+      <div class="stat">
+        <span class="stat-value" id="stat-count">—</span>
+        <span class="stat-label">parcels</span>
+      </div>
+      <div class="stat">
+        <span class="stat-value" id="stat-type1">—</span>
+        <span class="stat-label" id="stat-label1">—</span>
+      </div>
+      <div class="stat">
+        <span class="stat-value" id="stat-type2">—</span>
+        <span class="stat-label" id="stat-label2">—</span>
+      </div>
+    </div>
+
+    <div class="filter-section">
+
+      <!-- Colour mode -->
+      <div class="filter-label">Colour parcels by</div>
+      <div class="btn-group">
+        <button class="color-btn active" data-mode="type">Site type</button>
+        <button class="color-btn" data-mode="power">Power</button>
+        <button class="color-btn" data-mode="composite">Composite</button>
+      </div>
+
+      <!-- MW requirement -->
+      <div class="filter-label mt">DC size</div>
+      <div class="btn-group">
+        <button class="mw-btn" data-mw="20">20 MW</button>
+        <button class="mw-btn active" data-mw="50">50 MW</button>
+        <button class="mw-btn" data-mw="100">100 MW</button>
+      </div>
+
+      <!-- Region + Min size — two columns -->
+      <div class="filter-2col">
+        <div>
+          <div class="filter-label mt">Region</div>
+          <div class="select-wrap">
+            <select id="filter-region">
+              <option value="all">All regions</option>
+            </select>
+          </div>
+        </div>
+        <div>
+          <div class="filter-label mt">Min size</div>
+          <div class="select-wrap">
+            <select id="filter-size">
+              <option value="0">Any</option>
+              <option value="5">5+ ac</option>
+              <option value="10">10+ ac</option>
+              <option value="25">25+ ac</option>
+              <option value="50">50+ ac</option>
+              <option value="100">100+ ac</option>
+              <option value="250">250+ ac</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Min composite score -->
+      <div class="filter-label mt">Min composite score</div>
+      <div class="select-wrap">
+        <select id="filter-composite-score">
+          <option value="0">Any score</option>
+          <option value="40">40+ — Marginal</option>
+          <option value="55">55+ — Moderate</option>
+          <option value="70">70+ — Good</option>
+          <option value="82">82+ — Excellent</option>
+        </select>
+      </div>
+
+      <!-- Hard exclusion toggle -->
+      <div class="toggle-row">
+        <span class="toggle-label-text">Exclude flood zone 3</span>
+        <label class="toggle-switch">
+          <input type="checkbox" id="toggle-flood-exclude" checked />
+          <span class="toggle-slider"></span>
+        </label>
+      </div>
+
+      <!-- Map overlays — compact chips -->
+      <div class="filter-label mt">Map overlays</div>
+      <div class="overlay-chips">
+        <button class="overlay-chip active" data-layer="substations">⚡ Substations</button>
+        <button class="overlay-chip active" data-layer="powerlines">∿ Powerlines</button>
+        <button class="overlay-chip" data-layer="fibre">◎ Fibre</button>
+      </div>
+
+      <!-- Site type toggles -->
+      <div class="filter-label mt">Site type</div>
+      <div id="type-toggle-grid" class="type-toggle-grid"></div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="list-header">
+      <span>Matching parcels</span>
+      <span id="list-count" class="list-count-badge">—</span>
+    </div>
+    <div id="parcel-list" class="parcel-list">
+      <div class="list-loading">Loading parcels…</div>
+    </div>
+
+  </aside>
+
+  <div id="map"></div>
+
+  <div id="detail-panel" class="detail-panel hidden">
+    <button id="detail-close" class="detail-close" title="Close">✕</button>
+    <div id="detail-content"></div>
+  </div>
+
+  <div class="map-legend">
+    <div id="legend-items"></div>
+  </div>
+
+  <div id="zoom-nudge" class="zoom-nudge">
+    🔍 Zoom in to see smaller parcels
+  </div>
+
+  <button id="search-area-btn" class="search-area-btn">Search this area</button>
+
+  <script src="map.js?v=4"></script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Generated / runtime data
+data/flood_checkpoint.json
+
+# macOS
+.DS_Store
+
+# Editor
+.vscode/
+*.swp
