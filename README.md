@@ -1,100 +1,95 @@
 # DC Site Finder — UK Data Centre Land Intelligence
 
-    A map-driven tool for screening UK land parcels for data centre development
-    potential. Scores 40,000+ industrial and brownfield sites across six dimensions —
-    power, fibre, flood risk, planning, buildability, and market proximity — and lets you
-     filter, rank, and inspect them in real time.
+A map-driven siting tool for identifying and scoring the highest-potential land parcels for new data centre development across the UK.
 
-    **Live demo:** [dcsitingtool.netlify.app](https://dcsitingtool.netlify.app)
+**Live:** [dcsitingtool.netlify.app](https://dcsitingtool.netlify.app)
 
-    ---
+---
 
-    ## What it does
+## What it does
 
-    DC developers and real estate buyers currently spend weeks manually screening land
-    parcels across 10+ fragmented data sources. This tool replaces that process with a
-    single scored interface.
+DC developers and real estate buyers typically spend weeks manually screening land parcels across 10+ fragmented data sources — NESO TEC Register, local planning portals, EA flood maps, fibre databases, OS data. This tool replaces that process with a scored, filterable map interface.
 
-    - **40,000+ parcels** — OSM industrial, brownfield, power, transport, aviation,
-    military, commercial, and farmland sites across the UK
-    - **Composite 0–100 score** across six weighted dimensions
-    - **Three DC size anchors** — 20 MW, 50 MW, 100 MW (with interpolation between them)
-    - **Substation overlay** — 134 UK substations with real TEC Register queue data,
-    colour-coded by queue pressure
-    - **Powerline overlay** — animated 132kV+ transmission network
-    - **ITU backbone fibre overlay** — 1,187 operational UK fibre routes
-    - **Site detail panel** — full score breakdown per parcel with connection timeline
-    estimate
-    - **Filters** — region, minimum size, minimum composite score, DC size, site type,
-    flood zone exclusion
+**40,000+ raw land parcels** (industrial, brownfield, power, transport and other DC-relevant site types) are scored across six dimensions and surfaced in a single interface.
 
-    ---
+---
 
-    ## Scoring model
+## Scoring model
 
-    | Dimension | Weight | Metric |
-    |---|---|---|
-    | Power | 35% | Distance to substation, grid headroom, TEC queue pressure |
-    | Fibre | 20% | Distance to nearest backbone route or carrier-neutral colo |
-    | Flood risk | 15% | EA flood zone (Zone 1=100, Zone 2=50, Zone 3=0) |
-    | Planning | 15% | Land use classification |
-    | Buildability | 10% | Site size + land use penalty |
-    | Market proximity | 5% | Distance to nearest Tier 1 demand centre |
+| Dimension | Weight | Data source |
+|-----------|--------|-------------|
+| Power / grid access | 35% | 134 UK substations with real NESO TEC Register queue data |
+| Fibre connectivity | 20% | ITU BBmaps backbone routes (1,187 segments) + PeeringDB carrier-neutral colos |
+| Flood risk | 15% | EA Flood Map for Planning (Zone 1/2/3) |
+| Planning / land use | 15% | OSM landuse classification |
+| Buildability | 10% | Site area + type penalties |
+| Market proximity | 5% | Distance to Tier 1 demand centres |
 
-    ---
+**Composite score 0–100.** Hard exclusion for Flood Zone 3 (toggleable).
 
-    ## Data sources
+---
 
-    | Dataset | Source |
-    |---|---|
-    | Land parcels | OpenStreetMap (Overpass API) |
-    | Substations + TEC queue | NESO TEC Register |
-    | Powerlines | OpenStreetMap |
-    | Fibre routes | ITU BBmaps WFS |
-    | Carrier/IX locations | PeeringDB |
-    | Flood zones | EA Flood Map for Planning (OGC API) |
+## Features
 
-    ---
+- **Map** — Mapbox GL JS dark basemap with parcel polygons, substation overlay (colour-coded by TEC queue pressure), animated powerline layer, ITU backbone fibre routes
+- **Colour modes** — colour parcels by site type, power score, or composite score
+- **DC size selector** — 20 / 50 / 100 MW; scores interpolate between anchors
+- **Filters** — region, minimum site size, minimum composite score, flood zone exclusion, site type toggles
+- **Site detail panel** — full score breakdown by dimension, power sub-scores, connection timeline estimate based on TEC queue pressure
+- **Parcel list** — top 100 matching parcels sorted by composite score, synced to map selection
+- **Area search** — restrict list to current map viewport
 
-    ## Local development
+---
 
-    ```bash
-    # Serve locally (no build step needed)
-    python -m http.server 8080
-    # Open http://localhost:8080
+## Data sources
 
-    Requires a Mapbox public token in config.js.
+| File | Source | Notes |
+|------|--------|-------|
+| `uk_industrial_parcels.geojson` | OpenStreetMap (Overpass API) | 40k+ parcels, >2 acres, pre-enriched with all scores |
+| `uk_substations.json` | NESO TEC Register | 134 substations with real queue data as of early 2025 |
+| `uk_powerlines.geojson` | OpenStreetMap | 132kV+ transmission lines |
+| `uk_fibre_routes.geojson` | ITU BBmaps WFS | 1,187 operational UK backbone fibre route segments |
+| `uk_peeringdb.json` | PeeringDB API | UK internet exchanges and carrier-neutral facilities |
 
-    Re-running the enrichment pipeline
+---
 
-    python3 scripts/fetch_osm_parcels.py         # fetch parcels from OSM
-    python3 scripts/enrich_power_scores.py       # add power scores
-    python3 scripts/fetch_itu_fibre.py           # fetch ITU fibre routes
-    python3 scripts/enrich_fibre_routes.py       # add fibre distances
-    python3 scripts/enrich_flood_zones.py        # add EA flood zones (~3–5 hrs)
-    python3 scripts/enrich_composite_scores.py   # compute final scores
+## Enrichment pipeline
 
-    ---
-    Stack
+Data enrichment runs offline and outputs the scored GeoJSON. Scripts run in order:
 
-    - Mapbox GL JS 3.x — map rendering
-    - Vanilla JS — no framework
-    - Python 3 — data enrichment pipeline
-    - Netlify — hosting (auto-deploys on push to main)
+```bash
+python3 scripts/fetch_osm_parcels.py        # fetch raw land parcels from Overpass
+python3 scripts/fetch_powerlines.py         # fetch 132kV+ lines from OSM
+python3 scripts/fetch_peeringdb.py          # fetch UK IXPs and carrier colos
+python3 scripts/fetch_itu_fibre.py          # fetch ITU backbone fibre routes
+python3 scripts/enrich_power_scores.py      # add power scores (substation proximity + TEC queue)
+python3 scripts/enrich_flood_zones.py       # add EA flood zone classification (resumable, ~3hr)
+python3 scripts/enrich_fibre_routes.py      # add distance to nearest backbone fibre route
+python3 scripts/enrich_composite_scores.py  # compute final composite scores across all dimensions
+```
 
-    ---
-    Status
+---
 
-    - Base map + parcel layer
-    - Power scoring (substations, TEC queue, private wire)
-    - Composite scoring (six dimensions)
-    - Fibre route overlay + scoring
-    - Filters, parcel list, detail panel
-    - Flood zone overlay (data enrichment in progress — 27% complete)
-    - CSV export
-    - Site pipeline / flagging
+## Local development
 
-    ---
+```bash
+python3 -m http.server 8080
+# open http://localhost:8080
+```
 
-    Copy that into a file called `README.md` in the root of the repo, then push to
-    GitHub. It'll render automatically on the repo page.
+Requires a [Mapbox](https://mapbox.com) public token in `config.js`.
+
+---
+
+## Deployment
+
+Hosted on Netlify, auto-deploys on push to `main`. The `netlify.toml` sets long-cache headers on `/data/*` files to avoid re-downloading the 65MB parcels file on every visit.
+
+---
+
+## Key technical decisions
+
+- **Static GeoJSON** — all enrichment runs offline; the map loads a single pre-scored file rather than making live API calls. Avoids rate limits and latency.
+- **Three MW anchors** — power and composite scores are pre-computed at 20/50/100 MW and linearly interpolated at runtime, avoiding per-parcel recalculation in the browser.
+- **ITU BBmaps for fibre** — the only freely available source of UK backbone fibre route geometry. All routes are 2-vertex segments, enabling fast point-to-segment distance computation (~30s for 40k parcels).
+- **EA flood zones** — the EA OGC API rate-limits aggressively. The enrichment script uses a 5s request delay, geographic filtering to skip non-England cells, and a resumable checkpoint file.

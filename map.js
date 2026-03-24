@@ -56,7 +56,6 @@ const state = {
     region:           "all",
     activeTypes:      new Set(Object.keys(SITE_TYPES)),
     minAcres:         0,
-    minPowerScore:    0,
     minComposite:     0,
     excludeFloodZone3: true,   // hard exclude Zone 3 sites by default
   },
@@ -712,15 +711,6 @@ function initUI() {
     applyFilters();
   });
 
-  // Min power score filter (element removed from UI but keep handler in case re-added)
-  const powerScoreSel = document.getElementById("filter-power-score");
-  if (powerScoreSel) {
-    powerScoreSel.addEventListener("change", e => {
-      state.filters.minPowerScore = parseInt(e.target.value, 10);
-      applyFilters();
-    });
-  }
-
   // Min composite score filter
   const compSel = document.getElementById("filter-composite-score");
   if (compSel) {
@@ -747,8 +737,6 @@ function initUI() {
     document.querySelectorAll(".mw-btn").forEach(b => {
       b.classList.toggle("active", parseInt(b.dataset.mw, 10) === mw);
     });
-    const input = document.getElementById("mw-custom");
-    if (input && document.activeElement !== input) input.value = mw;
     refreshParcelColors();
     applyFilters();
     if (state.activeId !== null) {
@@ -760,17 +748,6 @@ function initUI() {
   document.querySelectorAll(".mw-btn").forEach(btn => {
     btn.addEventListener("click", () => setMwValue(parseInt(btn.dataset.mw, 10)));
   });
-
-  const mwInput = document.getElementById("mw-custom");
-  if (mwInput) {
-    mwInput.addEventListener("change", () => {
-      const v = parseInt(mwInput.value, 10);
-      if (!isNaN(v) && v > 0) setMwValue(v);
-    });
-    mwInput.addEventListener("keydown", (e) => {
-      if (e.key === "Enter") { e.preventDefault(); mwInput.blur(); }
-    });
-  }
 
   // Overlay chip toggles (substations / powerlines / fibre)
   document.querySelectorAll(".overlay-chip").forEach(chip => {
@@ -872,8 +849,7 @@ function updateLegend() {
 // ── Filters ───────────────────────────────────────────────────────
 function applyFilters() {
   if (state.areaSearch) setAreaSearch(false);  // reset on filter change
-  const { region, activeTypes, minAcres, minPowerScore,
-          minComposite, excludeFloodZone3 } = state.filters;
+  const { region, activeTypes, minAcres, minComposite, excludeFloodZone3 } = state.filters;
 
   state.filteredFeatures = state.allFeatures.filter(f => {
     const p = f.properties;
@@ -881,7 +857,6 @@ function applyFilters() {
     if (!activeTypes.has(p.site_type))                   return false;
     if (p.area_acres < minAcres)                         return false;
     if (excludeFloodZone3 && p.hard_excluded === true)   return false;
-    if (minPowerScore > 0 && getPowerScore(p) < minPowerScore) return false;
     if (minComposite  > 0 && getCompositeScore(p) < minComposite) return false;
     return true;
   });
@@ -1000,7 +975,7 @@ function buildCardHTML(props) {
         <span class="parcel-meta-item" style="color:${cColor}" title="${hasComposite ? "Composite" : "Power"} score">
           ${hasComposite ? "◉" : "⚡"} ${Math.round(composite)}
         </span>
-        <span class="parcel-meta-item">⚡ ${Math.round(getPowerScore(props))}</span>
+        ${hasComposite ? `<span class="parcel-meta-item" title="Power score">⚡ ${Math.round(getPowerScore(props))}</span>` : ""}
         <span class="parcel-meta-item">${props.region}</span>
       </div>
     </div>`;
