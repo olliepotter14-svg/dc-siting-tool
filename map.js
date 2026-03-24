@@ -173,13 +173,21 @@ let popup = new mapboxgl.Popup({
   maxWidth:     "300px",
 });
 
+// When popup X is clicked, clear full selection state
+popup.on("close", () => {
+  state.activeId = null;
+  updateActiveFeatureState();
+  document.getElementById("detail-panel").classList.add("hidden");
+  document.querySelectorAll(".parcel-card.active").forEach(c => c.classList.remove("active"));
+});
+
 // ── Load data ─────────────────────────────────────────────────────
 map.on("load", () => {
   Promise.all([
-    fetch(`data/uk_industrial_parcels.geojson?v=${Date.now()}`).then(r => r.json()),
-    fetch(`data/uk_substations.json?v=${Date.now()}`).then(r => r.json()),
-    fetch(`data/uk_powerlines.geojson?v=${Date.now()}`).then(r => r.json()),
-    fetch(`data/uk_fibre_routes.geojson?v=${Date.now()}`).then(r => r.json()),
+    fetch("data/uk_industrial_parcels.geojson?v=5").then(r => r.json()),
+    fetch("data/uk_substations.json?v=5").then(r => r.json()),
+    fetch("data/uk_powerlines.geojson?v=5").then(r => r.json()),
+    fetch("data/uk_fibre_routes.geojson?v=5").then(r => r.json()),
   ])
   .then(([geojson, subsRaw, powerlines, fibreRoutes]) => {
     state.allFeatures = geojson.features;
@@ -260,67 +268,121 @@ function addMapLayers() {
 
   map.addSource("substations", { type: "geojson", data: subGeoJSON });
 
-  // Glow ring behind each substation circle
+  const _QUEUE_COLOR = [
+    "case",
+    ["<=", ["get", "queue_pct"], 50],  "#00E676",
+    ["<=", ["get", "queue_pct"], 150], "#FFB300",
+    ["<=", ["get", "queue_pct"], 300], "#FF6D00",
+    "#FF1744",
+  ];
+
+  // Outer pulse ring — opacity animated by RAF loop
+  map.addLayer({
+    id: "sub-pulse", type: "circle", source: "substations",
+    paint: {
+      "circle-radius": ["interpolate", ["linear"], ["zoom"],
+        5,  ["interpolate", ["linear"], ["get", "capacity_mva"], 500, 11, 3000, 24],
+        10, ["interpolate", ["linear"], ["get", "capacity_mva"], 500, 22, 3000, 46],
+      ],
+      "circle-color":   _QUEUE_COLOR,
+      "circle-opacity": 0,
+      "circle-blur":    0.9,
+    },
+    minzoom: 5,
+  });
+
+  // Soft glow ring
   map.addLayer({
     id: "sub-glow", type: "circle", source: "substations",
     paint: {
       "circle-radius": ["interpolate", ["linear"], ["zoom"],
-        5, ["interpolate", ["linear"], ["get", "capacity_mva"], 500, 6, 3000, 14],
-        10, ["interpolate", ["linear"], ["get", "capacity_mva"], 500, 12, 3000, 28],
+        5,  ["interpolate", ["linear"], ["get", "capacity_mva"], 500, 7, 3000, 16],
+        10, ["interpolate", ["linear"], ["get", "capacity_mva"], 500, 14, 3000, 32],
       ],
-      "circle-color": [
-        "case",
-        ["<=", ["get", "queue_pct"], 50],  "#00E676",
-        ["<=", ["get", "queue_pct"], 150], "#FFB300",
-        ["<=", ["get", "queue_pct"], 300], "#FF6D00",
-        "#FF1744"
-      ],
-      "circle-opacity": 0.15,
-      "circle-blur": 1,
+      "circle-color":   _QUEUE_COLOR,
+      "circle-opacity": 0.22,
+      "circle-blur":    0.65,
     },
     minzoom: 5,
   });
 
-  // Main substation dot
+  // Mid ring halo — slightly larger than dot, creates a two-ring bullseye
+  map.addLayer({
+    id: "sub-ring", type: "circle", source: "substations",
+    paint: {
+      "circle-radius": ["interpolate", ["linear"], ["zoom"],
+        5,  ["interpolate", ["linear"], ["get", "capacity_mva"], 500, 4.5, 3000, 10],
+        10, ["interpolate", ["linear"], ["get", "capacity_mva"], 500, 9, 3000, 18],
+      ],
+      "circle-color":          _QUEUE_COLOR,
+      "circle-opacity":        0.30,
+      "circle-blur":           0,
+      "circle-stroke-color":   _QUEUE_COLOR,
+      "circle-stroke-width":   1,
+      "circle-stroke-opacity": 0.65,
+    },
+    minzoom: 5,
+  });
+
+  // Main solid dot
   map.addLayer({
     id: "sub-dot", type: "circle", source: "substations",
     paint: {
       "circle-radius": ["interpolate", ["linear"], ["zoom"],
-        5, ["interpolate", ["linear"], ["get", "capacity_mva"], 500, 3, 3000, 7],
+        5,  ["interpolate", ["linear"], ["get", "capacity_mva"], 500, 3, 3000, 7],
         10, ["interpolate", ["linear"], ["get", "capacity_mva"], 500, 6, 3000, 14],
       ],
-      "circle-color": [
-        "case",
-        ["<=", ["get", "queue_pct"], 50],  "#00E676",
-        ["<=", ["get", "queue_pct"], 150], "#FFB300",
-        ["<=", ["get", "queue_pct"], 300], "#FF6D00",
-        "#FF1744"
-      ],
-      "circle-stroke-color": "rgba(0,0,0,0.4)",
-      "circle-stroke-width": 1,
-      "circle-opacity": 0.9,
+      "circle-color":        _QUEUE_COLOR,
+      "circle-stroke-color": "rgba(255,255,255,0.22)",
+      "circle-stroke-width": 1.5,
+      "circle-opacity":      0.95,
     },
     minzoom: 5,
   });
 
-  // Substation label (shows at higher zoom)
+  // Bright white core — "hot centre" highlight
+  map.addLayer({
+    id: "sub-core", type: "circle", source: "substations",
+    paint: {
+      "circle-radius": ["interpolate", ["linear"], ["zoom"],
+        5, 1.5,
+        10, 3,
+      ],
+      "circle-color":   "#ffffff",
+      "circle-opacity": 0.80,
+    },
+    minzoom: 6,
+  });
+
+  // Label (shows at higher zoom)
   map.addLayer({
     id: "sub-label", type: "symbol", source: "substations",
     layout: {
-      "text-field":        ["get", "name"],
-      "text-font":         ["DIN Pro Medium", "Arial Unicode MS Regular"],
-      "text-size":         10,
-      "text-offset":       [0, 1.2],
-      "text-anchor":       "top",
-      "text-optional":     true,
+      "text-field":    ["get", "name"],
+      "text-font":     ["DIN Pro Medium", "Arial Unicode MS Regular"],
+      "text-size":     10,
+      "text-offset":   [0, 1.2],
+      "text-anchor":   "top",
+      "text-optional": true,
     },
     paint: {
-      "text-color":       "#C8D0E0",
-      "text-halo-color":  "rgba(10,13,18,0.8)",
-      "text-halo-width":  1.5,
+      "text-color":      "#C8D0E0",
+      "text-halo-color": "rgba(10,13,18,0.8)",
+      "text-halo-width": 1.5,
     },
     minzoom: 8,
   });
+
+  // Pulse animation — cycles sub-pulse opacity 0.30→0 over 2.5s
+  const _SUB = { rafId: null, PERIOD_MS: 2500 };
+  function _animateSubPulse(ts) {
+    const phase = (ts % _SUB.PERIOD_MS) / _SUB.PERIOD_MS;
+    const opacity = 0.30 * Math.pow(1 - phase, 1.5);
+    if (map.getLayer("sub-pulse"))
+      map.setPaintProperty("sub-pulse", "circle-opacity", opacity);
+    _SUB.rafId = requestAnimationFrame(_animateSubPulse);
+  }
+  _SUB.rafId = requestAnimationFrame(_animateSubPulse);
 
   // ── Substation hover popup ─────────────────────────────────────
   let subPopup = new mapboxgl.Popup({ closeButton: false, offset: 8, maxWidth: "260px" });
@@ -347,11 +409,11 @@ function addMapLayers() {
             <div style="font-size:10px;color:#4A5068;text-transform:uppercase;margin-top:2px">Queue pressure</div>
           </div>
           <div style="background:#161B25;border:1px solid rgba(255,255,255,.07);border-radius:6px;padding:8px">
-            <div style="font-size:16px;font-weight:700;color:#00E5FF">${Math.round(p.headroom_mva)}</div>
+            <div style="font-size:16px;font-weight:700;color:#00E5FF">${p.headroom_mva != null ? Math.round(p.headroom_mva) : "—"}</div>
             <div style="font-size:10px;color:#4A5068;text-transform:uppercase;margin-top:2px">MVA headroom</div>
           </div>
           <div style="background:#161B25;border:1px solid rgba(255,255,255,.07);border-radius:6px;padding:8px">
-            <div style="font-size:16px;font-weight:700;color:#F0F4FF">${Math.round(p.queue_mw)}</div>
+            <div style="font-size:16px;font-weight:700;color:#F0F4FF">${p.queue_mw != null ? Math.round(p.queue_mw) : "—"}</div>
             <div style="font-size:10px;color:#4A5068;text-transform:uppercase;margin-top:2px">Queue MW</div>
           </div>
           <div style="background:#161B25;border:1px solid rgba(255,255,255,.07);border-radius:6px;padding:8px">
@@ -596,7 +658,7 @@ function showDetailPanel(props) {
       ${cfg.label}
     </div>
     <div class="detail-title">${displayName(props)}</div>
-    <div class="detail-region">${props.region}${props.addr_city ? " · " + props.addr_city : ""}</div>
+    <div class="detail-region">${props.region ?? ""}${props.addr_city ? " · " + props.addr_city : ""}</div>
 
     <div class="detail-grid">
       <div class="detail-metric">
@@ -757,7 +819,7 @@ function initUI() {
       const layer = chip.dataset.layer;
       if (layer === "substations") {
         state.showSubstations = on;
-        ["sub-glow", "sub-dot", "sub-label"].forEach(id => {
+        ["sub-pulse", "sub-glow", "sub-ring", "sub-dot", "sub-core", "sub-label"].forEach(id => {
           if (map.getLayer(id)) map.setLayoutProperty(id, "visibility", on ? "visible" : "none");
         });
       } else if (layer === "powerlines") {
@@ -837,7 +899,7 @@ function updateLegend() {
       legend.appendChild(item);
     });
     [["Low queue (<50%)", "#00E676"], ["Moderate (50–150%)", "#FFB300"],
-     ["High (>300%)", "#FF1744"]].forEach(([lbl, color]) => {
+     ["High (150–300%)", "#FF6D00"], ["Severe (>300%)", "#FF1744"]].forEach(([lbl, color]) => {
       const item = document.createElement("div");
       item.className = "legend-item";
       item.innerHTML = `<span class="legend-circle" style="background:${color};box-shadow:0 0 5px ${color}"></span> ${lbl}`;
@@ -853,11 +915,11 @@ function applyFilters() {
 
   state.filteredFeatures = state.allFeatures.filter(f => {
     const p = f.properties;
-    if (region !== "all" && p.region !== region)         return false;
-    if (!activeTypes.has(p.site_type))                   return false;
-    if (p.area_acres < minAcres)                         return false;
-    if (excludeFloodZone3 && p.hard_excluded === true)   return false;
-    if (minComposite  > 0 && getCompositeScore(p) < minComposite) return false;
+    if (region !== "all" && p.region !== region)                                  return false;
+    if (!activeTypes.has(p.site_type))                                             return false;
+    if (p.area_acres != null && p.area_acres < minAcres)                           return false;
+    if (excludeFloodZone3 && (p.hard_excluded === true || p.flood_zone === 3))     return false;
+    if (minComposite > 0 && getCompositeScore(p) < minComposite)                   return false;
     return true;
   });
 
@@ -893,7 +955,11 @@ function buildFilteredGeoJSON() {
 
 function updateMapData() {
   const source = map.getSource("parcels");
-  if (source) source.setData(buildFilteredGeoJSON());
+  if (source) {
+    source.setData(buildFilteredGeoJSON());
+    // Re-apply feature state — setData reassigns Mapbox internal IDs
+    map.once("sourcedata", () => updateActiveFeatureState());
+  }
 }
 
 // ── Area search ───────────────────────────────────────────────────
@@ -1004,8 +1070,8 @@ function flyToParcel(geometry) {
   );
 }
 
-function fmtAcres(a) { return a >= 100 ? Math.round(a).toLocaleString() : Number(a).toFixed(1); }
-function fmtHa(h)    { return h >= 100 ? Math.round(h).toLocaleString() : Number(h).toFixed(1); }
+function fmtAcres(a) { return (a == null || isNaN(a)) ? "—" : a >= 100 ? Math.round(a).toLocaleString() : Number(a).toFixed(1); }
+function fmtHa(h)    { return (h == null || isNaN(h)) ? "—" : h >= 100 ? Math.round(h).toLocaleString() : Number(h).toFixed(1); }
 
 function displayName(props) {
   if (props.name && !props.name.startsWith("Unnamed")) return props.name;
