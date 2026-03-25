@@ -1082,22 +1082,31 @@ function computeConnectionCosts(props, mw) {
   const queuePct = props.sub_queue_pressure_pct ?? 200;
   const fibreKm  = props.best_fibre_km ?? props.dist_to_ix_km ?? 20;
   const subName  = props.nearest_sub_name ?? "nearest substation";
+  const subKv    = props.nearest_sub_voltage_kv ? `${props.nearest_sub_voltage_kv}kV` : "132kV";
 
   // ── Grid cable (132kV underground, NESO/Ofgem benchmarks) ──────
-  const effectiveDist = Math.max(0, distKm - 0.3);   // first 300m within site boundary
+  const effectiveDist = Math.max(0, distKm - 0.3);   // first 300m assumed within site boundary
   const cableLow  = effectiveDist * 2.0;
   const cableHigh = effectiveDist * 4.0;
 
   // ── Substation reinforcement (queue pressure as congestion proxy) ─
-  let rLow, rHigh, reinforceNote;
+  let rLow, rHigh, reinforceBand, reinforceRationale;
   if (queuePct <= 50) {
-    [rLow, rHigh, reinforceNote] = [0.5, 1.5, "Low queue — minor works likely"];
+    [rLow, rHigh, reinforceBand, reinforceRationale] = [0.5, 1.5,
+      "Minor works",
+      "Low queue — sub has headroom, minimal reinforcement expected"];
   } else if (queuePct <= 150) {
-    [rLow, rHigh, reinforceNote] = [2.0, 7.0, "Moderate queue — some reinforcement expected"];
+    [rLow, rHigh, reinforceBand, reinforceRationale] = [2.0, 7.0,
+      "Moderate reinforcement",
+      "Moderate queue — some bay or protection upgrades likely required"];
   } else if (queuePct <= 300) {
-    [rLow, rHigh, reinforceNote] = [5.0, 18.0, "High queue — significant reinforcement likely"];
+    [rLow, rHigh, reinforceBand, reinforceRationale] = [5.0, 18.0,
+      "Significant reinforcement",
+      "High queue — transformer or switchgear reinforcement likely needed"];
   } else {
-    [rLow, rHigh, reinforceNote] = [15.0, 45.0, "Severe congestion — major reinforcement or alt. connection point required"];
+    [rLow, rHigh, reinforceBand, reinforceRationale] = [15.0, 45.0,
+      "Major works",
+      "Severe congestion — major substation reinforcement or alternative connection point required"];
   }
 
   // ── Onsite HV infrastructure (£200–400/kW) ─────────────────────
@@ -1105,20 +1114,27 @@ function computeConnectionCosts(props, mw) {
   const onsiteHigh = mw * 0.40;
 
   // ── Fibre connection (dark fibre build or IRU) ──────────────────
-  let fLow, fHigh, fibreNote;
+  // Per-km rate bands reflect Ofcom/INCA dark fibre pricing data
+  let fLow, fHigh, fibreRateLow, fibreRateHigh, fibreContext;
   if (fibreKm <= 1) {
-    [fLow, fHigh, fibreNote] = [0.05, 0.2,  "On or adjacent to backbone — short connection only"];
+    [fLow, fHigh, fibreRateLow, fibreRateHigh, fibreContext] =
+      [0.05, 0.2, 50, 200, "On/adjacent to backbone — short duct connection only"];
   } else if (fibreKm <= 5) {
-    [fLow, fHigh, fibreNote] = [0.2,  1.5,  "Short metro route — carrier deal likely available"];
+    [fLow, fHigh, fibreRateLow, fibreRateHigh, fibreContext] =
+      [0.2, 1.5, 40, 300, "Metro range — carrier IRU deal likely available"];
   } else if (fibreKm <= 20) {
-    [fLow, fHigh, fibreNote] = [1.5,  6.0,  "Mid-range — dark fibre build or wholesale IRU"];
+    [fLow, fHigh, fibreRateLow, fibreRateHigh, fibreContext] =
+      [1.5, 6.0, 75, 300, "Mid-range — dark fibre build or wholesale IRU"];
   } else if (fibreKm <= 50) {
-    [fLow, fHigh, fibreNote] = [6.0,  20.0, "Long route — dedicated build required"];
+    [fLow, fHigh, fibreRateLow, fibreRateHigh, fibreContext] =
+      [6.0, 20.0, 120, 400, "Long route — dedicated fibre build likely required"];
   } else {
-    [fLow, fHigh, fibreNote] = [20.0, 60.0, "Very remote — carrier wholesale deal likely required; cost highly variable"];
+    [fLow, fHigh, fibreRateLow, fibreRateHigh, fibreContext] =
+      [20.0, 60.0, 300, 600, "Very remote — carrier wholesale deal likely required; cost highly variable"];
   }
-  const fibreType = (props.fibre_route_km != null && props.dist_to_ix_km != null && props.fibre_route_km <= props.dist_to_ix_km)
-    ? "backbone route" : "carrier-neutral colo";
+  const fibreType = (props.fibre_route_km != null && props.dist_to_ix_km != null
+    && props.fibre_route_km <= props.dist_to_ix_km)
+    ? "ITU backbone route" : "carrier-neutral colo";
 
   const totalLow  = cableLow  + rLow  + onsiteLow  + fLow;
   const totalHigh = cableHigh + rHigh + onsiteHigh + fHigh;
@@ -1127,27 +1143,31 @@ function computeConnectionCosts(props, mw) {
     total: { low: totalLow, high: totalHigh, mid: (totalLow + totalHigh) / 2 },
     components: [
       {
-        label:      "Grid cable to substation",
-        detail:     `${effectiveDist.toFixed(1)} km to ${subName}`,
-        assumption: "£2–4M/km for 132kV HV underground cable (NESO benchmark)",
+        label:   "Grid cable to substation",
+        input:   `${effectiveDist.toFixed(1)} km to ${subName} (${subKv})`,
+        formula: `${effectiveDist.toFixed(1)} km × £2–4M/km`,
+        source:  "NESO connection offer benchmarks for 132kV HV underground cable",
         low: cableLow, high: cableHigh,
       },
       {
-        label:      "Substation reinforcement",
-        detail:     `${Math.round(queuePct)}% TEC queue pressure`,
-        assumption: reinforceNote,
+        label:   "Substation reinforcement",
+        input:   `${Math.round(queuePct)}% TEC queue pressure → ${reinforceBand}`,
+        formula: `Lookup by queue band: ${fmtM(rLow)}–${fmtM(rHigh)}`,
+        source:  reinforceRationale,
         low: rLow, high: rHigh,
       },
       {
-        label:      `Onsite HV infrastructure`,
-        detail:     `${mw} MW — switchgear, transformers, protection`,
-        assumption: "£200–400/kW (Turner & Townsend benchmark)",
+        label:   "Onsite HV infrastructure",
+        input:   `${mw} MW demand`,
+        formula: `${mw} MW × £200–400/kW (= £${(mw*200).toLocaleString()}k–£${(mw*400).toLocaleString()}k)`,
+        source:  "Turner & Townsend DC benchmark — switchgear, transformers, protection",
         low: onsiteLow, high: onsiteHigh,
       },
       {
-        label:      "Fibre connection",
-        detail:     `${fibreKm.toFixed(1)} km to nearest ${fibreType}`,
-        assumption: fibreNote,
+        label:   "Fibre connection",
+        input:   `${fibreKm.toFixed(1)} km to nearest ${fibreType}`,
+        formula: `${fibreKm.toFixed(1)} km × £${fibreRateLow}–${fibreRateHigh}k/km`,
+        source:  fibreContext + " · Ofcom/INCA dark fibre pricing data",
         low: fLow, high: fHigh,
       },
     ],
@@ -1162,8 +1182,9 @@ function renderCostEstimate(props, mw) {
         <span class="cost-row-label">${comp.label}</span>
         <span class="cost-row-range">${fmtM(comp.low)} — ${fmtM(comp.high)}</span>
       </div>
-      <div class="cost-row-sub">${comp.detail}</div>
-      <div class="cost-row-assumption">${comp.assumption}</div>
+      <div class="cost-row-input">${comp.input}</div>
+      <div class="cost-row-formula">${comp.formula}</div>
+      <div class="cost-row-source">${comp.source}</div>
     </div>`).join("");
 
   const pct = Math.min(100, Math.max(0, (c.total.mid / (c.total.high * 1.1)) * 100));

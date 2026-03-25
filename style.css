@@ -1099,16 +1099,26 @@ select:hover {
   flex-shrink: 0;
 }
 
-.cost-row-sub {
+.cost-row-input {
   font-size: 10px;
   color: var(--text-mid);
-  margin-bottom: 2px;
+  margin-top: 3px;
 }
 
-.cost-row-assumption {
+.cost-row-formula {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--cyan-dim);
+  margin-top: 2px;
+  font-family: 'DM Mono', 'Roboto Mono', monospace;
+  letter-spacing: 0.02em;
+}
+
+.cost-row-source {
   font-size: 10px;
   color: var(--text-low);
   font-style: italic;
+  margin-top: 2px;
 }
 
 .cost-disclaimer {
