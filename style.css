@@ -991,6 +991,134 @@ select:hover {
   text-decoration: underline;
 }
 
+/* ─── Connection cost estimate ───────────────────────────────────── */
+
+.cost-total-block {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 12px 14px;
+  margin-bottom: 10px;
+}
+
+.cost-total-label {
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--text-low);
+  margin-bottom: 8px;
+}
+
+.cost-total-range {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.cost-range-low,
+.cost-range-high {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-hi);
+  white-space: nowrap;
+  min-width: 40px;
+}
+
+.cost-range-high {
+  text-align: right;
+}
+
+.cost-range-track {
+  flex: 1;
+  height: 6px;
+  background: rgba(255,255,255,0.07);
+  border-radius: 3px;
+  position: relative;
+}
+
+.cost-range-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #00E676, #FFB300, #FF6D00);
+  border-radius: 3px;
+  opacity: 0.5;
+}
+
+.cost-range-mid {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  background: var(--text-hi);
+  border-radius: 50%;
+  border: 2px solid var(--bg-card);
+  box-shadow: 0 0 6px rgba(255,255,255,0.4);
+}
+
+.cost-total-mid {
+  font-size: 11px;
+  color: var(--text-mid);
+  text-align: center;
+}
+
+.cost-breakdown {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.cost-row {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 8px 10px;
+}
+
+.cost-row-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 2px;
+}
+
+.cost-row-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-hi);
+}
+
+.cost-row-range {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--cyan);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.cost-row-sub {
+  font-size: 10px;
+  color: var(--text-mid);
+  margin-bottom: 2px;
+}
+
+.cost-row-assumption {
+  font-size: 10px;
+  color: var(--text-low);
+  font-style: italic;
+}
+
+.cost-disclaimer {
+  font-size: 10px;
+  color: var(--text-low);
+  line-height: 1.4;
+  padding: 6px 0 2px;
+  border-top: 1px solid var(--border);
+}
+
 /* ─── Search this area button ────────────────────────────────────── */
 
 .search-area-btn {

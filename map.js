@@ -725,6 +725,8 @@ function showDetailPanel(props) {
       <span class="pw-bonus">+${pwBonus}</span>
     </div>` : ""}
 
+    ${renderCostEstimate(props, state.mwValue)}
+
     <div class="detail-section-title" style="margin-top:14px">📐 Site</div>
     <div class="detail-row">
       <span class="detail-row-label">Area</span>
@@ -1072,6 +1074,117 @@ function flyToParcel(geometry) {
 
 function fmtAcres(a) { return (a == null || isNaN(a)) ? "—" : a >= 100 ? Math.round(a).toLocaleString() : Number(a).toFixed(1); }
 function fmtHa(h)    { return (h == null || isNaN(h)) ? "—" : h >= 100 ? Math.round(h).toLocaleString() : Number(h).toFixed(1); }
+function fmtM(v)     { return v < 1 ? `£${(v * 1000).toFixed(0)}k` : v >= 100 ? `£${Math.round(v)}M` : `£${v.toFixed(1)}M`; }
+
+// ── Connection cost estimate ───────────────────────────────────────
+function computeConnectionCosts(props, mw) {
+  const distKm   = props.nearest_sub_dist_km ?? 10;
+  const queuePct = props.sub_queue_pressure_pct ?? 200;
+  const fibreKm  = props.best_fibre_km ?? props.dist_to_ix_km ?? 20;
+  const subName  = props.nearest_sub_name ?? "nearest substation";
+
+  // ── Grid cable (132kV underground, NESO/Ofgem benchmarks) ──────
+  const effectiveDist = Math.max(0, distKm - 0.3);   // first 300m within site boundary
+  const cableLow  = effectiveDist * 2.0;
+  const cableHigh = effectiveDist * 4.0;
+
+  // ── Substation reinforcement (queue pressure as congestion proxy) ─
+  let rLow, rHigh, reinforceNote;
+  if (queuePct <= 50) {
+    [rLow, rHigh, reinforceNote] = [0.5, 1.5, "Low queue — minor works likely"];
+  } else if (queuePct <= 150) {
+    [rLow, rHigh, reinforceNote] = [2.0, 7.0, "Moderate queue — some reinforcement expected"];
+  } else if (queuePct <= 300) {
+    [rLow, rHigh, reinforceNote] = [5.0, 18.0, "High queue — significant reinforcement likely"];
+  } else {
+    [rLow, rHigh, reinforceNote] = [15.0, 45.0, "Severe congestion — major reinforcement or alt. connection point required"];
+  }
+
+  // ── Onsite HV infrastructure (£200–400/kW) ─────────────────────
+  const onsiteLow  = mw * 0.20;
+  const onsiteHigh = mw * 0.40;
+
+  // ── Fibre connection (dark fibre build or IRU) ──────────────────
+  let fLow, fHigh, fibreNote;
+  if (fibreKm <= 1) {
+    [fLow, fHigh, fibreNote] = [0.05, 0.2,  "On or adjacent to backbone — short connection only"];
+  } else if (fibreKm <= 5) {
+    [fLow, fHigh, fibreNote] = [0.2,  1.5,  "Short metro route — carrier deal likely available"];
+  } else if (fibreKm <= 20) {
+    [fLow, fHigh, fibreNote] = [1.5,  6.0,  "Mid-range — dark fibre build or wholesale IRU"];
+  } else if (fibreKm <= 50) {
+    [fLow, fHigh, fibreNote] = [6.0,  20.0, "Long route — dedicated build required"];
+  } else {
+    [fLow, fHigh, fibreNote] = [20.0, 60.0, "Very remote — carrier wholesale deal likely required; cost highly variable"];
+  }
+  const fibreType = (props.fibre_route_km != null && props.dist_to_ix_km != null && props.fibre_route_km <= props.dist_to_ix_km)
+    ? "backbone route" : "carrier-neutral colo";
+
+  const totalLow  = cableLow  + rLow  + onsiteLow  + fLow;
+  const totalHigh = cableHigh + rHigh + onsiteHigh + fHigh;
+
+  return {
+    total: { low: totalLow, high: totalHigh, mid: (totalLow + totalHigh) / 2 },
+    components: [
+      {
+        label:      "Grid cable to substation",
+        detail:     `${effectiveDist.toFixed(1)} km to ${subName}`,
+        assumption: "£2–4M/km for 132kV HV underground cable (NESO benchmark)",
+        low: cableLow, high: cableHigh,
+      },
+      {
+        label:      "Substation reinforcement",
+        detail:     `${Math.round(queuePct)}% TEC queue pressure`,
+        assumption: reinforceNote,
+        low: rLow, high: rHigh,
+      },
+      {
+        label:      `Onsite HV infrastructure`,
+        detail:     `${mw} MW — switchgear, transformers, protection`,
+        assumption: "£200–400/kW (Turner & Townsend benchmark)",
+        low: onsiteLow, high: onsiteHigh,
+      },
+      {
+        label:      "Fibre connection",
+        detail:     `${fibreKm.toFixed(1)} km to nearest ${fibreType}`,
+        assumption: fibreNote,
+        low: fLow, high: fHigh,
+      },
+    ],
+  };
+}
+
+function renderCostEstimate(props, mw) {
+  const c = computeConnectionCosts(props, mw);
+  const rows = c.components.map(comp => `
+    <div class="cost-row">
+      <div class="cost-row-top">
+        <span class="cost-row-label">${comp.label}</span>
+        <span class="cost-row-range">${fmtM(comp.low)} — ${fmtM(comp.high)}</span>
+      </div>
+      <div class="cost-row-sub">${comp.detail}</div>
+      <div class="cost-row-assumption">${comp.assumption}</div>
+    </div>`).join("");
+
+  const pct = Math.min(100, Math.max(0, (c.total.mid / (c.total.high * 1.1)) * 100));
+
+  return `
+    <div class="detail-section-title" style="margin-top:14px">💰 Connection cost estimate</div>
+    <div class="cost-total-block">
+      <div class="cost-total-label">Total indicative capex</div>
+      <div class="cost-total-range">
+        <span class="cost-range-low">${fmtM(c.total.low)}</span>
+        <div class="cost-range-track">
+          <div class="cost-range-fill" style="width:${pct}%"></div>
+          <div class="cost-range-mid" style="left:${pct}%" title="Mid estimate: ${fmtM(c.total.mid)}"></div>
+        </div>
+        <span class="cost-range-high">${fmtM(c.total.high)}</span>
+      </div>
+      <div class="cost-total-mid">Mid estimate ${fmtM(c.total.mid)}</div>
+    </div>
+    <div class="cost-breakdown">${rows}</div>
+    <div class="cost-disclaimer">Indicative capital costs only. Based on NESO/Ofgem grid benchmarks and Turner &amp; Townsend data. Excludes planning, civil works, and building costs. Subject to detailed feasibility.</div>`;
+}
 
 function displayName(props) {
   if (props.name && !props.name.startsWith("Unnamed")) return props.name;
