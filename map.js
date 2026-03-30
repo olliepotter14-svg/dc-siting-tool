@@ -618,9 +618,9 @@ function permissioningBucket(props) {
   const gz    = props.growth_zone;
 
   let bucket;
-  if (score >= 75)      bucket = "A — Pre-approved use";
-  else if (score >= 50) bucket = "B — Standard consent";
-  else                  bucket = "C — Change of use";
+  if (score >= 75)      bucket = "A — Permitted";
+  else if (score >= 50) bucket = "B — Achievable";
+  else                  bucket = "C — Complex";
 
   const tags = [];
   if (gz)   tags.push("AI Growth Zone ✦");

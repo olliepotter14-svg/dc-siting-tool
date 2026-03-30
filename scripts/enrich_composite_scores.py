@@ -168,26 +168,53 @@ def flood_score(zone):
     if zone == 3:  return 0     # Zone 3a/3b both treated as hard exclude
     return 100                   # default Zone 1 (e.g. Scotland/Wales)
 
+# ── Permissioning buckets ──────────────────────────────────────────
+# Three buckets reflecting real planning consent risk for DC conversion.
+#
+# Bucket A (score 85) — Permitted / low consent risk
+#   Industrial: DC is a lawful or near-lawful B2/B8 use; prior approval often sufficient
+#   Brownfield: previously developed, same planning path as industrial
+#   Power station: brownfield, existing HV grid on-site, strong DC precedents
+#     (Microsoft Skelton Grange, Rugeley, Ratcliffe); NESO actively promoting
+#     former power station sites for DC reuse; treated as previously developed land
+#
+# Bucket B (score 55) — Achievable / standard consent path
+#   Transport, Commercial, Military: change of use required but DC precedents
+#     exist; consent likely within 2–4 years through standard planning process
+#
+# Bucket C (score 20) — Complex / material change of use
+#   Extraction, Aviation, Farmland: significant change of use; sequential test;
+#     likely long timeline and high refusal risk without special circumstances
+#
+# Multipliers applied on top:
+#   Grey Belt (brownfield within Green Belt): ×0.80
+#     — surmountable with CNI status; precedent: Hertfordshire £3.75bn DC
+#   Green Belt (undeveloped): ×0.55
+#     — significant hurdle even with CNI; NPPF "very special circumstances" required
+#   AI Growth Zone: +15 points (capped at 100)
+#     — political alignment; government target of 2-year consent
+
+BUCKET_A = 85   # Permitted / low consent risk
+BUCKET_B = 55   # Achievable / standard consent
+BUCKET_C = 20   # Complex / change of use
+
 PLANNING_SCORES = {
-    "industrial":  90,
-    "brownfield":  80,
-    "power":       70,
-    "transport":   65,
-    "commercial":  60,
-    "military":    55,
-    "extraction":  40,
-    "aviation":    35,
-    "farmland":    20,
+    "industrial":  BUCKET_A,
+    "brownfield":  BUCKET_A,
+    "power":       BUCKET_A,
+    "transport":   BUCKET_B,
+    "commercial":  BUCKET_B,
+    "military":    BUCKET_B,
+    "extraction":  BUCKET_C,
+    "aviation":    BUCKET_C,
+    "farmland":    BUCKET_C,
 }
 
 def planning_score(site_type, green_belt=False, grey_belt=False):
-    base = PLANNING_SCORES.get(site_type, 50)
+    base = PLANNING_SCORES.get(site_type, BUCKET_B)
     if grey_belt:
-        # Previously developed land in Green Belt — surmountable with CNI status
-        # Major precedent: Hertfordshire £3.75bn DC approved on Grey Belt
         return max(5, round(base * 0.80))
     if green_belt:
-        # Undeveloped Green Belt — significant hurdle even with CNI, NPPF challenges
         return max(5, round(base * 0.55))
     return base
 
