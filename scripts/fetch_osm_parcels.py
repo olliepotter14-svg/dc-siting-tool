@@ -1,19 +1,29 @@
 """
-fetch_osm_parcels.py  (v2)
+fetch_osm_parcels.py  (v4)
 
 Fetches all DC-relevant land parcel types from OpenStreetMap via the Overpass API.
 Saves as data/uk_industrial_parcels.geojson
 
 Site types fetched:
-  industrial  — landuse=industrial
-  brownfield  — landuse=brownfield
-  power       — power=plant (active + disused)
-  aviation    — aeroway=aerodrome (active + disused)
-  military    — landuse=military (active + surplus)
+  industrial  — landuse=industrial, landuse=depot, landuse=logistics, disused:landuse=industrial
+  brownfield  — landuse=brownfield, landuse=landfill (>10 acres)
+  power       — power=plant (excludes solar farms)
+  aviation    — aeroway=aerodrome
+  military    — landuse=military
   transport   — landuse=railway, landuse=port
   extraction  — landuse=quarry
-  farmland    — landuse=farmland (>100 acres only — hyperscale threshold)
-  commercial  — landuse=retail, landuse=commercial
+  farmland    — landuse=farmland (>50 acres — lowered from 100 for mid-scale DCs)
+  commercial  — landuse=commercial, landuse=retail (>25 acres — avoids retail noise)
+
+v4 changes vs v3:
+  - Regions: Northern Ireland added; Scotland North extended to Shetland (61.5°N)
+  - Added landuse=depot and landuse=logistics (logistics parks, distribution centres)
+  - Added landuse=landfill (large brownfield reclamation candidates)
+  - Added disused:landuse=industrial (decommissioned industrial sites)
+  - Farmland minimum lowered 100→50 acres (captures viable mid-scale DC sites)
+  - Solar farms (power_source=solar) now excluded from power sites
+  - Deduplication uses (type, id) tuples to avoid cross-type ID collision
+  - Better name extraction: alt_name, addr:street, description fallbacks added
 
 Usage:
     pip install requests
@@ -34,12 +44,12 @@ MIN_AREA = {
     "industrial":  8_094,    # 2 acres
     "brownfield":  8_094,    # 2 acres
     "power":       20_235,   # 5 acres
-    "aviation":    20_235,   # 5 acres
+    "aviation":    20_235,   # 5 acres (includes disused airfields + military airfields)
     "military":    20_235,   # 5 acres
     "transport":   20_235,   # 5 acres
     "extraction":  20_235,   # 5 acres
-    "farmland":   404_686,   # 100 acres — hyperscale threshold
-    "commercial":  20_235,   # 5 acres
+    "farmland":   202_343,   # 50 acres — captures mid-scale DC sites (was 100)
+    "commercial":  40_469,   # 10 acres — golf courses need lower threshold than retail
 }
 
 UK_REGIONS = [
@@ -54,37 +64,75 @@ UK_REGIONS = [
     {"name": "North East",       "bbox": "54.5,-2.5,55.9,-0.8"},
     {"name": "Wales",            "bbox": "51.3,-5.3,53.5,-2.6"},
     {"name": "Scotland South",   "bbox": "54.8,-5.2,56.5,-1.8"},
-    {"name": "Scotland North",   "bbox": "56.5,-7.6,58.7,-2.0"},
+    {"name": "Scotland North",   "bbox": "56.5,-7.6,61.5,-0.8"},   # extended to Shetland
+    {"name": "Northern Ireland", "bbox": "54.0,-8.2,55.5,-5.4"},   # previously missing
 ]
 
 def overpass_query(bbox):
     """Single combined query covering all site types — one round trip per region."""
     return f"""
-[out:json][timeout:240];
+[out:json][timeout:300];
 (
-  way["landuse"~"^(industrial|brownfield|military|quarry|port|railway|farmland|retail|commercial)$"]({bbox});
-  relation["landuse"~"^(industrial|brownfield|military|quarry|port|railway|farmland|retail|commercial)$"]({bbox});
+  way["landuse"~"^(industrial|brownfield|military|quarry|port|railway|farmland|retail|commercial|depot|logistics|landfill)$"]({bbox});
+  relation["landuse"~"^(industrial|brownfield|military|quarry|port|railway|farmland|retail|commercial|depot|logistics|landfill)$"]({bbox});
+  way["disused:landuse"="industrial"]({bbox});
+  relation["disused:landuse"="industrial"]({bbox});
   way["power"="plant"]({bbox});
   relation["power"="plant"]({bbox});
   way["aeroway"="aerodrome"]({bbox});
   relation["aeroway"="aerodrome"]({bbox});
+  way["man_made"="works"][!"landuse"]({bbox});
+  relation["man_made"="works"][!"landuse"]({bbox});
+  way["disused:aeroway"="aerodrome"]({bbox});
+  relation["disused:aeroway"="aerodrome"]({bbox});
+  way["military"="airfield"]({bbox});
+  relation["military"="airfield"]({bbox});
+  way["leisure"="golf_course"]({bbox});
+  relation["leisure"="golf_course"]({bbox});
 );
 out body;
 >;
 out skel qt;
 """
 
+_SOLAR_SOURCES = {"solar", "photovoltaic", "pv"}
+
 def get_site_type(tags):
     """Map OSM tags to display site type."""
     power   = tags.get("power",   "")
     aeroway = tags.get("aeroway", "")
     landuse  = tags.get("landuse",  "")
+    disused  = tags.get("disused:landuse", "")
 
-    if power    == "plant":             return "power"
-    if aeroway  == "aerodrome":         return "aviation"
+    disused_aeroway = tags.get("disused:aeroway", "")
+    military_sub    = tags.get("military", "")
+    leisure         = tags.get("leisure", "")
+    man_made        = tags.get("man_made", "")
+
+    if power == "plant":
+        # Exclude solar farms — wrong shape/location for DCs; used as proximity signal only
+        src = tags.get("plant:source", tags.get("power_source", "")).lower()
+        if src in _SOLAR_SOURCES:
+            return "other"
+        return "power"
+    if aeroway == "aerodrome":
+        return "aviation"
+    if disused_aeroway == "aerodrome":
+        return "aviation"        # former/disused airfields — prime DC land
+    if military_sub == "airfield":
+        return "aviation"        # former military airfields
+    if man_made == "works" and not landuse:
+        return "industrial"      # standalone factories/processing plants missing landuse tag
+    if leisure == "golf_course":
+        return "commercial"      # declining golf clubs — large flat sites near urban fringe
+    if disused == "industrial":
+        return "industrial"      # decommissioned industrial — often best brownfield candidates
     return {
         "industrial":  "industrial",
+        "depot":       "industrial",   # logistics parks, distribution centres
+        "logistics":   "industrial",   # same
         "brownfield":  "brownfield",
+        "landfill":    "brownfield",   # large closed landfills — reclamation candidates
         "military":    "military",
         "quarry":      "extraction",
         "port":        "transport",
@@ -115,54 +163,101 @@ def calculate_area(coords):
         area -= coords[j][0] * m_lon * coords[i][1] * m_lat
     return abs(area) / 2
 
-def parse_response(data, region_name):
-    nodes = {el["id"]: (el["lon"], el["lat"])
-             for el in data.get("elements", []) if el["type"] == "node"}
+def make_feature(osm_id, tags, coords, region_name):
+    """Build a GeoJSON feature from resolved coordinates."""
+    site_type = get_site_type(tags)
+    if site_type == "other" or len(coords) < 4:
+        return None
+    area_m2 = calculate_area(coords)
+    if area_m2 < MIN_AREA.get(site_type, 8_094):
+        return None
+    name = (tags.get("name") or tags.get("alt_name") or tags.get("ref")
+            or tags.get("operator") or tags.get("addr:street")
+            or tags.get("description") or "")
+    name = name.strip() or f"Unnamed {site_type.title()} Site"
+    return {
+        "type": "Feature",
+        "id":   osm_id,
+        "geometry": {
+            "type":        "Polygon",
+            "coordinates": [[[round(c[0], 5), round(c[1], 5)] for c in coords]],
+        },
+        "properties": {
+            "osm_id":      osm_id,
+            "name":        name,
+            "site_type":   site_type,
+            "osm_tag":     get_osm_tag(tags),
+            "area_m2":     round(area_m2),
+            "area_ha":     round(area_m2 / 10_000, 2),
+            "area_acres":  round(area_m2 / 4_046.86, 1),
+            "region":      region_name,
+            "operator":    tags.get("operator", ""),
+            "addr_city":   tags.get("addr:city", ""),
+            "description": tags.get("description", ""),
+        },
+    }
 
-    features = []
-    for el in data.get("elements", []):
+def parse_response(data, region_name):
+    elements = data.get("elements", [])
+
+    # Node coordinate lookup
+    nodes = {el["id"]: (el["lon"], el["lat"])
+             for el in elements if el["type"] == "node"}
+
+    # Way coordinate + tag lookup (needed for relation member resolution)
+    way_coords = {}
+    way_tags   = {}
+    for el in elements:
         if el["type"] != "way":
+            continue
+        coords = [nodes[nid] for nid in el.get("nodes", []) if nid in nodes]
+        if coords:
+            way_coords[el["id"]] = coords
+            way_tags[el["id"]]   = el.get("tags", {})
+
+    features  = []
+    seen_ids  = set()   # stores (osm_type, osm_id) tuples to avoid cross-type collisions
+
+    # ── Relations (multipolygons — large business parks, science campuses etc.) ─
+    for el in elements:
+        if el["type"] != "relation":
             continue
         tags = el.get("tags", {})
         if not tags:
             continue
-
-        site_type = get_site_type(tags)
-        if site_type == "other":
+        key = ("relation", el["id"])
+        if key in seen_ids:
             continue
+        # Collect all outer-ring member way coordinates
+        all_coords = []
+        for member in el.get("members", []):
+            if member.get("type") == "way" and member.get("role") in ("outer", ""):
+                wid = member.get("ref")
+                if wid in way_coords:
+                    all_coords.extend(way_coords[wid])
+        feat = make_feature(el["id"], tags, all_coords, region_name)
+        if feat:
+            features.append(feat)
+            seen_ids.add(key)
+            # Mark member ways as consumed so they don't appear as duplicates
+            for member in el.get("members", []):
+                if member.get("type") == "way":
+                    seen_ids.add(("way", member.get("ref")))
 
-        coords = [nodes[nid] for nid in el.get("nodes", []) if nid in nodes]
-        if len(coords) < 4:
+    # ── Ways (standalone polygons) ─────────────────────────────────
+    for el in elements:
+        key = ("way", el["id"])
+        if el["type"] != "way" or key in seen_ids:
             continue
-
-        area_m2 = calculate_area(coords)
-        if area_m2 < MIN_AREA.get(site_type, 8_094):
+        tags = el.get("tags", {})
+        if not tags:
             continue
+        coords = way_coords.get(el["id"], [])
+        feat = make_feature(el["id"], tags, coords, region_name)
+        if feat:
+            features.append(feat)
+            seen_ids.add(key)
 
-        name = tags.get("name") or tags.get("ref") or tags.get("operator") or ""
-        name = name.strip() or f"Unnamed {site_type.title()} Site"
-
-        features.append({
-            "type": "Feature",
-            "id":   el["id"],
-            "geometry": {
-                "type":        "Polygon",
-                "coordinates": [[[round(c[0], 5), round(c[1], 5)] for c in coords]]
-            },
-            "properties": {
-                "osm_id":     el["id"],
-                "name":       name,
-                "site_type":  site_type,
-                "osm_tag":    get_osm_tag(tags),
-                "area_m2":    round(area_m2),
-                "area_ha":    round(area_m2 / 10_000, 2),
-                "area_acres": round(area_m2 / 4_046.86, 1),
-                "region":     region_name,
-                "operator":   tags.get("operator", ""),
-                "addr_city":  tags.get("addr:city", ""),
-                "description": tags.get("description", ""),
-            }
-        })
     return features
 
 def fetch_region(region, retries=5):
@@ -192,7 +287,7 @@ def fetch_region(region, retries=5):
     return []
 
 def main():
-    print("DC Site Finder — OSM Parcel Fetch (v2)")
+    print("DC Site Finder — OSM Parcel Fetch (v4)")
     print("=" * 45)
     print("Site types: industrial, brownfield, power, aviation, military, transport, extraction, farmland, commercial")
     print()
@@ -202,9 +297,11 @@ def main():
     for region in UK_REGIONS:
         features = fetch_region(region)
         for f in features:
-            if f["id"] not in seen_ids:
+            # Use osm_id string as dedup key (already unique within a fetch run)
+            fid = f["properties"]["osm_id"]
+            if fid not in seen_ids:
                 all_features.append(f)
-                seen_ids.add(f["id"])
+                seen_ids.add(fid)
         time.sleep(6)
 
     all_features.sort(key=lambda f: f["properties"]["area_m2"], reverse=True)

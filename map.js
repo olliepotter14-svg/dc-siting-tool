@@ -46,7 +46,7 @@ const state = {
   filteredFeatures: [],
   substations:      [],
   activeId:         null,
-  colorMode:        "type",   // "type" | "power" | "composite"
+  colorMode:        "composite", // "type" | "power" | "composite"
   mwValue:          50,       // numeric MW — any value
   showSubstations:  true,
   showPowerlines:   true,
@@ -54,7 +54,6 @@ const state = {
   areaSearch:       false,    // list filtered to current viewport
   filters: {
     region:           "all",
-    activeTypes:      new Set(Object.keys(SITE_TYPES)),
     minAcres:         0,
     minComposite:     0,
     excludeFloodZone3: true,   // hard exclude Zone 3 sites by default
@@ -147,24 +146,16 @@ function getTimeline(pct) {
 mapboxgl.accessToken = window.MAPBOX_TOKEN;
 
 const map = new mapboxgl.Map({
-  container: "map",
-  style:     "mapbox://styles/mapbox/dark-v11",
-  center:    [-1.8, 53.5],
-  zoom:      5.8,
-  minZoom:   4,
-  maxBounds: [[-12, 49], [3, 62]],
+  container:  "map",
+  style:      "mapbox://styles/mapbox/dark-v11",
+  center:     [-1.8, 53.5],
+  zoom:       5.8,
+  minZoom:    4,
+  maxBounds:  [[-12, 49], [3, 62]],
+  projection: "mercator",
 });
 
 map.addControl(new mapboxgl.NavigationControl({ showCompass: false }), "top-right");
-
-// Zoom-in nudge: remind users to zoom for small parcels
-const zoomNudge = document.getElementById("zoom-nudge");
-function updateZoomNudge() {
-  if (!zoomNudge) return;
-  zoomNudge.classList.toggle("hidden", map.getZoom() >= 8);
-}
-map.on("zoom", updateZoomNudge);
-map.on("load",  updateZoomNudge);
 
 let popup = new mapboxgl.Popup({
   closeButton:  true,
@@ -196,6 +187,7 @@ map.on("load", () => {
     initUI();
     applyFilters();
     addMapLayers();
+    refreshParcelColors();  // apply correct opacity for initial colorMode
     addPowerlineLayer(powerlines);
     addFibreRouteLayer(fibreRoutes);
   })
@@ -535,7 +527,7 @@ function refreshParcelColors() {
 
 // ── Selection ─────────────────────────────────────────────────────
 function selectParcel(osmId, geometry, props) {
-  state.activeId = osmId;
+  state.activeId = String(osmId);
   updateActiveFeatureState();
   showPopup(getCentroid(geometry.coordinates[0]), props);
   showDetailPanel(props);
@@ -554,7 +546,7 @@ function updateActiveFeatureState() {
   map.removeFeatureState({ source: "parcels" });
   if (state.activeId !== null) {
     map.querySourceFeatures("parcels").forEach(f => {
-      if (f.properties.osm_id === state.activeId)
+      if (String(f.properties.osm_id) === state.activeId)
         map.setFeatureState({ source: "parcels", id: f.id }, { active: true });
     });
   }
@@ -618,6 +610,42 @@ function floodZoneLabel(zone) {
   return { 1: "Zone 1 — Low risk", 2: "Zone 2 — Medium risk", 3: "Zone 3 — High risk" }[zone] ?? "Unknown";
 }
 
+/** Return a short permissioning bucket label for the detail panel. */
+function permissioningBucket(props) {
+  const score = props.permissioning_score ?? props.planning_score ?? 0;
+  const gb    = props.green_belt;
+  const grey  = props.grey_belt;
+  const gz    = props.growth_zone;
+
+  let bucket;
+  if (score >= 75)      bucket = "A — Pre-approved use";
+  else if (score >= 50) bucket = "B — Standard consent";
+  else                  bucket = "C — Change of use";
+
+  const tags = [];
+  if (gz)   tags.push("AI Growth Zone ✦");
+  if (grey) tags.push("Grey Belt");
+  else if (gb) tags.push("Green Belt");
+
+  return bucket + (tags.length ? " · " + tags.join(" · ") : "");
+}
+
+function hardExclusionBanner(props) {
+  if (!props.hard_excluded) return "";
+  const reasons = [];
+  if (props.flood_zone === 3) reasons.push("Flood Zone 3 (≥1% annual flood probability — NPPF prohibits critical infrastructure)");
+  const desigs = (props.protected_designations || []).filter(d => d);
+  desigs.forEach(d => reasons.push(d));
+  const reasonHTML = reasons.map(r => `<li>${r}</li>`).join("");
+  return `
+    <div class="hard-exclusion-banner">
+      <div class="hex-title">⛔ Hard-excluded — not viable for DC development</div>
+      <div class="hex-subtitle">This site has been automatically excluded from scoring due to planning or environmental constraints that cannot be overcome:</div>
+      <ul class="hex-reasons">${reasonHTML}</ul>
+      <div class="hex-note">Green Belt sites are <em>not</em> excluded — they carry a planning score penalty only.</div>
+    </div>`;
+}
+
 function showDetailPanel(props) {
   const panel     = document.getElementById("detail-panel");
   const content   = document.getElementById("detail-content");
@@ -650,7 +678,7 @@ function showDetailPanel(props) {
     </div>` : floodZone === 2 ? `
     <div class="flood-caution">
       <strong>Flood Zone 2 — Moderate risk</strong><br>
-      0.1–1% annual flood probability. A Flood Risk Assessment is required at planning stage. Score penalised.
+      0.1–1% annual flood probability. A Flood Risk Assessment will be required at planning stage.
     </div>` : "";
 
   content.innerHTML = `
@@ -666,8 +694,8 @@ function showDetailPanel(props) {
         <div class="detail-metric-label">Acres</div>
       </div>
       <div class="detail-metric">
-        <div class="detail-metric-value" style="color:${cColor}">${Math.round(compS)}</div>
-        <div class="detail-metric-label">${hasComposite ? "Composite" : "Power"} (${state.mwValue}MW)</div>
+        <div class="detail-metric-value" style="color:${cColor}">${props.hard_excluded ? "—" : Math.round(compS)}</div>
+        <div class="detail-metric-label">${props.hard_excluded ? "Excluded" : (hasComposite ? "Composite" : "Power") + " (" + state.mwValue + "MW)"}</div>
       </div>
       <div class="detail-metric">
         <div class="detail-metric-value" style="color:${floodColor};font-size:12px">${floodZoneLabel(floodZone)}</div>
@@ -675,25 +703,39 @@ function showDetailPanel(props) {
       </div>
     </div>
 
-    ${floodWarning}
+    ${hardExclusionBanner(props)}
 
-    ${hasComposite ? `
+    ${props.hard_excluded ? "" : floodWarning}
+
+    ${props.hard_excluded ? "" : (() => {
+      const desigs = (props.protected_designations || []).filter(d => d);
+      const greenBelt = props.green_belt;
+      const greyBelt  = props.grey_belt;
+      if (!desigs.length && !greenBelt) return '';
+      const badges = desigs.map(d => `<span class="desig-badge">${d}</span>`).join('');
+      const beltBadge = greyBelt
+        ? '<span class="desig-belt">Grey Belt</span>'
+        : greenBelt ? '<span class="desig-belt">Green Belt</span>' : '';
+      return `
+        <div class="detail-section-title">Protected Designations</div>
+        <div class="detail-designations">${badges}${beltBadge}</div>`;
+    })()}
+
+    ${!props.hard_excluded && hasComposite ? `
     <div class="detail-section-title">◉ Composite score breakdown</div>
     <div class="scorecard">
-      ${scorecardBar("Power — grid access (35%)", Math.round(powerS) + " / 100", powerS)}
+      ${scorecardBar("Power — grid access (40%)", Math.round(powerS) + " / 100", powerS)}
+      ${scorecardBar("Permissioning (30%)", permissioningBucket(props), props.permissioning_score ?? 0)}
       ${scorecardBar("Fibre — connectivity (20%)", (() => {
         const route = props.fibre_route_km;
         const ix    = props.dist_to_ix_km;
         if (route != null && ix != null) {
           const best = Math.min(route, ix);
-          return best.toFixed(1) + " km " + (route <= ix ? "(backbone route)" : "(carrier colo)");
+          return best.toFixed(1) + " km " + (route <= ix ? "(backbone)" : "(colo)");
         }
         return ix != null ? ix.toFixed(1) + " km" : "—";
       })(), props.fibre_score ?? 0)}
-      ${scorecardBar("Flood risk (15%)", floodZoneLabel(floodZone), props.flood_score ?? 0)}
-      ${scorecardBar("Planning / land use (15%)", cfg.label, props.planning_score ?? 0)}
       ${scorecardBar("Buildability (10%)", fmtAcres(props.area_acres) + " ac", props.buildability_score ?? 0)}
-      ${scorecardBar("Market proximity (5%)", props.nearest_ix_name ? "Near " + props.nearest_ix_name.split(" ")[0] : "—", props.market_score ?? 0)}
     </div>` : ""}
 
     <div class="detail-section-title">⚡ Power detail</div>
@@ -750,8 +792,8 @@ document.getElementById("detail-close").addEventListener("click", clearSelection
 document.getElementById("parcel-list").addEventListener("click", (e) => {
   const card = e.target.closest(".parcel-card");
   if (!card) return;
-  const osmId = parseInt(card.dataset.id, 10);
-  const feat  = state.allFeatures.find(f => f.properties.osm_id === osmId);
+  const osmId = card.dataset.id;
+  const feat  = state.allFeatures.find(f => String(f.properties.osm_id) === osmId);
   if (!feat) return;
   selectParcel(osmId, feat.geometry, feat.properties);
   flyToParcel(feat.geometry);
@@ -845,23 +887,21 @@ function initUI() {
     });
   });
 
-  // Site type toggles
-  const grid = document.getElementById("type-toggle-grid");
-  Object.entries(SITE_TYPES).forEach(([type, cfg]) => {
-    const btn = document.createElement("button");
-    btn.className    = "type-toggle active";
-    btn.dataset.type = type;
-    btn.textContent  = cfg.label;
-    btn.style.setProperty("--type-color", cfg.color);
-    btn.addEventListener("click", () => {
-      state.filters.activeTypes.has(type)
-        ? state.filters.activeTypes.delete(type)
-        : state.filters.activeTypes.add(type);
-      btn.classList.toggle("active");
+  // Reset filters button
+  const resetBtn = document.getElementById("reset-filters-btn");
+  if (resetBtn) {
+    resetBtn.addEventListener("click", () => {
+      state.filters.region           = "all";
+      state.filters.minAcres         = 0;
+      state.filters.minComposite     = 0;
+      state.filters.excludeFloodZone3 = true;
+      document.getElementById("filter-region").value           = "all";
+      document.getElementById("filter-size").value             = "0";
+      document.getElementById("filter-composite-score").value  = "0";
+      document.getElementById("toggle-flood-exclude").checked  = true;
       applyFilters();
     });
-    grid.appendChild(btn);
-  });
+  }
 
   // Search this area button
   const searchAreaBtn = document.getElementById("search-area-btn");
@@ -880,45 +920,41 @@ function updateLegend() {
 
   if (state.colorMode === "power" || state.colorMode === "composite") {
     const label = state.colorMode === "composite" ? "Composite" : "Power";
+    const sec1 = document.createElement("div"); sec1.className = "legend-section-label"; sec1.textContent = label + " score"; legend.appendChild(sec1);
     SCORE_COLORS.slice().reverse().forEach(([score, color]) => {
       const item = document.createElement("div");
       item.className = "legend-item";
-      item.innerHTML = `<span class="legend-dot" style="background:${color};box-shadow:0 0 5px ${color}"></span> ${label} ${score}+`;
-      legend.appendChild(item);
-    });
-    [["Low queue (<50%)", "#00E676"], ["Moderate (50–150%)", "#FFB300"],
-     ["High (150–300%)", "#FF6D00"], ["Severe (>300%)", "#FF1744"]].forEach(([lbl, color]) => {
-      const item = document.createElement("div");
-      item.className = "legend-item";
-      item.innerHTML = `<span class="legend-circle" style="background:${color};box-shadow:0 0 5px ${color}"></span> ${lbl}`;
+      item.innerHTML = `<span class="legend-dot" style="background:${color};box-shadow:0 0 5px ${color}"></span> ${score}+`;
       legend.appendChild(item);
     });
   } else {
+    const sec1 = document.createElement("div"); sec1.className = "legend-section-label"; sec1.textContent = "Site type"; legend.appendChild(sec1);
     Object.entries(SITE_TYPES).forEach(([, cfg]) => {
       const item = document.createElement("div");
       item.className = "legend-item";
       item.innerHTML = `<span class="legend-dot" style="background:${cfg.color};box-shadow:0 0 5px ${cfg.color}"></span> ${cfg.label}`;
       legend.appendChild(item);
     });
-    [["Low queue (<50%)", "#00E676"], ["Moderate (50–150%)", "#FFB300"],
-     ["High (150–300%)", "#FF6D00"], ["Severe (>300%)", "#FF1744"]].forEach(([lbl, color]) => {
-      const item = document.createElement("div");
-      item.className = "legend-item";
-      item.innerHTML = `<span class="legend-circle" style="background:${color};box-shadow:0 0 5px ${color}"></span> ${lbl}`;
-      legend.appendChild(item);
-    });
   }
+
+  const sep = document.createElement("div"); sep.className = "legend-sep"; legend.appendChild(sep);
+  const sec2 = document.createElement("div"); sec2.className = "legend-section-label"; sec2.textContent = "Substation queue"; legend.appendChild(sec2);
+  [["Low (<50%)", "#00E676"], ["Moderate (50–150%)", "#FFB300"],
+   ["High (150–300%)", "#FF6D00"], ["Severe (>300%)", "#FF1744"]].forEach(([lbl, color]) => {
+    const item = document.createElement("div");
+    item.className = "legend-item";
+    item.innerHTML = `<span class="legend-circle" style="background:${color};box-shadow:0 0 5px ${color}"></span> ${lbl}`;
+    legend.appendChild(item);
+  });
 }
 
 // ── Filters ───────────────────────────────────────────────────────
 function applyFilters() {
-  if (state.areaSearch) setAreaSearch(false);  // reset on filter change
-  const { region, activeTypes, minAcres, minComposite, excludeFloodZone3 } = state.filters;
+  const { region, minAcres, minComposite, excludeFloodZone3 } = state.filters;
 
   state.filteredFeatures = state.allFeatures.filter(f => {
     const p = f.properties;
     if (region !== "all" && p.region !== region)                                  return false;
-    if (!activeTypes.has(p.site_type))                                             return false;
     if (p.area_acres != null && p.area_acres < minAcres)                           return false;
     if (excludeFloodZone3 && (p.hard_excluded === true || p.flood_zone === 3))     return false;
     if (minComposite > 0 && getCompositeScore(p) < minComposite)                   return false;
@@ -931,24 +967,15 @@ function applyFilters() {
 }
 
 function updateStats() {
-  const n = state.filteredFeatures.length;
-  document.getElementById("stat-count").textContent = n.toLocaleString();
+  const total = state.allFeatures.length;
+  const score90 = state.allFeatures.filter(f => getCompositeScore(f.properties) >= 90).length;
 
-  const byType = {};
-  state.filteredFeatures.forEach(f => {
-    const t = f.properties.site_type;
-    byType[t] = (byType[t] || 0) + 1;
-  });
-  const sorted = Object.entries(byType).sort((a, b) => b[1] - a[1]);
-  const s1 = sorted[0], s2 = sorted[1];
+  document.getElementById("stat-count").textContent  = total.toLocaleString();
+  document.getElementById("stat-type1").textContent  = score90.toLocaleString();
 
-  document.getElementById("stat-type1").textContent   = s1 ? s1[1].toLocaleString() : "—";
-  document.getElementById("stat-label1").textContent  = s1 ? (SITE_TYPES[s1[0]]?.label || s1[0]) : "—";
-  document.getElementById("stat-type2").textContent   = s2 ? s2[1].toLocaleString() : "—";
-  document.getElementById("stat-label2").textContent  = s2 ? (SITE_TYPES[s2[0]]?.label || s2[0]) : "—";
   // list-count is managed by updateList() when area search is active
   if (!state.areaSearch)
-    document.getElementById("list-count").textContent = n.toLocaleString();
+    document.getElementById("list-count").textContent = state.filteredFeatures.length.toLocaleString();
 }
 
 function buildFilteredGeoJSON() {
@@ -990,7 +1017,7 @@ function updateList() {
   let features = state.filteredFeatures;
 
   // When area search is active, restrict list to current viewport
-  if (state.areaSearch && map.loaded()) {
+  if (state.areaSearch) {
     const bounds = map.getBounds();
     features = features.filter(f => {
       const [lng, lat] = getCentroid(f.geometry.coordinates[0]);
@@ -1026,11 +1053,15 @@ function buildCardHTML(props) {
   const composite  = getCompositeScore(props);
   const cColor     = scoreColor(composite);
   const floodZone  = props.flood_zone ?? null;
-  const floodIcon  = floodZone === 3 ? " ⚠" : floodZone === 2 ? " ~" : "";
+  const floodIcon  = floodZone === 3
+    ? ` <span style="color:#FF1744;font-size:9px;font-weight:700">⚠ FZ3</span>`
+    : floodZone === 2
+    ? ` <span style="color:#FFB300;font-size:9px;font-weight:700">FZ2</span>`
+    : "";
   const hasComposite = props.composite_score_50 != null;
 
   return `
-    <div class="parcel-card${props.osm_id === state.activeId ? " active" : ""}"
+    <div class="parcel-card${String(props.osm_id) === state.activeId ? " active" : ""}"
          data-id="${props.osm_id}" style="--card-color:${cfg.color}">
       <div class="parcel-card-header">
         <span class="parcel-name">${displayName(props)}${floodIcon}</span>
@@ -1051,7 +1082,7 @@ function buildCardHTML(props) {
 
 function highlightListCard(osmId) {
   document.querySelectorAll(".parcel-card").forEach(c =>
-    c.classList.toggle("active", parseInt(c.dataset.id, 10) === osmId));
+    c.classList.toggle("active", c.dataset.id === String(osmId)));
 }
 
 // ── Helpers ───────────────────────────────────────────────────────
