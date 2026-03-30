@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DC Site Selection Waterfall — 100MW</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+         background: #0f1117; color: #e2e8f0; min-height: 100vh; padding: 40px 24px; }
+  h1 { font-size: 22px; font-weight: 600; color: #f8fafc; margin-bottom: 4px; }
+  .subtitle { font-size: 13px; color: #64748b; margin-bottom: 36px; }
+  .waterfall { width: 100%; max-width: 960px; margin: 0 auto; }
+  .stage { display: flex; align-items: stretch; margin-bottom: 3px; cursor: default;
+            border-radius: 6px; overflow: hidden; transition: filter 0.15s; }
+  .stage:hover { filter: brightness(1.1); }
+  .stage-label { width: 280px; flex-shrink: 0; padding: 10px 14px;
+                  font-size: 13px; font-weight: 500; display: flex;
+                  align-items: center; background: #1e2535; }
+  .bar-wrap { flex: 1; display: flex; align-items: center;
+               background: #161b27; padding: 6px 10px; gap: 10px; }
+  .bar-outer { flex: 1; height: 28px; background: #1e2535; border-radius: 4px; overflow: hidden; }
+  .bar-inner { height: 100%; border-radius: 4px; transition: width 0.3s ease; }
+  .bar-value { font-size: 13px; font-weight: 600; white-space: nowrap; min-width: 70px; text-align: right; }
+  .bar-removed { font-size: 12px; color: #ef4444; white-space: nowrap; min-width: 80px; }
+  .tooltip { font-size: 11px; color: #94a3b8; padding: 4px 10px 8px 280px; margin-top: -3px;
+              margin-bottom: 8px; max-width: 960px; line-height: 1.5; }
+
+  /* colour palette by kind */
+  .kind-start  .stage-label { color: #60a5fa; }
+  .kind-start  .bar-inner   { background: #2563eb; }
+  .kind-start  .bar-value   { color: #60a5fa; }
+
+  .kind-exclude .stage-label { color: #f87171; }
+  .kind-exclude .bar-inner   { background: #dc2626; }
+  .kind-exclude .bar-value   { color: #f87171; }
+
+  .kind-size  .stage-label { color: #fb923c; }
+  .kind-size  .bar-inner   { background: #ea580c; }
+  .kind-size  .bar-value   { color: #fb923c; }
+
+  .kind-deprioritise .stage-label { color: #facc15; }
+  .kind-deprioritise .bar-inner   { background: #ca8a04; }
+  .kind-deprioritise .bar-value   { color: #facc15; }
+
+  .kind-info  .stage-label { color: #a78bfa; }
+  .kind-info  .bar-inner   { background: #7c3aed; }
+  .kind-info  .bar-value   { color: #a78bfa; }
+
+  .kind-score .stage-label { color: #34d399; }
+  .kind-score .bar-inner   { background: #059669; }
+  .kind-score .bar-value   { color: #34d399; }
+
+  .kind-end   .stage-label { color: #fbbf24; font-weight: 700; }
+  .kind-end   .bar-inner   { background: linear-gradient(90deg, #d97706, #fbbf24); }
+  .kind-end   .bar-value   { color: #fbbf24; font-weight: 700; font-size: 15px; }
+
+  .tables { max-width: 960px; margin: 40px auto 0; display: grid;
+             grid-template-columns: 1fr 1fr; gap: 20px; }
+  .tbl { background: #1e2535; border-radius: 8px; padding: 16px; }
+  .tbl h3 { font-size: 13px; color: #94a3b8; font-weight: 500; margin-bottom: 10px;
+             text-transform: uppercase; letter-spacing: 0.05em; }
+  .tbl table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .tbl td { padding: 5px 8px; border-bottom: 1px solid #2d3a4f; }
+  .tbl td:last-child { text-align: right; font-weight: 600; color: #fbbf24; }
+  .meta { max-width: 960px; margin: 12px auto 0; font-size: 11px; color: #475569; }
+</style>
+</head>
+<body>
+<div class="waterfall">
+  <h1>UK Data Centre Site Selection — 100MW Funnel</h1>
+  <p class="subtitle">From 63,478 UK land parcels to composite 90+ sites of ≥200 acres · Generated 30 Mar 2026 21:46</p>
+
+  <div class="stage kind-start">
+    <div class="stage-label">All UK land parcels (OSM)</div>
+    <div class="bar-wrap">
+      <div class="bar-outer">
+        <div class="bar-inner" style="width:100.0%"></div>
+      </div>
+      <div class="bar-value">63,478</div>
+      <div class="bar-removed"></div>
+    </div>
+  </div>
+  <div class="tooltip">Brownfield, industrial, agricultural, military, aviation and other land types across all 13 UK regions</div>
+
+  <div class="stage kind-exclude">
+    <div class="stage-label">Remove Flood Zone 3</div>
+    <div class="bar-wrap">
+      <div class="bar-outer">
+        <div class="bar-inner" style="width:91.5%"></div>
+      </div>
+      <div class="bar-value">58,069</div>
+      <div class="bar-removed">−5,409</div>
+    </div>
+  </div>
+  <div class="tooltip">High flood risk — uninhabitable for critical infrastructure. 5,409 parcels excluded.</div>
+
+  <div class="stage kind-exclude">
+    <div class="stage-label">Remove statutory designations</div>
+    <div class="bar-wrap">
+      <div class="bar-outer">
+        <div class="bar-inner" style="width:82.3%"></div>
+      </div>
+      <div class="bar-value">52,242</div>
+      <div class="bar-removed">−5,827</div>
+    </div>
+  </div>
+  <div class="tooltip">National Parks, AONBs, SSSIs, SACs, SPAs, Ancient Woodland, Scheduled Monuments etc. 5,827 parcels excluded.</div>
+
+  <div class="stage kind-size">
+    <div class="stage-label">Remove < 200 acres</div>
+    <div class="bar-wrap">
+      <div class="bar-outer">
+        <div class="bar-inner" style="width:7.4%"></div>
+      </div>
+      <div class="bar-value">4,669</div>
+      <div class="bar-removed">−47,573</div>
+    </div>
+  </div>
+  <div class="tooltip">Minimum 200 acres required for a 100MW campus. 47,573 parcels below threshold.</div>
+
+  <div class="stage kind-deprioritise">
+    <div class="stage-label">Set aside farmland</div>
+    <div class="bar-wrap">
+      <div class="bar-outer">
+        <div class="bar-inner" style="width:7.4%"></div>
+      </div>
+      <div class="bar-value">4,669</div>
+      <div class="bar-removed">−3,954</div>
+    </div>
+  </div>
+  <div class="tooltip">Agricultural land requires change of use — significantly higher planning risk and timeline. 3,954 parcels set aside (still scoreable).</div>
+
+  <div class="stage kind-info">
+    <div class="stage-label">Green Belt context</div>
+    <div class="bar-wrap">
+      <div class="bar-outer">
+        <div class="bar-inner" style="width:7.4%"></div>
+      </div>
+      <div class="bar-value"></div>
+      <div class="bar-removed"></div>
+    </div>
+  </div>
+  <div class="tooltip">0 Grey Belt (brownfield within Green Belt — CNI opportunity) · 0 undeveloped Green Belt (significant planning hurdle, not excluded)</div>
+
+  <div class="stage kind-score">
+    <div class="stage-label">Composite score ≥ 50</div>
+    <div class="bar-wrap">
+      <div class="bar-outer">
+        <div class="bar-inner" style="width:7.1%"></div>
+      </div>
+      <div class="bar-value">4,488</div>
+      <div class="bar-removed">−181</div>
+    </div>
+  </div>
+  <div class="tooltip">Minimum viability threshold across power, fibre, flood, planning, buildability and market proximity. 181 parcels below threshold.</div>
+
+  <div class="stage kind-score">
+    <div class="stage-label">Composite score ≥ 70</div>
+    <div class="bar-wrap">
+      <div class="bar-outer">
+        <div class="bar-inner" style="width:6.5%"></div>
+      </div>
+      <div class="bar-value">4,125</div>
+      <div class="bar-removed">−363</div>
+    </div>
+  </div>
+  <div class="tooltip">Strong candidates with good grid headroom, fibre connectivity and market proximity. 363 parcels below threshold.</div>
+
+  <div class="stage kind-score">
+    <div class="stage-label">Composite score ≥ 90</div>
+    <div class="bar-wrap">
+      <div class="bar-outer">
+        <div class="bar-inner" style="width:6.2%"></div>
+      </div>
+      <div class="bar-value">3,956</div>
+      <div class="bar-removed">−169</div>
+    </div>
+  </div>
+  <div class="tooltip">Priority targets — top-tier on all six dimensions. 169 parcels below threshold.</div>
+
+  <div class="stage kind-end">
+    <div class="stage-label">Priority 100MW sites</div>
+    <div class="bar-wrap">
+      <div class="bar-outer">
+        <div class="bar-inner" style="width:6.2%"></div>
+      </div>
+      <div class="bar-value">3,956</div>
+      <div class="bar-removed"></div>
+    </div>
+  </div>
+  <div class="tooltip">Composite 90+ sites ≥ 200 acres on previously developed land — top-tier for 100MW DC investment analysis</div>
+
+</div>
+<div class="tables">
+  <div class="tbl">
+    <h3>Priority sites by type</h3>
+    <table><tr><td>Industrial</td><td>2</td></tr></table>
+  </div>
+  <div class="tbl">
+    <h3>Priority sites by region</h3>
+    <table><tr><td>South East</td><td>1</td></tr><tr><td>North West</td><td>1</td></tr></table>
+  </div>
+</div>
+<p class="meta">Composite score = weighted average of power (35%), fibre (20%), flood risk (15%), planning (15%), buildability (10%), market proximity (5%) · Green Belt sites carry planning score penalty (55–80%) · Farmland set aside, not excluded · Data: OSM · EA Flood Map · planning.data.gov.uk</p>
+</body>
+</html>

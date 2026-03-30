@@ -611,6 +611,41 @@ select:hover {
 
 /* ─── Flood zone warnings ────────────────────────────────────────── */
 
+.hard-exclusion-banner {
+  background: rgba(255, 23, 68, 0.07);
+  border: 1px solid rgba(255, 23, 68, 0.40);
+  border-left: 3px solid #FF1744;
+  border-radius: var(--radius);
+  padding: 12px 14px;
+  margin: 10px 0 14px;
+}
+.hex-title {
+  font-size: 12px;
+  font-weight: 700;
+  color: #FF4569;
+  margin-bottom: 5px;
+}
+.hex-subtitle {
+  font-size: 11px;
+  color: #8B92A5;
+  margin-bottom: 7px;
+  line-height: 1.4;
+}
+.hex-reasons {
+  margin: 0 0 7px 0;
+  padding-left: 16px;
+  font-size: 11px;
+  color: #C8CDD8;
+  line-height: 1.6;
+}
+.hex-note {
+  font-size: 10px;
+  color: #5A6070;
+  border-top: 1px solid rgba(255,23,68,0.15);
+  padding-top: 6px;
+  margin-top: 4px;
+}
+
 .flood-warning {
   background: rgba(255, 23, 68, 0.08);
   border: 1px solid rgba(255, 23, 68, 0.35);
@@ -811,6 +846,44 @@ select:hover {
 .overlay-chip:hover:not(.active) {
   border-color: rgba(255,255,255,0.15);
   color: var(--text-hi);
+}
+
+/* ─── Filter group separator ─────────────────────────────────────── */
+
+.filter-group-sep {
+  margin: 12px -16px 10px;
+  padding: 4px 16px;
+  background: rgba(255,255,255,0.025);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-low);
+}
+
+/* ─── Reset filters button ───────────────────────────────────────── */
+
+.reset-filters-btn {
+  width: 100%;
+  margin-top: 12px;
+  padding: 7px;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text-low);
+  font-size: 11px;
+  font-weight: 500;
+  font-family: var(--font);
+  cursor: pointer;
+  transition: all 0.15s;
+  text-align: center;
+}
+
+.reset-filters-btn:hover {
+  border-color: rgba(255,255,255,0.2);
+  color: var(--text-mid);
 }
 
 /* ─── Toggle row ─────────────────────────────────────────────────── */
@@ -1183,6 +1256,60 @@ select:hover {
 
 .zoom-nudge.hidden {
   opacity: 0;
+}
+
+/* ─── Protected designation badges ──────────────────────────────── */
+
+.detail-designations {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-bottom: 4px;
+}
+
+.desig-badge {
+  font-size: 9.5px;
+  font-weight: 600;
+  padding: 2px 7px;
+  border-radius: 3px;
+  background: rgba(255, 107, 53, 0.1);
+  border: 1px solid rgba(255, 107, 53, 0.3);
+  color: #FF6B35;
+  line-height: 1.4;
+}
+
+.desig-belt {
+  font-size: 9.5px;
+  font-weight: 600;
+  padding: 2px 7px;
+  border-radius: 3px;
+  background: rgba(255, 179, 0, 0.1);
+  border: 1px solid rgba(255, 179, 0, 0.3);
+  color: #FFB300;
+  line-height: 1.4;
+}
+
+.desig-none {
+  font-size: 11px;
+  color: var(--text-low);
+  font-style: italic;
+}
+
+/* ─── Legend section separator ───────────────────────────────────── */
+
+.legend-sep {
+  height: 1px;
+  background: var(--border);
+  margin: 5px 0;
+}
+
+.legend-section-label {
+  font-size: 9px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-low);
+  margin-bottom: 4px;
 }
 
 /* ─── Mapbox attribution overrides ───────────────────────────────── */

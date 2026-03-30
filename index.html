@@ -29,30 +29,18 @@
     <div class="stats-bar">
       <div class="stat">
         <span class="stat-value" id="stat-count">—</span>
-        <span class="stat-label">parcels</span>
+        <span class="stat-label">total parcels</span>
       </div>
       <div class="stat">
         <span class="stat-value" id="stat-type1">—</span>
-        <span class="stat-label" id="stat-label1">—</span>
-      </div>
-      <div class="stat">
-        <span class="stat-value" id="stat-type2">—</span>
-        <span class="stat-label" id="stat-label2">—</span>
+        <span class="stat-label">score 90+</span>
       </div>
     </div>
 
     <div class="filter-section">
 
-      <!-- Colour mode -->
-      <div class="filter-label">Colour parcels by</div>
-      <div class="btn-group">
-        <button class="color-btn active" data-mode="type">Site type</button>
-        <button class="color-btn" data-mode="power">Power</button>
-        <button class="color-btn" data-mode="composite">Composite</button>
-      </div>
-
       <!-- MW requirement -->
-      <div class="filter-label mt">DC size</div>
+      <div class="filter-label">DC size</div>
       <div class="btn-group">
         <button class="mw-btn" data-mw="20">20 MW</button>
         <button class="mw-btn active" data-mw="50">50 MW</button>
@@ -93,7 +81,7 @@
           <option value="40">40+ — Marginal</option>
           <option value="55">55+ — Moderate</option>
           <option value="70">70+ — Good</option>
-          <option value="82">82+ — Excellent</option>
+          <option value="80">80+ — Excellent</option>
         </select>
       </div>
 
@@ -106,17 +94,25 @@
         </label>
       </div>
 
+      <div class="filter-group-sep">Display</div>
+
+      <!-- Colour mode -->
+      <div class="filter-label">Colour parcels by</div>
+      <div class="btn-group">
+        <button class="color-btn" data-mode="type">Site type</button>
+        <button class="color-btn" data-mode="power">Power</button>
+        <button class="color-btn active" data-mode="composite">Composite</button>
+      </div>
+
       <!-- Map overlays — compact chips -->
       <div class="filter-label mt">Map overlays</div>
       <div class="overlay-chips">
         <button class="overlay-chip active" data-layer="substations">⚡ Substations</button>
-        <button class="overlay-chip active" data-layer="powerlines">∿ Powerlines</button>
+        <button class="overlay-chip active" data-layer="powerlines">— Powerlines</button>
         <button class="overlay-chip" data-layer="fibre">◎ Fibre</button>
       </div>
 
-      <!-- Site type toggles -->
-      <div class="filter-label mt">Site type</div>
-      <div id="type-toggle-grid" class="type-toggle-grid"></div>
+      <button id="reset-filters-btn" class="reset-filters-btn">Reset all filters</button>
 
     </div>
 
@@ -143,12 +139,8 @@
     <div id="legend-items"></div>
   </div>
 
-  <div id="zoom-nudge" class="zoom-nudge">
-    🔍 Zoom in to see smaller parcels
-  </div>
-
   <button id="search-area-btn" class="search-area-btn">Search this area</button>
 
-  <script src="map.js?v=7"></script>
+  <script src="map.js?v=8"></script>
 </body>
 </html>

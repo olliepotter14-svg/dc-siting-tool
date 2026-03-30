@@ -145,6 +145,10 @@ def fetch_json_resilient(url):
             if "nodename" in msg or "name or service" in msg or "dns" in msg or "getaddrinfo" in msg:
                 print(f"\n  ⚠ DNS block detected — sleeping {DNS_WAIT//60} min and retrying…")
                 time.sleep(DNS_WAIT)
+            elif "remote end closed" in msg or "connection reset" in msg or "connection aborted" in msg:
+                # EA API drops connections periodically — sleep and retry indefinitely
+                print(f"\n  ⚠ Connection dropped — sleeping 60s and retrying…", flush=True)
+                time.sleep(60)
             else:
                 http_attempts += 1
                 if http_attempts > 4:
