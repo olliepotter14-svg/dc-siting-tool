@@ -51,44 +51,47 @@
     },
     "tec_queue_mw": 10.0,
     "tec_project_count": 1,
-    "real_queue_pressure_pct": 3.2,
+    "real_queue_pressure_pct": 72.7,
     "scores_real": {
       "20": {
         "can_support": true,
         "headroom_score": 100.0,
-        "queue_score": 96.8,
+        "queue_score": 27.3,
         "voltage_score": 100,
         "gsp_score": 100,
         "upgrade_score": 80,
-        "total_score": 97.0,
-        "real_queue_pressure": 3.2
+        "total_score": 76.2,
+        "real_queue_pressure": 72.7
       },
       "50": {
         "can_support": true,
         "headroom_score": 100.0,
-        "queue_score": 96.8,
+        "queue_score": 27.3,
         "voltage_score": 100,
         "gsp_score": 100,
         "upgrade_score": 80,
-        "total_score": 97.0,
-        "real_queue_pressure": 3.2
+        "total_score": 76.2,
+        "real_queue_pressure": 72.7
       },
       "100": {
         "can_support": true,
         "headroom_score": 100.0,
-        "queue_score": 96.8,
+        "queue_score": 27.3,
         "voltage_score": 100,
         "gsp_score": 100,
         "upgrade_score": 80,
-        "total_score": 97.0,
-        "real_queue_pressure": 3.2
+        "total_score": 76.2,
+        "real_queue_pressure": 72.7
       }
     },
     "headroom_source": "UKPN LTDS Table 3a (firm capacity, N-1 security standard)",
     "headroom_data_quality": "direct_headroom",
     "headroom_dno": "UKPN",
     "headroom_updated": true,
-    "headroom_capacity_mva": 756.8
+    "headroom_capacity_mva": 756.8,
+    "ltds_utilisation_pct": 58.5,
+    "ltds_committed_util_pct": 72.7,
+    "ltds_committed_headroom_mw": 206.6
   },
   {
     "name": "Northfleet East",
@@ -1603,44 +1606,47 @@
     },
     "tec_queue_mw": 129.4,
     "tec_project_count": 3,
-    "real_queue_pressure_pct": 16.3,
+    "real_queue_pressure_pct": 69.6,
     "scores_real": {
       "20": {
         "can_support": true,
         "headroom_score": 100.0,
-        "queue_score": 83.7,
+        "queue_score": 30.4,
         "voltage_score": 100,
         "gsp_score": 100,
         "upgrade_score": 80,
-        "total_score": 93.1,
-        "real_queue_pressure": 16.3
+        "total_score": 77.1,
+        "real_queue_pressure": 69.6
       },
       "50": {
         "can_support": true,
         "headroom_score": 100.0,
-        "queue_score": 83.7,
+        "queue_score": 30.4,
         "voltage_score": 100,
         "gsp_score": 100,
         "upgrade_score": 80,
-        "total_score": 93.1,
-        "real_queue_pressure": 16.3
+        "total_score": 77.1,
+        "real_queue_pressure": 69.6
       },
       "100": {
         "can_support": true,
         "headroom_score": 100.0,
-        "queue_score": 83.7,
+        "queue_score": 30.4,
         "voltage_score": 100,
         "gsp_score": 100,
         "upgrade_score": 80,
-        "total_score": 93.1,
-        "real_queue_pressure": 16.3
+        "total_score": 77.1,
+        "real_queue_pressure": 69.6
       }
     },
     "headroom_source": "UKPN LTDS Table 3a (firm capacity, N-1 security standard)",
     "headroom_data_quality": "direct_headroom",
     "headroom_dno": "UKPN",
     "headroom_updated": true,
-    "headroom_capacity_mva": 1853.0
+    "headroom_capacity_mva": 1853.0,
+    "ltds_utilisation_pct": 57.2,
+    "ltds_committed_util_pct": 69.6,
+    "ltds_committed_headroom_mw": 563.3
   },
   {
     "name": "Bramley",
@@ -2059,44 +2065,47 @@
     },
     "tec_queue_mw": 57.0,
     "tec_project_count": 1,
-    "real_queue_pressure_pct": 26.4,
+    "real_queue_pressure_pct": 63.7,
     "scores_real": {
       "20": {
         "can_support": true,
         "headroom_score": 100.0,
-        "queue_score": 73.6,
+        "queue_score": 36.3,
         "voltage_score": 100,
         "gsp_score": 100,
         "upgrade_score": 80,
-        "total_score": 90.1,
-        "real_queue_pressure": 26.4
+        "total_score": 78.9,
+        "real_queue_pressure": 63.7
       },
       "50": {
         "can_support": true,
         "headroom_score": 100.0,
-        "queue_score": 73.6,
+        "queue_score": 36.3,
         "voltage_score": 100,
         "gsp_score": 100,
         "upgrade_score": 80,
-        "total_score": 90.1,
-        "real_queue_pressure": 26.4
+        "total_score": 78.9,
+        "real_queue_pressure": 63.7
       },
       "100": {
         "can_support": true,
         "headroom_score": 100.0,
-        "queue_score": 73.6,
+        "queue_score": 36.3,
         "voltage_score": 100,
         "gsp_score": 100,
         "upgrade_score": 80,
-        "total_score": 90.1,
-        "real_queue_pressure": 26.4
+        "total_score": 78.9,
+        "real_queue_pressure": 63.7
       }
     },
     "headroom_source": "UKPN LTDS Table 3a (firm capacity, N-1 security standard)",
     "headroom_data_quality": "direct_headroom",
     "headroom_dno": "UKPN",
     "headroom_updated": true,
-    "headroom_capacity_mva": 467.7
+    "headroom_capacity_mva": 467.7,
+    "ltds_utilisation_pct": 53.8,
+    "ltds_committed_util_pct": 63.7,
+    "ltds_committed_headroom_mw": 169.7
   },
   {
     "name": "Peterhead",
@@ -2694,44 +2703,47 @@
     },
     "tec_queue_mw": 135.7,
     "tec_project_count": 2,
-    "real_queue_pressure_pct": 67.3,
+    "real_queue_pressure_pct": 69.8,
     "scores_real": {
       "20": {
         "can_support": true,
         "headroom_score": 100.0,
-        "queue_score": 32.7,
+        "queue_score": 30.2,
         "voltage_score": 100,
         "gsp_score": 100,
         "upgrade_score": 80,
-        "total_score": 77.8,
-        "real_queue_pressure": 67.3
+        "total_score": 77.1,
+        "real_queue_pressure": 69.8
       },
       "50": {
         "can_support": true,
         "headroom_score": 100.0,
-        "queue_score": 32.7,
+        "queue_score": 30.2,
         "voltage_score": 100,
         "gsp_score": 100,
         "upgrade_score": 80,
-        "total_score": 77.8,
-        "real_queue_pressure": 67.3
+        "total_score": 77.1,
+        "real_queue_pressure": 69.8
       },
       "100": {
         "can_support": true,
         "headroom_score": 100.0,
-        "queue_score": 32.7,
+        "queue_score": 30.2,
         "voltage_score": 100,
         "gsp_score": 100,
         "upgrade_score": 80,
-        "total_score": 77.8,
-        "real_queue_pressure": 67.3
+        "total_score": 77.1,
+        "real_queue_pressure": 69.8
       }
     },
     "headroom_source": "UKPN LTDS Table 3a (firm capacity, N-1 security standard)",
     "headroom_data_quality": "direct_headroom",
     "headroom_dno": "UKPN",
     "headroom_updated": true,
-    "headroom_capacity_mva": 482.2
+    "headroom_capacity_mva": 482.2,
+    "ltds_utilisation_pct": 58.2,
+    "ltds_committed_util_pct": 69.8,
+    "ltds_committed_headroom_mw": 145.4
   },
   {
     "name": "Deeside",
@@ -4694,44 +4706,47 @@
     },
     "tec_queue_mw": 274.9,
     "tec_project_count": 2,
-    "real_queue_pressure_pct": 28.1,
+    "real_queue_pressure_pct": 66.1,
     "scores_real": {
       "20": {
         "can_support": true,
         "headroom_score": 100.0,
-        "queue_score": 71.9,
+        "queue_score": 33.9,
         "voltage_score": 100,
         "gsp_score": 100,
         "upgrade_score": 80,
-        "total_score": 89.6,
-        "real_queue_pressure": 28.1
+        "total_score": 78.2,
+        "real_queue_pressure": 66.1
       },
       "50": {
         "can_support": true,
         "headroom_score": 100.0,
-        "queue_score": 71.9,
+        "queue_score": 33.9,
         "voltage_score": 100,
         "gsp_score": 100,
         "upgrade_score": 80,
-        "total_score": 89.6,
-        "real_queue_pressure": 28.1
+        "total_score": 78.2,
+        "real_queue_pressure": 66.1
       },
       "100": {
         "can_support": true,
         "headroom_score": 100.0,
-        "queue_score": 71.9,
+        "queue_score": 33.9,
         "voltage_score": 100,
         "gsp_score": 100,
         "upgrade_score": 80,
-        "total_score": 89.6,
-        "real_queue_pressure": 28.1
+        "total_score": 78.2,
+        "real_queue_pressure": 66.1
       }
     },
     "headroom_source": "UKPN LTDS Table 3a (firm capacity, N-1 security standard)",
     "headroom_data_quality": "direct_headroom",
     "headroom_dno": "UKPN",
     "headroom_updated": true,
-    "headroom_capacity_mva": 2351.2
+    "headroom_capacity_mva": 2351.2,
+    "ltds_utilisation_pct": 58.4,
+    "ltds_committed_util_pct": 66.1,
+    "ltds_committed_headroom_mw": 796.3
   },
   {
     "name": "Tilbury",
@@ -5150,37 +5165,37 @@
     },
     "tec_queue_mw": 165,
     "tec_project_count": 0,
-    "real_queue_pressure_pct": 33.7,
+    "real_queue_pressure_pct": 58.6,
     "scores_real": {
       "20": {
         "can_support": true,
         "headroom_score": 100.0,
-        "queue_score": 66.3,
+        "queue_score": 41.4,
         "voltage_score": 80,
         "gsp_score": 100,
         "upgrade_score": 80,
-        "total_score": 83.9,
-        "real_queue_pressure": 33.7
+        "total_score": 76.4,
+        "real_queue_pressure": 58.6
       },
       "50": {
         "can_support": true,
         "headroom_score": 100.0,
-        "queue_score": 66.3,
+        "queue_score": 41.4,
         "voltage_score": 80,
         "gsp_score": 100,
         "upgrade_score": 80,
-        "total_score": 83.9,
-        "real_queue_pressure": 33.7
+        "total_score": 76.4,
+        "real_queue_pressure": 58.6
       },
       "100": {
         "can_support": true,
         "headroom_score": 100.0,
-        "queue_score": 66.3,
+        "queue_score": 41.4,
         "voltage_score": 80,
         "gsp_score": 100,
         "upgrade_score": 80,
-        "total_score": 83.9,
-        "real_queue_pressure": 33.7
+        "total_score": 76.4,
+        "real_queue_pressure": 58.6
       }
     },
     "headroom_updated": true,
@@ -5188,7 +5203,10 @@
     "resolution_priority": "MEDIUM",
     "headroom_source": "UKPN LTDS Table 3a (firm capacity, N-1 security standard)",
     "headroom_dno": "UKPN",
-    "headroom_capacity_mva": 998.5
+    "headroom_capacity_mva": 998.5,
+    "ltds_utilisation_pct": 51.0,
+    "ltds_committed_util_pct": 58.6,
+    "ltds_committed_headroom_mw": 413.5
   },
   {
     "name": "Creyke Beck",
@@ -6190,7 +6208,10 @@
     "resolution_priority": "MEDIUM",
     "headroom_source": "UKPN LTDS Table 3a (firm capacity, N-1 security standard)",
     "headroom_dno": "UKPN",
-    "headroom_capacity_mva": 543.3
+    "headroom_capacity_mva": 543.3,
+    "ltds_utilisation_pct": 58.5,
+    "ltds_committed_util_pct": 70.5,
+    "ltds_committed_headroom_mw": 160.3
   },
   {
     "name": "Daines",
@@ -6921,7 +6942,10 @@
     "resolution_priority": "MEDIUM",
     "headroom_source": "UKPN LTDS Table 3a (firm capacity, N-1 security standard)",
     "headroom_dno": "UKPN",
-    "headroom_capacity_mva": 1465.6
+    "headroom_capacity_mva": 1465.6,
+    "ltds_utilisation_pct": 55.5,
+    "ltds_committed_util_pct": 66.9,
+    "ltds_committed_headroom_mw": 485.1
   },
   {
     "name": "Norwich Main",
@@ -7012,7 +7036,10 @@
     "headroom_data_quality": "direct_headroom",
     "headroom_dno": "UKPN",
     "headroom_updated": true,
-    "headroom_capacity_mva": 1569.8
+    "headroom_capacity_mva": 1569.8,
+    "ltds_utilisation_pct": 58.4,
+    "ltds_committed_util_pct": 67.2,
+    "ltds_committed_headroom_mw": 515.3
   },
   {
     "name": "Bramford",
@@ -7103,7 +7130,10 @@
     "headroom_data_quality": "direct_headroom",
     "headroom_dno": "UKPN",
     "headroom_updated": true,
-    "headroom_capacity_mva": 2463.5
+    "headroom_capacity_mva": 2463.5,
+    "ltds_utilisation_pct": 58.2,
+    "ltds_committed_util_pct": 69.4,
+    "ltds_committed_headroom_mw": 754.6
   },
   {
     "name": "East Claydon",
@@ -7925,7 +7955,10 @@
     "resolution_priority": "LOW",
     "headroom_source": "UKPN LTDS Table 3a (firm capacity, N-1 security standard)",
     "headroom_dno": "UKPN",
-    "headroom_capacity_mva": 756.8
+    "headroom_capacity_mva": 756.8,
+    "ltds_utilisation_pct": 58.5,
+    "ltds_committed_util_pct": 72.7,
+    "ltds_committed_headroom_mw": 206.6
   },
   {
     "name": "Sizewell",
@@ -8017,7 +8050,10 @@
     "resolution_priority": "MEDIUM",
     "headroom_source": "UKPN LTDS Table 3a (firm capacity, N-1 security standard)",
     "headroom_dno": "UKPN",
-    "headroom_capacity_mva": 2463.5
+    "headroom_capacity_mva": 2463.5,
+    "ltds_utilisation_pct": 58.2,
+    "ltds_committed_util_pct": 69.4,
+    "ltds_committed_headroom_mw": 754.6
   },
   {
     "name": "Torness",
@@ -8472,7 +8508,10 @@
     "headroom_data_quality": "direct_headroom",
     "headroom_dno": "UKPN",
     "headroom_updated": true,
-    "headroom_capacity_mva": 1465.6
+    "headroom_capacity_mva": 1465.6,
+    "ltds_utilisation_pct": 55.5,
+    "ltds_committed_util_pct": 66.9,
+    "ltds_committed_headroom_mw": 485.1
   },
   {
     "name": "Bushbury",
@@ -8708,44 +8747,47 @@
     },
     "tec_queue_mw": 240.0,
     "tec_project_count": 1,
-    "real_queue_pressure_pct": 35.8,
+    "real_queue_pressure_pct": 81.0,
     "scores_real": {
       "20": {
         "can_support": true,
         "headroom_score": 100.0,
-        "queue_score": 64.2,
+        "queue_score": 19.0,
         "voltage_score": 80,
         "gsp_score": 100,
         "upgrade_score": 80,
-        "total_score": 83.3,
-        "real_queue_pressure": 35.8
+        "total_score": 69.7,
+        "real_queue_pressure": 81.0
       },
       "50": {
         "can_support": true,
         "headroom_score": 100.0,
-        "queue_score": 64.2,
+        "queue_score": 19.0,
         "voltage_score": 80,
         "gsp_score": 100,
         "upgrade_score": 80,
-        "total_score": 83.3,
-        "real_queue_pressure": 35.8
+        "total_score": 69.7,
+        "real_queue_pressure": 81.0
       },
       "100": {
         "can_support": true,
         "headroom_score": 100.0,
-        "queue_score": 64.2,
+        "queue_score": 19.0,
         "voltage_score": 80,
         "gsp_score": 100,
         "upgrade_score": 80,
-        "total_score": 83.3,
-        "real_queue_pressure": 35.8
+        "total_score": 69.7,
+        "real_queue_pressure": 81.0
       }
     },
     "headroom_source": "UKPN LTDS Table 3a (firm capacity, N-1 security standard)",
     "headroom_data_quality": "direct_headroom",
     "headroom_dno": "UKPN",
     "headroom_updated": true,
-    "headroom_capacity_mva": 1725.0
+    "headroom_capacity_mva": 1725.0,
+    "ltds_utilisation_pct": 61.1,
+    "ltds_committed_util_pct": 81.0,
+    "ltds_committed_headroom_mw": 327.2
   },
   {
     "name": "Kirkby",
@@ -9475,7 +9517,10 @@
     "headroom_data_quality": "direct_headroom",
     "headroom_dno": "UKPN",
     "headroom_updated": true,
-    "headroom_capacity_mva": 632.1
+    "headroom_capacity_mva": 632.1,
+    "ltds_utilisation_pct": 60.6,
+    "ltds_committed_util_pct": 72.9,
+    "ltds_committed_headroom_mw": 171.4
   },
   {
     "name": "Strathaven",
@@ -9931,7 +9976,10 @@
     "headroom_data_quality": "direct_headroom",
     "headroom_dno": "UKPN",
     "headroom_updated": true,
-    "headroom_capacity_mva": 1184.1
+    "headroom_capacity_mva": 1184.1,
+    "ltds_utilisation_pct": 61.3,
+    "ltds_committed_util_pct": 65.3,
+    "ltds_committed_headroom_mw": 410.6
   },
   {
     "name": "West Weybridge",
@@ -9985,44 +10033,47 @@
     },
     "tec_queue_mw": 163.9,
     "tec_project_count": 3,
-    "real_queue_pressure_pct": 51.4,
+    "real_queue_pressure_pct": 81.8,
     "scores_real": {
       "20": {
         "can_support": true,
         "headroom_score": 100.0,
-        "queue_score": 48.6,
+        "queue_score": 18.2,
         "voltage_score": 80,
         "gsp_score": 70,
         "upgrade_score": 0,
-        "total_score": 67.6,
-        "real_queue_pressure": 51.4
+        "total_score": 58.5,
+        "real_queue_pressure": 81.8
       },
       "50": {
         "can_support": true,
         "headroom_score": 100.0,
-        "queue_score": 48.6,
+        "queue_score": 18.2,
         "voltage_score": 80,
         "gsp_score": 70,
         "upgrade_score": 0,
-        "total_score": 67.6,
-        "real_queue_pressure": 51.4
+        "total_score": 58.5,
+        "real_queue_pressure": 81.8
       },
       "100": {
         "can_support": true,
         "headroom_score": 100.0,
-        "queue_score": 48.6,
+        "queue_score": 18.2,
         "voltage_score": 80,
         "gsp_score": 70,
         "upgrade_score": 0,
-        "total_score": 67.6,
-        "real_queue_pressure": 51.4
+        "total_score": 58.5,
+        "real_queue_pressure": 81.8
       }
     },
     "headroom_source": "UKPN LTDS Table 3a (firm capacity, N-1 security standard)",
     "headroom_data_quality": "direct_headroom",
     "headroom_dno": "UKPN",
     "headroom_updated": true,
-    "headroom_capacity_mva": 985.1
+    "headroom_capacity_mva": 985.1,
+    "ltds_utilisation_pct": 67.6,
+    "ltds_committed_util_pct": 81.8,
+    "ltds_committed_headroom_mw": 179.1
   },
   {
     "name": "Bridgwater",
@@ -10478,7 +10529,10 @@
     "headroom_data_quality": "direct_headroom",
     "headroom_dno": "UKPN",
     "headroom_updated": true,
-    "headroom_capacity_mva": 195.5
+    "headroom_capacity_mva": 195.5,
+    "ltds_utilisation_pct": 57.0,
+    "ltds_committed_util_pct": 91.7,
+    "ltds_committed_headroom_mw": 16.2
   },
   {
     "name": "Devol Moor",
@@ -10754,7 +10808,10 @@
     "resolution_priority": "LOW",
     "headroom_source": "UKPN LTDS Table 3a (firm capacity, N-1 security standard)",
     "headroom_dno": "UKPN",
-    "headroom_capacity_mva": 998.5
+    "headroom_capacity_mva": 998.5,
+    "ltds_utilisation_pct": 51.0,
+    "ltds_committed_util_pct": 58.6,
+    "ltds_committed_headroom_mw": 413.5
   },
   {
     "name": "Frodsham",
@@ -11391,7 +11448,10 @@
     "headroom_data_quality": "direct_headroom",
     "headroom_dno": "UKPN",
     "headroom_updated": true,
-    "headroom_capacity_mva": 998.5
+    "headroom_capacity_mva": 998.5,
+    "ltds_utilisation_pct": 51.0,
+    "ltds_committed_util_pct": 58.6,
+    "ltds_committed_headroom_mw": 413.5
   },
   {
     "name": "Wimbledon",
@@ -11482,7 +11542,10 @@
     "headroom_data_quality": "direct_headroom",
     "headroom_dno": "UKPN",
     "headroom_updated": true,
-    "headroom_capacity_mva": 335.8
+    "headroom_capacity_mva": 335.8,
+    "ltds_utilisation_pct": 72.4,
+    "ltds_committed_util_pct": 85.6,
+    "ltds_committed_headroom_mw": 48.3
   },
   {
     "name": "Imperial Park",
@@ -11810,44 +11873,47 @@
     },
     "tec_queue_mw": 30.0,
     "tec_project_count": 1,
-    "real_queue_pressure_pct": 3.1,
+    "real_queue_pressure_pct": 41.8,
     "scores_real": {
       "20": {
         "can_support": true,
         "headroom_score": 100.0,
-        "queue_score": 96.9,
+        "queue_score": 58.2,
         "voltage_score": 80,
         "gsp_score": 70,
         "upgrade_score": 0,
-        "total_score": 82.1,
-        "real_queue_pressure": 3.1
+        "total_score": 70.5,
+        "real_queue_pressure": 41.8
       },
       "50": {
         "can_support": true,
         "headroom_score": 100.0,
-        "queue_score": 96.9,
+        "queue_score": 58.2,
         "voltage_score": 80,
         "gsp_score": 70,
         "upgrade_score": 0,
-        "total_score": 82.1,
-        "real_queue_pressure": 3.1
+        "total_score": 70.5,
+        "real_queue_pressure": 41.8
       },
       "100": {
         "can_support": true,
         "headroom_score": 100.0,
-        "queue_score": 96.9,
+        "queue_score": 58.2,
         "voltage_score": 80,
         "gsp_score": 70,
         "upgrade_score": 0,
-        "total_score": 82.1,
-        "real_queue_pressure": 3.1
+        "total_score": 70.5,
+        "real_queue_pressure": 41.8
       }
     },
     "headroom_source": "UKPN LTDS Table 3a (firm capacity, N-1 security standard)",
     "headroom_data_quality": "direct_headroom",
     "headroom_dno": "UKPN",
     "headroom_updated": true,
-    "headroom_capacity_mva": 1705.0
+    "headroom_capacity_mva": 1705.0,
+    "ltds_utilisation_pct": 42.5,
+    "ltds_committed_util_pct": 41.8,
+    "ltds_committed_headroom_mw": 992.8
   },
   {
     "name": "New Cross",
@@ -11901,44 +11967,47 @@
     },
     "tec_queue_mw": 88,
     "tec_project_count": 0,
-    "real_queue_pressure_pct": 37.4,
+    "real_queue_pressure_pct": 62.9,
     "scores_real": {
       "20": {
         "can_support": true,
         "headroom_score": 100.0,
-        "queue_score": 62.6,
+        "queue_score": 37.1,
         "voltage_score": 80,
         "gsp_score": 70,
         "upgrade_score": 0,
-        "total_score": 71.8,
-        "real_queue_pressure": 37.4
+        "total_score": 64.1,
+        "real_queue_pressure": 62.9
       },
       "50": {
         "can_support": true,
         "headroom_score": 100.0,
-        "queue_score": 62.6,
+        "queue_score": 37.1,
         "voltage_score": 80,
         "gsp_score": 70,
         "upgrade_score": 0,
-        "total_score": 71.8,
-        "real_queue_pressure": 37.4
+        "total_score": 64.1,
+        "real_queue_pressure": 62.9
       },
       "100": {
         "can_support": true,
         "headroom_score": 100.0,
-        "queue_score": 62.6,
+        "queue_score": 37.1,
         "voltage_score": 80,
         "gsp_score": 70,
         "upgrade_score": 0,
-        "total_score": 71.8,
-        "real_queue_pressure": 37.4
+        "total_score": 64.1,
+        "real_queue_pressure": 62.9
       }
     },
     "headroom_source": "UKPN LTDS Table 3a (firm capacity, N-1 security standard)",
     "headroom_data_quality": "direct_headroom",
     "headroom_dno": "UKPN",
     "headroom_updated": true,
-    "headroom_capacity_mva": 442.3
+    "headroom_capacity_mva": 442.3,
+    "ltds_utilisation_pct": 46.8,
+    "ltds_committed_util_pct": 62.9,
+    "ltds_committed_headroom_mw": 164.3
   },
   {
     "name": "West Ham",
@@ -11992,44 +12061,47 @@
     },
     "tec_queue_mw": 210,
     "tec_project_count": 0,
-    "real_queue_pressure_pct": 39.9,
+    "real_queue_pressure_pct": 51.9,
     "scores_real": {
       "20": {
         "can_support": true,
         "headroom_score": 100.0,
-        "queue_score": 60.1,
+        "queue_score": 48.1,
         "voltage_score": 80,
         "gsp_score": 70,
         "upgrade_score": 0,
-        "total_score": 71.0,
-        "real_queue_pressure": 39.9
+        "total_score": 67.4,
+        "real_queue_pressure": 51.9
       },
       "50": {
         "can_support": true,
         "headroom_score": 100.0,
-        "queue_score": 60.1,
+        "queue_score": 48.1,
         "voltage_score": 80,
         "gsp_score": 70,
         "upgrade_score": 0,
-        "total_score": 71.0,
-        "real_queue_pressure": 39.9
+        "total_score": 67.4,
+        "real_queue_pressure": 51.9
       },
       "100": {
         "can_support": true,
         "headroom_score": 100.0,
-        "queue_score": 60.1,
+        "queue_score": 48.1,
         "voltage_score": 80,
         "gsp_score": 70,
         "upgrade_score": 0,
-        "total_score": 71.0,
-        "real_queue_pressure": 39.9
+        "total_score": 67.4,
+        "real_queue_pressure": 51.9
       }
     },
     "headroom_source": "UKPN LTDS Table 3a (firm capacity, N-1 security standard)",
     "headroom_data_quality": "direct_headroom",
     "headroom_dno": "UKPN",
     "headroom_updated": true,
-    "headroom_capacity_mva": 960.5
+    "headroom_capacity_mva": 960.5,
+    "ltds_utilisation_pct": 45.2,
+    "ltds_committed_util_pct": 51.9,
+    "ltds_committed_headroom_mw": 461.6
   },
   {
     "name": "Cowley",
@@ -12174,43 +12246,46 @@
     },
     "tec_queue_mw": 95,
     "tec_project_count": 0,
-    "real_queue_pressure_pct": 20.5,
+    "real_queue_pressure_pct": 59.6,
     "scores_real": {
       "20": {
         "can_support": true,
         "headroom_score": 100.0,
-        "queue_score": 79.5,
+        "queue_score": 40.4,
         "voltage_score": 80,
         "gsp_score": 70,
         "upgrade_score": 0,
-        "total_score": 76.8,
-        "real_queue_pressure": 20.5
+        "total_score": 65.1,
+        "real_queue_pressure": 59.6
       },
       "50": {
         "can_support": true,
         "headroom_score": 100.0,
-        "queue_score": 79.5,
+        "queue_score": 40.4,
         "voltage_score": 80,
         "gsp_score": 70,
         "upgrade_score": 0,
-        "total_score": 76.8,
-        "real_queue_pressure": 20.5
+        "total_score": 65.1,
+        "real_queue_pressure": 59.6
       },
       "100": {
         "can_support": true,
         "headroom_score": 100.0,
-        "queue_score": 79.5,
+        "queue_score": 40.4,
         "voltage_score": 80,
         "gsp_score": 70,
         "upgrade_score": 0,
-        "total_score": 76.8,
-        "real_queue_pressure": 20.5
+        "total_score": 65.1,
+        "real_queue_pressure": 59.6
       }
     },
     "headroom_source": "UKPN LTDS Table 3a (firm capacity, N-1 security standard)",
     "headroom_data_quality": "direct_headroom",
     "headroom_dno": "UKPN",
     "headroom_updated": true,
-    "headroom_capacity_mva": 1108.0
+    "headroom_capacity_mva": 1108.0,
+    "ltds_utilisation_pct": 58.1,
+    "ltds_committed_util_pct": 59.6,
+    "ltds_committed_headroom_mw": 447.5
   }
 ]

@@ -146,13 +146,16 @@ def load_ukpn_ltds() -> dict:
     for key, d in recs.items():
         hw = d.get("headroom_mw")
         lookup[key] = {
-            "headroom_mw":   round(hw, 1) if hw is not None else None,
-            "capacity_mw":   d.get("firm_capacity_mw"),
-            "max_demand_mw": d.get("peak_demand_mw"),
-            "source":        d.get("source", "UKPN LTDS Table 3a"),
-            "quality":       "direct_headroom",   # firm capacity to N-1 standard
-            "dno":           "UKPN",
-            "raw_name":      d.get("gsp_raw_name", key),
+            "headroom_mw":        round(hw, 1) if hw is not None else None,
+            "capacity_mw":        d.get("firm_capacity_mw"),
+            "max_demand_mw":      d.get("peak_demand_mw"),
+            "ltds_utilisation":   d.get("utilisation_pct"),       # current utilisation
+            "committed_util":     d.get("committed_util_pct"),     # 2029/30 forecast (includes pipeline)
+            "committed_headroom": d.get("committed_headroom_mw"),  # headroom after pipeline
+            "source":             d.get("source", "UKPN LTDS Table 3a"),
+            "quality":            "direct_headroom",   # firm capacity to N-1 standard
+            "dno":                "UKPN",
+            "raw_name":           d.get("gsp_raw_name", key),
         }
     print(f"  UKPN LTDS Table 3a: {len(lookup)} GSPs loaded (firm capacity, N-1 standard)")
     return lookup
@@ -575,6 +578,12 @@ def main():
             sub["estimated_headroom_mva"] = headroom
             if capacity:
                 sub["headroom_capacity_mva"] = capacity
+            if data.get("ltds_utilisation") is not None:
+                sub["ltds_utilisation_pct"] = data["ltds_utilisation"]
+            if data.get("committed_util") is not None:
+                sub["ltds_committed_util_pct"] = data["committed_util"]
+            if data.get("committed_headroom") is not None:
+                sub["ltds_committed_headroom_mw"] = data["committed_headroom"]
             sub["headroom_source"]       = data["source"] + note
             sub["headroom_data_quality"] = data["quality"]
             sub["headroom_dno"]          = data["dno"]
@@ -652,12 +661,31 @@ def main():
         # Treat None or negative as zero (saturated / no data)
         hr_eff = headroom if (headroom is not None and headroom > 0) else 0.0
 
-        # Recalculate queue pressure using real headroom
+        # Recalculate queue pressure using real headroom.
+        # For UKPN substations with LTDS utilisation data, use LTDS utilisation
+        # as a floor for queue pressure. The TEC Register captures only generation
+        # connection requests; demand-side queue (DCs, EVs) is not publicly
+        # available. LTDS utilisation = peak_demand / firm_capacity gives an
+        # objective view of how loaded each distribution GSP already is, and
+        # substations operating at >50% utilisation should show as constrained.
         tec_queue = sub.get("tec_queue_mw", 0) or 0
         if hr_eff > 0:
-            new_queue_pct = round((tec_queue / hr_eff) * 100, 1)
+            tec_queue_pct = round((tec_queue / hr_eff) * 100, 1)
         else:
-            new_queue_pct = 999.0   # saturated / unknown capacity
+            tec_queue_pct = 999.0   # saturated / unknown capacity
+        # Use LTDS committed pipeline utilisation as a floor for queue pressure.
+        # The 2029/30 forecast demand (committed_util_pct) includes all connections
+        # already applied for and committed, not just current load. This is the
+        # demand-side equivalent of the TEC generation queue and correctly shows
+        # London substations as constrained even though TEC queue is near-zero.
+        # Falls back to current utilisation if 5-year forecast unavailable.
+        committed_util = sub.get("ltds_committed_util_pct")
+        ltds_util = sub.get("ltds_utilisation_pct")
+        ltds_floor = committed_util if committed_util is not None else ltds_util
+        if ltds_floor is not None:
+            new_queue_pct = round(max(tec_queue_pct, ltds_floor), 1)
+        else:
+            new_queue_pct = tec_queue_pct
         sub["real_queue_pressure_pct"] = new_queue_pct
         new_queue_score = round(max(0.0, min(100.0, 100 - new_queue_pct)), 1)
 

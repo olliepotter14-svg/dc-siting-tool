@@ -153,9 +153,9 @@ def process_records(records: list[dict]) -> dict:
 
     results = {}
     for gsp_name, rows in by_gsp.items():
-        demands  = []
-        caps     = []
-        utilised = []
+        demands   = []
+        caps      = []
+        forecast5 = []   # Forecast_M_D_MW_29_30 — includes committed pipeline
         for r in rows:
             try:
                 d = float(r.get("maximum_demand_24_25_mw") or 0)
@@ -169,8 +169,9 @@ def process_records(records: list[dict]) -> dict:
             except (ValueError, TypeError):
                 pass
             try:
-                u = float(r.get("unutilised_capacity_percent") or 0)
-                utilised.append(u)
+                # 5-year forecast includes committed but not-yet-built connections
+                f5 = float(r.get("forecast_m_d_mw_29_30") or 0)
+                forecast5.append(f5)
             except (ValueError, TypeError):
                 pass
 
@@ -179,24 +180,36 @@ def process_records(records: list[dict]) -> dict:
 
         total_demand   = sum(demands)
         # Firm capacity at GSP level = sum of firm capacities of constituent substations
-        # (they share the GSP transformer, so total firm = sum of feeder firms)
         total_firm     = sum(caps)
         headroom_mw    = round(total_firm - total_demand, 1)
         utilisation    = round((total_demand / total_firm * 100) if total_firm > 0 else 0, 1)
         licence_area   = rows[0].get("licencearea", "")
 
+        # Committed pipeline: 2029/30 forecast demand includes all connections
+        # already applied for and committed but not yet energised. This is the
+        # demand-side equivalent of the TEC generation queue.
+        committed_util = None
+        committed_headroom = None
+        if forecast5 and len(forecast5) == len(demands):
+            total_forecast5 = sum(forecast5)
+            if total_firm > 0:
+                committed_util = round((total_forecast5 / total_firm) * 100, 1)
+                committed_headroom = round(total_firm - total_forecast5, 1)
+
         key = normalise_gsp(gsp_name)
         results[key] = {
-            "gsp_raw_name":     gsp_name,
-            "licence_area":     licence_area,
-            "firm_capacity_mw": round(total_firm, 1),
-            "peak_demand_mw":   round(total_demand, 1),
-            "headroom_mw":      headroom_mw,
-            "utilisation_pct":  utilisation,
-            "substation_count": len(rows),
-            "source":           "UKPN LTDS Table 3a (firm capacity, N-1 security standard)",
-            "quality":          "direct_headroom",
-            "dno":              "UKPN",
+            "gsp_raw_name":          gsp_name,
+            "licence_area":          licence_area,
+            "firm_capacity_mw":      round(total_firm, 1),
+            "peak_demand_mw":        round(total_demand, 1),
+            "headroom_mw":           headroom_mw,
+            "utilisation_pct":       utilisation,
+            "committed_util_pct":    committed_util,      # 2029/30 forecast utilisation
+            "committed_headroom_mw": committed_headroom,  # headroom after pipeline connections
+            "substation_count":      len(rows),
+            "source":                "UKPN LTDS Table 3a (firm capacity, N-1 security standard)",
+            "quality":               "direct_headroom",
+            "dno":                   "UKPN",
         }
 
     return results
