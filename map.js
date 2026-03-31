@@ -175,10 +175,10 @@ popup.on("close", () => {
 // ── Load data ─────────────────────────────────────────────────────
 map.on("load", () => {
   Promise.all([
-    fetch("data/uk_industrial_parcels.geojson?v=5").then(r => r.json()),
-    fetch("data/uk_substations.json?v=5").then(r => r.json()),
-    fetch("data/uk_powerlines.geojson?v=5").then(r => r.json()),
-    fetch("data/uk_fibre_routes.geojson?v=5").then(r => r.json()),
+    fetch("data/uk_industrial_parcels.geojson?v=6").then(r => r.json()),
+    fetch("data/uk_substations.json?v=6").then(r => r.json()),
+    fetch("data/uk_powerlines.geojson?v=6").then(r => r.json()),
+    fetch("data/uk_fibre_routes.geojson?v=6").then(r => r.json()),
   ])
   .then(([geojson, subsRaw, powerlines, fibreRoutes]) => {
     state.allFeatures = geojson.features;
