@@ -219,13 +219,8 @@ map.on("load", () => {
   const parcelPromise = fetchWithProgress(
     "data/uk_industrial_parcels.geojson?v=7",
     (loaded, total) => {
-      const mb  = (loaded / 1_048_576).toFixed(1);
       const pct = total ? Math.round(loaded / total * 100) : null;
-      setLoadingMsg(
-        "Downloading parcel data…",
-        pct ? `${mb} MB of ${(total / 1_048_576).toFixed(0)} MB (${pct}%)` : `${mb} MB`,
-        pct ?? 10
-      );
+      setLoadingMsg("Downloading parcel data…", "", pct ?? 10);
     }
   );
 
@@ -236,7 +231,7 @@ map.on("load", () => {
     fetch("data/uk_fibre_routes.geojson?v=7").then(r => r.json()),
   ])
   .then(([geojson, subsRaw, powerlines, fibreRoutes]) => {
-    setLoadingMsg("Building map layers…", `${geojson.features.length.toLocaleString()} parcels loaded`, 95);
+    setLoadingMsg("Building map layers…", "", 95);
     state.allFeatures = geojson.features;
     state.substations = Array.isArray(subsRaw) ? subsRaw
       : subsRaw.substations ?? subsRaw.features ?? subsRaw;

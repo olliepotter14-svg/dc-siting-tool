@@ -1424,6 +1424,5 @@ select:hover {
 }
 
 #load-detail {
-  font-size: 11px;
-  color: #4A5068;
+  display: none;
 }
