@@ -172,15 +172,58 @@ popup.on("close", () => {
   document.querySelectorAll(".parcel-card.active").forEach(c => c.classList.remove("active"));
 });
 
+// ── Loading progress bar ──────────────────────────────────────────
+function fetchWithProgress(url, onProgress) {
+  return fetch(url).then(resp => {
+    const total = parseInt(resp.headers.get("content-length") || "0", 10);
+    const reader = resp.body.getReader();
+    const chunks = [];
+    let loaded = 0;
+    function pump() {
+      return reader.read().then(({ done, value }) => {
+        if (done) {
+          const blob = new Blob(chunks);
+          return blob.text().then(text => JSON.parse(text));
+        }
+        chunks.push(value);
+        loaded += value.length;
+        if (onProgress) onProgress(loaded, total);
+        return pump();
+      });
+    }
+    return pump();
+  });
+}
+
+function setLoadingMsg(html) {
+  const el = document.getElementById("parcel-list");
+  if (el) el.innerHTML = `<div class="list-loading">${html}</div>`;
+}
+
 // ── Load data ─────────────────────────────────────────────────────
 map.on("load", () => {
+  const parcelPromise = fetchWithProgress(
+    "data/uk_industrial_parcels.geojson?v=7",
+    (loaded, total) => {
+      const mb = (loaded / 1_048_576).toFixed(1);
+      const pct = total ? Math.round(loaded / total * 100) : null;
+      const bar = pct
+        ? `<div style="margin-top:8px;background:#1e2535;border-radius:4px;height:4px;overflow:hidden">
+             <div style="width:${pct}%;height:100%;background:#3b82f6;transition:width 0.2s"></div>
+           </div>`
+        : "";
+      setLoadingMsg(`Downloading parcel data… ${mb} MB${pct ? ` (${pct}%)` : ""}${bar}`);
+    }
+  );
+
   Promise.all([
-    fetch("data/uk_industrial_parcels.geojson?v=6").then(r => r.json()),
-    fetch("data/uk_substations.json?v=6").then(r => r.json()),
-    fetch("data/uk_powerlines.geojson?v=6").then(r => r.json()),
-    fetch("data/uk_fibre_routes.geojson?v=6").then(r => r.json()),
+    parcelPromise,
+    fetch("data/uk_substations.json?v=7").then(r => r.json()),
+    fetch("data/uk_powerlines.geojson?v=7").then(r => r.json()),
+    fetch("data/uk_fibre_routes.geojson?v=7").then(r => r.json()),
   ])
   .then(([geojson, subsRaw, powerlines, fibreRoutes]) => {
+    setLoadingMsg("Processing 63,478 parcels…");
     state.allFeatures = geojson.features;
     state.substations = Array.isArray(subsRaw) ? subsRaw
       : subsRaw.substations ?? subsRaw.features ?? subsRaw;
