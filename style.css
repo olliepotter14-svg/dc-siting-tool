@@ -1359,3 +1359,69 @@ select:hover {
     top: 16px;
   }
 }
+
+/* ─── Loading overlay ─────────────────────────────────────────────── */
+
+#load-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(10, 13, 18, 0.88);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.4s ease;
+}
+
+#load-overlay.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+#load-card {
+  background: #161B25;
+  border: 1px solid rgba(0, 229, 255, 0.2);
+  border-radius: 12px;
+  padding: 32px 40px;
+  min-width: 320px;
+  max-width: 420px;
+  text-align: center;
+  box-shadow: 0 0 40px rgba(0, 229, 255, 0.08);
+}
+
+#load-logo {
+  font-size: 18px;
+  font-weight: 700;
+  color: #00E5FF;
+  letter-spacing: 0.02em;
+  margin-bottom: 20px;
+}
+
+#load-status {
+  font-size: 14px;
+  font-weight: 600;
+  color: #F0F4FF;
+  margin-bottom: 14px;
+}
+
+#load-bar-track {
+  height: 6px;
+  background: #1e2535;
+  border-radius: 3px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+#load-bar-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #00B8CC, #00E5FF);
+  border-radius: 3px;
+  transition: width 0.25s ease;
+}
+
+#load-detail {
+  font-size: 11px;
+  color: #4A5068;
+}

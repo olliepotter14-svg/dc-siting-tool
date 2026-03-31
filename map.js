@@ -195,9 +195,23 @@ function fetchWithProgress(url, onProgress) {
   });
 }
 
-function setLoadingMsg(html) {
-  const el = document.getElementById("parcel-list");
-  if (el) el.innerHTML = `<div class="list-loading">${html}</div>`;
+function setLoadingMsg(status, detail, pct) {
+  const statusEl = document.getElementById("load-status");
+  const detailEl = document.getElementById("load-detail");
+  const barEl    = document.getElementById("load-bar-fill");
+  if (statusEl) statusEl.textContent = status;
+  if (detailEl) detailEl.textContent = detail || "";
+  if (barEl && pct != null) barEl.style.width = pct + "%";
+}
+
+function hideLoadOverlay() {
+  const overlay = document.getElementById("load-overlay");
+  if (overlay) overlay.classList.add("hidden");
+  // Restore sidebar list placeholder
+  const list = document.getElementById("parcel-list");
+  if (list && list.querySelector(".list-loading")) {
+    list.innerHTML = "";
+  }
 }
 
 // ── Load data ─────────────────────────────────────────────────────
@@ -205,14 +219,13 @@ map.on("load", () => {
   const parcelPromise = fetchWithProgress(
     "data/uk_industrial_parcels.geojson?v=7",
     (loaded, total) => {
-      const mb = (loaded / 1_048_576).toFixed(1);
+      const mb  = (loaded / 1_048_576).toFixed(1);
       const pct = total ? Math.round(loaded / total * 100) : null;
-      const bar = pct
-        ? `<div style="margin-top:8px;background:#1e2535;border-radius:4px;height:4px;overflow:hidden">
-             <div style="width:${pct}%;height:100%;background:#3b82f6;transition:width 0.2s"></div>
-           </div>`
-        : "";
-      setLoadingMsg(`Downloading parcel data… ${mb} MB${pct ? ` (${pct}%)` : ""}${bar}`);
+      setLoadingMsg(
+        "Downloading parcel data…",
+        pct ? `${mb} MB of ${(total / 1_048_576).toFixed(0)} MB (${pct}%)` : `${mb} MB`,
+        pct ?? 10
+      );
     }
   );
 
@@ -223,7 +236,7 @@ map.on("load", () => {
     fetch("data/uk_fibre_routes.geojson?v=7").then(r => r.json()),
   ])
   .then(([geojson, subsRaw, powerlines, fibreRoutes]) => {
-    setLoadingMsg("Processing 63,478 parcels…");
+    setLoadingMsg("Building map layers…", `${geojson.features.length.toLocaleString()} parcels loaded`, 95);
     state.allFeatures = geojson.features;
     state.substations = Array.isArray(subsRaw) ? subsRaw
       : subsRaw.substations ?? subsRaw.features ?? subsRaw;
@@ -233,14 +246,13 @@ map.on("load", () => {
     refreshParcelColors();  // apply correct opacity for initial colorMode
     addPowerlineLayer(powerlines);
     addFibreRouteLayer(fibreRoutes);
+    // Small delay so the map tiles have a moment to render before overlay lifts
+    setTimeout(hideLoadOverlay, 300);
   })
   .catch((err) => {
     console.error("Failed to load data:", err);
-    document.getElementById("parcel-list").innerHTML =
-      `<div class="list-loading" style="color:#ff4d4d">
-        Error: ${err.message || err}<br/>
-        <small style="opacity:0.6">${err.stack ? err.stack.split('\n')[1] : 'Check console for details'}</small>
-      </div>`;
+    setLoadingMsg("Failed to load data", err.message || String(err), 0);
+    document.getElementById("load-bar-fill").style.background = "#ef4444";
   });
 });
 

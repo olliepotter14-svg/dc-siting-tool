@@ -130,6 +130,18 @@
 
   <div id="map"></div>
 
+  <!-- Loading overlay — visible until parcel data is ready -->
+  <div id="load-overlay">
+    <div id="load-card">
+      <div id="load-logo">⚡ DC Site Finder</div>
+      <div id="load-status">Initialising…</div>
+      <div id="load-bar-track">
+        <div id="load-bar-fill"></div>
+      </div>
+      <div id="load-detail">Loading UK parcel data</div>
+    </div>
+  </div>
+
   <div id="detail-panel" class="detail-panel hidden">
     <button id="detail-close" class="detail-close" title="Close">✕</button>
     <div id="detail-content"></div>
@@ -141,6 +153,6 @@
 
   <button id="search-area-btn" class="search-area-btn">Search this area</button>
 
-  <script src="map.js?v=9"></script>
+  <script src="map.js?v=10"></script>
 </body>
 </html>
