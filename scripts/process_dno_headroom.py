@@ -57,7 +57,7 @@ NAME_MAP = {
     "feckenham":            "feckenham",
     "nechells":             "nechells east",
     "ironbridge":           "ironbridge and shrewsbury",
-    "barking":              "barking west",      # UKPN split into EPN/LPN
+    "barking":              "barking 132kv",     # UKPN LTDS — Barking 132kV EPN GSP (N-1 firm capacity)
     "beddington":           "beddington",
     "wimbledon":            "wimbledon 1",       # UKPN has Wimbledon 1 & 2
     "bramley":              "bramley basi",      # SSEN split
@@ -96,7 +96,16 @@ NAME_MAP = {
 }
 
 def resolve(our_name: str, lookup: dict):
-    """Find best match in lookup for a substation name."""
+    """Find best match in lookup for a substation name.
+
+    Quality preference order: direct_headroom > everything else.
+    When multiple partial matches exist, prefer the highest-quality source.
+    """
+    QUALITY_RANK = {"direct_headroom": 0, "agreed_technical_limits": 1,
+                    "direct_pry": 1, "pry_aggregate": 2,
+                    "nameplate_proxy": 3, "technical_limit_only": 3,
+                    "asset_limit_proxy": 4}
+
     n = norm(our_name)
     # Try override map first
     mapped = NAME_MAP.get(n, n)
@@ -105,10 +114,12 @@ def resolve(our_name: str, lookup: dict):
     # Direct normalised match
     if n in lookup:
         return n, lookup[n]
-    # Partial prefix match (e.g. "bicker fen" matches "bicker fen")
-    for k, v in lookup.items():
-        if k.startswith(n) or n.startswith(k):
-            return k, v
+    # Partial prefix match — collect all candidates, prefer best quality
+    candidates = [(k, v) for k, v in lookup.items()
+                  if k.startswith(n) or n.startswith(k)]
+    if candidates:
+        best = min(candidates, key=lambda kv: QUALITY_RANK.get(kv[1].get("quality", ""), 99))
+        return best
     return None, None
 
 
@@ -967,3 +978,7 @@ def generate_resolution_report(subs: list, lookups: dict):
     print(f"then re-run: python3 scripts/process_dno_headroom.py")
     print(f"             python3 scripts/enrich_power_scores.py")
     print(f"             python3 scripts/enrich_composite_scores.py")
+
+
+if __name__ == "__main__":
+    main()

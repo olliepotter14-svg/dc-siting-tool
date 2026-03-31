@@ -5,7 +5,7 @@
     "lng": 0.9833,
     "voltage_kv": 400,
     "capacity_mva": 2630,
-    "estimated_headroom_mva": 99.9,
+    "estimated_headroom_mva": 313.7,
     "region": "South East",
     "status": "Operational",
     "planned_upgrades": "IFA2 interconnector expansion",
@@ -51,43 +51,44 @@
     },
     "tec_queue_mw": 10.0,
     "tec_project_count": 1,
-    "real_queue_pressure_pct": 10.0,
+    "real_queue_pressure_pct": 3.2,
     "scores_real": {
       "20": {
         "can_support": true,
         "headroom_score": 100.0,
-        "queue_score": 90.0,
+        "queue_score": 96.8,
         "voltage_score": 100,
         "gsp_score": 100,
         "upgrade_score": 80,
-        "total_score": 95.0,
-        "real_queue_pressure": 10.0
+        "total_score": 97.0,
+        "real_queue_pressure": 3.2
       },
       "50": {
         "can_support": true,
-        "headroom_score": 99.9,
-        "queue_score": 90.0,
+        "headroom_score": 100.0,
+        "queue_score": 96.8,
         "voltage_score": 100,
         "gsp_score": 100,
         "upgrade_score": 80,
-        "total_score": 95.0,
-        "real_queue_pressure": 10.0
+        "total_score": 97.0,
+        "real_queue_pressure": 3.2
       },
       "100": {
-        "can_support": false,
-        "headroom_score": 50.0,
-        "queue_score": 90.0,
+        "can_support": true,
+        "headroom_score": 100.0,
+        "queue_score": 96.8,
         "voltage_score": 100,
         "gsp_score": 100,
         "upgrade_score": 80,
-        "total_score": 80.0,
-        "real_queue_pressure": 10.0
+        "total_score": 97.0,
+        "real_queue_pressure": 3.2
       }
     },
-    "headroom_source": "UKPN GSP Overview (agreed technical limits)",
-    "headroom_data_quality": "agreed_technical_limits",
+    "headroom_source": "UKPN LTDS Table 3a (firm capacity, N-1 security standard)",
+    "headroom_data_quality": "direct_headroom",
     "headroom_dno": "UKPN",
-    "headroom_updated": true
+    "headroom_updated": true,
+    "headroom_capacity_mva": 756.8
   },
   {
     "name": "Northfleet East",
@@ -1556,7 +1557,7 @@
     "lng": -0.45,
     "voltage_kv": 400,
     "capacity_mva": 2128,
-    "estimated_headroom_mva": 307.0,
+    "estimated_headroom_mva": 792.6,
     "region": "East",
     "status": "Operational",
     "planned_upgrades": "Luton growth",
@@ -1602,43 +1603,44 @@
     },
     "tec_queue_mw": 129.4,
     "tec_project_count": 3,
-    "real_queue_pressure_pct": 42.1,
+    "real_queue_pressure_pct": 16.3,
     "scores_real": {
       "20": {
         "can_support": true,
         "headroom_score": 100.0,
-        "queue_score": 57.9,
+        "queue_score": 83.7,
         "voltage_score": 100,
         "gsp_score": 100,
         "upgrade_score": 80,
-        "total_score": 85.4,
-        "real_queue_pressure": 42.1
+        "total_score": 93.1,
+        "real_queue_pressure": 16.3
       },
       "50": {
         "can_support": true,
         "headroom_score": 100.0,
-        "queue_score": 57.9,
+        "queue_score": 83.7,
         "voltage_score": 100,
         "gsp_score": 100,
         "upgrade_score": 80,
-        "total_score": 85.4,
-        "real_queue_pressure": 42.1
+        "total_score": 93.1,
+        "real_queue_pressure": 16.3
       },
       "100": {
         "can_support": true,
         "headroom_score": 100.0,
-        "queue_score": 57.9,
+        "queue_score": 83.7,
         "voltage_score": 100,
         "gsp_score": 100,
         "upgrade_score": 80,
-        "total_score": 85.4,
-        "real_queue_pressure": 42.1
+        "total_score": 93.1,
+        "real_queue_pressure": 16.3
       }
     },
-    "headroom_source": "UKPN GSP Overview (asset limit proxy)",
-    "headroom_data_quality": "asset_limit_proxy",
+    "headroom_source": "UKPN LTDS Table 3a (firm capacity, N-1 security standard)",
+    "headroom_data_quality": "direct_headroom",
     "headroom_dno": "UKPN",
-    "headroom_updated": true
+    "headroom_updated": true,
+    "headroom_capacity_mva": 1853.0
   },
   {
     "name": "Bramley",
@@ -2011,7 +2013,7 @@
     "lng": 0.25,
     "voltage_kv": 400,
     "capacity_mva": 2161,
-    "estimated_headroom_mva": 4.7,
+    "estimated_headroom_mva": 216.0,
     "region": "South East",
     "status": "Operational",
     "planned_upgrades": "Dartford Crossing area growth",
@@ -2057,43 +2059,44 @@
     },
     "tec_queue_mw": 57.0,
     "tec_project_count": 1,
-    "real_queue_pressure_pct": 1212.8,
+    "real_queue_pressure_pct": 26.4,
     "scores_real": {
       "20": {
-        "can_support": false,
-        "headroom_score": 11.8,
-        "queue_score": 0.0,
+        "can_support": true,
+        "headroom_score": 100.0,
+        "queue_score": 73.6,
         "voltage_score": 100,
         "gsp_score": 100,
         "upgrade_score": 80,
-        "total_score": 41.5,
-        "real_queue_pressure": 1212.8
+        "total_score": 90.1,
+        "real_queue_pressure": 26.4
       },
       "50": {
-        "can_support": false,
-        "headroom_score": 4.7,
-        "queue_score": 0.0,
+        "can_support": true,
+        "headroom_score": 100.0,
+        "queue_score": 73.6,
         "voltage_score": 100,
         "gsp_score": 100,
         "upgrade_score": 80,
-        "total_score": 39.4,
-        "real_queue_pressure": 1212.8
+        "total_score": 90.1,
+        "real_queue_pressure": 26.4
       },
       "100": {
-        "can_support": false,
-        "headroom_score": 2.4,
-        "queue_score": 0.0,
+        "can_support": true,
+        "headroom_score": 100.0,
+        "queue_score": 73.6,
         "voltage_score": 100,
         "gsp_score": 100,
         "upgrade_score": 80,
-        "total_score": 38.7,
-        "real_queue_pressure": 1212.8
+        "total_score": 90.1,
+        "real_queue_pressure": 26.4
       }
     },
-    "headroom_source": "UKPN GSP Overview (agreed technical limits)",
-    "headroom_data_quality": "agreed_technical_limits",
+    "headroom_source": "UKPN LTDS Table 3a (firm capacity, N-1 security standard)",
+    "headroom_data_quality": "direct_headroom",
     "headroom_dno": "UKPN",
-    "headroom_updated": true
+    "headroom_updated": true,
+    "headroom_capacity_mva": 467.7
   },
   {
     "name": "Peterhead",
@@ -2645,7 +2648,7 @@
     "lng": 0.7333,
     "voltage_kv": 400,
     "capacity_mva": 2403,
-    "estimated_headroom_mva": 94.3,
+    "estimated_headroom_mva": 201.7,
     "region": "South East",
     "status": "Operational",
     "planned_upgrades": "Reinforcement for Thames growth",
@@ -2691,43 +2694,44 @@
     },
     "tec_queue_mw": 135.7,
     "tec_project_count": 2,
-    "real_queue_pressure_pct": 143.9,
+    "real_queue_pressure_pct": 67.3,
     "scores_real": {
       "20": {
         "can_support": true,
         "headroom_score": 100.0,
-        "queue_score": 0.0,
+        "queue_score": 32.7,
         "voltage_score": 100,
         "gsp_score": 100,
         "upgrade_score": 80,
-        "total_score": 68.0,
-        "real_queue_pressure": 143.9
+        "total_score": 77.8,
+        "real_queue_pressure": 67.3
       },
       "50": {
         "can_support": true,
-        "headroom_score": 94.3,
-        "queue_score": 0.0,
+        "headroom_score": 100.0,
+        "queue_score": 32.7,
         "voltage_score": 100,
         "gsp_score": 100,
         "upgrade_score": 80,
-        "total_score": 66.3,
-        "real_queue_pressure": 143.9
+        "total_score": 77.8,
+        "real_queue_pressure": 67.3
       },
       "100": {
-        "can_support": false,
-        "headroom_score": 47.1,
-        "queue_score": 0.0,
+        "can_support": true,
+        "headroom_score": 100.0,
+        "queue_score": 32.7,
         "voltage_score": 100,
         "gsp_score": 100,
         "upgrade_score": 80,
-        "total_score": 52.1,
-        "real_queue_pressure": 143.9
+        "total_score": 77.8,
+        "real_queue_pressure": 67.3
       }
     },
-    "headroom_source": "UKPN GSP Overview (agreed technical limits)",
-    "headroom_data_quality": "agreed_technical_limits",
+    "headroom_source": "UKPN LTDS Table 3a (firm capacity, N-1 security standard)",
+    "headroom_data_quality": "direct_headroom",
     "headroom_dno": "UKPN",
-    "headroom_updated": true
+    "headroom_updated": true,
+    "headroom_capacity_mva": 482.2
   },
   {
     "name": "Deeside",
@@ -4644,7 +4648,7 @@
     "lng": -0.2167,
     "voltage_kv": 400,
     "capacity_mva": 1634,
-    "estimated_headroom_mva": 201.8,
+    "estimated_headroom_mva": 977.5,
     "region": "South East",
     "status": "Operational",
     "planned_upgrades": "Rampion 2 offshore wind",
@@ -4690,43 +4694,44 @@
     },
     "tec_queue_mw": 274.9,
     "tec_project_count": 2,
-    "real_queue_pressure_pct": 136.2,
+    "real_queue_pressure_pct": 28.1,
     "scores_real": {
       "20": {
         "can_support": true,
         "headroom_score": 100.0,
-        "queue_score": 0.0,
+        "queue_score": 71.9,
         "voltage_score": 100,
         "gsp_score": 100,
         "upgrade_score": 80,
-        "total_score": 68.0,
-        "real_queue_pressure": 136.2
+        "total_score": 89.6,
+        "real_queue_pressure": 28.1
       },
       "50": {
         "can_support": true,
         "headroom_score": 100.0,
-        "queue_score": 0.0,
+        "queue_score": 71.9,
         "voltage_score": 100,
         "gsp_score": 100,
         "upgrade_score": 80,
-        "total_score": 68.0,
-        "real_queue_pressure": 136.2
+        "total_score": 89.6,
+        "real_queue_pressure": 28.1
       },
       "100": {
         "can_support": true,
         "headroom_score": 100.0,
-        "queue_score": 0.0,
+        "queue_score": 71.9,
         "voltage_score": 100,
         "gsp_score": 100,
         "upgrade_score": 80,
-        "total_score": 68.0,
-        "real_queue_pressure": 136.2
+        "total_score": 89.6,
+        "real_queue_pressure": 28.1
       }
     },
-    "headroom_source": "UKPN GSP Overview (agreed technical limits)",
-    "headroom_data_quality": "agreed_technical_limits",
+    "headroom_source": "UKPN LTDS Table 3a (firm capacity, N-1 security standard)",
+    "headroom_data_quality": "direct_headroom",
     "headroom_dno": "UKPN",
-    "headroom_updated": true
+    "headroom_updated": true,
+    "headroom_capacity_mva": 2351.2
   },
   {
     "name": "Tilbury",
@@ -5099,7 +5104,7 @@
     "lng": -0.0333,
     "voltage_kv": 275,
     "capacity_mva": 1466,
-    "estimated_headroom_mva": -0.6,
+    "estimated_headroom_mva": 489.4,
     "region": "East",
     "status": "Operational",
     "planned_upgrades": "Lee Valley growth",
@@ -5145,44 +5150,45 @@
     },
     "tec_queue_mw": 165,
     "tec_project_count": 0,
-    "real_queue_pressure_pct": 999.0,
+    "real_queue_pressure_pct": 33.7,
     "scores_real": {
       "20": {
-        "can_support": false,
-        "headroom_score": 0.0,
-        "queue_score": 0.0,
+        "can_support": true,
+        "headroom_score": 100.0,
+        "queue_score": 66.3,
         "voltage_score": 80,
         "gsp_score": 100,
         "upgrade_score": 80,
-        "total_score": 34.0,
-        "real_queue_pressure": 999.0
+        "total_score": 83.9,
+        "real_queue_pressure": 33.7
       },
       "50": {
-        "can_support": false,
-        "headroom_score": 0.0,
-        "queue_score": 0.0,
+        "can_support": true,
+        "headroom_score": 100.0,
+        "queue_score": 66.3,
         "voltage_score": 80,
         "gsp_score": 100,
         "upgrade_score": 80,
-        "total_score": 34.0,
-        "real_queue_pressure": 999.0
+        "total_score": 83.9,
+        "real_queue_pressure": 33.7
       },
       "100": {
-        "can_support": false,
-        "headroom_score": 0.0,
-        "queue_score": 0.0,
+        "can_support": true,
+        "headroom_score": 100.0,
+        "queue_score": 66.3,
         "voltage_score": 80,
         "gsp_score": 100,
         "upgrade_score": 80,
-        "total_score": 34.0,
-        "real_queue_pressure": 999.0
+        "total_score": 83.9,
+        "real_queue_pressure": 33.7
       }
     },
     "headroom_updated": true,
-    "headroom_data_quality": "agreed_technical_limits",
+    "headroom_data_quality": "direct_headroom",
     "resolution_priority": "MEDIUM",
-    "headroom_source": "UKPN GSP Overview (agreed technical limits)",
-    "headroom_dno": "UKPN"
+    "headroom_source": "UKPN LTDS Table 3a (firm capacity, N-1 security standard)",
+    "headroom_dno": "UKPN",
+    "headroom_capacity_mva": 998.5
   },
   {
     "name": "Creyke Beck",
@@ -6100,7 +6106,7 @@
     "lng": 0.7167,
     "voltage_kv": 400,
     "capacity_mva": 2849,
-    "estimated_headroom_mva": 43.7,
+    "estimated_headroom_mva": 225.6,
     "region": "South East",
     "status": "Operational",
     "planned_upgrades": "Offshore wind connection",
@@ -6146,7 +6152,7 @@
     },
     "tec_queue_mw": 2427.0,
     "tec_project_count": 2,
-    "real_queue_pressure_pct": 5553.8,
+    "real_queue_pressure_pct": 1075.8,
     "scores_real": {
       "20": {
         "can_support": true,
@@ -6156,34 +6162,35 @@
         "gsp_score": 100,
         "upgrade_score": 80,
         "total_score": 68.0,
-        "real_queue_pressure": 5553.8
+        "real_queue_pressure": 1075.8
       },
       "50": {
-        "can_support": false,
-        "headroom_score": 43.7,
+        "can_support": true,
+        "headroom_score": 100.0,
         "queue_score": 0.0,
         "voltage_score": 100,
         "gsp_score": 100,
         "upgrade_score": 80,
-        "total_score": 51.1,
-        "real_queue_pressure": 5553.8
+        "total_score": 68.0,
+        "real_queue_pressure": 1075.8
       },
       "100": {
-        "can_support": false,
-        "headroom_score": 21.9,
+        "can_support": true,
+        "headroom_score": 100.0,
         "queue_score": 0.0,
         "voltage_score": 100,
         "gsp_score": 100,
         "upgrade_score": 80,
-        "total_score": 44.6,
-        "real_queue_pressure": 5553.8
+        "total_score": 68.0,
+        "real_queue_pressure": 1075.8
       }
     },
     "headroom_updated": true,
-    "headroom_data_quality": "asset_limit_proxy",
+    "headroom_data_quality": "direct_headroom",
     "resolution_priority": "MEDIUM",
-    "headroom_source": "UKPN GSP Overview (asset limit proxy)",
-    "headroom_dno": "UKPN"
+    "headroom_source": "UKPN LTDS Table 3a (firm capacity, N-1 security standard)",
+    "headroom_dno": "UKPN",
+    "headroom_capacity_mva": 543.3
   },
   {
     "name": "Daines",
@@ -6830,7 +6837,7 @@
     "lng": -0.15,
     "voltage_kv": 400,
     "capacity_mva": 2608,
-    "estimated_headroom_mva": 622.1,
+    "estimated_headroom_mva": 651.7,
     "region": "East Midlands",
     "status": "Operational",
     "planned_upgrades": "Lincolnshire growth",
@@ -6876,7 +6883,7 @@
     },
     "tec_queue_mw": 2100.0,
     "tec_project_count": 3,
-    "real_queue_pressure_pct": 337.6,
+    "real_queue_pressure_pct": 322.2,
     "scores_real": {
       "20": {
         "can_support": true,
@@ -6886,7 +6893,7 @@
         "gsp_score": 100,
         "upgrade_score": 80,
         "total_score": 68.0,
-        "real_queue_pressure": 337.6
+        "real_queue_pressure": 322.2
       },
       "50": {
         "can_support": true,
@@ -6896,7 +6903,7 @@
         "gsp_score": 100,
         "upgrade_score": 80,
         "total_score": 68.0,
-        "real_queue_pressure": 337.6
+        "real_queue_pressure": 322.2
       },
       "100": {
         "can_support": true,
@@ -6906,14 +6913,15 @@
         "gsp_score": 100,
         "upgrade_score": 80,
         "total_score": 68.0,
-        "real_queue_pressure": 337.6
+        "real_queue_pressure": 322.2
       }
     },
     "headroom_updated": true,
-    "headroom_data_quality": "asset_limit_proxy",
+    "headroom_data_quality": "direct_headroom",
     "resolution_priority": "MEDIUM",
-    "headroom_source": "UKPN GSP Overview (asset limit proxy)",
-    "headroom_dno": "UKPN"
+    "headroom_source": "UKPN LTDS Table 3a (firm capacity, N-1 security standard)",
+    "headroom_dno": "UKPN",
+    "headroom_capacity_mva": 1465.6
   },
   {
     "name": "Norwich Main",
@@ -6921,7 +6929,7 @@
     "lng": 1.2667,
     "voltage_kv": 400,
     "capacity_mva": 2959,
-    "estimated_headroom_mva": 4.2,
+    "estimated_headroom_mva": 652.8,
     "region": "East",
     "status": "Operational",
     "planned_upgrades": "Norfolk offshore wind",
@@ -6967,43 +6975,44 @@
     },
     "tec_queue_mw": 8754.0,
     "tec_project_count": 8,
-    "real_queue_pressure_pct": 208428.6,
+    "real_queue_pressure_pct": 1341.0,
     "scores_real": {
       "20": {
-        "can_support": false,
-        "headroom_score": 10.5,
+        "can_support": true,
+        "headroom_score": 100.0,
         "queue_score": 0.0,
         "voltage_score": 100,
         "gsp_score": 100,
         "upgrade_score": 80,
-        "total_score": 41.1,
-        "real_queue_pressure": 208428.6
+        "total_score": 68.0,
+        "real_queue_pressure": 1341.0
       },
       "50": {
-        "can_support": false,
-        "headroom_score": 4.2,
+        "can_support": true,
+        "headroom_score": 100.0,
         "queue_score": 0.0,
         "voltage_score": 100,
         "gsp_score": 100,
         "upgrade_score": 80,
-        "total_score": 39.3,
-        "real_queue_pressure": 208428.6
+        "total_score": 68.0,
+        "real_queue_pressure": 1341.0
       },
       "100": {
-        "can_support": false,
-        "headroom_score": 2.1,
+        "can_support": true,
+        "headroom_score": 100.0,
         "queue_score": 0.0,
         "voltage_score": 100,
         "gsp_score": 100,
         "upgrade_score": 80,
-        "total_score": 38.6,
-        "real_queue_pressure": 208428.6
+        "total_score": 68.0,
+        "real_queue_pressure": 1341.0
       }
     },
-    "headroom_source": "UKPN GSP Overview (agreed technical limits)",
-    "headroom_data_quality": "agreed_technical_limits",
+    "headroom_source": "UKPN LTDS Table 3a (firm capacity, N-1 security standard)",
+    "headroom_data_quality": "direct_headroom",
     "headroom_dno": "UKPN",
-    "headroom_updated": true
+    "headroom_updated": true,
+    "headroom_capacity_mva": 1569.8
   },
   {
     "name": "Bramford",
@@ -7011,7 +7020,7 @@
     "lng": 1.0667,
     "voltage_kv": 400,
     "capacity_mva": 2442,
-    "estimated_headroom_mva": 26.0,
+    "estimated_headroom_mva": 1028.7,
     "region": "East",
     "status": "Operational",
     "planned_upgrades": "East Anglia offshore",
@@ -7057,43 +7066,44 @@
     },
     "tec_queue_mw": 1960.9,
     "tec_project_count": 9,
-    "real_queue_pressure_pct": 7541.9,
+    "real_queue_pressure_pct": 190.6,
     "scores_real": {
       "20": {
         "can_support": true,
-        "headroom_score": 65.0,
+        "headroom_score": 100.0,
         "queue_score": 0.0,
         "voltage_score": 100,
         "gsp_score": 100,
         "upgrade_score": 80,
-        "total_score": 57.5,
-        "real_queue_pressure": 7541.9
+        "total_score": 68.0,
+        "real_queue_pressure": 190.6
       },
       "50": {
-        "can_support": false,
-        "headroom_score": 26.0,
+        "can_support": true,
+        "headroom_score": 100.0,
         "queue_score": 0.0,
         "voltage_score": 100,
         "gsp_score": 100,
         "upgrade_score": 80,
-        "total_score": 45.8,
-        "real_queue_pressure": 7541.9
+        "total_score": 68.0,
+        "real_queue_pressure": 190.6
       },
       "100": {
-        "can_support": false,
-        "headroom_score": 13.0,
+        "can_support": true,
+        "headroom_score": 100.0,
         "queue_score": 0.0,
         "voltage_score": 100,
         "gsp_score": 100,
         "upgrade_score": 80,
-        "total_score": 41.9,
-        "real_queue_pressure": 7541.9
+        "total_score": 68.0,
+        "real_queue_pressure": 190.6
       }
     },
-    "headroom_source": "UKPN GSP Overview (agreed technical limits)",
-    "headroom_data_quality": "agreed_technical_limits",
+    "headroom_source": "UKPN LTDS Table 3a (firm capacity, N-1 security standard)",
+    "headroom_data_quality": "direct_headroom",
     "headroom_dno": "UKPN",
-    "headroom_updated": true
+    "headroom_updated": true,
+    "headroom_capacity_mva": 2463.5
   },
   {
     "name": "East Claydon",
@@ -7831,7 +7841,7 @@
     "lng": 0.9667,
     "voltage_kv": 400,
     "capacity_mva": 1780,
-    "estimated_headroom_mva": 99.9,
+    "estimated_headroom_mva": 313.7,
     "region": "South East",
     "status": "Operational",
     "planned_upgrades": "Nuclear decommissioning area",
@@ -7877,7 +7887,7 @@
     },
     "tec_queue_mw": 500.0,
     "tec_project_count": 1,
-    "real_queue_pressure_pct": 500.5,
+    "real_queue_pressure_pct": 159.4,
     "scores_real": {
       "20": {
         "can_support": true,
@@ -7887,34 +7897,35 @@
         "gsp_score": 100,
         "upgrade_score": 0,
         "total_score": 60.0,
-        "real_queue_pressure": 500.5
+        "real_queue_pressure": 159.4
       },
       "50": {
         "can_support": true,
-        "headroom_score": 99.9,
+        "headroom_score": 100.0,
         "queue_score": 0.0,
         "voltage_score": 100,
         "gsp_score": 100,
         "upgrade_score": 0,
         "total_score": 60.0,
-        "real_queue_pressure": 500.5
+        "real_queue_pressure": 159.4
       },
       "100": {
-        "can_support": false,
-        "headroom_score": 50.0,
+        "can_support": true,
+        "headroom_score": 100.0,
         "queue_score": 0.0,
         "voltage_score": 100,
         "gsp_score": 100,
         "upgrade_score": 0,
-        "total_score": 45.0,
-        "real_queue_pressure": 500.5
+        "total_score": 60.0,
+        "real_queue_pressure": 159.4
       }
     },
     "headroom_updated": true,
-    "headroom_data_quality": "agreed_technical_limits",
+    "headroom_data_quality": "direct_headroom",
     "resolution_priority": "LOW",
-    "headroom_source": "UKPN GSP Overview (agreed technical limits)",
-    "headroom_dno": "UKPN"
+    "headroom_source": "UKPN LTDS Table 3a (firm capacity, N-1 security standard)",
+    "headroom_dno": "UKPN",
+    "headroom_capacity_mva": 756.8
   },
   {
     "name": "Sizewell",
@@ -7922,7 +7933,7 @@
     "lng": 1.6167,
     "voltage_kv": 400,
     "capacity_mva": 1731,
-    "estimated_headroom_mva": 26.0,
+    "estimated_headroom_mva": 1028.7,
     "region": "East",
     "status": "Operational",
     "planned_upgrades": "Sizewell C nuclear",
@@ -7968,44 +7979,45 @@
     },
     "tec_queue_mw": 1230.0,
     "tec_project_count": 1,
-    "real_queue_pressure_pct": 4730.8,
+    "real_queue_pressure_pct": 119.6,
     "scores_real": {
       "20": {
         "can_support": true,
-        "headroom_score": 65.0,
+        "headroom_score": 100.0,
         "queue_score": 0.0,
         "voltage_score": 100,
         "gsp_score": 100,
         "upgrade_score": 50,
-        "total_score": 54.5,
-        "real_queue_pressure": 4730.8
+        "total_score": 65.0,
+        "real_queue_pressure": 119.6
       },
       "50": {
-        "can_support": false,
-        "headroom_score": 26.0,
+        "can_support": true,
+        "headroom_score": 100.0,
         "queue_score": 0.0,
         "voltage_score": 100,
         "gsp_score": 100,
         "upgrade_score": 50,
-        "total_score": 42.8,
-        "real_queue_pressure": 4730.8
+        "total_score": 65.0,
+        "real_queue_pressure": 119.6
       },
       "100": {
-        "can_support": false,
-        "headroom_score": 13.0,
+        "can_support": true,
+        "headroom_score": 100.0,
         "queue_score": 0.0,
         "voltage_score": 100,
         "gsp_score": 100,
         "upgrade_score": 50,
-        "total_score": 38.9,
-        "real_queue_pressure": 4730.8
+        "total_score": 65.0,
+        "real_queue_pressure": 119.6
       }
     },
     "headroom_updated": true,
-    "headroom_data_quality": "agreed_technical_limits",
+    "headroom_data_quality": "direct_headroom",
     "resolution_priority": "MEDIUM",
-    "headroom_source": "UKPN GSP Overview (agreed technical limits)",
-    "headroom_dno": "UKPN"
+    "headroom_source": "UKPN LTDS Table 3a (firm capacity, N-1 security standard)",
+    "headroom_dno": "UKPN",
+    "headroom_capacity_mva": 2463.5
   },
   {
     "name": "Torness",
@@ -8377,7 +8389,7 @@
     "lng": 0.1833,
     "voltage_kv": 400,
     "capacity_mva": 2257,
-    "estimated_headroom_mva": 622.1,
+    "estimated_headroom_mva": 651.7,
     "region": "East Midlands",
     "status": "Operational",
     "planned_upgrades": "None planned",
@@ -8423,7 +8435,7 @@
     },
     "tec_queue_mw": 660.5,
     "tec_project_count": 3,
-    "real_queue_pressure_pct": 106.2,
+    "real_queue_pressure_pct": 101.4,
     "scores_real": {
       "20": {
         "can_support": true,
@@ -8433,7 +8445,7 @@
         "gsp_score": 100,
         "upgrade_score": 0,
         "total_score": 60.0,
-        "real_queue_pressure": 106.2
+        "real_queue_pressure": 101.4
       },
       "50": {
         "can_support": true,
@@ -8443,7 +8455,7 @@
         "gsp_score": 100,
         "upgrade_score": 0,
         "total_score": 60.0,
-        "real_queue_pressure": 106.2
+        "real_queue_pressure": 101.4
       },
       "100": {
         "can_support": true,
@@ -8453,13 +8465,14 @@
         "gsp_score": 100,
         "upgrade_score": 0,
         "total_score": 60.0,
-        "real_queue_pressure": 106.2
+        "real_queue_pressure": 101.4
       }
     },
-    "headroom_source": "UKPN GSP Overview (asset limit proxy)",
-    "headroom_data_quality": "asset_limit_proxy",
+    "headroom_source": "UKPN LTDS Table 3a (firm capacity, N-1 security standard)",
+    "headroom_data_quality": "direct_headroom",
     "headroom_dno": "UKPN",
-    "headroom_updated": true
+    "headroom_updated": true,
+    "headroom_capacity_mva": 1465.6
   },
   {
     "name": "Bushbury",
@@ -8649,7 +8662,7 @@
     "lng": -0.135,
     "voltage_kv": 275,
     "capacity_mva": 1436,
-    "estimated_headroom_mva": 316.7,
+    "estimated_headroom_mva": 671.3,
     "region": "London",
     "status": "Operational",
     "planned_upgrades": "Croydon growth area",
@@ -8695,43 +8708,44 @@
     },
     "tec_queue_mw": 240.0,
     "tec_project_count": 1,
-    "real_queue_pressure_pct": 75.8,
+    "real_queue_pressure_pct": 35.8,
     "scores_real": {
       "20": {
         "can_support": true,
         "headroom_score": 100.0,
-        "queue_score": 24.2,
+        "queue_score": 64.2,
         "voltage_score": 80,
         "gsp_score": 100,
         "upgrade_score": 80,
-        "total_score": 71.3,
-        "real_queue_pressure": 75.8
+        "total_score": 83.3,
+        "real_queue_pressure": 35.8
       },
       "50": {
         "can_support": true,
         "headroom_score": 100.0,
-        "queue_score": 24.2,
+        "queue_score": 64.2,
         "voltage_score": 80,
         "gsp_score": 100,
         "upgrade_score": 80,
-        "total_score": 71.3,
-        "real_queue_pressure": 75.8
+        "total_score": 83.3,
+        "real_queue_pressure": 35.8
       },
       "100": {
         "can_support": true,
         "headroom_score": 100.0,
-        "queue_score": 24.2,
+        "queue_score": 64.2,
         "voltage_score": 80,
         "gsp_score": 100,
         "upgrade_score": 80,
-        "total_score": 71.3,
-        "real_queue_pressure": 75.8
+        "total_score": 83.3,
+        "real_queue_pressure": 35.8
       }
     },
-    "headroom_source": "UKPN GSP Overview (asset limit proxy)",
-    "headroom_data_quality": "asset_limit_proxy",
+    "headroom_source": "UKPN LTDS Table 3a (firm capacity, N-1 security standard)",
+    "headroom_data_quality": "direct_headroom",
     "headroom_dno": "UKPN",
-    "headroom_updated": true
+    "headroom_updated": true,
+    "headroom_capacity_mva": 1725.0
   },
   {
     "name": "Kirkby",
@@ -9378,7 +9392,7 @@
     "lng": 0.1,
     "voltage_kv": 400,
     "capacity_mva": 1751,
-    "estimated_headroom_mva": 129.9,
+    "estimated_headroom_mva": 248.8,
     "region": "East",
     "status": "Operational",
     "planned_upgrades": "None planned",
@@ -9424,7 +9438,7 @@
     },
     "tec_queue_mw": 1829.9,
     "tec_project_count": 4,
-    "real_queue_pressure_pct": 1408.7,
+    "real_queue_pressure_pct": 735.5,
     "scores_real": {
       "20": {
         "can_support": true,
@@ -9434,7 +9448,7 @@
         "gsp_score": 100,
         "upgrade_score": 0,
         "total_score": 60.0,
-        "real_queue_pressure": 1408.7
+        "real_queue_pressure": 735.5
       },
       "50": {
         "can_support": true,
@@ -9444,23 +9458,24 @@
         "gsp_score": 100,
         "upgrade_score": 0,
         "total_score": 60.0,
-        "real_queue_pressure": 1408.7
+        "real_queue_pressure": 735.5
       },
       "100": {
         "can_support": true,
-        "headroom_score": 65.0,
+        "headroom_score": 100.0,
         "queue_score": 0.0,
         "voltage_score": 100,
         "gsp_score": 100,
         "upgrade_score": 0,
-        "total_score": 49.5,
-        "real_queue_pressure": 1408.7
+        "total_score": 60.0,
+        "real_queue_pressure": 735.5
       }
     },
-    "headroom_source": "UKPN GSP Overview (agreed technical limits)",
-    "headroom_data_quality": "agreed_technical_limits",
+    "headroom_source": "UKPN LTDS Table 3a (firm capacity, N-1 security standard)",
+    "headroom_data_quality": "direct_headroom",
     "headroom_dno": "UKPN",
-    "headroom_updated": true
+    "headroom_updated": true,
+    "headroom_capacity_mva": 632.1
   },
   {
     "name": "Strathaven",
@@ -9833,7 +9848,7 @@
     "lng": 0.4167,
     "voltage_kv": 400,
     "capacity_mva": 2011,
-    "estimated_headroom_mva": 102.9,
+    "estimated_headroom_mva": 458.8,
     "region": "South East",
     "status": "Operational",
     "planned_upgrades": "None planned",
@@ -9879,7 +9894,7 @@
     },
     "tec_queue_mw": 569.9,
     "tec_project_count": 3,
-    "real_queue_pressure_pct": 553.8,
+    "real_queue_pressure_pct": 124.2,
     "scores_real": {
       "20": {
         "can_support": true,
@@ -9889,7 +9904,7 @@
         "gsp_score": 70,
         "upgrade_score": 0,
         "total_score": 57.0,
-        "real_queue_pressure": 553.8
+        "real_queue_pressure": 124.2
       },
       "50": {
         "can_support": true,
@@ -9899,23 +9914,24 @@
         "gsp_score": 70,
         "upgrade_score": 0,
         "total_score": 57.0,
-        "real_queue_pressure": 553.8
+        "real_queue_pressure": 124.2
       },
       "100": {
         "can_support": true,
-        "headroom_score": 51.5,
+        "headroom_score": 100.0,
         "queue_score": 0.0,
         "voltage_score": 100,
         "gsp_score": 70,
         "upgrade_score": 0,
-        "total_score": 42.5,
-        "real_queue_pressure": 553.8
+        "total_score": 57.0,
+        "real_queue_pressure": 124.2
       }
     },
-    "headroom_source": "UKPN GSP Overview (agreed technical limits)",
-    "headroom_data_quality": "agreed_technical_limits",
+    "headroom_source": "UKPN LTDS Table 3a (firm capacity, N-1 security standard)",
+    "headroom_data_quality": "direct_headroom",
     "headroom_dno": "UKPN",
-    "headroom_updated": true
+    "headroom_updated": true,
+    "headroom_capacity_mva": 1184.1
   },
   {
     "name": "West Weybridge",
@@ -9923,7 +9939,7 @@
     "lng": -0.45,
     "voltage_kv": 275,
     "capacity_mva": 1197,
-    "estimated_headroom_mva": 295.7,
+    "estimated_headroom_mva": 318.8,
     "region": "Thames Valley",
     "status": "Operational",
     "planned_upgrades": "None planned",
@@ -9969,43 +9985,44 @@
     },
     "tec_queue_mw": 163.9,
     "tec_project_count": 3,
-    "real_queue_pressure_pct": 55.4,
+    "real_queue_pressure_pct": 51.4,
     "scores_real": {
       "20": {
         "can_support": true,
         "headroom_score": 100.0,
-        "queue_score": 44.6,
+        "queue_score": 48.6,
         "voltage_score": 80,
         "gsp_score": 70,
         "upgrade_score": 0,
-        "total_score": 66.4,
-        "real_queue_pressure": 55.4
+        "total_score": 67.6,
+        "real_queue_pressure": 51.4
       },
       "50": {
         "can_support": true,
         "headroom_score": 100.0,
-        "queue_score": 44.6,
+        "queue_score": 48.6,
         "voltage_score": 80,
         "gsp_score": 70,
         "upgrade_score": 0,
-        "total_score": 66.4,
-        "real_queue_pressure": 55.4
+        "total_score": 67.6,
+        "real_queue_pressure": 51.4
       },
       "100": {
         "can_support": true,
         "headroom_score": 100.0,
-        "queue_score": 44.6,
+        "queue_score": 48.6,
         "voltage_score": 80,
         "gsp_score": 70,
         "upgrade_score": 0,
-        "total_score": 66.4,
-        "real_queue_pressure": 55.4
+        "total_score": 67.6,
+        "real_queue_pressure": 51.4
       }
     },
-    "headroom_source": "UKPN GSP Overview (asset limit proxy)",
-    "headroom_data_quality": "asset_limit_proxy",
+    "headroom_source": "UKPN LTDS Table 3a (firm capacity, N-1 security standard)",
+    "headroom_data_quality": "direct_headroom",
     "headroom_dno": "UKPN",
-    "headroom_updated": true
+    "headroom_updated": true,
+    "headroom_capacity_mva": 985.1
   },
   {
     "name": "Bridgwater",
@@ -10378,7 +10395,7 @@
     "lng": 0.0833,
     "voltage_kv": 275,
     "capacity_mva": 1419,
-    "estimated_headroom_mva": 254.5,
+    "estimated_headroom_mva": 84.0,
     "region": "London",
     "status": "Operational",
     "planned_upgrades": "East London reinforcement",
@@ -10424,43 +10441,44 @@
     },
     "tec_queue_mw": 99.9,
     "tec_project_count": 1,
-    "real_queue_pressure_pct": 39.3,
+    "real_queue_pressure_pct": 118.9,
     "scores_real": {
       "20": {
         "can_support": true,
         "headroom_score": 100.0,
-        "queue_score": 60.7,
+        "queue_score": 0.0,
         "voltage_score": 80,
         "gsp_score": 100,
         "upgrade_score": 80,
-        "total_score": 82.2,
-        "real_queue_pressure": 39.3
+        "total_score": 64.0,
+        "real_queue_pressure": 118.9
       },
       "50": {
         "can_support": true,
-        "headroom_score": 100.0,
-        "queue_score": 60.7,
+        "headroom_score": 84.0,
+        "queue_score": 0.0,
         "voltage_score": 80,
         "gsp_score": 100,
         "upgrade_score": 80,
-        "total_score": 82.2,
-        "real_queue_pressure": 39.3
+        "total_score": 59.2,
+        "real_queue_pressure": 118.9
       },
       "100": {
-        "can_support": true,
-        "headroom_score": 100.0,
-        "queue_score": 60.7,
+        "can_support": false,
+        "headroom_score": 42.0,
+        "queue_score": 0.0,
         "voltage_score": 80,
         "gsp_score": 100,
         "upgrade_score": 80,
-        "total_score": 82.2,
-        "real_queue_pressure": 39.3
+        "total_score": 46.6,
+        "real_queue_pressure": 118.9
       }
     },
-    "headroom_source": "UKPN GSP Overview (asset limit proxy)",
-    "headroom_data_quality": "asset_limit_proxy",
+    "headroom_source": "UKPN LTDS Table 3a (firm capacity, N-1 security standard)",
+    "headroom_data_quality": "direct_headroom",
     "headroom_dno": "UKPN",
-    "headroom_updated": true
+    "headroom_updated": true,
+    "headroom_capacity_mva": 195.5
   },
   {
     "name": "Devol Moor",
@@ -10652,7 +10670,7 @@
     "lng": -0.0333,
     "voltage_kv": 275,
     "capacity_mva": 1222,
-    "estimated_headroom_mva": -0.6,
+    "estimated_headroom_mva": 489.4,
     "region": "East",
     "status": "Operational",
     "planned_upgrades": "Enfield growth",
@@ -10698,44 +10716,45 @@
     },
     "tec_queue_mw": 949.9,
     "tec_project_count": 2,
-    "real_queue_pressure_pct": 999.0,
+    "real_queue_pressure_pct": 194.1,
     "scores_real": {
       "20": {
-        "can_support": false,
-        "headroom_score": 0.0,
+        "can_support": true,
+        "headroom_score": 100.0,
         "queue_score": 0.0,
         "voltage_score": 80,
         "gsp_score": 70,
         "upgrade_score": 80,
-        "total_score": 31.0,
-        "real_queue_pressure": 999.0
+        "total_score": 61.0,
+        "real_queue_pressure": 194.1
       },
       "50": {
-        "can_support": false,
-        "headroom_score": 0.0,
+        "can_support": true,
+        "headroom_score": 100.0,
         "queue_score": 0.0,
         "voltage_score": 80,
         "gsp_score": 70,
         "upgrade_score": 80,
-        "total_score": 31.0,
-        "real_queue_pressure": 999.0
+        "total_score": 61.0,
+        "real_queue_pressure": 194.1
       },
       "100": {
-        "can_support": false,
-        "headroom_score": 0.0,
+        "can_support": true,
+        "headroom_score": 100.0,
         "queue_score": 0.0,
         "voltage_score": 80,
         "gsp_score": 70,
         "upgrade_score": 80,
-        "total_score": 31.0,
-        "real_queue_pressure": 999.0
+        "total_score": 61.0,
+        "real_queue_pressure": 194.1
       }
     },
     "headroom_updated": true,
-    "headroom_data_quality": "agreed_technical_limits",
+    "headroom_data_quality": "direct_headroom",
     "resolution_priority": "LOW",
-    "headroom_source": "UKPN GSP Overview (agreed technical limits)",
-    "headroom_dno": "UKPN"
+    "headroom_source": "UKPN LTDS Table 3a (firm capacity, N-1 security standard)",
+    "headroom_dno": "UKPN",
+    "headroom_capacity_mva": 998.5
   },
   {
     "name": "Frodsham",
@@ -11289,7 +11308,7 @@
     "lng": -0.0167,
     "voltage_kv": 275,
     "capacity_mva": 573,
-    "estimated_headroom_mva": -0.6,
+    "estimated_headroom_mva": 489.4,
     "region": "East",
     "status": "Operational",
     "planned_upgrades": "Harlow growth",
@@ -11335,43 +11354,44 @@
     },
     "tec_queue_mw": 715.0,
     "tec_project_count": 1,
-    "real_queue_pressure_pct": 999.0,
+    "real_queue_pressure_pct": 146.1,
     "scores_real": {
       "20": {
-        "can_support": false,
-        "headroom_score": 0.0,
+        "can_support": true,
+        "headroom_score": 100.0,
         "queue_score": 0.0,
         "voltage_score": 80,
         "gsp_score": 70,
         "upgrade_score": 80,
-        "total_score": 31.0,
-        "real_queue_pressure": 999.0
+        "total_score": 61.0,
+        "real_queue_pressure": 146.1
       },
       "50": {
-        "can_support": false,
-        "headroom_score": 0.0,
+        "can_support": true,
+        "headroom_score": 100.0,
         "queue_score": 0.0,
         "voltage_score": 80,
         "gsp_score": 70,
         "upgrade_score": 80,
-        "total_score": 31.0,
-        "real_queue_pressure": 999.0
+        "total_score": 61.0,
+        "real_queue_pressure": 146.1
       },
       "100": {
-        "can_support": false,
-        "headroom_score": 0.0,
+        "can_support": true,
+        "headroom_score": 100.0,
         "queue_score": 0.0,
         "voltage_score": 80,
         "gsp_score": 70,
         "upgrade_score": 80,
-        "total_score": 31.0,
-        "real_queue_pressure": 999.0
+        "total_score": 61.0,
+        "real_queue_pressure": 146.1
       }
     },
-    "headroom_source": "UKPN GSP Overview (agreed technical limits)",
-    "headroom_data_quality": "agreed_technical_limits",
+    "headroom_source": "UKPN LTDS Table 3a (firm capacity, N-1 security standard)",
+    "headroom_data_quality": "direct_headroom",
     "headroom_dno": "UKPN",
-    "headroom_updated": true
+    "headroom_updated": true,
+    "headroom_capacity_mva": 998.5
   },
   {
     "name": "Wimbledon",
@@ -11379,7 +11399,7 @@
     "lng": -0.2,
     "voltage_kv": 275,
     "capacity_mva": 1136,
-    "estimated_headroom_mva": -70.7,
+    "estimated_headroom_mva": 92.8,
     "region": "London",
     "status": "Operational",
     "planned_upgrades": "South London growth",
@@ -11425,43 +11445,44 @@
     },
     "tec_queue_mw": 120,
     "tec_project_count": 0,
-    "real_queue_pressure_pct": 999.0,
+    "real_queue_pressure_pct": 129.3,
     "scores_real": {
       "20": {
-        "can_support": false,
-        "headroom_score": 0.0,
+        "can_support": true,
+        "headroom_score": 100.0,
         "queue_score": 0.0,
         "voltage_score": 80,
         "gsp_score": 70,
         "upgrade_score": 80,
-        "total_score": 31.0,
-        "real_queue_pressure": 999.0
+        "total_score": 61.0,
+        "real_queue_pressure": 129.3
       },
       "50": {
-        "can_support": false,
-        "headroom_score": 0.0,
+        "can_support": true,
+        "headroom_score": 92.8,
         "queue_score": 0.0,
         "voltage_score": 80,
         "gsp_score": 70,
         "upgrade_score": 80,
-        "total_score": 31.0,
-        "real_queue_pressure": 999.0
+        "total_score": 58.8,
+        "real_queue_pressure": 129.3
       },
       "100": {
         "can_support": false,
-        "headroom_score": 0.0,
+        "headroom_score": 46.4,
         "queue_score": 0.0,
         "voltage_score": 80,
         "gsp_score": 70,
         "upgrade_score": 80,
-        "total_score": 31.0,
-        "real_queue_pressure": 999.0
+        "total_score": 44.9,
+        "real_queue_pressure": 129.3
       }
     },
-    "headroom_source": "UKPN GSP Overview (asset limit proxy)",
-    "headroom_data_quality": "asset_limit_proxy",
+    "headroom_source": "UKPN LTDS Table 3a (firm capacity, N-1 security standard)",
+    "headroom_data_quality": "direct_headroom",
     "headroom_dno": "UKPN",
-    "headroom_updated": true
+    "headroom_updated": true,
+    "headroom_capacity_mva": 335.8
   },
   {
     "name": "Imperial Park",
@@ -11743,7 +11764,7 @@
     "lng": -0.09,
     "voltage_kv": 275,
     "capacity_mva": 622,
-    "estimated_headroom_mva": 527.9,
+    "estimated_headroom_mva": 980.2,
     "region": "London",
     "status": "Operational",
     "planned_upgrades": "None planned",
@@ -11789,43 +11810,44 @@
     },
     "tec_queue_mw": 30.0,
     "tec_project_count": 1,
-    "real_queue_pressure_pct": 5.7,
+    "real_queue_pressure_pct": 3.1,
     "scores_real": {
       "20": {
         "can_support": true,
         "headroom_score": 100.0,
-        "queue_score": 94.3,
+        "queue_score": 96.9,
         "voltage_score": 80,
         "gsp_score": 70,
         "upgrade_score": 0,
-        "total_score": 81.3,
-        "real_queue_pressure": 5.7
+        "total_score": 82.1,
+        "real_queue_pressure": 3.1
       },
       "50": {
         "can_support": true,
         "headroom_score": 100.0,
-        "queue_score": 94.3,
+        "queue_score": 96.9,
         "voltage_score": 80,
         "gsp_score": 70,
         "upgrade_score": 0,
-        "total_score": 81.3,
-        "real_queue_pressure": 5.7
+        "total_score": 82.1,
+        "real_queue_pressure": 3.1
       },
       "100": {
         "can_support": true,
         "headroom_score": 100.0,
-        "queue_score": 94.3,
+        "queue_score": 96.9,
         "voltage_score": 80,
         "gsp_score": 70,
         "upgrade_score": 0,
-        "total_score": 81.3,
-        "real_queue_pressure": 5.7
+        "total_score": 82.1,
+        "real_queue_pressure": 3.1
       }
     },
-    "headroom_source": "UKPN GSP Overview (asset limit proxy)",
-    "headroom_data_quality": "asset_limit_proxy",
+    "headroom_source": "UKPN LTDS Table 3a (firm capacity, N-1 security standard)",
+    "headroom_data_quality": "direct_headroom",
     "headroom_dno": "UKPN",
-    "headroom_updated": true
+    "headroom_updated": true,
+    "headroom_capacity_mva": 1705.0
   },
   {
     "name": "New Cross",
@@ -11833,7 +11855,7 @@
     "lng": -0.035,
     "voltage_kv": 275,
     "capacity_mva": 1048,
-    "estimated_headroom_mva": 422.9,
+    "estimated_headroom_mva": 235.3,
     "region": "London",
     "status": "Operational",
     "planned_upgrades": "None planned",
@@ -11879,43 +11901,44 @@
     },
     "tec_queue_mw": 88,
     "tec_project_count": 0,
-    "real_queue_pressure_pct": 20.8,
+    "real_queue_pressure_pct": 37.4,
     "scores_real": {
       "20": {
         "can_support": true,
         "headroom_score": 100.0,
-        "queue_score": 79.2,
+        "queue_score": 62.6,
         "voltage_score": 80,
         "gsp_score": 70,
         "upgrade_score": 0,
-        "total_score": 76.8,
-        "real_queue_pressure": 20.8
+        "total_score": 71.8,
+        "real_queue_pressure": 37.4
       },
       "50": {
         "can_support": true,
         "headroom_score": 100.0,
-        "queue_score": 79.2,
+        "queue_score": 62.6,
         "voltage_score": 80,
         "gsp_score": 70,
         "upgrade_score": 0,
-        "total_score": 76.8,
-        "real_queue_pressure": 20.8
+        "total_score": 71.8,
+        "real_queue_pressure": 37.4
       },
       "100": {
         "can_support": true,
         "headroom_score": 100.0,
-        "queue_score": 79.2,
+        "queue_score": 62.6,
         "voltage_score": 80,
         "gsp_score": 70,
         "upgrade_score": 0,
-        "total_score": 76.8,
-        "real_queue_pressure": 20.8
+        "total_score": 71.8,
+        "real_queue_pressure": 37.4
       }
     },
-    "headroom_source": "UKPN GSP Overview (asset limit proxy)",
-    "headroom_data_quality": "asset_limit_proxy",
+    "headroom_source": "UKPN LTDS Table 3a (firm capacity, N-1 security standard)",
+    "headroom_data_quality": "direct_headroom",
     "headroom_dno": "UKPN",
-    "headroom_updated": true
+    "headroom_updated": true,
+    "headroom_capacity_mva": 442.3
   },
   {
     "name": "West Ham",
@@ -11923,7 +11946,7 @@
     "lng": 0.01,
     "voltage_kv": 275,
     "capacity_mva": 1031,
-    "estimated_headroom_mva": 315.8,
+    "estimated_headroom_mva": 526.3,
     "region": "London",
     "status": "Operational",
     "planned_upgrades": "None planned",
@@ -11969,43 +11992,44 @@
     },
     "tec_queue_mw": 210,
     "tec_project_count": 0,
-    "real_queue_pressure_pct": 66.5,
+    "real_queue_pressure_pct": 39.9,
     "scores_real": {
       "20": {
         "can_support": true,
         "headroom_score": 100.0,
-        "queue_score": 33.5,
+        "queue_score": 60.1,
         "voltage_score": 80,
         "gsp_score": 70,
         "upgrade_score": 0,
-        "total_score": 63.0,
-        "real_queue_pressure": 66.5
+        "total_score": 71.0,
+        "real_queue_pressure": 39.9
       },
       "50": {
         "can_support": true,
         "headroom_score": 100.0,
-        "queue_score": 33.5,
+        "queue_score": 60.1,
         "voltage_score": 80,
         "gsp_score": 70,
         "upgrade_score": 0,
-        "total_score": 63.0,
-        "real_queue_pressure": 66.5
+        "total_score": 71.0,
+        "real_queue_pressure": 39.9
       },
       "100": {
         "can_support": true,
         "headroom_score": 100.0,
-        "queue_score": 33.5,
+        "queue_score": 60.1,
         "voltage_score": 80,
         "gsp_score": 70,
         "upgrade_score": 0,
-        "total_score": 63.0,
-        "real_queue_pressure": 66.5
+        "total_score": 71.0,
+        "real_queue_pressure": 39.9
       }
     },
-    "headroom_source": "UKPN GSP Overview (asset limit proxy)",
-    "headroom_data_quality": "asset_limit_proxy",
+    "headroom_source": "UKPN LTDS Table 3a (firm capacity, N-1 security standard)",
+    "headroom_data_quality": "direct_headroom",
     "headroom_dno": "UKPN",
-    "headroom_updated": true
+    "headroom_updated": true,
+    "headroom_capacity_mva": 960.5
   },
   {
     "name": "Cowley",
@@ -12104,7 +12128,7 @@
     "lng": -0.17,
     "voltage_kv": 275,
     "capacity_mva": 518,
-    "estimated_headroom_mva": 603.0,
+    "estimated_headroom_mva": 464.5,
     "region": "London",
     "status": "Operational",
     "planned_upgrades": "None planned",
@@ -12150,42 +12174,43 @@
     },
     "tec_queue_mw": 95,
     "tec_project_count": 0,
-    "real_queue_pressure_pct": 15.8,
+    "real_queue_pressure_pct": 20.5,
     "scores_real": {
       "20": {
         "can_support": true,
         "headroom_score": 100.0,
-        "queue_score": 84.2,
+        "queue_score": 79.5,
         "voltage_score": 80,
         "gsp_score": 70,
         "upgrade_score": 0,
-        "total_score": 78.3,
-        "real_queue_pressure": 15.8
+        "total_score": 76.8,
+        "real_queue_pressure": 20.5
       },
       "50": {
         "can_support": true,
         "headroom_score": 100.0,
-        "queue_score": 84.2,
+        "queue_score": 79.5,
         "voltage_score": 80,
         "gsp_score": 70,
         "upgrade_score": 0,
-        "total_score": 78.3,
-        "real_queue_pressure": 15.8
+        "total_score": 76.8,
+        "real_queue_pressure": 20.5
       },
       "100": {
         "can_support": true,
         "headroom_score": 100.0,
-        "queue_score": 84.2,
+        "queue_score": 79.5,
         "voltage_score": 80,
         "gsp_score": 70,
         "upgrade_score": 0,
-        "total_score": 78.3,
-        "real_queue_pressure": 15.8
+        "total_score": 76.8,
+        "real_queue_pressure": 20.5
       }
     },
-    "headroom_source": "UKPN GSP Overview (asset limit proxy)",
-    "headroom_data_quality": "asset_limit_proxy",
+    "headroom_source": "UKPN LTDS Table 3a (firm capacity, N-1 security standard)",
+    "headroom_data_quality": "direct_headroom",
     "headroom_dno": "UKPN",
-    "headroom_updated": true
+    "headroom_updated": true,
+    "headroom_capacity_mva": 1108.0
   }
 ]

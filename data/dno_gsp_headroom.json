@@ -1,0 +1,2477 @@
+{
+  "abernethy": {
+    "headroom_mw": 44.7,
+    "capacity_mw": 120.0,
+    "max_demand_mw": 75.3,
+    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
+    "quality": "nameplate_proxy",
+    "dno": "SSEN",
+    "raw_name": "Abernethy"
+  },
+  "aberthaw and cardiff east": {
+    "headroom_mw": null,
+    "capacity_mw": 162.3,
+    "max_demand_mw": null,
+    "source": "NGED GSP Technical Limits (import TL only, no demand data)",
+    "quality": "technical_limit_only",
+    "dno": "NGED",
+    "raw_name": "Aberthaw and Cardiff East"
+  },
+  "abham": {
+    "headroom_mw": null,
+    "capacity_mw": 382.7,
+    "max_demand_mw": null,
+    "source": "NGED GSP Technical Limits (import TL only, no demand data)",
+    "quality": "technical_limit_only",
+    "dno": "NGED",
+    "raw_name": "Abham"
+  },
+  "acton lane": {
+    "headroom_mw": 74.4,
+    "capacity_mw": null,
+    "max_demand_mw": 45.6,
+    "source": "UKPN GSP Overview (asset limit proxy)",
+    "quality": "asset_limit_proxy",
+    "dno": "UKPN",
+    "raw_name": "ACTON LANE"
+  },
+  "acton lane 22kv": {
+    "headroom_mw": 8.5,
+    "capacity_mw": 43.7,
+    "max_demand_mw": 35.2,
+    "source": "UKPN LTDS Table 3a (firm capacity, N-1 security standard)",
+    "quality": "direct_headroom",
+    "dno": "UKPN",
+    "raw_name": "Acton Lane 22kV"
+  },
+  "alness": {
+    "headroom_mw": 89.5,
+    "capacity_mw": 120.0,
+    "max_demand_mw": 30.5,
+    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
+    "quality": "nameplate_proxy",
+    "dno": "SSEN",
+    "raw_name": "Alness"
+  },
+  "alverdiscott": {
+    "headroom_mw": null,
+    "capacity_mw": 257.0,
+    "max_demand_mw": null,
+    "source": "NGED GSP Technical Limits (import TL only, no demand data)",
+    "quality": "technical_limit_only",
+    "dno": "NGED",
+    "raw_name": "Alverdiscott"
+  },
+  "amersham": {
+    "headroom_mw": 73.2,
+    "capacity_mw": 180.7,
+    "max_demand_mw": 107.5,
+    "source": "UKPN LTDS Table 3a (firm capacity, N-1 security standard)",
+    "quality": "direct_headroom",
+    "dno": "UKPN",
+    "raw_name": "Amersham"
+  },
+  "arbroath": {
+    "headroom_mw": 0,
+    "capacity_mw": 45.0,
+    "max_demand_mw": 58.8,
+    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
+    "quality": "nameplate_proxy",
+    "dno": "SSEN",
+    "raw_name": "Arbroath"
+  },
+  "ardkinglas": {
+    "headroom_mw": 45.0,
+    "capacity_mw": 45.0,
+    "max_demand_mw": 0.0,
+    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
+    "quality": "nameplate_proxy",
+    "dno": "SSEN",
+    "raw_name": "Ardkinglas"
+  },
+  "ardmore": {
+    "headroom_mw": 23.8,
+    "capacity_mw": 60.0,
+    "max_demand_mw": 36.2,
+    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
+    "quality": "nameplate_proxy",
+    "dno": "SSEN",
+    "raw_name": "Ardmore"
+  },
+  "axminster": {
+    "headroom_mw": 142.5,
+    "capacity_mw": 240.0,
+    "max_demand_mw": 97.5,
+    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand) \u2014 SHARED SITE",
+    "quality": "nameplate_proxy",
+    "dno": "SSEN",
+    "raw_name": "Axminster"
+  },
+  "barking 132kv": {
+    "headroom_mw": 84.0,
+    "capacity_mw": 195.5,
+    "max_demand_mw": 111.5,
+    "source": "UKPN LTDS Table 3a (firm capacity, N-1 security standard)",
+    "quality": "direct_headroom",
+    "dno": "UKPN",
+    "raw_name": "Barking 132kV"
+  },
+  "barking c": {
+    "headroom_mw": 564.6,
+    "capacity_mw": null,
+    "max_demand_mw": 35.4,
+    "source": "UKPN GSP Overview (asset limit proxy)",
+    "quality": "asset_limit_proxy",
+    "dno": "UKPN",
+    "raw_name": "BARKING C (LPN)"
+  },
+  "barking c 132kv": {
+    "headroom_mw": 9.7,
+    "capacity_mw": 34.9,
+    "max_demand_mw": 25.2,
+    "source": "UKPN LTDS Table 3a (firm capacity, N-1 security standard)",
+    "quality": "direct_headroom",
+    "dno": "UKPN",
+    "raw_name": "Barking C 132kV"
+  },
+  "barking west": {
+    "headroom_mw": 254.5,
+    "capacity_mw": null,
+    "max_demand_mw": 145.5,
+    "source": "UKPN GSP Overview (asset limit proxy)",
+    "quality": "asset_limit_proxy",
+    "dno": "UKPN",
+    "raw_name": "BARKING WEST (LPN)"
+  },
+  "barking west 33kv": {
+    "headroom_mw": 114.2,
+    "capacity_mw": 293.2,
+    "max_demand_mw": 179.0,
+    "source": "UKPN LTDS Table 3a (firm capacity, N-1 security standard)",
+    "quality": "direct_headroom",
+    "dno": "UKPN",
+    "raw_name": "Barking West 33kV"
+  },
+  "beauly": {
+    "headroom_mw": 18.4,
+    "capacity_mw": 45.0,
+    "max_demand_mw": 26.6,
+    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
+    "quality": "nameplate_proxy",
+    "dno": "SSEN",
+    "raw_name": "Beauly"
+  },
+  "beddington": {
+    "headroom_mw": 671.3,
+    "capacity_mw": 1725.0,
+    "max_demand_mw": 1053.7,
+    "source": "UKPN LTDS Table 3a (firm capacity, N-1 security standard)",
+    "quality": "direct_headroom",
+    "dno": "UKPN",
+    "raw_name": "Beddington"
+  },
+  "berkswell": {
+    "headroom_mw": null,
+    "capacity_mw": 302.6,
+    "max_demand_mw": null,
+    "source": "NGED GSP Technical Limits (import TL only, no demand data)",
+    "quality": "technical_limit_only",
+    "dno": "NGED",
+    "raw_name": "Berkswell"
+  },
+  "berryburn": {
+    "headroom_mw": 120.0,
+    "capacity_mw": 120.0,
+    "max_demand_mw": 0.0,
+    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
+    "quality": "nameplate_proxy",
+    "dno": "SSEN",
+    "raw_name": "Berryburn"
+  },
+  "bicker fen": {
+    "headroom_mw": null,
+    "capacity_mw": 160.1,
+    "max_demand_mw": null,
+    "source": "NGED GSP Technical Limits (import TL only, no demand data)",
+    "quality": "technical_limit_only",
+    "dno": "NGED",
+    "raw_name": "Bicker Fen"
+  },
+  "birkenhead": {
+    "headroom_mw": null,
+    "capacity_mw": 250.4,
+    "max_demand_mw": null,
+    "source": "SPEN SPM Technical Limits (winter import limit, no demand data)",
+    "quality": "technical_limit_only",
+    "dno": "SPEN",
+    "raw_name": "Birkenhead"
+  },
+  "bishops wood": {
+    "headroom_mw": null,
+    "capacity_mw": 470.6,
+    "max_demand_mw": null,
+    "source": "NGED GSP Technical Limits (import TL only, no demand data)",
+    "quality": "technical_limit_only",
+    "dno": "NGED",
+    "raw_name": "Bishops Wood"
+  },
+  "blyth 132kv": {
+    "headroom_mw": 46.0,
+    "capacity_mw": 260.0,
+    "max_demand_mw": 23.0,
+    "source": "Northern Powergrid GSP Heatmap (direct demand headroom)",
+    "quality": "direct_headroom",
+    "dno": "NPG",
+    "raw_name": "Blyth 132kV"
+  },
+  "blyth 66kv": {
+    "headroom_mw": 0.0,
+    "capacity_mw": 140.0,
+    "max_demand_mw": 127.0,
+    "source": "Northern Powergrid GSP Heatmap (direct demand headroom)",
+    "quality": "direct_headroom",
+    "dno": "NPG",
+    "raw_name": "Blyth 66kV"
+  },
+  "boat of garten": {
+    "headroom_mw": 33.5,
+    "capacity_mw": 60.0,
+    "max_demand_mw": 26.5,
+    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
+    "quality": "nameplate_proxy",
+    "dno": "SSEN",
+    "raw_name": "Boat of Garten"
+  },
+  "bolney": {
+    "headroom_mw": 977.5,
+    "capacity_mw": 2351.2,
+    "max_demand_mw": 1373.7,
+    "source": "UKPN LTDS Table 3a (firm capacity, N-1 security standard)",
+    "quality": "direct_headroom",
+    "dno": "UKPN",
+    "raw_name": "Bolney"
+  },
+  "bonnybridge": {
+    "headroom_mw": 47.3,
+    "capacity_mw": 104.2,
+    "max_demand_mw": 56.9,
+    "source": "SPEN SPD Substation Utilisation 2024 \u2014 Bonnybridge",
+    "quality": "direct_headroom",
+    "dno": "SPEN SPD",
+    "raw_name": "Bonnybridge"
+  },
+  "botley wood": {
+    "headroom_mw": 97.9,
+    "capacity_mw": 240.0,
+    "max_demand_mw": 142.1,
+    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
+    "quality": "nameplate_proxy",
+    "dno": "SSEN",
+    "raw_name": "Botley Wood"
+  },
+  "braco west": {
+    "headroom_mw": 73.0,
+    "capacity_mw": 120.0,
+    "max_demand_mw": 47.0,
+    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
+    "quality": "nameplate_proxy",
+    "dno": "SSEN",
+    "raw_name": "Braco West"
+  },
+  "bradford west": {
+    "headroom_mw": 285.5,
+    "capacity_mw": 720.0,
+    "max_demand_mw": 372.0,
+    "source": "Northern Powergrid GSP Heatmap (direct demand headroom)",
+    "quality": "direct_headroom",
+    "dno": "NPG",
+    "raw_name": "Bradford West"
+  },
+  "braintree": {
+    "headroom_mw": 109.8,
+    "capacity_mw": 318.1,
+    "max_demand_mw": 208.3,
+    "source": "UKPN LTDS Table 3a (firm capacity, N-1 security standard)",
+    "quality": "direct_headroom",
+    "dno": "UKPN",
+    "raw_name": "Braintree"
+  },
+  "bramford": {
+    "headroom_mw": 1028.7,
+    "capacity_mw": 2463.5,
+    "max_demand_mw": 1434.8,
+    "source": "UKPN LTDS Table 3a (firm capacity, N-1 security standard)",
+    "quality": "direct_headroom",
+    "dno": "UKPN",
+    "raw_name": "Bramford"
+  },
+  "bramley amesthat": {
+    "headroom_mw": 57.0,
+    "capacity_mw": 240.0,
+    "max_demand_mw": 183.0,
+    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
+    "quality": "nameplate_proxy",
+    "dno": "SSEN",
+    "raw_name": "Bramley (Ames-That)"
+  },
+  "bramley basi": {
+    "headroom_mw": 110.8,
+    "capacity_mw": 240.0,
+    "max_demand_mw": 129.2,
+    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
+    "quality": "nameplate_proxy",
+    "dno": "SSEN",
+    "raw_name": "Bramley (Basi)"
+  },
+  "bridge of dun": {
+    "headroom_mw": 29.6,
+    "capacity_mw": 60.0,
+    "max_demand_mw": 30.4,
+    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
+    "quality": "nameplate_proxy",
+    "dno": "SSEN",
+    "raw_name": "Bridge of Dun"
+  },
+  "bridgwater": {
+    "headroom_mw": null,
+    "capacity_mw": 132.5,
+    "max_demand_mw": null,
+    "source": "NGED GSP Technical Limits (import TL only, no demand data)",
+    "quality": "technical_limit_only",
+    "dno": "NGED",
+    "raw_name": "Bridgwater"
+  },
+  "brimsdown": {
+    "headroom_mw": 358.8,
+    "capacity_mw": 969.9,
+    "max_demand_mw": 611.1,
+    "source": "UKPN LTDS Table 3a (firm capacity, N-1 security standard)",
+    "quality": "direct_headroom",
+    "dno": "UKPN",
+    "raw_name": "Brimsdown"
+  },
+  "broadford": {
+    "headroom_mw": 11.4,
+    "capacity_mw": 30.0,
+    "max_demand_mw": 18.6,
+    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
+    "quality": "nameplate_proxy",
+    "dno": "SSEN",
+    "raw_name": "Broadford"
+  },
+  "brora": {
+    "headroom_mw": 34.3,
+    "capacity_mw": 45.0,
+    "max_demand_mw": 10.7,
+    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
+    "quality": "nameplate_proxy",
+    "dno": "SSEN",
+    "raw_name": "Brora"
+  },
+  "burghmuir": {
+    "headroom_mw": 47.6,
+    "capacity_mw": 90.0,
+    "max_demand_mw": 42.4,
+    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
+    "quality": "nameplate_proxy",
+    "dno": "SSEN",
+    "raw_name": "Burghmuir"
+  },
+  "burwell": {
+    "headroom_mw": 428.6,
+    "capacity_mw": 1020.8,
+    "max_demand_mw": 592.2,
+    "source": "UKPN LTDS Table 3a (firm capacity, N-1 security standard)",
+    "quality": "direct_headroom",
+    "dno": "UKPN",
+    "raw_name": "Burwell"
+  },
+  "bushbury": {
+    "headroom_mw": null,
+    "capacity_mw": 167.3,
+    "max_demand_mw": null,
+    "source": "NGED GSP Technical Limits (import TL only, no demand data)",
+    "quality": "technical_limit_only",
+    "dno": "NGED",
+    "raw_name": "Bushbury"
+  },
+  "bustleholm": {
+    "headroom_mw": null,
+    "capacity_mw": 340.1,
+    "max_demand_mw": null,
+    "source": "NGED GSP Technical Limits (import TL only, no demand data)",
+    "quality": "technical_limit_only",
+    "dno": "NGED",
+    "raw_name": "Bustleholm"
+  },
+  "cairnford": {
+    "headroom_mw": 120.0,
+    "capacity_mw": 120.0,
+    "max_demand_mw": 0.0,
+    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
+    "quality": "nameplate_proxy",
+    "dno": "SSEN",
+    "raw_name": "Cairnford"
+  },
+  "camblesforth": {
+    "headroom_mw": 159.8,
+    "capacity_mw": 200.0,
+    "max_demand_mw": 31.0,
+    "source": "Northern Powergrid GSP Heatmap (direct demand headroom)",
+    "quality": "direct_headroom",
+    "dno": "NPG",
+    "raw_name": "Camblesforth"
+  },
+  "canterbury": {
+    "headroom_mw": 324.3,
+    "capacity_mw": 722.5,
+    "max_demand_mw": 398.2,
+    "source": "UKPN LTDS Table 3a (firm capacity, N-1 security standard)",
+    "quality": "direct_headroom",
+    "dno": "UKPN",
+    "raw_name": "Canterbury"
+  },
+  "canterbury north": {
+    "headroom_mw": 2.5,
+    "capacity_mw": null,
+    "max_demand_mw": 198.4,
+    "source": "UKPN GSP Overview (agreed technical limits)",
+    "quality": "agreed_technical_limits",
+    "dno": "UKPN",
+    "raw_name": "CANTERBURY NORTH"
+  },
+  "capenhurst": {
+    "headroom_mw": null,
+    "capacity_mw": 222.1,
+    "max_demand_mw": null,
+    "source": "SPEN SPM Technical Limits (winter import limit, no demand data)",
+    "quality": "technical_limit_only",
+    "dno": "SPEN",
+    "raw_name": "Capenhurst"
+  },
+  "carradale": {
+    "headroom_mw": 120.0,
+    "capacity_mw": 120.0,
+    "max_demand_mw": 0.0,
+    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
+    "quality": "nameplate_proxy",
+    "dno": "SSEN",
+    "raw_name": "Carradale 2"
+  },
+  "carrington": {
+    "headroom_mw": null,
+    "capacity_mw": 202.4,
+    "max_demand_mw": null,
+    "source": "SPEN SPM Technical Limits (winter import limit, no demand data)",
+    "quality": "technical_limit_only",
+    "dno": "SPEN",
+    "raw_name": "Carrington"
+  },
+  "cassley": {
+    "headroom_mw": 28.0,
+    "capacity_mw": 30.0,
+    "max_demand_mw": 2.0,
+    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
+    "quality": "nameplate_proxy",
+    "dno": "SSEN",
+    "raw_name": "Cassley"
+  },
+  "ceannacroc": {
+    "headroom_mw": 22.6,
+    "capacity_mw": 30.0,
+    "max_demand_mw": 7.4,
+    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
+    "quality": "nameplate_proxy",
+    "dno": "SSEN",
+    "raw_name": "Ceannacroc"
+  },
+  "cellarhead": {
+    "headroom_mw": null,
+    "capacity_mw": 460.4,
+    "max_demand_mw": null,
+    "source": "NGED GSP Technical Limits (import TL only, no demand data)",
+    "quality": "technical_limit_only",
+    "dno": "NGED",
+    "raw_name": "Cellarhead"
+  },
+  "charleston": {
+    "headroom_mw": 22.4,
+    "capacity_mw": 90.0,
+    "max_demand_mw": 67.6,
+    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
+    "quality": "nameplate_proxy",
+    "dno": "SSEN",
+    "raw_name": "Charleston"
+  },
+  "chessington": {
+    "headroom_mw": 281.7,
+    "capacity_mw": 748.6,
+    "max_demand_mw": 466.9,
+    "source": "UKPN LTDS Table 3a (firm capacity, N-1 security standard)",
+    "quality": "direct_headroom",
+    "dno": "UKPN",
+    "raw_name": "Chessington"
+  },
+  "chesterfield": {
+    "headroom_mw": null,
+    "capacity_mw": 514.0,
+    "max_demand_mw": null,
+    "source": "NGED GSP Technical Limits (import TL only, no demand data)",
+    "quality": "technical_limit_only",
+    "dno": "NGED",
+    "raw_name": "Chesterfield"
+  },
+  "chickerell": {
+    "headroom_mw": 152.3,
+    "capacity_mw": 240.0,
+    "max_demand_mw": 87.7,
+    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
+    "quality": "nameplate_proxy",
+    "dno": "SSEN",
+    "raw_name": "Chickerell"
+  },
+  "city road": {
+    "headroom_mw": 980.2,
+    "capacity_mw": 1705.0,
+    "max_demand_mw": 724.8,
+    "source": "UKPN LTDS Table 3a (firm capacity, N-1 security standard)",
+    "quality": "direct_headroom",
+    "dno": "UKPN",
+    "raw_name": "City Road"
+  },
+  "clachan": {
+    "headroom_mw": 55.6,
+    "capacity_mw": 60.0,
+    "max_demand_mw": 4.4,
+    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
+    "quality": "nameplate_proxy",
+    "dno": "SSEN",
+    "raw_name": "Clachan"
+  },
+  "clayhills": {
+    "headroom_mw": 32.5,
+    "capacity_mw": 60.0,
+    "max_demand_mw": 27.5,
+    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
+    "quality": "nameplate_proxy",
+    "dno": "SSEN",
+    "raw_name": "Clayhills"
+  },
+  "cockenzie": {
+    "headroom_mw": 41.3,
+    "capacity_mw": 86.8,
+    "max_demand_mw": 45.5,
+    "source": "SPEN SPD Substation Utilisation 2024 \u2014 Cockenzie",
+    "quality": "direct_headroom",
+    "dno": "SPEN SPD",
+    "raw_name": "Cockenzie"
+  },
+  "connahs quay": {
+    "headroom_mw": null,
+    "capacity_mw": 209.4,
+    "max_demand_mw": null,
+    "source": "SPEN SPM Technical Limits (winter import limit, no demand data)",
+    "quality": "technical_limit_only",
+    "dno": "SPEN",
+    "raw_name": "Connahs Quay"
+  },
+  "coupar angus": {
+    "headroom_mw": 55.5,
+    "capacity_mw": 120.0,
+    "max_demand_mw": 64.5,
+    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
+    "quality": "nameplate_proxy",
+    "dno": "SSEN",
+    "raw_name": "Coupar Angus"
+  },
+  "coventry": {
+    "headroom_mw": null,
+    "capacity_mw": 503.3,
+    "max_demand_mw": null,
+    "source": "NGED GSP Technical Limits (import TL only, no demand data)",
+    "quality": "technical_limit_only",
+    "dno": "NGED",
+    "raw_name": "Coventry"
+  },
+  "cowley": {
+    "headroom_mw": 294.2,
+    "capacity_mw": 960.0,
+    "max_demand_mw": 665.8,
+    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
+    "quality": "nameplate_proxy",
+    "dno": "SSEN",
+    "raw_name": "Cowley"
+  },
+  "craigiebuckler": {
+    "headroom_mw": 7.2,
+    "capacity_mw": 30.0,
+    "max_demand_mw": 22.8,
+    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
+    "quality": "nameplate_proxy",
+    "dno": "SSEN",
+    "raw_name": "Craigiebuckler"
+  },
+  "creyke beck": {
+    "headroom_mw": 316.5,
+    "capacity_mw": 720.0,
+    "max_demand_mw": 370.0,
+    "source": "Northern Powergrid GSP Heatmap (direct demand headroom)",
+    "quality": "direct_headroom",
+    "dno": "NPG",
+    "raw_name": "Creyke Beck"
+  },
+  "dallas": {
+    "headroom_mw": 120.0,
+    "capacity_mw": 120.0,
+    "max_demand_mw": 0.0,
+    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
+    "quality": "nameplate_proxy",
+    "dno": "SSEN",
+    "raw_name": "Dallas"
+  },
+  "devol moor": {
+    "headroom_mw": 35.4,
+    "capacity_mw": 60.0,
+    "max_demand_mw": 24.6,
+    "source": "SPEN SPD Substation Utilisation 2024 \u2014 Devol Moor",
+    "quality": "direct_headroom",
+    "dno": "SPEN SPD",
+    "raw_name": "Devol Moor"
+  },
+  "dounreay": {
+    "headroom_mw": 36.2,
+    "capacity_mw": 90.0,
+    "max_demand_mw": 53.8,
+    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
+    "quality": "nameplate_proxy",
+    "dno": "SSEN",
+    "raw_name": "Dounreay"
+  },
+  "drakelow": {
+    "headroom_mw": null,
+    "capacity_mw": 143.9,
+    "max_demand_mw": null,
+    "source": "NGED GSP Technical Limits (import TL only, no demand data)",
+    "quality": "technical_limit_only",
+    "dno": "NGED",
+    "raw_name": "Drakelow"
+  },
+  "drax": {
+    "headroom_mw": 203.9,
+    "capacity_mw": 260.0,
+    "max_demand_mw": 54.0,
+    "source": "Northern Powergrid GSP Heatmap (direct demand headroom)",
+    "quality": "direct_headroom",
+    "dno": "NPG",
+    "raw_name": "Drax"
+  },
+  "dudhope": {
+    "headroom_mw": 21.9,
+    "capacity_mw": 60.0,
+    "max_demand_mw": 38.1,
+    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
+    "quality": "nameplate_proxy",
+    "dno": "SSEN",
+    "raw_name": "Dudhope"
+  },
+  "dunbeath": {
+    "headroom_mw": 15.0,
+    "capacity_mw": 15.0,
+    "max_demand_mw": 0.0,
+    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
+    "quality": "nameplate_proxy",
+    "dno": "SSEN",
+    "raw_name": "Dunbeath"
+  },
+  "dunoon": {
+    "headroom_mw": 19.2,
+    "capacity_mw": 45.0,
+    "max_demand_mw": 25.8,
+    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
+    "quality": "nameplate_proxy",
+    "dno": "SSEN",
+    "raw_name": "Dunoon"
+  },
+  "dunvegan": {
+    "headroom_mw": 52.0,
+    "capacity_mw": 60.0,
+    "max_demand_mw": 8.1,
+    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
+    "quality": "nameplate_proxy",
+    "dno": "SSEN",
+    "raw_name": "Dunvegan"
+  },
+  "dyce": {
+    "headroom_mw": 55.2,
+    "capacity_mw": 90.0,
+    "max_demand_mw": 34.8,
+    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
+    "quality": "nameplate_proxy",
+    "dno": "SSEN",
+    "raw_name": "Dyce"
+  },
+  "ealing": {
+    "headroom_mw": 345.3,
+    "capacity_mw": 540.0,
+    "max_demand_mw": 194.7,
+    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
+    "quality": "nameplate_proxy",
+    "dno": "SSEN",
+    "raw_name": "Ealing"
+  },
+  "east claydon": {
+    "headroom_mw": 657.7,
+    "capacity_mw": 720.0,
+    "max_demand_mw": 62.3,
+    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand) \u2014 SHARED SITE",
+    "quality": "nameplate_proxy",
+    "dno": "SSEN",
+    "raw_name": "East Claydon"
+  },
+  "eaton socon": {
+    "headroom_mw": 227.1,
+    "capacity_mw": 542.4,
+    "max_demand_mw": 315.3,
+    "source": "UKPN LTDS Table 3a (firm capacity, N-1 security standard)",
+    "quality": "direct_headroom",
+    "dno": "UKPN",
+    "raw_name": "Eaton Socon"
+  },
+  "eccles": {
+    "headroom_mw": 46.8,
+    "capacity_mw": 78.0,
+    "max_demand_mw": 31.2,
+    "source": "SPEN SPD Substation Utilisation 2024 \u2014 Eccles",
+    "quality": "direct_headroom",
+    "dno": "SPEN SPD",
+    "raw_name": "Eccles"
+  },
+  "elgin": {
+    "headroom_mw": 44.6,
+    "capacity_mw": 90.0,
+    "max_demand_mw": 45.4,
+    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
+    "quality": "nameplate_proxy",
+    "dno": "SSEN",
+    "raw_name": "Elgin"
+  },
+  "elland": {
+    "headroom_mw": 270.9,
+    "capacity_mw": 600.0,
+    "max_demand_mw": 299.0,
+    "source": "Northern Powergrid GSP Heatmap (direct demand headroom)",
+    "quality": "direct_headroom",
+    "dno": "NPG",
+    "raw_name": "Elland"
+  },
+  "elstree": {
+    "headroom_mw": 490.8,
+    "capacity_mw": 1086.3,
+    "max_demand_mw": 595.5,
+    "source": "UKPN LTDS Table 3a (firm capacity, N-1 security standard)",
+    "quality": "direct_headroom",
+    "dno": "UKPN",
+    "raw_name": "Elstree"
+  },
+  "elstree stanmore": {
+    "headroom_mw": 102.3,
+    "capacity_mw": 223.9,
+    "max_demand_mw": 121.6,
+    "source": "UKPN LTDS Table 3a (firm capacity, N-1 security standard)",
+    "quality": "direct_headroom",
+    "dno": "UKPN",
+    "raw_name": "Elstree Stanmore"
+  },
+  "enderby": {
+    "headroom_mw": null,
+    "capacity_mw": 523.5,
+    "max_demand_mw": null,
+    "source": "NGED GSP Technical Limits (import TL only, no demand data)",
+    "quality": "technical_limit_only",
+    "dno": "NGED",
+    "raw_name": "Enderby"
+  },
+  "erskine": {
+    "headroom_mw": 23.2,
+    "capacity_mw": 41.7,
+    "max_demand_mw": 18.5,
+    "source": "SPEN SPD Substation Utilisation 2024 \u2014 Erskine",
+    "quality": "direct_headroom",
+    "dno": "SPEN SPD",
+    "raw_name": "Erskine"
+  },
+  "exeter": {
+    "headroom_mw": null,
+    "capacity_mw": 259.0,
+    "max_demand_mw": null,
+    "source": "NGED GSP Technical Limits (import TL only, no demand data)",
+    "quality": "technical_limit_only",
+    "dno": "NGED",
+    "raw_name": "Exeter"
+  },
+  "fasnakyle": {
+    "headroom_mw": 119.5,
+    "capacity_mw": 120.0,
+    "max_demand_mw": 0.5,
+    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
+    "quality": "nameplate_proxy",
+    "dno": "SSEN",
+    "raw_name": "Fasnakyle"
+  },
+  "fawley": {
+    "headroom_mw": 301.6,
+    "capacity_mw": 480.0,
+    "max_demand_mw": 178.4,
+    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
+    "quality": "nameplate_proxy",
+    "dno": "SSEN",
+    "raw_name": "Fawley"
+  },
+  "feckenham": {
+    "headroom_mw": null,
+    "capacity_mw": 238.3,
+    "max_demand_mw": null,
+    "source": "NGED GSP Technical Limits (import TL only, no demand data)",
+    "quality": "technical_limit_only",
+    "dno": "NGED",
+    "raw_name": "Feckenham"
+  },
+  "ferrybridge a": {
+    "headroom_mw": 36.3,
+    "capacity_mw": 200.0,
+    "max_demand_mw": 86.0,
+    "source": "Northern Powergrid GSP Heatmap (direct demand headroom)",
+    "quality": "direct_headroom",
+    "dno": "NPG",
+    "raw_name": "Ferrybridge A"
+  },
+  "ferrybridge b": {
+    "headroom_mw": 171.7,
+    "capacity_mw": 480.0,
+    "max_demand_mw": 223.0,
+    "source": "Northern Powergrid GSP Heatmap (direct demand headroom)",
+    "quality": "direct_headroom",
+    "dno": "NPG",
+    "raw_name": "Ferrybridge B"
+  },
+  "fetteresso": {
+    "headroom_mw": 120.0,
+    "capacity_mw": 120.0,
+    "max_demand_mw": 0.0,
+    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
+    "quality": "nameplate_proxy",
+    "dno": "SSEN",
+    "raw_name": "Fetteresso"
+  },
+  "fiddes": {
+    "headroom_mw": 68.8,
+    "capacity_mw": 90.0,
+    "max_demand_mw": 21.2,
+    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
+    "quality": "nameplate_proxy",
+    "dno": "SSEN",
+    "raw_name": "Fiddes"
+  },
+  "fiddlers ferry": {
+    "headroom_mw": null,
+    "capacity_mw": 163.0,
+    "max_demand_mw": null,
+    "source": "SPEN SPM Technical Limits (winter import limit, no demand data)",
+    "quality": "technical_limit_only",
+    "dno": "SPEN",
+    "raw_name": "Fiddlers Ferry"
+  },
+  "fleetbramley": {
+    "headroom_mw": 826.7,
+    "capacity_mw": 1920.0,
+    "max_demand_mw": 1093.3,
+    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
+    "quality": "nameplate_proxy",
+    "dno": "SSEN",
+    "raw_name": "Fleet-Bramley"
+  },
+  "fort augustus": {
+    "headroom_mw": 81.5,
+    "capacity_mw": 90.0,
+    "max_demand_mw": 8.5,
+    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
+    "quality": "nameplate_proxy",
+    "dno": "SSEN",
+    "raw_name": "Fort Augustus"
+  },
+  "fort william": {
+    "headroom_mw": 47.0,
+    "capacity_mw": 120.0,
+    "max_demand_mw": 73.0,
+    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
+    "quality": "nameplate_proxy",
+    "dno": "SSEN",
+    "raw_name": "Fort William"
+  },
+  "fourstones 20kv": {
+    "headroom_mw": 22.0,
+    "capacity_mw": 60.0,
+    "max_demand_mw": 38.0,
+    "source": "Northern Powergrid GSP Heatmap (direct demand headroom)",
+    "quality": "direct_headroom",
+    "dno": "NPG",
+    "raw_name": "Fourstones 20kV"
+  },
+  "fourstones 33kv": {
+    "headroom_mw": 51.0,
+    "capacity_mw": 60.0,
+    "max_demand_mw": 9.0,
+    "source": "Northern Powergrid GSP Heatmap (direct demand headroom)",
+    "quality": "direct_headroom",
+    "dno": "NPG",
+    "raw_name": "Fourstones 33kV"
+  },
+  "fraserburgh": {
+    "headroom_mw": 28.3,
+    "capacity_mw": 45.0,
+    "max_demand_mw": 16.7,
+    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
+    "quality": "nameplate_proxy",
+    "dno": "SSEN",
+    "raw_name": "Fraserburgh"
+  },
+  "frodsham": {
+    "headroom_mw": null,
+    "capacity_mw": 109.7,
+    "max_demand_mw": null,
+    "source": "SPEN SPM Technical Limits (winter import limit, no demand data)",
+    "quality": "technical_limit_only",
+    "dno": "SPEN",
+    "raw_name": "Frodsham"
+  },
+  "glenagnes": {
+    "headroom_mw": 60.0,
+    "capacity_mw": 60.0,
+    "max_demand_mw": 0.0,
+    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
+    "quality": "nameplate_proxy",
+    "dno": "SSEN",
+    "raw_name": "Glenagnes"
+  },
+  "glenfarclas": {
+    "headroom_mw": 90.0,
+    "capacity_mw": 90.0,
+    "max_demand_mw": 0.0,
+    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
+    "quality": "nameplate_proxy",
+    "dno": "SSEN",
+    "raw_name": "Glenfarclas"
+  },
+  "glenrothes": {
+    "headroom_mw": 43.7,
+    "capacity_mw": 73.0,
+    "max_demand_mw": 29.3,
+    "source": "SPEN SPD Substation Utilisation 2024 \u2014 Glenrothes",
+    "quality": "direct_headroom",
+    "dno": "SPEN SPD",
+    "raw_name": "Glenrothes"
+  },
+  "grangemouth": {
+    "headroom_mw": 98.2,
+    "capacity_mw": 150.0,
+    "max_demand_mw": 51.8,
+    "source": "SPEN SPD Substation Utilisation 2024 \u2014 Grangemouth A + Grangemouth C (proxy for Grangemouth)",
+    "quality": "direct_headroom",
+    "dno": "SPEN SPD",
+    "raw_name": "Grangemouth A + Grangemouth C"
+  },
+  "grendon": {
+    "headroom_mw": null,
+    "capacity_mw": null,
+    "max_demand_mw": 26.7,
+    "source": "UKPN GSP Overview (asset limit proxy)",
+    "quality": "asset_limit_proxy",
+    "dno": "UKPN",
+    "raw_name": "GRENDON"
+  },
+  "grimsby west": {
+    "headroom_mw": 0.0,
+    "capacity_mw": 260.0,
+    "max_demand_mw": 181.0,
+    "source": "Northern Powergrid GSP Heatmap (direct demand headroom)",
+    "quality": "direct_headroom",
+    "dno": "NPG",
+    "raw_name": "Grimsby West"
+  },
+  "grudie bridge": {
+    "headroom_mw": 73.7,
+    "capacity_mw": 90.0,
+    "max_demand_mw": 16.3,
+    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
+    "quality": "nameplate_proxy",
+    "dno": "SSEN",
+    "raw_name": "Grudie Bridge"
+  },
+  "hackney 132": {
+    "headroom_mw": 351.9,
+    "capacity_mw": null,
+    "max_demand_mw": 128.1,
+    "source": "UKPN GSP Overview (asset limit proxy)",
+    "quality": "asset_limit_proxy",
+    "dno": "UKPN",
+    "raw_name": "HACKNEY 132"
+  },
+  "hackney 132kv": {
+    "headroom_mw": 295.7,
+    "capacity_mw": 496.5,
+    "max_demand_mw": 200.8,
+    "source": "UKPN LTDS Table 3a (firm capacity, N-1 security standard)",
+    "quality": "direct_headroom",
+    "dno": "UKPN",
+    "raw_name": "Hackney 132kV"
+  },
+  "hackney 66": {
+    "headroom_mw": 25.4,
+    "capacity_mw": null,
+    "max_demand_mw": 154.6,
+    "source": "UKPN GSP Overview (asset limit proxy)",
+    "quality": "asset_limit_proxy",
+    "dno": "UKPN",
+    "raw_name": "HACKNEY 66"
+  },
+  "hackney 66kv": {
+    "headroom_mw": 83.4,
+    "capacity_mw": 283.1,
+    "max_demand_mw": 199.7,
+    "source": "UKPN LTDS Table 3a (firm capacity, N-1 security standard)",
+    "quality": "direct_headroom",
+    "dno": "UKPN",
+    "raw_name": "Hackney 66kV"
+  },
+  "harris": {
+    "headroom_mw": 57.3,
+    "capacity_mw": 60.0,
+    "max_demand_mw": 2.7,
+    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
+    "quality": "nameplate_proxy",
+    "dno": "SSEN",
+    "raw_name": "Harris"
+  },
+  "hartmoor": {
+    "headroom_mw": 37.8,
+    "capacity_mw": 140.0,
+    "max_demand_mw": 89.0,
+    "source": "Northern Powergrid GSP Heatmap (direct demand headroom)",
+    "quality": "direct_headroom",
+    "dno": "NPG",
+    "raw_name": "Hartmoor"
+  },
+  "hawthorn pit": {
+    "headroom_mw": 105.1,
+    "capacity_mw": 200.0,
+    "max_demand_mw": 90.0,
+    "source": "Northern Powergrid GSP Heatmap (direct demand headroom)",
+    "quality": "direct_headroom",
+    "dno": "NPG",
+    "raw_name": "Hawthorn Pit Grid"
+  },
+  "hurst": {
+    "headroom_mw": 256.1,
+    "capacity_mw": 688.7,
+    "max_demand_mw": 432.6,
+    "source": "UKPN LTDS Table 3a (firm capacity, N-1 security standard)",
+    "quality": "direct_headroom",
+    "dno": "UKPN",
+    "raw_name": "Hurst"
+  },
+  "ince": {
+    "headroom_mw": null,
+    "capacity_mw": 120.4,
+    "max_demand_mw": null,
+    "source": "SPEN SPM Technical Limits (winter import limit, no demand data)",
+    "quality": "technical_limit_only",
+    "dno": "SPEN",
+    "raw_name": "Ince"
+  },
+  "indian queens": {
+    "headroom_mw": null,
+    "capacity_mw": 414.4,
+    "max_demand_mw": null,
+    "source": "NGED GSP Technical Limits (import TL only, no demand data)",
+    "quality": "technical_limit_only",
+    "dno": "NGED",
+    "raw_name": "Indian Queens"
+  },
+  "inverkip": {
+    "headroom_mw": 48.4,
+    "capacity_mw": 78.0,
+    "max_demand_mw": 29.6,
+    "source": "SPEN SPD Substation Utilisation 2024 \u2014 Spango Valley (proxy for Inverkip)",
+    "quality": "direct_headroom",
+    "dno": "SPEN SPD",
+    "raw_name": "Spango Valley"
+  },
+  "inverness": {
+    "headroom_mw": 41.1,
+    "capacity_mw": 105.0,
+    "max_demand_mw": 63.9,
+    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
+    "quality": "nameplate_proxy",
+    "dno": "SSEN",
+    "raw_name": "Inverness"
+  },
+  "iron acton swe": {
+    "headroom_mw": null,
+    "capacity_mw": 525.0,
+    "max_demand_mw": null,
+    "source": "NGED GSP Technical Limits (import TL only, no demand data)",
+    "quality": "technical_limit_only",
+    "dno": "NGED",
+    "raw_name": "Iron Acton (SWe)"
+  },
+  "iron acton wm": {
+    "headroom_mw": null,
+    "capacity_mw": 201.9,
+    "max_demand_mw": null,
+    "source": "NGED GSP Technical Limits (import TL only, no demand data)",
+    "quality": "technical_limit_only",
+    "dno": "NGED",
+    "raw_name": "Iron Acton (WM)"
+  },
+  "ironbridge and shrewsbury": {
+    "headroom_mw": null,
+    "capacity_mw": 183.0,
+    "max_demand_mw": null,
+    "source": "NGED GSP Technical Limits (import TL only, no demand data)",
+    "quality": "technical_limit_only",
+    "dno": "NGED",
+    "raw_name": "Ironbridge and Shrewsbury"
+  },
+  "islington": {
+    "headroom_mw": 162.1,
+    "capacity_mw": 351.8,
+    "max_demand_mw": 189.7,
+    "source": "UKPN LTDS Table 3a (firm capacity, N-1 security standard)",
+    "quality": "direct_headroom",
+    "dno": "UKPN",
+    "raw_name": "Islington"
+  },
+  "iver 132kv": {
+    "headroom_mw": 194.2,
+    "capacity_mw": 720.0,
+    "max_demand_mw": 525.8,
+    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
+    "quality": "nameplate_proxy",
+    "dno": "SSEN",
+    "raw_name": "Iver 132kV"
+  },
+  "iver 66kv": {
+    "headroom_mw": 142.7,
+    "capacity_mw": 300.0,
+    "max_demand_mw": 157.3,
+    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
+    "quality": "nameplate_proxy",
+    "dno": "SSEN",
+    "raw_name": "Iver 66kV"
+  },
+  "jordanthorpe": {
+    "headroom_mw": 62.3,
+    "capacity_mw": 120.0,
+    "max_demand_mw": 55.0,
+    "source": "Northern Powergrid GSP Heatmap (direct demand headroom)",
+    "quality": "direct_headroom",
+    "dno": "NPG",
+    "raw_name": "Jordanthorpe"
+  },
+  "kaimes": {
+    "headroom_mw": 92.9,
+    "capacity_mw": 186.0,
+    "max_demand_mw": 93.1,
+    "source": "SPEN SPD Substation Utilisation 2024 \u2014 Kaimes",
+    "quality": "direct_headroom",
+    "dno": "SPEN SPD",
+    "raw_name": "Kaimes"
+  },
+  "keadby": {
+    "headroom_mw": 0.0,
+    "capacity_mw": 480.0,
+    "max_demand_mw": 278.0,
+    "source": "Northern Powergrid GSP Heatmap (direct demand headroom)",
+    "quality": "direct_headroom",
+    "dno": "NPG",
+    "raw_name": "Keadby"
+  },
+  "keith": {
+    "headroom_mw": 58.9,
+    "capacity_mw": 90.0,
+    "max_demand_mw": 31.1,
+    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
+    "quality": "nameplate_proxy",
+    "dno": "SSEN",
+    "raw_name": "Keith 2"
+  },
+  "kemsley": {
+    "headroom_mw": 201.7,
+    "capacity_mw": 482.2,
+    "max_demand_mw": 280.5,
+    "source": "UKPN LTDS Table 3a (firm capacity, N-1 security standard)",
+    "quality": "direct_headroom",
+    "dno": "UKPN",
+    "raw_name": "Kemsley"
+  },
+  "killin": {
+    "headroom_mw": 35.6,
+    "capacity_mw": 45.0,
+    "max_demand_mw": 9.4,
+    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
+    "quality": "nameplate_proxy",
+    "dno": "SSEN",
+    "raw_name": "Killin"
+  },
+  "kincardine": {
+    "headroom_mw": 45.2,
+    "capacity_mw": 88.5,
+    "max_demand_mw": 43.3,
+    "source": "SPEN SPD Substation Utilisation 2024 \u2014 Devonside (proxy for Kincardine)",
+    "quality": "direct_headroom",
+    "dno": "SPEN SPD",
+    "raw_name": "Devonside"
+  },
+  "kingsnorth": {
+    "headroom_mw": 225.6,
+    "capacity_mw": 543.3,
+    "max_demand_mw": 317.7,
+    "source": "UKPN LTDS Table 3a (firm capacity, N-1 security standard)",
+    "quality": "direct_headroom",
+    "dno": "UKPN",
+    "raw_name": "Kingsnorth"
+  },
+  "kinlochleven": {
+    "headroom_mw": 18.6,
+    "capacity_mw": 45.0,
+    "max_demand_mw": 26.4,
+    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
+    "quality": "nameplate_proxy",
+    "dno": "SSEN",
+    "raw_name": "Kinlochleven"
+  },
+  "kintore": {
+    "headroom_mw": 3.6,
+    "capacity_mw": 105.0,
+    "max_demand_mw": 101.4,
+    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
+    "quality": "nameplate_proxy",
+    "dno": "SSEN",
+    "raw_name": "Kintore"
+  },
+  "kirkby": {
+    "headroom_mw": null,
+    "capacity_mw": 307.0,
+    "max_demand_mw": null,
+    "source": "SPEN SPM Technical Limits (winter import limit, no demand data)",
+    "quality": "technical_limit_only",
+    "dno": "SPEN",
+    "raw_name": "Kirkby"
+  },
+  "kirkstall b": {
+    "headroom_mw": 199.8,
+    "capacity_mw": 480.0,
+    "max_demand_mw": 227.0,
+    "source": "Northern Powergrid GSP Heatmap (direct demand headroom)",
+    "quality": "direct_headroom",
+    "dno": "NPG",
+    "raw_name": "Kirkstall B"
+  },
+  "kitwell": {
+    "headroom_mw": null,
+    "capacity_mw": 385.8,
+    "max_demand_mw": null,
+    "source": "NGED GSP Technical Limits (import TL only, no demand data)",
+    "quality": "technical_limit_only",
+    "dno": "NGED",
+    "raw_name": "Kitwell"
+  },
+  "knaresborough": {
+    "headroom_mw": 91.4,
+    "capacity_mw": 260.0,
+    "max_demand_mw": 151.0,
+    "source": "Northern Powergrid GSP Heatmap (direct demand headroom)",
+    "quality": "direct_headroom",
+    "dno": "NPG",
+    "raw_name": "Knaresborough"
+  },
+  "lackenby": {
+    "headroom_mw": 101.8,
+    "capacity_mw": 260.0,
+    "max_demand_mw": 151.0,
+    "source": "Northern Powergrid GSP Heatmap (direct demand headroom)",
+    "quality": "direct_headroom",
+    "dno": "NPG",
+    "raw_name": "Lackenby"
+  },
+  "lairg": {
+    "headroom_mw": 81.9,
+    "capacity_mw": 90.0,
+    "max_demand_mw": 8.1,
+    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
+    "quality": "nameplate_proxy",
+    "dno": "SSEN",
+    "raw_name": "Lairg"
+  },
+  "laleham": {
+    "headroom_mw": 83.0,
+    "capacity_mw": 230.1,
+    "max_demand_mw": 147.1,
+    "source": "UKPN LTDS Table 3a (firm capacity, N-1 security standard)",
+    "quality": "direct_headroom",
+    "dno": "UKPN",
+    "raw_name": "Laleham"
+  },
+  "landulph": {
+    "headroom_mw": null,
+    "capacity_mw": 277.0,
+    "max_demand_mw": null,
+    "source": "NGED GSP Technical Limits (import TL only, no demand data)",
+    "quality": "technical_limit_only",
+    "dno": "NGED",
+    "raw_name": "Landulph"
+  },
+  "lea marston wm": {
+    "headroom_mw": null,
+    "capacity_mw": 277.3,
+    "max_demand_mw": null,
+    "source": "NGED GSP Technical Limits (import TL only, no demand data)",
+    "quality": "technical_limit_only",
+    "dno": "NGED",
+    "raw_name": "Lea Marston (WM)"
+  },
+  "legacy": {
+    "headroom_mw": null,
+    "capacity_mw": 265.3,
+    "max_demand_mw": null,
+    "source": "SPEN SPM Technical Limits (winter import limit, no demand data)",
+    "quality": "technical_limit_only",
+    "dno": "SPEN",
+    "raw_name": "Legacy"
+  },
+  "lister drive": {
+    "headroom_mw": null,
+    "capacity_mw": 331.6,
+    "max_demand_mw": null,
+    "source": "SPEN SPM Technical Limits (winter import limit, no demand data)",
+    "quality": "technical_limit_only",
+    "dno": "SPEN",
+    "raw_name": "Lister Drive"
+  },
+  "littlebrook": {
+    "headroom_mw": 216.0,
+    "capacity_mw": 467.7,
+    "max_demand_mw": 251.7,
+    "source": "UKPN LTDS Table 3a (firm capacity, N-1 security standard)",
+    "quality": "direct_headroom",
+    "dno": "UKPN",
+    "raw_name": "Littlebrook"
+  },
+  "lodge road": {
+    "headroom_mw": 201.6,
+    "capacity_mw": 548.8,
+    "max_demand_mw": 347.2,
+    "source": "UKPN LTDS Table 3a (firm capacity, N-1 security standard)",
+    "quality": "direct_headroom",
+    "dno": "UKPN",
+    "raw_name": "Lodge Road"
+  },
+  "longannet": {
+    "headroom_mw": 45.2,
+    "capacity_mw": 88.5,
+    "max_demand_mw": 43.3,
+    "source": "SPEN SPD Substation Utilisation 2024 \u2014 Devonside (proxy for Longannet)",
+    "quality": "direct_headroom",
+    "dno": "SPEN SPD",
+    "raw_name": "Devonside"
+  },
+  "lovedean": {
+    "headroom_mw": 132.1,
+    "capacity_mw": 720.0,
+    "max_demand_mw": 587.9,
+    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
+    "quality": "nameplate_proxy",
+    "dno": "SSEN",
+    "raw_name": "Lovedean"
+  },
+  "lunanhead": {
+    "headroom_mw": 38.7,
+    "capacity_mw": 90.0,
+    "max_demand_mw": 51.3,
+    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
+    "quality": "nameplate_proxy",
+    "dno": "SSEN",
+    "raw_name": "Lunanhead"
+  },
+  "lyndhurst": {
+    "headroom_mw": 0,
+    "capacity_mw": 60.0,
+    "max_demand_mw": 68.4,
+    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
+    "quality": "nameplate_proxy",
+    "dno": "SSEN",
+    "raw_name": "Lyndhurst"
+  },
+  "macduff": {
+    "headroom_mw": 68.0,
+    "capacity_mw": 90.0,
+    "max_demand_mw": 22.0,
+    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
+    "quality": "nameplate_proxy",
+    "dno": "SSEN",
+    "raw_name": "Macduff"
+  },
+  "mannington": {
+    "headroom_mw": 331.9,
+    "capacity_mw": 960.0,
+    "max_demand_mw": 628.1,
+    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
+    "quality": "nameplate_proxy",
+    "dno": "SSEN",
+    "raw_name": "Mannington"
+  },
+  "margam": {
+    "headroom_mw": null,
+    "capacity_mw": 99.2,
+    "max_demand_mw": null,
+    "source": "NGED GSP Technical Limits (import TL only, no demand data)",
+    "quality": "technical_limit_only",
+    "dno": "NGED",
+    "raw_name": "Margam"
+  },
+  "melksham": {
+    "headroom_mw": 286.6,
+    "capacity_mw": 720.0,
+    "max_demand_mw": 433.4,
+    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
+    "quality": "nameplate_proxy",
+    "dno": "SSEN",
+    "raw_name": "Melksham"
+  },
+  "mill hill": {
+    "headroom_mw": 179.5,
+    "capacity_mw": 524.6,
+    "max_demand_mw": 345.1,
+    "source": "UKPN LTDS Table 3a (firm capacity, N-1 security standard)",
+    "quality": "direct_headroom",
+    "dno": "UKPN",
+    "raw_name": "Mill Hill"
+  },
+  "milton of craigie": {
+    "headroom_mw": 15.7,
+    "capacity_mw": 60.0,
+    "max_demand_mw": 44.3,
+    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
+    "quality": "nameplate_proxy",
+    "dno": "SSEN",
+    "raw_name": "Milton of Craigie"
+  },
+  "minety": {
+    "headroom_mw": 363.3,
+    "capacity_mw": 720.0,
+    "max_demand_mw": 356.7,
+    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
+    "quality": "nameplate_proxy",
+    "dno": "SSEN",
+    "raw_name": "Minety"
+  },
+  "mybster": {
+    "headroom_mw": 120.0,
+    "capacity_mw": 120.0,
+    "max_demand_mw": 0.0,
+    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
+    "quality": "nameplate_proxy",
+    "dno": "SSEN",
+    "raw_name": "Mybster 2"
+  },
+  "nairn": {
+    "headroom_mw": 26.6,
+    "capacity_mw": 60.0,
+    "max_demand_mw": 33.4,
+    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
+    "quality": "nameplate_proxy",
+    "dno": "SSEN",
+    "raw_name": "Nairn"
+  },
+  "nechells east": {
+    "headroom_mw": null,
+    "capacity_mw": 332.7,
+    "max_demand_mw": null,
+    "source": "NGED GSP Technical Limits (import TL only, no demand data)",
+    "quality": "technical_limit_only",
+    "dno": "NGED",
+    "raw_name": "Nechells East"
+  },
+  "neepsend": {
+    "headroom_mw": 59.2,
+    "capacity_mw": 140.0,
+    "max_demand_mw": 75.0,
+    "source": "Northern Powergrid GSP Heatmap (direct demand headroom)",
+    "quality": "direct_headroom",
+    "dno": "NPG",
+    "raw_name": "Neepsend"
+  },
+  "new cross 132": {
+    "headroom_mw": 422.9,
+    "capacity_mw": null,
+    "max_demand_mw": 57.1,
+    "source": "UKPN GSP Overview (asset limit proxy)",
+    "quality": "asset_limit_proxy",
+    "dno": "UKPN",
+    "raw_name": "NEW CROSS 132"
+  },
+  "new cross 132kv": {
+    "headroom_mw": 235.3,
+    "capacity_mw": 442.3,
+    "max_demand_mw": 207.0,
+    "source": "UKPN LTDS Table 3a (firm capacity, N-1 security standard)",
+    "quality": "direct_headroom",
+    "dno": "UKPN",
+    "raw_name": "New Cross 132kV"
+  },
+  "new cross 66": {
+    "headroom_mw": 397.1,
+    "capacity_mw": null,
+    "max_demand_mw": 142.9,
+    "source": "UKPN GSP Overview (asset limit proxy)",
+    "quality": "asset_limit_proxy",
+    "dno": "UKPN",
+    "raw_name": "NEW CROSS 66"
+  },
+  "new cross 66kv": {
+    "headroom_mw": 116.8,
+    "capacity_mw": 327.2,
+    "max_demand_mw": 210.4,
+    "source": "UKPN LTDS Table 3a (firm capacity, N-1 security standard)",
+    "quality": "direct_headroom",
+    "dno": "UKPN",
+    "raw_name": "New Cross 66kV"
+  },
+  "ninfield": {
+    "headroom_mw": 458.8,
+    "capacity_mw": 1184.1,
+    "max_demand_mw": 725.3,
+    "source": "UKPN LTDS Table 3a (firm capacity, N-1 security standard)",
+    "quality": "direct_headroom",
+    "dno": "UKPN",
+    "raw_name": "Ninfield"
+  },
+  "north hyde": {
+    "headroom_mw": 169.5,
+    "capacity_mw": 360.0,
+    "max_demand_mw": 190.5,
+    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
+    "quality": "nameplate_proxy",
+    "dno": "SSEN",
+    "raw_name": "North Hyde"
+  },
+  "northfleet": {
+    "headroom_mw": 649.6,
+    "capacity_mw": 1426.5,
+    "max_demand_mw": 776.9,
+    "source": "UKPN LTDS Table 3a (firm capacity, N-1 security standard)",
+    "quality": "direct_headroom",
+    "dno": "UKPN",
+    "raw_name": "Northfleet"
+  },
+  "northfleet east": {
+    "headroom_mw": 97.0,
+    "capacity_mw": null,
+    "max_demand_mw": 363.0,
+    "source": "UKPN GSP Overview (agreed technical limits)",
+    "quality": "agreed_technical_limits",
+    "dno": "UKPN",
+    "raw_name": "NORTHFLEET EAST"
+  },
+  "norton": {
+    "headroom_mw": 0.0,
+    "capacity_mw": 720.0,
+    "max_demand_mw": 365.0,
+    "source": "Northern Powergrid GSP Heatmap (direct demand headroom)",
+    "quality": "direct_headroom",
+    "dno": "NPG",
+    "raw_name": "Norton"
+  },
+  "norton lees": {
+    "headroom_mw": 54.0,
+    "capacity_mw": 120.0,
+    "max_demand_mw": 58.0,
+    "source": "Northern Powergrid GSP Heatmap (direct demand headroom)",
+    "quality": "direct_headroom",
+    "dno": "NPG",
+    "raw_name": "Norton Lees"
+  },
+  "norwich": {
+    "headroom_mw": 652.8,
+    "capacity_mw": 1569.8,
+    "max_demand_mw": 917.0,
+    "source": "UKPN LTDS Table 3a (firm capacity, N-1 security standard)",
+    "quality": "direct_headroom",
+    "dno": "UKPN",
+    "raw_name": "Norwich"
+  },
+  "nursling": {
+    "headroom_mw": 163.0,
+    "capacity_mw": 480.0,
+    "max_demand_mw": 317.0,
+    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
+    "quality": "nameplate_proxy",
+    "dno": "SSEN",
+    "raw_name": "Nursling"
+  },
+  "ocker hill": {
+    "headroom_mw": null,
+    "capacity_mw": 101.9,
+    "max_demand_mw": null,
+    "source": "NGED GSP Technical Limits (import TL only, no demand data)",
+    "quality": "technical_limit_only",
+    "dno": "NGED",
+    "raw_name": "Ocker Hill"
+  },
+  "offerton": {
+    "headroom_mw": 77.4,
+    "capacity_mw": 120.0,
+    "max_demand_mw": 38.0,
+    "source": "Northern Powergrid GSP Heatmap (direct demand headroom)",
+    "quality": "direct_headroom",
+    "dno": "NPG",
+    "raw_name": "Offerton"
+  },
+  "oldbury": {
+    "headroom_mw": null,
+    "capacity_mw": 84.4,
+    "max_demand_mw": null,
+    "source": "NGED GSP Technical Limits (import TL only, no demand data)",
+    "quality": "technical_limit_only",
+    "dno": "NGED",
+    "raw_name": "Oldbury"
+  },
+  "orrin": {
+    "headroom_mw": 60.0,
+    "capacity_mw": 60.0,
+    "max_demand_mw": 0.0,
+    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
+    "quality": "nameplate_proxy",
+    "dno": "SSEN",
+    "raw_name": "Orrin"
+  },
+  "osbaldwick": {
+    "headroom_mw": 207.3,
+    "capacity_mw": 480.0,
+    "max_demand_mw": 261.0,
+    "source": "Northern Powergrid GSP Heatmap (direct demand headroom)",
+    "quality": "direct_headroom",
+    "dno": "NPG",
+    "raw_name": "Osbaldwick"
+  },
+  "pelham": {
+    "headroom_mw": 248.8,
+    "capacity_mw": 632.1,
+    "max_demand_mw": 383.3,
+    "source": "UKPN LTDS Table 3a (firm capacity, N-1 security standard)",
+    "quality": "direct_headroom",
+    "dno": "UKPN",
+    "raw_name": "Pelham"
+  },
+  "pembroke": {
+    "headroom_mw": null,
+    "capacity_mw": 254.2,
+    "max_demand_mw": null,
+    "source": "NGED GSP Technical Limits (import TL only, no demand data)",
+    "quality": "technical_limit_only",
+    "dno": "NGED",
+    "raw_name": "Pembroke"
+  },
+  "penn": {
+    "headroom_mw": null,
+    "capacity_mw": 416.1,
+    "max_demand_mw": null,
+    "source": "NGED GSP Technical Limits (import TL only, no demand data)",
+    "quality": "technical_limit_only",
+    "dno": "NGED",
+    "raw_name": "Penn"
+  },
+  "pentir": {
+    "headroom_mw": null,
+    "capacity_mw": 75.0,
+    "max_demand_mw": null,
+    "source": "SPEN SPM Technical Limits (winter import limit, no demand data)",
+    "quality": "technical_limit_only",
+    "dno": "SPEN",
+    "raw_name": "Pentir"
+  },
+  "persley": {
+    "headroom_mw": 48.6,
+    "capacity_mw": 90.0,
+    "max_demand_mw": 41.4,
+    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
+    "quality": "nameplate_proxy",
+    "dno": "SSEN",
+    "raw_name": "Persley"
+  },
+  "peterhead grange": {
+    "headroom_mw": 11.2,
+    "capacity_mw": 45.0,
+    "max_demand_mw": 33.8,
+    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
+    "quality": "nameplate_proxy",
+    "dno": "SSEN",
+    "raw_name": "Peterhead Grange"
+  },
+  "peterhead shell": {
+    "headroom_mw": 6.1,
+    "capacity_mw": 15.0,
+    "max_demand_mw": 8.9,
+    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
+    "quality": "nameplate_proxy",
+    "dno": "SSEN",
+    "raw_name": "Peterhead Shell"
+  },
+  "pitsmoor 34": {
+    "headroom_mw": 73.0,
+    "capacity_mw": 120.0,
+    "max_demand_mw": 47.0,
+    "source": "Northern Powergrid GSP Heatmap (direct demand headroom)",
+    "quality": "direct_headroom",
+    "dno": "NPG",
+    "raw_name": "Pitsmoor 3/4"
+  },
+  "poppleton": {
+    "headroom_mw": 64.2,
+    "capacity_mw": 120.0,
+    "max_demand_mw": 38.0,
+    "source": "Northern Powergrid GSP Heatmap (direct demand headroom)",
+    "quality": "direct_headroom",
+    "dno": "NPG",
+    "raw_name": "Poppleton"
+  },
+  "port ann": {
+    "headroom_mw": 0,
+    "capacity_mw": 30.0,
+    "max_demand_mw": 33.6,
+    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
+    "quality": "nameplate_proxy",
+    "dno": "SSEN",
+    "raw_name": "Port Ann"
+  },
+  "portham": {
+    "headroom_mw": null,
+    "capacity_mw": 374.2,
+    "max_demand_mw": null,
+    "source": "NGED GSP Technical Limits (import TL only, no demand data)",
+    "quality": "technical_limit_only",
+    "dno": "NGED",
+    "raw_name": "Portham"
+  },
+  "pyle": {
+    "headroom_mw": null,
+    "capacity_mw": 100.8,
+    "max_demand_mw": null,
+    "source": "NGED GSP Technical Limits (import TL only, no demand data)",
+    "quality": "technical_limit_only",
+    "dno": "NGED",
+    "raw_name": "Pyle"
+  },
+  "quoich": {
+    "headroom_mw": 28.1,
+    "capacity_mw": 30.0,
+    "max_demand_mw": 1.9,
+    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
+    "quality": "nameplate_proxy",
+    "dno": "SSEN",
+    "raw_name": "Quoich"
+  },
+  "rainhill": {
+    "headroom_mw": null,
+    "capacity_mw": 430.3,
+    "max_demand_mw": null,
+    "source": "SPEN SPM Technical Limits (winter import limit, no demand data)",
+    "quality": "technical_limit_only",
+    "dno": "SPEN",
+    "raw_name": "Rainhill"
+  },
+  "rannoch": {
+    "headroom_mw": 86.7,
+    "capacity_mw": 90.0,
+    "max_demand_mw": 3.3,
+    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
+    "quality": "nameplate_proxy",
+    "dno": "SSEN",
+    "raw_name": "Rannoch"
+  },
+  "rassau": {
+    "headroom_mw": null,
+    "capacity_mw": 156.5,
+    "max_demand_mw": null,
+    "source": "NGED GSP Technical Limits (import TL only, no demand data)",
+    "quality": "technical_limit_only",
+    "dno": "NGED",
+    "raw_name": "Rassau"
+  },
+  "ratcliffe": {
+    "headroom_mw": null,
+    "capacity_mw": 387.4,
+    "max_demand_mw": null,
+    "source": "NGED GSP Technical Limits (import TL only, no demand data)",
+    "quality": "technical_limit_only",
+    "dno": "NGED",
+    "raw_name": "Ratcliffe"
+  },
+  "rayleigh": {
+    "headroom_mw": 581.4,
+    "capacity_mw": 1454.0,
+    "max_demand_mw": 872.6,
+    "source": "UKPN LTDS Table 3a (firm capacity, N-1 security standard)",
+    "quality": "direct_headroom",
+    "dno": "UKPN",
+    "raw_name": "Rayleigh"
+  },
+  "redbridge": {
+    "headroom_mw": 35.1,
+    "capacity_mw": 171.3,
+    "max_demand_mw": 136.2,
+    "source": "UKPN LTDS Table 3a (firm capacity, N-1 security standard)",
+    "quality": "direct_headroom",
+    "dno": "UKPN",
+    "raw_name": "Redbridge"
+  },
+  "redmoss": {
+    "headroom_mw": 6.5,
+    "capacity_mw": 60.0,
+    "max_demand_mw": 53.5,
+    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
+    "quality": "nameplate_proxy",
+    "dno": "SSEN",
+    "raw_name": "Redmoss"
+  },
+  "richborough": {
+    "headroom_mw": 218.3,
+    "capacity_mw": 416.3,
+    "max_demand_mw": 198.0,
+    "source": "UKPN LTDS Table 3a (firm capacity, N-1 security standard)",
+    "quality": "direct_headroom",
+    "dno": "UKPN",
+    "raw_name": "Richborough"
+  },
+  "rothienorman": {
+    "headroom_mw": 118.7,
+    "capacity_mw": 120.0,
+    "max_demand_mw": 1.3,
+    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
+    "quality": "nameplate_proxy",
+    "dno": "SSEN",
+    "raw_name": "Rothienorman"
+  },
+  "rye house": {
+    "headroom_mw": 489.4,
+    "capacity_mw": 998.5,
+    "max_demand_mw": 509.1,
+    "source": "UKPN LTDS Table 3a (firm capacity, N-1 security standard)",
+    "quality": "direct_headroom",
+    "dno": "UKPN",
+    "raw_name": "Rye House"
+  },
+  "saltend north": {
+    "headroom_mw": 0.0,
+    "capacity_mw": 200.0,
+    "max_demand_mw": 99.0,
+    "source": "Northern Powergrid GSP Heatmap (direct demand headroom)",
+    "quality": "direct_headroom",
+    "dno": "NPG",
+    "raw_name": "Saltend North"
+  },
+  "saltholme": {
+    "headroom_mw": 60.0,
+    "capacity_mw": 260.0,
+    "max_demand_mw": 78.0,
+    "source": "Northern Powergrid GSP Heatmap (direct demand headroom)",
+    "quality": "direct_headroom",
+    "dno": "NPG",
+    "raw_name": "Saltholme"
+  },
+  "sandford": {
+    "headroom_mw": null,
+    "capacity_mw": 111.6,
+    "max_demand_mw": null,
+    "source": "NGED GSP Technical Limits (import TL only, no demand data)",
+    "quality": "technical_limit_only",
+    "dno": "NGED",
+    "raw_name": "Sandford"
+  },
+  "sellindge": {
+    "headroom_mw": 313.7,
+    "capacity_mw": 756.8,
+    "max_demand_mw": 443.1,
+    "source": "UKPN LTDS Table 3a (firm capacity, N-1 security standard)",
+    "quality": "direct_headroom",
+    "dno": "UKPN",
+    "raw_name": "Sellindge"
+  },
+  "sheffield city": {
+    "headroom_mw": 35.2,
+    "capacity_mw": 120.0,
+    "max_demand_mw": 84.0,
+    "source": "Northern Powergrid GSP Heatmap (direct demand headroom)",
+    "quality": "direct_headroom",
+    "dno": "NPG",
+    "raw_name": "Sheffield City"
+  },
+  "shin": {
+    "headroom_mw": 70.2,
+    "capacity_mw": 90.0,
+    "max_demand_mw": 19.8,
+    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
+    "quality": "nameplate_proxy",
+    "dno": "SSEN",
+    "raw_name": "Shin"
+  },
+  "skelton grange": {
+    "headroom_mw": 55.1,
+    "capacity_mw": 720.0,
+    "max_demand_mw": 504.0,
+    "source": "Northern Powergrid GSP Heatmap (direct demand headroom)",
+    "quality": "direct_headroom",
+    "dno": "NPG",
+    "raw_name": "Skelton Grange"
+  },
+  "sloy": {
+    "headroom_mw": 45.7,
+    "capacity_mw": 50.0,
+    "max_demand_mw": 4.3,
+    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
+    "quality": "nameplate_proxy",
+    "dno": "SSEN",
+    "raw_name": "Sloy"
+  },
+  "south shields": {
+    "headroom_mw": 28.1,
+    "capacity_mw": 100.0,
+    "max_demand_mw": 48.0,
+    "source": "Northern Powergrid GSP Heatmap (direct demand headroom)",
+    "quality": "direct_headroom",
+    "dno": "NPG",
+    "raw_name": "South Shields"
+  },
+  "spennymoor": {
+    "headroom_mw": 127.9,
+    "capacity_mw": 480.0,
+    "max_demand_mw": 198.0,
+    "source": "Northern Powergrid GSP Heatmap (direct demand headroom)",
+    "quality": "direct_headroom",
+    "dno": "NPG",
+    "raw_name": "Spennymoor GSP"
+  },
+  "st asaph": {
+    "headroom_mw": null,
+    "capacity_mw": 53.2,
+    "max_demand_mw": null,
+    "source": "SPEN SPM Technical Limits (winter import limit, no demand data)",
+    "quality": "technical_limit_only",
+    "dno": "SPEN",
+    "raw_name": "St. Asaph"
+  },
+  "st fergus": {
+    "headroom_mw": 21.9,
+    "capacity_mw": 30.0,
+    "max_demand_mw": 8.1,
+    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
+    "quality": "nameplate_proxy",
+    "dno": "SSEN",
+    "raw_name": "St Fergus"
+  },
+  "st fillans": {
+    "headroom_mw": 19.2,
+    "capacity_mw": 25.0,
+    "max_demand_mw": 5.8,
+    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
+    "quality": "nameplate_proxy",
+    "dno": "SSEN",
+    "raw_name": "St Fillans"
+  },
+  "st johns wood": {
+    "headroom_mw": 464.5,
+    "capacity_mw": 1108.0,
+    "max_demand_mw": 643.5,
+    "source": "UKPN LTDS Table 3a (firm capacity, N-1 security standard)",
+    "quality": "direct_headroom",
+    "dno": "UKPN",
+    "raw_name": "St Johns Wood"
+  },
+  "staythorpe": {
+    "headroom_mw": null,
+    "capacity_mw": 208.3,
+    "max_demand_mw": null,
+    "source": "NGED GSP Technical Limits (import TL only, no demand data)",
+    "quality": "technical_limit_only",
+    "dno": "NGED",
+    "raw_name": "Staythorpe"
+  },
+  "stella north": {
+    "headroom_mw": 36.5,
+    "capacity_mw": 260.0,
+    "max_demand_mw": 186.0,
+    "source": "Northern Powergrid GSP Heatmap (direct demand headroom)",
+    "quality": "direct_headroom",
+    "dno": "NPG",
+    "raw_name": "Stella North"
+  },
+  "stella south": {
+    "headroom_mw": 0.0,
+    "capacity_mw": 260.0,
+    "max_demand_mw": 252.0,
+    "source": "Northern Powergrid GSP Heatmap (direct demand headroom)",
+    "quality": "direct_headroom",
+    "dno": "NPG",
+    "raw_name": "Stella South"
+  },
+  "stoke bardolph": {
+    "headroom_mw": null,
+    "capacity_mw": 103.6,
+    "max_demand_mw": null,
+    "source": "NGED GSP Technical Limits (import TL only, no demand data)",
+    "quality": "technical_limit_only",
+    "dno": "NGED",
+    "raw_name": "Stoke Bardolph"
+  },
+  "stornoway": {
+    "headroom_mw": 38.4,
+    "capacity_mw": 60.0,
+    "max_demand_mw": 21.6,
+    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
+    "quality": "nameplate_proxy",
+    "dno": "SSEN",
+    "raw_name": "Stornoway"
+  },
+  "strathaven": {
+    "headroom_mw": 56.2,
+    "capacity_mw": 109.7,
+    "max_demand_mw": 53.4,
+    "source": "SPEN SPD Substation Utilisation 2024 \u2014 Strathaven",
+    "quality": "direct_headroom",
+    "dno": "SPEN SPD",
+    "raw_name": "Strathaven"
+  },
+  "strathleven": {
+    "headroom_mw": 65.8,
+    "capacity_mw": 90.0,
+    "max_demand_mw": 24.2,
+    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand) \u2014 SHARED SITE",
+    "quality": "nameplate_proxy",
+    "dno": "SSEN",
+    "raw_name": "Strathleven"
+  },
+  "strichen": {
+    "headroom_mw": 70.7,
+    "capacity_mw": 90.0,
+    "max_demand_mw": 19.3,
+    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
+    "quality": "nameplate_proxy",
+    "dno": "SSEN",
+    "raw_name": "Strichen"
+  },
+  "sundon": {
+    "headroom_mw": 792.6,
+    "capacity_mw": 1853.0,
+    "max_demand_mw": 1060.4,
+    "source": "UKPN LTDS Table 3a (firm capacity, N-1 security standard)",
+    "quality": "direct_headroom",
+    "dno": "UKPN",
+    "raw_name": "Sundon"
+  },
+  "swansea north": {
+    "headroom_mw": null,
+    "capacity_mw": 380.5,
+    "max_demand_mw": null,
+    "source": "NGED GSP Technical Limits (import TL only, no demand data)",
+    "quality": "technical_limit_only",
+    "dno": "NGED",
+    "raw_name": "Swansea North"
+  },
+  "tarland": {
+    "headroom_mw": 11.5,
+    "capacity_mw": 30.0,
+    "max_demand_mw": 18.5,
+    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
+    "quality": "nameplate_proxy",
+    "dno": "SSEN",
+    "raw_name": "Tarland"
+  },
+  "taunton": {
+    "headroom_mw": null,
+    "capacity_mw": 185.1,
+    "max_demand_mw": null,
+    "source": "NGED GSP Technical Limits (import TL only, no demand data)",
+    "quality": "technical_limit_only",
+    "dno": "NGED",
+    "raw_name": "Taunton"
+  },
+  "taynuilt": {
+    "headroom_mw": 56.9,
+    "capacity_mw": 90.0,
+    "max_demand_mw": 33.1,
+    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
+    "quality": "nameplate_proxy",
+    "dno": "SSEN",
+    "raw_name": "Taynuilt"
+  },
+  "templeborough 27533kv": {
+    "headroom_mw": 69.0,
+    "capacity_mw": 96.0,
+    "max_demand_mw": 27.0,
+    "source": "Northern Powergrid GSP Heatmap (direct demand headroom)",
+    "quality": "direct_headroom",
+    "dno": "NPG",
+    "raw_name": "Templeborough 275/33kV"
+  },
+  "thurcroft": {
+    "headroom_mw": 221.4,
+    "capacity_mw": 360.0,
+    "max_demand_mw": 125.0,
+    "source": "Northern Powergrid GSP Heatmap (direct demand headroom)",
+    "quality": "direct_headroom",
+    "dno": "NPG",
+    "raw_name": "Thurcroft"
+  },
+  "thurso south": {
+    "headroom_mw": 74.7,
+    "capacity_mw": 120.0,
+    "max_demand_mw": 45.3,
+    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
+    "quality": "nameplate_proxy",
+    "dno": "SSEN",
+    "raw_name": "Thurso South"
+  },
+  "tilbury": {
+    "headroom_mw": 592.7,
+    "capacity_mw": null,
+    "max_demand_mw": 127.3,
+    "source": "UKPN GSP Overview (agreed technical limits)",
+    "quality": "agreed_technical_limits",
+    "dno": "UKPN",
+    "raw_name": "TILBURY"
+  },
+  "tilbury 1&7": {
+    "headroom_mw": 191.2,
+    "capacity_mw": 352.4,
+    "max_demand_mw": 161.2,
+    "source": "UKPN LTDS Table 3a (firm capacity, N-1 security standard)",
+    "quality": "direct_headroom",
+    "dno": "UKPN",
+    "raw_name": "Tilbury 1&7"
+  },
+  "tilbury 2&8": {
+    "headroom_mw": 134.9,
+    "capacity_mw": 277.5,
+    "max_demand_mw": 142.6,
+    "source": "UKPN LTDS Table 3a (firm capacity, N-1 security standard)",
+    "quality": "direct_headroom",
+    "dno": "UKPN",
+    "raw_name": "Tilbury 2&8"
+  },
+  "tilbury sgts 17": {
+    "headroom_mw": null,
+    "capacity_mw": null,
+    "max_demand_mw": 0.0,
+    "source": "UKPN GSP Overview (asset limit proxy)",
+    "quality": "asset_limit_proxy",
+    "dno": "UKPN",
+    "raw_name": "TILBURY SGTs 1&7"
+  },
+  "tilbury sgts 28": {
+    "headroom_mw": null,
+    "capacity_mw": null,
+    "max_demand_mw": 0.0,
+    "source": "UKPN GSP Overview (asset limit proxy)",
+    "quality": "asset_limit_proxy",
+    "dno": "UKPN",
+    "raw_name": "TILBURY SGTs 2&8"
+  },
+  "torness": {
+    "headroom_mw": 16.2,
+    "capacity_mw": 33.0,
+    "max_demand_mw": 16.8,
+    "source": "SPEN SPD Substation Utilisation 2024 \u2014 Dunbar A (proxy for Torness)",
+    "quality": "direct_headroom",
+    "dno": "SPEN SPD",
+    "raw_name": "Dunbar A"
+  },
+  "tottenham": {
+    "headroom_mw": 301.9,
+    "capacity_mw": 755.6,
+    "max_demand_mw": 453.7,
+    "source": "UKPN LTDS Table 3a (firm capacity, N-1 security standard)",
+    "quality": "direct_headroom",
+    "dno": "UKPN",
+    "raw_name": "Tottenham"
+  },
+  "tummel bridge": {
+    "headroom_mw": 6.1,
+    "capacity_mw": 21.0,
+    "max_demand_mw": 14.9,
+    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
+    "quality": "nameplate_proxy",
+    "dno": "SSEN",
+    "raw_name": "Tummel Bridge"
+  },
+  "tynemouth": {
+    "headroom_mw": 87.5,
+    "capacity_mw": 260.0,
+    "max_demand_mw": 152.0,
+    "source": "Northern Powergrid GSP Heatmap (direct demand headroom)",
+    "quality": "direct_headroom",
+    "dno": "NPG",
+    "raw_name": "Tynemouth"
+  },
+  "upper boat": {
+    "headroom_mw": null,
+    "capacity_mw": 201.6,
+    "max_demand_mw": null,
+    "source": "NGED GSP Technical Limits (import TL only, no demand data)",
+    "quality": "technical_limit_only",
+    "dno": "NGED",
+    "raw_name": "Upper Boat"
+  },
+  "uskmouth": {
+    "headroom_mw": null,
+    "capacity_mw": 240.5,
+    "max_demand_mw": null,
+    "source": "NGED GSP Technical Limits (import TL only, no demand data)",
+    "quality": "technical_limit_only",
+    "dno": "NGED",
+    "raw_name": "Uskmouth"
+  },
+  "walpole": {
+    "headroom_mw": 651.7,
+    "capacity_mw": 1465.6,
+    "max_demand_mw": 813.9,
+    "source": "UKPN LTDS Table 3a (firm capacity, N-1 security standard)",
+    "quality": "direct_headroom",
+    "dno": "UKPN",
+    "raw_name": "Walpole"
+  },
+  "warley": {
+    "headroom_mw": 267.0,
+    "capacity_mw": 730.7,
+    "max_demand_mw": 463.7,
+    "source": "UKPN LTDS Table 3a (firm capacity, N-1 security standard)",
+    "quality": "direct_headroom",
+    "dno": "UKPN",
+    "raw_name": "Warley"
+  },
+  "watford south": {
+    "headroom_mw": 276.8,
+    "capacity_mw": 697.6,
+    "max_demand_mw": 420.8,
+    "source": "UKPN LTDS Table 3a (firm capacity, N-1 security standard)",
+    "quality": "direct_headroom",
+    "dno": "UKPN",
+    "raw_name": "Watford South"
+  },
+  "west boldon": {
+    "headroom_mw": 126.7,
+    "capacity_mw": 360.0,
+    "max_demand_mw": 213.0,
+    "source": "Northern Powergrid GSP Heatmap (direct demand headroom)",
+    "quality": "direct_headroom",
+    "dno": "NPG",
+    "raw_name": "West Boldon"
+  },
+  "west burton": {
+    "headroom_mw": null,
+    "capacity_mw": 207.3,
+    "max_demand_mw": null,
+    "source": "NGED GSP Technical Limits (import TL only, no demand data)",
+    "quality": "technical_limit_only",
+    "dno": "NGED",
+    "raw_name": "West Burton"
+  },
+  "west ham": {
+    "headroom_mw": 526.3,
+    "capacity_mw": 960.5,
+    "max_demand_mw": 434.2,
+    "source": "UKPN LTDS Table 3a (firm capacity, N-1 security standard)",
+    "quality": "direct_headroom",
+    "dno": "UKPN",
+    "raw_name": "West Ham"
+  },
+  "west melton section": {
+    "headroom_mw": 124.3,
+    "capacity_mw": 360.0,
+    "max_demand_mw": 212.0,
+    "source": "Northern Powergrid GSP Heatmap (direct demand headroom)",
+    "quality": "direct_headroom",
+    "dno": "NPG",
+    "raw_name": "West Melton Section 3"
+  },
+  "west melton thorpe marsh": {
+    "headroom_mw": 0.0,
+    "capacity_mw": 360.0,
+    "max_demand_mw": 381.0,
+    "source": "Northern Powergrid GSP Heatmap (direct demand headroom)",
+    "quality": "direct_headroom",
+    "dno": "NPG",
+    "raw_name": "West Melton / Thorpe Marsh"
+  },
+  "west thurrock": {
+    "headroom_mw": 27.3,
+    "capacity_mw": 58.0,
+    "max_demand_mw": 30.7,
+    "source": "UKPN LTDS Table 3a (firm capacity, N-1 security standard)",
+    "quality": "direct_headroom",
+    "dno": "UKPN",
+    "raw_name": "West Thurrock"
+  },
+  "west weybridge": {
+    "headroom_mw": 318.8,
+    "capacity_mw": 985.1,
+    "max_demand_mw": 666.3,
+    "source": "UKPN LTDS Table 3a (firm capacity, N-1 security standard)",
+    "quality": "direct_headroom",
+    "dno": "UKPN",
+    "raw_name": "West Weybridge"
+  },
+  "westfield": {
+    "headroom_mw": 34.8,
+    "capacity_mw": 65.0,
+    "max_demand_mw": 30.2,
+    "source": "SPEN SPD Substation Utilisation 2024 \u2014 Westfield",
+    "quality": "direct_headroom",
+    "dno": "SPEN SPD",
+    "raw_name": "Westfield"
+  },
+  "willenhall": {
+    "headroom_mw": null,
+    "capacity_mw": 113.2,
+    "max_demand_mw": null,
+    "source": "NGED GSP Technical Limits (import TL only, no demand data)",
+    "quality": "technical_limit_only",
+    "dno": "NGED",
+    "raw_name": "Willenhall"
+  },
+  "willesden": {
+    "headroom_mw": 140.4,
+    "capacity_mw": 242.2,
+    "max_demand_mw": 101.8,
+    "source": "UKPN LTDS Table 3a (firm capacity, N-1 security standard)",
+    "quality": "direct_headroom",
+    "dno": "UKPN",
+    "raw_name": "Willesden"
+  },
+  "willesden 132": {
+    "headroom_mw": 543.1,
+    "capacity_mw": null,
+    "max_demand_mw": 176.9,
+    "source": "UKPN GSP Overview (asset limit proxy)",
+    "quality": "asset_limit_proxy",
+    "dno": "UKPN",
+    "raw_name": "WILLESDEN 132"
+  },
+  "willesden 132kv": {
+    "headroom_mw": 193.3,
+    "capacity_mw": 336.8,
+    "max_demand_mw": 143.5,
+    "source": "UKPN LTDS Table 3a (firm capacity, N-1 security standard)",
+    "quality": "direct_headroom",
+    "dno": "UKPN",
+    "raw_name": "Willesden 132kV"
+  },
+  "willesden 66": {
+    "headroom_mw": 249.5,
+    "capacity_mw": null,
+    "max_demand_mw": 110.5,
+    "source": "UKPN GSP Overview (asset limit proxy)",
+    "quality": "asset_limit_proxy",
+    "dno": "UKPN",
+    "raw_name": "WILLESDEN 66"
+  },
+  "willesden grid 66 kv": {
+    "headroom_mw": 44.0,
+    "capacity_mw": 113.7,
+    "max_demand_mw": 69.7,
+    "source": "UKPN LTDS Table 3a (firm capacity, N-1 security standard)",
+    "quality": "direct_headroom",
+    "dno": "UKPN",
+    "raw_name": "Willesden Grid 66 kV"
+  },
+  "willington": {
+    "headroom_mw": null,
+    "capacity_mw": 0.0,
+    "max_demand_mw": null,
+    "source": "NGED GSP Technical Limits (import TL only, no demand data)",
+    "quality": "technical_limit_only",
+    "dno": "NGED",
+    "raw_name": "Willington"
+  },
+  "willowdale": {
+    "headroom_mw": 34.9,
+    "capacity_mw": 60.0,
+    "max_demand_mw": 25.1,
+    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
+    "quality": "nameplate_proxy",
+    "dno": "SSEN",
+    "raw_name": "Willowdale"
+  },
+  "wimbledon 1&2 132kv": {
+    "headroom_mw": 92.8,
+    "capacity_mw": 335.8,
+    "max_demand_mw": 243.0,
+    "source": "UKPN LTDS Table 3a (firm capacity, N-1 security standard)",
+    "quality": "direct_headroom",
+    "dno": "UKPN",
+    "raw_name": "Wimbledon 1&2 132kV"
+  },
+  "wimbledon 12": {
+    "headroom_mw": -70.7,
+    "capacity_mw": null,
+    "max_demand_mw": 250.7,
+    "source": "UKPN GSP Overview (asset limit proxy)",
+    "quality": "asset_limit_proxy",
+    "dno": "UKPN",
+    "raw_name": "WIMBLEDON 1&2"
+  },
+  "wimbledon 3&4 132kv": {
+    "headroom_mw": 713.7,
+    "capacity_mw": 1614.2,
+    "max_demand_mw": 900.5,
+    "source": "UKPN LTDS Table 3a (firm capacity, N-1 security standard)",
+    "quality": "direct_headroom",
+    "dno": "UKPN",
+    "raw_name": "Wimbledon 3&4 132kV"
+  },
+  "wimbledon 34": {
+    "headroom_mw": 213.0,
+    "capacity_mw": null,
+    "max_demand_mw": 507.0,
+    "source": "UKPN GSP Overview (asset limit proxy)",
+    "quality": "asset_limit_proxy",
+    "dno": "UKPN",
+    "raw_name": "WIMBLEDON 3&4"
+  },
+  "wincobank": {
+    "headroom_mw": 73.2,
+    "capacity_mw": 120.0,
+    "max_demand_mw": 32.0,
+    "source": "Northern Powergrid GSP Heatmap (direct demand headroom)",
+    "quality": "direct_headroom",
+    "dno": "NPG",
+    "raw_name": "Wincobank"
+  },
+  "woodhill": {
+    "headroom_mw": 55.2,
+    "capacity_mw": 90.0,
+    "max_demand_mw": 34.8,
+    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
+    "quality": "nameplate_proxy",
+    "dno": "SSEN",
+    "raw_name": "Woodhill"
+  },
+  "wymondley": {
+    "headroom_mw": 300.6,
+    "capacity_mw": 757.0,
+    "max_demand_mw": 456.4,
+    "source": "UKPN LTDS Table 3a (firm capacity, N-1 security standard)",
+    "quality": "direct_headroom",
+    "dno": "UKPN",
+    "raw_name": "Wymondley"
+  }
+}

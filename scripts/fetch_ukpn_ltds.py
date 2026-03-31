@@ -89,10 +89,20 @@ def fetch_via_api(api_key: str) -> list[dict]:
 
 
 def load_from_csv(filepath: str) -> list[dict]:
-    """Load records from a manually downloaded CSV file."""
+    """Load records from a manually downloaded CSV file.
+
+    Normalises column names to lowercase with underscores so they match the
+    API field names expected by process_records():
+      GridSupplyPoint  → gridsupplypoint
+      Firm_Capacity_MW → firm_capacity_mw
+      Season           → season   (etc.)
+    """
+    def _norm(key: str) -> str:
+        return key.strip().lower().replace(" ", "_")
+
     records = []
     with open(filepath, encoding="utf-8-sig") as f:
-        # OpenDataSoft CSVs use semicolon delimiter
+        # OpenDataSoft CSVs use semicolon delimiter; direct downloads use comma
         dialect = "excel" if "," in f.read(500) else None
         f.seek(0)
         if dialect:
@@ -100,7 +110,7 @@ def load_from_csv(filepath: str) -> list[dict]:
         else:
             reader = csv.DictReader(f, delimiter=";")
         for row in reader:
-            records.append(dict(row))
+            records.append({_norm(k): v for k, v in row.items()})
     print(f"Loaded {len(records):,} rows from {filepath}")
     return records
 
