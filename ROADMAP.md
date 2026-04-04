@@ -121,6 +121,42 @@ Approach route:     Known institutional — BD channel recommended
 
 **Cost consideration:** Live HMLR queries at £3/title — consider whether to gate behind a "Request owner data" button to avoid accidental cost at scale.
 
+### Feature 9: Planning application monitoring
+**Goal**: Alert users when planning applications are submitted near scored parcels — particularly from hyperscalers (Amazon, Microsoft, Google, Stack) or major DC developers. Replaces the need for a £2k/month ProPSearch subscription.
+
+**What to show:**
+- Recent planning applications within X km of a parcel, filterable by applicant name / keyword ("data centre", "data hall", "hyperscale")
+- Application stage: outline / detailed / permitted / refused
+- Applicant name — signals which operators are moving in a given area
+- "Competitor activity" tag on parcels where a major player has submitted nearby
+
+**Data source**: planning.data.gov.uk planning applications API (free, national coverage, updated daily). Filterable by description keyword, applicant, geometry, date range.
+
+**Build approach:**
+- Nightly or on-demand fetch of recent DC-related planning applications into `data/planning_applications.json`
+- Spatial index: for each application, find parcels within 10km
+- In detail panel: "Nearby planning activity" section listing relevant applications with links to LPA portal
+- Optional: email alert when a new application matches a saved search area
+
+**Why it matters**: Stage of application tells you how far along a competitor is — outline planning means they've decided on the site; detailed means they're close to building. Early-stage applications (pre-app, outline) are the most valuable intelligence.
+
+---
+
+### Feature 10: Behind-the-meter power scoring enhancement
+**Goal**: Sites with existing HV infrastructure on-site (former power stations, substations, EfW plants, industrial sites with private wire) are categorically different from grid-dependent sites. Surface this in the scoring and detail panel.
+
+**Current gap**: A site 500m from a 400kV substation with an existing 132kV transformer on-site scores the same as one with no on-site infrastructure. In reality the latter is a materially faster, cheaper connection.
+
+**What to add:**
+- OSM tag detection: `power=substation`, `power=plant`, `power=transformer` within or adjacent to parcel boundary → flag as "existing HV infrastructure"
+- Former power station classification: `power=plant` + `plant:source=coal/gas/nuclear` → "former power station" badge, significant scoring bonus
+- Private wire detection: existing generation assets (solar farm, wind, EfW, CHP) within 1km → flag as behind-the-meter generation potential
+- Score bonus: sites with on-site HV infrastructure get +10–20 points on the power dimension
+
+**Data source**: OSM power layer (already loaded as `uk_powerlines.geojson` — extend to include plant/substation polygons).
+
+---
+
 ### Feature 8: Land value estimation
 **Goal**: Show an indicative land acquisition cost range per parcel with full transparency on how the figure was derived — same approach as connection cost estimates.
 

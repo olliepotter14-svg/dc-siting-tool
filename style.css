@@ -598,6 +598,59 @@ select:hover {
   align-self: center;
 }
 
+/* ── BTM (behind-the-meter) HV badge ─────────────────────────── */
+.btm-inline-badge {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--cyan);
+  background: var(--cyan-glow);
+  border: 1px solid var(--border-hi);
+  border-radius: 20px;
+  padding: 1px 7px;
+  margin-left: 6px;
+  vertical-align: middle;
+  letter-spacing: 0.02em;
+}
+
+.detail-btm {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  background: rgba(0, 229, 255, 0.08);
+  border: 1px solid rgba(0, 229, 255, 0.25);
+  border-radius: var(--radius);
+  padding: 10px 12px;
+  margin-top: 14px;
+}
+
+.btm-icon { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
+
+.btm-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--cyan);
+  margin-bottom: 3px;
+}
+
+.btm-sub {
+  font-size: 11px;
+  color: var(--text-mid);
+  line-height: 1.4;
+}
+
+.btm-bonus {
+  flex-shrink: 0;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--cyan);
+  background: var(--cyan-glow);
+  border: 1px solid var(--border-hi);
+  border-radius: 20px;
+  padding: 2px 8px;
+  align-self: center;
+}
+
 .detail-coming-soon {
   background: var(--cyan-faint);
   border: 1px dashed var(--border-hi);

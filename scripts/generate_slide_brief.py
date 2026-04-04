@@ -77,6 +77,22 @@ def body(doc, text, bold=False, italic=False, size=10):
     return p
 
 
+def bullet(doc, bold_text, detail_text=""):
+    """Bullet point: bold key takeaway + regular supporting sentence."""
+    p = doc.add_paragraph(style="List Bullet")
+    run_b = p.add_run(bold_text)
+    run_b.font.bold = True
+    run_b.font.size = Pt(10)
+    run_b.font.color.rgb = BLACK
+    if detail_text:
+        run_d = p.add_run(" " + detail_text)
+        run_d.font.bold = False
+        run_d.font.size = Pt(10)
+        run_d.font.color.rgb = BLACK
+    p.paragraph_format.space_after = Pt(4)
+    return p
+
+
 def callout(doc, text):
     """Amber-highlighted callout paragraph."""
     p = doc.add_paragraph()
@@ -164,82 +180,127 @@ def main():
     section_divider(doc)
 
     # ══════════════════════════════════════════════════════════════
-    # SLIDE 1: THREE OUTCOMES — HORMOZI STYLE
+    # SLIDE 1: OUTCOMES — TWO LEVELS
     # ══════════════════════════════════════════════════════════════
     hd1(doc, "SLIDE 1: What the Tool Does")
-    hd2(doc, "Three outcomes DC operators get from day one")
 
-    # ── Outcome 1 ──
-    hd3(doc, "1.  Your team spends six weeks building a shortlist. This builds the same one before lunch.")
+    # ── ORGANISATIONAL OUTCOMES ──────────────────────────────────
+    hd2(doc, "For the organisation — proprietary ability to secure high-power land faster")
 
     body(doc, (
-        "Manual site screening for a 100MW data centre currently takes a team of two, four to eight weeks. "
-        "They're pulling NESO TEC queue registers, DNO headroom portals, EA flood maps, planning databases, "
-        "and OS land parcel records — from different sources, in different formats, at different update frequencies. "
-        "They're building a patchwork. And at the end of it, they might have 20 sites worth looking at."
+        "In the race for UK data centre sites, power is the constraint and speed is the differentiator. "
+        "The organisations that win are not the ones with the best analysts — they are the ones that identify, "
+        "option, and apply for power connections on viable sites before anyone else knows those sites exist. "
+        "That window is closing. The DC Site Finder is built to be the systematic advantage that keeps it open."
     ))
-    body(doc, (
-        "The DC Site Finder covers 63,478 UK land parcels, pre-enriched with grid, flood, fibre, planning, and "
-        "buildability data. Every parcel scored. Every filter instant. A 100MW search that takes a team two weeks "
-        "to screen manually runs in seconds and returns a ranked shortlist with full score breakdowns."
-    ))
-    callout(doc, "63,478 parcels. Four dimensions. Instant ranked output. The analysis that took weeks now takes a filter.")
+
+    org_tbl = doc.add_table(rows=1, cols=2)
+    org_tbl.style = "Table Grid"
+    table_header_row(org_tbl, ["Organisational outcome", "What it means in practice"], widths=[7, 11])
+    org_data = [
+        ("Proprietary site pipeline before competitors",
+         "Systematic scan of 63,478 UK parcels identifies optionable sites weeks before they surface "
+         "through agents or are flagged by hyperscalers. First to option is first to apply for power. "
+         "First to apply for power controls the connection queue position."),
+        ("Grid intelligence that brokers and agents don't have",
+         "The tool ingests UKPN LTDS Table 3a committed demand forecasts — data that shows which "
+         "substations are 85–92% loaded by 2030 but appear unconstrained in the TEC Register. "
+         "Competitors using standard grid reports are making decisions on wrong data."),
+        ("IC-ready deal origination, not broker-dependent sourcing",
+         "Every shortlisted site comes with an auditable score traceable to named public datasets. "
+         "No reliance on broker estimates or anecdotal grid feedback. Suitable as primary input "
+         "to investment committee analysis from day one."),
+        ("Competitive intelligence on where hyperscalers are moving",
+         "Planning application monitoring (coming F9) flags Amazon, Microsoft, Google, and Stack "
+         "applications in real time — by geography and application stage. Know which markets "
+         "are being targeted before those deals are public."),
+    ]
+    for i, row in enumerate(org_data):
+        add_table_row(org_tbl, row, alt=(i % 2 == 1), bold_first=True)
 
     doc.add_paragraph()
+    callout(doc, (
+        "The organisations that secure the best grid connections in the next 24 months will define "
+        "UK data centre geography for a decade. This is the tool for that window."
+    ))
 
-    # ── Outcome 2 ──
-    hd3(doc, "2.  Every grid report you have seen about London substations is wrong — here is why.")
+    section_divider(doc)
+
+    # ── EMPLOYEE / ANALYST OUTCOMES ──────────────────────────────
+    hd2(doc, "For the analyst — stop wasting days on sites that fail at the last hurdle")
 
     body(doc, (
-        "The most cited grid constraint measure in the UK is the NESO TEC Register. It shows near-zero queue "
-        "pressure at London substations. That is because the TEC Register counts generation connections only — "
+        "The current process is broken at the individual level. A site finder or analyst spends 90% of "
+        "their due diligence on a site — power portal checks, flood map overlays, planning searches, "
+        "fibre proximity — and then discovers a dealbreaker that was in the data all along. "
+        "Flood Zone 3. An SSSI designation. A substation that is 91% committed by 2030. "
+        "Days wasted. Deal dead. Start again."
+    ))
+
+    emp_tbl = doc.add_table(rows=1, cols=2)
+    emp_tbl.style = "Table Grid"
+    table_header_row(emp_tbl, ["Employee outcome", "What it replaces"], widths=[7, 11])
+    emp_data = [
+        ("Dealbreakers surfaced in seconds, not at the end of a week",
+         "Hard exclusions (Flood Zone 3, SSSIs, AONBs, Scheduled Monuments) are pre-applied to all "
+         "63,478 parcels. A site that would have failed after a week of manual checks is eliminated "
+         "before it is ever opened. The analyst only sees viable sites."),
+        ("One tool instead of ten portals",
+         "NESO TEC Register. UKPN LTDS. EA Flood Map. planning.data.gov.uk. ITU BBmaps. PeeringDB. "
+         "All pre-ingested, pre-processed, pre-scored. No more bouncing between portals and "
+         "building spreadsheets to manually reconcile data in different formats."),
+        ("A ranked shortlist in the time it takes to set three filters",
+         "Region. Minimum site size. Minimum composite score. The tool returns a ranked list of "
+         "matching parcels with full score breakdowns — power, permissioning, fibre, buildability. "
+         "A 100MW shortlist that took two weeks to build manually is produced before lunch."),
+        ("Scores you can defend, not gut feel you have to justify",
+         "Every sub-score traces back to its source dataset. Power score → LTDS Table 3a row. "
+         "Flood exclusion → EA polygon. Fibre score → ITU route segment. When a senior decision-maker "
+         "or IC asks how you arrived at a site, the answer is a named public dataset, not 'desk research'."),
+    ]
+    for i, row in enumerate(emp_data):
+        add_table_row(emp_tbl, row, alt=(i % 2 == 1), bold_first=True)
+
+    doc.add_paragraph()
+    callout(doc, (
+        "The tool does not replace judgement. It eliminates the work that was never worth doing in the first place."
+    ))
+
+    section_divider(doc)
+
+    # ── GRID INTELLIGENCE CALLOUT ────────────────────────────────
+    hd2(doc, "The grid picture everyone else is using is wrong")
+
+    body(doc, (
+        "The NESO TEC Register — the most cited grid constraint measure in the UK — shows near-zero queue "
+        "pressure at London substations. That is because the TEC Register counts generation connections only: "
         "wind farms, batteries, power stations. No generators connect in Mayfair. So London looks unconstrained."
     ))
     body(doc, (
-        "London is not unconstrained. It is running at 85–92% committed utilisation by 2030, once you include "
-        "the demand connections — the hyperscalers, rail operators, and EV charging networks that have already "
-        "contracted connections but haven't been built yet. That data lives in UKPN LTDS Table 3a. "
-        "We ingest it, and we show you what the committed pipeline actually looks like."
+        "London is not unconstrained. It is running at 85–92% committed utilisation by 2030 once you "
+        "include demand connections — the hyperscalers, rail operators, and EV charging networks that have "
+        "already contracted connections but not yet been built. That data lives in UKPN LTDS Table 3a. "
+        "The DC Site Finder ingests it."
     ))
 
-    # Mini table: key London substations
     tbl = doc.add_table(rows=1, cols=4)
     tbl.style = "Table Grid"
     tbl.alignment = WD_TABLE_ALIGNMENT.LEFT
     table_header_row(tbl, ["Substation", "Firm Capacity", "Current Util.", "2030 Committed Util."],
                      widths=[4.5, 3.5, 3.5, 4.5])
-    data = [
+    london_data = [
         ("Wimbledon", "108 MW", "~55%", "85.6% — CONSTRAINED"),
         ("Barking 132kV", "84 MW", "~65%", "91.7% — CONSTRAINED"),
         ("St Johns Wood", "464 MW", "~42%", "59.6% — AMBER"),
         ("City Road", "980 MW", "~24%", "41.8% — AVAILABLE"),
     ]
-    for i, row in enumerate(data):
+    for i, row in enumerate(london_data):
         add_table_row(tbl, row, alt=(i % 2 == 1), bold_first=True)
 
     doc.add_paragraph()
     callout(doc, (
-        "Wimbledon: 85.6% committed by 2030. Barking: 91.7%. That is not in any broker report. "
-        "It is in the LTDS. We read the LTDS."
-    ))
-    doc.add_paragraph()
-
-    # ── Outcome 3 ──
-    hd3(doc, "3.  Every number traces to a named public dataset. Take it to investment committee.")
-
-    body(doc, (
-        "Most site shortlists are built on qualitative judgement — broker estimates, anecdotal grid feedback, "
-        "manual planning checks. They cannot be audited. They cannot be reproduced. And they create risk when "
-        "the IC asks how you arrived at a number."
-    ))
-    body(doc, (
-        "Every score in the DC Site Finder derives from a named, publicly available dataset with documented "
-        "methodology. A site's power score traces back to its LTDS Table 3a row. Its flood exclusion traces "
-        "back to the EA flood map polygon. Its fibre score traces back to the ITU BBmaps route segment. "
-        "134 substations scored. 6 DNOs covered. No qualitative adjustments. No black boxes."
-    ))
-    callout(doc, (
-        "Suitable as the primary data input to investment committee analysis — not just an internal screening exercise."
+        "Wimbledon: 85.6% committed by 2030. Barking: 91.7%. "
+        "That is not in any broker report. It is in the LTDS. We read the LTDS."
     ))
 
     section_divider(doc)
@@ -491,6 +552,267 @@ def main():
     section_divider(doc)
 
     # ══════════════════════════════════════════════════════════════
+    # TOP 10 SITES — DETAILED ANALYSIS
+    # ══════════════════════════════════════════════════════════════
+    hd1(doc, "Top 10 Sites — Detailed Analysis (100MW)")
+
+    body(doc, (
+        "The following sites represent the highest-scoring land parcels from the DC Site Finder at a 100MW "
+        "campus requirement. Each has been independently researched against publicly available sources. "
+        "Where material changes have occurred since scoring (ownership changes, planning decisions, "
+        "competing use commitments), these are flagged explicitly. All composite scores are as computed "
+        "by the tool's four-factor model (Power 40%, Permissioning 30%, Fibre 20%, Buildability 10%)."
+    ), italic=True)
+
+    doc.add_paragraph()
+
+    # ── SITE 1 ────────────────────────────────────────────────────
+    hd2(doc, "1.  Carrington Energy Zone, Trafford, Greater Manchester")
+
+    # Summary bar
+    meta_tbl = doc.add_table(rows=1, cols=5)
+    meta_tbl.style = "Table Grid"
+    table_header_row(meta_tbl,
+                     ["Composite score", "Area", "Site type", "Region", "Nearest substation"],
+                     widths=[3.5, 2.5, 3, 3.5, 5.5])
+    add_table_row(meta_tbl, ["89.7 / 100", "266 acres", "Industrial", "North West", "Carrington 400kV (1.6km)"])
+
+    doc.add_paragraph()
+    bullet(doc, "Already a committed hyperscale cluster in formation, not a latent opportunity.",
+           "Eclipse Power Optimise and Carlton Power signed a Joint Development Agreement in 2025 for Future Point Manchester — an energy park specifically designed for hyperscale DC development, actively marketing to operators as of mid-2025.")
+    bullet(doc, "A 1.4GW bilateral private grid connection has been secured for 2028 with no upstream reinforcement required.",
+           "This bypasses the multi-year queue problem that constrains virtually every other large UK site — an exceptional position that cannot be replicated at most comparable locations.")
+    bullet(doc, "The on-site power cluster is unmatched in the UK outside London.",
+           "The National Grid 400kV Carrington substation serves an 884MW ESB CCGT (commissioned 2016), a 680MW Statera BESS (planning secured, energisation target 2026), a £300M Highview liquid air energy storage project, and 500MW+ of planned low-carbon generation within the Future Point energy park.")
+    bullet(doc, "Peel Land & Property is the dominant landowner across the wider 2,800-acre Carrington allocation.",
+           "Trafford Council is leading an active masterplan process targeting 350,000 sqm of employment space. A prerequisite £130M Carrington Relief Road is in planning (2026), designed by Amey/Balfour Beatty.")
+    bullet(doc, "The tool independently identified this geography as #1 before the market formalised around it.",
+           "The scoring model's power weighting correctly surfaced the Carrington 400kV cluster — a validation of the methodology's ability to find signal ahead of public announcements.")
+
+    doc.add_paragraph()
+
+    # ── SITE 2 ────────────────────────────────────────────────────
+    hd2(doc, "2.  Port of Southampton — Eastern Docks Industrial Area")
+
+    meta_tbl2 = doc.add_table(rows=1, cols=5)
+    meta_tbl2.style = "Table Grid"
+    table_header_row(meta_tbl2,
+                     ["Composite score", "Area", "Site type", "Region", "Nearest substation"],
+                     widths=[3.5, 2.5, 3, 3.5, 5.5])
+    add_table_row(meta_tbl2, ["89.2 / 100", "605 acres", "Industrial", "South East", "Nursling 400kV (4.7km)"])
+
+    doc.add_paragraph()
+    bullet(doc, "ABP's Port Master Plan 2016–2035 is focused on expanding port capacity, not enabling change of use — making DC development on the core port estate unlikely without ABP's active cooperation.",
+           "Southampton City Council's planning policy is strongly protective of port and industrial land; no data centre announcements or applications have been made on the port estate as of March 2026.")
+    bullet(doc, "The Nursling 400kV Grid Supply Point 4.7km away is the principal attraction, not the port land itself.",
+           "National Grid refurbished the entire Mannington-to-Nursling 400kV overhead line (115 pylons, originally 1966). Pivot Power received Test Valley BC approval for a 50MW BESS directly adjacent to the substation; BW ESS has consent for a grid-scale BESS at ABP's Marchwood Industrial Park.")
+    bullet(doc, "Active grid investment in the Nursling corridor confirms this as a high-priority connection point, not a legacy asset.",
+           "Two separate BESS projects with 400kV direct connections approved within 5km of the substation signals continued DNO investment in this grid node.")
+    bullet(doc, "No local IXP in Southampton limits this location for colocation or wholesale deployments where carrier diversity matters.",
+           "The nearest major internet exchanges are in London, accessed via national dark fibre along the M3 corridor — adequate for enterprise but limiting for carrier-neutral hosting.")
+    callout(doc, (
+        "Constraint flag: The Nursling Industrial Estate (Site 8 below) is the more actionable opportunity "
+        "in this geography — closer to the substation, institutional ownership, no port land use protection. "
+        "Port of Southampton scores on size and grid proximity; the acquisition route is through adjacent "
+        "industrial land, not the ABP-controlled port estate."
+    ))
+
+    doc.add_paragraph()
+
+    # ── SITE 3 ────────────────────────────────────────────────────
+    hd2(doc, "3.  Ratcliffe-on-Soar Power Station, Nottinghamshire")
+
+    meta_tbl3 = doc.add_table(rows=1, cols=5)
+    meta_tbl3.style = "Table Grid"
+    table_header_row(meta_tbl3,
+                     ["Composite score", "Area", "Site type", "Region", "Nearest substation"],
+                     widths=[3.5, 2.5, 3, 3.5, 5.5])
+    add_table_row(meta_tbl3, ["87.7 / 100", "276 acres", "Brownfield", "East Midlands", "Ratcliffe-on-Soar 400kV (0.35km)"])
+
+    doc.add_paragraph()
+    bullet(doc, "The 400kV and 132kV substations remain on-site through decommissioning, separately owned by National Grid and not part of the Uniper demolition programme.",
+           "Uniper's planning documentation confirms 'existing energy infrastructure in place' with grid connections, demineralised water, and cooling water systems as retained infrastructure assets. The substation is just 350 metres from the parcel centroid — near-minimal connection cost.")
+    bullet(doc, "Rushcliffe Borough Council's November 2025 Cabinet report formally proposed amending the LDO to explicitly permit data centre uses on the southern portion of the site.",
+           "The report cited 'the rapid evolution of AI technology and the critical importance that the UK Government is placing on provision of data centres.' A full LDO review is scheduled for summer 2026 with DC uses expected to be formally incorporated.")
+    bullet(doc, "The existing LDO (adopted July 2023, developed with Arup) already permits 810,000 sqm across advanced manufacturing, logistics, and R&D without individual planning consents.",
+           "This is the fastest consent route of any brownfield DC site in the UK — no application, no determination, no appeal risk. DC uses are one Cabinet decision away from being added.")
+    bullet(doc, "East Midlands Freeport designation provides business rates relief, enhanced capital allowances, and streamlined customs procedures for eligible occupiers.",
+           "Adjacent East Midlands Parkway station connects to HS2, providing future high-speed rail access. The £330M EMERGE energy-from-waste facility has planning approval, adding potential waste-heat and behind-the-meter energy supply to the site.")
+    callout(doc, (
+        "Best-in-class former power station opportunity. On-site 400kV grid, streamlined LDO consent "
+        "pathway, Freeport tax incentives, HS2 adjacency, and active council engagement with data "
+        "centre operators — all confirmed by primary sources. The November 2025 LDO amendment is "
+        "the clearest public signal of intent of any UK former power station site."
+    ))
+
+    doc.add_paragraph()
+
+    # ── SITE 4 ────────────────────────────────────────────────────
+    hd2(doc, "4.  Sowton Industrial Estate, Exeter, Devon")
+
+    meta_tbl4 = doc.add_table(rows=1, cols=5)
+    meta_tbl4.style = "Table Grid"
+    table_header_row(meta_tbl4,
+                     ["Composite score", "Area", "Site type", "Region", "Nearest substation"],
+                     widths=[3.5, 2.5, 3, 3.5, 5.5])
+    add_table_row(meta_tbl4, ["87.7 / 100", "228 acres", "Industrial", "South West", "Exeter 400kV (3.6km)"])
+
+    doc.add_paragraph()
+    bullet(doc, "Sowton already has a proven data centre precedent — SWComms (now Focus Group) has operated a 600+ cabinet facility at Moor Lane since 2001, with multi-carrier redundancy and chilled water cooling.",
+           "A second former DC at 9 Apple Lane (19,645 sq ft, 2.5MVA) was marketed at £2.95M in 2023, confirming both planning precedent and commercial demand for DC use within the estate.")
+    bullet(doc, "The Exeter 400kV substation upgrade began October 2025 — explicitly designed to 'increase voltage control capability in anticipation of future demand growth'.",
+           "Envolve Infrastructure on behalf of National Grid is replacing two transformers (SCT and EAT), commissioning through winter 2025/26. This is a direct forward-looking grid investment signal for this location.")
+    bullet(doc, "Co-ownership by Devon County Council and Exeter City Council provides a public sector engagement route for large occupiers seeking a long-term leasehold.",
+           "Stoford's long-term agreement with the Church Commissioners to unlock ~500,000 sq ft at the adjacent Exeter Logistics Park confirms continued institutional investment appetite in the M5 corridor.")
+    bullet(doc, "No local IXP in Exeter limits wholesale or carrier-neutral DC deployments — the nearest major exchange is LINX Bristol.",
+           "Dark fibre routes to London and Bristol are available via national carriers, but the absence of an Exeter-specific internet exchange is the binding connectivity constraint for any multi-tenant colocation use case.")
+
+    doc.add_paragraph()
+
+    # ── SITE 5 ────────────────────────────────────────────────────
+    hd2(doc, "5.  West Burton Industrial Area, Nottinghamshire")
+
+    meta_tbl5 = doc.add_table(rows=1, cols=5)
+    meta_tbl5.style = "Table Grid"
+    table_header_row(meta_tbl5,
+                     ["Composite score", "Area", "Site type", "Region", "Nearest substation"],
+                     widths=[3.5, 2.5, 3, 3.5, 5.5])
+    add_table_row(meta_tbl5, ["87.7 / 100", "443 acres", "Industrial", "Yorkshire / E. Midlands", "West Burton 400kV (0.8km)"])
+
+    doc.add_paragraph()
+    bullet(doc, "West Burton 400kV substation is an active, high-capacity transmission node — a 480MW solar farm received a Development Consent Order in January 2025 with its grid connection routed here.",
+           "Keadby-to-West-Burton overhead line reconductoring completed November 2024. West Burton B (1,332MW CCGT, TotalEnergies) remains operational with active capacity market contracts, and 500MW BESS planning permission has been secured.")
+    bullet(doc, "West Burton A (159ac, Site 14 in the dataset) is committed to the UK's first prototype fusion power plant — the STEP programme received £2.5B government commitment and cannot be considered for data centre use.",
+           "In March 2026, the ILIOS consortium (Kier Group, Nuvia, BAM Nuttall, AECOM, Turner & Townsend) was appointed to lead a £200M redevelopment of West Burton A. Public consultation ran January to March 2026; first fusion operations targeted early 2040s.")
+    bullet(doc, "The 443ac industrial parcel scored here is adjacent to but legally distinct from the West Burton A site — availability and ownership require direct verification.",
+           "Any DC proposal in this area would need to navigate the STEP programme's planning protections, security perimeter requirements, and designation as nationally significant infrastructure.")
+    callout(doc, (
+        "Intelligence flag: West Burton A (159ac, ranked #14) is committed to STEP fusion. "
+        "The 443ac industrial parcel is a separate but adjacent site — ownership and availability "
+        "to be verified. Score reflects genuine grid advantage; STEP commitment is a material "
+        "complication for any proposal in this area."
+    ))
+
+    doc.add_paragraph()
+
+    # ── SITE 6 ────────────────────────────────────────────────────
+    hd2(doc, "6.  Swansea West Business Park / Swansea Vale, South Wales")
+
+    meta_tbl6 = doc.add_table(rows=1, cols=5)
+    meta_tbl6.style = "Table Grid"
+    table_header_row(meta_tbl6,
+                     ["Composite score", "Area", "Site type", "Region", "Nearest substation"],
+                     widths=[3.5, 2.5, 3, 3.5, 5.5])
+    add_table_row(meta_tbl6, ["87.0 / 100", "210 acres", "Industrial", "Wales", "Swansea North 400kV (4.7km)"])
+
+    doc.add_paragraph()
+    bullet(doc, "South Wales AI Growth Zone (designated autumn 2025) targets £10B investment and 1GW+ of data centre capacity — with Welsh Government fast-track planning averaging 28 days for major infrastructure decisions.",
+           "Vantage Data Centers has already purchased the former Ford Bridgend factory (158 acres) and received outline planning consent for a 10-building campus with 3 substations, construction beginning 2026. Microsoft has also confirmed South Wales involvement.")
+    bullet(doc, "Swansea North 400kV GIS substation is a modern installation using Mitsubishi Electric equipment — more capable and compact than legacy open-air substations elsewhere.",
+           "GIS technology was commissioned specifically to transfer demand from the legacy 275kV infrastructure in response to rising 132kV demand, indicating a forward-looking grid investment cycle.")
+    bullet(doc, "Both parks are managed directly by Swansea Council — a public sector counterparty that provides a straightforward, single-point engagement route for a large occupier.",
+           "DVLA, ERS Insurance, and Western Power Distribution are confirmed occupiers at Swansea Vale, demonstrating government-grade occupier tolerance and planning precedent for large institutional uses.")
+    bullet(doc, "Swansea sits 25–40km west of current Bridgend/Newport activity — lower land competition and earlier-stage opportunity, at the cost of slightly less established developer attention.",
+           "Welsh Government support and Growth Zone fast-track benefits apply across South Wales, but the immediate concentration of hyperscaler and developer activity is further east. For an operator seeking lower competition with the same regulatory advantages, Swansea is the credible position.")
+
+    doc.add_paragraph()
+
+    # ── SITE 7 ────────────────────────────────────────────────────
+    hd2(doc, "7.  Littlebrook Manorway, Dartford, Kent")
+
+    meta_tbl7 = doc.add_table(rows=1, cols=5)
+    meta_tbl7.style = "Table Grid"
+    table_header_row(meta_tbl7,
+                     ["Composite score", "Area", "Site type", "Region", "Nearest substation"],
+                     widths=[3.5, 2.5, 3, 3.5, 5.5])
+    add_table_row(meta_tbl7, ["86.1 / 100", "166 acres", "Industrial", "London & South East", "Littlebrook 400kV (1.7km)"])
+
+    doc.add_paragraph()
+    bullet(doc, "The new Littlebrook 400kV substation was commissioned in April 2024 — one of the most significant recent transmission investments in the South East — designed to transmit 2GW of low-carbon electricity.",
+           "Built by Balfour Beatty and GE Vernova replacing a 1977-era installation, it uses next-generation SF₆-free switchgear. It draws from IFA2, ElecLink, North Sea Link, and Thames Estuary offshore wind into approximately 1.5 million homes.")
+    bullet(doc, "Thames Estuary Growth Board commissioned Buro Happold to conduct a dedicated data centre study for the region, explicitly naming the Littlebrook 400kV substation as the defining grid asset for future DC development.",
+           "Custodian Data Centres opened a 10MW facility at Crossways Business Park, Dartford in Q2 2022. NTT, VIRTUS, and Kao Data operate large facilities in the wider M25/London orbital, confirming Dartford's role as an active secondary DC corridor.")
+    bullet(doc, "The 166-acre Manorway parcel itself is substantially committed — Amazon's 2.3M sqft 'Mega Box', an IKEA pre-let, and Aegis Energy's EV charging hub (planning 2026) occupy or option the available land.",
+           "The DC opportunity is the new 2GW substation and adjacent industrial land with direct connection access — not the Manorway parcel as scored. Acquisition requires identifying available land within 2km of the substation.")
+    callout(doc, (
+        "The tool's score reflects the grid proximity accurately; a direct acquisition approach would "
+        "require identifying adjacent industrial land with connection access to the new substation. "
+        "Dartford at the M25/M2 intersection is an increasingly competitive alternative to the "
+        "congested Slough/Hayes/M4 cluster — 15 miles from Central London."
+    ))
+
+    doc.add_paragraph()
+
+    # ── SITE 8 ────────────────────────────────────────────────────
+    hd2(doc, "8.  Nursling Industrial Estate, Southampton, Hampshire")
+
+    meta_tbl8 = doc.add_table(rows=1, cols=5)
+    meta_tbl8.style = "Table Grid"
+    table_header_row(meta_tbl8,
+                     ["Composite score", "Area", "Site type", "Region", "Nearest substation"],
+                     widths=[3.5, 2.5, 3, 3.5, 5.5])
+    add_table_row(meta_tbl8, ["88.7 / 100", "85 acres", "Industrial", "South East", "Nursling 400kV (1.3km)"])
+
+    doc.add_paragraph()
+    bullet(doc, "Scores 88.7 at only 85 acres — above several much larger sites — because the Nursling 400kV Grid Supply Point is just 1.3km away, the closest substation proximity of any South of England site in the top 10.",
+           "National Grid has refurbished the entire Mannington-to-Nursling 400kV overhead line (115 pylons, originally 1966). Pivot Power (EDF) received Test Valley BC approval for a 50MW BESS with direct 400kV transmission connection on National Grid land adjacent to the substation.")
+    bullet(doc, "Indurent — Blackstone-backed, formed July 2024 from Industrials REIT and St. Modwen Logistics — is the dominant institutional owner of the estate.",
+           "Blackstone's institutional ownership profile means a single counterparty for any large occupier discussion, with the capital backing to structure non-standard long-term leasehold arrangements. Indurent 135 (135,617 sq ft, BREEAM Outstanding, EPC A+) was recently completed.")
+    bullet(doc, "No data centre announcements as of March 2026 — this site is ahead of the market, not already committed.",
+           "Southampton's DC market is thin (one commercial facility on DatacenterMap). No competing DC applications in the planning system. First-mover advantage is available to an operator willing to engage now.")
+    bullet(doc, "No local IXP is the binding connectivity constraint for carrier-neutral or multi-tenant colocation deployments.",
+           "For wholesale or enterprise DC where grid proximity is the primary factor and London latency is acceptable, the 1.3km substation distance makes Nursling one of the most actionable sites in the South of England outside the M25.")
+
+    doc.add_paragraph()
+
+    # ── SITE 9 ────────────────────────────────────────────────────
+    hd2(doc, "9.  Rugeley Power Station, Staffordshire")
+
+    meta_tbl9 = doc.add_table(rows=1, cols=5)
+    meta_tbl9.style = "Table Grid"
+    table_header_row(meta_tbl9,
+                     ["Composite score", "Area", "Site type", "Region", "Nearest substation"],
+                     widths=[3.5, 2.5, 3, 3.5, 5.5])
+    add_table_row(meta_tbl9, ["87.3 / 100", "142 acres", "Brownfield", "East Midlands", "Rugeley 400kV (1.6km)"])
+
+    doc.add_paragraph()
+    bullet(doc, "SOLD: ENGIE sold Rugeley to Vistry Group in August 2025 for a 2,300-home residential scheme — confirmed unavailable for data centre development.",
+           "Vistry's redevelopment includes 2,300 low-carbon homes, a 26-hectare Riverside Park gifted to Staffordshire Wildlife Trust, and an Academy school opened September 2025. Only 5 hectares of unspecified employment space are included.")
+    bullet(doc, "The 400kV National Grid substation remains operational and is being upgraded — National Grid is replacing and relocating the 132kV infrastructure with Stage 1 commissioning Autumn 2026 to Spring 2028.",
+           "The grid asset that drove this site's score remains relevant for any adjacent industrial land within connection range. The substation itself is not part of the Vistry residential scheme.")
+    bullet(doc, "Cannock Chase SAC and AONB within 8km is a material constraint for any high-impact industrial use in this area, independent of the residential commitment.",
+           "Any proposal within the zone of influence requires a Habitats Regulations Assessment screening. The site also straddles Cannock Chase and Lichfield District Council boundaries, adding planning coordination complexity.")
+    callout(doc, (
+        "This site should be removed from active shortlists. Rugeley power station is confirmed for "
+        "residential use. The 400kV substation remains a relevant grid asset but the site itself "
+        "is not available. Monitor for adjacent brownfield parcels within substation connection range."
+    ))
+
+    doc.add_paragraph()
+
+    # ── SITE 10 ────────────────────────────────────────────────────
+    hd2(doc, "10.  Calmore Industrial Estate, Totton, Hampshire")
+
+    meta_tbl10 = doc.add_table(rows=1, cols=5)
+    meta_tbl10.style = "Table Grid"
+    table_header_row(meta_tbl10,
+                     ["Composite score", "Area", "Site type", "Region", "Nearest substation"],
+                     widths=[3.5, 2.5, 3, 3.5, 5.5])
+    add_table_row(meta_tbl10, ["87.0 / 100", "82 acres", "Industrial", "South East", "Nursling 400kV (3.1km)"])
+
+    doc.add_paragraph()
+    bullet(doc, "Sits in the same Nursling 400kV grid catchment as Sites 2 and 8, but 3.1km from the substation versus Nursling Industrial Estate's 1.3km — the additional distance is the principal score differentiator.",
+           "The same grid fundamentals apply: Nursling 400kV GSP recently refurbished, Pivot Power 50MW BESS approved adjacent, active SSEN investment in the Hampshire distribution network.")
+    bullet(doc, "New Forest National Park boundary constrains westward expansion, but the existing estate sits outside the designated area and benefits from established industrial land use (Bucket A permissioning).",
+           "The Park boundary is a hard western limit for any scale-up — any DC development here must be contained within the existing estate footprint rather than assembled by expanding outward.")
+    bullet(doc, "Land ownership is more fragmented than Nursling — multiple industrial freeholders rather than a dominant institutional counterparty.",
+           "Assembly complexity is higher than Nursling. The principal argument for Calmore is lower cost per acre given the additional substation distance and more mixed occupier profile, not superior grid access.")
+    bullet(doc, "Best assessed as part of a coordinated Nursling substation connection strategy alongside Site 8, not as a standalone acquisition.",
+           "A developer assembling land in the Southampton grid catchment should treat Calmore and Nursling Industrial Estate as a combined opportunity — maximising parcel optionality within connection distance of the same 400kV GSP.")
+
+    section_divider(doc)
+
+    # ══════════════════════════════════════════════════════════════
     # WHAT'S BUILT — F1-F5
     # ══════════════════════════════════════════════════════════════
     hd1(doc, "What's Built — Current Feature Set")
@@ -570,14 +892,27 @@ def main():
          "HMLR INSPIRE title number lookup. Companies House integration for corporate ownership resolution. "
          "Owner classification: individual / company / REIT / public sector / overseas entity. "
          "Direct outreach routing — finds the right contact rather than just the registered owner name. "
-         "Cost: ~£3/query via HMLR API; queries run on-demand per site."),
+         "Turns site identification into actionable deal origination. Cost: ~£3/query via HMLR API."),
         ("F8 — Land value estimation",
          "Medium",
          "£/acre benchmarks by region × site type (industrial, brownfield, agricultural). "
          "VOA rateable values as capital value proxy for commercial/industrial parcels. "
          "Brownfield remediation cost range (£50k–£500k/acre depending on former use). "
-         "Planning risk flag (Low / Medium / High) based on designation, local plan policy, "
-         "and Green Belt status. Output: indicative land cost range and total site acquisition budget."),
+         "Planning risk flag (Low / Medium / High). Output: indicative land cost range in context "
+         "of total capex stack."),
+        ("F9 — Planning application monitoring",
+         "High",
+         "Alerts when planning applications are submitted near scored parcels — filterable by applicant "
+         "name and keywords ('data centre', 'data hall', 'hyperscale'). Application stage shown: "
+         "outline / detailed / permitted / refused. Identifies competitor activity by geography. "
+         "Replaces £24k/yr ProPSearch subscription. Data: planning.data.gov.uk API (free, daily updates)."),
+        ("F10 — Behind-the-meter power scoring",
+         "High",
+         "Sites with existing HV infrastructure on-site (former power stations, on-site substations, "
+         "EfW plants) are categorically faster and cheaper to connect than grid-dependent sites. "
+         "Currently scored identically — a material gap. OSM power layer detection of existing "
+         "transformers, plant, and private wire within parcel boundary. Scoring bonus of +10–20 points "
+         "on the power dimension for qualifying sites."),
     ]
 
     for i, (feat, pri, desc) in enumerate(backlog):

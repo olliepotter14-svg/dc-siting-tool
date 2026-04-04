@@ -32,11 +32,16 @@ import math
 import time
 import os
 
-PARCELS_FILE = "data/uk_industrial_parcels.geojson"
-SUBS_FILE    = "data/uk_substations.json"
-OUTPUT_FILE  = "data/uk_industrial_parcels.geojson"
+PARCELS_FILE    = "data/uk_industrial_parcels.geojson"
+SUBS_FILE       = "data/uk_substations.json"
+BTM_ASSETS_FILE = "data/uk_btm_assets.json"
+OUTPUT_FILE     = "data/uk_industrial_parcels.geojson"
 
 BEST_SUB_RADIUS_KM = 25.0   # search radius for best-sub-within-25km
+
+# ── BTM detection radii ────────────────────────────────────────────
+BTM_ON_SITE_KM  = 0.20   # ≤200m  → on_site tier
+BTM_ADJACENT_KM = 1.00   # ≤1km   → adjacent tier
 
 
 def haversine(lat1, lng1, lat2, lng2):
@@ -65,6 +70,48 @@ def distance_factor(km):
     return 0.30
 
 
+def _btm_bonus(asset_type, voltage_kv, tier):
+    """Points bonus for on-site or adjacent HV infrastructure."""
+    if tier == "on_site":
+        if asset_type == "hv_substation_132": return 15
+        if asset_type == "hv_substation_66":  return 12
+    elif tier == "adjacent":
+        if asset_type == "hv_substation_132": return 6
+        if asset_type == "hv_substation_66":  return 4
+    return 0
+
+
+def btm_detect(plat, plng, btm_assets, btm_coords):
+    """
+    Find the nearest qualifying HV asset and return bonus metadata.
+    Only considers assets within BTM_ADJACENT_KM (1km).
+
+    Returns a dict with keys: flag, type, name, dist_m, voltage_kv, tier, bonus.
+    """
+    best = {
+        "flag": False, "type": None, "name": None,
+        "dist_m": None, "voltage_kv": None, "tier": None, "bonus": 0,
+    }
+    for i, (alat, alng) in enumerate(btm_coords):
+        d_km = haversine(plat, plng, alat, alng)
+        if d_km > BTM_ADJACENT_KM:
+            continue
+        a    = btm_assets[i]
+        tier = "on_site" if d_km <= BTM_ON_SITE_KM else "adjacent"
+        bonus = _btm_bonus(a["type"], a.get("voltage_kv", 0), tier)
+        if bonus > best["bonus"]:
+            best = {
+                "flag":       True,
+                "type":       a["type"],
+                "name":       a["name"],
+                "dist_m":     round(d_km * 1000),
+                "voltage_kv": a.get("voltage_kv"),
+                "tier":       tier,
+                "bonus":      bonus,
+            }
+    return best
+
+
 def main():
     print("DC Site Finder — Power Score Enrichment (v2: best sub within 25km)")
     print("=" * 65)
@@ -87,6 +134,18 @@ def main():
         geojson = json.load(f)
     features = geojson["features"]
     print(f"Parcels loaded: {len(features):,}")
+
+    # ── Load BTM assets ───────────────────────────────────────────────
+    if os.path.exists(BTM_ASSETS_FILE):
+        with open(BTM_ASSETS_FILE) as f:
+            btm_assets = json.load(f)
+        btm_coords = [(a["lat"], a["lng"]) for a in btm_assets]
+        print(f"BTM assets loaded: {len(btm_assets)} (UKPN 66kV + 132kV)")
+    else:
+        print(f"WARNING: {BTM_ASSETS_FILE} not found — run fetch_btm_assets.py first")
+        print("         BTM bonuses will be 0 for all parcels")
+        btm_assets = []
+        btm_coords = []
 
     # ── Extract renewable plant centroids for detail panel flag ───────
     renewable_keywords = {"wind", "solar", "tidal", "wave", "offshore"}
@@ -156,6 +215,9 @@ def main():
             nearest_ren_km = min(haversine(plat, plng, rlat, rlng)
                                  for rlat, rlng in renewable_centroids)
 
+        # ── BTM detection ─────────────────────────────────────────────
+        btm = btm_detect(plat, plng, btm_assets, btm_coords)
+
         # ── Write enriched properties ─────────────────────────────────
         p = feat["properties"]
         # Nearest sub (display / backward compat)
@@ -172,10 +234,19 @@ def main():
         p["best_sub_queue_pct"]  = round(best_sub.get("real_queue_pressure_pct", 0), 1)
         p["best_sub_headroom_mva"] = best_sub.get("estimated_headroom_mva", 0)
 
-        # Power scores (from best sub, no private wire bonus in score)
-        p["power_score_20"]  = min(100, scores["20"])
-        p["power_score_50"]  = min(100, scores["50"])
-        p["power_score_100"] = min(100, scores["100"])
+        # Power scores: base + BTM bonus, capped at 100
+        p["power_score_20"]  = min(100, scores["20"]  + btm["bonus"])
+        p["power_score_50"]  = min(100, scores["50"]  + btm["bonus"])
+        p["power_score_100"] = min(100, scores["100"] + btm["bonus"])
+
+        # BTM metadata
+        p["btm_flag"]       = btm["flag"]
+        p["btm_type"]       = btm["type"]
+        p["btm_name"]       = btm["name"]
+        p["btm_dist_m"]     = btm["dist_m"]
+        p["btm_voltage_kv"] = btm["voltage_kv"]
+        p["btm_tier"]       = btm["tier"]
+        p["btm_bonus"]      = btm["bonus"]
 
         # Private wire flag for detail panel (not used in scoring)
         p["nearest_renewable_km"] = (round(nearest_ren_km, 1)

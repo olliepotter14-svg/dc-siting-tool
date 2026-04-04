@@ -51,6 +51,7 @@ const state = {
   showSubstations:  true,
   showPowerlines:   true,
   showFibreRoutes:  false,
+  showBtmAssets:    false,
   areaSearch:       false,    // list filtered to current viewport
   filters: {
     region:           "all",
@@ -229,8 +230,9 @@ map.on("load", () => {
     fetch("data/uk_substations.json?v=7").then(r => r.json()),
     fetch("data/uk_powerlines.geojson?v=7").then(r => r.json()),
     fetch("data/uk_fibre_routes.geojson?v=7").then(r => r.json()),
+    fetch("data/uk_btm_assets.json?v=1").then(r => r.json()).catch(() => []),
   ])
-  .then(([geojson, subsRaw, powerlines, fibreRoutes]) => {
+  .then(([geojson, subsRaw, powerlines, fibreRoutes, btmAssets]) => {
     setLoadingMsg("Building map layers…", "", 95);
     state.allFeatures = geojson.features;
     state.substations = Array.isArray(subsRaw) ? subsRaw
@@ -241,6 +243,7 @@ map.on("load", () => {
     refreshParcelColors();  // apply correct opacity for initial colorMode
     addPowerlineLayer(powerlines);
     addFibreRouteLayer(fibreRoutes);
+    addBtmLayer(btmAssets);
     // Small delay so the map tiles have a moment to render before overlay lifts
     setTimeout(hideLoadOverlay, 300);
   })
@@ -774,7 +777,7 @@ function showDetailPanel(props) {
     ${!props.hard_excluded && hasComposite ? `
     <div class="detail-section-title">◉ Composite score breakdown</div>
     <div class="scorecard">
-      ${scorecardBar("Power — grid access (40%)", Math.round(powerS) + " / 100", powerS)}
+      ${scorecardBar("Power — grid access (40%)", Math.round(powerS) + " / 100" + (props.btm_flag ? ` <span class="btm-inline-badge">⚡ ${props.btm_tier === "on_site" ? "On-site" : "Adjacent"} HV</span>` : ""), powerS)}
       ${scorecardBar("Permissioning (30%)", permissioningBucket(props), props.permissioning_score ?? 0)}
       ${scorecardBar("Fibre — connectivity (20%)", (() => {
         const route = props.fibre_route_km;
@@ -806,6 +809,16 @@ function showDetailPanel(props) {
         Substation: <strong>${props.nearest_sub_name ?? "—"}</strong> (${props.nearest_sub_voltage_kv ?? "—"}kV)
       </div>
     </div>
+
+    ${props.btm_flag ? `
+    <div class="detail-btm">
+      <span class="btm-icon">⚡</span>
+      <div>
+        <div class="btm-title">HV infrastructure ${props.btm_tier === "on_site" ? "on-site" : "adjacent"} · ${props.btm_voltage_kv}kV · ${props.btm_dist_m}m</div>
+        <div class="btm-sub">${props.btm_name ?? ""} — connection may be achievable via modification rather than new build, bypassing the standard queue process.</div>
+      </div>
+      <span class="btm-bonus">+${props.btm_bonus}</span>
+    </div>` : ""}
 
     ${pwBonus > 0 ? `
     <div class="detail-private-wire">
@@ -921,6 +934,11 @@ function initUI() {
       } else if (layer === "fibre") {
         state.showFibreRoutes = on;
         if (map.getLayer("fibre-routes")) map.setLayoutProperty("fibre-routes", "visibility", on ? "visible" : "none");
+      } else if (layer === "btm") {
+        state.showBtmAssets = on;
+        ["btm-ring-132", "btm-dot-132", "btm-ring-66", "btm-dot-66"].forEach(id => {
+          if (map.getLayer(id)) map.setLayoutProperty(id, "visibility", on ? "visible" : "none");
+        });
       }
     });
   });
@@ -1415,4 +1433,95 @@ function addFibreRouteLayer(geojson) {
       ],
     },
   }, "sub-glow");  // above parcels, below substation circles
+}
+
+function addBtmLayer(assets) {
+  if (!assets || assets.length === 0) return;
+
+  // Split into two GeoJSON feature collections by voltage tier
+  const make = (voltageType) => ({
+    type: "FeatureCollection",
+    features: assets
+      .filter(a => a.type === voltageType)
+      .map(a => ({
+        type: "Feature",
+        geometry: { type: "Point", coordinates: [a.lng, a.lat] },
+        properties: { name: a.name, voltage_kv: a.voltage_kv, dno: a.dno },
+      })),
+  });
+
+  map.addSource("btm-132", { type: "geojson", data: make("hv_substation_132") });
+  map.addSource("btm-66",  { type: "geojson", data: make("hv_substation_66")  });
+
+  const vis = state.showBtmAssets ? "visible" : "none";
+
+  // 132kV — amber colour, slightly larger
+  map.addLayer({
+    id: "btm-ring-132", type: "circle", source: "btm-132",
+    layout: { visibility: vis },
+    paint: {
+      "circle-radius": ["interpolate", ["linear"], ["zoom"], 6, 5, 10, 9, 13, 13],
+      "circle-color": "transparent",
+      "circle-stroke-width": 1.5,
+      "circle-stroke-color": "#FFB300",
+      "circle-opacity": 0.9,
+    },
+  });
+  map.addLayer({
+    id: "btm-dot-132", type: "circle", source: "btm-132",
+    layout: { visibility: vis },
+    paint: {
+      "circle-radius": ["interpolate", ["linear"], ["zoom"], 6, 2.5, 10, 4.5, 13, 6.5],
+      "circle-color": "#FFB300",
+      "circle-opacity": 0.85,
+    },
+  });
+
+  // 66kV — gold/yellow, slightly smaller
+  map.addLayer({
+    id: "btm-ring-66", type: "circle", source: "btm-66",
+    layout: { visibility: vis },
+    paint: {
+      "circle-radius": ["interpolate", ["linear"], ["zoom"], 6, 4, 10, 7.5, 13, 11],
+      "circle-color": "transparent",
+      "circle-stroke-width": 1.5,
+      "circle-stroke-color": "#FFD740",
+      "circle-opacity": 0.9,
+    },
+  });
+  map.addLayer({
+    id: "btm-dot-66", type: "circle", source: "btm-66",
+    layout: { visibility: vis },
+    paint: {
+      "circle-radius": ["interpolate", ["linear"], ["zoom"], 6, 2, 10, 3.5, 13, 5],
+      "circle-color": "#FFD740",
+      "circle-opacity": 0.85,
+    },
+  });
+
+  // Hover popup
+  let btmPopup = new mapboxgl.Popup({ closeButton: false, offset: 8, maxWidth: "220px" });
+
+  function showBtmPopup(e) {
+    map.getCanvas().style.cursor = "pointer";
+    const p = e.features[0].properties;
+    const col = p.voltage_kv >= 132 ? "#FFB300" : "#FFD740";
+    btmPopup.setLngLat(e.features[0].geometry.coordinates)
+      .setHTML(`
+        <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;
+                    color:${col};margin-bottom:5px">${p.voltage_kv}kV HV Substation</div>
+        <div style="font-size:13px;font-weight:700;color:#F0F4FF;margin-bottom:6px">${p.name}</div>
+        <div style="font-size:11px;color:#6B7A99">DNO: ${p.dno ?? "UKPN"}</div>
+        <div style="font-size:10px;color:#4A5068;margin-top:4px">Behind-the-meter asset — nearby parcels may connect via modification</div>
+      `)
+      .addTo(map);
+  }
+
+  ["btm-dot-132", "btm-dot-66"].forEach(id => {
+    map.on("mouseenter", id, showBtmPopup);
+    map.on("mouseleave", id, () => {
+      map.getCanvas().style.cursor = "";
+      btmPopup.remove();
+    });
+  });
 }
