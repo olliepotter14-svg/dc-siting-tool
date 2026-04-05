@@ -6,7 +6,6 @@ venv/
 
 # Generated / runtime data
 data/flood_checkpoint.json
-data/uk_btm_assets.json
 data/ssen_substation_locations.csv
 
 # macOS
