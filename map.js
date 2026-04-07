@@ -1436,7 +1436,6 @@ function addFibreRouteLayer(geojson) {
 }
 
 function addBtmLayer(assets) {
-  console.log("addBtmLayer called, assets:", assets ? assets.length : "null/undefined");
   if (!assets || assets.length === 0) return;
 
   // Split into two GeoJSON feature collections by voltage tier
@@ -1451,11 +1450,8 @@ function addBtmLayer(assets) {
       })),
   });
 
-  const data132 = make("hv_substation_132");
-  const data66  = make("hv_substation_66");
-  console.log("BTM 132kV features:", data132.features.length, "| 66kV features:", data66.features.length);
-  map.addSource("btm-132", { type: "geojson", data: data132 });
-  map.addSource("btm-66",  { type: "geojson", data: data66  });
+  map.addSource("btm-132", { type: "geojson", data: make("hv_substation_132") });
+  map.addSource("btm-66",  { type: "geojson", data: make("hv_substation_66")  });
 
   const vis = state.showBtmAssets ? "visible" : "none";
 
