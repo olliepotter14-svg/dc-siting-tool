@@ -101,14 +101,13 @@ function applyFocusMode() {
   });
   document.querySelectorAll('.overlay-chip[data-layer="btm"]').forEach(c => c.classList.add("active"));
 
-  // Inject CTA banner
+  // Inject district banner (no link to full tool — this is a lead magnet)
   const banner = document.createElement("div");
   banner.id = "focus-banner";
   banner.innerHTML = `
     <div class="focus-banner">
       <div class="focus-title">DC Site Finder — ${FOCUS.label}</div>
       <div class="focus-sub">Showing data centre site opportunities in ${FOCUS.label}. Click any parcel for full scoring breakdown.</div>
-      <a href="https://dcsitingtool.netlify.app" class="focus-cta">Explore the full UK tool →</a>
     </div>
   `;
   document.getElementById("sidebar").prepend(banner);

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DC Site Finder — Greater Manchester</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://api.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.css" rel="stylesheet" />
+  <script src="https://api.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.js"></script>
+  <script src="config.js"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <aside id="sidebar">
+
+    <div class="sidebar-header">
+      <div class="logo">
+        <span class="logo-icon">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="1" y="1" width="26" height="26" rx="6" stroke="#00E5FF" stroke-width="1.5"/>
+            <circle cx="8"  cy="8"  r="2" fill="#00E5FF"/>
+            <circle cx="20" cy="8"  r="2" fill="#00E5FF"/>
+            <circle cx="8"  cy="20" r="2" fill="#00E5FF"/>
+            <circle cx="20" cy="20" r="2" fill="#00E5FF"/>
+            <circle cx="14" cy="14" r="2.5" fill="#00E5FF"/>
+            <line x1="8"  y1="8"  x2="14" y2="14" stroke="#00E5FF" stroke-width="1" stroke-opacity="0.5"/>
+            <line x1="20" y1="8"  x2="14" y2="14" stroke="#00E5FF" stroke-width="1" stroke-opacity="0.5"/>
+            <line x1="8"  y1="20" x2="14" y2="14" stroke="#00E5FF" stroke-width="1" stroke-opacity="0.5"/>
+            <line x1="20" y1="20" x2="14" y2="14" stroke="#00E5FF" stroke-width="1" stroke-opacity="0.5"/>
+          </svg>
+        </span>
+        <div>
+          <div class="logo-title">DC Site Finder</div>
+          <div class="logo-sub">UK Data Centre Land Intelligence</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="stats-bar">
+      <div class="stat">
+        <span class="stat-value" id="stat-count">—</span>
+        <span class="stat-label">total parcels</span>
+      </div>
+      <div class="stat">
+        <span class="stat-value" id="stat-type1">—</span>
+        <span class="stat-label">score 90+</span>
+      </div>
+    </div>
+
+    <div class="filter-section">
+
+      <!-- MW requirement -->
+      <div class="filter-label">DC size</div>
+      <div class="btn-group">
+        <button class="mw-btn" data-mw="20">20 MW</button>
+        <button class="mw-btn active" data-mw="50">50 MW</button>
+        <button class="mw-btn" data-mw="100">100 MW</button>
+      </div>
+
+      <!-- Region + Min size — two columns -->
+      <div class="filter-2col">
+        <div>
+          <div class="filter-label mt">Region</div>
+          <div class="select-wrap">
+            <select id="filter-region">
+              <option value="all">All regions</option>
+            </select>
+          </div>
+        </div>
+        <div>
+          <div class="filter-label mt">Min size</div>
+          <div class="select-wrap">
+            <select id="filter-size">
+              <option value="0">Any</option>
+              <option value="5">5+ ac</option>
+              <option value="10">10+ ac</option>
+              <option value="25">25+ ac</option>
+              <option value="50">50+ ac</option>
+              <option value="100">100+ ac</option>
+              <option value="250">250+ ac</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Min composite score -->
+      <div class="filter-label mt">Min composite score</div>
+      <div class="select-wrap">
+        <select id="filter-composite-score">
+          <option value="0">Any score</option>
+          <option value="40">40+ — Marginal</option>
+          <option value="55">55+ — Moderate</option>
+          <option value="70">70+ — Good</option>
+          <option value="80">80+ — Excellent</option>
+        </select>
+      </div>
+
+      <!-- Hard exclusion toggle -->
+      <div class="toggle-row">
+        <span class="toggle-label-text">Exclude flood zone 3</span>
+        <label class="toggle-switch">
+          <input type="checkbox" id="toggle-flood-exclude" checked />
+          <span class="toggle-slider"></span>
+        </label>
+      </div>
+
+      <div class="filter-group-sep">Display</div>
+
+      <!-- Colour mode -->
+      <div class="filter-label">Colour parcels by</div>
+      <div class="btn-group">
+        <button class="color-btn" data-mode="type">Site type</button>
+        <button class="color-btn" data-mode="power">Power</button>
+        <button class="color-btn active" data-mode="composite">Composite</button>
+      </div>
+
+      <!-- Map overlays — compact chips -->
+      <div class="filter-label mt">Map overlays</div>
+      <div class="overlay-chips">
+        <button class="overlay-chip active" data-layer="substations">⚡ Substations</button>
+        <button class="overlay-chip active" data-layer="powerlines">— Powerlines</button>
+        <button class="overlay-chip" data-layer="fibre">◎ Fibre</button>
+        <button class="overlay-chip" data-layer="btm">◉ HV nodes</button>
+      </div>
+
+      <button id="reset-filters-btn" class="reset-filters-btn">Reset all filters</button>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="list-header">
+      <span>Matching parcels</span>
+      <span id="list-count" class="list-count-badge">—</span>
+    </div>
+    <div id="parcel-list" class="parcel-list">
+      <div class="list-loading">Loading parcels…</div>
+    </div>
+
+  </aside>
+
+  <div id="map"></div>
+
+  <!-- Loading overlay — visible until parcel data is ready -->
+  <div id="load-overlay">
+    <div id="load-card">
+      <div id="load-logo">
+        <svg width="22" height="22" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" style="vertical-align:middle;margin-right:8px">
+          <rect x="1" y="1" width="26" height="26" rx="6" stroke="#00E5FF" stroke-width="1.5"/>
+          <circle cx="8"  cy="8"  r="2" fill="#00E5FF"/>
+          <circle cx="20" cy="8"  r="2" fill="#00E5FF"/>
+          <circle cx="8"  cy="20" r="2" fill="#00E5FF"/>
+          <circle cx="20" cy="20" r="2" fill="#00E5FF"/>
+          <circle cx="14" cy="14" r="2.5" fill="#00E5FF"/>
+          <line x1="8"  y1="8"  x2="14" y2="14" stroke="#00E5FF" stroke-width="1" stroke-opacity="0.5"/>
+          <line x1="20" y1="8"  x2="14" y2="14" stroke="#00E5FF" stroke-width="1" stroke-opacity="0.5"/>
+          <line x1="8"  y1="20" x2="14" y2="14" stroke="#00E5FF" stroke-width="1" stroke-opacity="0.5"/>
+          <line x1="20" y1="20" x2="14" y2="14" stroke="#00E5FF" stroke-width="1" stroke-opacity="0.5"/>
+        </svg>DC Site Finder
+      </div>
+      <div id="load-status">Initialising…</div>
+      <div id="load-bar-track">
+        <div id="load-bar-fill"></div>
+      </div>
+      <div id="load-detail">Loading UK parcel data</div>
+    </div>
+  </div>
+
+  <div id="detail-panel" class="detail-panel hidden">
+    <button id="detail-close" class="detail-close" title="Close">✕</button>
+    <div id="detail-content"></div>
+  </div>
+
+  <div class="map-legend">
+    <div id="legend-items"></div>
+  </div>
+
+  <button id="search-area-btn" class="search-area-btn">Search this area</button>
+
+  <!-- Hidden form for Netlify Forms detection (JS-rendered forms need this) -->
+  <form name="email-capture" netlify netlify-honeypot="bot-field" hidden>
+    <input name="bot-field" />
+    <input name="email" />
+    <input name="district" />
+  </form>
+
+  <script>
+    // Hardcode focus param for this lead magnet page
+    if (!new URLSearchParams(window.location.search).has("focus")) {
+      const url = new URL(window.location);
+      url.searchParams.set("focus", "manchester");
+      history.replaceState(null, "", url);
+    }
+  </script>
+  <script src="map.js?v=13"></script>
+</body>
+</html>
