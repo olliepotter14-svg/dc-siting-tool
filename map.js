@@ -83,6 +83,11 @@ const FOCUS = _focusParam ? FOCUS_DISTRICTS[_focusParam.toLowerCase()] : null;
 function applyFocusMode() {
   if (!FOCUS) return;
 
+  // Show email gate if not already captured
+  if (!isEmailCaptured()) {
+    showEmailGate();
+  }
+
   // Update page title
   document.title = `DC Site Finder — ${FOCUS.label}`;
 
@@ -755,26 +760,36 @@ function isEmailCaptured() {
   return !FOCUS || localStorage.getItem("dc_email_captured") === "true";
 }
 
-function showEmailGate(pendingProps) {
-  const panel   = document.getElementById("detail-panel");
-  const content = document.getElementById("detail-content");
-  panel.classList.add("open");
-
-  content.innerHTML = `
+function showEmailGate() {
+  const overlay = document.createElement("div");
+  overlay.id = "email-gate-overlay";
+  overlay.innerHTML = `
     <div class="email-gate">
-      <div class="email-gate-icon">◉</div>
-      <div class="email-gate-title">Unlock full site breakdowns</div>
-      <div class="email-gate-sub">Enter your email to see detailed scoring, cost estimates, and grid connection data for every site in ${FOCUS.label}.</div>
+      <div class="email-gate-icon">
+        <svg width="36" height="36" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="1" y="1" width="26" height="26" rx="6" stroke="#00E5FF" stroke-width="1.5"/>
+          <circle cx="8" cy="8" r="2" fill="#00E5FF"/><circle cx="20" cy="8" r="2" fill="#00E5FF"/>
+          <circle cx="8" cy="20" r="2" fill="#00E5FF"/><circle cx="20" cy="20" r="2" fill="#00E5FF"/>
+          <circle cx="14" cy="14" r="2.5" fill="#00E5FF"/>
+          <line x1="8" y1="8" x2="14" y2="14" stroke="#00E5FF" stroke-width="1" stroke-opacity="0.5"/>
+          <line x1="20" y1="8" x2="14" y2="14" stroke="#00E5FF" stroke-width="1" stroke-opacity="0.5"/>
+          <line x1="8" y1="20" x2="14" y2="14" stroke="#00E5FF" stroke-width="1" stroke-opacity="0.5"/>
+          <line x1="20" y1="20" x2="14" y2="14" stroke="#00E5FF" stroke-width="1" stroke-opacity="0.5"/>
+        </svg>
+      </div>
+      <div class="email-gate-title">DC Site Finder — ${FOCUS.label}</div>
+      <div class="email-gate-sub">2,400+ data centre sites scored, ranked, and mapped. Enter your email to explore the interactive tool.</div>
       <form id="email-gate-form" class="email-gate-form" name="email-capture" method="POST" data-netlify="true" netlify-honeypot="bot-field">
         <input type="hidden" name="form-name" value="email-capture" />
         <input type="hidden" name="district" value="${FOCUS.label}" />
         <p style="display:none"><input name="bot-field" /></p>
         <input type="email" name="email" id="email-gate-input" placeholder="you@company.com" required />
-        <button type="submit" class="email-gate-btn">Unlock</button>
+        <button type="submit" class="email-gate-btn">Explore the map</button>
       </form>
       <div class="email-gate-note">No spam. We'll only email you if we build something relevant.</div>
     </div>
   `;
+  document.body.appendChild(overlay);
 
   document.getElementById("email-gate-form").addEventListener("submit", (e) => {
     e.preventDefault();
@@ -783,28 +798,22 @@ function showEmailGate(pendingProps) {
     if (!email) return;
 
     const btn = document.querySelector(".email-gate-btn");
-    btn.textContent = "Unlocking…";
+    btn.textContent = "Loading…";
     btn.disabled = true;
 
-    // Submit to Netlify Forms
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: new URLSearchParams(new FormData(form)).toString(),
     }).finally(() => {
       localStorage.setItem("dc_email_captured", "true");
-      showDetailPanel(pendingProps);
+      overlay.classList.add("fade-out");
+      setTimeout(() => overlay.remove(), 400);
     });
   });
 }
 
 function showDetailPanel(props) {
-  // Gate behind email in focus mode
-  if (!isEmailCaptured()) {
-    showEmailGate(props);
-    return;
-  }
-
   const panel     = document.getElementById("detail-panel");
   const content   = document.getElementById("detail-content");
   const cfg       = SITE_TYPES[props.site_type] || { color: "#8B92A5", label: props.site_type };

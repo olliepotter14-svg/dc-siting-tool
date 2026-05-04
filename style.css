@@ -98,16 +98,37 @@ html, body {
 
 .focus-cta:hover { opacity: 0.85; }
 
-/* ─── Email gate (focus mode detail panel) ──────────────────────── */
+/* ─── Email gate (focus mode full-screen overlay) ───────────────── */
+#email-gate-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  background: rgba(10, 13, 18, 0.92);
+  backdrop-filter: blur(12px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.35s;
+}
+
+#email-gate-overlay.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
 .email-gate {
-  padding: 32px 20px;
+  padding: 40px 32px;
   text-align: center;
+  background: var(--bg-card);
+  border: 1px solid var(--border-hi);
+  border-radius: 12px;
+  max-width: 420px;
+  width: 90%;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
 }
 
 .email-gate-icon {
-  font-size: 28px;
-  color: var(--cyan);
-  margin-bottom: 14px;
+  margin-bottom: 18px;
 }
 
 .email-gate-title {
