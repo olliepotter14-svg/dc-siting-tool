@@ -63,17 +63,18 @@ const state = {
 
 // ── Focus mode (lead magnet) ─────────────────────────────────────
 // Usage: ?focus=manchester  — zooms to district, shows CTA banner
+// bbox: [west, south, east, north] — parcels outside are excluded in focus mode
 const FOCUS_DISTRICTS = {
-  manchester:  { center: [-2.24, 53.48], zoom: 11, label: "Greater Manchester" },
-  birmingham:  { center: [-1.89, 52.48], zoom: 11, label: "Birmingham & West Midlands" },
-  london:      { center: [0.05, 51.51],  zoom: 10, label: "London & Thames Gateway" },
-  bristol:     { center: [-2.59, 51.45], zoom: 11, label: "Bristol & South West" },
-  leeds:       { center: [-1.55, 53.80], zoom: 11, label: "Leeds & West Yorkshire" },
-  glasgow:     { center: [-4.25, 55.86], zoom: 11, label: "Glasgow & Central Belt" },
-  cardiff:     { center: [-3.18, 51.48], zoom: 11, label: "Cardiff & South Wales" },
-  edinburgh:   { center: [-3.19, 55.95], zoom: 11, label: "Edinburgh" },
-  newcastle:   { center: [-1.61, 54.97], zoom: 11, label: "Newcastle & Tyne" },
-  liverpool:   { center: [-2.98, 53.41], zoom: 11, label: "Liverpool & Merseyside" },
+  manchester:  { center: [-2.24, 53.48], zoom: 11, label: "Greater Manchester", bbox: [-2.75, 53.30, -1.80, 53.70] },
+  birmingham:  { center: [-1.89, 52.48], zoom: 11, label: "Birmingham & West Midlands", bbox: [-2.30, 52.25, -1.50, 52.70] },
+  london:      { center: [0.05, 51.51],  zoom: 10, label: "London & Thames Gateway", bbox: [-0.55, 51.25, 0.50, 51.75] },
+  bristol:     { center: [-2.59, 51.45], zoom: 11, label: "Bristol & South West", bbox: [-3.00, 51.25, -2.20, 51.65] },
+  leeds:       { center: [-1.55, 53.80], zoom: 11, label: "Leeds & West Yorkshire", bbox: [-2.00, 53.60, -1.10, 54.00] },
+  glasgow:     { center: [-4.25, 55.86], zoom: 11, label: "Glasgow & Central Belt", bbox: [-4.70, 55.65, -3.80, 56.10] },
+  cardiff:     { center: [-3.18, 51.48], zoom: 11, label: "Cardiff & South Wales", bbox: [-3.60, 51.30, -2.80, 51.65] },
+  edinburgh:   { center: [-3.19, 55.95], zoom: 11, label: "Edinburgh", bbox: [-3.55, 55.80, -2.85, 56.10] },
+  newcastle:   { center: [-1.61, 54.97], zoom: 11, label: "Newcastle & Tyne", bbox: [-2.10, 54.75, -1.15, 55.20] },
+  liverpool:   { center: [-2.98, 53.41], zoom: 11, label: "Liverpool & Merseyside", bbox: [-3.35, 53.20, -2.60, 53.60] },
 };
 
 const _focusParam = new URLSearchParams(window.location.search).get("focus");
@@ -81,6 +82,9 @@ const FOCUS = _focusParam ? FOCUS_DISTRICTS[_focusParam.toLowerCase()] : null;
 
 function applyFocusMode() {
   if (!FOCUS) return;
+
+  // Update page title
+  document.title = `DC Site Finder — ${FOCUS.label}`;
 
   // Fly to district
   map.flyTo({ center: FOCUS.center, zoom: FOCUS.zoom, duration: 1200 });
@@ -1069,6 +1073,17 @@ function applyFilters() {
 
   state.filteredFeatures = state.allFeatures.filter(f => {
     const p = f.properties;
+
+    // Focus mode: only show parcels within the district bbox
+    if (FOCUS) {
+      const coords = f.geometry.coordinates[0];
+      const lngs = coords.map(c => c[0]), lats = coords.map(c => c[1]);
+      const cLng = lngs.reduce((a, b) => a + b) / lngs.length;
+      const cLat = lats.reduce((a, b) => a + b) / lats.length;
+      const [w, s, e, n] = FOCUS.bbox;
+      if (cLng < w || cLng > e || cLat < s || cLat > n) return false;
+    }
+
     if (region !== "all" && p.region !== region)                                  return false;
     if (p.area_acres != null && p.area_acres < minAcres)                           return false;
     if (excludeFloodZone3 && (p.hard_excluded === true || p.flood_zone === 3))     return false;
@@ -1082,8 +1097,9 @@ function applyFilters() {
 }
 
 function updateStats() {
-  const total = state.allFeatures.length;
-  const score90 = state.allFeatures.filter(f => getCompositeScore(f.properties) >= 90).length;
+  const base  = FOCUS ? state.filteredFeatures : state.allFeatures;
+  const total = base.length;
+  const score90 = base.filter(f => getCompositeScore(f.properties) >= 90).length;
 
   document.getElementById("stat-count").textContent  = total.toLocaleString();
   document.getElementById("stat-type1").textContent  = score90.toLocaleString();
