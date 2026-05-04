@@ -63,6 +63,41 @@ html, body {
   bottom: 0;
 }
 
+/* ─── Focus mode (lead magnet banner) ───────────────────────────── */
+.focus-banner {
+  background: linear-gradient(135deg, rgba(0, 229, 255, 0.12), rgba(0, 229, 255, 0.04));
+  border-bottom: 1px solid var(--border-hi);
+  padding: 16px 18px;
+}
+
+.focus-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--cyan);
+  margin-bottom: 6px;
+}
+
+.focus-sub {
+  font-size: 11.5px;
+  color: var(--text-mid);
+  line-height: 1.45;
+  margin-bottom: 12px;
+}
+
+.focus-cta {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--bg-deep);
+  background: var(--cyan);
+  padding: 6px 14px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: opacity 0.15s;
+}
+
+.focus-cta:hover { opacity: 0.85; }
+
 /* ─── Sidebar Header ─────────────────────────────────────────────── */
 
 .sidebar-header {

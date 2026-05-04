@@ -61,6 +61,50 @@ const state = {
   },
 };
 
+// ── Focus mode (lead magnet) ─────────────────────────────────────
+// Usage: ?focus=manchester  — zooms to district, shows CTA banner
+const FOCUS_DISTRICTS = {
+  manchester:  { center: [-2.24, 53.48], zoom: 11, label: "Greater Manchester" },
+  birmingham:  { center: [-1.89, 52.48], zoom: 11, label: "Birmingham & West Midlands" },
+  london:      { center: [0.05, 51.51],  zoom: 10, label: "London & Thames Gateway" },
+  bristol:     { center: [-2.59, 51.45], zoom: 11, label: "Bristol & South West" },
+  leeds:       { center: [-1.55, 53.80], zoom: 11, label: "Leeds & West Yorkshire" },
+  glasgow:     { center: [-4.25, 55.86], zoom: 11, label: "Glasgow & Central Belt" },
+  cardiff:     { center: [-3.18, 51.48], zoom: 11, label: "Cardiff & South Wales" },
+  edinburgh:   { center: [-3.19, 55.95], zoom: 11, label: "Edinburgh" },
+  newcastle:   { center: [-1.61, 54.97], zoom: 11, label: "Newcastle & Tyne" },
+  liverpool:   { center: [-2.98, 53.41], zoom: 11, label: "Liverpool & Merseyside" },
+};
+
+const _focusParam = new URLSearchParams(window.location.search).get("focus");
+const FOCUS = _focusParam ? FOCUS_DISTRICTS[_focusParam.toLowerCase()] : null;
+
+function applyFocusMode() {
+  if (!FOCUS) return;
+
+  // Fly to district
+  map.flyTo({ center: FOCUS.center, zoom: FOCUS.zoom, duration: 1200 });
+
+  // Auto-enable HV nodes + substations
+  state.showBtmAssets = true;
+  ["btm-ring-132", "btm-dot-132", "btm-ring-66", "btm-dot-66"].forEach(id => {
+    if (map.getLayer(id)) map.setLayoutProperty(id, "visibility", "visible");
+  });
+  document.querySelectorAll('.overlay-chip[data-layer="btm"]').forEach(c => c.classList.add("active"));
+
+  // Inject CTA banner
+  const banner = document.createElement("div");
+  banner.id = "focus-banner";
+  banner.innerHTML = `
+    <div class="focus-banner">
+      <div class="focus-title">DC Site Finder — ${FOCUS.label}</div>
+      <div class="focus-sub">Showing data centre site opportunities in ${FOCUS.label}. Click any parcel for full scoring breakdown.</div>
+      <a href="https://dcsitingtool.netlify.app" class="focus-cta">Explore the full UK tool →</a>
+    </div>
+  `;
+  document.getElementById("sidebar").prepend(banner);
+}
+
 // ── Power score helpers ───────────────────────────────────────────
 function lerp(a, b, t) { return a + (b - a) * t; }
 
@@ -245,7 +289,10 @@ map.on("load", () => {
     addFibreRouteLayer(fibreRoutes);
     addBtmLayer(btmAssets);
     // Small delay so the map tiles have a moment to render before overlay lifts
-    setTimeout(hideLoadOverlay, 300);
+    setTimeout(() => {
+      hideLoadOverlay();
+      applyFocusMode();
+    }, 300);
   })
   .catch((err) => {
     console.error("Failed to load data:", err);
