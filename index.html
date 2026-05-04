@@ -180,6 +180,13 @@
 
   <button id="search-area-btn" class="search-area-btn">Search this area</button>
 
-  <script src="map.js?v=12"></script>
+  <!-- Hidden form for Netlify Forms detection (JS-rendered forms need this) -->
+  <form name="email-capture" netlify netlify-honeypot="bot-field" hidden>
+    <input name="bot-field" />
+    <input name="email" />
+    <input name="district" />
+  </form>
+
+  <script src="map.js?v=13"></script>
 </body>
 </html>

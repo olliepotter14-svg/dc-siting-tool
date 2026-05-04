@@ -750,7 +750,61 @@ function hardExclusionBanner(props) {
     </div>`;
 }
 
+// ── Email gate (focus mode only) ──────────────────────────────────
+function isEmailCaptured() {
+  return !FOCUS || localStorage.getItem("dc_email_captured") === "true";
+}
+
+function showEmailGate(pendingProps) {
+  const panel   = document.getElementById("detail-panel");
+  const content = document.getElementById("detail-content");
+  panel.classList.add("open");
+
+  content.innerHTML = `
+    <div class="email-gate">
+      <div class="email-gate-icon">◉</div>
+      <div class="email-gate-title">Unlock full site breakdowns</div>
+      <div class="email-gate-sub">Enter your email to see detailed scoring, cost estimates, and grid connection data for every site in ${FOCUS.label}.</div>
+      <form id="email-gate-form" class="email-gate-form" name="email-capture" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="email-capture" />
+        <input type="hidden" name="district" value="${FOCUS.label}" />
+        <p style="display:none"><input name="bot-field" /></p>
+        <input type="email" name="email" id="email-gate-input" placeholder="you@company.com" required />
+        <button type="submit" class="email-gate-btn">Unlock</button>
+      </form>
+      <div class="email-gate-note">No spam. We'll only email you if we build something relevant.</div>
+    </div>
+  `;
+
+  document.getElementById("email-gate-form").addEventListener("submit", (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const email = document.getElementById("email-gate-input").value.trim();
+    if (!email) return;
+
+    const btn = document.querySelector(".email-gate-btn");
+    btn.textContent = "Unlocking…";
+    btn.disabled = true;
+
+    // Submit to Netlify Forms
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(new FormData(form)).toString(),
+    }).finally(() => {
+      localStorage.setItem("dc_email_captured", "true");
+      showDetailPanel(pendingProps);
+    });
+  });
+}
+
 function showDetailPanel(props) {
+  // Gate behind email in focus mode
+  if (!isEmailCaptured()) {
+    showEmailGate(props);
+    return;
+  }
+
   const panel     = document.getElementById("detail-panel");
   const content   = document.getElementById("detail-content");
   const cfg       = SITE_TYPES[props.site_type] || { color: "#8B92A5", label: props.site_type };

@@ -98,6 +98,87 @@ html, body {
 
 .focus-cta:hover { opacity: 0.85; }
 
+/* ─── Email gate (focus mode detail panel) ──────────────────────── */
+.email-gate {
+  padding: 32px 20px;
+  text-align: center;
+}
+
+.email-gate-icon {
+  font-size: 28px;
+  color: var(--cyan);
+  margin-bottom: 14px;
+}
+
+.email-gate-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-hi);
+  margin-bottom: 8px;
+}
+
+.email-gate-sub {
+  font-size: 12px;
+  color: var(--text-mid);
+  line-height: 1.5;
+  margin-bottom: 20px;
+  max-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.email-gate-form {
+  display: flex;
+  gap: 8px;
+  max-width: 320px;
+  margin: 0 auto 12px;
+}
+
+.email-gate-form input {
+  flex: 1;
+  padding: 9px 12px;
+  border-radius: 6px;
+  border: 1px solid var(--border-hi);
+  background: var(--bg-deep);
+  color: var(--text-hi);
+  font-size: 13px;
+  font-family: inherit;
+  outline: none;
+}
+
+.email-gate-form input::placeholder {
+  color: var(--text-low);
+}
+
+.email-gate-form input:focus {
+  border-color: var(--cyan);
+  box-shadow: 0 0 0 2px rgba(0, 229, 255, 0.15);
+}
+
+.email-gate-btn {
+  padding: 9px 18px;
+  border-radius: 6px;
+  border: none;
+  background: var(--cyan);
+  color: var(--bg-deep);
+  font-size: 13px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: opacity 0.15s;
+}
+
+.email-gate-btn:hover { opacity: 0.85; }
+.email-gate-btn:disabled { opacity: 0.5; cursor: default; }
+
+.email-gate-note {
+  font-size: 10px;
+  color: var(--text-low);
+  max-width: 280px;
+  margin: 0 auto;
+}
+
 /* ─── Sidebar Header ─────────────────────────────────────────────── */
 
 .sidebar-header {
