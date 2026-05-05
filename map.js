@@ -48,8 +48,8 @@ const state = {
   activeId:         null,
   colorMode:        "composite", // "type" | "power" | "composite"
   mwValue:          50,       // numeric MW — any value
-  showSubstations:  !window._HIDE_GRID_LAYERS,
-  showPowerlines:   !window._HIDE_GRID_LAYERS,
+  showSubstations:  true,
+  showPowerlines:   true,
   showFibreRoutes:  false,
   showBtmAssets:    false,
   areaSearch:       false,    // list filtered to current viewport

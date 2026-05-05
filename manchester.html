@@ -120,6 +120,9 @@
       <!-- Map overlays — compact chips -->
       <div class="filter-label mt">Map overlays</div>
       <div class="overlay-chips">
+        <button class="overlay-chip active" data-layer="substations">⚡ Substations</button>
+        <button class="overlay-chip active" data-layer="powerlines">— Powerlines</button>
+        <button class="overlay-chip" data-layer="fibre">◎ Fibre</button>
         <button class="overlay-chip" data-layer="btm">◉ HV nodes</button>
       </div>
 
@@ -194,8 +197,6 @@
       url.searchParams.set("focus", "manchester");
       history.replaceState(null, "", url);
     }
-    // Hide substations and powerlines on lead magnet (set before map.js loads)
-    window._HIDE_GRID_LAYERS = true;
   </script>
   <script src="map.js?v=13"></script>
 </body>
