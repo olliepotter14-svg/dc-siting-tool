@@ -120,13 +120,13 @@
       <!-- Map overlays — compact chips -->
       <div class="filter-label mt">Map overlays</div>
       <div class="overlay-chips">
-        <button class="overlay-chip active" data-layer="substations">⚡ Substations</button>
-        <button class="overlay-chip active" data-layer="powerlines">— Powerlines</button>
-        <button class="overlay-chip" data-layer="fibre">◎ Fibre</button>
         <button class="overlay-chip" data-layer="btm">◉ HV nodes</button>
       </div>
 
       <button id="reset-filters-btn" class="reset-filters-btn">Reset all filters</button>
+
+      <div class="divider" style="margin-top:16px"></div>
+      <a href="https://tidycal.com/naturetechmemos/20-minute-meeting" target="_blank" rel="noopener" class="book-call-btn">Book a call →</a>
 
     </div>
 
@@ -194,6 +194,8 @@
       url.searchParams.set("focus", "manchester");
       history.replaceState(null, "", url);
     }
+    // Hide substations and powerlines on lead magnet (set before map.js loads)
+    window._HIDE_GRID_LAYERS = true;
   </script>
   <script src="map.js?v=13"></script>
 </body>

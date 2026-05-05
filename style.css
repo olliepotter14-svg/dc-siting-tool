@@ -98,6 +98,23 @@ html, body {
 
 .focus-cta:hover { opacity: 0.85; }
 
+.book-call-btn {
+  display: block;
+  margin-top: 14px;
+  padding: 10px 16px;
+  background: var(--cyan);
+  color: var(--bg-deep);
+  font-size: 13px;
+  font-weight: 600;
+  font-family: inherit;
+  border-radius: 6px;
+  text-align: center;
+  text-decoration: none;
+  transition: opacity 0.15s;
+}
+
+.book-call-btn:hover { opacity: 0.85; }
+
 /* ─── Email gate (focus mode full-screen overlay) ───────────────── */
 #email-gate-overlay {
   position: fixed;
