@@ -39,7 +39,7 @@ const state = {
   latencyAnchorIso:  null,        // F5 — auto-set from state.selectedIso when a country is clicked
   latencyMs:         10,          // F5 — default 10 ms so clicking a country immediately draws a sphere
   colourBy:          null,        // factor key — F17
-  sizeBy:            'dc_capacity_total_mw',   // size markers by DC capacity (F29)
+  sizeBy:            null,         // size-by-capacity reverted — markers stay uniform
   weights:           {},          // factor_id → 0..10  (F24)
   weightsActive:     true,        // toggle composite scoring globally
   composite:         {},          // iso2 → { score, rank, contributing, missing }  (F24)
