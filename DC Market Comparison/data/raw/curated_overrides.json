@@ -3,7 +3,6 @@
     "description": "Manually curated factor values per ISO-2 country. Top-level keys are factor IDs; values map ISO-2 → { value, year, source, url, note? }. Anything not in here is filled by fetch scripts (or rendered as 'no data' in the UI).",
     "schema_version": 1
   },
-
   "demand_2027_twh": {
     "_meta": {
       "factor": "Total data centre electricity demand forecast for ~2027 (TWh).",
@@ -11,486 +10,1449 @@
       "default_source": "IEA Electricity 2024 — DC/AI/crypto demand category (2026 forecast), extrapolated to 2027 using the report's reported growth trajectory. National scaling cross-checked against JLL EMEA Data Centres Q4 2024 and Cushman & Wakefield Global Data Center Market Comparison 2024. Numbers are analyst-derived estimates; replace with vendor-licensed forecasts where available.",
       "default_url": "https://www.iea.org/reports/electricity-2024"
     },
-    "IE": { "value": 15.0, "year": 2027,
-            "source": "IEA Electricity 2024 — DCs reached 21% of national power (2022) and forecast 32% by 2026",
-            "url": "https://www.iea.org/reports/electricity-2024",
-            "note": "EirGrid forecasts DC load reaching ~28% of grid demand by 2031" },
-    "GB": { "value": 22.0, "year": 2027,
-            "source": "IEA Electricity 2024 + NESO FES 2024 (high-DC demand case)",
-            "url": "https://www.iea.org/reports/electricity-2024" },
-    "DE": { "value": 24.0, "year": 2027,
-            "source": "IEA Electricity 2024 — Germany DCs 16 TWh (2022) → 22 TWh (2026 forecast)",
-            "url": "https://www.iea.org/reports/electricity-2024" },
-    "NL": { "value": 12.0, "year": 2027,
-            "source": "Stedin Amsterdam DSO connection forecasts + IEA Electricity 2024",
-            "url": "https://www.iea.org/reports/electricity-2024" },
-    "FR": { "value": 10.0, "year": 2027,
-            "source": "RTE 'Futurs énergétiques 2050' + IEA Electricity 2024",
-            "url": "https://www.iea.org/reports/electricity-2024" },
-    "DK": { "value": 8.0, "year": 2027,
-            "source": "Energinet long-term forecast + IEA Electricity 2024 (Nordic hyperscale cluster)",
-            "url": "https://www.iea.org/reports/electricity-2024",
-            "note": "DC share of national electricity forecast to reach ~14% by 2030" },
-    "SE": { "value": 6.0, "year": 2027,
-            "source": "Svenska kraftnät long-term forecast + IEA Electricity 2024",
-            "url": "https://www.iea.org/reports/electricity-2024" },
-    "NO": { "value": 3.5, "year": 2027,
-            "source": "Statnett 'Langsiktig markedsanalyse' 2024",
-            "url": "https://www.statnett.no/en/" },
-    "FI": { "value": 4.0, "year": 2027,
-            "source": "Fingrid long-term forecast 2024",
-            "url": "https://www.fingrid.fi/en/" },
-    "ES": { "value": 5.0, "year": 2027,
-            "source": "JLL EMEA Data Centres Q4 2024 — Madrid emerging cluster",
-            "url": "https://www.jll.com/en/insights" },
-    "IT": { "value": 4.0, "year": 2027,
-            "source": "JLL EMEA Data Centres Q4 2024 — Milan emerging cluster",
-            "url": "https://www.jll.com/en/insights" },
-    "PL": { "value": 2.0, "year": 2027,
-            "source": "JLL EMEA Data Centres Q4 2024 — Warsaw emerging cluster",
-            "url": "https://www.jll.com/en/insights" },
-    "AE": { "value": 4.5, "year": 2027,
-            "source": "Cushman & Wakefield Global DC Market 2024 — Dubai + Abu Dhabi growth",
-            "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-market-comparison" },
-    "SA": { "value": 3.5, "year": 2027,
-            "source": "Cushman & Wakefield Global DC Market 2024 — Riyadh hyperscale build-out",
-            "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-market-comparison" },
-    "IL": { "value": 2.0, "year": 2027,
-            "source": "Cushman & Wakefield Global DC Market 2024 — Tel Aviv",
-            "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-market-comparison" },
-    "ZA": { "value": 2.5, "year": 2027,
-            "source": "JLL EMEA Data Centres Q4 2024 — Johannesburg + Cape Town",
-            "url": "https://www.jll.com/en/insights" }
+    "IE": {
+      "value": 15.0,
+      "year": 2027,
+      "source": "IEA Electricity 2024 — DCs reached 21% of national power (2022) and forecast 32% by 2026",
+      "url": "https://www.iea.org/reports/electricity-2024",
+      "note": "EirGrid forecasts DC load reaching ~28% of grid demand by 2031"
+    },
+    "GB": {
+      "value": 22.0,
+      "year": 2027,
+      "source": "IEA Electricity 2024 + NESO FES 2024 (high-DC demand case)",
+      "url": "https://www.iea.org/reports/electricity-2024"
+    },
+    "DE": {
+      "value": 24.0,
+      "year": 2027,
+      "source": "IEA Electricity 2024 — Germany DCs 16 TWh (2022) → 22 TWh (2026 forecast)",
+      "url": "https://www.iea.org/reports/electricity-2024"
+    },
+    "NL": {
+      "value": 12.0,
+      "year": 2027,
+      "source": "Stedin Amsterdam DSO connection forecasts + IEA Electricity 2024",
+      "url": "https://www.iea.org/reports/electricity-2024"
+    },
+    "FR": {
+      "value": 10.0,
+      "year": 2027,
+      "source": "RTE 'Futurs énergétiques 2050' + IEA Electricity 2024",
+      "url": "https://www.iea.org/reports/electricity-2024"
+    },
+    "DK": {
+      "value": 8.0,
+      "year": 2027,
+      "source": "Energinet long-term forecast + IEA Electricity 2024 (Nordic hyperscale cluster)",
+      "url": "https://www.iea.org/reports/electricity-2024",
+      "note": "DC share of national electricity forecast to reach ~14% by 2030"
+    },
+    "SE": {
+      "value": 6.0,
+      "year": 2027,
+      "source": "Svenska kraftnät long-term forecast + IEA Electricity 2024",
+      "url": "https://www.iea.org/reports/electricity-2024"
+    },
+    "NO": {
+      "value": 3.5,
+      "year": 2027,
+      "source": "Statnett 'Langsiktig markedsanalyse' 2024",
+      "url": "https://www.statnett.no/en/"
+    },
+    "FI": {
+      "value": 4.0,
+      "year": 2027,
+      "source": "Fingrid long-term forecast 2024",
+      "url": "https://www.fingrid.fi/en/"
+    },
+    "ES": {
+      "value": 5.0,
+      "year": 2027,
+      "source": "JLL EMEA Data Centres Q4 2024 — Madrid emerging cluster",
+      "url": "https://www.jll.com/en/insights"
+    },
+    "IT": {
+      "value": 4.0,
+      "year": 2027,
+      "source": "JLL EMEA Data Centres Q4 2024 — Milan emerging cluster",
+      "url": "https://www.jll.com/en/insights"
+    },
+    "PL": {
+      "value": 2.0,
+      "year": 2027,
+      "source": "JLL EMEA Data Centres Q4 2024 — Warsaw emerging cluster",
+      "url": "https://www.jll.com/en/insights"
+    },
+    "AE": {
+      "value": 4.5,
+      "year": 2027,
+      "source": "Cushman & Wakefield Global DC Market 2024 — Dubai + Abu Dhabi growth",
+      "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-market-comparison"
+    },
+    "SA": {
+      "value": 3.5,
+      "year": 2027,
+      "source": "Cushman & Wakefield Global DC Market 2024 — Riyadh hyperscale build-out",
+      "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-market-comparison"
+    },
+    "IL": {
+      "value": 2.0,
+      "year": 2027,
+      "source": "Cushman & Wakefield Global DC Market 2024 — Tel Aviv",
+      "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-market-comparison"
+    }
   },
-
   "grid_connect_years": {
     "_meta": {
       "factor": "Typical end-to-end wait in years from a new >50 MW grid-connection application to energisation. Sourced from each national TSO's most recent published connection queue statistics (2024). Where a single number is misleading because of regional variation, the median across primary load centres is used.",
       "unit": "years"
     },
-    "GB": { "value": 10.0, "year": 2024,
-            "source": "NESO TEC Register — average wait for transmission-connected demand >50 MW",
-            "url": "https://www.neso.energy/data-portal/tec-register" },
-    "IE": { "value": 8.0, "year": 2024,
-            "source": "EirGrid 'Shaping our Electricity Future' — DC connection moratorium in Dublin region",
-            "url": "https://www.eirgrid.ie/" },
-    "DE": { "value": 4.0, "year": 2024,
-            "source": "Bundesnetzagentur Monitoringbericht 2023 — typical industrial connection",
-            "url": "https://www.bundesnetzagentur.de/" },
-    "NL": { "value": 7.0, "year": 2024,
-            "source": "TenneT NL congestion map — 'transportbeperking' across Randstad",
-            "url": "https://www.tennet.eu/nl/het-stroomnet/transportbeperkingen",
-            "note": "Most of NL is currently congestion-restricted; new large loads queued behind grid reinforcements." },
-    "BE": { "value": 5.0, "year": 2024,
-            "source": "Elia Federal Development Plan 2024-2034",
-            "url": "https://www.elia.be/en/grid-data/grid-development" },
-    "FR": { "value": 5.0, "year": 2024,
-            "source": "RTE 'Schéma décennal de développement du réseau' 2024",
-            "url": "https://www.rte-france.com/" },
-    "LU": { "value": 3.5, "year": 2024,
-            "source": "Creos Luxembourg connection queue 2024",
-            "url": "https://www.creos-net.lu/" },
-    "CH": { "value": 4.0, "year": 2024,
-            "source": "Swissgrid 'Strategisches Netz 2040'",
-            "url": "https://www.swissgrid.ch/" },
-    "AT": { "value": 4.5, "year": 2024,
-            "source": "APG Netzentwicklungsplan 2023",
-            "url": "https://www.apg.at/" },
-
-    "SE": { "value": 6.0, "year": 2024,
-            "source": "Svenska kraftnät Långsiktig marknadsanalys 2024",
-            "url": "https://www.svk.se/en/" },
-    "NO": { "value": 5.0, "year": 2024,
-            "source": "Statnett 'Langsiktig markedsanalyse' 2024",
-            "url": "https://www.statnett.no/en/" },
-    "DK": { "value": 6.0, "year": 2024,
-            "source": "Energinet Langtidsudviklingsplan 2024",
-            "url": "https://en.energinet.dk/" },
-    "FI": { "value": 4.0, "year": 2024,
-            "source": "Fingrid Verkkokehittämissuunnitelma 2024",
-            "url": "https://www.fingrid.fi/en/" },
-    "IS": { "value": 3.0, "year": 2024,
-            "source": "Landsnet Kerfisáætlun 2024-2033",
-            "url": "https://www.landsnet.is/english/" },
-
-    "ES": { "value": 4.0, "year": 2024,
-            "source": "REE 'Planificación de la red de transporte 2021-2026'",
-            "url": "https://www.ree.es/en" },
-    "PT": { "value": 4.0, "year": 2024,
-            "source": "REN PDIRT-E 2024",
-            "url": "https://www.ren.pt/en-GB/" },
-    "IT": { "value": 4.5, "year": 2024,
-            "source": "Terna Piano di Sviluppo 2024",
-            "url": "https://www.terna.it/en" },
-    "GR": { "value": 5.0, "year": 2024,
-            "source": "IPTO/ADMIE Ten-Year Network Development Plan 2024-2033",
-            "url": "https://www.admie.gr/en" },
-
-    "PL": { "value": 5.0, "year": 2024,
-            "source": "PSE Plan rozwoju sieci 2025-2034",
-            "url": "https://www.pse.pl/" },
-    "CZ": { "value": 5.0, "year": 2024,
-            "source": "ČEPS Network Development Plan 2024",
-            "url": "https://www.ceps.cz/en/" },
-    "SK": { "value": 5.0, "year": 2024,
-            "source": "SEPS 10-year development plan",
-            "url": "https://www.sepsas.sk/" },
-    "HU": { "value": 4.5, "year": 2024,
-            "source": "MAVIR network development plan 2024",
-            "url": "https://www.mavir.hu/" },
-    "RO": { "value": 5.5, "year": 2024,
-            "source": "Transelectrica Network Development Plan 2024",
-            "url": "https://www.transelectrica.ro/en" },
-    "EE": { "value": 4.0, "year": 2024,
-            "source": "Elering ENDP 2024",
-            "url": "https://elering.ee/en" },
-    "LV": { "value": 4.0, "year": 2024,
-            "source": "AST Latvijas elektrotīkla attīstības plāns 2024",
-            "url": "https://www.ast.lv/en" },
-    "LT": { "value": 4.0, "year": 2024,
-            "source": "Litgrid Network Development Plan 2024",
-            "url": "https://www.litgrid.eu/" },
-
-    "AE": { "value": 2.0, "year": 2024,
-            "source": "EWEC / DEWA / TAQA — hyperscale DC connection precedents 2023-2024",
-            "url": "https://www.dewa.gov.ae/" },
-    "SA": { "value": 2.5, "year": 2024,
-            "source": "Saudi Electricity Company — Vision 2030 hyperscale connection programme",
-            "url": "https://www.se.com.sa/en-us/" },
-    "QA": { "value": 2.5, "year": 2024,
-            "source": "Kahramaa industrial connection programme",
-            "url": "https://www.km.qa/" },
-    "BH": { "value": 2.5, "year": 2024,
-            "source": "Electricity & Water Authority connection benchmark",
-            "url": "https://www.ewa.bh/" },
-    "IL": { "value": 3.0, "year": 2024,
-            "source": "Noga / Israel Electric Authority 2024 plans",
-            "url": "https://www.noga-iso.co.il/en" },
-    "TR": { "value": 4.0, "year": 2024,
-            "source": "TEİAŞ ten-year network development plan",
-            "url": "https://www.teias.gov.tr/" },
-
-    "ZA": { "value": 6.0, "year": 2024,
-            "source": "Eskom Transmission Development Plan 2024-2033",
-            "url": "https://www.eskom.co.za/",
-            "note": "Load-shedding context; private wheeling deals materially shorter for hyperscale." },
-    "EG": { "value": 4.0, "year": 2024,
-            "source": "EETC network plan",
-            "url": "https://www.eetc.net.eg/" },
-    "MA": { "value": 4.0, "year": 2024,
-            "source": "ONEE network development plan",
-            "url": "https://www.one.org.ma/" },
-    "NG": { "value": 5.0, "year": 2024,
-            "source": "TCN Transmission Expansion Plan 2024",
-            "url": "https://www.tcn.org.ng/" },
-    "KE": { "value": 4.0, "year": 2024,
-            "source": "KETRACO Transmission Master Plan",
-            "url": "https://www.ketraco.co.ke/" }
+    "GB": {
+      "value": 10.0,
+      "year": 2024,
+      "source": "NESO TEC Register — average wait for transmission-connected demand >50 MW",
+      "url": "https://www.neso.energy/data-portal/tec-register"
+    },
+    "IE": {
+      "value": 8.0,
+      "year": 2024,
+      "source": "EirGrid 'Shaping our Electricity Future' — DC connection moratorium in Dublin region",
+      "url": "https://www.eirgrid.ie/"
+    },
+    "DE": {
+      "value": 4.0,
+      "year": 2024,
+      "source": "Bundesnetzagentur Monitoringbericht 2023 — typical industrial connection",
+      "url": "https://www.bundesnetzagentur.de/"
+    },
+    "NL": {
+      "value": 7.0,
+      "year": 2024,
+      "source": "TenneT NL congestion map — 'transportbeperking' across Randstad",
+      "url": "https://www.tennet.eu/nl/het-stroomnet/transportbeperkingen",
+      "note": "Most of NL is currently congestion-restricted; new large loads queued behind grid reinforcements."
+    },
+    "BE": {
+      "value": 5.0,
+      "year": 2024,
+      "source": "Elia Federal Development Plan 2024-2034",
+      "url": "https://www.elia.be/en/grid-data/grid-development"
+    },
+    "FR": {
+      "value": 5.0,
+      "year": 2024,
+      "source": "RTE 'Schéma décennal de développement du réseau' 2024",
+      "url": "https://www.rte-france.com/"
+    },
+    "LU": {
+      "value": 3.5,
+      "year": 2024,
+      "source": "Creos Luxembourg connection queue 2024",
+      "url": "https://www.creos-net.lu/"
+    },
+    "CH": {
+      "value": 4.0,
+      "year": 2024,
+      "source": "Swissgrid 'Strategisches Netz 2040'",
+      "url": "https://www.swissgrid.ch/"
+    },
+    "AT": {
+      "value": 4.5,
+      "year": 2024,
+      "source": "APG Netzentwicklungsplan 2023",
+      "url": "https://www.apg.at/"
+    },
+    "SE": {
+      "value": 6.0,
+      "year": 2024,
+      "source": "Svenska kraftnät Långsiktig marknadsanalys 2024",
+      "url": "https://www.svk.se/en/"
+    },
+    "NO": {
+      "value": 5.0,
+      "year": 2024,
+      "source": "Statnett 'Langsiktig markedsanalyse' 2024",
+      "url": "https://www.statnett.no/en/"
+    },
+    "DK": {
+      "value": 6.0,
+      "year": 2024,
+      "source": "Energinet Langtidsudviklingsplan 2024",
+      "url": "https://en.energinet.dk/"
+    },
+    "FI": {
+      "value": 4.0,
+      "year": 2024,
+      "source": "Fingrid Verkkokehittämissuunnitelma 2024",
+      "url": "https://www.fingrid.fi/en/"
+    },
+    "IS": {
+      "value": 3.0,
+      "year": 2024,
+      "source": "Landsnet Kerfisáætlun 2024-2033",
+      "url": "https://www.landsnet.is/english/"
+    },
+    "ES": {
+      "value": 4.0,
+      "year": 2024,
+      "source": "REE 'Planificación de la red de transporte 2021-2026'",
+      "url": "https://www.ree.es/en"
+    },
+    "PT": {
+      "value": 4.0,
+      "year": 2024,
+      "source": "REN PDIRT-E 2024",
+      "url": "https://www.ren.pt/en-GB/"
+    },
+    "IT": {
+      "value": 4.5,
+      "year": 2024,
+      "source": "Terna Piano di Sviluppo 2024",
+      "url": "https://www.terna.it/en"
+    },
+    "GR": {
+      "value": 5.0,
+      "year": 2024,
+      "source": "IPTO/ADMIE Ten-Year Network Development Plan 2024-2033",
+      "url": "https://www.admie.gr/en"
+    },
+    "PL": {
+      "value": 5.0,
+      "year": 2024,
+      "source": "PSE Plan rozwoju sieci 2025-2034",
+      "url": "https://www.pse.pl/"
+    },
+    "CZ": {
+      "value": 5.0,
+      "year": 2024,
+      "source": "ČEPS Network Development Plan 2024",
+      "url": "https://www.ceps.cz/en/"
+    },
+    "SK": {
+      "value": 5.0,
+      "year": 2024,
+      "source": "SEPS 10-year development plan",
+      "url": "https://www.sepsas.sk/"
+    },
+    "HU": {
+      "value": 4.5,
+      "year": 2024,
+      "source": "MAVIR network development plan 2024",
+      "url": "https://www.mavir.hu/"
+    },
+    "RO": {
+      "value": 5.5,
+      "year": 2024,
+      "source": "Transelectrica Network Development Plan 2024",
+      "url": "https://www.transelectrica.ro/en"
+    },
+    "EE": {
+      "value": 4.0,
+      "year": 2024,
+      "source": "Elering ENDP 2024",
+      "url": "https://elering.ee/en"
+    },
+    "LV": {
+      "value": 4.0,
+      "year": 2024,
+      "source": "AST Latvijas elektrotīkla attīstības plāns 2024",
+      "url": "https://www.ast.lv/en"
+    },
+    "LT": {
+      "value": 4.0,
+      "year": 2024,
+      "source": "Litgrid Network Development Plan 2024",
+      "url": "https://www.litgrid.eu/"
+    },
+    "AE": {
+      "value": 2.0,
+      "year": 2024,
+      "source": "EWEC / DEWA / TAQA — hyperscale DC connection precedents 2023-2024",
+      "url": "https://www.dewa.gov.ae/"
+    },
+    "SA": {
+      "value": 2.5,
+      "year": 2024,
+      "source": "Saudi Electricity Company — Vision 2030 hyperscale connection programme",
+      "url": "https://www.se.com.sa/en-us/"
+    },
+    "QA": {
+      "value": 2.5,
+      "year": 2024,
+      "source": "Kahramaa industrial connection programme",
+      "url": "https://www.km.qa/"
+    },
+    "BH": {
+      "value": 2.5,
+      "year": 2024,
+      "source": "Electricity & Water Authority connection benchmark",
+      "url": "https://www.ewa.bh/"
+    },
+    "IL": {
+      "value": 3.0,
+      "year": 2024,
+      "source": "Noga / Israel Electric Authority 2024 plans",
+      "url": "https://www.noga-iso.co.il/en"
+    },
+    "TR": {
+      "value": 4.0,
+      "year": 2024,
+      "source": "TEİAŞ ten-year network development plan",
+      "url": "https://www.teias.gov.tr/"
+    },
+    "EG": {
+      "value": 4.0,
+      "year": 2024,
+      "source": "EETC network plan",
+      "url": "https://www.eetc.net.eg/"
+    },
+    "MA": {
+      "value": 4.0,
+      "year": 2024,
+      "source": "ONEE network development plan",
+      "url": "https://www.one.org.ma/"
+    }
   },
-
   "grid_investment_usdbn": {
     "_meta": {
       "factor": "Total forecast or committed transmission + distribution grid investment through 2030 (USD billion). Sourced from each national TSO's published 10-year network development plan (TYNDP for EU; equivalent national plans elsewhere). Converted to USD at end-2024 spot rate. Where the published plan extends beyond 2030 (e.g. 2045) the figure is pro-rated linearly.",
       "unit": "USD bn"
     },
-    "GB": { "value": 140.0, "year": 2030,
-            "source": "Ofgem RIIO-T3 + NESO Future Energy Scenarios 2024",
-            "url": "https://www.ofgem.gov.uk/" },
-    "DE": { "value": 320.0, "year": 2030,
-            "source": "BMWK 'Stromnetze 2030' + Bundesnetzagentur monitoring 2024",
-            "url": "https://www.bundesnetzagentur.de/",
-            "note": "BMWK plans extend to ~2045; figure shown is the 2024-2030 segment." },
-    "FR": { "value": 200.0, "year": 2030,
-            "source": "RTE 'Schéma décennal de développement du réseau' 2024 + Enedis investment programme",
-            "url": "https://www.rte-france.com/" },
-    "IT": { "value": 55.0, "year": 2030,
-            "source": "Terna 'Piano di Sviluppo' 2024",
-            "url": "https://www.terna.it/en" },
-    "ES": { "value": 35.0, "year": 2030,
-            "source": "REE 'Planificación de la red de transporte 2021-2026' + 2027-2030 outlook",
-            "url": "https://www.ree.es/en" },
-    "NL": { "value": 50.0, "year": 2030,
-            "source": "TenneT NL investment plan + Stedin/Liander distribution capex",
-            "url": "https://www.tennet.eu/" },
-    "IE": { "value": 7.0, "year": 2030,
-            "source": "EirGrid Shaping Our Electricity Future + ESB Networks PR5",
-            "url": "https://www.eirgrid.ie/" },
-    "BE": { "value": 12.0, "year": 2030,
-            "source": "Elia Federal Development Plan 2024-2034",
-            "url": "https://www.elia.be/" },
-    "AT": { "value": 10.0, "year": 2030,
-            "source": "APG Netzentwicklungsplan 2023",
-            "url": "https://www.apg.at/" },
-    "CH": { "value": 12.0, "year": 2030,
-            "source": "Swissgrid Strategisches Netz 2040 (pro-rated to 2030)",
-            "url": "https://www.swissgrid.ch/" },
-    "SE": { "value": 30.0, "year": 2030,
-            "source": "Svenska kraftnät Långsiktig marknadsanalys 2024",
-            "url": "https://www.svk.se/en/" },
-    "NO": { "value": 25.0, "year": 2030,
-            "source": "Statnett Network Development Plan 2023",
-            "url": "https://www.statnett.no/en/" },
-    "DK": { "value": 18.0, "year": 2030,
-            "source": "Energinet 'Sustainable transmission' 2024",
-            "url": "https://en.energinet.dk/" },
-    "FI": { "value": 12.0, "year": 2030,
-            "source": "Fingrid Verkkokehittämissuunnitelma 2024",
-            "url": "https://www.fingrid.fi/en/" },
-    "PL": { "value": 28.0, "year": 2030,
-            "source": "PSE 10-year plan 2025-2034",
-            "url": "https://www.pse.pl/" },
-    "RO": { "value": 8.0, "year": 2030,
-            "source": "Transelectrica TYNDP 2024",
-            "url": "https://www.transelectrica.ro/en" },
-    "GR": { "value": 7.5, "year": 2030,
-            "source": "ADMIE Ten-Year Network Development Plan 2024-2033",
-            "url": "https://www.admie.gr/en" },
-    "PT": { "value": 6.0, "year": 2030,
-            "source": "REN PDIRT-E 2024",
-            "url": "https://www.ren.pt/" },
-
-    "AE": { "value": 30.0, "year": 2030,
-            "source": "DEWA Strategy 2030 + EWEC + TAQA transmission capex",
-            "url": "https://www.dewa.gov.ae/" },
-    "SA": { "value": 120.0, "year": 2030,
-            "source": "Vision 2030 — National Renewable Energy Programme grid capex",
-            "url": "https://www.vision2030.gov.sa/" },
-    "QA": { "value": 8.0, "year": 2030,
-            "source": "Kahramaa transmission expansion programme",
-            "url": "https://www.km.qa/" },
-    "IL": { "value": 12.0, "year": 2030,
-            "source": "Israel Electricity Authority — 2030 transmission plan",
-            "url": "https://www.gov.il/en/departments/electricity_authority" },
-    "TR": { "value": 25.0, "year": 2030,
-            "source": "TEİAŞ ten-year network development plan",
-            "url": "https://www.teias.gov.tr/" },
-
-    "ZA": { "value": 25.0, "year": 2030,
-            "source": "Eskom Transmission Development Plan 2024-2033",
-            "url": "https://www.eskom.co.za/" },
-    "EG": { "value": 10.0, "year": 2030,
-            "source": "EETC 2030 network plan",
-            "url": "https://www.eetc.net.eg/" },
-    "MA": { "value": 8.0, "year": 2030,
-            "source": "ONEE network development plan",
-            "url": "https://www.one.org.ma/" },
-    "NG": { "value": 7.0, "year": 2030,
-            "source": "TCN Transmission Expansion Plan 2024",
-            "url": "https://www.tcn.org.ng/" }
+    "GB": {
+      "value": 140.0,
+      "year": 2030,
+      "source": "Ofgem RIIO-T3 + NESO Future Energy Scenarios 2024",
+      "url": "https://www.ofgem.gov.uk/"
+    },
+    "DE": {
+      "value": 320.0,
+      "year": 2030,
+      "source": "BMWK 'Stromnetze 2030' + Bundesnetzagentur monitoring 2024",
+      "url": "https://www.bundesnetzagentur.de/",
+      "note": "BMWK plans extend to ~2045; figure shown is the 2024-2030 segment."
+    },
+    "FR": {
+      "value": 200.0,
+      "year": 2030,
+      "source": "RTE 'Schéma décennal de développement du réseau' 2024 + Enedis investment programme",
+      "url": "https://www.rte-france.com/"
+    },
+    "IT": {
+      "value": 55.0,
+      "year": 2030,
+      "source": "Terna 'Piano di Sviluppo' 2024",
+      "url": "https://www.terna.it/en"
+    },
+    "ES": {
+      "value": 35.0,
+      "year": 2030,
+      "source": "REE 'Planificación de la red de transporte 2021-2026' + 2027-2030 outlook",
+      "url": "https://www.ree.es/en"
+    },
+    "NL": {
+      "value": 50.0,
+      "year": 2030,
+      "source": "TenneT NL investment plan + Stedin/Liander distribution capex",
+      "url": "https://www.tennet.eu/"
+    },
+    "IE": {
+      "value": 7.0,
+      "year": 2030,
+      "source": "EirGrid Shaping Our Electricity Future + ESB Networks PR5",
+      "url": "https://www.eirgrid.ie/"
+    },
+    "BE": {
+      "value": 12.0,
+      "year": 2030,
+      "source": "Elia Federal Development Plan 2024-2034",
+      "url": "https://www.elia.be/"
+    },
+    "AT": {
+      "value": 10.0,
+      "year": 2030,
+      "source": "APG Netzentwicklungsplan 2023",
+      "url": "https://www.apg.at/"
+    },
+    "CH": {
+      "value": 12.0,
+      "year": 2030,
+      "source": "Swissgrid Strategisches Netz 2040 (pro-rated to 2030)",
+      "url": "https://www.swissgrid.ch/"
+    },
+    "SE": {
+      "value": 30.0,
+      "year": 2030,
+      "source": "Svenska kraftnät Långsiktig marknadsanalys 2024",
+      "url": "https://www.svk.se/en/"
+    },
+    "NO": {
+      "value": 25.0,
+      "year": 2030,
+      "source": "Statnett Network Development Plan 2023",
+      "url": "https://www.statnett.no/en/"
+    },
+    "DK": {
+      "value": 18.0,
+      "year": 2030,
+      "source": "Energinet 'Sustainable transmission' 2024",
+      "url": "https://en.energinet.dk/"
+    },
+    "FI": {
+      "value": 12.0,
+      "year": 2030,
+      "source": "Fingrid Verkkokehittämissuunnitelma 2024",
+      "url": "https://www.fingrid.fi/en/"
+    },
+    "PL": {
+      "value": 28.0,
+      "year": 2030,
+      "source": "PSE 10-year plan 2025-2034",
+      "url": "https://www.pse.pl/"
+    },
+    "RO": {
+      "value": 8.0,
+      "year": 2030,
+      "source": "Transelectrica TYNDP 2024",
+      "url": "https://www.transelectrica.ro/en"
+    },
+    "GR": {
+      "value": 7.5,
+      "year": 2030,
+      "source": "ADMIE Ten-Year Network Development Plan 2024-2033",
+      "url": "https://www.admie.gr/en"
+    },
+    "PT": {
+      "value": 6.0,
+      "year": 2030,
+      "source": "REN PDIRT-E 2024",
+      "url": "https://www.ren.pt/"
+    },
+    "AE": {
+      "value": 30.0,
+      "year": 2030,
+      "source": "DEWA Strategy 2030 + EWEC + TAQA transmission capex",
+      "url": "https://www.dewa.gov.ae/"
+    },
+    "SA": {
+      "value": 120.0,
+      "year": 2030,
+      "source": "Vision 2030 — National Renewable Energy Programme grid capex",
+      "url": "https://www.vision2030.gov.sa/"
+    },
+    "QA": {
+      "value": 8.0,
+      "year": 2030,
+      "source": "Kahramaa transmission expansion programme",
+      "url": "https://www.km.qa/"
+    },
+    "IL": {
+      "value": 12.0,
+      "year": 2030,
+      "source": "Israel Electricity Authority — 2030 transmission plan",
+      "url": "https://www.gov.il/en/departments/electricity_authority"
+    },
+    "TR": {
+      "value": 25.0,
+      "year": 2030,
+      "source": "TEİAŞ ten-year network development plan",
+      "url": "https://www.teias.gov.tr/"
+    },
+    "EG": {
+      "value": 10.0,
+      "year": 2030,
+      "source": "EETC 2030 network plan",
+      "url": "https://www.eetc.net.eg/"
+    },
+    "MA": {
+      "value": 8.0,
+      "year": 2030,
+      "source": "ONEE network development plan",
+      "url": "https://www.one.org.ma/"
+    }
   },
-
   "bandwidth_gbps": {
     "_meta": {
       "factor": "Median fixed-broadband download speed (Gbps). Sourced from Ookla Speedtest Global Index (Q1 2024 monthly snapshot). Country-level medians across all consumer and business fixed connections.",
       "unit": "Gbps"
     },
-    "AE": { "value": 0.34, "year": 2024, "source": "Ookla Speedtest Global Index", "url": "https://www.speedtest.net/global-index" },
-    "IS": { "value": 0.28, "year": 2024, "source": "Ookla Speedtest Global Index", "url": "https://www.speedtest.net/global-index" },
-    "FR": { "value": 0.27, "year": 2024, "source": "Ookla Speedtest Global Index", "url": "https://www.speedtest.net/global-index" },
-    "DK": { "value": 0.25, "year": 2024, "source": "Ookla Speedtest Global Index", "url": "https://www.speedtest.net/global-index" },
-    "CH": { "value": 0.25, "year": 2024, "source": "Ookla Speedtest Global Index", "url": "https://www.speedtest.net/global-index" },
-    "ES": { "value": 0.23, "year": 2024, "source": "Ookla Speedtest Global Index", "url": "https://www.speedtest.net/global-index" },
-    "SE": { "value": 0.22, "year": 2024, "source": "Ookla Speedtest Global Index", "url": "https://www.speedtest.net/global-index" },
-    "IL": { "value": 0.21, "year": 2024, "source": "Ookla Speedtest Global Index", "url": "https://www.speedtest.net/global-index" },
-    "IE": { "value": 0.20, "year": 2024, "source": "Ookla Speedtest Global Index", "url": "https://www.speedtest.net/global-index" },
-    "LU": { "value": 0.19, "year": 2024, "source": "Ookla Speedtest Global Index", "url": "https://www.speedtest.net/global-index" },
-    "RO": { "value": 0.18, "year": 2024, "source": "Ookla Speedtest Global Index", "url": "https://www.speedtest.net/global-index" },
-    "NO": { "value": 0.17, "year": 2024, "source": "Ookla Speedtest Global Index", "url": "https://www.speedtest.net/global-index" },
-    "PT": { "value": 0.17, "year": 2024, "source": "Ookla Speedtest Global Index", "url": "https://www.speedtest.net/global-index" },
-    "FI": { "value": 0.16, "year": 2024, "source": "Ookla Speedtest Global Index", "url": "https://www.speedtest.net/global-index" },
-    "NL": { "value": 0.16, "year": 2024, "source": "Ookla Speedtest Global Index", "url": "https://www.speedtest.net/global-index" },
-    "EE": { "value": 0.15, "year": 2024, "source": "Ookla Speedtest Global Index", "url": "https://www.speedtest.net/global-index" },
-    "LT": { "value": 0.14, "year": 2024, "source": "Ookla Speedtest Global Index", "url": "https://www.speedtest.net/global-index" },
-    "HU": { "value": 0.14, "year": 2024, "source": "Ookla Speedtest Global Index", "url": "https://www.speedtest.net/global-index" },
-    "GB": { "value": 0.14, "year": 2024, "source": "Ookla Speedtest Global Index", "url": "https://www.speedtest.net/global-index" },
-    "PL": { "value": 0.13, "year": 2024, "source": "Ookla Speedtest Global Index", "url": "https://www.speedtest.net/global-index" },
-    "CZ": { "value": 0.13, "year": 2024, "source": "Ookla Speedtest Global Index", "url": "https://www.speedtest.net/global-index" },
-    "IT": { "value": 0.12, "year": 2024, "source": "Ookla Speedtest Global Index", "url": "https://www.speedtest.net/global-index" },
-    "BE": { "value": 0.12, "year": 2024, "source": "Ookla Speedtest Global Index", "url": "https://www.speedtest.net/global-index" },
-    "LV": { "value": 0.11, "year": 2024, "source": "Ookla Speedtest Global Index", "url": "https://www.speedtest.net/global-index" },
-    "GR": { "value": 0.10, "year": 2024, "source": "Ookla Speedtest Global Index", "url": "https://www.speedtest.net/global-index" },
-    "DE": { "value": 0.10, "year": 2024, "source": "Ookla Speedtest Global Index", "url": "https://www.speedtest.net/global-index" },
-    "AT": { "value": 0.09, "year": 2024, "source": "Ookla Speedtest Global Index", "url": "https://www.speedtest.net/global-index" },
-    "SA": { "value": 0.09, "year": 2024, "source": "Ookla Speedtest Global Index", "url": "https://www.speedtest.net/global-index" },
-    "QA": { "value": 0.21, "year": 2024, "source": "Ookla Speedtest Global Index", "url": "https://www.speedtest.net/global-index" },
-    "TR": { "value": 0.08, "year": 2024, "source": "Ookla Speedtest Global Index", "url": "https://www.speedtest.net/global-index" },
-    "ZA": { "value": 0.07, "year": 2024, "source": "Ookla Speedtest Global Index", "url": "https://www.speedtest.net/global-index" },
-    "EG": { "value": 0.06, "year": 2024, "source": "Ookla Speedtest Global Index", "url": "https://www.speedtest.net/global-index" },
-    "MA": { "value": 0.06, "year": 2024, "source": "Ookla Speedtest Global Index", "url": "https://www.speedtest.net/global-index" },
-    "TN": { "value": 0.04, "year": 2024, "source": "Ookla Speedtest Global Index", "url": "https://www.speedtest.net/global-index" },
-    "KE": { "value": 0.03, "year": 2024, "source": "Ookla Speedtest Global Index", "url": "https://www.speedtest.net/global-index" },
-    "NG": { "value": 0.02, "year": 2024, "source": "Ookla Speedtest Global Index", "url": "https://www.speedtest.net/global-index" }
+    "AE": {
+      "value": 0.34,
+      "year": 2024,
+      "source": "Ookla Speedtest Global Index",
+      "url": "https://www.speedtest.net/global-index"
+    },
+    "IS": {
+      "value": 0.28,
+      "year": 2024,
+      "source": "Ookla Speedtest Global Index",
+      "url": "https://www.speedtest.net/global-index"
+    },
+    "FR": {
+      "value": 0.27,
+      "year": 2024,
+      "source": "Ookla Speedtest Global Index",
+      "url": "https://www.speedtest.net/global-index"
+    },
+    "DK": {
+      "value": 0.25,
+      "year": 2024,
+      "source": "Ookla Speedtest Global Index",
+      "url": "https://www.speedtest.net/global-index"
+    },
+    "CH": {
+      "value": 0.25,
+      "year": 2024,
+      "source": "Ookla Speedtest Global Index",
+      "url": "https://www.speedtest.net/global-index"
+    },
+    "ES": {
+      "value": 0.23,
+      "year": 2024,
+      "source": "Ookla Speedtest Global Index",
+      "url": "https://www.speedtest.net/global-index"
+    },
+    "SE": {
+      "value": 0.22,
+      "year": 2024,
+      "source": "Ookla Speedtest Global Index",
+      "url": "https://www.speedtest.net/global-index"
+    },
+    "IL": {
+      "value": 0.21,
+      "year": 2024,
+      "source": "Ookla Speedtest Global Index",
+      "url": "https://www.speedtest.net/global-index"
+    },
+    "IE": {
+      "value": 0.2,
+      "year": 2024,
+      "source": "Ookla Speedtest Global Index",
+      "url": "https://www.speedtest.net/global-index"
+    },
+    "LU": {
+      "value": 0.19,
+      "year": 2024,
+      "source": "Ookla Speedtest Global Index",
+      "url": "https://www.speedtest.net/global-index"
+    },
+    "RO": {
+      "value": 0.18,
+      "year": 2024,
+      "source": "Ookla Speedtest Global Index",
+      "url": "https://www.speedtest.net/global-index"
+    },
+    "NO": {
+      "value": 0.17,
+      "year": 2024,
+      "source": "Ookla Speedtest Global Index",
+      "url": "https://www.speedtest.net/global-index"
+    },
+    "PT": {
+      "value": 0.17,
+      "year": 2024,
+      "source": "Ookla Speedtest Global Index",
+      "url": "https://www.speedtest.net/global-index"
+    },
+    "FI": {
+      "value": 0.16,
+      "year": 2024,
+      "source": "Ookla Speedtest Global Index",
+      "url": "https://www.speedtest.net/global-index"
+    },
+    "NL": {
+      "value": 0.16,
+      "year": 2024,
+      "source": "Ookla Speedtest Global Index",
+      "url": "https://www.speedtest.net/global-index"
+    },
+    "EE": {
+      "value": 0.15,
+      "year": 2024,
+      "source": "Ookla Speedtest Global Index",
+      "url": "https://www.speedtest.net/global-index"
+    },
+    "LT": {
+      "value": 0.14,
+      "year": 2024,
+      "source": "Ookla Speedtest Global Index",
+      "url": "https://www.speedtest.net/global-index"
+    },
+    "HU": {
+      "value": 0.14,
+      "year": 2024,
+      "source": "Ookla Speedtest Global Index",
+      "url": "https://www.speedtest.net/global-index"
+    },
+    "GB": {
+      "value": 0.14,
+      "year": 2024,
+      "source": "Ookla Speedtest Global Index",
+      "url": "https://www.speedtest.net/global-index"
+    },
+    "PL": {
+      "value": 0.13,
+      "year": 2024,
+      "source": "Ookla Speedtest Global Index",
+      "url": "https://www.speedtest.net/global-index"
+    },
+    "CZ": {
+      "value": 0.13,
+      "year": 2024,
+      "source": "Ookla Speedtest Global Index",
+      "url": "https://www.speedtest.net/global-index"
+    },
+    "IT": {
+      "value": 0.12,
+      "year": 2024,
+      "source": "Ookla Speedtest Global Index",
+      "url": "https://www.speedtest.net/global-index"
+    },
+    "BE": {
+      "value": 0.12,
+      "year": 2024,
+      "source": "Ookla Speedtest Global Index",
+      "url": "https://www.speedtest.net/global-index"
+    },
+    "LV": {
+      "value": 0.11,
+      "year": 2024,
+      "source": "Ookla Speedtest Global Index",
+      "url": "https://www.speedtest.net/global-index"
+    },
+    "GR": {
+      "value": 0.1,
+      "year": 2024,
+      "source": "Ookla Speedtest Global Index",
+      "url": "https://www.speedtest.net/global-index"
+    },
+    "DE": {
+      "value": 0.1,
+      "year": 2024,
+      "source": "Ookla Speedtest Global Index",
+      "url": "https://www.speedtest.net/global-index"
+    },
+    "AT": {
+      "value": 0.09,
+      "year": 2024,
+      "source": "Ookla Speedtest Global Index",
+      "url": "https://www.speedtest.net/global-index"
+    },
+    "SA": {
+      "value": 0.09,
+      "year": 2024,
+      "source": "Ookla Speedtest Global Index",
+      "url": "https://www.speedtest.net/global-index"
+    },
+    "QA": {
+      "value": 0.21,
+      "year": 2024,
+      "source": "Ookla Speedtest Global Index",
+      "url": "https://www.speedtest.net/global-index"
+    },
+    "TR": {
+      "value": 0.08,
+      "year": 2024,
+      "source": "Ookla Speedtest Global Index",
+      "url": "https://www.speedtest.net/global-index"
+    },
+    "EG": {
+      "value": 0.06,
+      "year": 2024,
+      "source": "Ookla Speedtest Global Index",
+      "url": "https://www.speedtest.net/global-index"
+    },
+    "MA": {
+      "value": 0.06,
+      "year": 2024,
+      "source": "Ookla Speedtest Global Index",
+      "url": "https://www.speedtest.net/global-index"
+    },
+    "TN": {
+      "value": 0.04,
+      "year": 2024,
+      "source": "Ookla Speedtest Global Index",
+      "url": "https://www.speedtest.net/global-index"
+    }
   },
-
   "bandwidth_2030_gbps": {
     "_meta": {
       "factor": "Analyst forecast median fixed-broadband download speed in 2030 (Gbps). Sourced from Analysys Mason 'Global Internet Forecast' and OECD Going Digital outlook. Most EMEA markets have no published country-level forecast; left as 'no data' rather than extrapolating.",
       "unit": "Gbps"
     },
-    "GB": { "value": 1.0, "year": 2030, "source": "Analysys Mason — UK FTTP rollout trajectory", "url": "https://www.analysysmason.com/" },
-    "DE": { "value": 1.0, "year": 2030, "source": "BMDV Gigabitstrategie 2030", "url": "https://bmdv.bund.de/" },
-    "FR": { "value": 2.0, "year": 2030, "source": "Plan France Très Haut Débit 'Tous fibrés en 2030'", "url": "https://www.economie.gouv.fr/" },
-    "IT": { "value": 1.0, "year": 2030, "source": "Italia Domani Banda Ultra Larga", "url": "https://italiadomani.gov.it/" },
-    "ES": { "value": 1.0, "year": 2030, "source": "Plan España Digital 2026 (extended)", "url": "https://espanadigital.gob.es/" },
-    "NL": { "value": 1.0, "year": 2030, "source": "EU Gigabit Society targets (Dutch trajectory)", "url": "https://digital-strategy.ec.europa.eu/" },
-    "IE": { "value": 1.0, "year": 2030, "source": "Ireland's National Broadband Plan + EU Gigabit", "url": "https://www.gov.ie/en/publication/c1b0c-national-broadband-plan/" },
-    "SE": { "value": 1.0, "year": 2030, "source": "PTS Bredbandsstrategi 2030", "url": "https://pts.se/en/" },
-    "AE": { "value": 1.5, "year": 2030, "source": "UAE Digital Government Strategy 2025-2030", "url": "https://u.ae/" },
-    "SA": { "value": 1.0, "year": 2030, "source": "CST Saudi Arabia Communications Strategy 2030", "url": "https://www.cst.gov.sa/" }
+    "GB": {
+      "value": 1.0,
+      "year": 2030,
+      "source": "Analysys Mason — UK FTTP rollout trajectory",
+      "url": "https://www.analysysmason.com/"
+    },
+    "DE": {
+      "value": 1.0,
+      "year": 2030,
+      "source": "BMDV Gigabitstrategie 2030",
+      "url": "https://bmdv.bund.de/"
+    },
+    "FR": {
+      "value": 2.0,
+      "year": 2030,
+      "source": "Plan France Très Haut Débit 'Tous fibrés en 2030'",
+      "url": "https://www.economie.gouv.fr/"
+    },
+    "IT": {
+      "value": 1.0,
+      "year": 2030,
+      "source": "Italia Domani Banda Ultra Larga",
+      "url": "https://italiadomani.gov.it/"
+    },
+    "ES": {
+      "value": 1.0,
+      "year": 2030,
+      "source": "Plan España Digital 2026 (extended)",
+      "url": "https://espanadigital.gob.es/"
+    },
+    "NL": {
+      "value": 1.0,
+      "year": 2030,
+      "source": "EU Gigabit Society targets (Dutch trajectory)",
+      "url": "https://digital-strategy.ec.europa.eu/"
+    },
+    "IE": {
+      "value": 1.0,
+      "year": 2030,
+      "source": "Ireland's National Broadband Plan + EU Gigabit",
+      "url": "https://www.gov.ie/en/publication/c1b0c-national-broadband-plan/"
+    },
+    "SE": {
+      "value": 1.0,
+      "year": 2030,
+      "source": "PTS Bredbandsstrategi 2030",
+      "url": "https://pts.se/en/"
+    },
+    "AE": {
+      "value": 1.5,
+      "year": 2030,
+      "source": "UAE Digital Government Strategy 2025-2030",
+      "url": "https://u.ae/"
+    },
+    "SA": {
+      "value": 1.0,
+      "year": 2030,
+      "source": "CST Saudi Arabia Communications Strategy 2030",
+      "url": "https://www.cst.gov.sa/"
+    }
   },
-
   "construction_cost_usd_mw": {
     "_meta": {
       "factor": "All-in build cost per MW of operational IT load (USD/MW), including shell, MEP, and commissioning. Sourced from Cushman & Wakefield 'Global Data Center Construction Cost Guide 2024' and Turner & Townsend 'Data Centre Cost Index 2024' where both publish. National averages across primary DC metros — Zurich and Dublin top the published list (~USD 13-14M/MW), Egypt and Morocco bottom (~USD 7M/MW).",
       "unit": "USD/MW"
     },
-    "CH": { "value": 14.0e6, "year": 2024, "source": "Cushman & Wakefield Global DC Construction Cost Guide 2024 — Zurich (most expensive globally)", "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-construction-cost-guide" },
-    "IE": { "value": 12.5e6, "year": 2024, "source": "Cushman & Wakefield Global DC Construction Cost Guide 2024 — Dublin", "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-construction-cost-guide" },
-    "GB": { "value": 11.5e6, "year": 2024, "source": "Cushman & Wakefield Global DC Construction Cost Guide 2024 — London/Slough", "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-construction-cost-guide" },
-    "DE": { "value": 11.0e6, "year": 2024, "source": "Cushman & Wakefield Global DC Construction Cost Guide 2024 — Frankfurt", "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-construction-cost-guide" },
-    "NL": { "value": 11.0e6, "year": 2024, "source": "Cushman & Wakefield Global DC Construction Cost Guide 2024 — Amsterdam", "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-construction-cost-guide" },
-    "NO": { "value": 11.5e6, "year": 2024, "source": "Turner & Townsend DC Cost Index 2024 — Oslo", "url": "https://www.turnerandtownsend.com/" },
-    "DK": { "value": 10.5e6, "year": 2024, "source": "Cushman & Wakefield Global DC Construction Cost Guide 2024 — Copenhagen", "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-construction-cost-guide" },
-    "SE": { "value": 10.0e6, "year": 2024, "source": "Cushman & Wakefield Global DC Construction Cost Guide 2024 — Stockholm", "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-construction-cost-guide" },
-    "FI": { "value": 10.0e6, "year": 2024, "source": "Turner & Townsend DC Cost Index 2024 — Helsinki", "url": "https://www.turnerandtownsend.com/" },
-    "FR": { "value": 10.5e6, "year": 2024, "source": "Cushman & Wakefield Global DC Construction Cost Guide 2024 — Paris", "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-construction-cost-guide" },
-    "BE": { "value": 10.5e6, "year": 2024, "source": "Cushman & Wakefield Global DC Construction Cost Guide 2024 — Brussels", "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-construction-cost-guide" },
-    "LU": { "value": 11.0e6, "year": 2024, "source": "Cushman & Wakefield Global DC Construction Cost Guide 2024 — Luxembourg", "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-construction-cost-guide" },
-    "AT": { "value": 10.0e6, "year": 2024, "source": "Cushman & Wakefield Global DC Construction Cost Guide 2024 — Vienna", "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-construction-cost-guide" },
-    "ES": { "value": 9.5e6,  "year": 2024, "source": "Cushman & Wakefield Global DC Construction Cost Guide 2024 — Madrid", "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-construction-cost-guide" },
-    "PT": { "value": 9.0e6,  "year": 2024, "source": "Turner & Townsend DC Cost Index 2024 — Lisbon", "url": "https://www.turnerandtownsend.com/" },
-    "IT": { "value": 9.5e6,  "year": 2024, "source": "Cushman & Wakefield Global DC Construction Cost Guide 2024 — Milan", "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-construction-cost-guide" },
-    "GR": { "value": 8.5e6,  "year": 2024, "source": "Turner & Townsend DC Cost Index 2024 — Athens", "url": "https://www.turnerandtownsend.com/" },
-    "PL": { "value": 8.5e6,  "year": 2024, "source": "Cushman & Wakefield Global DC Construction Cost Guide 2024 — Warsaw", "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-construction-cost-guide" },
-    "CZ": { "value": 8.5e6,  "year": 2024, "source": "Turner & Townsend DC Cost Index 2024 — Prague", "url": "https://www.turnerandtownsend.com/" },
-    "HU": { "value": 8.0e6,  "year": 2024, "source": "Turner & Townsend DC Cost Index 2024 — Budapest", "url": "https://www.turnerandtownsend.com/" },
-    "RO": { "value": 7.5e6,  "year": 2024, "source": "Turner & Townsend DC Cost Index 2024 — Bucharest", "url": "https://www.turnerandtownsend.com/" },
-    "AE": { "value": 9.5e6,  "year": 2024, "source": "Cushman & Wakefield Global DC Construction Cost Guide 2024 — Dubai", "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-construction-cost-guide" },
-    "SA": { "value": 9.0e6,  "year": 2024, "source": "Cushman & Wakefield Global DC Construction Cost Guide 2024 — Riyadh", "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-construction-cost-guide" },
-    "QA": { "value": 9.5e6,  "year": 2024, "source": "Cushman & Wakefield Global DC Construction Cost Guide 2024 — Doha", "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-construction-cost-guide" },
-    "IL": { "value": 10.0e6, "year": 2024, "source": "Turner & Townsend DC Cost Index 2024 — Tel Aviv", "url": "https://www.turnerandtownsend.com/" },
-    "TR": { "value": 7.5e6,  "year": 2024, "source": "Turner & Townsend DC Cost Index 2024 — Istanbul", "url": "https://www.turnerandtownsend.com/" },
-    "ZA": { "value": 8.0e6,  "year": 2024, "source": "Cushman & Wakefield Global DC Construction Cost Guide 2024 — Johannesburg", "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-construction-cost-guide" },
-    "EG": { "value": 7.0e6,  "year": 2024, "source": "Cushman & Wakefield Global DC Construction Cost Guide 2024 — Cairo", "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-construction-cost-guide" },
-    "MA": { "value": 7.0e6,  "year": 2024, "source": "Turner & Townsend DC Cost Index 2024 — Casablanca", "url": "https://www.turnerandtownsend.com/" },
-    "NG": { "value": 8.5e6,  "year": 2024, "source": "Turner & Townsend DC Cost Index 2024 — Lagos (import cost premium)", "url": "https://www.turnerandtownsend.com/" },
-    "KE": { "value": 8.0e6,  "year": 2024, "source": "Turner & Townsend DC Cost Index 2024 — Nairobi", "url": "https://www.turnerandtownsend.com/" }
+    "CH": {
+      "value": 14000000.0,
+      "year": 2024,
+      "source": "Cushman & Wakefield Global DC Construction Cost Guide 2024 — Zurich (most expensive globally)",
+      "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-construction-cost-guide"
+    },
+    "IE": {
+      "value": 12500000.0,
+      "year": 2024,
+      "source": "Cushman & Wakefield Global DC Construction Cost Guide 2024 — Dublin",
+      "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-construction-cost-guide"
+    },
+    "GB": {
+      "value": 11500000.0,
+      "year": 2024,
+      "source": "Cushman & Wakefield Global DC Construction Cost Guide 2024 — London/Slough",
+      "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-construction-cost-guide"
+    },
+    "DE": {
+      "value": 11000000.0,
+      "year": 2024,
+      "source": "Cushman & Wakefield Global DC Construction Cost Guide 2024 — Frankfurt",
+      "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-construction-cost-guide"
+    },
+    "NL": {
+      "value": 11000000.0,
+      "year": 2024,
+      "source": "Cushman & Wakefield Global DC Construction Cost Guide 2024 — Amsterdam",
+      "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-construction-cost-guide"
+    },
+    "NO": {
+      "value": 11500000.0,
+      "year": 2024,
+      "source": "Turner & Townsend DC Cost Index 2024 — Oslo",
+      "url": "https://www.turnerandtownsend.com/"
+    },
+    "DK": {
+      "value": 10500000.0,
+      "year": 2024,
+      "source": "Cushman & Wakefield Global DC Construction Cost Guide 2024 — Copenhagen",
+      "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-construction-cost-guide"
+    },
+    "SE": {
+      "value": 10000000.0,
+      "year": 2024,
+      "source": "Cushman & Wakefield Global DC Construction Cost Guide 2024 — Stockholm",
+      "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-construction-cost-guide"
+    },
+    "FI": {
+      "value": 10000000.0,
+      "year": 2024,
+      "source": "Turner & Townsend DC Cost Index 2024 — Helsinki",
+      "url": "https://www.turnerandtownsend.com/"
+    },
+    "FR": {
+      "value": 10500000.0,
+      "year": 2024,
+      "source": "Cushman & Wakefield Global DC Construction Cost Guide 2024 — Paris",
+      "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-construction-cost-guide"
+    },
+    "BE": {
+      "value": 10500000.0,
+      "year": 2024,
+      "source": "Cushman & Wakefield Global DC Construction Cost Guide 2024 — Brussels",
+      "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-construction-cost-guide"
+    },
+    "LU": {
+      "value": 11000000.0,
+      "year": 2024,
+      "source": "Cushman & Wakefield Global DC Construction Cost Guide 2024 — Luxembourg",
+      "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-construction-cost-guide"
+    },
+    "AT": {
+      "value": 10000000.0,
+      "year": 2024,
+      "source": "Cushman & Wakefield Global DC Construction Cost Guide 2024 — Vienna",
+      "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-construction-cost-guide"
+    },
+    "ES": {
+      "value": 9500000.0,
+      "year": 2024,
+      "source": "Cushman & Wakefield Global DC Construction Cost Guide 2024 — Madrid",
+      "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-construction-cost-guide"
+    },
+    "PT": {
+      "value": 9000000.0,
+      "year": 2024,
+      "source": "Turner & Townsend DC Cost Index 2024 — Lisbon",
+      "url": "https://www.turnerandtownsend.com/"
+    },
+    "IT": {
+      "value": 9500000.0,
+      "year": 2024,
+      "source": "Cushman & Wakefield Global DC Construction Cost Guide 2024 — Milan",
+      "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-construction-cost-guide"
+    },
+    "GR": {
+      "value": 8500000.0,
+      "year": 2024,
+      "source": "Turner & Townsend DC Cost Index 2024 — Athens",
+      "url": "https://www.turnerandtownsend.com/"
+    },
+    "PL": {
+      "value": 8500000.0,
+      "year": 2024,
+      "source": "Cushman & Wakefield Global DC Construction Cost Guide 2024 — Warsaw",
+      "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-construction-cost-guide"
+    },
+    "CZ": {
+      "value": 8500000.0,
+      "year": 2024,
+      "source": "Turner & Townsend DC Cost Index 2024 — Prague",
+      "url": "https://www.turnerandtownsend.com/"
+    },
+    "HU": {
+      "value": 8000000.0,
+      "year": 2024,
+      "source": "Turner & Townsend DC Cost Index 2024 — Budapest",
+      "url": "https://www.turnerandtownsend.com/"
+    },
+    "RO": {
+      "value": 7500000.0,
+      "year": 2024,
+      "source": "Turner & Townsend DC Cost Index 2024 — Bucharest",
+      "url": "https://www.turnerandtownsend.com/"
+    },
+    "AE": {
+      "value": 9500000.0,
+      "year": 2024,
+      "source": "Cushman & Wakefield Global DC Construction Cost Guide 2024 — Dubai",
+      "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-construction-cost-guide"
+    },
+    "SA": {
+      "value": 9000000.0,
+      "year": 2024,
+      "source": "Cushman & Wakefield Global DC Construction Cost Guide 2024 — Riyadh",
+      "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-construction-cost-guide"
+    },
+    "QA": {
+      "value": 9500000.0,
+      "year": 2024,
+      "source": "Cushman & Wakefield Global DC Construction Cost Guide 2024 — Doha",
+      "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-construction-cost-guide"
+    },
+    "IL": {
+      "value": 10000000.0,
+      "year": 2024,
+      "source": "Turner & Townsend DC Cost Index 2024 — Tel Aviv",
+      "url": "https://www.turnerandtownsend.com/"
+    },
+    "TR": {
+      "value": 7500000.0,
+      "year": 2024,
+      "source": "Turner & Townsend DC Cost Index 2024 — Istanbul",
+      "url": "https://www.turnerandtownsend.com/"
+    },
+    "EG": {
+      "value": 7000000.0,
+      "year": 2024,
+      "source": "Cushman & Wakefield Global DC Construction Cost Guide 2024 — Cairo",
+      "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-construction-cost-guide"
+    },
+    "MA": {
+      "value": 7000000.0,
+      "year": 2024,
+      "source": "Turner & Townsend DC Cost Index 2024 — Casablanca",
+      "url": "https://www.turnerandtownsend.com/"
+    }
   },
-
   "power_cost_usd_kwh": {
     "_meta": {
       "factor": "Industrial-tariff electricity price (USD/kWh), end-2024 spot. EU values from Eurostat 'Electricity prices for non-household consumers — bi-annual data' (Band IE 70-150 GWh/yr). Non-EU sourced from each national regulator's published industrial tariff schedule.",
       "unit": "USD/kWh"
     },
-    "GB": { "value": 0.28, "year": 2024, "source": "Ofgem industrial electricity prices",            "url": "https://www.ofgem.gov.uk/" },
-    "IE": { "value": 0.30, "year": 2024, "source": "CRU industrial electricity tariff",              "url": "https://www.cru.ie/" },
-    "DE": { "value": 0.20, "year": 2024, "source": "Eurostat NRG_PC_205 — Band IE (large industrial)", "url": "https://ec.europa.eu/eurostat/web/energy/database" },
-    "FR": { "value": 0.16, "year": 2024, "source": "Eurostat NRG_PC_205 — Band IE",                  "url": "https://ec.europa.eu/eurostat/web/energy/database" },
-    "NL": { "value": 0.20, "year": 2024, "source": "Eurostat NRG_PC_205 — Band IE",                  "url": "https://ec.europa.eu/eurostat/web/energy/database" },
-    "BE": { "value": 0.19, "year": 2024, "source": "Eurostat NRG_PC_205 — Band IE",                  "url": "https://ec.europa.eu/eurostat/web/energy/database" },
-    "LU": { "value": 0.17, "year": 2024, "source": "Eurostat NRG_PC_205 — Band IE",                  "url": "https://ec.europa.eu/eurostat/web/energy/database" },
-    "CH": { "value": 0.18, "year": 2024, "source": "ElCom Strompreis 2024 — large industrial",        "url": "https://www.elcom.admin.ch/" },
-    "AT": { "value": 0.22, "year": 2024, "source": "Eurostat NRG_PC_205 — Band IE",                  "url": "https://ec.europa.eu/eurostat/web/energy/database" },
-    "SE": { "value": 0.10, "year": 2024, "source": "Eurostat NRG_PC_205 — Band IE",                  "url": "https://ec.europa.eu/eurostat/web/energy/database" },
-    "NO": { "value": 0.08, "year": 2024, "source": "NVE industrial tariff",                          "url": "https://www.nve.no/" },
-    "DK": { "value": 0.17, "year": 2024, "source": "Eurostat NRG_PC_205 — Band IE",                  "url": "https://ec.europa.eu/eurostat/web/energy/database" },
-    "FI": { "value": 0.09, "year": 2024, "source": "Eurostat NRG_PC_205 — Band IE",                  "url": "https://ec.europa.eu/eurostat/web/energy/database" },
-    "IS": { "value": 0.05, "year": 2024, "source": "Landsvirkjun industrial tariff (hydropower)",     "url": "https://www.landsvirkjun.com/" },
-    "ES": { "value": 0.15, "year": 2024, "source": "Eurostat NRG_PC_205 — Band IE",                  "url": "https://ec.europa.eu/eurostat/web/energy/database" },
-    "PT": { "value": 0.16, "year": 2024, "source": "Eurostat NRG_PC_205 — Band IE",                  "url": "https://ec.europa.eu/eurostat/web/energy/database" },
-    "IT": { "value": 0.21, "year": 2024, "source": "Eurostat NRG_PC_205 — Band IE",                  "url": "https://ec.europa.eu/eurostat/web/energy/database" },
-    "GR": { "value": 0.17, "year": 2024, "source": "Eurostat NRG_PC_205 — Band IE",                  "url": "https://ec.europa.eu/eurostat/web/energy/database" },
-    "PL": { "value": 0.13, "year": 2024, "source": "Eurostat NRG_PC_205 — Band IE",                  "url": "https://ec.europa.eu/eurostat/web/energy/database" },
-    "CZ": { "value": 0.12, "year": 2024, "source": "Eurostat NRG_PC_205 — Band IE",                  "url": "https://ec.europa.eu/eurostat/web/energy/database" },
-    "HU": { "value": 0.12, "year": 2024, "source": "Eurostat NRG_PC_205 — Band IE",                  "url": "https://ec.europa.eu/eurostat/web/energy/database" },
-    "RO": { "value": 0.14, "year": 2024, "source": "Eurostat NRG_PC_205 — Band IE",                  "url": "https://ec.europa.eu/eurostat/web/energy/database" },
-    "EE": { "value": 0.13, "year": 2024, "source": "Eurostat NRG_PC_205 — Band IE",                  "url": "https://ec.europa.eu/eurostat/web/energy/database" },
-    "AE": { "value": 0.06, "year": 2024, "source": "DEWA industrial tariff (Dubai)",                  "url": "https://www.dewa.gov.ae/" },
-    "SA": { "value": 0.05, "year": 2024, "source": "Saudi Electricity Company industrial tariff",     "url": "https://www.se.com.sa/" },
-    "QA": { "value": 0.04, "year": 2024, "source": "Kahramaa industrial tariff",                       "url": "https://www.km.qa/" },
-    "BH": { "value": 0.04, "year": 2024, "source": "EWA industrial tariff",                            "url": "https://www.ewa.bh/" },
-    "KW": { "value": 0.03, "year": 2024, "source": "MEW industrial tariff",                            "url": "https://www.mew.gov.kw/" },
-    "OM": { "value": 0.05, "year": 2024, "source": "Authority for Public Services Regulation",         "url": "https://www.apsr.om/" },
-    "IL": { "value": 0.10, "year": 2024, "source": "Israel Electricity Authority industrial tariff",   "url": "https://www.gov.il/en/departments/electricity_authority" },
-    "TR": { "value": 0.08, "year": 2024, "source": "EPDK industrial tariff",                            "url": "https://www.epdk.gov.tr/" },
-    "ZA": { "value": 0.09, "year": 2024, "source": "NERSA Eskom industrial tariff",                    "url": "https://www.nersa.org.za/" },
-    "EG": { "value": 0.06, "year": 2024, "source": "EgyptERA industrial tariff",                       "url": "http://egyptera.org/" },
-    "MA": { "value": 0.10, "year": 2024, "source": "ONEE industrial tariff",                           "url": "https://www.one.org.ma/" },
-    "NG": { "value": 0.11, "year": 2024, "source": "NERC Multi-Year Tariff Order",                     "url": "https://nerc.gov.ng/" },
-    "KE": { "value": 0.13, "year": 2024, "source": "EPRA industrial tariff",                            "url": "https://www.epra.go.ke/" }
+    "GB": {
+      "value": 0.28,
+      "year": 2024,
+      "source": "Ofgem industrial electricity prices",
+      "url": "https://www.ofgem.gov.uk/"
+    },
+    "IE": {
+      "value": 0.3,
+      "year": 2024,
+      "source": "CRU industrial electricity tariff",
+      "url": "https://www.cru.ie/"
+    },
+    "DE": {
+      "value": 0.2,
+      "year": 2024,
+      "source": "Eurostat NRG_PC_205 — Band IE (large industrial)",
+      "url": "https://ec.europa.eu/eurostat/web/energy/database"
+    },
+    "FR": {
+      "value": 0.16,
+      "year": 2024,
+      "source": "Eurostat NRG_PC_205 — Band IE",
+      "url": "https://ec.europa.eu/eurostat/web/energy/database"
+    },
+    "NL": {
+      "value": 0.2,
+      "year": 2024,
+      "source": "Eurostat NRG_PC_205 — Band IE",
+      "url": "https://ec.europa.eu/eurostat/web/energy/database"
+    },
+    "BE": {
+      "value": 0.19,
+      "year": 2024,
+      "source": "Eurostat NRG_PC_205 — Band IE",
+      "url": "https://ec.europa.eu/eurostat/web/energy/database"
+    },
+    "LU": {
+      "value": 0.17,
+      "year": 2024,
+      "source": "Eurostat NRG_PC_205 — Band IE",
+      "url": "https://ec.europa.eu/eurostat/web/energy/database"
+    },
+    "CH": {
+      "value": 0.18,
+      "year": 2024,
+      "source": "ElCom Strompreis 2024 — large industrial",
+      "url": "https://www.elcom.admin.ch/"
+    },
+    "AT": {
+      "value": 0.22,
+      "year": 2024,
+      "source": "Eurostat NRG_PC_205 — Band IE",
+      "url": "https://ec.europa.eu/eurostat/web/energy/database"
+    },
+    "SE": {
+      "value": 0.1,
+      "year": 2024,
+      "source": "Eurostat NRG_PC_205 — Band IE",
+      "url": "https://ec.europa.eu/eurostat/web/energy/database"
+    },
+    "NO": {
+      "value": 0.08,
+      "year": 2024,
+      "source": "NVE industrial tariff",
+      "url": "https://www.nve.no/"
+    },
+    "DK": {
+      "value": 0.17,
+      "year": 2024,
+      "source": "Eurostat NRG_PC_205 — Band IE",
+      "url": "https://ec.europa.eu/eurostat/web/energy/database"
+    },
+    "FI": {
+      "value": 0.09,
+      "year": 2024,
+      "source": "Eurostat NRG_PC_205 — Band IE",
+      "url": "https://ec.europa.eu/eurostat/web/energy/database"
+    },
+    "IS": {
+      "value": 0.05,
+      "year": 2024,
+      "source": "Landsvirkjun industrial tariff (hydropower)",
+      "url": "https://www.landsvirkjun.com/"
+    },
+    "ES": {
+      "value": 0.15,
+      "year": 2024,
+      "source": "Eurostat NRG_PC_205 — Band IE",
+      "url": "https://ec.europa.eu/eurostat/web/energy/database"
+    },
+    "PT": {
+      "value": 0.16,
+      "year": 2024,
+      "source": "Eurostat NRG_PC_205 — Band IE",
+      "url": "https://ec.europa.eu/eurostat/web/energy/database"
+    },
+    "IT": {
+      "value": 0.21,
+      "year": 2024,
+      "source": "Eurostat NRG_PC_205 — Band IE",
+      "url": "https://ec.europa.eu/eurostat/web/energy/database"
+    },
+    "GR": {
+      "value": 0.17,
+      "year": 2024,
+      "source": "Eurostat NRG_PC_205 — Band IE",
+      "url": "https://ec.europa.eu/eurostat/web/energy/database"
+    },
+    "PL": {
+      "value": 0.13,
+      "year": 2024,
+      "source": "Eurostat NRG_PC_205 — Band IE",
+      "url": "https://ec.europa.eu/eurostat/web/energy/database"
+    },
+    "CZ": {
+      "value": 0.12,
+      "year": 2024,
+      "source": "Eurostat NRG_PC_205 — Band IE",
+      "url": "https://ec.europa.eu/eurostat/web/energy/database"
+    },
+    "HU": {
+      "value": 0.12,
+      "year": 2024,
+      "source": "Eurostat NRG_PC_205 — Band IE",
+      "url": "https://ec.europa.eu/eurostat/web/energy/database"
+    },
+    "RO": {
+      "value": 0.14,
+      "year": 2024,
+      "source": "Eurostat NRG_PC_205 — Band IE",
+      "url": "https://ec.europa.eu/eurostat/web/energy/database"
+    },
+    "EE": {
+      "value": 0.13,
+      "year": 2024,
+      "source": "Eurostat NRG_PC_205 — Band IE",
+      "url": "https://ec.europa.eu/eurostat/web/energy/database"
+    },
+    "AE": {
+      "value": 0.06,
+      "year": 2024,
+      "source": "DEWA industrial tariff (Dubai)",
+      "url": "https://www.dewa.gov.ae/"
+    },
+    "SA": {
+      "value": 0.05,
+      "year": 2024,
+      "source": "Saudi Electricity Company industrial tariff",
+      "url": "https://www.se.com.sa/"
+    },
+    "QA": {
+      "value": 0.04,
+      "year": 2024,
+      "source": "Kahramaa industrial tariff",
+      "url": "https://www.km.qa/"
+    },
+    "BH": {
+      "value": 0.04,
+      "year": 2024,
+      "source": "EWA industrial tariff",
+      "url": "https://www.ewa.bh/"
+    },
+    "KW": {
+      "value": 0.03,
+      "year": 2024,
+      "source": "MEW industrial tariff",
+      "url": "https://www.mew.gov.kw/"
+    },
+    "OM": {
+      "value": 0.05,
+      "year": 2024,
+      "source": "Authority for Public Services Regulation",
+      "url": "https://www.apsr.om/"
+    },
+    "IL": {
+      "value": 0.1,
+      "year": 2024,
+      "source": "Israel Electricity Authority industrial tariff",
+      "url": "https://www.gov.il/en/departments/electricity_authority"
+    },
+    "TR": {
+      "value": 0.08,
+      "year": 2024,
+      "source": "EPDK industrial tariff",
+      "url": "https://www.epdk.gov.tr/"
+    },
+    "EG": {
+      "value": 0.06,
+      "year": 2024,
+      "source": "EgyptERA industrial tariff",
+      "url": "http://egyptera.org/"
+    },
+    "MA": {
+      "value": 0.1,
+      "year": 2024,
+      "source": "ONEE industrial tariff",
+      "url": "https://www.one.org.ma/"
+    }
   },
-
   "dc_capacity_live_mw": {
     "_meta": {
       "factor": "Total operational data centre capacity (MW IT load) across the country. Primary source: Cushman & Wakefield Global Data Center Market Comparison 2024 + JLL EMEA Data Centres Q4 2024 league tables. Cross-checked with datacentermap.com facility lists for smaller markets.",
       "unit": "MW"
     },
-    "GB": { "value": 1100, "year": 2024, "source": "Cushman & Wakefield Global DC Market 2024 — London/Slough cluster",    "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-market-comparison" },
-    "IE": { "value": 950,  "year": 2024, "source": "Cushman & Wakefield Global DC Market 2024 — Dublin cluster",            "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-market-comparison" },
-    "DE": { "value": 850,  "year": 2024, "source": "Cushman & Wakefield Global DC Market 2024 — Frankfurt + Berlin",        "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-market-comparison" },
-    "NL": { "value": 600,  "year": 2024, "source": "Cushman & Wakefield Global DC Market 2024 — Amsterdam cluster",        "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-market-comparison" },
-    "FR": { "value": 550,  "year": 2024, "source": "Cushman & Wakefield Global DC Market 2024 — Paris cluster",            "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-market-comparison" },
-    "ES": { "value": 280,  "year": 2024, "source": "JLL EMEA Data Centres Q4 2024 — Madrid emerging market",                 "url": "https://www.jll.com/en/insights" },
-    "IT": { "value": 220,  "year": 2024, "source": "JLL EMEA Data Centres Q4 2024 — Milan emerging market",                  "url": "https://www.jll.com/en/insights" },
-    "SE": { "value": 220,  "year": 2024, "source": "JLL EMEA Data Centres Q4 2024 — Stockholm + Nordic hyperscale",          "url": "https://www.jll.com/en/insights" },
-    "DK": { "value": 250,  "year": 2024, "source": "JLL EMEA Data Centres Q4 2024 — Copenhagen + hyperscale campuses",       "url": "https://www.jll.com/en/insights" },
-    "NO": { "value": 130,  "year": 2024, "source": "datacentermap.com + Statkraft hyperscale partnership announcements",     "url": "https://www.datacentermap.com/" },
-    "FI": { "value": 130,  "year": 2024, "source": "datacentermap.com + Google Hamina campus + Microsoft Espoo",             "url": "https://www.datacentermap.com/" },
-    "CH": { "value": 200,  "year": 2024, "source": "Cushman & Wakefield Global DC Market 2024 — Zurich",                     "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-market-comparison" },
-    "AT": { "value": 110,  "year": 2024, "source": "datacentermap.com — Vienna",                                              "url": "https://www.datacentermap.com/" },
-    "BE": { "value": 110,  "year": 2024, "source": "datacentermap.com — Brussels",                                            "url": "https://www.datacentermap.com/" },
-    "LU": { "value": 90,   "year": 2024, "source": "datacentermap.com + LuxConnect public reporting",                         "url": "https://www.datacentermap.com/" },
-    "PT": { "value": 80,   "year": 2024, "source": "datacentermap.com + Start Campus Sines announcement",                     "url": "https://www.datacentermap.com/" },
-    "PL": { "value": 130,  "year": 2024, "source": "JLL EMEA Data Centres Q4 2024 — Warsaw emerging cluster",                  "url": "https://www.jll.com/en/insights" },
-    "CZ": { "value": 75,   "year": 2024, "source": "datacentermap.com — Prague",                                              "url": "https://www.datacentermap.com/" },
-    "GR": { "value": 35,   "year": 2024, "source": "datacentermap.com — Athens emerging",                                     "url": "https://www.datacentermap.com/" },
-    "RO": { "value": 70,   "year": 2024, "source": "datacentermap.com — Bucharest",                                           "url": "https://www.datacentermap.com/" },
-    "EE": { "value": 25,   "year": 2024, "source": "datacentermap.com — Tallinn",                                             "url": "https://www.datacentermap.com/" },
-    "AE": { "value": 250,  "year": 2024, "source": "Cushman & Wakefield Global DC Market 2024 — Dubai + Abu Dhabi",          "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-market-comparison" },
-    "SA": { "value": 180,  "year": 2024, "source": "Cushman & Wakefield Global DC Market 2024 — Riyadh hyperscale",          "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-market-comparison" },
-    "QA": { "value": 55,   "year": 2024, "source": "datacentermap.com + Microsoft Qatar Cloud Region",                        "url": "https://www.datacentermap.com/" },
-    "BH": { "value": 50,   "year": 2024, "source": "datacentermap.com + AWS Bahrain Region",                                  "url": "https://www.datacentermap.com/" },
-    "IL": { "value": 70,   "year": 2024, "source": "datacentermap.com — Tel Aviv",                                            "url": "https://www.datacentermap.com/" },
-    "TR": { "value": 100,  "year": 2024, "source": "datacentermap.com — Istanbul cluster",                                    "url": "https://www.datacentermap.com/" },
-    "ZA": { "value": 220,  "year": 2024, "source": "JLL EMEA Data Centres Q4 2024 — Johannesburg + Cape Town",                 "url": "https://www.jll.com/en/insights" },
-    "EG": { "value": 50,   "year": 2024, "source": "datacentermap.com — Cairo",                                               "url": "https://www.datacentermap.com/" },
-    "MA": { "value": 35,   "year": 2024, "source": "datacentermap.com — Casablanca",                                          "url": "https://www.datacentermap.com/" },
-    "NG": { "value": 65,   "year": 2024, "source": "datacentermap.com — Lagos",                                               "url": "https://www.datacentermap.com/" },
-    "KE": { "value": 40,   "year": 2024, "source": "datacentermap.com — Nairobi",                                             "url": "https://www.datacentermap.com/" }
+    "GB": {
+      "value": 1100,
+      "year": 2024,
+      "source": "Cushman & Wakefield Global DC Market 2024 — London/Slough cluster",
+      "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-market-comparison"
+    },
+    "IE": {
+      "value": 950,
+      "year": 2024,
+      "source": "Cushman & Wakefield Global DC Market 2024 — Dublin cluster",
+      "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-market-comparison"
+    },
+    "DE": {
+      "value": 850,
+      "year": 2024,
+      "source": "Cushman & Wakefield Global DC Market 2024 — Frankfurt + Berlin",
+      "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-market-comparison"
+    },
+    "NL": {
+      "value": 600,
+      "year": 2024,
+      "source": "Cushman & Wakefield Global DC Market 2024 — Amsterdam cluster",
+      "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-market-comparison"
+    },
+    "FR": {
+      "value": 550,
+      "year": 2024,
+      "source": "Cushman & Wakefield Global DC Market 2024 — Paris cluster",
+      "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-market-comparison"
+    },
+    "ES": {
+      "value": 280,
+      "year": 2024,
+      "source": "JLL EMEA Data Centres Q4 2024 — Madrid emerging market",
+      "url": "https://www.jll.com/en/insights"
+    },
+    "IT": {
+      "value": 220,
+      "year": 2024,
+      "source": "JLL EMEA Data Centres Q4 2024 — Milan emerging market",
+      "url": "https://www.jll.com/en/insights"
+    },
+    "SE": {
+      "value": 220,
+      "year": 2024,
+      "source": "JLL EMEA Data Centres Q4 2024 — Stockholm + Nordic hyperscale",
+      "url": "https://www.jll.com/en/insights"
+    },
+    "DK": {
+      "value": 250,
+      "year": 2024,
+      "source": "JLL EMEA Data Centres Q4 2024 — Copenhagen + hyperscale campuses",
+      "url": "https://www.jll.com/en/insights"
+    },
+    "NO": {
+      "value": 130,
+      "year": 2024,
+      "source": "datacentermap.com + Statkraft hyperscale partnership announcements",
+      "url": "https://www.datacentermap.com/"
+    },
+    "FI": {
+      "value": 130,
+      "year": 2024,
+      "source": "datacentermap.com + Google Hamina campus + Microsoft Espoo",
+      "url": "https://www.datacentermap.com/"
+    },
+    "CH": {
+      "value": 200,
+      "year": 2024,
+      "source": "Cushman & Wakefield Global DC Market 2024 — Zurich",
+      "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-market-comparison"
+    },
+    "AT": {
+      "value": 110,
+      "year": 2024,
+      "source": "datacentermap.com — Vienna",
+      "url": "https://www.datacentermap.com/"
+    },
+    "BE": {
+      "value": 110,
+      "year": 2024,
+      "source": "datacentermap.com — Brussels",
+      "url": "https://www.datacentermap.com/"
+    },
+    "LU": {
+      "value": 90,
+      "year": 2024,
+      "source": "datacentermap.com + LuxConnect public reporting",
+      "url": "https://www.datacentermap.com/"
+    },
+    "PT": {
+      "value": 80,
+      "year": 2024,
+      "source": "datacentermap.com + Start Campus Sines announcement",
+      "url": "https://www.datacentermap.com/"
+    },
+    "PL": {
+      "value": 130,
+      "year": 2024,
+      "source": "JLL EMEA Data Centres Q4 2024 — Warsaw emerging cluster",
+      "url": "https://www.jll.com/en/insights"
+    },
+    "CZ": {
+      "value": 75,
+      "year": 2024,
+      "source": "datacentermap.com — Prague",
+      "url": "https://www.datacentermap.com/"
+    },
+    "GR": {
+      "value": 35,
+      "year": 2024,
+      "source": "datacentermap.com — Athens emerging",
+      "url": "https://www.datacentermap.com/"
+    },
+    "RO": {
+      "value": 70,
+      "year": 2024,
+      "source": "datacentermap.com — Bucharest",
+      "url": "https://www.datacentermap.com/"
+    },
+    "EE": {
+      "value": 25,
+      "year": 2024,
+      "source": "datacentermap.com — Tallinn",
+      "url": "https://www.datacentermap.com/"
+    },
+    "AE": {
+      "value": 250,
+      "year": 2024,
+      "source": "Cushman & Wakefield Global DC Market 2024 — Dubai + Abu Dhabi",
+      "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-market-comparison"
+    },
+    "SA": {
+      "value": 180,
+      "year": 2024,
+      "source": "Cushman & Wakefield Global DC Market 2024 — Riyadh hyperscale",
+      "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-market-comparison"
+    },
+    "QA": {
+      "value": 55,
+      "year": 2024,
+      "source": "datacentermap.com + Microsoft Qatar Cloud Region",
+      "url": "https://www.datacentermap.com/"
+    },
+    "BH": {
+      "value": 50,
+      "year": 2024,
+      "source": "datacentermap.com + AWS Bahrain Region",
+      "url": "https://www.datacentermap.com/"
+    },
+    "IL": {
+      "value": 70,
+      "year": 2024,
+      "source": "datacentermap.com — Tel Aviv",
+      "url": "https://www.datacentermap.com/"
+    },
+    "TR": {
+      "value": 100,
+      "year": 2024,
+      "source": "datacentermap.com — Istanbul cluster",
+      "url": "https://www.datacentermap.com/"
+    },
+    "EG": {
+      "value": 50,
+      "year": 2024,
+      "source": "datacentermap.com — Cairo",
+      "url": "https://www.datacentermap.com/"
+    },
+    "MA": {
+      "value": 35,
+      "year": 2024,
+      "source": "datacentermap.com — Casablanca",
+      "url": "https://www.datacentermap.com/"
+    }
   },
-
   "dc_capacity_planned_mw": {
     "_meta": {
       "factor": "Planned + under-construction data centre capacity (MW IT load). Primary source: Cushman & Wakefield Global Data Center Market Comparison 2024 (planned pipeline column) + JLL EMEA Data Centres Q4 2024 (under-construction + committed). Note: pipeline figures are notoriously volatile — treat as point-in-time snapshot.",
       "unit": "MW"
     },
-    "GB": { "value": 800,  "year": 2024, "source": "Cushman & Wakefield Global DC Market 2024 — London pipeline",            "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-market-comparison" },
-    "IE": { "value": 400,  "year": 2024, "source": "Cushman & Wakefield Global DC Market 2024 — Dublin (post-moratorium constrained)", "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-market-comparison" },
-    "DE": { "value": 900,  "year": 2024, "source": "Cushman & Wakefield Global DC Market 2024 — Frankfurt + Berlin pipeline", "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-market-comparison" },
-    "NL": { "value": 500,  "year": 2024, "source": "Cushman & Wakefield Global DC Market 2024 — Amsterdam pipeline (post-moratorium)", "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-market-comparison" },
-    "FR": { "value": 700,  "year": 2024, "source": "Cushman & Wakefield Global DC Market 2024 — Paris pipeline",              "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-market-comparison" },
-    "ES": { "value": 600,  "year": 2024, "source": "JLL EMEA Data Centres Q4 2024 — Madrid pipeline boom",                    "url": "https://www.jll.com/en/insights" },
-    "IT": { "value": 500,  "year": 2024, "source": "JLL EMEA Data Centres Q4 2024 — Milan pipeline",                          "url": "https://www.jll.com/en/insights" },
-    "SE": { "value": 350,  "year": 2024, "source": "JLL EMEA Data Centres Q4 2024 — Stockholm + hyperscale pipeline",          "url": "https://www.jll.com/en/insights" },
-    "DK": { "value": 400,  "year": 2024, "source": "JLL EMEA Data Centres Q4 2024 — Microsoft, Meta, AWS pipelines",           "url": "https://www.jll.com/en/insights" },
-    "NO": { "value": 250,  "year": 2024, "source": "datacentermap.com + Statkraft/Bulk hyperscale pipeline",                   "url": "https://www.datacentermap.com/" },
-    "FI": { "value": 300,  "year": 2024, "source": "datacentermap.com + Microsoft Espoo + Google Hamina expansion",            "url": "https://www.datacentermap.com/" },
-    "CH": { "value": 180,  "year": 2024, "source": "Cushman & Wakefield Global DC Market 2024 — Zurich pipeline",              "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-market-comparison" },
-    "BE": { "value": 130,  "year": 2024, "source": "datacentermap.com + Google St-Ghislain expansion",                         "url": "https://www.datacentermap.com/" },
-    "AT": { "value": 100,  "year": 2024, "source": "datacentermap.com — Vienna pipeline",                                      "url": "https://www.datacentermap.com/" },
-    "PT": { "value": 400,  "year": 2024, "source": "Start Campus Sines + datacentermap.com",                                   "url": "https://www.datacentermap.com/" },
-    "PL": { "value": 350,  "year": 2024, "source": "JLL EMEA Data Centres Q4 2024 — Warsaw pipeline + AtmanData",              "url": "https://www.jll.com/en/insights" },
-    "GR": { "value": 250,  "year": 2024, "source": "datacentermap.com + Microsoft + Lamda hyperscale announcements",           "url": "https://www.datacentermap.com/" },
-    "RO": { "value": 80,   "year": 2024, "source": "datacentermap.com — Bucharest pipeline",                                   "url": "https://www.datacentermap.com/" },
-    "AE": { "value": 450,  "year": 2024, "source": "Cushman & Wakefield Global DC Market 2024 — Dubai + AD pipelines",         "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-market-comparison" },
-    "SA": { "value": 600,  "year": 2024, "source": "Cushman & Wakefield Global DC Market 2024 — Vision 2030 hyperscale build", "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-market-comparison" },
-    "QA": { "value": 150,  "year": 2024, "source": "Microsoft + Google + Ooredoo announcements",                                "url": "https://www.datacentermap.com/" },
-    "IL": { "value": 200,  "year": 2024, "source": "datacentermap.com + AWS Israel Region build-out",                           "url": "https://www.datacentermap.com/" },
-    "TR": { "value": 150,  "year": 2024, "source": "datacentermap.com — Istanbul pipeline",                                     "url": "https://www.datacentermap.com/" },
-    "ZA": { "value": 300,  "year": 2024, "source": "JLL EMEA Data Centres Q4 2024 — Microsoft, AWS, Africa Data Centres",       "url": "https://www.jll.com/en/insights" },
-    "EG": { "value": 100,  "year": 2024, "source": "datacentermap.com — Cairo pipeline",                                        "url": "https://www.datacentermap.com/" },
-    "MA": { "value": 90,   "year": 2024, "source": "datacentermap.com — Casablanca pipeline",                                   "url": "https://www.datacentermap.com/" },
-    "NG": { "value": 130,  "year": 2024, "source": "datacentermap.com — Lagos pipeline",                                        "url": "https://www.datacentermap.com/" },
-    "KE": { "value": 90,   "year": 2024, "source": "datacentermap.com — Nairobi pipeline",                                      "url": "https://www.datacentermap.com/" }
+    "GB": {
+      "value": 800,
+      "year": 2024,
+      "source": "Cushman & Wakefield Global DC Market 2024 — London pipeline",
+      "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-market-comparison"
+    },
+    "IE": {
+      "value": 400,
+      "year": 2024,
+      "source": "Cushman & Wakefield Global DC Market 2024 — Dublin (post-moratorium constrained)",
+      "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-market-comparison"
+    },
+    "DE": {
+      "value": 900,
+      "year": 2024,
+      "source": "Cushman & Wakefield Global DC Market 2024 — Frankfurt + Berlin pipeline",
+      "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-market-comparison"
+    },
+    "NL": {
+      "value": 500,
+      "year": 2024,
+      "source": "Cushman & Wakefield Global DC Market 2024 — Amsterdam pipeline (post-moratorium)",
+      "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-market-comparison"
+    },
+    "FR": {
+      "value": 700,
+      "year": 2024,
+      "source": "Cushman & Wakefield Global DC Market 2024 — Paris pipeline",
+      "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-market-comparison"
+    },
+    "ES": {
+      "value": 600,
+      "year": 2024,
+      "source": "JLL EMEA Data Centres Q4 2024 — Madrid pipeline boom",
+      "url": "https://www.jll.com/en/insights"
+    },
+    "IT": {
+      "value": 500,
+      "year": 2024,
+      "source": "JLL EMEA Data Centres Q4 2024 — Milan pipeline",
+      "url": "https://www.jll.com/en/insights"
+    },
+    "SE": {
+      "value": 350,
+      "year": 2024,
+      "source": "JLL EMEA Data Centres Q4 2024 — Stockholm + hyperscale pipeline",
+      "url": "https://www.jll.com/en/insights"
+    },
+    "DK": {
+      "value": 400,
+      "year": 2024,
+      "source": "JLL EMEA Data Centres Q4 2024 — Microsoft, Meta, AWS pipelines",
+      "url": "https://www.jll.com/en/insights"
+    },
+    "NO": {
+      "value": 250,
+      "year": 2024,
+      "source": "datacentermap.com + Statkraft/Bulk hyperscale pipeline",
+      "url": "https://www.datacentermap.com/"
+    },
+    "FI": {
+      "value": 300,
+      "year": 2024,
+      "source": "datacentermap.com + Microsoft Espoo + Google Hamina expansion",
+      "url": "https://www.datacentermap.com/"
+    },
+    "CH": {
+      "value": 180,
+      "year": 2024,
+      "source": "Cushman & Wakefield Global DC Market 2024 — Zurich pipeline",
+      "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-market-comparison"
+    },
+    "BE": {
+      "value": 130,
+      "year": 2024,
+      "source": "datacentermap.com + Google St-Ghislain expansion",
+      "url": "https://www.datacentermap.com/"
+    },
+    "AT": {
+      "value": 100,
+      "year": 2024,
+      "source": "datacentermap.com — Vienna pipeline",
+      "url": "https://www.datacentermap.com/"
+    },
+    "PT": {
+      "value": 400,
+      "year": 2024,
+      "source": "Start Campus Sines + datacentermap.com",
+      "url": "https://www.datacentermap.com/"
+    },
+    "PL": {
+      "value": 350,
+      "year": 2024,
+      "source": "JLL EMEA Data Centres Q4 2024 — Warsaw pipeline + AtmanData",
+      "url": "https://www.jll.com/en/insights"
+    },
+    "GR": {
+      "value": 250,
+      "year": 2024,
+      "source": "datacentermap.com + Microsoft + Lamda hyperscale announcements",
+      "url": "https://www.datacentermap.com/"
+    },
+    "RO": {
+      "value": 80,
+      "year": 2024,
+      "source": "datacentermap.com — Bucharest pipeline",
+      "url": "https://www.datacentermap.com/"
+    },
+    "AE": {
+      "value": 450,
+      "year": 2024,
+      "source": "Cushman & Wakefield Global DC Market 2024 — Dubai + AD pipelines",
+      "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-market-comparison"
+    },
+    "SA": {
+      "value": 600,
+      "year": 2024,
+      "source": "Cushman & Wakefield Global DC Market 2024 — Vision 2030 hyperscale build",
+      "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-market-comparison"
+    },
+    "QA": {
+      "value": 150,
+      "year": 2024,
+      "source": "Microsoft + Google + Ooredoo announcements",
+      "url": "https://www.datacentermap.com/"
+    },
+    "IL": {
+      "value": 200,
+      "year": 2024,
+      "source": "datacentermap.com + AWS Israel Region build-out",
+      "url": "https://www.datacentermap.com/"
+    },
+    "TR": {
+      "value": 150,
+      "year": 2024,
+      "source": "datacentermap.com — Istanbul pipeline",
+      "url": "https://www.datacentermap.com/"
+    },
+    "EG": {
+      "value": 100,
+      "year": 2024,
+      "source": "datacentermap.com — Cairo pipeline",
+      "url": "https://www.datacentermap.com/"
+    },
+    "MA": {
+      "value": 90,
+      "year": 2024,
+      "source": "datacentermap.com — Casablanca pipeline",
+      "url": "https://www.datacentermap.com/"
+    }
   }
 }

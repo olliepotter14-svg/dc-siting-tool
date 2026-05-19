@@ -1,21 +1,21 @@
 {
   "_meta": {
     "generated_by": "scripts/build_markets_dataset.py",
-    "country_count": 48,
+    "country_count": 45,
     "factor_coverage": {
-      "demand_2027_twh": 16,
-      "grid_connect_years": 37,
-      "grid_investment_usdbn": 27,
-      "bandwidth_gbps": 36,
+      "demand_2027_twh": 15,
+      "grid_connect_years": 34,
+      "grid_investment_usdbn": 25,
+      "bandwidth_gbps": 33,
       "bandwidth_2030_gbps": 10,
-      "construction_cost_usd_mw": 31,
-      "power_cost_usd_kwh": 36,
-      "dc_capacity_live_mw": 32,
-      "dc_capacity_planned_mw": 28,
-      "power_per_capita_kwh": 48,
-      "carbon_intensity_gco2_kwh": 48,
-      "rd_techs_per_million": 32,
-      "tertiary_grad_pct": 47
+      "construction_cost_usd_mw": 28,
+      "power_cost_usd_kwh": 33,
+      "dc_capacity_live_mw": 29,
+      "dc_capacity_planned_mw": 25,
+      "power_per_capita_kwh": 45,
+      "carbon_intensity_gco2_kwh": 45,
+      "rd_techs_per_million": 31,
+      "tertiary_grad_pct": 44
     }
   },
   "markets": [
@@ -3046,103 +3046,10 @@
       }
     },
     {
-      "iso2": "ZA",
-      "name": "South Africa",
-      "flag": "🇿🇦",
-      "region": "Africa",
-      "anchors": {
-        "capital": {
-          "name": "Pretoria",
-          "lon": 28.1881,
-          "lat": -25.7479
-        },
-        "dc_metro": {
-          "name": "Johannesburg",
-          "lon": 28.0473,
-          "lat": -26.2041
-        }
-      },
-      "factors": {
-        "demand_2027_twh": {
-          "value": 2.5,
-          "year": 2027,
-          "source": "JLL EMEA Data Centres Q4 2024 — Johannesburg + Cape Town",
-          "url": "https://www.jll.com/en/insights"
-        },
-        "grid_connect_years": {
-          "value": 6.0,
-          "year": 2024,
-          "source": "Eskom Transmission Development Plan 2024-2033",
-          "url": "https://www.eskom.co.za/",
-          "note": "Load-shedding context; private wheeling deals materially shorter for hyperscale."
-        },
-        "grid_investment_usdbn": {
-          "value": 25.0,
-          "year": 2030,
-          "source": "Eskom Transmission Development Plan 2024-2033",
-          "url": "https://www.eskom.co.za/"
-        },
-        "bandwidth_gbps": {
-          "value": 0.07,
-          "year": 2024,
-          "source": "Ookla Speedtest Global Index",
-          "url": "https://www.speedtest.net/global-index"
-        },
-        "construction_cost_usd_mw": {
-          "value": 8000000.0,
-          "year": 2024,
-          "source": "Cushman & Wakefield Global DC Construction Cost Guide 2024 — Johannesburg",
-          "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-construction-cost-guide"
-        },
-        "power_cost_usd_kwh": {
-          "value": 0.09,
-          "year": 2024,
-          "source": "NERSA Eskom industrial tariff",
-          "url": "https://www.nersa.org.za/"
-        },
-        "dc_capacity_live_mw": {
-          "value": 220,
-          "year": 2024,
-          "source": "JLL EMEA Data Centres Q4 2024 — Johannesburg + Cape Town",
-          "url": "https://www.jll.com/en/insights"
-        },
-        "dc_capacity_planned_mw": {
-          "value": 300,
-          "year": 2024,
-          "source": "JLL EMEA Data Centres Q4 2024 — Microsoft, AWS, Africa Data Centres",
-          "url": "https://www.jll.com/en/insights"
-        },
-        "power_per_capita_kwh": {
-          "value": 3749.3442,
-          "year": 2025,
-          "source": "Our World in Data (Ember 'Yearly Electricity Data')",
-          "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation"
-        },
-        "carbon_intensity_gco2_kwh": {
-          "value": 699.29,
-          "year": 2025,
-          "source": "Our World in Data (Ember 'Carbon intensity of electricity')",
-          "url": "https://ourworldindata.org/grapher/carbon-intensity-electricity"
-        },
-        "rd_techs_per_million": {
-          "value": 129.50941,
-          "year": 2017,
-          "source": "World Bank Indicators — Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",
-          "url": "https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6"
-        },
-        "tertiary_grad_pct": {
-          "value": 7.01721000671387,
-          "year": 2023,
-          "source": "World Bank Indicators — Educational attainment ≥ Bachelor's (% of pop 25+, SE.TER.CUAT.BA.ZS)",
-          "url": "https://data.worldbank.org/indicator/SE.TER.CUAT.BA.ZS"
-        }
-      }
-    },
-    {
       "iso2": "EG",
       "name": "Egypt",
       "flag": "🇪🇬",
-      "region": "Africa",
+      "region": "North Africa",
       "anchors": {
         "capital": {
           "name": "Cairo",
@@ -3228,7 +3135,7 @@
       "iso2": "MA",
       "name": "Morocco",
       "flag": "🇲🇦",
-      "region": "Africa",
+      "region": "North Africa",
       "anchors": {
         "capital": {
           "name": "Rabat",
@@ -3305,164 +3212,10 @@
       }
     },
     {
-      "iso2": "NG",
-      "name": "Nigeria",
-      "flag": "🇳🇬",
-      "region": "Africa",
-      "anchors": {
-        "capital": {
-          "name": "Abuja",
-          "lon": 7.4951,
-          "lat": 9.0765
-        },
-        "dc_metro": {
-          "name": "Lagos",
-          "lon": 3.3792,
-          "lat": 6.5244
-        }
-      },
-      "factors": {
-        "grid_connect_years": {
-          "value": 5.0,
-          "year": 2024,
-          "source": "TCN Transmission Expansion Plan 2024",
-          "url": "https://www.tcn.org.ng/"
-        },
-        "grid_investment_usdbn": {
-          "value": 7.0,
-          "year": 2030,
-          "source": "TCN Transmission Expansion Plan 2024",
-          "url": "https://www.tcn.org.ng/"
-        },
-        "bandwidth_gbps": {
-          "value": 0.02,
-          "year": 2024,
-          "source": "Ookla Speedtest Global Index",
-          "url": "https://www.speedtest.net/global-index"
-        },
-        "construction_cost_usd_mw": {
-          "value": 8500000.0,
-          "year": 2024,
-          "source": "Turner & Townsend DC Cost Index 2024 — Lagos (import cost premium)",
-          "url": "https://www.turnerandtownsend.com/"
-        },
-        "power_cost_usd_kwh": {
-          "value": 0.11,
-          "year": 2024,
-          "source": "NERC Multi-Year Tariff Order",
-          "url": "https://nerc.gov.ng/"
-        },
-        "dc_capacity_live_mw": {
-          "value": 65,
-          "year": 2024,
-          "source": "datacentermap.com — Lagos",
-          "url": "https://www.datacentermap.com/"
-        },
-        "dc_capacity_planned_mw": {
-          "value": 130,
-          "year": 2024,
-          "source": "datacentermap.com — Lagos pipeline",
-          "url": "https://www.datacentermap.com/"
-        },
-        "power_per_capita_kwh": {
-          "value": 174.88481,
-          "year": 2025,
-          "source": "Our World in Data (Ember 'Yearly Electricity Data')",
-          "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation"
-        },
-        "carbon_intensity_gco2_kwh": {
-          "value": 455.71,
-          "year": 2025,
-          "source": "Our World in Data (Ember 'Carbon intensity of electricity')",
-          "url": "https://ourworldindata.org/grapher/carbon-intensity-electricity"
-        },
-        "tertiary_grad_pct": {
-          "value": 3.80241384950738,
-          "year": 2023,
-          "source": "World Bank Indicators — Educational attainment ≥ Bachelor's (% of pop 25+, SE.TER.CUAT.BA.ZS)",
-          "url": "https://data.worldbank.org/indicator/SE.TER.CUAT.BA.ZS"
-        }
-      }
-    },
-    {
-      "iso2": "KE",
-      "name": "Kenya",
-      "flag": "🇰🇪",
-      "region": "Africa",
-      "anchors": {
-        "capital": {
-          "name": "Nairobi",
-          "lon": 36.8219,
-          "lat": -1.2921
-        },
-        "dc_metro": {
-          "name": "Nairobi",
-          "lon": 36.8219,
-          "lat": -1.2921
-        }
-      },
-      "factors": {
-        "grid_connect_years": {
-          "value": 4.0,
-          "year": 2024,
-          "source": "KETRACO Transmission Master Plan",
-          "url": "https://www.ketraco.co.ke/"
-        },
-        "bandwidth_gbps": {
-          "value": 0.03,
-          "year": 2024,
-          "source": "Ookla Speedtest Global Index",
-          "url": "https://www.speedtest.net/global-index"
-        },
-        "construction_cost_usd_mw": {
-          "value": 8000000.0,
-          "year": 2024,
-          "source": "Turner & Townsend DC Cost Index 2024 — Nairobi",
-          "url": "https://www.turnerandtownsend.com/"
-        },
-        "power_cost_usd_kwh": {
-          "value": 0.13,
-          "year": 2024,
-          "source": "EPRA industrial tariff",
-          "url": "https://www.epra.go.ke/"
-        },
-        "dc_capacity_live_mw": {
-          "value": 40,
-          "year": 2024,
-          "source": "datacentermap.com — Nairobi",
-          "url": "https://www.datacentermap.com/"
-        },
-        "dc_capacity_planned_mw": {
-          "value": 90,
-          "year": 2024,
-          "source": "datacentermap.com — Nairobi pipeline",
-          "url": "https://www.datacentermap.com/"
-        },
-        "power_per_capita_kwh": {
-          "value": 244.03601,
-          "year": 2025,
-          "source": "Our World in Data (Ember 'Yearly Electricity Data')",
-          "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation"
-        },
-        "carbon_intensity_gco2_kwh": {
-          "value": 95.44,
-          "year": 2025,
-          "source": "Our World in Data (Ember 'Carbon intensity of electricity')",
-          "url": "https://ourworldindata.org/grapher/carbon-intensity-electricity"
-        },
-        "tertiary_grad_pct": {
-          "value": 5.47591018676758,
-          "year": 2022,
-          "source": "World Bank Indicators — Educational attainment ≥ Bachelor's (% of pop 25+, SE.TER.CUAT.BA.ZS)",
-          "url": "https://data.worldbank.org/indicator/SE.TER.CUAT.BA.ZS"
-        }
-      }
-    },
-    {
       "iso2": "TN",
       "name": "Tunisia",
       "flag": "🇹🇳",
-      "region": "Africa",
+      "region": "North Africa",
       "anchors": {
         "capital": {
           "name": "Tunis",
@@ -3512,7 +3265,7 @@
       "iso2": "DZ",
       "name": "Algeria",
       "flag": "🇩🇿",
-      "region": "Africa",
+      "region": "North Africa",
       "anchors": {
         "capital": {
           "name": "Algiers",

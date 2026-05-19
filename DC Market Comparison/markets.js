@@ -172,7 +172,7 @@ const REGION_ORDER = [
   'Southern Europe',
   'Central & Eastern Europe',
   'Middle East',
-  'Africa',
+  'North Africa',
 ];
 
 async function loadCountries() {
@@ -276,124 +276,186 @@ const OVERLAYS = {
     }],
   },
   dcs: {
-    file: 'data/overlay_hyperscale.geojson',
-    sourceId: 'overlay-dcs-src',
-    interactive: true,
-    popup: (props) => {
-      const statusLabel = (props.status || 'operational').replace(/_/g, ' ');
-      const note = props.note ? '<div class="popup-line" style="color:var(--text-low);font-size:10px;font-style:italic">' + escapeHtml(props.note) + '</div>' : '';
-      return ''
-        + '<div class="popup-tag tag-dc tag-status-' + escapeHtml(props.status || 'operational') + '">' + escapeHtml(statusLabel) + '</div>'
-        + '<div class="popup-name">' + escapeHtml(props.name || 'Unnamed facility') + '</div>'
-        + '<div class="popup-region">' + escapeHtml(props.operator || '') + (props.city ? ' · ' + escapeHtml(props.city) : '') + (props.country ? ', ' + escapeHtml(props.country) : '') + '</div>'
-        + '<div class="popup-line"><span class="popup-key">Capacity</span> <strong>' + (props.mw != null ? props.mw + ' MW' : 'n/a') + '</strong></div>'
-        + note
-        + (props.url ? '<a class="popup-link" href="' + escapeHtml(props.url) + '" target="_blank" rel="noopener">Source ↗</a>' : '');
-    },
+    // Two data sources behind the one toggle:
+    // 1) Full PeeringDB facility list (~1,800 sites) — comprehensive
+    //    coverage of carrier-neutral colos. No MW; small grey dots.
+    // 2) Curated hyperscale + large colo dataset (~80 sites with MW + status).
+    //    Rendered on top so MW labels and status colour pop above the base.
+    sources: [
+      { id: 'overlay-dcs-base-src',   file: 'data/overlay_dc_sites.geojson'  },
+      { id: 'overlay-dcs-hyper-src',  file: 'data/overlay_hyperscale.geojson' },
+    ],
     layers: [
       {
-        id: 'overlay-dcs',
+        id: 'overlay-dcs-base',
+        sourceRef: 'overlay-dcs-base-src',
         type: 'circle',
+        interactive: true,
+        popupKind: 'peeringdb',
         paint: {
-          // Radius proportional to MW capacity (5px at 10 MW → 24px at 500 MW)
-          'circle-radius': [
-            'interpolate', ['linear'], ['get', 'mw'],
-            10,  4,
-            50,  7,
-            150, 12,
-            300, 18,
-            500, 24,
-          ],
-          // Status colour: green = live, amber = under construction, grey = planned
-          'circle-color': [
-            'match', ['get', 'status'],
-            'operational',       '#2E7D32',
-            'under_construction','#F57C00',
-            'planned',           '#9E9E9E',
-            '#9C27B0',
-          ],
+          'circle-radius':       ['interpolate', ['linear'], ['zoom'], 2, 1.5, 6, 3, 8, 4.5],
+          'circle-color':        '#9C27B0',
           'circle-stroke-color': '#10141C',
-          'circle-stroke-width': 1.5,
-          'circle-opacity':      0.85,
+          'circle-stroke-width': 0.4,
+          'circle-opacity':      0.55,
         },
       },
       {
-        id: 'overlay-dcs-labels',
+        id: 'overlay-dcs-hyper',
+        sourceRef: 'overlay-dcs-hyper-src',
+        type: 'circle',
+        interactive: true,
+        popupKind: 'hyperscale',
+        paint: {
+          'circle-radius': [
+            'interpolate', ['linear'], ['get', 'mw'],
+            10,  5,
+            50,  8,
+            150, 13,
+            300, 19,
+            500, 25,
+          ],
+          'circle-color': [
+            'match', ['get', 'status'],
+            'operational',        '#2E7D32',
+            'under_construction', '#F57C00',
+            'planned',            '#9E9E9E',
+            '#9C27B0',
+          ],
+          'circle-stroke-color': '#0A0D12',
+          'circle-stroke-width': 1.8,
+          'circle-opacity':      0.92,
+        },
+      },
+      {
+        id: 'overlay-dcs-hyper-labels',
+        sourceRef: 'overlay-dcs-hyper-src',
         type: 'symbol',
+        interactive: false,
         layout: {
           'text-field': ['concat', ['to-string', ['get', 'mw']], ' MW'],
           'text-font':  ['Open Sans Bold', 'Arial Unicode MS Bold'],
-          'text-size':  ['interpolate', ['linear'], ['zoom'], 3, 9, 5, 10, 7, 12],
+          'text-size':  ['interpolate', ['linear'], ['zoom'], 3, 9, 5, 11, 7, 13],
           'text-anchor': 'top',
-          'text-offset': [0, 1.0],
+          'text-offset': [0, 1.1],
           'text-allow-overlap': false,
           'text-padding': 2,
         },
         paint: {
           'text-color':      '#FFFFFF',
           'text-halo-color': '#0A0D12',
-          'text-halo-width': 1.5,
+          'text-halo-width': 1.8,
         },
       },
     ],
+    popups: {
+      peeringdb: (props) => ''
+        + '<div class="popup-tag tag-dc">Carrier-neutral facility</div>'
+        + '<div class="popup-name">' + escapeHtml(props.name || 'Unnamed facility') + '</div>'
+        + '<div class="popup-region">' + escapeHtml(props.city || '') + (props.country ? ' · ' + escapeHtml(props.country) : '') + '</div>'
+        + (props.url ? '<a class="popup-link" href="' + escapeHtml(props.url) + '" target="_blank" rel="noopener">View on PeeringDB ↗</a>' : ''),
+      hyperscale: (props) => {
+        const statusLabel = (props.status || 'operational').replace(/_/g, ' ');
+        const note = props.note ? '<div class="popup-line" style="color:var(--text-low);font-size:10px;font-style:italic">' + escapeHtml(props.note) + '</div>' : '';
+        return ''
+          + '<div class="popup-tag tag-dc tag-status-' + escapeHtml(props.status || 'operational') + '">' + escapeHtml(statusLabel) + '</div>'
+          + '<div class="popup-name">' + escapeHtml(props.name || 'Unnamed facility') + '</div>'
+          + '<div class="popup-region">' + escapeHtml(props.operator || '') + (props.city ? ' · ' + escapeHtml(props.city) : '') + (props.country ? ', ' + escapeHtml(props.country) : '') + '</div>'
+          + '<div class="popup-line"><span class="popup-key">Capacity</span> <strong>' + (props.mw != null ? props.mw + ' MW' : 'n/a') + '</strong></div>'
+          + note
+          + (props.url ? '<a class="popup-link" href="' + escapeHtml(props.url) + '" target="_blank" rel="noopener">Operator page ↗</a>' : '');
+      },
+    },
   },
 };
 
 let _overlayPopup = null;
 
 function wireOverlayLayerInteractions(o) {
-  if (!o.interactive) return;
-  // Only the first layer is treated as the clickable surface (e.g. the
-  // circles), not any decorative symbol/label layers on top.
-  const clickLayerId = o.layers[0].id;
-  state.map.on('click', clickLayerId, (e) => {
-    if (!e.features || !e.features[0]) return;
-    const props = e.features[0].properties || {};
-    const html = o.popup(props);
-    if (_overlayPopup) _overlayPopup.remove();
-    _overlayPopup = new mapboxgl.Popup({ closeButton: true, closeOnClick: true, offset: 10, maxWidth: '300px' })
-      .setLngLat(e.features[0].geometry.coordinates.slice())
-      .setHTML(html)
-      .addTo(state.map);
-    e.originalEvent.stopPropagation();
-  });
-  state.map.on('mouseenter', clickLayerId, () => {
-    state.map.getCanvas().style.cursor = 'pointer';
-  });
-  state.map.on('mouseleave', clickLayerId, () => {
-    state.map.getCanvas().style.cursor = '';
-  });
+  // New schema (sources + layers w/ popupKind): wire each interactive layer
+  // to its specific popup builder. Legacy schema falls back to o.popup.
+  const layersToWire = (o.layers || []).filter(L => L.interactive !== false);
+  for (const layer of layersToWire) {
+    const id = layer.id;
+    if (layer._wired) continue;
+    layer._wired = true;
+    state.map.on('click', id, (e) => {
+      if (!e.features || !e.features[0]) return;
+      const props = e.features[0].properties || {};
+      let html;
+      if (layer.popupKind && o.popups) {
+        const builder = o.popups[layer.popupKind];
+        html = builder ? builder(props) : '';
+      } else if (typeof o.popup === 'function') {
+        html = o.popup(props);
+      } else {
+        return;
+      }
+      if (!html) return;
+      if (_overlayPopup) _overlayPopup.remove();
+      _overlayPopup = new mapboxgl.Popup({ closeButton: true, closeOnClick: true, offset: 10, maxWidth: '300px' })
+        .setLngLat(e.features[0].geometry.coordinates.slice())
+        .setHTML(html)
+        .addTo(state.map);
+      e.originalEvent.stopPropagation();
+    });
+    state.map.on('mouseenter', id, () => { state.map.getCanvas().style.cursor = 'pointer'; });
+    state.map.on('mouseleave', id, () => { state.map.getCanvas().style.cursor = ''; });
+  }
 }
 
 async function toggleOverlay(key, enabled) {
   const o = OVERLAYS[key];
   if (!o) return;
+
+  // Normalise the schema: legacy entries use `sourceId` + `file`; new ones use
+  // a `sources` array. Build a unified list of sources to manage.
+  const sources = o.sources
+    ? o.sources
+    : [{ id: o.sourceId, file: o.file }];
+
   if (enabled) {
-    // Lazy-load the data the first time the overlay is enabled.
-    if (!state.map.getSource(o.sourceId)) {
+    // Lazy-load each source the first time the overlay is enabled.
+    let loadedSomething = false;
+    for (const src of sources) {
+      if (state.map.getSource(src.id)) continue;
       try {
-        const res = await fetch(o.file);
+        const res = await fetch(src.file);
         if (!res.ok) throw new Error('HTTP ' + res.status);
         const data = await res.json();
-        state.map.addSource(o.sourceId, { type: 'geojson', data });
-        for (const layer of o.layers) {
-          state.map.addLayer({ ...layer, source: o.sourceId }, 'country-markers');
-        }
-        wireOverlayLayerInteractions(o);
-        console.log('[overlay]', key, 'loaded',
+        state.map.addSource(src.id, { type: 'geojson', data });
+        loadedSomething = true;
+        console.log('[overlay]', key, '/', src.id, 'loaded',
           (data.features && data.features.length) || 0, 'features');
       } catch (err) {
-        console.warn('[overlay] failed to load', key, '—', err.message);
-        flashCompareBar('Overlay data missing — run scripts/fetch_overlays.py');
-        const btn = document.querySelector('.overlay-chip[data-layer="' + key + '"]');
-        if (btn) btn.classList.remove('active');
-        return;
+        console.warn('[overlay] failed to load', src.file, '—', err.message);
       }
-    } else {
+    }
+
+    // Add each layer if it's not yet on the map.
+    if (loadedSomething || sources.every(s => state.map.getSource(s.id))) {
       for (const layer of o.layers) {
-        if (state.map.getLayer(layer.id)) {
-          state.map.setLayoutProperty(layer.id, 'visibility', 'visible');
-        }
+        if (state.map.getLayer(layer.id)) continue;
+        const sourceId = layer.sourceRef || o.sourceId;
+        if (!state.map.getSource(sourceId)) continue;
+        const layerCopy = { ...layer };
+        delete layerCopy.sourceRef;
+        delete layerCopy.interactive;
+        delete layerCopy.popupKind;
+        state.map.addLayer({ ...layerCopy, source: sourceId }, 'country-markers');
+      }
+      wireOverlayLayerInteractions(o);
+    } else {
+      flashCompareBar('Overlay data missing — run scripts/fetch_overlays.py');
+      const btn = document.querySelector('.overlay-chip[data-layer="' + key + '"]');
+      if (btn) btn.classList.remove('active');
+      return;
+    }
+
+    // Show any layers that were previously hidden.
+    for (const layer of o.layers) {
+      if (state.map.getLayer(layer.id)) {
+        state.map.setLayoutProperty(layer.id, 'visibility', 'visible');
       }
     }
   } else {
