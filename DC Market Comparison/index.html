@@ -100,13 +100,26 @@
 
   <div id="map"></div>
 
-  <!-- Floating colour-by control over the map (top-left of map area) -->
+  <!-- Floating colour + size controls over the map (top-left) -->
   <div class="map-colour-control">
-    <span class="map-colour-label">Colour markers by</span>
-    <div class="select-wrap">
-      <select id="colour-by-select">
-        <option value="">— none (cyan) —</option>
-      </select>
+    <div class="map-control-row">
+      <span class="map-colour-label">Colour by</span>
+      <div class="select-wrap">
+        <select id="colour-by-select">
+          <option value="">— none (cyan) —</option>
+        </select>
+      </div>
+    </div>
+    <div class="map-control-row">
+      <span class="map-colour-label">Size by</span>
+      <div class="select-wrap">
+        <select id="size-by-select">
+          <option value="">— uniform —</option>
+          <option value="dc_capacity_live_mw">Live DC capacity (MW)</option>
+          <option value="dc_capacity_total_mw" selected>Total capacity (live + planned)</option>
+          <option value="dc_capacity_planned_mw">Planned + under construction (MW)</option>
+        </select>
+      </div>
     </div>
   </div>
 
@@ -213,6 +226,6 @@
     <div class="compare-drawer-body" id="compare-drawer-body"></div>
   </div>
 
-  <script src="markets.js?v=23"></script>
+  <script src="markets.js?v=24"></script>
 </body>
 </html>

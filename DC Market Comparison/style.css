@@ -217,9 +217,15 @@ html, body {
   padding: 8px 12px;
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 6px;
   box-shadow: 0 4px 16px rgba(0,0,0,0.3);
-  min-width: 220px;
+  min-width: 260px;
+}
+
+.map-control-row {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
 }
 
 .map-colour-label {
@@ -1247,6 +1253,63 @@ select:hover { border-color: rgba(255,255,255,0.15); }
   color: var(--text-low);
   margin-top: 4px;
 }
+
+/* ─── Capacity outlook bar (F29) ──────────────────────────────── */
+
+.capacity-bar-wrap {
+  margin-top: 8px;
+  padding: 10px 0;
+}
+
+.capacity-bar-title {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-low);
+  margin-bottom: 6px;
+}
+
+.capacity-bar-track {
+  display: flex;
+  height: 14px;
+  background: var(--bg-deep);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.capacity-bar-live {
+  background: linear-gradient(90deg, #2E7D32, #4CAF50);
+}
+
+.capacity-bar-planned {
+  background: linear-gradient(90deg, #E65100, #FFB300);
+}
+
+.capacity-bar-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 6px;
+  font-size: 10px;
+  color: var(--text-mid);
+  font-variant-numeric: tabular-nums;
+}
+
+.capacity-bar-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.capacity-bar-swatch {
+  width: 9px;
+  height: 9px;
+  border-radius: 2px;
+}
+
+.capacity-bar-swatch-live    { background: #4CAF50; }
+.capacity-bar-swatch-planned { background: #FFB300; }
 
 /* ─── Score breakdown bars (F25) ──────────────────────────────── */
 

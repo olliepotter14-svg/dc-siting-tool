@@ -39,6 +39,7 @@ const state = {
   latencyAnchorIso:  null,        // F5 — auto-set from state.selectedIso when a country is clicked
   latencyMs:         10,          // F5 — default 10 ms so clicking a country immediately draws a sphere
   colourBy:          null,        // factor key — F17
+  sizeBy:            'dc_capacity_total_mw',   // size markers by DC capacity (F29)
   weights:           {},          // factor_id → 0..10  (F24)
   weightsActive:     true,        // toggle composite scoring globally
   composite:         {},          // iso2 → { score, rank, contributing, missing }  (F24)
@@ -471,6 +472,13 @@ function countriesFeatureCollection() {
       const comp = state.composite[c.iso2];
       if (comp && comp.score != null) {
         factorProps['f_composite_score'] = comp.score;
+      }
+      // Synthetic factor: total DC capacity (live + planned). Used by the
+      // size-by control so country orbs scale with market scale (F29).
+      const live    = factorProps['f_dc_capacity_live_mw']    || 0;
+      const planned = factorProps['f_dc_capacity_planned_mw'] || 0;
+      if (live + planned > 0) {
+        factorProps['f_dc_capacity_total_mw'] = live + planned;
       }
       // Label that the symbol layer renders on top of the circle when
       // colour-by is active. Short string of the active factor's value.
@@ -1088,20 +1096,58 @@ function wireColourBySelect() {
     renderMarkerData();   // re-emits the `label` property on every feature
     applyColourMode();
   });
+  const sizeSel = document.getElementById('size-by-select');
+  if (sizeSel) {
+    sizeSel.addEventListener('change', () => {
+      state.sizeBy = sizeSel.value || null;
+      applyMarkerRadius();
+    });
+  }
+}
+
+function applyMarkerRadius() {
+  const sizeFid = state.sizeBy;
+  if (!sizeFid) {
+    // Uniform default radius — when colourBy is on, this gets overridden
+    // further down by applyColourMode for legibility.
+    state.map.setPaintProperty('country-markers', 'circle-radius', [
+      'interpolate', ['linear'], ['zoom'],
+      2, 5,  4, 7,  6, 10,
+    ]);
+    return;
+  }
+  // Build a per-factor min/max bracket so the smallest market still reads as
+  // a marker, not a dot. Floor at 4 px, cap at 26 px.
+  let max = 0;
+  for (const c of state.markets) {
+    if (sizeFid === 'dc_capacity_total_mw') {
+      const live    = (c.factors.dc_capacity_live_mw    || {}).value || 0;
+      const planned = (c.factors.dc_capacity_planned_mw || {}).value || 0;
+      if (live + planned > max) max = live + planned;
+    } else {
+      const v = (c.factors[sizeFid] || {}).value;
+      if (typeof v === 'number' && v > max) max = v;
+    }
+  }
+  if (max === 0) max = 1;
+  const propKey = 'f_' + sizeFid;
+  state.map.setPaintProperty('country-markers', 'circle-radius', [
+    'interpolate', ['linear'], ['zoom'],
+    2, ['interpolate', ['linear'], ['coalesce', ['get', propKey], 0], 0, 3,  max, 16],
+    4, ['interpolate', ['linear'], ['coalesce', ['get', propKey], 0], 0, 4,  max, 22],
+    6, ['interpolate', ['linear'], ['coalesce', ['get', propKey], 0], 0, 6,  max, 30],
+  ]);
 }
 
 function applyColourMode() {
+  applyMarkerRadius();  // size always re-applies; colour layered on top
   const fid = state.colourBy;
   if (!fid) {
-    // Default: solid cyan with active-state override + smaller markers
+    // Default: solid cyan with active-state override
     state.map.setPaintProperty('country-markers', 'circle-color', [
       'case',
       ['boolean', ['feature-state', 'active'], false], '#FFFFFF',
       '#00E5FF',
-    ]);
-    state.map.setPaintProperty('country-markers', 'circle-radius', [
-      'interpolate', ['linear'], ['zoom'],
-      2, 5,  4, 7,  6, 10,
     ]);
     renderColourLegend(null);
     return;
@@ -1147,11 +1193,14 @@ function applyColourMode() {
   ];
   state.map.setPaintProperty('country-markers', 'circle-color', colourExpr);
 
-  // Bigger markers when colouring so the colour reads at a glance.
-  state.map.setPaintProperty('country-markers', 'circle-radius', [
-    'interpolate', ['linear'], ['zoom'],
-    2, 7,  4, 11,  6, 16,
-  ]);
+  // If no size-by is active, fall back to the bigger uniform radius for
+  // legibility when colouring. Otherwise leave the size driven by sizeBy.
+  if (!state.sizeBy) {
+    state.map.setPaintProperty('country-markers', 'circle-radius', [
+      'interpolate', ['linear'], ['zoom'],
+      2, 7,  4, 11,  6, 16,
+    ]);
+  }
 
   renderColourLegend(opt, min, max, values.length);
 }
@@ -1633,6 +1682,39 @@ function renderDetailRow(label, entry, fmt, fid, iso2, dir) {
     + '</div>';
 }
 
+function renderCapacityBar(factors) {
+  const live    = (factors.dc_capacity_live_mw    || {}).value;
+  const planned = (factors.dc_capacity_planned_mw || {}).value;
+  if (typeof live !== 'number' && typeof planned !== 'number') return '';
+
+  // Reference against the largest EMEA market so different countries' bars
+  // are comparable side-by-side.
+  let emeaMax = 0;
+  for (const c of state.markets) {
+    const l = (c.factors.dc_capacity_live_mw    || {}).value || 0;
+    const p = (c.factors.dc_capacity_planned_mw || {}).value || 0;
+    if (l + p > emeaMax) emeaMax = l + p;
+  }
+  if (emeaMax === 0) emeaMax = 1;
+  const liveVal    = typeof live    === 'number' ? live    : 0;
+  const plannedVal = typeof planned === 'number' ? planned : 0;
+  const livePct    = (liveVal    / emeaMax) * 100;
+  const plannedPct = (plannedVal / emeaMax) * 100;
+
+  return ''
+    + '<div class="capacity-bar-wrap">'
+    +   '<div class="capacity-bar-title">Capacity outlook · vs largest EMEA market</div>'
+    +   '<div class="capacity-bar-track">'
+    +     '<div class="capacity-bar-live"    style="width:' + livePct.toFixed(1)    + '%" title="Live: ' + liveVal + ' MW"></div>'
+    +     '<div class="capacity-bar-planned" style="width:' + plannedPct.toFixed(1) + '%" title="Planned + under construction: ' + plannedVal + ' MW"></div>'
+    +   '</div>'
+    +   '<div class="capacity-bar-legend">'
+    +     '<span class="capacity-bar-legend-item"><span class="capacity-bar-swatch capacity-bar-swatch-live"></span> Live ' + liveVal.toLocaleString() + ' MW</span>'
+    +     '<span class="capacity-bar-legend-item"><span class="capacity-bar-swatch capacity-bar-swatch-planned"></span> Planned + UC ' + plannedVal.toLocaleString() + ' MW</span>'
+    +   '</div>'
+    + '</div>';
+}
+
 function renderScoreBreakdown(comp) {
   // Per-factor contribution bars. Sorted by weighted contribution descending.
   const rows = Object.entries(comp.contrib || {})
@@ -1712,6 +1794,11 @@ function openDetailPanel(country) {
       currentSection = section;
     }
     html += renderDetailRow(label, factors[factorId], fmt, factorId, country.iso2, dir);
+    // After the planned-DC row at the very end of Market maturity, render a
+    // stacked bar visualising live vs planned MW for this country.
+    if (factorId === 'dc_capacity_planned_mw') {
+      html += renderCapacityBar(factors);
+    }
   }
 
   content.innerHTML = html;
