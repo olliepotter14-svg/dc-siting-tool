@@ -292,12 +292,14 @@ const OVERLAYS = {
         type: 'circle',
         interactive: true,
         popupKind: 'peeringdb',
+        // Tiny dots — PeeringDB has 1,800+ facilities; this is a "presence"
+        // signal rather than a primary visual.
         paint: {
-          'circle-radius':       ['interpolate', ['linear'], ['zoom'], 2, 1.5, 6, 3, 8, 4.5],
-          'circle-color':        '#9C27B0',
-          'circle-stroke-color': '#10141C',
-          'circle-stroke-width': 0.4,
-          'circle-opacity':      0.55,
+          'circle-radius':       ['interpolate', ['linear'], ['zoom'], 2, 1, 5, 1.8, 8, 3],
+          'circle-color':        '#B36BCB',
+          'circle-stroke-color': '#0A0D12',
+          'circle-stroke-width': 0.3,
+          'circle-opacity':      0.45,
         },
       },
       {
@@ -306,25 +308,34 @@ const OVERLAYS = {
         type: 'circle',
         interactive: true,
         popupKind: 'hyperscale',
+        // Hollow rings: transparent fill, thick coloured stroke. This reads
+        // visually distinct from the country score markers (which are solid
+        // filled circles with a number overlay) and stops the larger DC
+        // circles from drowning out the country layer when both are on.
         paint: {
           'circle-radius': [
             'interpolate', ['linear'], ['get', 'mw'],
-            10,  5,
-            50,  8,
-            150, 13,
-            300, 19,
-            500, 25,
+            10,  4,
+            50,  6,
+            150, 9,
+            300, 12,
+            500, 15,
           ],
-          'circle-color': [
+          'circle-color':        'rgba(0,0,0,0)',
+          'circle-stroke-color': [
             'match', ['get', 'status'],
-            'operational',        '#2E7D32',
-            'under_construction', '#F57C00',
-            'planned',            '#9E9E9E',
-            '#9C27B0',
+            'operational',        '#4CAF50',
+            'under_construction', '#FFB300',
+            'planned',            '#B0BEC5',
+            '#CE93D8',
           ],
-          'circle-stroke-color': '#0A0D12',
-          'circle-stroke-width': 1.8,
-          'circle-opacity':      0.92,
+          'circle-stroke-width': [
+            'interpolate', ['linear'], ['get', 'mw'],
+            10,  1.5,
+            150, 2.5,
+            500, 3.0,
+          ],
+          'circle-opacity':       1,
         },
       },
       {
