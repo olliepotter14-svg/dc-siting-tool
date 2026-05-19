@@ -292,14 +292,12 @@ const OVERLAYS = {
         type: 'circle',
         interactive: true,
         popupKind: 'peeringdb',
-        // Tiny dots — PeeringDB has 1,800+ facilities; this is a "presence"
-        // signal rather than a primary visual.
         paint: {
-          'circle-radius':       ['interpolate', ['linear'], ['zoom'], 2, 1, 5, 1.8, 8, 3],
-          'circle-color':        '#B36BCB',
-          'circle-stroke-color': '#0A0D12',
-          'circle-stroke-width': 0.3,
-          'circle-opacity':      0.45,
+          'circle-radius':       ['interpolate', ['linear'], ['zoom'], 2, 1.5, 6, 3, 8, 4.5],
+          'circle-color':        '#9C27B0',
+          'circle-stroke-color': '#10141C',
+          'circle-stroke-width': 0.4,
+          'circle-opacity':      0.7,
         },
       },
       {
@@ -308,54 +306,14 @@ const OVERLAYS = {
         type: 'circle',
         interactive: true,
         popupKind: 'hyperscale',
-        // Hollow rings: transparent fill, thick coloured stroke. This reads
-        // visually distinct from the country score markers (which are solid
-        // filled circles with a number overlay) and stops the larger DC
-        // circles from drowning out the country layer when both are on.
+        // Same purple-dot style as the PeeringDB layer for a clean uniform
+        // look. MW + status info still shows in the click popup.
         paint: {
-          'circle-radius': [
-            'interpolate', ['linear'], ['get', 'mw'],
-            10,  4,
-            50,  6,
-            150, 9,
-            300, 12,
-            500, 15,
-          ],
-          'circle-color':        'rgba(0,0,0,0)',
-          'circle-stroke-color': [
-            'match', ['get', 'status'],
-            'operational',        '#4CAF50',
-            'under_construction', '#FFB300',
-            'planned',            '#B0BEC5',
-            '#CE93D8',
-          ],
-          'circle-stroke-width': [
-            'interpolate', ['linear'], ['get', 'mw'],
-            10,  1.5,
-            150, 2.5,
-            500, 3.0,
-          ],
-          'circle-opacity':       1,
-        },
-      },
-      {
-        id: 'overlay-dcs-hyper-labels',
-        sourceRef: 'overlay-dcs-hyper-src',
-        type: 'symbol',
-        interactive: false,
-        layout: {
-          'text-field': ['concat', ['to-string', ['get', 'mw']], ' MW'],
-          'text-font':  ['Open Sans Bold', 'Arial Unicode MS Bold'],
-          'text-size':  ['interpolate', ['linear'], ['zoom'], 3, 9, 5, 11, 7, 13],
-          'text-anchor': 'top',
-          'text-offset': [0, 1.1],
-          'text-allow-overlap': false,
-          'text-padding': 2,
-        },
-        paint: {
-          'text-color':      '#FFFFFF',
-          'text-halo-color': '#0A0D12',
-          'text-halo-width': 1.8,
+          'circle-radius':       ['interpolate', ['linear'], ['zoom'], 2, 1.5, 6, 3, 8, 4.5],
+          'circle-color':        '#9C27B0',
+          'circle-stroke-color': '#10141C',
+          'circle-stroke-width': 0.4,
+          'circle-opacity':      0.7,
         },
       },
     ],
@@ -488,11 +446,6 @@ function wireOverlayChips() {
     const wasActive = btn.classList.contains('active');
     btn.classList.toggle('active', !wasActive);
     toggleOverlay(key, !wasActive);
-    // Show/hide the DC status legend with the dcs toggle
-    if (key === 'dcs') {
-      const legend = document.getElementById('dc-status-legend');
-      if (legend) legend.classList.toggle('hidden', wasActive);
-    }
   });
 }
 
