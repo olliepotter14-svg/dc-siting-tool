@@ -276,27 +276,66 @@ const OVERLAYS = {
     }],
   },
   dcs: {
-    file: 'data/overlay_dc_sites.geojson',
+    file: 'data/overlay_hyperscale.geojson',
     sourceId: 'overlay-dcs-src',
     interactive: true,
     popup: (props) => {
+      const statusLabel = (props.status || 'operational').replace(/_/g, ' ');
+      const note = props.note ? '<div class="popup-line" style="color:var(--text-low);font-size:10px;font-style:italic">' + escapeHtml(props.note) + '</div>' : '';
       return ''
-        + '<div class="popup-tag tag-dc">Data centre · ' + escapeHtml(props.status || 'operational') + '</div>'
+        + '<div class="popup-tag tag-dc tag-status-' + escapeHtml(props.status || 'operational') + '">' + escapeHtml(statusLabel) + '</div>'
         + '<div class="popup-name">' + escapeHtml(props.name || 'Unnamed facility') + '</div>'
-        + '<div class="popup-region">' + escapeHtml(props.city || '') + (props.country ? ' · ' + escapeHtml(props.country) : '') + '</div>'
-        + (props.url ? '<a class="popup-link" href="' + escapeHtml(props.url) + '" target="_blank" rel="noopener">View on PeeringDB ↗</a>' : '');
+        + '<div class="popup-region">' + escapeHtml(props.operator || '') + (props.city ? ' · ' + escapeHtml(props.city) : '') + (props.country ? ', ' + escapeHtml(props.country) : '') + '</div>'
+        + '<div class="popup-line"><span class="popup-key">Capacity</span> <strong>' + (props.mw != null ? props.mw + ' MW' : 'n/a') + '</strong></div>'
+        + note
+        + (props.url ? '<a class="popup-link" href="' + escapeHtml(props.url) + '" target="_blank" rel="noopener">Source ↗</a>' : '');
     },
-    layers: [{
-      id: 'overlay-dcs',
-      type: 'circle',
-      paint: {
-        'circle-radius':       ['interpolate', ['linear'], ['zoom'], 2, 1.5, 6, 3, 8, 5],
-        'circle-color':        '#9C27B0',
-        'circle-stroke-color': '#10141C',
-        'circle-stroke-width': 0.4,
-        'circle-opacity':      0.85,
+    layers: [
+      {
+        id: 'overlay-dcs',
+        type: 'circle',
+        paint: {
+          // Radius proportional to MW capacity (5px at 10 MW → 24px at 500 MW)
+          'circle-radius': [
+            'interpolate', ['linear'], ['get', 'mw'],
+            10,  4,
+            50,  7,
+            150, 12,
+            300, 18,
+            500, 24,
+          ],
+          // Status colour: green = live, amber = under construction, grey = planned
+          'circle-color': [
+            'match', ['get', 'status'],
+            'operational',       '#2E7D32',
+            'under_construction','#F57C00',
+            'planned',           '#9E9E9E',
+            '#9C27B0',
+          ],
+          'circle-stroke-color': '#10141C',
+          'circle-stroke-width': 1.5,
+          'circle-opacity':      0.85,
+        },
       },
-    }],
+      {
+        id: 'overlay-dcs-labels',
+        type: 'symbol',
+        layout: {
+          'text-field': ['concat', ['to-string', ['get', 'mw']], ' MW'],
+          'text-font':  ['Open Sans Bold', 'Arial Unicode MS Bold'],
+          'text-size':  ['interpolate', ['linear'], ['zoom'], 3, 9, 5, 10, 7, 12],
+          'text-anchor': 'top',
+          'text-offset': [0, 1.0],
+          'text-allow-overlap': false,
+          'text-padding': 2,
+        },
+        paint: {
+          'text-color':      '#FFFFFF',
+          'text-halo-color': '#0A0D12',
+          'text-halo-width': 1.5,
+        },
+      },
+    ],
   },
 };
 
@@ -304,26 +343,26 @@ let _overlayPopup = null;
 
 function wireOverlayLayerInteractions(o) {
   if (!o.interactive) return;
-  for (const layer of o.layers) {
-    state.map.on('click', layer.id, (e) => {
-      if (!e.features || !e.features[0]) return;
-      const props = e.features[0].properties || {};
-      const html = o.popup(props);
-      if (_overlayPopup) _overlayPopup.remove();
-      _overlayPopup = new mapboxgl.Popup({ closeButton: true, closeOnClick: true, offset: 10, maxWidth: '280px' })
-        .setLngLat(e.features[0].geometry.coordinates.slice())
-        .setHTML(html)
-        .addTo(state.map);
-      // Stop the country-marker click from also firing
-      e.originalEvent.stopPropagation();
-    });
-    state.map.on('mouseenter', layer.id, () => {
-      state.map.getCanvas().style.cursor = 'pointer';
-    });
-    state.map.on('mouseleave', layer.id, () => {
-      state.map.getCanvas().style.cursor = '';
-    });
-  }
+  // Only the first layer is treated as the clickable surface (e.g. the
+  // circles), not any decorative symbol/label layers on top.
+  const clickLayerId = o.layers[0].id;
+  state.map.on('click', clickLayerId, (e) => {
+    if (!e.features || !e.features[0]) return;
+    const props = e.features[0].properties || {};
+    const html = o.popup(props);
+    if (_overlayPopup) _overlayPopup.remove();
+    _overlayPopup = new mapboxgl.Popup({ closeButton: true, closeOnClick: true, offset: 10, maxWidth: '300px' })
+      .setLngLat(e.features[0].geometry.coordinates.slice())
+      .setHTML(html)
+      .addTo(state.map);
+    e.originalEvent.stopPropagation();
+  });
+  state.map.on('mouseenter', clickLayerId, () => {
+    state.map.getCanvas().style.cursor = 'pointer';
+  });
+  state.map.on('mouseleave', clickLayerId, () => {
+    state.map.getCanvas().style.cursor = '';
+  });
 }
 
 async function toggleOverlay(key, enabled) {
@@ -376,6 +415,11 @@ function wireOverlayChips() {
     const wasActive = btn.classList.contains('active');
     btn.classList.toggle('active', !wasActive);
     toggleOverlay(key, !wasActive);
+    // Show/hide the DC status legend with the dcs toggle
+    if (key === 'dcs') {
+      const legend = document.getElementById('dc-status-legend');
+      if (legend) legend.classList.toggle('hidden', wasActive);
+    }
   });
 }
 
@@ -1414,11 +1458,7 @@ function rankRowEl(r, total, opt, isComposite) {
   if (typeof r.value !== 'number') {
     valCell = '<div class="rank-value">— no data</div>';
   } else {
-    let sub = '';
-    if (r.year) sub = '<span class="rank-value-sub">' + r.year + '</span>';
-    else if (isComposite && state.composite[r.c.iso2] && state.composite[r.c.iso2].total) {
-      sub = '<span class="rank-value-sub">of ' + state.composite[r.c.iso2].total + '</span>';
-    }
+    const sub = r.year ? '<span class="rank-value-sub">' + r.year + '</span>' : '';
     valCell = '<div><div class="rank-value"' + colourStyle + '>' + opt.fmt(r.value) + '</div>' + sub + '</div>';
   }
 
