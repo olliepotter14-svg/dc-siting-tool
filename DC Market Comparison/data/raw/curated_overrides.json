@@ -11,17 +11,17 @@
       "default_url": "https://www.iea.org/reports/electricity-2024"
     },
     "IE": {
-      "value": 15.0,
+      "value": 11.0,
       "year": 2027,
-      "source": "IEA Electricity 2024 — DCs reached 21% of national power (2022) and forecast 32% by 2026",
-      "url": "https://www.iea.org/reports/electricity-2024",
-      "note": "EirGrid forecasts DC load reaching ~28% of grid demand by 2031"
+      "source": "EirGrid Generation Capacity Statement 2025-2034 — DC trajectory 9.4 TWh (2025) → 14.6 TWh (2034); 2027 interpolated",
+      "url": "https://www.eirgrid.ie/",
+      "note": "EirGrid forecasts DC share rising to ~28% of national grid demand by 2031"
     },
     "GB": {
-      "value": 22.0,
+      "value": 14.0,
       "year": 2027,
-      "source": "IEA Electricity 2024 + NESO FES 2024 (high-DC demand case)",
-      "url": "https://www.iea.org/reports/electricity-2024"
+      "source": "NESO Future Energy Scenarios 2024 — UK DC demand 7.6 TWh (today) → 22 TWh (2030); 2027 mid-trajectory",
+      "url": "https://www.neso.energy/future-energy"
     },
     "DE": {
       "value": 24.0,
@@ -112,7 +112,7 @@
       "value": 10.0,
       "year": 2024,
       "source": "NESO TEC Register — average wait for transmission-connected demand >50 MW",
-      "url": "https://www.neso.energy/data-portal/tec-register"
+      "url": "https://www.neso.energy/data-portal/transmission-entry-capacity-tec-register/tec_register"
     },
     "IE": {
       "value": 8.0,
@@ -320,22 +320,22 @@
       "unit": "USD bn"
     },
     "GB": {
-      "value": 140.0,
+      "value": 100.0,
       "year": 2030,
-      "source": "Ofgem RIIO-T3 + NESO Future Energy Scenarios 2024",
+      "source": "Ofgem RIIO-T3 (~£35 bn transmission) + ED2 distribution (~£23 bn) + wider programme to 2031 = ~£80 bn (~$100 bn)",
       "url": "https://www.ofgem.gov.uk/"
     },
     "DE": {
-      "value": 320.0,
+      "value": 100.0,
       "year": 2030,
-      "source": "BMWK 'Stromnetze 2030' + Bundesnetzagentur monitoring 2024",
+      "source": "BNetzA NEP 2037/2045 (€360-390 bn full horizon to 2045) pro-rated to 2030 segment ≈ €85-100 bn (~$100 bn)",
       "url": "https://www.bundesnetzagentur.de/",
-      "note": "BMWK plans extend to ~2045; figure shown is the 2024-2030 segment."
+      "note": "Full-horizon plan extends to 2045; figure shown is the 2024-2030 segment only."
     },
     "FR": {
-      "value": 200.0,
+      "value": 85.0,
       "year": 2030,
-      "source": "RTE 'Schéma décennal de développement du réseau' 2024 + Enedis investment programme",
+      "source": "RTE SDDR 2024 (€35-50 bn transmission to 2030) + Enedis (~€30-40 bn) = ~€65-90 bn (~$85 bn)",
       "url": "https://www.rte-france.com/"
     },
     "IT": {
@@ -1017,9 +1017,9 @@
       "url": "https://ec.europa.eu/eurostat/web/energy/database"
     },
     "IT": {
-      "value": 0.21,
+      "value": 0.17,
       "year": 2024,
-      "source": "Eurostat NRG_PC_205 — Band IE",
+      "source": "Eurostat NRG_PC_205 — Band IE (2024 H2: ~€0.16/kWh ≈ $0.17)",
       "url": "https://ec.europa.eu/eurostat/web/energy/database"
     },
     "GR": {

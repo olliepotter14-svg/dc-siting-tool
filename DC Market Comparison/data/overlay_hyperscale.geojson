@@ -9,222 +9,2015 @@
     }
   },
   "features": [
-
-    { "type":"Feature", "geometry":{"type":"Point","coordinates":[-0.5950, 51.5105]},
-      "properties":{"name":"Equinix LD5/LD6 (Slough)","operator":"Equinix","operator_type":"colo","city":"Slough","country":"GB","mw":75,"status":"operational","url":"https://www.equinix.com/data-centers/europe-colocation/united-kingdom-colocation/london-data-centers"} },
-    { "type":"Feature", "geometry":{"type":"Point","coordinates":[-0.6300, 51.5050]},
-      "properties":{"name":"Iron Mountain LON-3","operator":"Iron Mountain","operator_type":"colo","city":"Slough","country":"GB","mw":27,"status":"operational","url":"https://www.ironmountain.com/data-centers"} },
-    { "type":"Feature", "geometry":{"type":"Point","coordinates":[-0.5300, 51.4500]},
-      "properties":{"name":"Microsoft UK South (Heathrow)","operator":"Microsoft Azure","operator_type":"hyperscale","city":"London","country":"GB","mw":100,"status":"operational","url":"https://datacenters.microsoft.com/region/europe/"} },
-    { "type":"Feature", "geometry":{"type":"Point","coordinates":[-0.0600, 51.5200]},
-      "properties":{"name":"Telehouse North/West/East","operator":"Telehouse","operator_type":"colo","city":"London","country":"GB","mw":50,"status":"operational","url":"https://www.telehouse.net/"} },
-    { "type":"Feature", "geometry":{"type":"Point","coordinates":[-0.0200, 51.5500]},
-      "properties":{"name":"Digital Realty / Interxion LON1-LON4","operator":"Digital Realty","operator_type":"colo","city":"London","country":"GB","mw":80,"status":"operational","url":"https://www.digitalrealty.co.uk/"} },
-    { "type":"Feature", "geometry":{"type":"Point","coordinates":[-0.7800, 51.3500]},
-      "properties":{"name":"VIRTUS LONDON5/LONDON6","operator":"VIRTUS","operator_type":"colo","city":"Slough","country":"GB","mw":80,"status":"operational","url":"https://www.virtusdatacentres.com/"} },
-    { "type":"Feature", "geometry":{"type":"Point","coordinates":[-0.6100, 51.5200]},
-      "properties":{"name":"VIRTUS LONDON7 (Cobalt Park)","operator":"VIRTUS","operator_type":"colo","city":"Slough","country":"GB","mw":52,"status":"under_construction","url":"https://www.virtusdatacentres.com/"} },
-    { "type":"Feature", "geometry":{"type":"Point","coordinates":[-0.5700, 51.5050]},
-      "properties":{"name":"Yondr Slough Campus","operator":"Yondr","operator_type":"hyperscale","city":"Slough","country":"GB","mw":120,"status":"under_construction","url":"https://www.yondrgroup.com/"} },
-    { "type":"Feature", "geometry":{"type":"Point","coordinates":[-0.0700, 51.5500]},
-      "properties":{"name":"Stack EMEA LON02","operator":"Stack Infrastructure","operator_type":"hyperscale","city":"London","country":"GB","mw":85,"status":"under_construction","url":"https://www.stackinfra.com/"} },
-    { "type":"Feature", "geometry":{"type":"Point","coordinates":[-0.4500, 51.4800]},
-      "properties":{"name":"Iron Mountain LON-4","operator":"Iron Mountain","operator_type":"colo","city":"London","country":"GB","mw":33,"status":"under_construction","url":"https://www.ironmountain.com/data-centers"} },
-    { "type":"Feature", "geometry":{"type":"Point","coordinates":[-0.5500, 51.5300]},
-      "properties":{"name":"Ada Infrastructure Docklands","operator":"Ada Infrastructure","operator_type":"hyperscale","city":"London","country":"GB","mw":210,"status":"under_construction","note":"GLP-backed flagship build","url":"https://www.adainfrastructure.com/"} },
-
-    { "type":"Feature", "geometry":{"type":"Point","coordinates":[-6.2603, 53.3498]},
-      "properties":{"name":"Meta Clonee","operator":"Meta","operator_type":"hyperscale","city":"Dublin","country":"IE","mw":230,"status":"operational","url":"https://datacenters.atmeta.com/clonee/"} },
-    { "type":"Feature", "geometry":{"type":"Point","coordinates":[-6.3700, 53.3500]},
-      "properties":{"name":"Microsoft North Europe","operator":"Microsoft Azure","operator_type":"hyperscale","city":"Dublin","country":"IE","mw":170,"status":"operational","url":"https://datacenters.microsoft.com/region/europe/"} },
-    { "type":"Feature", "geometry":{"type":"Point","coordinates":[-6.4000, 53.4200]},
-      "properties":{"name":"AWS Ireland (multi-AZ Dublin)","operator":"AWS","operator_type":"hyperscale","city":"Dublin","country":"IE","mw":250,"status":"operational","url":"https://aws.amazon.com/about-aws/global-infrastructure/regions_az/"} },
-    { "type":"Feature", "geometry":{"type":"Point","coordinates":[-6.4500, 53.3700]},
-      "properties":{"name":"Equinix DB1-DB5","operator":"Equinix","operator_type":"colo","city":"Dublin","country":"IE","mw":75,"status":"operational","url":"https://www.equinix.com/data-centers/europe-colocation/ireland-colocation/dublin-data-centers"} },
-    { "type":"Feature", "geometry":{"type":"Point","coordinates":[-6.4600, 53.3650]},
-      "properties":{"name":"Equinix DB6 Dublin","operator":"Equinix","operator_type":"colo","city":"Dublin","country":"IE","mw":35,"status":"under_construction","url":"https://www.equinix.com/"} },
-    { "type":"Feature", "geometry":{"type":"Point","coordinates":[-6.5000, 53.3400]},
-      "properties":{"name":"Stack EMEA DUB02","operator":"Stack Infrastructure","operator_type":"hyperscale","city":"Dublin","country":"IE","mw":80,"status":"under_construction","url":"https://www.stackinfra.com/"} },
-    { "type":"Feature", "geometry":{"type":"Point","coordinates":[-6.4200, 53.3700]},
-      "properties":{"name":"EdgeConneX EDC Dublin","operator":"EdgeConneX","operator_type":"hyperscale","city":"Dublin","country":"IE","mw":150,"status":"under_construction","url":"https://www.edgeconnex.com/"} },
-    { "type":"Feature", "geometry":{"type":"Point","coordinates":[-6.4700, 53.3550]},
-      "properties":{"name":"Echelon DUB10","operator":"Echelon","operator_type":"hyperscale","city":"Dublin","country":"IE","mw":140,"status":"under_construction","note":"Planning challenges; partial start","url":"https://echelondc.com/"} },
-
-    { "type":"Feature", "geometry":{"type":"Point","coordinates":[8.6821, 50.1109]},
-      "properties":{"name":"Equinix FR2/FR4/FR5/FR6/FR7","operator":"Equinix","operator_type":"colo","city":"Frankfurt","country":"DE","mw":130,"status":"operational","url":"https://www.equinix.com/data-centers/europe-colocation/germany-colocation/frankfurt-data-centers"} },
-    { "type":"Feature", "geometry":{"type":"Point","coordinates":[8.7100, 50.1300]},
-      "properties":{"name":"Digital Realty / Interxion FRA1-FRA17","operator":"Digital Realty","operator_type":"colo","city":"Frankfurt","country":"DE","mw":180,"status":"operational","url":"https://www.digitalrealty.com/data-centers/emea/frankfurt"} },
-    { "type":"Feature", "geometry":{"type":"Point","coordinates":[8.6500, 50.0900]},
-      "properties":{"name":"NTT Frankfurt 1-3","operator":"NTT","operator_type":"colo","city":"Frankfurt","country":"DE","mw":90,"status":"operational","url":"https://services.global.ntt/en-us/services-and-products/data-centers/frankfurt"} },
-    { "type":"Feature", "geometry":{"type":"Point","coordinates":[8.6700, 50.1000]},
-      "properties":{"name":"Vantage FRA1/FRA2","operator":"Vantage","operator_type":"colo","city":"Frankfurt","country":"DE","mw":80,"status":"operational","url":"https://vantage-dc.com/data_center/frankfurt/"} },
-    { "type":"Feature", "geometry":{"type":"Point","coordinates":[8.6900, 50.1200]},
-      "properties":{"name":"Microsoft Germany West Central","operator":"Microsoft Azure","operator_type":"hyperscale","city":"Frankfurt","country":"DE","mw":120,"status":"operational","url":"https://datacenters.microsoft.com/region/europe/"} },
-    { "type":"Feature", "geometry":{"type":"Point","coordinates":[8.7000, 50.1400]},
-      "properties":{"name":"Vantage FRA21/FRA22","operator":"Vantage","operator_type":"colo","city":"Frankfurt","country":"DE","mw":200,"status":"under_construction","url":"https://vantage-dc.com/"} },
-    { "type":"Feature", "geometry":{"type":"Point","coordinates":[8.7200, 50.1100]},
-      "properties":{"name":"Digital Realty FRA18-FRA20","operator":"Digital Realty","operator_type":"colo","city":"Frankfurt","country":"DE","mw":120,"status":"under_construction","url":"https://www.digitalrealty.com/"} },
-    { "type":"Feature", "geometry":{"type":"Point","coordinates":[8.6600, 50.1000]},
-      "properties":{"name":"Equinix FR9/FR10","operator":"Equinix","operator_type":"colo","city":"Frankfurt","country":"DE","mw":65,"status":"under_construction","url":"https://www.equinix.com/"} },
-    { "type":"Feature", "geometry":{"type":"Point","coordinates":[8.6400, 50.0800]},
-      "properties":{"name":"CyrusOne FRA5/FRA6","operator":"CyrusOne","operator_type":"hyperscale","city":"Frankfurt","country":"DE","mw":110,"status":"under_construction","url":"https://www.cyrusone.com/"} },
-    { "type":"Feature", "geometry":{"type":"Point","coordinates":[13.4050, 52.5200]},
-      "properties":{"name":"Microsoft Germany North (Berlin)","operator":"Microsoft Azure","operator_type":"hyperscale","city":"Berlin","country":"DE","mw":150,"status":"under_construction","url":"https://datacenters.microsoft.com/region/europe/"} },
-    { "type":"Feature", "geometry":{"type":"Point","coordinates":[8.6800, 50.1200]},
-      "properties":{"name":"Yondr Frankfurt Campus","operator":"Yondr","operator_type":"hyperscale","city":"Frankfurt","country":"DE","mw":180,"status":"under_construction","url":"https://www.yondrgroup.com/"} },
-
-    { "type":"Feature", "geometry":{"type":"Point","coordinates":[4.9041, 52.3676]},
-      "properties":{"name":"Equinix AM3/AM4/AM7","operator":"Equinix","operator_type":"colo","city":"Amsterdam","country":"NL","mw":75,"status":"operational","url":"https://www.equinix.com/data-centers/europe-colocation/netherlands-colocation/amsterdam-data-centers"} },
-    { "type":"Feature", "geometry":{"type":"Point","coordinates":[4.9300, 52.3800]},
-      "properties":{"name":"Digital Realty / Interxion AMS1-AMS17","operator":"Digital Realty","operator_type":"colo","city":"Amsterdam","country":"NL","mw":150,"status":"operational","url":"https://www.digitalrealty.com/data-centers/emea/amsterdam"} },
-    { "type":"Feature", "geometry":{"type":"Point","coordinates":[5.0200, 52.7800]},
-      "properties":{"name":"Microsoft Middenmeer","operator":"Microsoft Azure","operator_type":"hyperscale","city":"Middenmeer","country":"NL","mw":230,"status":"operational","url":"https://datacenters.microsoft.com/region/europe/"} },
-    { "type":"Feature", "geometry":{"type":"Point","coordinates":[5.1500, 52.6700]},
-      "properties":{"name":"Google Eemshaven","operator":"Google","operator_type":"hyperscale","city":"Eemshaven","country":"NL","mw":230,"status":"operational","url":"https://www.google.com/about/datacenters/locations/eemshaven/"} },
-    { "type":"Feature", "geometry":{"type":"Point","coordinates":[5.0500, 52.8000]},
-      "properties":{"name":"Microsoft Middenmeer 2","operator":"Microsoft Azure","operator_type":"hyperscale","city":"Middenmeer","country":"NL","mw":120,"status":"under_construction","url":"https://datacenters.microsoft.com/region/europe/"} },
-    { "type":"Feature", "geometry":{"type":"Point","coordinates":[4.9400, 52.3850]},
-      "properties":{"name":"Equinix AM11","operator":"Equinix","operator_type":"colo","city":"Amsterdam","country":"NL","mw":40,"status":"under_construction","url":"https://www.equinix.com/"} },
-
-    { "type":"Feature", "geometry":{"type":"Point","coordinates":[2.3522, 48.8566]},
-      "properties":{"name":"Equinix PA8/PA9","operator":"Equinix","operator_type":"colo","city":"Paris","country":"FR","mw":50,"status":"operational","url":"https://www.equinix.com/data-centers/europe-colocation/france-colocation/paris-data-centers"} },
-    { "type":"Feature", "geometry":{"type":"Point","coordinates":[2.3500, 48.9000]},
-      "properties":{"name":"Digital Realty / Interxion PAR1-PAR8","operator":"Digital Realty","operator_type":"colo","city":"Paris","country":"FR","mw":110,"status":"operational","url":"https://www.digitalrealty.com/data-centers/emea/paris"} },
-    { "type":"Feature", "geometry":{"type":"Point","coordinates":[2.4500, 48.8200]},
-      "properties":{"name":"Data4 Paris-Saclay","operator":"Data4","operator_type":"colo","city":"Saclay","country":"FR","mw":80,"status":"operational","url":"https://www.data4group.com/en/data-center-france/"} },
-    { "type":"Feature", "geometry":{"type":"Point","coordinates":[2.3800, 48.9100]},
-      "properties":{"name":"AWS Paris (EU-West-3)","operator":"AWS","operator_type":"hyperscale","city":"Paris","country":"FR","mw":100,"status":"operational","url":"https://aws.amazon.com/about-aws/global-infrastructure/regions_az/"} },
-    { "type":"Feature", "geometry":{"type":"Point","coordinates":[2.4600, 48.8250]},
-      "properties":{"name":"Data4 Paris-Saclay Phase 2","operator":"Data4","operator_type":"colo","city":"Saclay","country":"FR","mw":60,"status":"under_construction","url":"https://www.data4group.com/"} },
-    { "type":"Feature", "geometry":{"type":"Point","coordinates":[2.3400, 48.8600]},
-      "properties":{"name":"Equinix PA10/PA11","operator":"Equinix","operator_type":"colo","city":"Paris","country":"FR","mw":80,"status":"under_construction","url":"https://www.equinix.com/"} },
-    { "type":"Feature", "geometry":{"type":"Point","coordinates":[2.3900, 48.9050]},
-      "properties":{"name":"Telehouse TH3 Paris","operator":"Telehouse","operator_type":"colo","city":"Paris","country":"FR","mw":45,"status":"under_construction","url":"https://www.telehouse.net/"} },
-
-    { "type":"Feature", "geometry":{"type":"Point","coordinates":[4.3517, 50.8503]},
-      "properties":{"name":"Google St-Ghislain","operator":"Google","operator_type":"hyperscale","city":"Saint-Ghislain","country":"BE","mw":200,"status":"operational","url":"https://www.google.com/about/datacenters/locations/st-ghislain/"} },
-    { "type":"Feature", "geometry":{"type":"Point","coordinates":[3.9000, 50.4500]},
-      "properties":{"name":"Google St-Ghislain Phase 4","operator":"Google","operator_type":"hyperscale","city":"Saint-Ghislain","country":"BE","mw":100,"status":"under_construction","url":"https://www.google.com/about/datacenters/locations/st-ghislain/"} },
-    { "type":"Feature", "geometry":{"type":"Point","coordinates":[6.1296, 49.6116]},
-      "properties":{"name":"LuxConnect DC1-DC3","operator":"LuxConnect","operator_type":"colo","city":"Bissen","country":"LU","mw":40,"status":"operational","url":"https://www.luxconnect.lu/"} },
-
-    { "type":"Feature", "geometry":{"type":"Point","coordinates":[-3.7038, 40.4168]},
-      "properties":{"name":"Equinix MD2/MD3","operator":"Equinix","operator_type":"colo","city":"Madrid","country":"ES","mw":35,"status":"operational","url":"https://www.equinix.com/data-centers/europe-colocation/spain-colocation/madrid-data-centers"} },
-    { "type":"Feature", "geometry":{"type":"Point","coordinates":[-3.6800, 40.4500]},
-      "properties":{"name":"Stack EMEA Madrid MAD01","operator":"Stack Infrastructure","operator_type":"hyperscale","city":"Madrid","country":"ES","mw":120,"status":"under_construction","url":"https://www.stackinfra.com/"} },
-    { "type":"Feature", "geometry":{"type":"Point","coordinates":[-3.7100, 40.5000]},
-      "properties":{"name":"AWS Spain (EU-South-2)","operator":"AWS","operator_type":"hyperscale","city":"Madrid","country":"ES","mw":150,"status":"under_construction","url":"https://aws.amazon.com/about-aws/global-infrastructure/regions_az/"} },
-    { "type":"Feature", "geometry":{"type":"Point","coordinates":[-3.6900, 40.4900]},
-      "properties":{"name":"Microsoft Spain Central","operator":"Microsoft Azure","operator_type":"hyperscale","city":"Madrid","country":"ES","mw":120,"status":"operational","url":"https://datacenters.microsoft.com/region/europe/"} },
-    { "type":"Feature", "geometry":{"type":"Point","coordinates":[-3.7050, 40.4700]},
-      "properties":{"name":"Data4 Madrid","operator":"Data4","operator_type":"colo","city":"Madrid","country":"ES","mw":80,"status":"under_construction","url":"https://www.data4group.com/"} },
-    { "type":"Feature", "geometry":{"type":"Point","coordinates":[-3.6700, 40.4600]},
-      "properties":{"name":"Merlin Edge Madrid","operator":"Merlin Properties","operator_type":"colo","city":"Madrid","country":"ES","mw":55,"status":"under_construction","url":"https://www.merlinproperties.com/"} },
-    { "type":"Feature", "geometry":{"type":"Point","coordinates":[-3.7400, 40.5800]},
-      "properties":{"name":"Stack Tres Cantos MAD02","operator":"Stack Infrastructure","operator_type":"hyperscale","city":"Tres Cantos","country":"ES","mw":80,"status":"under_construction","url":"https://www.stackinfra.com/"} },
-
-    { "type":"Feature", "geometry":{"type":"Point","coordinates":[9.1900, 45.4642]},
-      "properties":{"name":"Aruba Global Cloud Data Center Bergamo","operator":"Aruba","operator_type":"colo","city":"Bergamo","country":"IT","mw":90,"status":"operational","url":"https://www.arubadatacenter.com/"} },
-    { "type":"Feature", "geometry":{"type":"Point","coordinates":[9.2000, 45.4800]},
-      "properties":{"name":"Equinix MI3","operator":"Equinix","operator_type":"colo","city":"Milan","country":"IT","mw":30,"status":"operational","url":"https://www.equinix.com/"} },
-    { "type":"Feature", "geometry":{"type":"Point","coordinates":[9.2200, 45.4500]},
-      "properties":{"name":"AWS Italy (EU-South-1)","operator":"AWS","operator_type":"hyperscale","city":"Milan","country":"IT","mw":80,"status":"operational","url":"https://aws.amazon.com/about-aws/global-infrastructure/regions_az/"} },
-    { "type":"Feature", "geometry":{"type":"Point","coordinates":[9.1800, 45.4900]},
-      "properties":{"name":"Equinix MI5/MI6","operator":"Equinix","operator_type":"colo","city":"Milan","country":"IT","mw":55,"status":"under_construction","url":"https://www.equinix.com/"} },
-    { "type":"Feature", "geometry":{"type":"Point","coordinates":[9.2100, 45.4400]},
-      "properties":{"name":"Data4 Milan MIL01","operator":"Data4","operator_type":"colo","city":"Milan","country":"IT","mw":85,"status":"under_construction","url":"https://www.data4group.com/"} },
-    { "type":"Feature", "geometry":{"type":"Point","coordinates":[9.2300, 45.4700]},
-      "properties":{"name":"Vantage MIL11","operator":"Vantage","operator_type":"colo","city":"Milan","country":"IT","mw":80,"status":"under_construction","url":"https://vantage-dc.com/"} },
-
-    { "type":"Feature", "geometry":{"type":"Point","coordinates":[-9.1393, 38.7223]},
-      "properties":{"name":"Start Campus SIN01 (Sines)","operator":"Start Campus","operator_type":"hyperscale","city":"Sines","country":"PT","mw":22,"status":"operational","note":"Phase 1 live, SIN02-SIN04 under construction","url":"https://startcampus.com/"} },
-    { "type":"Feature", "geometry":{"type":"Point","coordinates":[-9.1300, 38.7280]},
-      "properties":{"name":"Start Campus SIN02-SIN04 (Sines)","operator":"Start Campus","operator_type":"hyperscale","city":"Sines","country":"PT","mw":473,"status":"under_construction","note":"Campus total 495 MW once complete","url":"https://startcampus.com/"} },
-
-    { "type":"Feature", "geometry":{"type":"Point","coordinates":[18.0686, 59.3293]},
-      "properties":{"name":"DigiPlex Stockholm","operator":"DigiPlex","operator_type":"colo","city":"Stockholm","country":"SE","mw":40,"status":"operational","url":"https://www.digiplex.com/"} },
-    { "type":"Feature", "geometry":{"type":"Point","coordinates":[20.2630, 67.8557]},
-      "properties":{"name":"Facebook Luleå","operator":"Meta","operator_type":"hyperscale","city":"Luleå","country":"SE","mw":120,"status":"operational","url":"https://datacenters.atmeta.com/lulea/"} },
-    { "type":"Feature", "geometry":{"type":"Point","coordinates":[18.1000, 59.3500]},
-      "properties":{"name":"Microsoft Sweden Central","operator":"Microsoft Azure","operator_type":"hyperscale","city":"Stockholm","country":"SE","mw":250,"status":"under_construction","url":"https://datacenters.microsoft.com/region/europe/"} },
-    { "type":"Feature", "geometry":{"type":"Point","coordinates":[18.0700, 59.3000]},
-      "properties":{"name":"atNorth SWE01","operator":"atNorth","operator_type":"colo","city":"Stockholm","country":"SE","mw":50,"status":"under_construction","url":"https://www.atnorth.com/"} },
-
-    { "type":"Feature", "geometry":{"type":"Point","coordinates":[10.7522, 59.9139]},
-      "properties":{"name":"Bulk N01 (Oslo)","operator":"Bulk","operator_type":"colo","city":"Oslo","country":"NO","mw":35,"status":"operational","url":"https://www.bulk.com/"} },
-    { "type":"Feature", "geometry":{"type":"Point","coordinates":[7.0000, 58.5000]},
-      "properties":{"name":"Green Mountain DC1 (Stavanger)","operator":"Green Mountain","operator_type":"colo","city":"Stavanger","country":"NO","mw":35,"status":"operational","url":"https://greenmountain.no/"} },
-    { "type":"Feature", "geometry":{"type":"Point","coordinates":[7.0200, 58.4800]},
-      "properties":{"name":"Green Mountain DC2 expansion","operator":"Green Mountain","operator_type":"colo","city":"Stavanger","country":"NO","mw":60,"status":"under_construction","url":"https://greenmountain.no/"} },
-    { "type":"Feature", "geometry":{"type":"Point","coordinates":[10.6500, 59.9500]},
-      "properties":{"name":"Bulk N02 (Oslo)","operator":"Bulk","operator_type":"colo","city":"Oslo","country":"NO","mw":60,"status":"under_construction","url":"https://www.bulk.com/"} },
-
-    { "type":"Feature", "geometry":{"type":"Point","coordinates":[12.5683, 55.6761]},
-      "properties":{"name":"Microsoft Denmark East","operator":"Microsoft Azure","operator_type":"hyperscale","city":"Copenhagen","country":"DK","mw":300,"status":"under_construction","url":"https://datacenters.microsoft.com/region/europe/"} },
-    { "type":"Feature", "geometry":{"type":"Point","coordinates":[10.0000, 55.7000]},
-      "properties":{"name":"Meta Odense","operator":"Meta","operator_type":"hyperscale","city":"Odense","country":"DK","mw":175,"status":"operational","url":"https://datacenters.atmeta.com/odense/"} },
-    { "type":"Feature", "geometry":{"type":"Point","coordinates":[12.6000, 55.7000]},
-      "properties":{"name":"AWS Denmark","operator":"AWS","operator_type":"hyperscale","city":"Copenhagen","country":"DK","mw":150,"status":"under_construction","url":"https://aws.amazon.com/"} },
-    { "type":"Feature", "geometry":{"type":"Point","coordinates":[12.5500, 55.6900]},
-      "properties":{"name":"nLighten Copenhagen","operator":"nLighten","operator_type":"colo","city":"Copenhagen","country":"DK","mw":40,"status":"under_construction","url":"https://nlighten.com/"} },
-
-    { "type":"Feature", "geometry":{"type":"Point","coordinates":[27.1932, 60.6936]},
-      "properties":{"name":"Google Hamina","operator":"Google","operator_type":"hyperscale","city":"Hamina","country":"FI","mw":260,"status":"operational","url":"https://www.google.com/about/datacenters/locations/hamina/"} },
-    { "type":"Feature", "geometry":{"type":"Point","coordinates":[24.9384, 60.1699]},
-      "properties":{"name":"Microsoft Finland (Espoo)","operator":"Microsoft Azure","operator_type":"hyperscale","city":"Espoo","country":"FI","mw":200,"status":"under_construction","url":"https://datacenters.microsoft.com/region/europe/"} },
-    { "type":"Feature", "geometry":{"type":"Point","coordinates":[27.2000, 60.7000]},
-      "properties":{"name":"Google Hamina Phase 5","operator":"Google","operator_type":"hyperscale","city":"Hamina","country":"FI","mw":120,"status":"under_construction","url":"https://www.google.com/about/datacenters/locations/hamina/"} },
-
-    { "type":"Feature", "geometry":{"type":"Point","coordinates":[-21.9426, 64.1466]},
-      "properties":{"name":"atNorth ICE03","operator":"atNorth","operator_type":"colo","city":"Reykjavik","country":"IS","mw":80,"status":"under_construction","url":"https://www.atnorth.com/"} },
-
-    { "type":"Feature", "geometry":{"type":"Point","coordinates":[21.0122, 52.2297]},
-      "properties":{"name":"AtmanData Warsaw","operator":"Atman","operator_type":"colo","city":"Warsaw","country":"PL","mw":35,"status":"operational","url":"https://www.atman.pl/en"} },
-    { "type":"Feature", "geometry":{"type":"Point","coordinates":[21.0200, 52.2400]},
-      "properties":{"name":"Microsoft Poland Central","operator":"Microsoft Azure","operator_type":"hyperscale","city":"Warsaw","country":"PL","mw":110,"status":"operational","url":"https://datacenters.microsoft.com/region/europe/"} },
-    { "type":"Feature", "geometry":{"type":"Point","coordinates":[21.0300, 52.2100]},
-      "properties":{"name":"AtmanData Warsaw WAW-3","operator":"Atman","operator_type":"colo","city":"Warsaw","country":"PL","mw":50,"status":"under_construction","url":"https://www.atman.pl/en"} },
-    { "type":"Feature", "geometry":{"type":"Point","coordinates":[14.4378, 50.0755]},
-      "properties":{"name":"CE Colo Prague","operator":"CE Colo","operator_type":"colo","city":"Prague","country":"CZ","mw":30,"status":"operational","url":"https://www.cecolo.com/"} },
-    { "type":"Feature", "geometry":{"type":"Point","coordinates":[26.1025, 44.4268]},
-      "properties":{"name":"NXDATA Bucharest","operator":"NXDATA","operator_type":"colo","city":"Bucharest","country":"RO","mw":25,"status":"operational","url":"https://www.nxdata.ro/"} },
-    { "type":"Feature", "geometry":{"type":"Point","coordinates":[23.7275, 37.9838]},
-      "properties":{"name":"Lamda Hellinikon Phase 1 (Microsoft Athens)","operator":"Microsoft Azure","operator_type":"hyperscale","city":"Athens","country":"GR","mw":120,"status":"under_construction","url":"https://datacenters.microsoft.com/region/europe/"} },
-
-    { "type":"Feature", "geometry":{"type":"Point","coordinates":[55.2708, 25.2048]},
-      "properties":{"name":"Equinix DX1/DX2 (Dubai)","operator":"Equinix","operator_type":"colo","city":"Dubai","country":"AE","mw":35,"status":"operational","url":"https://www.equinix.com/data-centers/middle-east-data-centers/uae-data-centers"} },
-    { "type":"Feature", "geometry":{"type":"Point","coordinates":[55.3500, 25.0500]},
-      "properties":{"name":"khazna AUH/DXB cluster","operator":"khazna","operator_type":"hyperscale","city":"Abu Dhabi","country":"AE","mw":180,"status":"operational","url":"https://www.khazna.ae/"} },
-    { "type":"Feature", "geometry":{"type":"Point","coordinates":[55.3700, 25.0700]},
-      "properties":{"name":"khazna AUH04/05 expansion","operator":"khazna","operator_type":"hyperscale","city":"Abu Dhabi","country":"AE","mw":100,"status":"under_construction","url":"https://www.khazna.ae/"} },
-    { "type":"Feature", "geometry":{"type":"Point","coordinates":[55.3000, 25.2300]},
-      "properties":{"name":"Microsoft UAE North","operator":"Microsoft Azure","operator_type":"hyperscale","city":"Dubai","country":"AE","mw":80,"status":"under_construction","url":"https://datacenters.microsoft.com/region/europe/"} },
-    { "type":"Feature", "geometry":{"type":"Point","coordinates":[55.2900, 25.2200]},
-      "properties":{"name":"G42 / G42 Cloud Dubai","operator":"G42","operator_type":"hyperscale","city":"Dubai","country":"AE","mw":120,"status":"under_construction","note":"AI infra build-out","url":"https://www.g42.ai/"} },
-    { "type":"Feature", "geometry":{"type":"Point","coordinates":[46.6753, 24.7136]},
-      "properties":{"name":"STC SDC2 (Riyadh)","operator":"STC","operator_type":"colo","city":"Riyadh","country":"SA","mw":60,"status":"operational","url":"https://www.stc.com.sa/"} },
-    { "type":"Feature", "geometry":{"type":"Point","coordinates":[46.7000, 24.7500]},
-      "properties":{"name":"Saudi Cloud STC Cloud","operator":"STC Cloud","operator_type":"hyperscale","city":"Riyadh","country":"SA","mw":80,"status":"operational","url":"https://www.stc.com.sa/"} },
-    { "type":"Feature", "geometry":{"type":"Point","coordinates":[46.6900, 24.7400]},
-      "properties":{"name":"Google Saudi Region","operator":"Google","operator_type":"hyperscale","city":"Dammam","country":"SA","mw":150,"status":"under_construction","url":"https://cloud.google.com/about/locations"} },
-    { "type":"Feature", "geometry":{"type":"Point","coordinates":[46.7100, 24.7600]},
-      "properties":{"name":"NEOM Cognitive Cloud","operator":"NEOM","operator_type":"hyperscale","city":"Tabuk","country":"SA","mw":200,"status":"under_construction","note":"Vision 2030 hyperscale campus","url":"https://www.neom.com/"} },
-    { "type":"Feature", "geometry":{"type":"Point","coordinates":[51.5310, 25.2854]},
-      "properties":{"name":"Microsoft Qatar Cloud","operator":"Microsoft Azure","operator_type":"hyperscale","city":"Doha","country":"QA","mw":55,"status":"operational","url":"https://datacenters.microsoft.com/region/europe/"} },
-    { "type":"Feature", "geometry":{"type":"Point","coordinates":[51.5500, 25.3000]},
-      "properties":{"name":"Google Qatar Region","operator":"Google","operator_type":"hyperscale","city":"Doha","country":"QA","mw":80,"status":"under_construction","url":"https://cloud.google.com/about/locations"} },
-    { "type":"Feature", "geometry":{"type":"Point","coordinates":[34.7818, 32.0853]},
-      "properties":{"name":"AWS Israel (IL-Central-1)","operator":"AWS","operator_type":"hyperscale","city":"Tel Aviv","country":"IL","mw":80,"status":"operational","url":"https://aws.amazon.com/about-aws/global-infrastructure/regions_az/"} },
-    { "type":"Feature", "geometry":{"type":"Point","coordinates":[34.7900, 32.1000]},
-      "properties":{"name":"Google Israel Region","operator":"Google","operator_type":"hyperscale","city":"Tel Aviv","country":"IL","mw":80,"status":"under_construction","url":"https://cloud.google.com/about/locations"} },
-    { "type":"Feature", "geometry":{"type":"Point","coordinates":[28.9784, 41.0082]},
-      "properties":{"name":"Türk Telekom Istanbul","operator":"Türk Telekom","operator_type":"colo","city":"Istanbul","country":"TR","mw":40,"status":"operational","url":"https://www.turktelekom.com.tr/"} },
-
-    { "type":"Feature", "geometry":{"type":"Point","coordinates":[31.2357, 30.0444]},
-      "properties":{"name":"Telecom Egypt Smart Village","operator":"Telecom Egypt","operator_type":"colo","city":"Cairo","country":"EG","mw":20,"status":"operational","url":"https://te.eg/wps/portal/te"} },
-    { "type":"Feature", "geometry":{"type":"Point","coordinates":[31.2500, 30.0700]},
-      "properties":{"name":"Mountain View Egypt","operator":"Mountain View","operator_type":"colo","city":"Cairo","country":"EG","mw":30,"status":"under_construction","url":"https://mvegypt.com/"} },
-    { "type":"Feature", "geometry":{"type":"Point","coordinates":[-7.5898, 33.5731]},
-      "properties":{"name":"N+ONE Casablanca","operator":"N+ONE","operator_type":"colo","city":"Casablanca","country":"MA","mw":15,"status":"operational","url":"https://www.nplusone.ma/"} }
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.595,
+          51.5105
+        ]
+      },
+      "properties": {
+        "name": "Equinix LD5/LD6 (Slough)",
+        "operator": "Equinix",
+        "operator_type": "colo",
+        "city": "Slough",
+        "country": "GB",
+        "mw": 75,
+        "status": "operational",
+        "url": "https://www.equinix.com/data-centers/europe-colocation/united-kingdom-colocation/london-data-centers"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.63,
+          51.505
+        ]
+      },
+      "properties": {
+        "name": "Iron Mountain LON-3",
+        "operator": "Iron Mountain",
+        "operator_type": "colo",
+        "city": "Slough",
+        "country": "GB",
+        "mw": 27,
+        "status": "operational",
+        "url": "https://www.ironmountain.com/data-centers"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.53,
+          51.45
+        ]
+      },
+      "properties": {
+        "name": "Microsoft UK South (Heathrow)",
+        "operator": "Microsoft Azure",
+        "operator_type": "hyperscale",
+        "city": "London",
+        "country": "GB",
+        "mw": 100,
+        "status": "operational",
+        "url": "https://datacenters.microsoft.com/region/europe/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.06,
+          51.52
+        ]
+      },
+      "properties": {
+        "name": "Telehouse North/West/East",
+        "operator": "Telehouse",
+        "operator_type": "colo",
+        "city": "London",
+        "country": "GB",
+        "mw": 50,
+        "status": "operational",
+        "url": "https://www.telehouse.net/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.02,
+          51.55
+        ]
+      },
+      "properties": {
+        "name": "Digital Realty / Interxion LON1-LON4",
+        "operator": "Digital Realty",
+        "operator_type": "colo",
+        "city": "London",
+        "country": "GB",
+        "mw": 80,
+        "status": "operational",
+        "url": "https://www.digitalrealty.co.uk/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.78,
+          51.35
+        ]
+      },
+      "properties": {
+        "name": "VIRTUS LONDON5/LONDON6",
+        "operator": "VIRTUS",
+        "operator_type": "colo",
+        "city": "Slough",
+        "country": "GB",
+        "mw": 80,
+        "status": "operational",
+        "url": "https://www.virtusdatacentres.com/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.44,
+          51.507
+        ]
+      },
+      "properties": {
+        "name": "VIRTUS LONDON7 (Stockley Park)",
+        "operator": "VIRTUS",
+        "operator_type": "colo",
+        "city": "Slough",
+        "country": "GB",
+        "mw": 52,
+        "status": "under_construction",
+        "url": "https://www.virtusdatacentres.com/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.57,
+          51.505
+        ]
+      },
+      "properties": {
+        "name": "Yondr Slough Campus",
+        "operator": "Yondr",
+        "operator_type": "hyperscale",
+        "city": "Slough",
+        "country": "GB",
+        "mw": 120,
+        "status": "under_construction",
+        "url": "https://www.yondrgroup.com/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.07,
+          51.55
+        ]
+      },
+      "properties": {
+        "name": "Stack EMEA LON02",
+        "operator": "Stack Infrastructure",
+        "operator_type": "hyperscale",
+        "city": "London",
+        "country": "GB",
+        "mw": 85,
+        "status": "under_construction",
+        "url": "https://www.stackinfra.com/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.45,
+          51.48
+        ]
+      },
+      "properties": {
+        "name": "Iron Mountain LON-4",
+        "operator": "Iron Mountain",
+        "operator_type": "colo",
+        "city": "London",
+        "country": "GB",
+        "mw": 33,
+        "status": "under_construction",
+        "url": "https://www.ironmountain.com/data-centers"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.05,
+          51.5
+        ]
+      },
+      "properties": {
+        "name": "Ada Infrastructure Docklands",
+        "operator": "Ada Infrastructure",
+        "operator_type": "hyperscale",
+        "city": "London",
+        "country": "GB",
+        "mw": 210,
+        "status": "under_construction",
+        "note": "GLP-backed flagship build",
+        "url": "https://www.adainfrastructure.com/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2603,
+          53.3498
+        ]
+      },
+      "properties": {
+        "name": "Meta Clonee",
+        "operator": "Meta",
+        "operator_type": "hyperscale",
+        "city": "Dublin",
+        "country": "IE",
+        "mw": 288,
+        "status": "operational",
+        "url": "https://datacenters.atmeta.com/all-locations/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.37,
+          53.35
+        ]
+      },
+      "properties": {
+        "name": "Microsoft North Europe",
+        "operator": "Microsoft Azure",
+        "operator_type": "hyperscale",
+        "city": "Dublin",
+        "country": "IE",
+        "mw": 170,
+        "status": "operational",
+        "url": "https://datacenters.microsoft.com/region/europe/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.4,
+          53.42
+        ]
+      },
+      "properties": {
+        "name": "AWS Ireland (multi-AZ Dublin)",
+        "operator": "AWS",
+        "operator_type": "hyperscale",
+        "city": "Dublin",
+        "country": "IE",
+        "mw": 450,
+        "status": "operational",
+        "url": "https://aws.amazon.com/about-aws/global-infrastructure/regions_az/",
+        "note": "EU-WEST-1 region across multiple Dublin AZs; AI DC Index estimate"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.45,
+          53.37
+        ]
+      },
+      "properties": {
+        "name": "Equinix DB1-DB5",
+        "operator": "Equinix",
+        "operator_type": "colo",
+        "city": "Dublin",
+        "country": "IE",
+        "mw": 75,
+        "status": "operational",
+        "url": "https://www.equinix.com/data-centers/europe-colocation/ireland-colocation/dublin-data-centers"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.46,
+          53.365
+        ]
+      },
+      "properties": {
+        "name": "Equinix DB6 Dublin",
+        "operator": "Equinix",
+        "operator_type": "colo",
+        "city": "Dublin",
+        "country": "IE",
+        "mw": 35,
+        "status": "under_construction",
+        "url": "https://www.equinix.com/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.5,
+          53.34
+        ]
+      },
+      "properties": {
+        "name": "Stack EMEA DUB02",
+        "operator": "Stack Infrastructure",
+        "operator_type": "hyperscale",
+        "city": "Dublin",
+        "country": "IE",
+        "mw": 80,
+        "status": "under_construction",
+        "url": "https://www.stackinfra.com/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.42,
+          53.37
+        ]
+      },
+      "properties": {
+        "name": "EdgeConneX EDC Dublin",
+        "operator": "EdgeConneX",
+        "operator_type": "hyperscale",
+        "city": "Dublin",
+        "country": "IE",
+        "mw": 150,
+        "status": "under_construction",
+        "url": "https://www.edgeconnex.com/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.47,
+          53.355
+        ]
+      },
+      "properties": {
+        "name": "Echelon DUB10",
+        "operator": "Echelon",
+        "operator_type": "hyperscale",
+        "city": "Dublin",
+        "country": "IE",
+        "mw": 140,
+        "status": "under_construction",
+        "note": "Planning challenges; partial start",
+        "url": "https://echelondc.com/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.6821,
+          50.1109
+        ]
+      },
+      "properties": {
+        "name": "Equinix FR2/FR4/FR5/FR6/FR7",
+        "operator": "Equinix",
+        "operator_type": "colo",
+        "city": "Frankfurt",
+        "country": "DE",
+        "mw": 130,
+        "status": "operational",
+        "url": "https://www.equinix.com/data-centers/europe-colocation/germany-colocation/frankfurt-data-centers"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.71,
+          50.13
+        ]
+      },
+      "properties": {
+        "name": "Digital Realty / Interxion FRA1-FRA17",
+        "operator": "Digital Realty",
+        "operator_type": "colo",
+        "city": "Frankfurt",
+        "country": "DE",
+        "mw": 180,
+        "status": "operational",
+        "url": "https://www.digitalrealty.com/data-centers/emea/frankfurt"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.65,
+          50.09
+        ]
+      },
+      "properties": {
+        "name": "NTT Frankfurt 1-3",
+        "operator": "NTT",
+        "operator_type": "colo",
+        "city": "Frankfurt",
+        "country": "DE",
+        "mw": 90,
+        "status": "operational",
+        "url": "https://services.global.ntt/en-us/services-and-products/data-centers/frankfurt"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.67,
+          50.1
+        ]
+      },
+      "properties": {
+        "name": "Vantage FRA1/FRA2",
+        "operator": "Vantage",
+        "operator_type": "colo",
+        "city": "Frankfurt",
+        "country": "DE",
+        "mw": 80,
+        "status": "operational",
+        "url": "https://vantage-dc.com/data_center/frankfurt/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.69,
+          50.12
+        ]
+      },
+      "properties": {
+        "name": "Microsoft Germany West Central",
+        "operator": "Microsoft Azure",
+        "operator_type": "hyperscale",
+        "city": "Frankfurt",
+        "country": "DE",
+        "mw": 120,
+        "status": "operational",
+        "url": "https://datacenters.microsoft.com/region/europe/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.7,
+          50.14
+        ]
+      },
+      "properties": {
+        "name": "Vantage FRA21/FRA22",
+        "operator": "Vantage",
+        "operator_type": "colo",
+        "city": "Frankfurt",
+        "country": "DE",
+        "mw": 200,
+        "status": "under_construction",
+        "url": "https://vantage-dc.com/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.72,
+          50.11
+        ]
+      },
+      "properties": {
+        "name": "Digital Realty FRA18-FRA20",
+        "operator": "Digital Realty",
+        "operator_type": "colo",
+        "city": "Frankfurt",
+        "country": "DE",
+        "mw": 120,
+        "status": "under_construction",
+        "url": "https://www.digitalrealty.com/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.66,
+          50.1
+        ]
+      },
+      "properties": {
+        "name": "Equinix FR9/FR10",
+        "operator": "Equinix",
+        "operator_type": "colo",
+        "city": "Frankfurt",
+        "country": "DE",
+        "mw": 65,
+        "status": "under_construction",
+        "url": "https://www.equinix.com/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.64,
+          50.08
+        ]
+      },
+      "properties": {
+        "name": "CyrusOne FRA5/FRA6",
+        "operator": "CyrusOne",
+        "operator_type": "hyperscale",
+        "city": "Frankfurt",
+        "country": "DE",
+        "mw": 110,
+        "status": "under_construction",
+        "url": "https://www.cyrusone.com/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.405,
+          52.52
+        ]
+      },
+      "properties": {
+        "name": "Microsoft Germany North (Berlin)",
+        "operator": "Microsoft Azure",
+        "operator_type": "hyperscale",
+        "city": "Berlin",
+        "country": "DE",
+        "mw": 150,
+        "status": "under_construction",
+        "url": "https://datacenters.microsoft.com/region/europe/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.68,
+          50.12
+        ]
+      },
+      "properties": {
+        "name": "Yondr Frankfurt Campus",
+        "operator": "Yondr",
+        "operator_type": "hyperscale",
+        "city": "Frankfurt",
+        "country": "DE",
+        "mw": 180,
+        "status": "under_construction",
+        "url": "https://www.yondrgroup.com/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.9041,
+          52.3676
+        ]
+      },
+      "properties": {
+        "name": "Equinix AM3/AM4/AM7",
+        "operator": "Equinix",
+        "operator_type": "colo",
+        "city": "Amsterdam",
+        "country": "NL",
+        "mw": 75,
+        "status": "operational",
+        "url": "https://www.equinix.com/data-centers/europe-colocation/netherlands-colocation/amsterdam-data-centers"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.93,
+          52.38
+        ]
+      },
+      "properties": {
+        "name": "Digital Realty / Interxion AMS1-AMS17",
+        "operator": "Digital Realty",
+        "operator_type": "colo",
+        "city": "Amsterdam",
+        "country": "NL",
+        "mw": 150,
+        "status": "operational",
+        "url": "https://www.digitalrealty.com/data-centers/emea/amsterdam"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.02,
+          52.78
+        ]
+      },
+      "properties": {
+        "name": "Microsoft Middenmeer",
+        "operator": "Microsoft Azure",
+        "operator_type": "hyperscale",
+        "city": "Middenmeer",
+        "country": "NL",
+        "mw": 230,
+        "status": "operational",
+        "url": "https://datacenters.microsoft.com/region/europe/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.15,
+          52.67
+        ]
+      },
+      "properties": {
+        "name": "Google Eemshaven",
+        "operator": "Google",
+        "operator_type": "hyperscale",
+        "city": "Eemshaven",
+        "country": "NL",
+        "mw": 140,
+        "status": "operational",
+        "url": "https://www.google.com/about/datacenters/locations/eemshaven/",
+        "note": "Eemshaven facility ~140 MW; Google NL total (Eemshaven + Middenmeer) ~200 MW combined"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.05,
+          52.8
+        ]
+      },
+      "properties": {
+        "name": "Microsoft Middenmeer 2",
+        "operator": "Microsoft Azure",
+        "operator_type": "hyperscale",
+        "city": "Middenmeer",
+        "country": "NL",
+        "mw": 120,
+        "status": "under_construction",
+        "url": "https://datacenters.microsoft.com/region/europe/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.94,
+          52.385
+        ]
+      },
+      "properties": {
+        "name": "Equinix AM11",
+        "operator": "Equinix",
+        "operator_type": "colo",
+        "city": "Amsterdam",
+        "country": "NL",
+        "mw": 40,
+        "status": "under_construction",
+        "url": "https://www.equinix.com/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3522,
+          48.8566
+        ]
+      },
+      "properties": {
+        "name": "Equinix PA8/PA9",
+        "operator": "Equinix",
+        "operator_type": "colo",
+        "city": "Paris",
+        "country": "FR",
+        "mw": 50,
+        "status": "operational",
+        "url": "https://www.equinix.com/data-centers/europe-colocation/france-colocation/paris-data-centers"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.35,
+          48.9
+        ]
+      },
+      "properties": {
+        "name": "Digital Realty / Interxion PAR1-PAR8",
+        "operator": "Digital Realty",
+        "operator_type": "colo",
+        "city": "Paris",
+        "country": "FR",
+        "mw": 110,
+        "status": "operational",
+        "url": "https://www.digitalrealty.com/data-centers/emea/paris"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.45,
+          48.82
+        ]
+      },
+      "properties": {
+        "name": "Data4 Paris-Saclay",
+        "operator": "Data4",
+        "operator_type": "colo",
+        "city": "Saclay",
+        "country": "FR",
+        "mw": 80,
+        "status": "operational",
+        "url": "https://www.data4group.com/en/data-center-france/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.38,
+          48.91
+        ]
+      },
+      "properties": {
+        "name": "AWS Paris (EU-West-3)",
+        "operator": "AWS",
+        "operator_type": "hyperscale",
+        "city": "Paris",
+        "country": "FR",
+        "mw": 100,
+        "status": "operational",
+        "url": "https://aws.amazon.com/about-aws/global-infrastructure/regions_az/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.46,
+          48.825
+        ]
+      },
+      "properties": {
+        "name": "Data4 Paris-Saclay Phase 2",
+        "operator": "Data4",
+        "operator_type": "colo",
+        "city": "Saclay",
+        "country": "FR",
+        "mw": 60,
+        "status": "under_construction",
+        "url": "https://www.data4group.com/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.34,
+          48.86
+        ]
+      },
+      "properties": {
+        "name": "Equinix PA10/PA11",
+        "operator": "Equinix",
+        "operator_type": "colo",
+        "city": "Paris",
+        "country": "FR",
+        "mw": 80,
+        "status": "under_construction",
+        "url": "https://www.equinix.com/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.39,
+          48.905
+        ]
+      },
+      "properties": {
+        "name": "Telehouse TH3 Paris",
+        "operator": "Telehouse",
+        "operator_type": "colo",
+        "city": "Paris",
+        "country": "FR",
+        "mw": 45,
+        "status": "under_construction",
+        "url": "https://www.telehouse.net/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.3517,
+          50.8503
+        ]
+      },
+      "properties": {
+        "name": "Google St-Ghislain",
+        "operator": "Google",
+        "operator_type": "hyperscale",
+        "city": "Saint-Ghislain",
+        "country": "BE",
+        "mw": 200,
+        "status": "operational",
+        "url": "https://www.google.com/about/datacenters/locations/st-ghislain/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.9,
+          50.45
+        ]
+      },
+      "properties": {
+        "name": "Google St-Ghislain Phase 4",
+        "operator": "Google",
+        "operator_type": "hyperscale",
+        "city": "Saint-Ghislain",
+        "country": "BE",
+        "mw": 100,
+        "status": "under_construction",
+        "url": "https://www.google.com/about/datacenters/locations/st-ghislain/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.1296,
+          49.6116
+        ]
+      },
+      "properties": {
+        "name": "LuxConnect DC1-DC3",
+        "operator": "LuxConnect",
+        "operator_type": "colo",
+        "city": "Bissen",
+        "country": "LU",
+        "mw": 40,
+        "status": "operational",
+        "url": "https://www.luxconnect.lu/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.7038,
+          40.4168
+        ]
+      },
+      "properties": {
+        "name": "Equinix MD2/MD3",
+        "operator": "Equinix",
+        "operator_type": "colo",
+        "city": "Madrid",
+        "country": "ES",
+        "mw": 35,
+        "status": "operational",
+        "url": "https://www.equinix.com/data-centers/europe-colocation/spain-colocation/madrid-data-centers"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.68,
+          40.45
+        ]
+      },
+      "properties": {
+        "name": "Stack EMEA Madrid MAD01",
+        "operator": "Stack Infrastructure",
+        "operator_type": "hyperscale",
+        "city": "Madrid",
+        "country": "ES",
+        "mw": 120,
+        "status": "under_construction",
+        "url": "https://www.stackinfra.com/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.71,
+          40.5
+        ]
+      },
+      "properties": {
+        "name": "AWS Spain (EU-South-2)",
+        "operator": "AWS",
+        "operator_type": "hyperscale",
+        "city": "Madrid",
+        "country": "ES",
+        "mw": 150,
+        "status": "under_construction",
+        "url": "https://aws.amazon.com/about-aws/global-infrastructure/regions_az/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.69,
+          40.49
+        ]
+      },
+      "properties": {
+        "name": "Microsoft Spain Central",
+        "operator": "Microsoft Azure",
+        "operator_type": "hyperscale",
+        "city": "Madrid",
+        "country": "ES",
+        "mw": 120,
+        "status": "operational",
+        "url": "https://datacenters.microsoft.com/region/europe/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.705,
+          40.47
+        ]
+      },
+      "properties": {
+        "name": "Data4 Madrid",
+        "operator": "Data4",
+        "operator_type": "colo",
+        "city": "Madrid",
+        "country": "ES",
+        "mw": 80,
+        "status": "under_construction",
+        "url": "https://www.data4group.com/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.67,
+          40.46
+        ]
+      },
+      "properties": {
+        "name": "Merlin Edge Madrid",
+        "operator": "Merlin Properties",
+        "operator_type": "colo",
+        "city": "Madrid",
+        "country": "ES",
+        "mw": 55,
+        "status": "under_construction",
+        "url": "https://www.merlinproperties.com/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.74,
+          40.58
+        ]
+      },
+      "properties": {
+        "name": "Stack Tres Cantos MAD02",
+        "operator": "Stack Infrastructure",
+        "operator_type": "hyperscale",
+        "city": "Tres Cantos",
+        "country": "ES",
+        "mw": 80,
+        "status": "under_construction",
+        "url": "https://www.stackinfra.com/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.19,
+          45.4642
+        ]
+      },
+      "properties": {
+        "name": "Aruba Global Cloud Data Center Bergamo",
+        "operator": "Aruba",
+        "operator_type": "colo",
+        "city": "Bergamo",
+        "country": "IT",
+        "mw": 90,
+        "status": "operational",
+        "url": "https://www.arubadatacenter.com/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2,
+          45.48
+        ]
+      },
+      "properties": {
+        "name": "Equinix MI3",
+        "operator": "Equinix",
+        "operator_type": "colo",
+        "city": "Milan",
+        "country": "IT",
+        "mw": 30,
+        "status": "operational",
+        "url": "https://www.equinix.com/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.22,
+          45.45
+        ]
+      },
+      "properties": {
+        "name": "AWS Italy (EU-South-1)",
+        "operator": "AWS",
+        "operator_type": "hyperscale",
+        "city": "Milan",
+        "country": "IT",
+        "mw": 80,
+        "status": "operational",
+        "url": "https://aws.amazon.com/about-aws/global-infrastructure/regions_az/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.18,
+          45.49
+        ]
+      },
+      "properties": {
+        "name": "Equinix MI5/MI6",
+        "operator": "Equinix",
+        "operator_type": "colo",
+        "city": "Milan",
+        "country": "IT",
+        "mw": 55,
+        "status": "under_construction",
+        "url": "https://www.equinix.com/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.21,
+          45.44
+        ]
+      },
+      "properties": {
+        "name": "Data4 Milan MIL01",
+        "operator": "Data4",
+        "operator_type": "colo",
+        "city": "Milan",
+        "country": "IT",
+        "mw": 85,
+        "status": "under_construction",
+        "url": "https://www.data4group.com/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.23,
+          45.47
+        ]
+      },
+      "properties": {
+        "name": "Vantage MIL11",
+        "operator": "Vantage",
+        "operator_type": "colo",
+        "city": "Milan",
+        "country": "IT",
+        "mw": 80,
+        "status": "under_construction",
+        "url": "https://vantage-dc.com/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -9.1393,
+          38.7223
+        ]
+      },
+      "properties": {
+        "name": "Start Campus SIN01 (Sines)",
+        "operator": "Start Campus",
+        "operator_type": "hyperscale",
+        "city": "Sines",
+        "country": "PT",
+        "mw": 14,
+        "status": "operational",
+        "note": "SIN01 Phase 1 ~14 MW live; subsequent campus phases under construction",
+        "url": "https://startcampus.com/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -9.13,
+          38.728
+        ]
+      },
+      "properties": {
+        "name": "Start Campus SIN02-SIN04 (Sines)",
+        "operator": "Start Campus",
+        "operator_type": "hyperscale",
+        "city": "Sines",
+        "country": "PT",
+        "mw": 473,
+        "status": "under_construction",
+        "note": "SIN02-04 currently under construction (~473 MW). Campus total expanded to 1.2 GW per Aug 2024 announcement.",
+        "url": "https://startcampus.com/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.0686,
+          59.3293
+        ]
+      },
+      "properties": {
+        "name": "atNorth STO01 (formerly DigiPlex)",
+        "operator": "atNorth",
+        "operator_type": "colo",
+        "city": "Stockholm",
+        "country": "SE",
+        "mw": 40,
+        "status": "operational",
+        "url": "https://www.atnorth.com/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          20.263,
+          67.8557
+        ]
+      },
+      "properties": {
+        "name": "Facebook Luleå",
+        "operator": "Meta",
+        "operator_type": "hyperscale",
+        "city": "Luleå",
+        "country": "SE",
+        "mw": 120,
+        "status": "operational",
+        "url": "https://datacenters.atmeta.com/all-locations/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          17.15,
+          60.67
+        ]
+      },
+      "properties": {
+        "name": "Microsoft Sweden Central",
+        "operator": "Microsoft Azure",
+        "operator_type": "hyperscale",
+        "city": "Gävle",
+        "country": "SE",
+        "mw": 500,
+        "status": "operational",
+        "url": "https://datacenters.microsoft.com/region/europe/",
+        "note": "Microsoft Sweden Central region opened Q4 2021; expanded to ~500 MW across Gävle, Sandviken and Staffanstorp campuses"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.07,
+          59.3
+        ]
+      },
+      "properties": {
+        "name": "atNorth SWE01",
+        "operator": "atNorth",
+        "operator_type": "colo",
+        "city": "Stockholm",
+        "country": "SE",
+        "mw": 50,
+        "status": "under_construction",
+        "url": "https://www.atnorth.com/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.7522,
+          59.9139
+        ]
+      },
+      "properties": {
+        "name": "Bulk N01 (Oslo)",
+        "operator": "Bulk",
+        "operator_type": "colo",
+        "city": "Oslo",
+        "country": "NO",
+        "mw": 35,
+        "status": "operational",
+        "url": "https://www.bulk.com/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.0,
+          58.5
+        ]
+      },
+      "properties": {
+        "name": "Green Mountain DC1 (Stavanger)",
+        "operator": "Green Mountain",
+        "operator_type": "colo",
+        "city": "Stavanger",
+        "country": "NO",
+        "mw": 35,
+        "status": "operational",
+        "url": "https://greenmountain.no/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.02,
+          58.48
+        ]
+      },
+      "properties": {
+        "name": "Green Mountain DC2 expansion",
+        "operator": "Green Mountain",
+        "operator_type": "colo",
+        "city": "Stavanger",
+        "country": "NO",
+        "mw": 60,
+        "status": "under_construction",
+        "url": "https://greenmountain.no/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.65,
+          59.95
+        ]
+      },
+      "properties": {
+        "name": "Bulk N02 (Oslo)",
+        "operator": "Bulk",
+        "operator_type": "colo",
+        "city": "Oslo",
+        "country": "NO",
+        "mw": 60,
+        "status": "under_construction",
+        "url": "https://www.bulk.com/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.5683,
+          55.6761
+        ]
+      },
+      "properties": {
+        "name": "Microsoft Denmark East",
+        "operator": "Microsoft Azure",
+        "operator_type": "hyperscale",
+        "city": "Copenhagen",
+        "country": "DK",
+        "mw": 300,
+        "status": "under_construction",
+        "url": "https://datacenters.microsoft.com/region/europe/",
+        "note": "Aspirational total; signed PPAs cover ~130 MW renewables. 300 MW IT load represents full multi-campus build envelope."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.0,
+          55.7
+        ]
+      },
+      "properties": {
+        "name": "Meta Odense",
+        "operator": "Meta",
+        "operator_type": "hyperscale",
+        "city": "Odense",
+        "country": "DK",
+        "mw": 175,
+        "status": "operational",
+        "url": "https://datacenters.atmeta.com/all-locations/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.6,
+          55.7
+        ]
+      },
+      "properties": {
+        "name": "AWS Denmark",
+        "operator": "AWS",
+        "operator_type": "hyperscale",
+        "city": "Copenhagen",
+        "country": "DK",
+        "mw": 150,
+        "status": "under_construction",
+        "url": "https://aws.amazon.com/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.55,
+          55.69
+        ]
+      },
+      "properties": {
+        "name": "nLighten Copenhagen",
+        "operator": "nLighten",
+        "operator_type": "colo",
+        "city": "Copenhagen",
+        "country": "DK",
+        "mw": 40,
+        "status": "under_construction",
+        "url": "https://nlighten.com/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.1932,
+          60.6936
+        ]
+      },
+      "properties": {
+        "name": "Google Hamina",
+        "operator": "Google",
+        "operator_type": "hyperscale",
+        "city": "Hamina",
+        "country": "FI",
+        "mw": 260,
+        "status": "operational",
+        "url": "https://www.google.com/about/datacenters/locations/hamina/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.9384,
+          60.1699
+        ]
+      },
+      "properties": {
+        "name": "Microsoft Finland (Espoo)",
+        "operator": "Microsoft Azure",
+        "operator_type": "hyperscale",
+        "city": "Espoo",
+        "country": "FI",
+        "mw": 200,
+        "status": "under_construction",
+        "url": "https://datacenters.microsoft.com/region/europe/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.2,
+          60.7
+        ]
+      },
+      "properties": {
+        "name": "Google Hamina Phase 5",
+        "operator": "Google",
+        "operator_type": "hyperscale",
+        "city": "Hamina",
+        "country": "FI",
+        "mw": 120,
+        "status": "under_construction",
+        "url": "https://www.google.com/about/datacenters/locations/hamina/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -21.9426,
+          64.1466
+        ]
+      },
+      "properties": {
+        "name": "atNorth ICE03",
+        "operator": "atNorth",
+        "operator_type": "colo",
+        "city": "Reykjavik",
+        "country": "IS",
+        "mw": 80,
+        "status": "under_construction",
+        "url": "https://www.atnorth.com/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          21.0122,
+          52.2297
+        ]
+      },
+      "properties": {
+        "name": "AtmanData Warsaw",
+        "operator": "Atman",
+        "operator_type": "colo",
+        "city": "Warsaw",
+        "country": "PL",
+        "mw": 35,
+        "status": "operational",
+        "url": "https://www.atman.pl/en"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          21.02,
+          52.24
+        ]
+      },
+      "properties": {
+        "name": "Microsoft Poland Central",
+        "operator": "Microsoft Azure",
+        "operator_type": "hyperscale",
+        "city": "Warsaw",
+        "country": "PL",
+        "mw": 110,
+        "status": "operational",
+        "url": "https://datacenters.microsoft.com/region/europe/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          21.03,
+          52.21
+        ]
+      },
+      "properties": {
+        "name": "AtmanData Warsaw WAW-3",
+        "operator": "Atman",
+        "operator_type": "colo",
+        "city": "Warsaw",
+        "country": "PL",
+        "mw": 50,
+        "status": "under_construction",
+        "url": "https://www.atman.pl/en"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.4378,
+          50.0755
+        ]
+      },
+      "properties": {
+        "name": "CE Colo Prague",
+        "operator": "CE Colo",
+        "operator_type": "colo",
+        "city": "Prague",
+        "country": "CZ",
+        "mw": 30,
+        "status": "operational",
+        "url": "https://www.cecolo.com/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.1025,
+          44.4268
+        ]
+      },
+      "properties": {
+        "name": "NXDATA Bucharest",
+        "operator": "NXDATA",
+        "operator_type": "colo",
+        "city": "Bucharest",
+        "country": "RO",
+        "mw": 25,
+        "status": "operational",
+        "url": "https://www.nxdata.ro/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.7275,
+          37.9838
+        ]
+      },
+      "properties": {
+        "name": "Lamda Hellinikon Phase 1 (Microsoft Athens)",
+        "operator": "Microsoft Azure",
+        "operator_type": "hyperscale",
+        "city": "Athens",
+        "country": "GR",
+        "mw": 120,
+        "status": "under_construction",
+        "url": "https://datacenters.microsoft.com/region/europe/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          55.2708,
+          25.2048
+        ]
+      },
+      "properties": {
+        "name": "Equinix DX1/DX2 (Dubai)",
+        "operator": "Equinix",
+        "operator_type": "colo",
+        "city": "Dubai",
+        "country": "AE",
+        "mw": 35,
+        "status": "operational",
+        "url": "https://www.equinix.com/data-centers/middle-east-colocation/uae-colocation/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          54.621,
+          24.419
+        ]
+      },
+      "properties": {
+        "name": "khazna AUH/DXB cluster",
+        "operator": "khazna",
+        "operator_type": "hyperscale",
+        "city": "Abu Dhabi",
+        "country": "AE",
+        "mw": 180,
+        "status": "operational",
+        "url": "https://www.khazna.ae/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          54.621,
+          24.419
+        ]
+      },
+      "properties": {
+        "name": "khazna AUH04/05 expansion",
+        "operator": "khazna",
+        "operator_type": "hyperscale",
+        "city": "Abu Dhabi",
+        "country": "AE",
+        "mw": 100,
+        "status": "under_construction",
+        "url": "https://www.khazna.ae/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          55.3,
+          25.23
+        ]
+      },
+      "properties": {
+        "name": "Microsoft UAE North",
+        "operator": "Microsoft Azure",
+        "operator_type": "hyperscale",
+        "city": "Dubai",
+        "country": "AE",
+        "mw": 80,
+        "status": "under_construction",
+        "url": "https://datacenters.microsoft.com/region/europe/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          55.29,
+          25.22
+        ]
+      },
+      "properties": {
+        "name": "G42 / G42 Cloud Dubai",
+        "operator": "G42",
+        "operator_type": "hyperscale",
+        "city": "Dubai",
+        "country": "AE",
+        "mw": 120,
+        "status": "under_construction",
+        "note": "AI infra build-out",
+        "url": "https://www.g42.ai/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          46.6753,
+          24.7136
+        ]
+      },
+      "properties": {
+        "name": "STC SDC2 (Riyadh)",
+        "operator": "STC",
+        "operator_type": "colo",
+        "city": "Riyadh",
+        "country": "SA",
+        "mw": 60,
+        "status": "operational",
+        "url": "https://www.stc.com.sa/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          46.7,
+          24.75
+        ]
+      },
+      "properties": {
+        "name": "Saudi Cloud STC Cloud",
+        "operator": "STC Cloud",
+        "operator_type": "hyperscale",
+        "city": "Riyadh",
+        "country": "SA",
+        "mw": 80,
+        "status": "operational",
+        "url": "https://www.stc.com.sa/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          50.1,
+          26.42
+        ]
+      },
+      "properties": {
+        "name": "Google Saudi Region",
+        "operator": "Google",
+        "operator_type": "hyperscale",
+        "city": "Dammam",
+        "country": "SA",
+        "mw": 150,
+        "status": "under_construction",
+        "url": "https://cloud.google.com/about/locations"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.0,
+          28.0
+        ]
+      },
+      "properties": {
+        "name": "NEOM Cognitive Cloud",
+        "operator": "NEOM",
+        "operator_type": "hyperscale",
+        "city": "Oxagon",
+        "country": "SA",
+        "mw": 200,
+        "status": "under_construction",
+        "note": "Vision 2030 hyperscale campus",
+        "url": "https://www.neom.com/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          51.531,
+          25.2854
+        ]
+      },
+      "properties": {
+        "name": "Microsoft Qatar Cloud",
+        "operator": "Microsoft Azure",
+        "operator_type": "hyperscale",
+        "city": "Doha",
+        "country": "QA",
+        "mw": 55,
+        "status": "operational",
+        "url": "https://datacenters.microsoft.com/region/europe/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          51.55,
+          25.3
+        ]
+      },
+      "properties": {
+        "name": "Google Qatar Region",
+        "operator": "Google",
+        "operator_type": "hyperscale",
+        "city": "Doha",
+        "country": "QA",
+        "mw": 80,
+        "status": "under_construction",
+        "url": "https://cloud.google.com/about/locations"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          34.7818,
+          32.0853
+        ]
+      },
+      "properties": {
+        "name": "AWS Israel (IL-Central-1)",
+        "operator": "AWS",
+        "operator_type": "hyperscale",
+        "city": "Tel Aviv",
+        "country": "IL",
+        "mw": 80,
+        "status": "operational",
+        "url": "https://aws.amazon.com/about-aws/global-infrastructure/regions_az/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          34.79,
+          32.1
+        ]
+      },
+      "properties": {
+        "name": "Google Israel Region",
+        "operator": "Google",
+        "operator_type": "hyperscale",
+        "city": "Tel Aviv",
+        "country": "IL",
+        "mw": 80,
+        "status": "under_construction",
+        "url": "https://cloud.google.com/about/locations"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          29.4407,
+          40.8027
+        ]
+      },
+      "properties": {
+        "name": "Türk Telekom Istanbul",
+        "operator": "Türk Telekom",
+        "operator_type": "colo",
+        "city": "Gebze",
+        "country": "TR",
+        "mw": 40,
+        "status": "operational",
+        "url": "https://www.turktelekom.com.tr/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.2357,
+          30.0444
+        ]
+      },
+      "properties": {
+        "name": "Telecom Egypt Smart Village",
+        "operator": "Telecom Egypt",
+        "operator_type": "colo",
+        "city": "Cairo",
+        "country": "EG",
+        "mw": 20,
+        "status": "operational",
+        "url": "https://te.eg/wps/portal/te"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.25,
+          30.07
+        ]
+      },
+      "properties": {
+        "name": "Mountain View Egypt",
+        "operator": "Mountain View",
+        "operator_type": "colo",
+        "city": "Cairo",
+        "country": "EG",
+        "mw": 30,
+        "status": "under_construction",
+        "url": "https://mvegypt.com/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -7.5898,
+          33.5731
+        ]
+      },
+      "properties": {
+        "name": "N+ONE Casablanca",
+        "operator": "N+ONE",
+        "operator_type": "colo",
+        "city": "Casablanca",
+        "country": "MA",
+        "mw": 15,
+        "status": "operational",
+        "url": "https://www.nplusone.ma/"
+      }
+    }
   ]
 }
