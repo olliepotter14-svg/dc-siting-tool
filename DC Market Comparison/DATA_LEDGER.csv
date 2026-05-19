@@ -1,0 +1,498 @@
+origin,factor_id,factor_label,unit,iso2,country,value,year,source,url,note,status
+curated,bandwidth_2030_gbps,2030 broadband policy target,Gbps,AE,United Arab Emirates,1.5,2030,UAE Digital Government Strategy 2025-2030,https://u.ae/,"Policy target, not analyst-forecast median speed",pending
+curated,bandwidth_2030_gbps,2030 broadband policy target,Gbps,DE,Germany,1.0,2030,BMDV Gigabitstrategie 2030,https://bmdv.bund.de/,"Policy target, not analyst-forecast median speed",pending
+curated,bandwidth_2030_gbps,2030 broadband policy target,Gbps,ES,Spain,1.0,2030,Plan España Digital 2026 (extended),https://espanadigital.gob.es/,"Policy target, not analyst-forecast median speed",pending
+curated,bandwidth_2030_gbps,2030 broadband policy target,Gbps,FR,France,2.0,2030,Plan France Très Haut Débit 'Tous fibrés en 2030',https://www.economie.gouv.fr/,"Policy target, not analyst-forecast median speed",pending
+curated,bandwidth_2030_gbps,2030 broadband policy target,Gbps,GB,United Kingdom,1.0,2030,Analysys Mason — UK FTTP rollout trajectory,https://www.analysysmason.com/,"Policy target, not analyst-forecast median speed",pending
+curated,bandwidth_2030_gbps,2030 broadband policy target,Gbps,IE,Ireland,1.0,2030,Ireland's National Broadband Plan + EU Gigabit,https://www.gov.ie/en/publication/c1b0c-national-broadband-plan/,"Policy target, not analyst-forecast median speed",pending
+curated,bandwidth_2030_gbps,2030 broadband policy target,Gbps,IT,Italy,1.0,2030,Italia Domani Banda Ultra Larga,https://italiadomani.gov.it/,"Policy target, not analyst-forecast median speed",pending
+curated,bandwidth_2030_gbps,2030 broadband policy target,Gbps,NL,Netherlands,1.0,2030,EU Gigabit Society targets (Dutch trajectory),https://digital-strategy.ec.europa.eu/,"Policy target, not analyst-forecast median speed",pending
+curated,bandwidth_2030_gbps,2030 broadband policy target,Gbps,SA,Saudi Arabia,1.0,2030,CST Saudi Arabia Communications Strategy 2030,https://www.cst.gov.sa/,"Policy target, not analyst-forecast median speed",pending
+curated,bandwidth_2030_gbps,2030 broadband policy target,Gbps,SE,Sweden,1.0,2030,PTS Bredbandsstrategi 2030,https://pts.se/en/,"Policy target, not analyst-forecast median speed",pending
+curated,bandwidth_gbps,Median fixed-broadband download speed,Gbps,AE,United Arab Emirates,0.31,2024,Ookla Speedtest Global Index,https://www.speedtest.net/global-index,,pending
+curated,bandwidth_gbps,Median fixed-broadband download speed,Gbps,AT,Austria,0.09,2024,Ookla Speedtest Global Index,https://www.speedtest.net/global-index,,pending
+curated,bandwidth_gbps,Median fixed-broadband download speed,Gbps,BE,Belgium,0.12,2024,Ookla Speedtest Global Index,https://www.speedtest.net/global-index,,pending
+curated,bandwidth_gbps,Median fixed-broadband download speed,Gbps,CH,Switzerland,0.25,2024,Ookla Speedtest Global Index,https://www.speedtest.net/global-index,,pending
+curated,bandwidth_gbps,Median fixed-broadband download speed,Gbps,CZ,Czechia,0.13,2024,Ookla Speedtest Global Index,https://www.speedtest.net/global-index,,pending
+curated,bandwidth_gbps,Median fixed-broadband download speed,Gbps,DE,Germany,0.1,2024,Ookla Speedtest Global Index,https://www.speedtest.net/global-index,,pending
+curated,bandwidth_gbps,Median fixed-broadband download speed,Gbps,DK,Denmark,0.25,2024,Ookla Speedtest Global Index,https://www.speedtest.net/global-index,,pending
+curated,bandwidth_gbps,Median fixed-broadband download speed,Gbps,EE,Estonia,0.15,2024,Ookla Speedtest Global Index,https://www.speedtest.net/global-index,,pending
+curated,bandwidth_gbps,Median fixed-broadband download speed,Gbps,EG,Egypt,0.06,2024,Ookla Speedtest Global Index,https://www.speedtest.net/global-index,,pending
+curated,bandwidth_gbps,Median fixed-broadband download speed,Gbps,ES,Spain,0.23,2024,Ookla Speedtest Global Index,https://www.speedtest.net/global-index,,pending
+curated,bandwidth_gbps,Median fixed-broadband download speed,Gbps,FI,Finland,0.16,2024,Ookla Speedtest Global Index,https://www.speedtest.net/global-index,,pending
+curated,bandwidth_gbps,Median fixed-broadband download speed,Gbps,FR,France,0.27,2024,Ookla Speedtest Global Index,https://www.speedtest.net/global-index,,pending
+curated,bandwidth_gbps,Median fixed-broadband download speed,Gbps,GB,United Kingdom,0.14,2024,Ookla Speedtest Global Index,https://www.speedtest.net/global-index,,pending
+curated,bandwidth_gbps,Median fixed-broadband download speed,Gbps,GR,Greece,0.1,2024,Ookla Speedtest Global Index,https://www.speedtest.net/global-index,,pending
+curated,bandwidth_gbps,Median fixed-broadband download speed,Gbps,HU,Hungary,0.14,2024,Ookla Speedtest Global Index,https://www.speedtest.net/global-index,,pending
+curated,bandwidth_gbps,Median fixed-broadband download speed,Gbps,IE,Ireland,0.2,2024,Ookla Speedtest Global Index,https://www.speedtest.net/global-index,,pending
+curated,bandwidth_gbps,Median fixed-broadband download speed,Gbps,IL,Israel,0.21,2024,Ookla Speedtest Global Index,https://www.speedtest.net/global-index,,pending
+curated,bandwidth_gbps,Median fixed-broadband download speed,Gbps,IS,Iceland,0.3,2024,Ookla Speedtest Global Index,https://www.speedtest.net/global-index,,pending
+curated,bandwidth_gbps,Median fixed-broadband download speed,Gbps,IT,Italy,0.12,2024,Ookla Speedtest Global Index,https://www.speedtest.net/global-index,,pending
+curated,bandwidth_gbps,Median fixed-broadband download speed,Gbps,LT,Lithuania,0.14,2024,Ookla Speedtest Global Index,https://www.speedtest.net/global-index,,pending
+curated,bandwidth_gbps,Median fixed-broadband download speed,Gbps,LU,Luxembourg,0.19,2024,Ookla Speedtest Global Index,https://www.speedtest.net/global-index,,pending
+curated,bandwidth_gbps,Median fixed-broadband download speed,Gbps,LV,Latvia,0.11,2024,Ookla Speedtest Global Index,https://www.speedtest.net/global-index,,pending
+curated,bandwidth_gbps,Median fixed-broadband download speed,Gbps,MA,Morocco,0.06,2024,Ookla Speedtest Global Index,https://www.speedtest.net/global-index,,pending
+curated,bandwidth_gbps,Median fixed-broadband download speed,Gbps,NL,Netherlands,0.16,2024,Ookla Speedtest Global Index,https://www.speedtest.net/global-index,,pending
+curated,bandwidth_gbps,Median fixed-broadband download speed,Gbps,NO,Norway,0.17,2024,Ookla Speedtest Global Index,https://www.speedtest.net/global-index,,pending
+curated,bandwidth_gbps,Median fixed-broadband download speed,Gbps,PL,Poland,0.13,2024,Ookla Speedtest Global Index,https://www.speedtest.net/global-index,,pending
+curated,bandwidth_gbps,Median fixed-broadband download speed,Gbps,PT,Portugal,0.17,2024,Ookla Speedtest Global Index,https://www.speedtest.net/global-index,,pending
+curated,bandwidth_gbps,Median fixed-broadband download speed,Gbps,QA,Qatar,0.21,2024,Ookla Speedtest Global Index,https://www.speedtest.net/global-index,,pending
+curated,bandwidth_gbps,Median fixed-broadband download speed,Gbps,RO,Romania,0.18,2024,Ookla Speedtest Global Index,https://www.speedtest.net/global-index,,pending
+curated,bandwidth_gbps,Median fixed-broadband download speed,Gbps,SA,Saudi Arabia,0.09,2024,Ookla Speedtest Global Index,https://www.speedtest.net/global-index,,pending
+curated,bandwidth_gbps,Median fixed-broadband download speed,Gbps,SE,Sweden,0.22,2024,Ookla Speedtest Global Index,https://www.speedtest.net/global-index,,pending
+curated,bandwidth_gbps,Median fixed-broadband download speed,Gbps,TN,Tunisia,0.04,2024,Ookla Speedtest Global Index,https://www.speedtest.net/global-index,,pending
+curated,bandwidth_gbps,Median fixed-broadband download speed,Gbps,TR,Türkiye,0.08,2024,Ookla Speedtest Global Index,https://www.speedtest.net/global-index,,pending
+api_fetch,carbon_intensity_gco2_kwh,Grid carbon intensity,gCO2/kWh,AE,United Arab Emirates,467.51,2024,Our World in Data (Ember 'Carbon intensity of electricity'),https://ourworldindata.org/grapher/carbon-intensity-electricity,,pending
+api_fetch,carbon_intensity_gco2_kwh,Grid carbon intensity,gCO2/kWh,AT,Austria,116.91,2025,Our World in Data (Ember 'Carbon intensity of electricity'),https://ourworldindata.org/grapher/carbon-intensity-electricity,,pending
+api_fetch,carbon_intensity_gco2_kwh,Grid carbon intensity,gCO2/kWh,BE,Belgium,149.82,2025,Our World in Data (Ember 'Carbon intensity of electricity'),https://ourworldindata.org/grapher/carbon-intensity-electricity,,pending
+api_fetch,carbon_intensity_gco2_kwh,Grid carbon intensity,gCO2/kWh,BG,Bulgaria,275.55,2025,Our World in Data (Ember 'Carbon intensity of electricity'),https://ourworldindata.org/grapher/carbon-intensity-electricity,,pending
+api_fetch,carbon_intensity_gco2_kwh,Grid carbon intensity,gCO2/kWh,BH,Bahrain,902.24,2024,Our World in Data (Ember 'Carbon intensity of electricity'),https://ourworldindata.org/grapher/carbon-intensity-electricity,,pending
+api_fetch,carbon_intensity_gco2_kwh,Grid carbon intensity,gCO2/kWh,CH,Switzerland,39.22,2025,Our World in Data (Ember 'Carbon intensity of electricity'),https://ourworldindata.org/grapher/carbon-intensity-electricity,,pending
+api_fetch,carbon_intensity_gco2_kwh,Grid carbon intensity,gCO2/kWh,CY,Cyprus,489.0,2025,Our World in Data (Ember 'Carbon intensity of electricity'),https://ourworldindata.org/grapher/carbon-intensity-electricity,,pending
+api_fetch,carbon_intensity_gco2_kwh,Grid carbon intensity,gCO2/kWh,CZ,Czechia,401.46,2025,Our World in Data (Ember 'Carbon intensity of electricity'),https://ourworldindata.org/grapher/carbon-intensity-electricity,,pending
+api_fetch,carbon_intensity_gco2_kwh,Grid carbon intensity,gCO2/kWh,DE,Germany,329.65,2025,Our World in Data (Ember 'Carbon intensity of electricity'),https://ourworldindata.org/grapher/carbon-intensity-electricity,,pending
+api_fetch,carbon_intensity_gco2_kwh,Grid carbon intensity,gCO2/kWh,DK,Denmark,114.41,2025,Our World in Data (Ember 'Carbon intensity of electricity'),https://ourworldindata.org/grapher/carbon-intensity-electricity,,pending
+api_fetch,carbon_intensity_gco2_kwh,Grid carbon intensity,gCO2/kWh,DZ,Algeria,632.94,2024,Our World in Data (Ember 'Carbon intensity of electricity'),https://ourworldindata.org/grapher/carbon-intensity-electricity,,pending
+api_fetch,carbon_intensity_gco2_kwh,Grid carbon intensity,gCO2/kWh,EE,Estonia,319.15,2025,Our World in Data (Ember 'Carbon intensity of electricity'),https://ourworldindata.org/grapher/carbon-intensity-electricity,,pending
+api_fetch,carbon_intensity_gco2_kwh,Grid carbon intensity,gCO2/kWh,EG,Egypt,563.23,2025,Our World in Data (Ember 'Carbon intensity of electricity'),https://ourworldindata.org/grapher/carbon-intensity-electricity,,pending
+api_fetch,carbon_intensity_gco2_kwh,Grid carbon intensity,gCO2/kWh,ES,Spain,153.6,2025,Our World in Data (Ember 'Carbon intensity of electricity'),https://ourworldindata.org/grapher/carbon-intensity-electricity,,pending
+api_fetch,carbon_intensity_gco2_kwh,Grid carbon intensity,gCO2/kWh,FI,Finland,57.47,2025,Our World in Data (Ember 'Carbon intensity of electricity'),https://ourworldindata.org/grapher/carbon-intensity-electricity,,pending
+api_fetch,carbon_intensity_gco2_kwh,Grid carbon intensity,gCO2/kWh,FR,France,41.44,2025,Our World in Data (Ember 'Carbon intensity of electricity'),https://ourworldindata.org/grapher/carbon-intensity-electricity,,pending
+api_fetch,carbon_intensity_gco2_kwh,Grid carbon intensity,gCO2/kWh,GB,United Kingdom,217.41,2025,Our World in Data (Ember 'Carbon intensity of electricity'),https://ourworldindata.org/grapher/carbon-intensity-electricity,,pending
+api_fetch,carbon_intensity_gco2_kwh,Grid carbon intensity,gCO2/kWh,GR,Greece,315.09,2025,Our World in Data (Ember 'Carbon intensity of electricity'),https://ourworldindata.org/grapher/carbon-intensity-electricity,,pending
+api_fetch,carbon_intensity_gco2_kwh,Grid carbon intensity,gCO2/kWh,HR,Croatia,158.5,2025,Our World in Data (Ember 'Carbon intensity of electricity'),https://ourworldindata.org/grapher/carbon-intensity-electricity,,pending
+api_fetch,carbon_intensity_gco2_kwh,Grid carbon intensity,gCO2/kWh,HU,Hungary,163.02,2025,Our World in Data (Ember 'Carbon intensity of electricity'),https://ourworldindata.org/grapher/carbon-intensity-electricity,,pending
+api_fetch,carbon_intensity_gco2_kwh,Grid carbon intensity,gCO2/kWh,IE,Ireland,256.54,2025,Our World in Data (Ember 'Carbon intensity of electricity'),https://ourworldindata.org/grapher/carbon-intensity-electricity,,pending
+api_fetch,carbon_intensity_gco2_kwh,Grid carbon intensity,gCO2/kWh,IL,Israel,492.69,2025,Our World in Data (Ember 'Carbon intensity of electricity'),https://ourworldindata.org/grapher/carbon-intensity-electricity,,pending
+api_fetch,carbon_intensity_gco2_kwh,Grid carbon intensity,gCO2/kWh,IS,Iceland,27.82,2024,Our World in Data (Ember 'Carbon intensity of electricity'),https://ourworldindata.org/grapher/carbon-intensity-electricity,,pending
+api_fetch,carbon_intensity_gco2_kwh,Grid carbon intensity,gCO2/kWh,IT,Italy,284.78,2025,Our World in Data (Ember 'Carbon intensity of electricity'),https://ourworldindata.org/grapher/carbon-intensity-electricity,,pending
+api_fetch,carbon_intensity_gco2_kwh,Grid carbon intensity,gCO2/kWh,JO,Jordan,529.79,2024,Our World in Data (Ember 'Carbon intensity of electricity'),https://ourworldindata.org/grapher/carbon-intensity-electricity,,pending
+api_fetch,carbon_intensity_gco2_kwh,Grid carbon intensity,gCO2/kWh,KW,Kuwait,635.31,2025,Our World in Data (Ember 'Carbon intensity of electricity'),https://ourworldindata.org/grapher/carbon-intensity-electricity,,pending
+api_fetch,carbon_intensity_gco2_kwh,Grid carbon intensity,gCO2/kWh,LT,Lithuania,138.36,2025,Our World in Data (Ember 'Carbon intensity of electricity'),https://ourworldindata.org/grapher/carbon-intensity-electricity,,pending
+api_fetch,carbon_intensity_gco2_kwh,Grid carbon intensity,gCO2/kWh,LU,Luxembourg,123.38,2025,Our World in Data (Ember 'Carbon intensity of electricity'),https://ourworldindata.org/grapher/carbon-intensity-electricity,,pending
+api_fetch,carbon_intensity_gco2_kwh,Grid carbon intensity,gCO2/kWh,LV,Latvia,138.76,2025,Our World in Data (Ember 'Carbon intensity of electricity'),https://ourworldindata.org/grapher/carbon-intensity-electricity,,pending
+api_fetch,carbon_intensity_gco2_kwh,Grid carbon intensity,gCO2/kWh,MA,Morocco,596.4,2025,Our World in Data (Ember 'Carbon intensity of electricity'),https://ourworldindata.org/grapher/carbon-intensity-electricity,,pending
+api_fetch,carbon_intensity_gco2_kwh,Grid carbon intensity,gCO2/kWh,MT,Malta,484.02,2025,Our World in Data (Ember 'Carbon intensity of electricity'),https://ourworldindata.org/grapher/carbon-intensity-electricity,,pending
+api_fetch,carbon_intensity_gco2_kwh,Grid carbon intensity,gCO2/kWh,NL,Netherlands,253.56,2025,Our World in Data (Ember 'Carbon intensity of electricity'),https://ourworldindata.org/grapher/carbon-intensity-electricity,,pending
+api_fetch,carbon_intensity_gco2_kwh,Grid carbon intensity,gCO2/kWh,NO,Norway,28.11,2025,Our World in Data (Ember 'Carbon intensity of electricity'),https://ourworldindata.org/grapher/carbon-intensity-electricity,,pending
+api_fetch,carbon_intensity_gco2_kwh,Grid carbon intensity,gCO2/kWh,OM,Oman,544.47,2025,Our World in Data (Ember 'Carbon intensity of electricity'),https://ourworldindata.org/grapher/carbon-intensity-electricity,,pending
+api_fetch,carbon_intensity_gco2_kwh,Grid carbon intensity,gCO2/kWh,PL,Poland,588.6,2025,Our World in Data (Ember 'Carbon intensity of electricity'),https://ourworldindata.org/grapher/carbon-intensity-electricity,,pending
+api_fetch,carbon_intensity_gco2_kwh,Grid carbon intensity,gCO2/kWh,PT,Portugal,127.91,2025,Our World in Data (Ember 'Carbon intensity of electricity'),https://ourworldindata.org/grapher/carbon-intensity-electricity,,pending
+api_fetch,carbon_intensity_gco2_kwh,Grid carbon intensity,gCO2/kWh,QA,Qatar,581.52,2025,Our World in Data (Ember 'Carbon intensity of electricity'),https://ourworldindata.org/grapher/carbon-intensity-electricity,,pending
+api_fetch,carbon_intensity_gco2_kwh,Grid carbon intensity,gCO2/kWh,RO,Romania,250.75,2025,Our World in Data (Ember 'Carbon intensity of electricity'),https://ourworldindata.org/grapher/carbon-intensity-electricity,,pending
+api_fetch,carbon_intensity_gco2_kwh,Grid carbon intensity,gCO2/kWh,RS,Serbia,695.8,2025,Our World in Data (Ember 'Carbon intensity of electricity'),https://ourworldindata.org/grapher/carbon-intensity-electricity,,pending
+api_fetch,carbon_intensity_gco2_kwh,Grid carbon intensity,gCO2/kWh,SA,Saudi Arabia,691.95,2024,Our World in Data (Ember 'Carbon intensity of electricity'),https://ourworldindata.org/grapher/carbon-intensity-electricity,,pending
+api_fetch,carbon_intensity_gco2_kwh,Grid carbon intensity,gCO2/kWh,SE,Sweden,35.26,2025,Our World in Data (Ember 'Carbon intensity of electricity'),https://ourworldindata.org/grapher/carbon-intensity-electricity,,pending
+api_fetch,carbon_intensity_gco2_kwh,Grid carbon intensity,gCO2/kWh,SI,Slovenia,183.29,2025,Our World in Data (Ember 'Carbon intensity of electricity'),https://ourworldindata.org/grapher/carbon-intensity-electricity,,pending
+api_fetch,carbon_intensity_gco2_kwh,Grid carbon intensity,gCO2/kWh,SK,Slovakia,94.85,2025,Our World in Data (Ember 'Carbon intensity of electricity'),https://ourworldindata.org/grapher/carbon-intensity-electricity,,pending
+api_fetch,carbon_intensity_gco2_kwh,Grid carbon intensity,gCO2/kWh,TN,Tunisia,560.29,2025,Our World in Data (Ember 'Carbon intensity of electricity'),https://ourworldindata.org/grapher/carbon-intensity-electricity,,pending
+api_fetch,carbon_intensity_gco2_kwh,Grid carbon intensity,gCO2/kWh,TR,Türkiye,474.74,2025,Our World in Data (Ember 'Carbon intensity of electricity'),https://ourworldindata.org/grapher/carbon-intensity-electricity,,pending
+curated,construction_cost_usd_mw,DC build cost per MW,USD/MW,AE,United Arab Emirates,9500000.0,2024,Cushman & Wakefield Global DC Construction Cost Guide 2024 — Dubai,https://www.cushmanwakefield.com/en/insights/global-data-center-construction-cost-guide,,pending
+curated,construction_cost_usd_mw,DC build cost per MW,USD/MW,AT,Austria,10000000.0,2024,Cushman & Wakefield Global DC Construction Cost Guide 2024 — Vienna,https://www.cushmanwakefield.com/en/insights/global-data-center-construction-cost-guide,,pending
+curated,construction_cost_usd_mw,DC build cost per MW,USD/MW,BE,Belgium,10500000.0,2024,Cushman & Wakefield Global DC Construction Cost Guide 2024 — Brussels,https://www.cushmanwakefield.com/en/insights/global-data-center-construction-cost-guide,,pending
+curated,construction_cost_usd_mw,DC build cost per MW,USD/MW,CH,Switzerland,14000000.0,2024,Cushman & Wakefield Global DC Construction Cost Guide 2024 — Zurich (most expensive globally),https://www.cushmanwakefield.com/en/insights/global-data-center-construction-cost-guide,,pending
+curated,construction_cost_usd_mw,DC build cost per MW,USD/MW,CZ,Czechia,8500000.0,2024,Turner & Townsend DC Cost Index 2024 — Prague,https://www.turnerandtownsend.com/,,pending
+curated,construction_cost_usd_mw,DC build cost per MW,USD/MW,DE,Germany,11000000.0,2024,Cushman & Wakefield Global DC Construction Cost Guide 2024 — Frankfurt,https://www.cushmanwakefield.com/en/insights/global-data-center-construction-cost-guide,,pending
+curated,construction_cost_usd_mw,DC build cost per MW,USD/MW,DK,Denmark,10500000.0,2024,Cushman & Wakefield Global DC Construction Cost Guide 2024 — Copenhagen,https://www.cushmanwakefield.com/en/insights/global-data-center-construction-cost-guide,,pending
+curated,construction_cost_usd_mw,DC build cost per MW,USD/MW,EG,Egypt,7000000.0,2024,Cushman & Wakefield Global DC Construction Cost Guide 2024 — Cairo,https://www.cushmanwakefield.com/en/insights/global-data-center-construction-cost-guide,,pending
+curated,construction_cost_usd_mw,DC build cost per MW,USD/MW,ES,Spain,9500000.0,2024,Cushman & Wakefield Global DC Construction Cost Guide 2024 — Madrid,https://www.cushmanwakefield.com/en/insights/global-data-center-construction-cost-guide,,pending
+curated,construction_cost_usd_mw,DC build cost per MW,USD/MW,FI,Finland,10000000.0,2024,Turner & Townsend DC Cost Index 2024 — Helsinki,https://www.turnerandtownsend.com/,,pending
+curated,construction_cost_usd_mw,DC build cost per MW,USD/MW,FR,France,10500000.0,2024,Cushman & Wakefield Global DC Construction Cost Guide 2024 — Paris,https://www.cushmanwakefield.com/en/insights/global-data-center-construction-cost-guide,,pending
+curated,construction_cost_usd_mw,DC build cost per MW,USD/MW,GB,United Kingdom,11500000.0,2024,Cushman & Wakefield Global DC Construction Cost Guide 2024 — London/Slough,https://www.cushmanwakefield.com/en/insights/global-data-center-construction-cost-guide,,pending
+curated,construction_cost_usd_mw,DC build cost per MW,USD/MW,GR,Greece,8500000.0,2024,Turner & Townsend DC Cost Index 2024 — Athens,https://www.turnerandtownsend.com/,,pending
+curated,construction_cost_usd_mw,DC build cost per MW,USD/MW,HU,Hungary,8000000.0,2024,Turner & Townsend DC Cost Index 2024 — Budapest,https://www.turnerandtownsend.com/,,pending
+curated,construction_cost_usd_mw,DC build cost per MW,USD/MW,IE,Ireland,12500000.0,2024,Cushman & Wakefield Global DC Construction Cost Guide 2024 — Dublin,https://www.cushmanwakefield.com/en/insights/global-data-center-construction-cost-guide,,pending
+curated,construction_cost_usd_mw,DC build cost per MW,USD/MW,IL,Israel,10000000.0,2024,Turner & Townsend DC Cost Index 2024 — Tel Aviv,https://www.turnerandtownsend.com/,,pending
+curated,construction_cost_usd_mw,DC build cost per MW,USD/MW,IT,Italy,9500000.0,2024,Cushman & Wakefield Global DC Construction Cost Guide 2024 — Milan,https://www.cushmanwakefield.com/en/insights/global-data-center-construction-cost-guide,,pending
+curated,construction_cost_usd_mw,DC build cost per MW,USD/MW,LU,Luxembourg,11000000.0,2024,Cushman & Wakefield Global DC Construction Cost Guide 2024 — Luxembourg,https://www.cushmanwakefield.com/en/insights/global-data-center-construction-cost-guide,,pending
+curated,construction_cost_usd_mw,DC build cost per MW,USD/MW,MA,Morocco,7000000.0,2024,Turner & Townsend DC Cost Index 2024 — Casablanca,https://www.turnerandtownsend.com/,,pending
+curated,construction_cost_usd_mw,DC build cost per MW,USD/MW,NL,Netherlands,11000000.0,2024,Cushman & Wakefield Global DC Construction Cost Guide 2024 — Amsterdam,https://www.cushmanwakefield.com/en/insights/global-data-center-construction-cost-guide,,pending
+curated,construction_cost_usd_mw,DC build cost per MW,USD/MW,NO,Norway,10500000.0,2024,Cushman & Wakefield Global DC Construction Cost Guide 2024 — Oslo,https://www.turnerandtownsend.com/,,pending
+curated,construction_cost_usd_mw,DC build cost per MW,USD/MW,PL,Poland,8500000.0,2024,Cushman & Wakefield Global DC Construction Cost Guide 2024 — Warsaw,https://www.cushmanwakefield.com/en/insights/global-data-center-construction-cost-guide,,pending
+curated,construction_cost_usd_mw,DC build cost per MW,USD/MW,PT,Portugal,9000000.0,2024,Turner & Townsend DC Cost Index 2024 — Lisbon,https://www.turnerandtownsend.com/,,pending
+curated,construction_cost_usd_mw,DC build cost per MW,USD/MW,QA,Qatar,9500000.0,2024,Cushman & Wakefield Global DC Construction Cost Guide 2024 — Doha,https://www.cushmanwakefield.com/en/insights/global-data-center-construction-cost-guide,,pending
+curated,construction_cost_usd_mw,DC build cost per MW,USD/MW,RO,Romania,7500000.0,2024,Turner & Townsend DC Cost Index 2024 — Bucharest,https://www.turnerandtownsend.com/,,pending
+curated,construction_cost_usd_mw,DC build cost per MW,USD/MW,SA,Saudi Arabia,9000000.0,2024,Cushman & Wakefield Global DC Construction Cost Guide 2024 — Riyadh,https://www.cushmanwakefield.com/en/insights/global-data-center-construction-cost-guide,,pending
+curated,construction_cost_usd_mw,DC build cost per MW,USD/MW,SE,Sweden,10000000.0,2024,Cushman & Wakefield Global DC Construction Cost Guide 2024 — Stockholm,https://www.cushmanwakefield.com/en/insights/global-data-center-construction-cost-guide,,pending
+curated,construction_cost_usd_mw,DC build cost per MW,USD/MW,TR,Türkiye,7500000.0,2024,Turner & Townsend DC Cost Index 2024 — Istanbul,https://www.turnerandtownsend.com/,,pending
+curated,dc_capacity_live_mw,Operational DC capacity,MW,AE,United Arab Emirates,350,2025,Cushman & Wakefield Global DC Market H1 2025 + JLL EMEA Data Centres Q1 2025 (national totals),https://www.cushmanwakefield.com/en/insights/global-data-center-market-comparison,,pending
+curated,dc_capacity_live_mw,Operational DC capacity,MW,AT,Austria,110,2024,datacentermap.com — Vienna,https://www.datacentermap.com/,,pending
+curated,dc_capacity_live_mw,Operational DC capacity,MW,BE,Belgium,110,2024,datacentermap.com — Brussels,https://www.datacentermap.com/,,pending
+curated,dc_capacity_live_mw,Operational DC capacity,MW,BH,Bahrain,50,2024,datacentermap.com + AWS Bahrain Region,https://www.datacentermap.com/,,pending
+curated,dc_capacity_live_mw,Operational DC capacity,MW,CH,Switzerland,200,2024,Cushman & Wakefield Global DC Market 2024 — Zurich,https://www.cushmanwakefield.com/en/insights/global-data-center-market-comparison,,pending
+curated,dc_capacity_live_mw,Operational DC capacity,MW,CZ,Czechia,75,2024,datacentermap.com — Prague,https://www.datacentermap.com/,,pending
+curated,dc_capacity_live_mw,Operational DC capacity,MW,DE,Germany,980,2025,Cushman & Wakefield Global DC Market H1 2025 + JLL EMEA Data Centres Q1 2025 (national totals),https://www.cushmanwakefield.com/en/insights/global-data-center-market-comparison,,pending
+curated,dc_capacity_live_mw,Operational DC capacity,MW,DK,Denmark,250,2024,JLL EMEA Data Centres Q4 2024 — Copenhagen + hyperscale campuses,https://www.jll.com/en/insights,,pending
+curated,dc_capacity_live_mw,Operational DC capacity,MW,EE,Estonia,25,2024,datacentermap.com — Tallinn,https://www.datacentermap.com/,,pending
+curated,dc_capacity_live_mw,Operational DC capacity,MW,EG,Egypt,50,2024,datacentermap.com — Cairo,https://www.datacentermap.com/,,pending
+curated,dc_capacity_live_mw,Operational DC capacity,MW,ES,Spain,280,2024,JLL EMEA Data Centres Q4 2024 — Madrid emerging market,https://www.jll.com/en/insights,,pending
+curated,dc_capacity_live_mw,Operational DC capacity,MW,FI,Finland,130,2024,datacentermap.com + Google Hamina campus + Microsoft Espoo,https://www.datacentermap.com/,,pending
+curated,dc_capacity_live_mw,Operational DC capacity,MW,FR,France,550,2024,Cushman & Wakefield Global DC Market 2024 — Paris cluster,https://www.cushmanwakefield.com/en/insights/global-data-center-market-comparison,,pending
+curated,dc_capacity_live_mw,Operational DC capacity,MW,GB,United Kingdom,1400,2025,Cushman & Wakefield Global DC Market H1 2025 + JLL EMEA Data Centres Q1 2025 (national totals),https://www.cushmanwakefield.com/en/insights/global-data-center-market-comparison,,pending
+curated,dc_capacity_live_mw,Operational DC capacity,MW,GR,Greece,35,2024,datacentermap.com — Athens emerging,https://www.datacentermap.com/,,pending
+curated,dc_capacity_live_mw,Operational DC capacity,MW,IE,Ireland,1150,2025,Cushman & Wakefield Global DC Market H1 2025 + JLL EMEA Data Centres Q1 2025 (national totals),https://www.cushmanwakefield.com/en/insights/global-data-center-market-comparison,,pending
+curated,dc_capacity_live_mw,Operational DC capacity,MW,IL,Israel,70,2024,datacentermap.com — Tel Aviv,https://www.datacentermap.com/,,pending
+curated,dc_capacity_live_mw,Operational DC capacity,MW,IT,Italy,220,2024,JLL EMEA Data Centres Q4 2024 — Milan emerging market,https://www.jll.com/en/insights,,pending
+curated,dc_capacity_live_mw,Operational DC capacity,MW,LU,Luxembourg,90,2024,datacentermap.com + LuxConnect public reporting,https://www.datacentermap.com/,,pending
+curated,dc_capacity_live_mw,Operational DC capacity,MW,MA,Morocco,35,2024,datacentermap.com — Casablanca,https://www.datacentermap.com/,,pending
+curated,dc_capacity_live_mw,Operational DC capacity,MW,NL,Netherlands,850,2025,Cushman & Wakefield Global DC Market H1 2025 + JLL EMEA Data Centres Q1 2025 (national totals),https://www.cushmanwakefield.com/en/insights/global-data-center-market-comparison,,pending
+curated,dc_capacity_live_mw,Operational DC capacity,MW,NO,Norway,130,2024,datacentermap.com + Statkraft hyperscale partnership announcements,https://www.datacentermap.com/,,pending
+curated,dc_capacity_live_mw,Operational DC capacity,MW,PL,Poland,130,2024,JLL EMEA Data Centres Q4 2024 — Warsaw emerging cluster,https://www.jll.com/en/insights,,pending
+curated,dc_capacity_live_mw,Operational DC capacity,MW,PT,Portugal,80,2024,datacentermap.com + Start Campus Sines announcement,https://www.datacentermap.com/,,pending
+curated,dc_capacity_live_mw,Operational DC capacity,MW,QA,Qatar,55,2024,datacentermap.com + Microsoft Qatar Cloud Region,https://www.datacentermap.com/,,pending
+curated,dc_capacity_live_mw,Operational DC capacity,MW,RO,Romania,70,2024,datacentermap.com — Bucharest,https://www.datacentermap.com/,,pending
+curated,dc_capacity_live_mw,Operational DC capacity,MW,SA,Saudi Arabia,180,2024,Cushman & Wakefield Global DC Market 2024 — Riyadh hyperscale,https://www.cushmanwakefield.com/en/insights/global-data-center-market-comparison,,pending
+curated,dc_capacity_live_mw,Operational DC capacity,MW,SE,Sweden,500,2025,Cushman & Wakefield Global DC Market H1 2025 + JLL EMEA Data Centres Q1 2025 (national totals),https://www.jll.com/en/insights,,pending
+curated,dc_capacity_live_mw,Operational DC capacity,MW,TR,Türkiye,100,2024,datacentermap.com — Istanbul cluster,https://www.datacentermap.com/,,pending
+curated,dc_capacity_planned_mw,Planned + under-construction DC capacity,MW,AE,United Arab Emirates,450,2024,Cushman & Wakefield Global DC Market 2024 — Dubai + AD pipelines,https://www.cushmanwakefield.com/en/insights/global-data-center-market-comparison,,pending
+curated,dc_capacity_planned_mw,Planned + under-construction DC capacity,MW,AT,Austria,100,2024,datacentermap.com — Vienna pipeline,https://www.datacentermap.com/,,pending
+curated,dc_capacity_planned_mw,Planned + under-construction DC capacity,MW,BE,Belgium,130,2024,datacentermap.com + Google St-Ghislain expansion,https://www.datacentermap.com/,,pending
+curated,dc_capacity_planned_mw,Planned + under-construction DC capacity,MW,CH,Switzerland,180,2024,Cushman & Wakefield Global DC Market 2024 — Zurich pipeline,https://www.cushmanwakefield.com/en/insights/global-data-center-market-comparison,,pending
+curated,dc_capacity_planned_mw,Planned + under-construction DC capacity,MW,DE,Germany,900,2024,Cushman & Wakefield Global DC Market 2024 — Frankfurt + Berlin pipeline,https://www.cushmanwakefield.com/en/insights/global-data-center-market-comparison,,pending
+curated,dc_capacity_planned_mw,Planned + under-construction DC capacity,MW,DK,Denmark,400,2024,"JLL EMEA Data Centres Q4 2024 — Microsoft, Meta, AWS pipelines",https://www.jll.com/en/insights,,pending
+curated,dc_capacity_planned_mw,Planned + under-construction DC capacity,MW,EG,Egypt,100,2024,datacentermap.com — Cairo pipeline,https://www.datacentermap.com/,,pending
+curated,dc_capacity_planned_mw,Planned + under-construction DC capacity,MW,ES,Spain,600,2024,JLL EMEA Data Centres Q4 2024 — Madrid pipeline boom,https://www.jll.com/en/insights,,pending
+curated,dc_capacity_planned_mw,Planned + under-construction DC capacity,MW,FI,Finland,300,2024,datacentermap.com + Microsoft Espoo + Google Hamina expansion,https://www.datacentermap.com/,,pending
+curated,dc_capacity_planned_mw,Planned + under-construction DC capacity,MW,FR,France,700,2024,Cushman & Wakefield Global DC Market 2024 — Paris pipeline,https://www.cushmanwakefield.com/en/insights/global-data-center-market-comparison,,pending
+curated,dc_capacity_planned_mw,Planned + under-construction DC capacity,MW,GB,United Kingdom,800,2024,Cushman & Wakefield Global DC Market 2024 — London pipeline,https://www.cushmanwakefield.com/en/insights/global-data-center-market-comparison,,pending
+curated,dc_capacity_planned_mw,Planned + under-construction DC capacity,MW,GR,Greece,250,2024,datacentermap.com + Microsoft + Lamda hyperscale announcements,https://www.datacentermap.com/,,pending
+curated,dc_capacity_planned_mw,Planned + under-construction DC capacity,MW,IE,Ireland,400,2024,Cushman & Wakefield Global DC Market 2024 — Dublin (post-moratorium constrained),https://www.cushmanwakefield.com/en/insights/global-data-center-market-comparison,,pending
+curated,dc_capacity_planned_mw,Planned + under-construction DC capacity,MW,IL,Israel,200,2024,datacentermap.com + AWS Israel Region build-out,https://www.datacentermap.com/,,pending
+curated,dc_capacity_planned_mw,Planned + under-construction DC capacity,MW,IT,Italy,500,2024,JLL EMEA Data Centres Q4 2024 — Milan pipeline,https://www.jll.com/en/insights,,pending
+curated,dc_capacity_planned_mw,Planned + under-construction DC capacity,MW,MA,Morocco,90,2024,datacentermap.com — Casablanca pipeline,https://www.datacentermap.com/,,pending
+curated,dc_capacity_planned_mw,Planned + under-construction DC capacity,MW,NL,Netherlands,500,2024,Cushman & Wakefield Global DC Market 2024 — Amsterdam pipeline (post-moratorium),https://www.cushmanwakefield.com/en/insights/global-data-center-market-comparison,,pending
+curated,dc_capacity_planned_mw,Planned + under-construction DC capacity,MW,NO,Norway,250,2024,datacentermap.com + Statkraft/Bulk hyperscale pipeline,https://www.datacentermap.com/,,pending
+curated,dc_capacity_planned_mw,Planned + under-construction DC capacity,MW,PL,Poland,350,2024,JLL EMEA Data Centres Q4 2024 — Warsaw pipeline + AtmanData,https://www.jll.com/en/insights,,pending
+curated,dc_capacity_planned_mw,Planned + under-construction DC capacity,MW,PT,Portugal,400,2024,Start Campus Sines + datacentermap.com,https://www.datacentermap.com/,,pending
+curated,dc_capacity_planned_mw,Planned + under-construction DC capacity,MW,QA,Qatar,150,2024,Microsoft + Google + Ooredoo announcements,https://www.datacentermap.com/,,pending
+curated,dc_capacity_planned_mw,Planned + under-construction DC capacity,MW,RO,Romania,80,2024,datacentermap.com — Bucharest pipeline,https://www.datacentermap.com/,,pending
+curated,dc_capacity_planned_mw,Planned + under-construction DC capacity,MW,SA,Saudi Arabia,600,2024,Cushman & Wakefield Global DC Market 2024 — Vision 2030 hyperscale build,https://www.cushmanwakefield.com/en/insights/global-data-center-market-comparison,,pending
+curated,dc_capacity_planned_mw,Planned + under-construction DC capacity,MW,SE,Sweden,350,2024,JLL EMEA Data Centres Q4 2024 — Stockholm + hyperscale pipeline,https://www.jll.com/en/insights,,pending
+curated,dc_capacity_planned_mw,Planned + under-construction DC capacity,MW,TR,Türkiye,150,2024,datacentermap.com — Istanbul pipeline,https://www.datacentermap.com/,,pending
+curated,demand_2027_twh,Total DC electricity demand 2027,TWh,AE,United Arab Emirates,4.5,2027,Cushman & Wakefield Global DC Market 2024 — Dubai + Abu Dhabi growth,https://www.cushmanwakefield.com/en/insights/global-data-center-market-comparison,,pending
+curated,demand_2027_twh,Total DC electricity demand 2027,TWh,DE,Germany,24.0,2027,Bitkom DC trajectory: 20 TWh (2024) → ~31 TWh (2030); 24 TWh in 2027 mid-trajectory,https://www.bitkom.org/,,pending
+curated,demand_2027_twh,Total DC electricity demand 2027,TWh,DK,Denmark,8.0,2027,Energinet long-term forecast + IEA Electricity 2024 (Nordic hyperscale cluster),https://www.iea.org/reports/electricity-2024,DC share of national electricity forecast to reach ~14% by 2030,pending
+curated,demand_2027_twh,Total DC electricity demand 2027,TWh,ES,Spain,5.0,2027,JLL EMEA Data Centres Q4 2024 — Madrid emerging cluster,https://www.jll.com/en/insights,,pending
+curated,demand_2027_twh,Total DC electricity demand 2027,TWh,FI,Finland,4.0,2027,Fingrid long-term forecast 2024,https://www.fingrid.fi/en/,,pending
+curated,demand_2027_twh,Total DC electricity demand 2027,TWh,FR,France,10.0,2027,RTE 'Futurs énergétiques 2050' + IEA Electricity 2024,https://www.iea.org/reports/electricity-2024,,pending
+curated,demand_2027_twh,Total DC electricity demand 2027,TWh,GB,United Kingdom,14.0,2027,NESO Future Energy Scenarios 2024 — UK DC demand 7.6 TWh (today) → 22 TWh (2030); 2027 mid-trajectory,https://www.neso.energy/future-energy,,pending
+curated,demand_2027_twh,Total DC electricity demand 2027,TWh,IE,Ireland,11.0,2027,EirGrid Generation Capacity Statement 2025-2034 — DC trajectory 9.4 TWh (2025) → 14.6 TWh (2034); 2027 interpolated,https://www.eirgrid.ie/,EirGrid forecasts DC share rising to ~28% of national grid demand by 2031,pending
+curated,demand_2027_twh,Total DC electricity demand 2027,TWh,IL,Israel,2.0,2027,Cushman & Wakefield Global DC Market 2024 — Tel Aviv,https://www.cushmanwakefield.com/en/insights/global-data-center-market-comparison,,pending
+curated,demand_2027_twh,Total DC electricity demand 2027,TWh,IT,Italy,4.0,2027,JLL EMEA Data Centres Q4 2024 — Milan emerging cluster,https://www.jll.com/en/insights,,pending
+curated,demand_2027_twh,Total DC electricity demand 2027,TWh,NL,Netherlands,12.0,2027,Stedin Amsterdam DSO connection forecasts + IEA Electricity 2024,https://www.iea.org/reports/electricity-2024,At upper end of credible range; assumes full Microsoft + Google pipeline lights up,pending
+curated,demand_2027_twh,Total DC electricity demand 2027,TWh,NO,Norway,3.5,2027,Statnett 'Langsiktig markedsanalyse' 2024,https://www.statnett.no/en/,,pending
+curated,demand_2027_twh,Total DC electricity demand 2027,TWh,PL,Poland,2.0,2027,JLL EMEA Data Centres Q4 2024 — Warsaw emerging cluster,https://www.jll.com/en/insights,,pending
+curated,demand_2027_twh,Total DC electricity demand 2027,TWh,SA,Saudi Arabia,3.5,2027,Cushman & Wakefield Global DC Market 2024 — Riyadh hyperscale build-out,https://www.cushmanwakefield.com/en/insights/global-data-center-market-comparison,,pending
+curated,demand_2027_twh,Total DC electricity demand 2027,TWh,SE,Sweden,6.0,2027,Svenska kraftnät long-term forecast + IEA Electricity 2024,https://www.iea.org/reports/electricity-2024,,pending
+curated,grid_connect_years,Years to grid connection (>50 MW load),years,AE,United Arab Emirates,2.0,2024,EWEC / DEWA / TAQA — hyperscale DC connection precedents 2023-2024,https://www.dewa.gov.ae/,,pending
+curated,grid_connect_years,Years to grid connection (>50 MW load),years,AT,Austria,4.5,2024,APG Netzentwicklungsplan 2023,https://www.apg.at/,,pending
+curated,grid_connect_years,Years to grid connection (>50 MW load),years,BE,Belgium,5.0,2024,Elia Federal Development Plan 2024-2034,https://www.elia.be/en/grid-data/grid-development,,pending
+curated,grid_connect_years,Years to grid connection (>50 MW load),years,BH,Bahrain,2.5,2024,Electricity & Water Authority connection benchmark,https://www.ewa.bh/,,pending
+curated,grid_connect_years,Years to grid connection (>50 MW load),years,CH,Switzerland,4.0,2024,Swissgrid 'Strategisches Netz 2040',https://www.swissgrid.ch/,,pending
+curated,grid_connect_years,Years to grid connection (>50 MW load),years,CZ,Czechia,5.0,2024,ČEPS Network Development Plan 2024,https://www.ceps.cz/en/,,pending
+curated,grid_connect_years,Years to grid connection (>50 MW load),years,DE,Germany,4.0,2024,Bundesnetzagentur Monitoringbericht 2023 — typical industrial connection,https://www.bundesnetzagentur.de/,,pending
+curated,grid_connect_years,Years to grid connection (>50 MW load),years,DK,Denmark,6.0,2024,Energinet Langtidsudviklingsplan 2024,https://en.energinet.dk/,,pending
+curated,grid_connect_years,Years to grid connection (>50 MW load),years,EE,Estonia,4.0,2024,Elering ENDP 2024,https://elering.ee/en,,pending
+curated,grid_connect_years,Years to grid connection (>50 MW load),years,EG,Egypt,4.0,2024,EETC network plan,https://www.eetc.net.eg/,,pending
+curated,grid_connect_years,Years to grid connection (>50 MW load),years,ES,Spain,4.0,2024,REE 'Planificación de la red de transporte 2021-2026',https://www.ree.es/en,,pending
+curated,grid_connect_years,Years to grid connection (>50 MW load),years,FI,Finland,4.0,2024,Fingrid Verkkokehittämissuunnitelma 2024,https://www.fingrid.fi/en/,,pending
+curated,grid_connect_years,Years to grid connection (>50 MW load),years,FR,France,5.0,2024,RTE 'Schéma décennal de développement du réseau' 2024,https://www.rte-france.com/,,pending
+curated,grid_connect_years,Years to grid connection (>50 MW load),years,GB,United Kingdom,10.0,2024,NESO TEC Register — average wait for transmission-connected demand >50 MW,https://www.neso.energy/data-portal/transmission-entry-capacity-tec-register/tec_register,,pending
+curated,grid_connect_years,Years to grid connection (>50 MW load),years,GR,Greece,5.0,2024,IPTO/ADMIE Ten-Year Network Development Plan 2024-2033,https://www.admie.gr/en,,pending
+curated,grid_connect_years,Years to grid connection (>50 MW load),years,HU,Hungary,4.5,2024,MAVIR network development plan 2024,https://www.mavir.hu/,,pending
+curated,grid_connect_years,Years to grid connection (>50 MW load),years,IE,Ireland,8.0,2024,EirGrid 'Shaping our Electricity Future' — DC connection moratorium in Dublin region,https://www.eirgrid.ie/,,pending
+curated,grid_connect_years,Years to grid connection (>50 MW load),years,IL,Israel,3.0,2024,Noga / Israel Electric Authority 2024 plans,https://www.noga-iso.co.il/en,,pending
+curated,grid_connect_years,Years to grid connection (>50 MW load),years,IS,Iceland,3.0,2024,Landsnet Kerfisáætlun 2024-2033,https://www.landsnet.is/english/,,pending
+curated,grid_connect_years,Years to grid connection (>50 MW load),years,IT,Italy,4.5,2024,Terna Piano di Sviluppo 2024,https://www.terna.it/en,,pending
+curated,grid_connect_years,Years to grid connection (>50 MW load),years,LT,Lithuania,4.0,2024,Litgrid Network Development Plan 2024,https://www.litgrid.eu/,,pending
+curated,grid_connect_years,Years to grid connection (>50 MW load),years,LU,Luxembourg,3.5,2024,Creos Luxembourg connection queue 2024,https://www.creos-net.lu/,,pending
+curated,grid_connect_years,Years to grid connection (>50 MW load),years,LV,Latvia,4.0,2024,AST Latvijas elektrotīkla attīstības plāns 2024,https://www.ast.lv/en,,pending
+curated,grid_connect_years,Years to grid connection (>50 MW load),years,MA,Morocco,4.0,2024,ONEE network development plan,https://www.one.org.ma/,,pending
+curated,grid_connect_years,Years to grid connection (>50 MW load),years,NL,Netherlands,7.0,2024,TenneT NL congestion map — 'transportbeperking' across Randstad,https://www.tennet.eu/nl/het-stroomnet/transportbeperkingen,Most of NL is currently congestion-restricted; new large loads queued behind grid reinforcements.,pending
+curated,grid_connect_years,Years to grid connection (>50 MW load),years,NO,Norway,5.0,2024,Statnett 'Langsiktig markedsanalyse' 2024,https://www.statnett.no/en/,,pending
+curated,grid_connect_years,Years to grid connection (>50 MW load),years,PL,Poland,5.0,2024,PSE Plan rozwoju sieci 2025-2034,https://www.pse.pl/,,pending
+curated,grid_connect_years,Years to grid connection (>50 MW load),years,PT,Portugal,4.0,2024,REN PDIRT-E 2024,https://www.ren.pt/en-GB/,,pending
+curated,grid_connect_years,Years to grid connection (>50 MW load),years,QA,Qatar,2.5,2024,Kahramaa industrial connection programme,https://www.km.qa/,,pending
+curated,grid_connect_years,Years to grid connection (>50 MW load),years,RO,Romania,5.5,2024,Transelectrica Network Development Plan 2024,https://www.transelectrica.ro/en,,pending
+curated,grid_connect_years,Years to grid connection (>50 MW load),years,SA,Saudi Arabia,2.5,2024,Saudi Electricity Company — Vision 2030 hyperscale connection programme,https://www.se.com.sa/en-us/,,pending
+curated,grid_connect_years,Years to grid connection (>50 MW load),years,SE,Sweden,6.0,2024,Svenska kraftnät Långsiktig marknadsanalys 2024,https://www.svk.se/en/,,pending
+curated,grid_connect_years,Years to grid connection (>50 MW load),years,SK,Slovakia,5.0,2024,SEPS 10-year development plan,https://www.sepsas.sk/,,pending
+curated,grid_connect_years,Years to grid connection (>50 MW load),years,TR,Türkiye,4.0,2024,TEİAŞ ten-year network development plan,https://www.teias.gov.tr/,,pending
+curated,grid_investment_usdbn,Forecast grid investment through 2030,USD bn,AE,United Arab Emirates,30.0,2030,DEWA Strategy 2030 + EWEC + TAQA transmission capex,https://www.dewa.gov.ae/,,pending
+curated,grid_investment_usdbn,Forecast grid investment through 2030,USD bn,AT,Austria,10.0,2030,APG Netzentwicklungsplan 2023,https://www.apg.at/,,pending
+curated,grid_investment_usdbn,Forecast grid investment through 2030,USD bn,BE,Belgium,12.0,2030,Elia Federal Development Plan 2024-2034,https://www.elia.be/,,pending
+curated,grid_investment_usdbn,Forecast grid investment through 2030,USD bn,CH,Switzerland,12.0,2030,Swissgrid Strategisches Netz 2040 (pro-rated to 2030),https://www.swissgrid.ch/,,pending
+curated,grid_investment_usdbn,Forecast grid investment through 2030,USD bn,DE,Germany,100.0,2030,BNetzA NEP 2037/2045 (€360-390 bn full horizon to 2045) pro-rated to 2030 segment ≈ €85-100 bn (~$100 bn),https://www.bundesnetzagentur.de/,Full-horizon plan extends to 2045; figure shown is the 2024-2030 segment only.,pending
+curated,grid_investment_usdbn,Forecast grid investment through 2030,USD bn,DK,Denmark,18.0,2030,Energinet 'Sustainable transmission' 2024,https://en.energinet.dk/,,pending
+curated,grid_investment_usdbn,Forecast grid investment through 2030,USD bn,EG,Egypt,10.0,2030,EETC 2030 network plan,https://www.eetc.net.eg/,,pending
+curated,grid_investment_usdbn,Forecast grid investment through 2030,USD bn,ES,Spain,35.0,2030,REE 'Planificación de la red de transporte 2021-2026' + 2027-2030 outlook,https://www.ree.es/en,,pending
+curated,grid_investment_usdbn,Forecast grid investment through 2030,USD bn,FI,Finland,12.0,2030,Fingrid Verkkokehittämissuunnitelma 2024,https://www.fingrid.fi/en/,,pending
+curated,grid_investment_usdbn,Forecast grid investment through 2030,USD bn,FR,France,85.0,2030,RTE SDDR 2024 (€35-50 bn transmission to 2030) + Enedis (~€30-40 bn) = ~€65-90 bn (~$85 bn),https://www.rte-france.com/,,pending
+curated,grid_investment_usdbn,Forecast grid investment through 2030,USD bn,GB,United Kingdom,100.0,2030,Ofgem RIIO-T3 (~£35 bn transmission) + ED2 distribution (~£23 bn) + wider programme to 2031 = ~£80 bn (~$100 bn),https://www.ofgem.gov.uk/,,pending
+curated,grid_investment_usdbn,Forecast grid investment through 2030,USD bn,GR,Greece,7.5,2030,ADMIE Ten-Year Network Development Plan 2024-2033,https://www.admie.gr/en,,pending
+curated,grid_investment_usdbn,Forecast grid investment through 2030,USD bn,IE,Ireland,7.0,2030,EirGrid Shaping Our Electricity Future + ESB Networks PR5,https://www.eirgrid.ie/,,pending
+curated,grid_investment_usdbn,Forecast grid investment through 2030,USD bn,IL,Israel,12.0,2030,Israel Electricity Authority — 2030 transmission plan,https://www.gov.il/en/departments/electricity_authority,,pending
+curated,grid_investment_usdbn,Forecast grid investment through 2030,USD bn,IT,Italy,55.0,2030,Terna 'Piano di Sviluppo' 2024,https://www.terna.it/en,,pending
+curated,grid_investment_usdbn,Forecast grid investment through 2030,USD bn,MA,Morocco,8.0,2030,ONEE network development plan,https://www.one.org.ma/,,pending
+curated,grid_investment_usdbn,Forecast grid investment through 2030,USD bn,NL,Netherlands,50.0,2030,TenneT NL investment plan + Stedin/Liander distribution capex,https://www.tennet.eu/,,pending
+curated,grid_investment_usdbn,Forecast grid investment through 2030,USD bn,NO,Norway,25.0,2030,Statnett Network Development Plan 2023,https://www.statnett.no/en/,,pending
+curated,grid_investment_usdbn,Forecast grid investment through 2030,USD bn,PL,Poland,28.0,2030,PSE 10-year plan 2025-2034,https://www.pse.pl/,,pending
+curated,grid_investment_usdbn,Forecast grid investment through 2030,USD bn,PT,Portugal,6.0,2030,REN PDIRT-E 2024,https://www.ren.pt/,,pending
+curated,grid_investment_usdbn,Forecast grid investment through 2030,USD bn,QA,Qatar,8.0,2030,Kahramaa transmission expansion programme,https://www.km.qa/,,pending
+curated,grid_investment_usdbn,Forecast grid investment through 2030,USD bn,RO,Romania,8.0,2030,Transelectrica TYNDP 2024,https://www.transelectrica.ro/en,,pending
+curated,grid_investment_usdbn,Forecast grid investment through 2030,USD bn,SA,Saudi Arabia,120.0,2030,Saudi Electricity Company $58.7 bn 2025-2030 transmission+distribution programme + wider $120 bn build-out commentary,https://www.vision2030.gov.sa/,,pending
+curated,grid_investment_usdbn,Forecast grid investment through 2030,USD bn,SE,Sweden,30.0,2030,Svenska kraftnät Långsiktig marknadsanalys 2024,https://www.svk.se/en/,,pending
+curated,grid_investment_usdbn,Forecast grid investment through 2030,USD bn,TR,Türkiye,25.0,2030,TEİAŞ ten-year network development plan,https://www.teias.gov.tr/,,pending
+curated,power_cost_usd_kwh,Industrial electricity tariff,USD/kWh,AE,United Arab Emirates,0.06,2024,DEWA industrial tariff (Dubai),https://www.dewa.gov.ae/,,pending
+curated,power_cost_usd_kwh,Industrial electricity tariff,USD/kWh,AT,Austria,0.22,2024,Eurostat NRG_PC_205 — Band IE,https://ec.europa.eu/eurostat/web/energy/database,,pending
+curated,power_cost_usd_kwh,Industrial electricity tariff,USD/kWh,BE,Belgium,0.19,2024,Eurostat NRG_PC_205 — Band IE,https://ec.europa.eu/eurostat/web/energy/database,,pending
+curated,power_cost_usd_kwh,Industrial electricity tariff,USD/kWh,BH,Bahrain,0.04,2024,EWA industrial tariff,https://www.ewa.bh/,,pending
+curated,power_cost_usd_kwh,Industrial electricity tariff,USD/kWh,CH,Switzerland,0.18,2024,ElCom Strompreis 2024 — large industrial,https://www.elcom.admin.ch/,,pending
+curated,power_cost_usd_kwh,Industrial electricity tariff,USD/kWh,CZ,Czechia,0.12,2024,Eurostat NRG_PC_205 — Band IE,https://ec.europa.eu/eurostat/web/energy/database,,pending
+curated,power_cost_usd_kwh,Industrial electricity tariff,USD/kWh,DE,Germany,0.2,2024,Eurostat NRG_PC_205 — Band IE (large industrial),https://ec.europa.eu/eurostat/web/energy/database,,pending
+curated,power_cost_usd_kwh,Industrial electricity tariff,USD/kWh,DK,Denmark,0.17,2024,Eurostat NRG_PC_205 — Band IE,https://ec.europa.eu/eurostat/web/energy/database,,pending
+curated,power_cost_usd_kwh,Industrial electricity tariff,USD/kWh,EE,Estonia,0.13,2024,Eurostat NRG_PC_205 — Band IE,https://ec.europa.eu/eurostat/web/energy/database,,pending
+curated,power_cost_usd_kwh,Industrial electricity tariff,USD/kWh,EG,Egypt,0.06,2024,EgyptERA industrial tariff,http://egyptera.org/,,pending
+curated,power_cost_usd_kwh,Industrial electricity tariff,USD/kWh,ES,Spain,0.15,2024,Eurostat NRG_PC_205 — Band IE,https://ec.europa.eu/eurostat/web/energy/database,,pending
+curated,power_cost_usd_kwh,Industrial electricity tariff,USD/kWh,FI,Finland,0.09,2024,Eurostat NRG_PC_205 — Band IE,https://ec.europa.eu/eurostat/web/energy/database,,pending
+curated,power_cost_usd_kwh,Industrial electricity tariff,USD/kWh,FR,France,0.16,2024,Eurostat NRG_PC_205 — Band IE,https://ec.europa.eu/eurostat/web/energy/database,,pending
+curated,power_cost_usd_kwh,Industrial electricity tariff,USD/kWh,GB,United Kingdom,0.28,2024,Ofgem industrial electricity prices,https://www.ofgem.gov.uk/,,pending
+curated,power_cost_usd_kwh,Industrial electricity tariff,USD/kWh,GR,Greece,0.17,2024,Eurostat NRG_PC_205 — Band IE,https://ec.europa.eu/eurostat/web/energy/database,,pending
+curated,power_cost_usd_kwh,Industrial electricity tariff,USD/kWh,HU,Hungary,0.12,2024,Eurostat NRG_PC_205 — Band IE,https://ec.europa.eu/eurostat/web/energy/database,,pending
+curated,power_cost_usd_kwh,Industrial electricity tariff,USD/kWh,IE,Ireland,0.3,2024,CRU industrial electricity tariff,https://www.cru.ie/,,pending
+curated,power_cost_usd_kwh,Industrial electricity tariff,USD/kWh,IL,Israel,0.1,2024,Israel Electricity Authority industrial tariff,https://www.gov.il/en/departments/electricity_authority,,pending
+curated,power_cost_usd_kwh,Industrial electricity tariff,USD/kWh,IS,Iceland,0.05,2024,Landsvirkjun industrial tariff (hydropower),https://www.landsvirkjun.com/,,pending
+curated,power_cost_usd_kwh,Industrial electricity tariff,USD/kWh,IT,Italy,0.17,2024,Eurostat NRG_PC_205 — Band IE (2024 H2: ~€0.16/kWh ≈ $0.17),https://ec.europa.eu/eurostat/web/energy/database,,pending
+curated,power_cost_usd_kwh,Industrial electricity tariff,USD/kWh,KW,Kuwait,0.03,2024,MEW industrial tariff,https://www.mew.gov.kw/,,pending
+curated,power_cost_usd_kwh,Industrial electricity tariff,USD/kWh,LU,Luxembourg,0.17,2024,Eurostat NRG_PC_205 — Band IE,https://ec.europa.eu/eurostat/web/energy/database,,pending
+curated,power_cost_usd_kwh,Industrial electricity tariff,USD/kWh,MA,Morocco,0.1,2024,ONEE industrial tariff,https://www.one.org.ma/,,pending
+curated,power_cost_usd_kwh,Industrial electricity tariff,USD/kWh,NL,Netherlands,0.2,2024,Eurostat NRG_PC_205 — Band IE,https://ec.europa.eu/eurostat/web/energy/database,,pending
+curated,power_cost_usd_kwh,Industrial electricity tariff,USD/kWh,NO,Norway,0.08,2024,NVE industrial tariff,https://www.nve.no/,,pending
+curated,power_cost_usd_kwh,Industrial electricity tariff,USD/kWh,OM,Oman,0.05,2024,Authority for Public Services Regulation,https://www.apsr.om/,,pending
+curated,power_cost_usd_kwh,Industrial electricity tariff,USD/kWh,PL,Poland,0.13,2024,Eurostat NRG_PC_205 — Band IE,https://ec.europa.eu/eurostat/web/energy/database,,pending
+curated,power_cost_usd_kwh,Industrial electricity tariff,USD/kWh,PT,Portugal,0.16,2024,Eurostat NRG_PC_205 — Band IE,https://ec.europa.eu/eurostat/web/energy/database,,pending
+curated,power_cost_usd_kwh,Industrial electricity tariff,USD/kWh,QA,Qatar,0.04,2024,Kahramaa industrial tariff,https://www.km.qa/,,pending
+curated,power_cost_usd_kwh,Industrial electricity tariff,USD/kWh,RO,Romania,0.14,2024,Eurostat NRG_PC_205 — Band IE,https://ec.europa.eu/eurostat/web/energy/database,,pending
+curated,power_cost_usd_kwh,Industrial electricity tariff,USD/kWh,SA,Saudi Arabia,0.05,2024,Saudi Electricity Company industrial tariff,https://www.se.com.sa/,,pending
+curated,power_cost_usd_kwh,Industrial electricity tariff,USD/kWh,SE,Sweden,0.1,2024,Eurostat NRG_PC_205 — Band IE,https://ec.europa.eu/eurostat/web/energy/database,,pending
+curated,power_cost_usd_kwh,Industrial electricity tariff,USD/kWh,TR,Türkiye,0.08,2024,EPDK industrial tariff,https://www.epdk.gov.tr/,,pending
+api_fetch,power_per_capita_kwh,Electricity generation per capita,kWh,AE,United Arab Emirates,16074.892,2024,Our World in Data (Ember 'Yearly Electricity Data'),https://ourworldindata.org/grapher/per-capita-electricity-generation,,pending
+api_fetch,power_per_capita_kwh,Electricity generation per capita,kWh,AT,Austria,8034.1665,2025,Our World in Data (Ember 'Yearly Electricity Data'),https://ourworldindata.org/grapher/per-capita-electricity-generation,,pending
+api_fetch,power_per_capita_kwh,Electricity generation per capita,kWh,BE,Belgium,6198.8667,2025,Our World in Data (Ember 'Yearly Electricity Data'),https://ourworldindata.org/grapher/per-capita-electricity-generation,,pending
+api_fetch,power_per_capita_kwh,Electricity generation per capita,kWh,BG,Bulgaria,5653.389,2025,Our World in Data (Ember 'Yearly Electricity Data'),https://ourworldindata.org/grapher/per-capita-electricity-generation,,pending
+api_fetch,power_per_capita_kwh,Electricity generation per capita,kWh,BH,Bahrain,23614.566,2024,Our World in Data (Ember 'Yearly Electricity Data'),https://ourworldindata.org/grapher/per-capita-electricity-generation,,pending
+api_fetch,power_per_capita_kwh,Electricity generation per capita,kWh,CH,Switzerland,7250.6973,2025,Our World in Data (Ember 'Yearly Electricity Data'),https://ourworldindata.org/grapher/per-capita-electricity-generation,,pending
+api_fetch,power_per_capita_kwh,Electricity generation per capita,kWh,CY,Cyprus,4311.4956,2025,Our World in Data (Ember 'Yearly Electricity Data'),https://ourworldindata.org/grapher/per-capita-electricity-generation,,pending
+api_fetch,power_per_capita_kwh,Electricity generation per capita,kWh,CZ,Czechia,7116.4375,2025,Our World in Data (Ember 'Yearly Electricity Data'),https://ourworldindata.org/grapher/per-capita-electricity-generation,,pending
+api_fetch,power_per_capita_kwh,Electricity generation per capita,kWh,DE,Germany,5952.6562,2025,Our World in Data (Ember 'Yearly Electricity Data'),https://ourworldindata.org/grapher/per-capita-electricity-generation,,pending
+api_fetch,power_per_capita_kwh,Electricity generation per capita,kWh,DK,Denmark,5547.6743,2025,Our World in Data (Ember 'Yearly Electricity Data'),https://ourworldindata.org/grapher/per-capita-electricity-generation,,pending
+api_fetch,power_per_capita_kwh,Electricity generation per capita,kWh,DZ,Algeria,2058.3455,2024,Our World in Data (Ember 'Yearly Electricity Data'),https://ourworldindata.org/grapher/per-capita-electricity-generation,,pending
+api_fetch,power_per_capita_kwh,Electricity generation per capita,kWh,EE,Estonia,4545.333,2025,Our World in Data (Ember 'Yearly Electricity Data'),https://ourworldindata.org/grapher/per-capita-electricity-generation,,pending
+api_fetch,power_per_capita_kwh,Electricity generation per capita,kWh,EG,Egypt,2075.8496,2025,Our World in Data (Ember 'Yearly Electricity Data'),https://ourworldindata.org/grapher/per-capita-electricity-generation,,pending
+api_fetch,power_per_capita_kwh,Electricity generation per capita,kWh,ES,Spain,6011.4897,2025,Our World in Data (Ember 'Yearly Electricity Data'),https://ourworldindata.org/grapher/per-capita-electricity-generation,,pending
+api_fetch,power_per_capita_kwh,Electricity generation per capita,kWh,FI,Finland,14635.462,2025,Our World in Data (Ember 'Yearly Electricity Data'),https://ourworldindata.org/grapher/per-capita-electricity-generation,,pending
+api_fetch,power_per_capita_kwh,Electricity generation per capita,kWh,FR,France,8551.734,2025,Our World in Data (Ember 'Yearly Electricity Data'),https://ourworldindata.org/grapher/per-capita-electricity-generation,,pending
+api_fetch,power_per_capita_kwh,Electricity generation per capita,kWh,GB,United Kingdom,4202.795,2025,Our World in Data (Ember 'Yearly Electricity Data'),https://ourworldindata.org/grapher/per-capita-electricity-generation,,pending
+api_fetch,power_per_capita_kwh,Electricity generation per capita,kWh,GR,Greece,5862.853,2025,Our World in Data (Ember 'Yearly Electricity Data'),https://ourworldindata.org/grapher/per-capita-electricity-generation,,pending
+api_fetch,power_per_capita_kwh,Electricity generation per capita,kWh,HR,Croatia,3820.0034,2025,Our World in Data (Ember 'Yearly Electricity Data'),https://ourworldindata.org/grapher/per-capita-electricity-generation,,pending
+api_fetch,power_per_capita_kwh,Electricity generation per capita,kWh,HU,Hungary,4177.617,2025,Our World in Data (Ember 'Yearly Electricity Data'),https://ourworldindata.org/grapher/per-capita-electricity-generation,,pending
+api_fetch,power_per_capita_kwh,Electricity generation per capita,kWh,IE,Ireland,5830.783,2025,Our World in Data (Ember 'Yearly Electricity Data'),https://ourworldindata.org/grapher/per-capita-electricity-generation,,pending
+api_fetch,power_per_capita_kwh,Electricity generation per capita,kWh,IL,Israel,8626.503,2025,Our World in Data (Ember 'Yearly Electricity Data'),https://ourworldindata.org/grapher/per-capita-electricity-generation,,pending
+api_fetch,power_per_capita_kwh,Electricity generation per capita,kWh,IS,Iceland,48423.5,2024,Our World in Data (Ember 'Yearly Electricity Data'),https://ourworldindata.org/grapher/per-capita-electricity-generation,,pending
+api_fetch,power_per_capita_kwh,Electricity generation per capita,kWh,IT,Italy,4475.346,2025,Our World in Data (Ember 'Yearly Electricity Data'),https://ourworldindata.org/grapher/per-capita-electricity-generation,,pending
+api_fetch,power_per_capita_kwh,Electricity generation per capita,kWh,JO,Jordan,2048.8389,2024,Our World in Data (Ember 'Yearly Electricity Data'),https://ourworldindata.org/grapher/per-capita-electricity-generation,,pending
+api_fetch,power_per_capita_kwh,Electricity generation per capita,kWh,KW,Kuwait,18402.018,2025,Our World in Data (Ember 'Yearly Electricity Data'),https://ourworldindata.org/grapher/per-capita-electricity-generation,,pending
+api_fetch,power_per_capita_kwh,Electricity generation per capita,kWh,LT,Lithuania,3141.1763,2025,Our World in Data (Ember 'Yearly Electricity Data'),https://ourworldindata.org/grapher/per-capita-electricity-generation,,pending
+api_fetch,power_per_capita_kwh,Electricity generation per capita,kWh,LU,Luxembourg,2263.1948,2025,Our World in Data (Ember 'Yearly Electricity Data'),https://ourworldindata.org/grapher/per-capita-electricity-generation,,pending
+api_fetch,power_per_capita_kwh,Electricity generation per capita,kWh,LV,Latvia,3382.6797,2025,Our World in Data (Ember 'Yearly Electricity Data'),https://ourworldindata.org/grapher/per-capita-electricity-generation,,pending
+api_fetch,power_per_capita_kwh,Electricity generation per capita,kWh,MA,Morocco,1157.9261,2025,Our World in Data (Ember 'Yearly Electricity Data'),https://ourworldindata.org/grapher/per-capita-electricity-generation,,pending
+api_fetch,power_per_capita_kwh,Electricity generation per capita,kWh,MT,Malta,4015.3574,2025,Our World in Data (Ember 'Yearly Electricity Data'),https://ourworldindata.org/grapher/per-capita-electricity-generation,,pending
+api_fetch,power_per_capita_kwh,Electricity generation per capita,kWh,NL,Netherlands,7356.0425,2025,Our World in Data (Ember 'Yearly Electricity Data'),https://ourworldindata.org/grapher/per-capita-electricity-generation,,pending
+api_fetch,power_per_capita_kwh,Electricity generation per capita,kWh,NO,Norway,28598.236,2025,Our World in Data (Ember 'Yearly Electricity Data'),https://ourworldindata.org/grapher/per-capita-electricity-generation,,pending
+api_fetch,power_per_capita_kwh,Electricity generation per capita,kWh,OM,Oman,9616.547,2025,Our World in Data (Ember 'Yearly Electricity Data'),https://ourworldindata.org/grapher/per-capita-electricity-generation,,pending
+api_fetch,power_per_capita_kwh,Electricity generation per capita,kWh,PL,Poland,4542.6284,2025,Our World in Data (Ember 'Yearly Electricity Data'),https://ourworldindata.org/grapher/per-capita-electricity-generation,,pending
+api_fetch,power_per_capita_kwh,Electricity generation per capita,kWh,PT,Portugal,4910.76,2025,Our World in Data (Ember 'Yearly Electricity Data'),https://ourworldindata.org/grapher/per-capita-electricity-generation,,pending
+api_fetch,power_per_capita_kwh,Electricity generation per capita,kWh,QA,Qatar,18030.156,2025,Our World in Data (Ember 'Yearly Electricity Data'),https://ourworldindata.org/grapher/per-capita-electricity-generation,,pending
+api_fetch,power_per_capita_kwh,Electricity generation per capita,kWh,RO,Romania,2634.2434,2025,Our World in Data (Ember 'Yearly Electricity Data'),https://ourworldindata.org/grapher/per-capita-electricity-generation,,pending
+api_fetch,power_per_capita_kwh,Electricity generation per capita,kWh,RS,Serbia,5474.6284,2025,Our World in Data (Ember 'Yearly Electricity Data'),https://ourworldindata.org/grapher/per-capita-electricity-generation,,pending
+api_fetch,power_per_capita_kwh,Electricity generation per capita,kWh,SA,Saudi Arabia,13386.431,2024,Our World in Data (Ember 'Yearly Electricity Data'),https://ourworldindata.org/grapher/per-capita-electricity-generation,,pending
+api_fetch,power_per_capita_kwh,Electricity generation per capita,kWh,SE,Sweden,16019.127,2025,Our World in Data (Ember 'Yearly Electricity Data'),https://ourworldindata.org/grapher/per-capita-electricity-generation,,pending
+api_fetch,power_per_capita_kwh,Electricity generation per capita,kWh,SI,Slovenia,7009.688,2025,Our World in Data (Ember 'Yearly Electricity Data'),https://ourworldindata.org/grapher/per-capita-electricity-generation,,pending
+api_fetch,power_per_capita_kwh,Electricity generation per capita,kWh,SK,Slovakia,5315.191,2025,Our World in Data (Ember 'Yearly Electricity Data'),https://ourworldindata.org/grapher/per-capita-electricity-generation,,pending
+api_fetch,power_per_capita_kwh,Electricity generation per capita,kWh,TN,Tunisia,1806.686,2025,Our World in Data (Ember 'Yearly Electricity Data'),https://ourworldindata.org/grapher/per-capita-electricity-generation,,pending
+api_fetch,power_per_capita_kwh,Electricity generation per capita,kWh,TR,Türkiye,4035.562,2025,Our World in Data (Ember 'Yearly Electricity Data'),https://ourworldindata.org/grapher/per-capita-electricity-generation,,pending
+api_fetch,rd_techs_per_million,R&D technicians per million population,count,AE,United Arab Emirates,889.5377,2018,"World Bank Indicators — Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6,,pending
+api_fetch,rd_techs_per_million,R&D technicians per million population,count,AT,Austria,2648.10229,2017,"World Bank Indicators — Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6,,pending
+api_fetch,rd_techs_per_million,R&D technicians per million population,count,CH,Switzerland,2619.74154,2017,"World Bank Indicators — Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6,,pending
+api_fetch,rd_techs_per_million,R&D technicians per million population,count,CY,Cyprus,325.14267,2017,"World Bank Indicators — Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6,,pending
+api_fetch,rd_techs_per_million,R&D technicians per million population,count,CZ,Czechia,2186.3591,2018,"World Bank Indicators — Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6,,pending
+api_fetch,rd_techs_per_million,R&D technicians per million population,count,DE,Germany,2006.65327,2017,"World Bank Indicators — Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6,,pending
+api_fetch,rd_techs_per_million,R&D technicians per million population,count,DZ,Algeria,41.86166,2017,"World Bank Indicators — Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6,,pending
+api_fetch,rd_techs_per_million,R&D technicians per million population,count,EE,Estonia,654.84807,2017,"World Bank Indicators — Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6,,pending
+api_fetch,rd_techs_per_million,R&D technicians per million population,count,EG,Egypt,369.55568,2018,"World Bank Indicators — Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6,,pending
+api_fetch,rd_techs_per_million,R&D technicians per million population,count,ES,Spain,1264.92042,2017,"World Bank Indicators — Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6,,pending
+api_fetch,rd_techs_per_million,R&D technicians per million population,count,FR,France,1805.54395,2017,"World Bank Indicators — Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6,,pending
+api_fetch,rd_techs_per_million,R&D technicians per million population,count,GB,United Kingdom,1305.4251,2016,"World Bank Indicators — Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6,,pending
+api_fetch,rd_techs_per_million,R&D technicians per million population,count,HR,Croatia,714.10522,2017,"World Bank Indicators — Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6,,pending
+api_fetch,rd_techs_per_million,R&D technicians per million population,count,HU,Hungary,770.31206,2017,"World Bank Indicators — Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6,,pending
+api_fetch,rd_techs_per_million,R&D technicians per million population,count,IE,Ireland,1164.60931,2017,"World Bank Indicators — Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6,,pending
+api_fetch,rd_techs_per_million,R&D technicians per million population,count,IS,Iceland,2371.46113,2017,"World Bank Indicators — Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6,,pending
+api_fetch,rd_techs_per_million,R&D technicians per million population,count,JO,Jordan,108.88597,2015,"World Bank Indicators — Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6,,pending
+api_fetch,rd_techs_per_million,R&D technicians per million population,count,KW,Kuwait,45.19843,2018,"World Bank Indicators — Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6,,pending
+api_fetch,rd_techs_per_million,R&D technicians per million population,count,LU,Luxembourg,3166.02186,2017,"World Bank Indicators — Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6,,pending
+api_fetch,rd_techs_per_million,R&D technicians per million population,count,MA,Morocco,40.25476,2016,"World Bank Indicators — Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6,,pending
+api_fetch,rd_techs_per_million,R&D technicians per million population,count,MT,Malta,885.98028,2017,"World Bank Indicators — Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6,,pending
+api_fetch,rd_techs_per_million,R&D technicians per million population,count,OM,Oman,32.77024,2018,"World Bank Indicators — Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6,,pending
+api_fetch,rd_techs_per_million,R&D technicians per million population,count,PL,Poland,415.27482,2017,"World Bank Indicators — Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6,,pending
+api_fetch,rd_techs_per_million,R&D technicians per million population,count,PT,Portugal,780.06385,2017,"World Bank Indicators — Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6,,pending
+api_fetch,rd_techs_per_million,R&D technicians per million population,count,QA,Qatar,397.09787,2018,"World Bank Indicators — Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6,,pending
+api_fetch,rd_techs_per_million,R&D technicians per million population,count,RO,Romania,278.82409,2017,"World Bank Indicators — Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6,,pending
+api_fetch,rd_techs_per_million,R&D technicians per million population,count,RS,Serbia,412.03292,2018,"World Bank Indicators — Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6,,pending
+api_fetch,rd_techs_per_million,R&D technicians per million population,count,SI,Slovenia,1814.20289,2017,"World Bank Indicators — Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6,,pending
+api_fetch,rd_techs_per_million,R&D technicians per million population,count,SK,Slovakia,520.62951,2018,"World Bank Indicators — Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6,,pending
+api_fetch,rd_techs_per_million,R&D technicians per million population,count,TN,Tunisia,61.73693,2018,"World Bank Indicators — Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6,,pending
+api_fetch,rd_techs_per_million,R&D technicians per million population,count,TR,Türkiye,353.73836,2017,"World Bank Indicators — Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6,,pending
+api_fetch,tertiary_grad_pct,Tertiary education attainment %,%,AE,United Arab Emirates,52.7169189453125,2023,"World Bank Indicators — Educational attainment ≥ Bachelor's (% of pop 25+, SE.TER.CUAT.BA.ZS)",https://data.worldbank.org/indicator/SE.TER.CUAT.BA.ZS,,pending
+api_fetch,tertiary_grad_pct,Tertiary education attainment %,%,AT,Austria,14.8791799545288,2021,"World Bank Indicators — Educational attainment ≥ Bachelor's (% of pop 25+, SE.TER.CUAT.BA.ZS)",https://data.worldbank.org/indicator/SE.TER.CUAT.BA.ZS,,pending
+api_fetch,tertiary_grad_pct,Tertiary education attainment %,%,BE,Belgium,37.4110337879949,2023,"World Bank Indicators — Educational attainment ≥ Bachelor's (% of pop 25+, SE.TER.CUAT.BA.ZS)",https://data.worldbank.org/indicator/SE.TER.CUAT.BA.ZS,,pending
+api_fetch,tertiary_grad_pct,Tertiary education attainment %,%,BG,Bulgaria,26.3688540109966,2023,"World Bank Indicators — Educational attainment ≥ Bachelor's (% of pop 25+, SE.TER.CUAT.BA.ZS)",https://data.worldbank.org/indicator/SE.TER.CUAT.BA.ZS,,pending
+api_fetch,tertiary_grad_pct,Tertiary education attainment %,%,BH,Bahrain,29.5776996612549,2023,"World Bank Indicators — Educational attainment ≥ Bachelor's (% of pop 25+, SE.TER.CUAT.BA.ZS)",https://data.worldbank.org/indicator/SE.TER.CUAT.BA.ZS,,pending
+api_fetch,tertiary_grad_pct,Tertiary education attainment %,%,CH,Switzerland,41.2647756874978,2023,"World Bank Indicators — Educational attainment ≥ Bachelor's (% of pop 25+, SE.TER.CUAT.BA.ZS)",https://data.worldbank.org/indicator/SE.TER.CUAT.BA.ZS,,pending
+api_fetch,tertiary_grad_pct,Tertiary education attainment %,%,CY,Cyprus,34.7165099830882,2023,"World Bank Indicators — Educational attainment ≥ Bachelor's (% of pop 25+, SE.TER.CUAT.BA.ZS)",https://data.worldbank.org/indicator/SE.TER.CUAT.BA.ZS,,pending
+api_fetch,tertiary_grad_pct,Tertiary education attainment %,%,CZ,Czechia,21.9581005821149,2023,"World Bank Indicators — Educational attainment ≥ Bachelor's (% of pop 25+, SE.TER.CUAT.BA.ZS)",https://data.worldbank.org/indicator/SE.TER.CUAT.BA.ZS,,pending
+api_fetch,tertiary_grad_pct,Tertiary education attainment %,%,DE,Germany,30.5294541601323,2023,"World Bank Indicators — Educational attainment ≥ Bachelor's (% of pop 25+, SE.TER.CUAT.BA.ZS)",https://data.worldbank.org/indicator/SE.TER.CUAT.BA.ZS,,pending
+api_fetch,tertiary_grad_pct,Tertiary education attainment %,%,DK,Denmark,33.6215669364704,2023,"World Bank Indicators — Educational attainment ≥ Bachelor's (% of pop 25+, SE.TER.CUAT.BA.ZS)",https://data.worldbank.org/indicator/SE.TER.CUAT.BA.ZS,,pending
+api_fetch,tertiary_grad_pct,Tertiary education attainment %,%,DZ,Algeria,11.4359302520752,2019,"World Bank Indicators — Educational attainment ≥ Bachelor's (% of pop 25+, SE.TER.CUAT.BA.ZS)",https://data.worldbank.org/indicator/SE.TER.CUAT.BA.ZS,,pending
+api_fetch,tertiary_grad_pct,Tertiary education attainment %,%,EE,Estonia,32.9437276359698,2023,"World Bank Indicators — Educational attainment ≥ Bachelor's (% of pop 25+, SE.TER.CUAT.BA.ZS)",https://data.worldbank.org/indicator/SE.TER.CUAT.BA.ZS,,pending
+api_fetch,tertiary_grad_pct,Tertiary education attainment %,%,EG,Egypt,18.0522908453089,2023,"World Bank Indicators — Educational attainment ≥ Bachelor's (% of pop 25+, SE.TER.CUAT.BA.ZS)",https://data.worldbank.org/indicator/SE.TER.CUAT.BA.ZS,,pending
+api_fetch,tertiary_grad_pct,Tertiary education attainment %,%,ES,Spain,25.0426560264041,2023,"World Bank Indicators — Educational attainment ≥ Bachelor's (% of pop 25+, SE.TER.CUAT.BA.ZS)",https://data.worldbank.org/indicator/SE.TER.CUAT.BA.ZS,,pending
+api_fetch,tertiary_grad_pct,Tertiary education attainment %,%,FI,Finland,29.8881473990903,2023,"World Bank Indicators — Educational attainment ≥ Bachelor's (% of pop 25+, SE.TER.CUAT.BA.ZS)",https://data.worldbank.org/indicator/SE.TER.CUAT.BA.ZS,,pending
+api_fetch,tertiary_grad_pct,Tertiary education attainment %,%,FR,France,24.3546212580131,2023,"World Bank Indicators — Educational attainment ≥ Bachelor's (% of pop 25+, SE.TER.CUAT.BA.ZS)",https://data.worldbank.org/indicator/SE.TER.CUAT.BA.ZS,,pending
+api_fetch,tertiary_grad_pct,Tertiary education attainment %,%,GB,United Kingdom,39.5936584472656,2021,"World Bank Indicators — Educational attainment ≥ Bachelor's (% of pop 25+, SE.TER.CUAT.BA.ZS)",https://data.worldbank.org/indicator/SE.TER.CUAT.BA.ZS,,pending
+api_fetch,tertiary_grad_pct,Tertiary education attainment %,%,GR,Greece,28.0326523757238,2023,"World Bank Indicators — Educational attainment ≥ Bachelor's (% of pop 25+, SE.TER.CUAT.BA.ZS)",https://data.worldbank.org/indicator/SE.TER.CUAT.BA.ZS,,pending
+api_fetch,tertiary_grad_pct,Tertiary education attainment %,%,HR,Croatia,21.9618380926261,2023,"World Bank Indicators — Educational attainment ≥ Bachelor's (% of pop 25+, SE.TER.CUAT.BA.ZS)",https://data.worldbank.org/indicator/SE.TER.CUAT.BA.ZS,,pending
+api_fetch,tertiary_grad_pct,Tertiary education attainment %,%,HU,Hungary,26.3525127220673,2023,"World Bank Indicators — Educational attainment ≥ Bachelor's (% of pop 25+, SE.TER.CUAT.BA.ZS)",https://data.worldbank.org/indicator/SE.TER.CUAT.BA.ZS,,pending
+api_fetch,tertiary_grad_pct,Tertiary education attainment %,%,IE,Ireland,41.8523570536881,2023,"World Bank Indicators — Educational attainment ≥ Bachelor's (% of pop 25+, SE.TER.CUAT.BA.ZS)",https://data.worldbank.org/indicator/SE.TER.CUAT.BA.ZS,,pending
+api_fetch,tertiary_grad_pct,Tertiary education attainment %,%,IL,Israel,38.2999787289694,2023,"World Bank Indicators — Educational attainment ≥ Bachelor's (% of pop 25+, SE.TER.CUAT.BA.ZS)",https://data.worldbank.org/indicator/SE.TER.CUAT.BA.ZS,,pending
+api_fetch,tertiary_grad_pct,Tertiary education attainment %,%,IS,Iceland,34.4636962573314,2023,"World Bank Indicators — Educational attainment ≥ Bachelor's (% of pop 25+, SE.TER.CUAT.BA.ZS)",https://data.worldbank.org/indicator/SE.TER.CUAT.BA.ZS,,pending
+api_fetch,tertiary_grad_pct,Tertiary education attainment %,%,IT,Italy,17.5816398207436,2023,"World Bank Indicators — Educational attainment ≥ Bachelor's (% of pop 25+, SE.TER.CUAT.BA.ZS)",https://data.worldbank.org/indicator/SE.TER.CUAT.BA.ZS,,pending
+api_fetch,tertiary_grad_pct,Tertiary education attainment %,%,JO,Jordan,23.2269191741943,2023,"World Bank Indicators — Educational attainment ≥ Bachelor's (% of pop 25+, SE.TER.CUAT.BA.ZS)",https://data.worldbank.org/indicator/SE.TER.CUAT.BA.ZS,,pending
+api_fetch,tertiary_grad_pct,Tertiary education attainment %,%,KW,Kuwait,11.1163301467896,2018,"World Bank Indicators — Educational attainment ≥ Bachelor's (% of pop 25+, SE.TER.CUAT.BA.ZS)",https://data.worldbank.org/indicator/SE.TER.CUAT.BA.ZS,,pending
+api_fetch,tertiary_grad_pct,Tertiary education attainment %,%,LT,Lithuania,41.3070548478587,2023,"World Bank Indicators — Educational attainment ≥ Bachelor's (% of pop 25+, SE.TER.CUAT.BA.ZS)",https://data.worldbank.org/indicator/SE.TER.CUAT.BA.ZS,,pending
+api_fetch,tertiary_grad_pct,Tertiary education attainment %,%,LU,Luxembourg,41.8519604082982,2023,"World Bank Indicators — Educational attainment ≥ Bachelor's (% of pop 25+, SE.TER.CUAT.BA.ZS)",https://data.worldbank.org/indicator/SE.TER.CUAT.BA.ZS,,pending
+api_fetch,tertiary_grad_pct,Tertiary education attainment %,%,LV,Latvia,33.2018814850714,2023,"World Bank Indicators — Educational attainment ≥ Bachelor's (% of pop 25+, SE.TER.CUAT.BA.ZS)",https://data.worldbank.org/indicator/SE.TER.CUAT.BA.ZS,,pending
+api_fetch,tertiary_grad_pct,Tertiary education attainment %,%,MT,Malta,26.3049825063073,2023,"World Bank Indicators — Educational attainment ≥ Bachelor's (% of pop 25+, SE.TER.CUAT.BA.ZS)",https://data.worldbank.org/indicator/SE.TER.CUAT.BA.ZS,,pending
+api_fetch,tertiary_grad_pct,Tertiary education attainment %,%,NL,Netherlands,36.5573313987755,2023,"World Bank Indicators — Educational attainment ≥ Bachelor's (% of pop 25+, SE.TER.CUAT.BA.ZS)",https://data.worldbank.org/indicator/SE.TER.CUAT.BA.ZS,,pending
+api_fetch,tertiary_grad_pct,Tertiary education attainment %,%,NO,Norway,32.1868255742863,2023,"World Bank Indicators — Educational attainment ≥ Bachelor's (% of pop 25+, SE.TER.CUAT.BA.ZS)",https://data.worldbank.org/indicator/SE.TER.CUAT.BA.ZS,,pending
+api_fetch,tertiary_grad_pct,Tertiary education attainment %,%,OM,Oman,19.1144905090332,2022,"World Bank Indicators — Educational attainment ≥ Bachelor's (% of pop 25+, SE.TER.CUAT.BA.ZS)",https://data.worldbank.org/indicator/SE.TER.CUAT.BA.ZS,,pending
+api_fetch,tertiary_grad_pct,Tertiary education attainment %,%,PL,Poland,27.7237205505371,2021,"World Bank Indicators — Educational attainment ≥ Bachelor's (% of pop 25+, SE.TER.CUAT.BA.ZS)",https://data.worldbank.org/indicator/SE.TER.CUAT.BA.ZS,,pending
+api_fetch,tertiary_grad_pct,Tertiary education attainment %,%,PT,Portugal,23.5028353899237,2023,"World Bank Indicators — Educational attainment ≥ Bachelor's (% of pop 25+, SE.TER.CUAT.BA.ZS)",https://data.worldbank.org/indicator/SE.TER.CUAT.BA.ZS,,pending
+api_fetch,tertiary_grad_pct,Tertiary education attainment %,%,QA,Qatar,30.3933792114258,2022,"World Bank Indicators — Educational attainment ≥ Bachelor's (% of pop 25+, SE.TER.CUAT.BA.ZS)",https://data.worldbank.org/indicator/SE.TER.CUAT.BA.ZS,,pending
+api_fetch,tertiary_grad_pct,Tertiary education attainment %,%,RO,Romania,14.6010893280568,2023,"World Bank Indicators — Educational attainment ≥ Bachelor's (% of pop 25+, SE.TER.CUAT.BA.ZS)",https://data.worldbank.org/indicator/SE.TER.CUAT.BA.ZS,,pending
+api_fetch,tertiary_grad_pct,Tertiary education attainment %,%,RS,Serbia,18.6692014707128,2023,"World Bank Indicators — Educational attainment ≥ Bachelor's (% of pop 25+, SE.TER.CUAT.BA.ZS)",https://data.worldbank.org/indicator/SE.TER.CUAT.BA.ZS,,pending
+api_fetch,tertiary_grad_pct,Tertiary education attainment %,%,SA,Saudi Arabia,30.8887484783962,2023,"World Bank Indicators — Educational attainment ≥ Bachelor's (% of pop 25+, SE.TER.CUAT.BA.ZS)",https://data.worldbank.org/indicator/SE.TER.CUAT.BA.ZS,,pending
+api_fetch,tertiary_grad_pct,Tertiary education attainment %,%,SE,Sweden,34.883027208531,2023,"World Bank Indicators — Educational attainment ≥ Bachelor's (% of pop 25+, SE.TER.CUAT.BA.ZS)",https://data.worldbank.org/indicator/SE.TER.CUAT.BA.ZS,,pending
+api_fetch,tertiary_grad_pct,Tertiary education attainment %,%,SI,Slovenia,22.0416035512248,2023,"World Bank Indicators — Educational attainment ≥ Bachelor's (% of pop 25+, SE.TER.CUAT.BA.ZS)",https://data.worldbank.org/indicator/SE.TER.CUAT.BA.ZS,,pending
+api_fetch,tertiary_grad_pct,Tertiary education attainment %,%,SK,Slovakia,25.2886278348116,2023,"World Bank Indicators — Educational attainment ≥ Bachelor's (% of pop 25+, SE.TER.CUAT.BA.ZS)",https://data.worldbank.org/indicator/SE.TER.CUAT.BA.ZS,,pending
+api_fetch,tertiary_grad_pct,Tertiary education attainment %,%,TN,Tunisia,12.8028297424316,2023,"World Bank Indicators — Educational attainment ≥ Bachelor's (% of pop 25+, SE.TER.CUAT.BA.ZS)",https://data.worldbank.org/indicator/SE.TER.CUAT.BA.ZS,,pending
+api_fetch,tertiary_grad_pct,Tertiary education attainment %,%,TR,Türkiye,21.8643391177776,2023,"World Bank Indicators — Educational attainment ≥ Bachelor's (% of pop 25+, SE.TER.CUAT.BA.ZS)",https://data.worldbank.org/indicator/SE.TER.CUAT.BA.ZS,,pending
+hyperscale,facility,Equinix DX1/DX2 (Dubai),MW,AE,United Arab Emirates,35,,Equinix,https://www.equinix.com/data-centers/middle-east-colocation/uae-colocation/,operational,pending
+hyperscale,facility,G42 / G42 Cloud Dubai,MW,AE,United Arab Emirates,120,,G42,https://www.g42.ai/,under_construction; AI infra build-out,pending
+hyperscale,facility,Microsoft UAE North,MW,AE,United Arab Emirates,80,,Microsoft Azure,https://datacenters.microsoft.com/region/europe/,under_construction,pending
+hyperscale,facility,khazna AUH/DXB cluster,MW,AE,United Arab Emirates,180,,khazna,https://www.khazna.ae/,operational,pending
+hyperscale,facility,khazna AUH04/05 expansion,MW,AE,United Arab Emirates,100,,khazna,https://www.khazna.ae/,under_construction,pending
+hyperscale,facility,Google St-Ghislain,MW,BE,Belgium,200,,Google,https://www.google.com/about/datacenters/locations/st-ghislain/,operational,pending
+hyperscale,facility,Google St-Ghislain Phase 4,MW,BE,Belgium,100,,Google,https://www.google.com/about/datacenters/locations/st-ghislain/,under_construction,pending
+hyperscale,facility,CE Colo Prague,MW,CZ,Czechia,30,,CE Colo,https://www.cecolo.com/,operational,pending
+hyperscale,facility,CyrusOne FRA5/FRA6,MW,DE,Germany,110,,CyrusOne,https://www.cyrusone.com/,under_construction,pending
+hyperscale,facility,Digital Realty / Interxion FRA1-FRA17,MW,DE,Germany,180,,Digital Realty,https://www.digitalrealty.com/data-centers/emea/frankfurt,operational,pending
+hyperscale,facility,Digital Realty FRA18-FRA20,MW,DE,Germany,120,,Digital Realty,https://www.digitalrealty.com/,under_construction,pending
+hyperscale,facility,Equinix FR2/FR4/FR5/FR6/FR7,MW,DE,Germany,130,,Equinix,https://www.equinix.com/data-centers/europe-colocation/germany-colocation/frankfurt-data-centers,operational,pending
+hyperscale,facility,Equinix FR9/FR10,MW,DE,Germany,65,,Equinix,https://www.equinix.com/,under_construction,pending
+hyperscale,facility,Microsoft Germany North (Berlin),MW,DE,Germany,150,,Microsoft Azure,https://datacenters.microsoft.com/region/europe/,under_construction,pending
+hyperscale,facility,Microsoft Germany West Central,MW,DE,Germany,120,,Microsoft Azure,https://datacenters.microsoft.com/region/europe/,operational,pending
+hyperscale,facility,NTT Frankfurt 1-3,MW,DE,Germany,90,,NTT,https://services.global.ntt/en-us/services-and-products/data-centers/frankfurt,operational,pending
+hyperscale,facility,Vantage FRA1/FRA2,MW,DE,Germany,80,,Vantage,https://vantage-dc.com/data_center/frankfurt/,operational,pending
+hyperscale,facility,Vantage FRA21/FRA22,MW,DE,Germany,200,,Vantage,https://vantage-dc.com/,under_construction,pending
+hyperscale,facility,Yondr Frankfurt Campus,MW,DE,Germany,180,,Yondr,https://www.yondrgroup.com/,under_construction,pending
+hyperscale,facility,AWS Denmark,MW,DK,Denmark,150,,AWS,https://aws.amazon.com/,under_construction,pending
+hyperscale,facility,Meta Odense,MW,DK,Denmark,175,,Meta,https://datacenters.atmeta.com/all-locations/,operational,pending
+hyperscale,facility,Microsoft Denmark East,MW,DK,Denmark,300,,Microsoft Azure,https://datacenters.microsoft.com/region/europe/,under_construction; Aspirational total; signed PPAs cover ~130 MW renewables. 300 MW IT load represents full multi-campus build envelope.,pending
+hyperscale,facility,nLighten Copenhagen,MW,DK,Denmark,40,,nLighten,https://nlighten.com/,under_construction,pending
+hyperscale,facility,Mountain View Egypt,MW,EG,Egypt,30,,Mountain View,https://mvegypt.com/,under_construction,pending
+hyperscale,facility,Telecom Egypt Smart Village,MW,EG,Egypt,20,,Telecom Egypt,https://www.datacentermap.com/,operational,pending
+hyperscale,facility,AWS Spain (EU-South-2),MW,ES,Spain,150,,AWS,https://aws.amazon.com/about-aws/global-infrastructure/regions_az/,under_construction,pending
+hyperscale,facility,Data4 Madrid,MW,ES,Spain,80,,Data4,https://www.data4group.com/,under_construction,pending
+hyperscale,facility,Equinix MD2/MD3,MW,ES,Spain,35,,Equinix,https://www.equinix.com/data-centers/europe-colocation/spain-colocation/madrid-data-centers,operational,pending
+hyperscale,facility,Merlin Edge Madrid,MW,ES,Spain,55,,Merlin Properties,https://www.merlinproperties.com/,under_construction,pending
+hyperscale,facility,Microsoft Spain Central,MW,ES,Spain,120,,Microsoft Azure,https://datacenters.microsoft.com/region/europe/,operational,pending
+hyperscale,facility,Stack EMEA Madrid MAD01,MW,ES,Spain,120,,Stack Infrastructure,https://www.stackinfra.com/,under_construction,pending
+hyperscale,facility,Stack Tres Cantos MAD02,MW,ES,Spain,80,,Stack Infrastructure,https://www.stackinfra.com/,under_construction,pending
+hyperscale,facility,Google Hamina,MW,FI,Finland,260,,Google,https://www.google.com/about/datacenters/locations/hamina/,operational,pending
+hyperscale,facility,Google Hamina Phase 5,MW,FI,Finland,120,,Google,https://www.google.com/about/datacenters/locations/hamina/,under_construction,pending
+hyperscale,facility,Microsoft Finland (Espoo),MW,FI,Finland,200,,Microsoft Azure,https://datacenters.microsoft.com/region/europe/,under_construction,pending
+hyperscale,facility,AWS Paris (EU-West-3),MW,FR,France,175,,AWS,https://aws.amazon.com/about-aws/global-infrastructure/regions_az/,operational; EU-WEST-3 region; conservative AI DC Index estimate,pending
+hyperscale,facility,Data4 Paris-Saclay,MW,FR,France,80,,Data4,https://www.data4group.com/en/data-center-france/,operational,pending
+hyperscale,facility,Data4 Paris-Saclay Phase 2,MW,FR,France,60,,Data4,https://www.data4group.com/,under_construction,pending
+hyperscale,facility,Digital Realty / Interxion PAR1-PAR8,MW,FR,France,110,,Digital Realty,https://www.digitalrealty.com/data-centers/emea/paris,operational,pending
+hyperscale,facility,Equinix PA10/PA11,MW,FR,France,80,,Equinix,https://www.equinix.com/,under_construction,pending
+hyperscale,facility,Equinix PA8/PA9,MW,FR,France,50,,Equinix,https://www.equinix.com/data-centers/europe-colocation/france-colocation/paris-data-centers,operational,pending
+hyperscale,facility,Telehouse TH3 Paris,MW,FR,France,45,,Telehouse,https://www.telehouse.net/,under_construction,pending
+hyperscale,facility,Ada Infrastructure Docklands,MW,GB,United Kingdom,210,,Ada Infrastructure,https://www.adainfrastructure.com/,under_construction; GLP-backed flagship build,pending
+hyperscale,facility,Digital Realty / Interxion LON1-LON4,MW,GB,United Kingdom,80,,Digital Realty,https://www.digitalrealty.co.uk/,operational,pending
+hyperscale,facility,Equinix LD5/LD6 (Slough),MW,GB,United Kingdom,75,,Equinix,https://www.equinix.com/data-centers/europe-colocation/united-kingdom-colocation/london-data-centers,operational,pending
+hyperscale,facility,Iron Mountain LON-3,MW,GB,United Kingdom,27,,Iron Mountain,https://www.ironmountain.com/data-centers,operational,pending
+hyperscale,facility,Iron Mountain LON-4,MW,GB,United Kingdom,33,,Iron Mountain,https://www.ironmountain.com/data-centers,under_construction,pending
+hyperscale,facility,Microsoft UK South (Heathrow),MW,GB,United Kingdom,175,,Microsoft Azure,https://datacenters.microsoft.com/region/europe/,operational; AI DC Index estimate across multiple London sites; Microsoft does not publish per-region MW,pending
+hyperscale,facility,Stack EMEA LON02,MW,GB,United Kingdom,85,,Stack Infrastructure,https://www.stackinfra.com/,under_construction,pending
+hyperscale,facility,Telehouse North/West/East,MW,GB,United Kingdom,50,,Telehouse,https://www.telehouse.net/,operational,pending
+hyperscale,facility,VIRTUS LONDON5/LONDON6,MW,GB,United Kingdom,80,,VIRTUS,https://www.virtusdatacentres.com/,operational,pending
+hyperscale,facility,VIRTUS LONDON7 (Stockley Park),MW,GB,United Kingdom,52,,VIRTUS,https://www.virtusdatacentres.com/,under_construction,pending
+hyperscale,facility,Yondr Slough Campus,MW,GB,United Kingdom,120,,Yondr,https://www.yondrgroup.com/,under_construction,pending
+hyperscale,facility,Lamda Hellinikon Phase 1 (Microsoft Athens),MW,GR,Greece,120,,Microsoft Azure,https://datacenters.microsoft.com/region/europe/,under_construction,pending
+hyperscale,facility,AWS Ireland (multi-AZ Dublin),MW,IE,Ireland,450,,AWS,https://aws.amazon.com/about-aws/global-infrastructure/regions_az/,operational; EU-WEST-1 region across multiple Dublin AZs; AI DC Index estimate,pending
+hyperscale,facility,Echelon DUB10,MW,IE,Ireland,140,,Echelon,https://echelondc.com/,under_construction; Planning challenges; partial start,pending
+hyperscale,facility,EdgeConneX EDC Dublin,MW,IE,Ireland,150,,EdgeConneX,https://www.edgeconnex.com/,under_construction,pending
+hyperscale,facility,Equinix DB1-DB5,MW,IE,Ireland,75,,Equinix,https://www.equinix.com/data-centers/europe-colocation/ireland-colocation/dublin-data-centers,operational,pending
+hyperscale,facility,Equinix DB6 Dublin,MW,IE,Ireland,35,,Equinix,https://www.equinix.com/,under_construction,pending
+hyperscale,facility,Meta Clonee,MW,IE,Ireland,288,,Meta,https://datacenters.atmeta.com/all-locations/,operational,pending
+hyperscale,facility,Microsoft North Europe,MW,IE,Ireland,170,,Microsoft Azure,https://datacenters.microsoft.com/region/europe/,operational,pending
+hyperscale,facility,Stack EMEA DUB02,MW,IE,Ireland,80,,Stack Infrastructure,https://www.stackinfra.com/,under_construction,pending
+hyperscale,facility,AWS Israel (IL-Central-1),MW,IL,Israel,80,,AWS,https://aws.amazon.com/about-aws/global-infrastructure/regions_az/,operational,pending
+hyperscale,facility,Google Israel Region,MW,IL,Israel,80,,Google,https://cloud.google.com/about/locations,under_construction,pending
+hyperscale,facility,atNorth ICE03,MW,IS,Iceland,80,,atNorth,https://www.atnorth.com/,under_construction,pending
+hyperscale,facility,AWS Italy (EU-South-1),MW,IT,Italy,80,,AWS,https://aws.amazon.com/about-aws/global-infrastructure/regions_az/,operational,pending
+hyperscale,facility,Aruba Global Cloud Data Center Bergamo,MW,IT,Italy,90,,Aruba,https://www.arubadatacenter.com/,operational,pending
+hyperscale,facility,Data4 Milan MIL01,MW,IT,Italy,85,,Data4,https://www.data4group.com/,under_construction,pending
+hyperscale,facility,Equinix MI3,MW,IT,Italy,30,,Equinix,https://www.equinix.com/,operational,pending
+hyperscale,facility,Equinix MI5/MI6,MW,IT,Italy,55,,Equinix,https://www.equinix.com/,under_construction,pending
+hyperscale,facility,Vantage MIL11,MW,IT,Italy,80,,Vantage,https://vantage-dc.com/,under_construction,pending
+hyperscale,facility,LuxConnect DC1-DC3,MW,LU,Luxembourg,40,,LuxConnect,https://www.luxconnect.lu/,operational,pending
+hyperscale,facility,N+ONE Casablanca,MW,MA,Morocco,15,,N+ONE,https://www.nplusone.ma/,operational,pending
+hyperscale,facility,Digital Realty / Interxion AMS1-AMS17,MW,NL,Netherlands,150,,Digital Realty,https://www.digitalrealty.com/data-centers/emea/amsterdam,operational,pending
+hyperscale,facility,Equinix AM11,MW,NL,Netherlands,40,,Equinix,https://www.equinix.com/,under_construction,pending
+hyperscale,facility,Equinix AM3/AM4/AM7,MW,NL,Netherlands,75,,Equinix,https://www.equinix.com/data-centers/europe-colocation/netherlands-colocation/amsterdam-data-centers,operational,pending
+hyperscale,facility,Google Eemshaven,MW,NL,Netherlands,140,,Google,https://www.google.com/about/datacenters/locations/eemshaven/,operational; Eemshaven facility ~140 MW; Google NL total (Eemshaven + Middenmeer) ~200 MW combined,pending
+hyperscale,facility,Microsoft Middenmeer,MW,NL,Netherlands,230,,Microsoft Azure,https://datacenters.microsoft.com/region/europe/,operational,pending
+hyperscale,facility,Microsoft Middenmeer 2,MW,NL,Netherlands,120,,Microsoft Azure,https://datacenters.microsoft.com/region/europe/,under_construction,pending
+hyperscale,facility,Bulk N01 (Oslo),MW,NO,Norway,35,,Bulk,https://www.bulk.com/,operational,pending
+hyperscale,facility,Bulk N02 (Oslo),MW,NO,Norway,60,,Bulk,https://www.bulk.com/,under_construction,pending
+hyperscale,facility,Green Mountain DC1 (Stavanger),MW,NO,Norway,35,,Green Mountain,https://greenmountain.no/,operational,pending
+hyperscale,facility,Green Mountain DC2 expansion,MW,NO,Norway,60,,Green Mountain,https://greenmountain.no/,under_construction,pending
+hyperscale,facility,AtmanData Warsaw,MW,PL,Poland,35,,Atman,https://www.atman.pl/en,operational,pending
+hyperscale,facility,AtmanData Warsaw WAW-3,MW,PL,Poland,50,,Atman,https://www.atman.pl/en,under_construction,pending
+hyperscale,facility,Microsoft Poland Central,MW,PL,Poland,110,,Microsoft Azure,https://datacenters.microsoft.com/region/europe/,operational,pending
+hyperscale,facility,Start Campus SIN01 (Sines),MW,PT,Portugal,14,,Start Campus,https://startcampus.com/,operational; SIN01 Phase 1 ~14 MW live; subsequent campus phases under construction,pending
+hyperscale,facility,Start Campus SIN02-SIN04 (Sines),MW,PT,Portugal,473,,Start Campus,https://startcampus.com/,under_construction; SIN02-04 currently under construction (~473 MW). Campus total expanded to 1.2 GW per Aug 2024 announcement.,pending
+hyperscale,facility,Google Qatar Region,MW,QA,Qatar,80,,Google,https://cloud.google.com/about/locations,under_construction,pending
+hyperscale,facility,Microsoft Qatar Cloud,MW,QA,Qatar,80,,Microsoft Azure,https://datacenters.microsoft.com/region/europe/,operational,pending
+hyperscale,facility,NXDATA Bucharest,MW,RO,Romania,25,,NXDATA,https://www.nxdata.ro/,operational,pending
+hyperscale,facility,Google Saudi Region,MW,SA,Saudi Arabia,150,,Google,https://cloud.google.com/about/locations,under_construction,pending
+hyperscale,facility,NEOM Cognitive Cloud,MW,SA,Saudi Arabia,200,,NEOM,https://www.neom.com/,under_construction; Vision 2030 hyperscale campus,pending
+hyperscale,facility,STC SDC2 (Riyadh),MW,SA,Saudi Arabia,60,,STC,https://www.datacenterdynamics.com/en/news/saudi-telecom-company-stc-data-centers/,operational,pending
+hyperscale,facility,Saudi Cloud STC Cloud,MW,SA,Saudi Arabia,80,,STC Cloud,https://www.stc.com.sa/,operational,pending
+hyperscale,facility,Facebook Luleå,MW,SE,Sweden,120,,Meta,https://datacenters.atmeta.com/all-locations/,operational,pending
+hyperscale,facility,Microsoft Sweden Central,MW,SE,Sweden,500,,Microsoft Azure,https://datacenters.microsoft.com/region/europe/,"operational; Microsoft Sweden Central region opened Q4 2021; expanded to ~500 MW across Gävle, Sandviken and Staffanstorp campuses",pending
+hyperscale,facility,atNorth STO01 (formerly DigiPlex),MW,SE,Sweden,40,,atNorth,https://www.atnorth.com/,operational,pending
+hyperscale,facility,atNorth SWE01,MW,SE,Sweden,50,,atNorth,https://www.atnorth.com/,under_construction,pending
+hyperscale,facility,Türk Telekom Istanbul,MW,TR,Türkiye,40,,Türk Telekom,https://www.turktelekom.com.tr/,operational,pending

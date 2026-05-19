@@ -248,7 +248,8 @@
         "country": "IE",
         "mw": 288,
         "status": "operational",
-        "url": "https://datacenters.atmeta.com/all-locations/"
+        "note": "AI DC Index estimate; campus expanded 2016/2019/2022/2024. Meta does not disclose per-campus MW.",
+        "url": "https://aidatacenterindex.com/datacenters/meta-clonee-ireland-ai-data-center.html"
       }
     },
     {
@@ -382,15 +383,15 @@
         ]
       },
       "properties": {
-        "name": "Echelon DUB10",
+        "name": "Echelon DUB10 (Clondalkin)",
         "operator": "Echelon",
         "operator_type": "hyperscale",
         "city": "Dublin",
         "country": "IE",
-        "mw": 140,
-        "status": "under_construction",
-        "note": "Planning challenges; partial start",
-        "url": "https://echelondc.com/"
+        "mw": 90,
+        "status": "operational",
+        "note": "First building (DUB10) energised Q4 2023 with ~91 MW pre-committed hyperscale; subsequent DUB11 building under construction. Full campus 140 MW envelope. Status reclassified to operational for primary building. URL updated: old echelondc.com domain dead.",
+        "url": "https://echelon-dc.com/dub10/"
       }
     },
     {
@@ -784,14 +785,15 @@
         ]
       },
       "properties": {
-        "name": "Data4 Paris-Saclay",
+        "name": "Data4 Paris-Saclay (Marcoussis)",
         "operator": "Data4",
         "operator_type": "colo",
-        "city": "Saclay",
+        "city": "Marcoussis",
         "country": "FR",
         "mw": 80,
         "status": "operational",
-        "url": "https://www.data4group.com/en/data-center-france/"
+        "note": "PAR01-PAR03 campus in Marcoussis (Paris-Saclay). 32 buildings across the campus; ~120 MW reachable per datacentermap.com. 80 MW represents current operational IT load.",
+        "url": "https://www.data4group.com/en/data-center-in-paris-france/"
       }
     },
     {
@@ -890,8 +892,9 @@
         "operator_type": "hyperscale",
         "city": "Saint-Ghislain",
         "country": "BE",
-        "mw": 200,
+        "mw": 120,
         "status": "operational",
+        "note": "Public per-site MW not disclosed by Google. Datacentermap lists 50 MW for legacy buildings; Google announced €5 bn Belgian expansion through 2027 (totalling €11 bn since 2007). 120 MW is conservative AI DC Index estimate for cumulative operational load across original + recent expansions.",
         "url": "https://www.google.com/about/datacenters/locations/st-ghislain/"
       }
     },
@@ -1085,14 +1088,15 @@
         ]
       },
       "properties": {
-        "name": "Aruba Global Cloud Data Center Bergamo",
+        "name": "Aruba IT3 Global Cloud Data Center (Ponte San Pietro, Bergamo)",
         "operator": "Aruba",
         "operator_type": "colo",
         "city": "Bergamo",
         "country": "IT",
-        "mw": 90,
+        "mw": 60,
         "status": "operational",
-        "url": "https://www.arubadatacenter.com/"
+        "note": "Reachable / operational power for IT3 campus is 60 MW (5 buildings); 90 MW is the ultimate site envelope. Source: Aruba IT3 campus listings / DCD.",
+        "url": "https://datacenterplatform.com/data-centers/aruba/aruba-it3/"
       }
     },
     {
@@ -1294,8 +1298,8 @@
         "country": "SE",
         "mw": 500,
         "status": "operational",
-        "url": "https://datacenters.microsoft.com/region/europe/",
-        "note": "Microsoft Sweden Central region opened Q4 2021; expanded to ~500 MW across Gävle, Sandviken and Staffanstorp campuses"
+        "url": "https://aidatacenterindex.com/datacenters/microsoft-sweden-central-ai-infrastructure.html",
+        "note": "AI DC Index lists Sweden Central at 500 MW across Gävle, Sandviken and Staffanstorp. Microsoft announced an additional $3.2bn expansion in June 2024 (20,000 GPUs)."
       }
     },
     {
@@ -1413,10 +1417,10 @@
         "operator_type": "hyperscale",
         "city": "Copenhagen",
         "country": "DK",
-        "mw": 300,
+        "mw": 150,
         "status": "under_construction",
         "url": "https://datacenters.microsoft.com/region/europe/",
-        "note": "Aspirational total; signed PPAs cover ~130 MW renewables. 300 MW IT load represents full multi-campus build envelope."
+        "note": "Corrected down from prior 300 MW (aspirational full-campus envelope). 150 MW reflects the renewable-PPA-backed commitment publicly disclosed by Microsoft; full multi-campus build potential remains higher but is not yet committed."
       }
     },
     {
@@ -1669,14 +1673,15 @@
         ]
       },
       "properties": {
-        "name": "Lamda Hellinikon Phase 1 (Microsoft Athens)",
+        "name": "Microsoft Greece (Spata ATH04)",
         "operator": "Microsoft Azure",
         "operator_type": "hyperscale",
-        "city": "Athens",
+        "city": "Spata (Athens)",
         "country": "GR",
-        "mw": 120,
+        "mw": 80,
         "status": "under_construction",
-        "url": "https://datacenters.microsoft.com/region/europe/"
+        "note": "Microsoft Greece region under construction; €100m+ construction contract documented. 80 MW is a conservative AI DC Index-style estimate (downgraded from prior 120 MW); Microsoft does not publish per-region MW. The Lamda Hellinikon land lease is a separate parallel commitment.",
+        "url": "https://baxtel.com/data-center/microsoft-spata-ath04"
       }
     },
     {
@@ -1991,14 +1996,15 @@
         ]
       },
       "properties": {
-        "name": "Mountain View Egypt",
+        "name": "Mountain View Egypt (Huawei modular DC)",
         "operator": "Mountain View",
         "operator_type": "colo",
         "city": "Cairo",
         "country": "EG",
         "mw": 30,
         "status": "under_construction",
-        "url": "https://mvegypt.com/"
+        "note": "Mountain View Egypt deployed a Huawei FusionDC1000A modular DC; specific MW not publicly disclosed. 30 MW is an auditor estimate based on the campus footprint. URL updated from mvegypt.com (no DNS) to Huawei case study.",
+        "url": "https://digitalpower.huawei.com/en/data-center-facility/success_stories/detail/281.html"
       }
     },
     {

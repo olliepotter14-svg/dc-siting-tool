@@ -275,8 +275,9 @@
     "SA": {
       "value": 2.5,
       "year": 2024,
-      "source": "Saudi Electricity Company — Vision 2030 hyperscale connection programme",
-      "url": "https://www.se.com.sa/en-us/"
+      "source": "Saudi Electricity Company — SAR 472 bn ($126 bn) 2024-2030 T&D capex programme implies fast-track industrial connections; MEED reporting",
+      "url": "https://www.meed.com/saudi-electricity-company-reveals-2030-expenditure-details",
+      "note": "URL repointed from se.com.sa (returns HTTP 500) to MEED coverage of SEC capex disclosure."
     },
     "QA": {
       "value": 2.5,
@@ -376,10 +377,11 @@
       "url": "https://www.apg.at/"
     },
     "CH": {
-      "value": 12.0,
+      "value": 4.0,
       "year": 2030,
-      "source": "Swissgrid Strategisches Netz 2040 (pro-rated to 2030)",
-      "url": "https://www.swissgrid.ch/"
+      "source": "Swissgrid Strategic Grid 2040 — CHF 5.5 bn (~USD 6 bn) total to 2040; ~CHF 3-4 bn (~USD 4 bn) to 2030 segment",
+      "url": "https://www.swissgrid.ch/en/home/projects/future-grid.html",
+      "note": "Corrected from prior $12 bn; Swissgrid Apr 2025 announcement confirms CHF 5.5 bn full programme value through 2040, of which the 2030 segment is ~70%."
     },
     "SE": {
       "value": 30.0,
@@ -436,10 +438,11 @@
       "url": "https://www.dewa.gov.ae/"
     },
     "SA": {
-      "value": 120.0,
+      "value": 126.0,
       "year": 2030,
-      "source": "Saudi Electricity Company $58.7 bn 2025-2030 transmission+distribution programme + wider $120 bn build-out commentary",
-      "url": "https://www.vision2030.gov.sa/"
+      "source": "Saudi Electricity Company — SAR 472 bn (~USD 126 bn) 2024-2030 T&D capex programme: SAR 351 bn transmission + SAR 116 bn distribution",
+      "url": "https://www.meed.com/saudi-electricity-company-reveals-2030-expenditure-details",
+      "note": "Corrected from prior $120 bn rough; precise figure SAR 472 bn ≈ USD 126 bn per MEED reporting of SEC disclosure."
     },
     "QA": {
       "value": 8.0,
@@ -696,11 +699,11 @@
       "note": "Policy target, not analyst-forecast median speed"
     },
     "FR": {
-      "value": 2.0,
+      "value": 1.0,
       "year": 2030,
-      "source": "Plan France Très Haut Débit 'Tous fibrés en 2030'",
+      "source": "Plan France Très Haut Débit + EU Digital Decade 2030 Gigabit target",
       "url": "https://www.economie.gouv.fr/",
-      "note": "Policy target, not analyst-forecast median speed"
+      "note": "Policy target, not analyst-forecast median speed. Corrected down from 2.0 Gbps; FR plan target is full-fibre coverage, not 2 Gbps median. 1.0 Gbps aligns with peer EU methodology."
     },
     "IT": {
       "value": 1.0,
@@ -726,9 +729,9 @@
     "IE": {
       "value": 1.0,
       "year": 2030,
-      "source": "Ireland's National Broadband Plan + EU Gigabit",
-      "url": "https://www.gov.ie/en/publication/c1b0c-national-broadband-plan/",
-      "note": "Policy target, not analyst-forecast median speed"
+      "source": "Ireland's National Digital Connectivity Strategy (gigabit-to-all-premises by 2028) + EU Digital Decade 2030 Gigabit target",
+      "url": "https://digital-strategy.ec.europa.eu/en/policies/digital-connectivity-ireland",
+      "note": "Policy target, not analyst-forecast median speed. URL repointed: gov.ie/c1b0c page returns 404; EC digital-strategy page summarises the same NBP commitment."
     },
     "SE": {
       "value": 1.0,
@@ -758,16 +761,17 @@
       "unit": "USD/MW"
     },
     "CH": {
-      "value": 14000000.0,
+      "value": 14200000.0,
       "year": 2024,
-      "source": "Cushman & Wakefield Global DC Construction Cost Guide 2024 — Zurich (most expensive globally)",
-      "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-construction-cost-guide"
+      "source": "Turner & Townsend Data Centre Cost Index 2024 — Zurich US$14.2/W (most expensive globally alongside Tokyo & Singapore)",
+      "url": "https://reports.turnerandtownsend.com/dcci-2024/data-centre-cost-trends"
     },
     "IE": {
-      "value": 12500000.0,
+      "value": 10000000.0,
       "year": 2024,
-      "source": "Cushman & Wakefield Global DC Construction Cost Guide 2024 — Dublin",
-      "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-construction-cost-guide"
+      "source": "Turner & Townsend Data Centre Cost Index 2024 — Dublin US$10.0/W",
+      "url": "https://reports.turnerandtownsend.com/dcci-2024/data-centre-cost-trends",
+      "note": "Corrected down from prior $12.5M/MW estimate; T&T 2024 DCCI lists Dublin at $10.0/W."
     },
     "GB": {
       "value": 11500000.0,
@@ -836,10 +840,11 @@
       "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-construction-cost-guide"
     },
     "ES": {
-      "value": 9500000.0,
+      "value": 10000000.0,
       "year": 2024,
-      "source": "Cushman & Wakefield Global DC Construction Cost Guide 2024 — Madrid",
-      "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-construction-cost-guide"
+      "source": "Turner & Townsend Data Centre Cost Index 2024 — Madrid US$10.0/W",
+      "url": "https://reports.turnerandtownsend.com/dcci-2024/data-centre-cost-trends",
+      "note": "Updated to T&T 2024 DCCI Madrid figure ($10.0/W); Madrid now overtaking several US markets per T&T commentary."
     },
     "PT": {
       "value": 9000000.0,
@@ -1078,8 +1083,8 @@
     "SA": {
       "value": 0.05,
       "year": 2024,
-      "source": "Saudi Electricity Company industrial tariff",
-      "url": "https://www.se.com.sa/"
+      "source": "Saudi Electricity Regulatory Authority (SERA) — industrial consumption tariff schedule (SAR 0.18/kWh ≈ USD 0.048/kWh)",
+      "url": "https://www.sera.gov.sa/en/consumer/electric-tariff/electric-tariff-categories/consumption-tariff"
     },
     "QA": {
       "value": 0.04,
