@@ -1385,6 +1385,15 @@ function renderRankingPanel() {
   }
 }
 
+function rampColourForRank(rank, total) {
+  if (typeof rank !== 'number' || !total || total < 2) return null;
+  const pct = (rank - 1) / (total - 1);  // 0 = best, 1 = worst
+  // Snap to one of the 5 ramp stops so the colour matches the marker layer.
+  // Rank 1 → COLOUR_RAMP[4] (green), Rank N → COLOUR_RAMP[0] (red).
+  const idx = Math.round((1 - pct) * (COLOUR_RAMP.length - 1));
+  return COLOUR_RAMP[idx];
+}
+
 function rankRowEl(r, total, opt, isComposite) {
   const row = document.createElement('div');
   row.className = 'rank-row';
@@ -1393,15 +1402,11 @@ function rankRowEl(r, total, opt, isComposite) {
   if (state.selectedIso === r.c.iso2) row.classList.add('active');
   if (state.compareSelected.has(r.c.iso2)) row.classList.add('compare-on');
 
-  let numClass = '';
-  if (typeof r.value === 'number') {
-    const pct = r.rank / total;
-    if (pct <= 0.25) numClass = ' top';
-    else if (pct <= 0.5) numClass = ' mid';
-  }
+  const rampColor = rampColourForRank(r.rank, total);
+  const colourStyle = rampColor ? ' style="color:' + rampColor + '"' : '';
 
   const numCell = (typeof r.value === 'number')
-    ? '<div class="rank-num' + numClass + '">#' + r.rank + '</div>'
+    ? '<div class="rank-num"' + colourStyle + '>#' + r.rank + '</div>'
     : '<div class="rank-num">—</div>';
 
   // Right-hand value cell
@@ -1414,7 +1419,7 @@ function rankRowEl(r, total, opt, isComposite) {
     else if (isComposite && state.composite[r.c.iso2] && state.composite[r.c.iso2].total) {
       sub = '<span class="rank-value-sub">of ' + state.composite[r.c.iso2].total + '</span>';
     }
-    valCell = '<div><div class="rank-value">' + opt.fmt(r.value) + '</div>' + sub + '</div>';
+    valCell = '<div><div class="rank-value"' + colourStyle + '>' + opt.fmt(r.value) + '</div>' + sub + '</div>';
   }
 
   // Country name with optional subtitle for composite (showing data coverage)
