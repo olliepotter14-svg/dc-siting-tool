@@ -1,0 +1,3556 @@
+{
+  "_meta": {
+    "generated_by": "scripts/build_markets_dataset.py",
+    "country_count": 48,
+    "factor_coverage": {
+      "demand_2027_twh": 16,
+      "grid_connect_years": 37,
+      "grid_investment_usdbn": 27,
+      "bandwidth_gbps": 36,
+      "bandwidth_2030_gbps": 10,
+      "construction_cost_usd_mw": 31,
+      "power_cost_usd_kwh": 36,
+      "dc_capacity_live_mw": 32,
+      "dc_capacity_planned_mw": 28,
+      "power_per_capita_kwh": 48,
+      "carbon_intensity_gco2_kwh": 48,
+      "rd_techs_per_million": 32,
+      "tertiary_grad_pct": 47
+    }
+  },
+  "markets": [
+    {
+      "iso2": "GB",
+      "name": "United Kingdom",
+      "flag": "🇬🇧",
+      "region": "Western Europe",
+      "anchors": {
+        "capital": {
+          "name": "London",
+          "lon": -0.1276,
+          "lat": 51.5074
+        },
+        "dc_metro": {
+          "name": "Slough",
+          "lon": -0.595,
+          "lat": 51.5105
+        }
+      },
+      "factors": {
+        "demand_2027_twh": {
+          "value": 22.0,
+          "year": 2027,
+          "source": "IEA Electricity 2024 + NESO FES 2024 (high-DC demand case)",
+          "url": "https://www.iea.org/reports/electricity-2024"
+        },
+        "grid_connect_years": {
+          "value": 10.0,
+          "year": 2024,
+          "source": "NESO TEC Register — average wait for transmission-connected demand >50 MW",
+          "url": "https://www.neso.energy/data-portal/tec-register"
+        },
+        "grid_investment_usdbn": {
+          "value": 140.0,
+          "year": 2030,
+          "source": "Ofgem RIIO-T3 + NESO Future Energy Scenarios 2024",
+          "url": "https://www.ofgem.gov.uk/"
+        },
+        "bandwidth_gbps": {
+          "value": 0.14,
+          "year": 2024,
+          "source": "Ookla Speedtest Global Index",
+          "url": "https://www.speedtest.net/global-index"
+        },
+        "bandwidth_2030_gbps": {
+          "value": 1.0,
+          "year": 2030,
+          "source": "Analysys Mason — UK FTTP rollout trajectory",
+          "url": "https://www.analysysmason.com/"
+        },
+        "construction_cost_usd_mw": {
+          "value": 11500000.0,
+          "year": 2024,
+          "source": "Cushman & Wakefield Global DC Construction Cost Guide 2024 — London/Slough",
+          "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-construction-cost-guide"
+        },
+        "power_cost_usd_kwh": {
+          "value": 0.28,
+          "year": 2024,
+          "source": "Ofgem industrial electricity prices",
+          "url": "https://www.ofgem.gov.uk/"
+        },
+        "dc_capacity_live_mw": {
+          "value": 1100,
+          "year": 2024,
+          "source": "Cushman & Wakefield Global DC Market 2024 — London/Slough cluster",
+          "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-market-comparison"
+        },
+        "dc_capacity_planned_mw": {
+          "value": 800,
+          "year": 2024,
+          "source": "Cushman & Wakefield Global DC Market 2024 — London pipeline",
+          "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-market-comparison"
+        },
+        "power_per_capita_kwh": {
+          "value": 4202.795,
+          "year": 2025,
+          "source": "Our World in Data (Ember 'Yearly Electricity Data')",
+          "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation"
+        },
+        "carbon_intensity_gco2_kwh": {
+          "value": 217.41,
+          "year": 2025,
+          "source": "Our World in Data (Ember 'Carbon intensity of electricity')",
+          "url": "https://ourworldindata.org/grapher/carbon-intensity-electricity"
+        },
+        "rd_techs_per_million": {
+          "value": 1305.4251,
+          "year": 2016,
+          "source": "World Bank Indicators — Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",
+          "url": "https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6"
+        },
+        "tertiary_grad_pct": {
+          "value": 39.5936584472656,
+          "year": 2021,
+          "source": "World Bank Indicators — Educational attainment ≥ Bachelor's (% of pop 25+, SE.TER.CUAT.BA.ZS)",
+          "url": "https://data.worldbank.org/indicator/SE.TER.CUAT.BA.ZS"
+        }
+      }
+    },
+    {
+      "iso2": "IE",
+      "name": "Ireland",
+      "flag": "🇮🇪",
+      "region": "Western Europe",
+      "anchors": {
+        "capital": {
+          "name": "Dublin",
+          "lon": -6.2603,
+          "lat": 53.3498
+        },
+        "dc_metro": {
+          "name": "Dublin",
+          "lon": -6.2603,
+          "lat": 53.3498
+        }
+      },
+      "factors": {
+        "demand_2027_twh": {
+          "value": 15.0,
+          "year": 2027,
+          "source": "IEA Electricity 2024 — DCs reached 21% of national power (2022) and forecast 32% by 2026",
+          "url": "https://www.iea.org/reports/electricity-2024",
+          "note": "EirGrid forecasts DC load reaching ~28% of grid demand by 2031"
+        },
+        "grid_connect_years": {
+          "value": 8.0,
+          "year": 2024,
+          "source": "EirGrid 'Shaping our Electricity Future' — DC connection moratorium in Dublin region",
+          "url": "https://www.eirgrid.ie/"
+        },
+        "grid_investment_usdbn": {
+          "value": 7.0,
+          "year": 2030,
+          "source": "EirGrid Shaping Our Electricity Future + ESB Networks PR5",
+          "url": "https://www.eirgrid.ie/"
+        },
+        "bandwidth_gbps": {
+          "value": 0.2,
+          "year": 2024,
+          "source": "Ookla Speedtest Global Index",
+          "url": "https://www.speedtest.net/global-index"
+        },
+        "bandwidth_2030_gbps": {
+          "value": 1.0,
+          "year": 2030,
+          "source": "Ireland's National Broadband Plan + EU Gigabit",
+          "url": "https://www.gov.ie/en/publication/c1b0c-national-broadband-plan/"
+        },
+        "construction_cost_usd_mw": {
+          "value": 12500000.0,
+          "year": 2024,
+          "source": "Cushman & Wakefield Global DC Construction Cost Guide 2024 — Dublin",
+          "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-construction-cost-guide"
+        },
+        "power_cost_usd_kwh": {
+          "value": 0.3,
+          "year": 2024,
+          "source": "CRU industrial electricity tariff",
+          "url": "https://www.cru.ie/"
+        },
+        "dc_capacity_live_mw": {
+          "value": 950,
+          "year": 2024,
+          "source": "Cushman & Wakefield Global DC Market 2024 — Dublin cluster",
+          "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-market-comparison"
+        },
+        "dc_capacity_planned_mw": {
+          "value": 400,
+          "year": 2024,
+          "source": "Cushman & Wakefield Global DC Market 2024 — Dublin (post-moratorium constrained)",
+          "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-market-comparison"
+        },
+        "power_per_capita_kwh": {
+          "value": 5830.783,
+          "year": 2025,
+          "source": "Our World in Data (Ember 'Yearly Electricity Data')",
+          "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation"
+        },
+        "carbon_intensity_gco2_kwh": {
+          "value": 256.54,
+          "year": 2025,
+          "source": "Our World in Data (Ember 'Carbon intensity of electricity')",
+          "url": "https://ourworldindata.org/grapher/carbon-intensity-electricity"
+        },
+        "rd_techs_per_million": {
+          "value": 1164.60931,
+          "year": 2017,
+          "source": "World Bank Indicators — Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",
+          "url": "https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6"
+        },
+        "tertiary_grad_pct": {
+          "value": 41.8523570536881,
+          "year": 2023,
+          "source": "World Bank Indicators — Educational attainment ≥ Bachelor's (% of pop 25+, SE.TER.CUAT.BA.ZS)",
+          "url": "https://data.worldbank.org/indicator/SE.TER.CUAT.BA.ZS"
+        }
+      }
+    },
+    {
+      "iso2": "FR",
+      "name": "France",
+      "flag": "🇫🇷",
+      "region": "Western Europe",
+      "anchors": {
+        "capital": {
+          "name": "Paris",
+          "lon": 2.3522,
+          "lat": 48.8566
+        },
+        "dc_metro": {
+          "name": "Paris",
+          "lon": 2.3522,
+          "lat": 48.8566
+        }
+      },
+      "factors": {
+        "demand_2027_twh": {
+          "value": 10.0,
+          "year": 2027,
+          "source": "RTE 'Futurs énergétiques 2050' + IEA Electricity 2024",
+          "url": "https://www.iea.org/reports/electricity-2024"
+        },
+        "grid_connect_years": {
+          "value": 5.0,
+          "year": 2024,
+          "source": "RTE 'Schéma décennal de développement du réseau' 2024",
+          "url": "https://www.rte-france.com/"
+        },
+        "grid_investment_usdbn": {
+          "value": 200.0,
+          "year": 2030,
+          "source": "RTE 'Schéma décennal de développement du réseau' 2024 + Enedis investment programme",
+          "url": "https://www.rte-france.com/"
+        },
+        "bandwidth_gbps": {
+          "value": 0.27,
+          "year": 2024,
+          "source": "Ookla Speedtest Global Index",
+          "url": "https://www.speedtest.net/global-index"
+        },
+        "bandwidth_2030_gbps": {
+          "value": 2.0,
+          "year": 2030,
+          "source": "Plan France Très Haut Débit 'Tous fibrés en 2030'",
+          "url": "https://www.economie.gouv.fr/"
+        },
+        "construction_cost_usd_mw": {
+          "value": 10500000.0,
+          "year": 2024,
+          "source": "Cushman & Wakefield Global DC Construction Cost Guide 2024 — Paris",
+          "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-construction-cost-guide"
+        },
+        "power_cost_usd_kwh": {
+          "value": 0.16,
+          "year": 2024,
+          "source": "Eurostat NRG_PC_205 — Band IE",
+          "url": "https://ec.europa.eu/eurostat/web/energy/database"
+        },
+        "dc_capacity_live_mw": {
+          "value": 550,
+          "year": 2024,
+          "source": "Cushman & Wakefield Global DC Market 2024 — Paris cluster",
+          "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-market-comparison"
+        },
+        "dc_capacity_planned_mw": {
+          "value": 700,
+          "year": 2024,
+          "source": "Cushman & Wakefield Global DC Market 2024 — Paris pipeline",
+          "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-market-comparison"
+        },
+        "power_per_capita_kwh": {
+          "value": 8551.734,
+          "year": 2025,
+          "source": "Our World in Data (Ember 'Yearly Electricity Data')",
+          "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation"
+        },
+        "carbon_intensity_gco2_kwh": {
+          "value": 41.44,
+          "year": 2025,
+          "source": "Our World in Data (Ember 'Carbon intensity of electricity')",
+          "url": "https://ourworldindata.org/grapher/carbon-intensity-electricity"
+        },
+        "rd_techs_per_million": {
+          "value": 1805.54395,
+          "year": 2017,
+          "source": "World Bank Indicators — Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",
+          "url": "https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6"
+        },
+        "tertiary_grad_pct": {
+          "value": 24.3546212580131,
+          "year": 2023,
+          "source": "World Bank Indicators — Educational attainment ≥ Bachelor's (% of pop 25+, SE.TER.CUAT.BA.ZS)",
+          "url": "https://data.worldbank.org/indicator/SE.TER.CUAT.BA.ZS"
+        }
+      }
+    },
+    {
+      "iso2": "DE",
+      "name": "Germany",
+      "flag": "🇩🇪",
+      "region": "Western Europe",
+      "anchors": {
+        "capital": {
+          "name": "Berlin",
+          "lon": 13.405,
+          "lat": 52.52
+        },
+        "dc_metro": {
+          "name": "Frankfurt",
+          "lon": 8.6821,
+          "lat": 50.1109
+        }
+      },
+      "factors": {
+        "demand_2027_twh": {
+          "value": 24.0,
+          "year": 2027,
+          "source": "IEA Electricity 2024 — Germany DCs 16 TWh (2022) → 22 TWh (2026 forecast)",
+          "url": "https://www.iea.org/reports/electricity-2024"
+        },
+        "grid_connect_years": {
+          "value": 4.0,
+          "year": 2024,
+          "source": "Bundesnetzagentur Monitoringbericht 2023 — typical industrial connection",
+          "url": "https://www.bundesnetzagentur.de/"
+        },
+        "grid_investment_usdbn": {
+          "value": 320.0,
+          "year": 2030,
+          "source": "BMWK 'Stromnetze 2030' + Bundesnetzagentur monitoring 2024",
+          "url": "https://www.bundesnetzagentur.de/",
+          "note": "BMWK plans extend to ~2045; figure shown is the 2024-2030 segment."
+        },
+        "bandwidth_gbps": {
+          "value": 0.1,
+          "year": 2024,
+          "source": "Ookla Speedtest Global Index",
+          "url": "https://www.speedtest.net/global-index"
+        },
+        "bandwidth_2030_gbps": {
+          "value": 1.0,
+          "year": 2030,
+          "source": "BMDV Gigabitstrategie 2030",
+          "url": "https://bmdv.bund.de/"
+        },
+        "construction_cost_usd_mw": {
+          "value": 11000000.0,
+          "year": 2024,
+          "source": "Cushman & Wakefield Global DC Construction Cost Guide 2024 — Frankfurt",
+          "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-construction-cost-guide"
+        },
+        "power_cost_usd_kwh": {
+          "value": 0.2,
+          "year": 2024,
+          "source": "Eurostat NRG_PC_205 — Band IE (large industrial)",
+          "url": "https://ec.europa.eu/eurostat/web/energy/database"
+        },
+        "dc_capacity_live_mw": {
+          "value": 850,
+          "year": 2024,
+          "source": "Cushman & Wakefield Global DC Market 2024 — Frankfurt + Berlin",
+          "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-market-comparison"
+        },
+        "dc_capacity_planned_mw": {
+          "value": 900,
+          "year": 2024,
+          "source": "Cushman & Wakefield Global DC Market 2024 — Frankfurt + Berlin pipeline",
+          "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-market-comparison"
+        },
+        "power_per_capita_kwh": {
+          "value": 5952.6562,
+          "year": 2025,
+          "source": "Our World in Data (Ember 'Yearly Electricity Data')",
+          "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation"
+        },
+        "carbon_intensity_gco2_kwh": {
+          "value": 329.65,
+          "year": 2025,
+          "source": "Our World in Data (Ember 'Carbon intensity of electricity')",
+          "url": "https://ourworldindata.org/grapher/carbon-intensity-electricity"
+        },
+        "rd_techs_per_million": {
+          "value": 2006.65327,
+          "year": 2017,
+          "source": "World Bank Indicators — Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",
+          "url": "https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6"
+        },
+        "tertiary_grad_pct": {
+          "value": 30.5294541601323,
+          "year": 2023,
+          "source": "World Bank Indicators — Educational attainment ≥ Bachelor's (% of pop 25+, SE.TER.CUAT.BA.ZS)",
+          "url": "https://data.worldbank.org/indicator/SE.TER.CUAT.BA.ZS"
+        }
+      }
+    },
+    {
+      "iso2": "NL",
+      "name": "Netherlands",
+      "flag": "🇳🇱",
+      "region": "Western Europe",
+      "anchors": {
+        "capital": {
+          "name": "Amsterdam",
+          "lon": 4.9041,
+          "lat": 52.3676
+        },
+        "dc_metro": {
+          "name": "Amsterdam",
+          "lon": 4.9041,
+          "lat": 52.3676
+        }
+      },
+      "factors": {
+        "demand_2027_twh": {
+          "value": 12.0,
+          "year": 2027,
+          "source": "Stedin Amsterdam DSO connection forecasts + IEA Electricity 2024",
+          "url": "https://www.iea.org/reports/electricity-2024"
+        },
+        "grid_connect_years": {
+          "value": 7.0,
+          "year": 2024,
+          "source": "TenneT NL congestion map — 'transportbeperking' across Randstad",
+          "url": "https://www.tennet.eu/nl/het-stroomnet/transportbeperkingen",
+          "note": "Most of NL is currently congestion-restricted; new large loads queued behind grid reinforcements."
+        },
+        "grid_investment_usdbn": {
+          "value": 50.0,
+          "year": 2030,
+          "source": "TenneT NL investment plan + Stedin/Liander distribution capex",
+          "url": "https://www.tennet.eu/"
+        },
+        "bandwidth_gbps": {
+          "value": 0.16,
+          "year": 2024,
+          "source": "Ookla Speedtest Global Index",
+          "url": "https://www.speedtest.net/global-index"
+        },
+        "bandwidth_2030_gbps": {
+          "value": 1.0,
+          "year": 2030,
+          "source": "EU Gigabit Society targets (Dutch trajectory)",
+          "url": "https://digital-strategy.ec.europa.eu/"
+        },
+        "construction_cost_usd_mw": {
+          "value": 11000000.0,
+          "year": 2024,
+          "source": "Cushman & Wakefield Global DC Construction Cost Guide 2024 — Amsterdam",
+          "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-construction-cost-guide"
+        },
+        "power_cost_usd_kwh": {
+          "value": 0.2,
+          "year": 2024,
+          "source": "Eurostat NRG_PC_205 — Band IE",
+          "url": "https://ec.europa.eu/eurostat/web/energy/database"
+        },
+        "dc_capacity_live_mw": {
+          "value": 600,
+          "year": 2024,
+          "source": "Cushman & Wakefield Global DC Market 2024 — Amsterdam cluster",
+          "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-market-comparison"
+        },
+        "dc_capacity_planned_mw": {
+          "value": 500,
+          "year": 2024,
+          "source": "Cushman & Wakefield Global DC Market 2024 — Amsterdam pipeline (post-moratorium)",
+          "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-market-comparison"
+        },
+        "power_per_capita_kwh": {
+          "value": 7356.0425,
+          "year": 2025,
+          "source": "Our World in Data (Ember 'Yearly Electricity Data')",
+          "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation"
+        },
+        "carbon_intensity_gco2_kwh": {
+          "value": 253.56,
+          "year": 2025,
+          "source": "Our World in Data (Ember 'Carbon intensity of electricity')",
+          "url": "https://ourworldindata.org/grapher/carbon-intensity-electricity"
+        },
+        "tertiary_grad_pct": {
+          "value": 36.5573313987755,
+          "year": 2023,
+          "source": "World Bank Indicators — Educational attainment ≥ Bachelor's (% of pop 25+, SE.TER.CUAT.BA.ZS)",
+          "url": "https://data.worldbank.org/indicator/SE.TER.CUAT.BA.ZS"
+        }
+      }
+    },
+    {
+      "iso2": "BE",
+      "name": "Belgium",
+      "flag": "🇧🇪",
+      "region": "Western Europe",
+      "anchors": {
+        "capital": {
+          "name": "Brussels",
+          "lon": 4.3517,
+          "lat": 50.8503
+        },
+        "dc_metro": {
+          "name": "Brussels",
+          "lon": 4.3517,
+          "lat": 50.8503
+        }
+      },
+      "factors": {
+        "grid_connect_years": {
+          "value": 5.0,
+          "year": 2024,
+          "source": "Elia Federal Development Plan 2024-2034",
+          "url": "https://www.elia.be/en/grid-data/grid-development"
+        },
+        "grid_investment_usdbn": {
+          "value": 12.0,
+          "year": 2030,
+          "source": "Elia Federal Development Plan 2024-2034",
+          "url": "https://www.elia.be/"
+        },
+        "bandwidth_gbps": {
+          "value": 0.12,
+          "year": 2024,
+          "source": "Ookla Speedtest Global Index",
+          "url": "https://www.speedtest.net/global-index"
+        },
+        "construction_cost_usd_mw": {
+          "value": 10500000.0,
+          "year": 2024,
+          "source": "Cushman & Wakefield Global DC Construction Cost Guide 2024 — Brussels",
+          "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-construction-cost-guide"
+        },
+        "power_cost_usd_kwh": {
+          "value": 0.19,
+          "year": 2024,
+          "source": "Eurostat NRG_PC_205 — Band IE",
+          "url": "https://ec.europa.eu/eurostat/web/energy/database"
+        },
+        "dc_capacity_live_mw": {
+          "value": 110,
+          "year": 2024,
+          "source": "datacentermap.com — Brussels",
+          "url": "https://www.datacentermap.com/"
+        },
+        "dc_capacity_planned_mw": {
+          "value": 130,
+          "year": 2024,
+          "source": "datacentermap.com + Google St-Ghislain expansion",
+          "url": "https://www.datacentermap.com/"
+        },
+        "power_per_capita_kwh": {
+          "value": 6198.8667,
+          "year": 2025,
+          "source": "Our World in Data (Ember 'Yearly Electricity Data')",
+          "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation"
+        },
+        "carbon_intensity_gco2_kwh": {
+          "value": 149.82,
+          "year": 2025,
+          "source": "Our World in Data (Ember 'Carbon intensity of electricity')",
+          "url": "https://ourworldindata.org/grapher/carbon-intensity-electricity"
+        },
+        "tertiary_grad_pct": {
+          "value": 37.4110337879949,
+          "year": 2023,
+          "source": "World Bank Indicators — Educational attainment ≥ Bachelor's (% of pop 25+, SE.TER.CUAT.BA.ZS)",
+          "url": "https://data.worldbank.org/indicator/SE.TER.CUAT.BA.ZS"
+        }
+      }
+    },
+    {
+      "iso2": "LU",
+      "name": "Luxembourg",
+      "flag": "🇱🇺",
+      "region": "Western Europe",
+      "anchors": {
+        "capital": {
+          "name": "Luxembourg City",
+          "lon": 6.1296,
+          "lat": 49.6116
+        },
+        "dc_metro": {
+          "name": "Luxembourg City",
+          "lon": 6.1296,
+          "lat": 49.6116
+        }
+      },
+      "factors": {
+        "grid_connect_years": {
+          "value": 3.5,
+          "year": 2024,
+          "source": "Creos Luxembourg connection queue 2024",
+          "url": "https://www.creos-net.lu/"
+        },
+        "bandwidth_gbps": {
+          "value": 0.19,
+          "year": 2024,
+          "source": "Ookla Speedtest Global Index",
+          "url": "https://www.speedtest.net/global-index"
+        },
+        "construction_cost_usd_mw": {
+          "value": 11000000.0,
+          "year": 2024,
+          "source": "Cushman & Wakefield Global DC Construction Cost Guide 2024 — Luxembourg",
+          "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-construction-cost-guide"
+        },
+        "power_cost_usd_kwh": {
+          "value": 0.17,
+          "year": 2024,
+          "source": "Eurostat NRG_PC_205 — Band IE",
+          "url": "https://ec.europa.eu/eurostat/web/energy/database"
+        },
+        "dc_capacity_live_mw": {
+          "value": 90,
+          "year": 2024,
+          "source": "datacentermap.com + LuxConnect public reporting",
+          "url": "https://www.datacentermap.com/"
+        },
+        "power_per_capita_kwh": {
+          "value": 2263.1948,
+          "year": 2025,
+          "source": "Our World in Data (Ember 'Yearly Electricity Data')",
+          "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation"
+        },
+        "carbon_intensity_gco2_kwh": {
+          "value": 123.38,
+          "year": 2025,
+          "source": "Our World in Data (Ember 'Carbon intensity of electricity')",
+          "url": "https://ourworldindata.org/grapher/carbon-intensity-electricity"
+        },
+        "rd_techs_per_million": {
+          "value": 3166.02186,
+          "year": 2017,
+          "source": "World Bank Indicators — Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",
+          "url": "https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6"
+        },
+        "tertiary_grad_pct": {
+          "value": 41.8519604082982,
+          "year": 2023,
+          "source": "World Bank Indicators — Educational attainment ≥ Bachelor's (% of pop 25+, SE.TER.CUAT.BA.ZS)",
+          "url": "https://data.worldbank.org/indicator/SE.TER.CUAT.BA.ZS"
+        }
+      }
+    },
+    {
+      "iso2": "CH",
+      "name": "Switzerland",
+      "flag": "🇨🇭",
+      "region": "Western Europe",
+      "anchors": {
+        "capital": {
+          "name": "Bern",
+          "lon": 7.4474,
+          "lat": 46.948
+        },
+        "dc_metro": {
+          "name": "Zurich",
+          "lon": 8.5417,
+          "lat": 47.3769
+        }
+      },
+      "factors": {
+        "grid_connect_years": {
+          "value": 4.0,
+          "year": 2024,
+          "source": "Swissgrid 'Strategisches Netz 2040'",
+          "url": "https://www.swissgrid.ch/"
+        },
+        "grid_investment_usdbn": {
+          "value": 12.0,
+          "year": 2030,
+          "source": "Swissgrid Strategisches Netz 2040 (pro-rated to 2030)",
+          "url": "https://www.swissgrid.ch/"
+        },
+        "bandwidth_gbps": {
+          "value": 0.25,
+          "year": 2024,
+          "source": "Ookla Speedtest Global Index",
+          "url": "https://www.speedtest.net/global-index"
+        },
+        "construction_cost_usd_mw": {
+          "value": 14000000.0,
+          "year": 2024,
+          "source": "Cushman & Wakefield Global DC Construction Cost Guide 2024 — Zurich (most expensive globally)",
+          "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-construction-cost-guide"
+        },
+        "power_cost_usd_kwh": {
+          "value": 0.18,
+          "year": 2024,
+          "source": "ElCom Strompreis 2024 — large industrial",
+          "url": "https://www.elcom.admin.ch/"
+        },
+        "dc_capacity_live_mw": {
+          "value": 200,
+          "year": 2024,
+          "source": "Cushman & Wakefield Global DC Market 2024 — Zurich",
+          "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-market-comparison"
+        },
+        "dc_capacity_planned_mw": {
+          "value": 180,
+          "year": 2024,
+          "source": "Cushman & Wakefield Global DC Market 2024 — Zurich pipeline",
+          "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-market-comparison"
+        },
+        "power_per_capita_kwh": {
+          "value": 7250.6973,
+          "year": 2025,
+          "source": "Our World in Data (Ember 'Yearly Electricity Data')",
+          "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation"
+        },
+        "carbon_intensity_gco2_kwh": {
+          "value": 39.22,
+          "year": 2025,
+          "source": "Our World in Data (Ember 'Carbon intensity of electricity')",
+          "url": "https://ourworldindata.org/grapher/carbon-intensity-electricity"
+        },
+        "rd_techs_per_million": {
+          "value": 2619.74154,
+          "year": 2017,
+          "source": "World Bank Indicators — Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",
+          "url": "https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6"
+        },
+        "tertiary_grad_pct": {
+          "value": 41.2647756874978,
+          "year": 2023,
+          "source": "World Bank Indicators — Educational attainment ≥ Bachelor's (% of pop 25+, SE.TER.CUAT.BA.ZS)",
+          "url": "https://data.worldbank.org/indicator/SE.TER.CUAT.BA.ZS"
+        }
+      }
+    },
+    {
+      "iso2": "AT",
+      "name": "Austria",
+      "flag": "🇦🇹",
+      "region": "Western Europe",
+      "anchors": {
+        "capital": {
+          "name": "Vienna",
+          "lon": 16.3738,
+          "lat": 48.2082
+        },
+        "dc_metro": {
+          "name": "Vienna",
+          "lon": 16.3738,
+          "lat": 48.2082
+        }
+      },
+      "factors": {
+        "grid_connect_years": {
+          "value": 4.5,
+          "year": 2024,
+          "source": "APG Netzentwicklungsplan 2023",
+          "url": "https://www.apg.at/"
+        },
+        "grid_investment_usdbn": {
+          "value": 10.0,
+          "year": 2030,
+          "source": "APG Netzentwicklungsplan 2023",
+          "url": "https://www.apg.at/"
+        },
+        "bandwidth_gbps": {
+          "value": 0.09,
+          "year": 2024,
+          "source": "Ookla Speedtest Global Index",
+          "url": "https://www.speedtest.net/global-index"
+        },
+        "construction_cost_usd_mw": {
+          "value": 10000000.0,
+          "year": 2024,
+          "source": "Cushman & Wakefield Global DC Construction Cost Guide 2024 — Vienna",
+          "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-construction-cost-guide"
+        },
+        "power_cost_usd_kwh": {
+          "value": 0.22,
+          "year": 2024,
+          "source": "Eurostat NRG_PC_205 — Band IE",
+          "url": "https://ec.europa.eu/eurostat/web/energy/database"
+        },
+        "dc_capacity_live_mw": {
+          "value": 110,
+          "year": 2024,
+          "source": "datacentermap.com — Vienna",
+          "url": "https://www.datacentermap.com/"
+        },
+        "dc_capacity_planned_mw": {
+          "value": 100,
+          "year": 2024,
+          "source": "datacentermap.com — Vienna pipeline",
+          "url": "https://www.datacentermap.com/"
+        },
+        "power_per_capita_kwh": {
+          "value": 8034.1665,
+          "year": 2025,
+          "source": "Our World in Data (Ember 'Yearly Electricity Data')",
+          "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation"
+        },
+        "carbon_intensity_gco2_kwh": {
+          "value": 116.91,
+          "year": 2025,
+          "source": "Our World in Data (Ember 'Carbon intensity of electricity')",
+          "url": "https://ourworldindata.org/grapher/carbon-intensity-electricity"
+        },
+        "rd_techs_per_million": {
+          "value": 2648.10229,
+          "year": 2017,
+          "source": "World Bank Indicators — Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",
+          "url": "https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6"
+        },
+        "tertiary_grad_pct": {
+          "value": 14.8791799545288,
+          "year": 2021,
+          "source": "World Bank Indicators — Educational attainment ≥ Bachelor's (% of pop 25+, SE.TER.CUAT.BA.ZS)",
+          "url": "https://data.worldbank.org/indicator/SE.TER.CUAT.BA.ZS"
+        }
+      }
+    },
+    {
+      "iso2": "SE",
+      "name": "Sweden",
+      "flag": "🇸🇪",
+      "region": "Northern Europe",
+      "anchors": {
+        "capital": {
+          "name": "Stockholm",
+          "lon": 18.0686,
+          "lat": 59.3293
+        },
+        "dc_metro": {
+          "name": "Stockholm",
+          "lon": 18.0686,
+          "lat": 59.3293
+        }
+      },
+      "factors": {
+        "demand_2027_twh": {
+          "value": 6.0,
+          "year": 2027,
+          "source": "Svenska kraftnät long-term forecast + IEA Electricity 2024",
+          "url": "https://www.iea.org/reports/electricity-2024"
+        },
+        "grid_connect_years": {
+          "value": 6.0,
+          "year": 2024,
+          "source": "Svenska kraftnät Långsiktig marknadsanalys 2024",
+          "url": "https://www.svk.se/en/"
+        },
+        "grid_investment_usdbn": {
+          "value": 30.0,
+          "year": 2030,
+          "source": "Svenska kraftnät Långsiktig marknadsanalys 2024",
+          "url": "https://www.svk.se/en/"
+        },
+        "bandwidth_gbps": {
+          "value": 0.22,
+          "year": 2024,
+          "source": "Ookla Speedtest Global Index",
+          "url": "https://www.speedtest.net/global-index"
+        },
+        "bandwidth_2030_gbps": {
+          "value": 1.0,
+          "year": 2030,
+          "source": "PTS Bredbandsstrategi 2030",
+          "url": "https://pts.se/en/"
+        },
+        "construction_cost_usd_mw": {
+          "value": 10000000.0,
+          "year": 2024,
+          "source": "Cushman & Wakefield Global DC Construction Cost Guide 2024 — Stockholm",
+          "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-construction-cost-guide"
+        },
+        "power_cost_usd_kwh": {
+          "value": 0.1,
+          "year": 2024,
+          "source": "Eurostat NRG_PC_205 — Band IE",
+          "url": "https://ec.europa.eu/eurostat/web/energy/database"
+        },
+        "dc_capacity_live_mw": {
+          "value": 220,
+          "year": 2024,
+          "source": "JLL EMEA Data Centres Q4 2024 — Stockholm + Nordic hyperscale",
+          "url": "https://www.jll.com/en/insights"
+        },
+        "dc_capacity_planned_mw": {
+          "value": 350,
+          "year": 2024,
+          "source": "JLL EMEA Data Centres Q4 2024 — Stockholm + hyperscale pipeline",
+          "url": "https://www.jll.com/en/insights"
+        },
+        "power_per_capita_kwh": {
+          "value": 16019.127,
+          "year": 2025,
+          "source": "Our World in Data (Ember 'Yearly Electricity Data')",
+          "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation"
+        },
+        "carbon_intensity_gco2_kwh": {
+          "value": 35.26,
+          "year": 2025,
+          "source": "Our World in Data (Ember 'Carbon intensity of electricity')",
+          "url": "https://ourworldindata.org/grapher/carbon-intensity-electricity"
+        },
+        "tertiary_grad_pct": {
+          "value": 34.883027208531,
+          "year": 2023,
+          "source": "World Bank Indicators — Educational attainment ≥ Bachelor's (% of pop 25+, SE.TER.CUAT.BA.ZS)",
+          "url": "https://data.worldbank.org/indicator/SE.TER.CUAT.BA.ZS"
+        }
+      }
+    },
+    {
+      "iso2": "NO",
+      "name": "Norway",
+      "flag": "🇳🇴",
+      "region": "Northern Europe",
+      "anchors": {
+        "capital": {
+          "name": "Oslo",
+          "lon": 10.7522,
+          "lat": 59.9139
+        },
+        "dc_metro": {
+          "name": "Oslo",
+          "lon": 10.7522,
+          "lat": 59.9139
+        }
+      },
+      "factors": {
+        "demand_2027_twh": {
+          "value": 3.5,
+          "year": 2027,
+          "source": "Statnett 'Langsiktig markedsanalyse' 2024",
+          "url": "https://www.statnett.no/en/"
+        },
+        "grid_connect_years": {
+          "value": 5.0,
+          "year": 2024,
+          "source": "Statnett 'Langsiktig markedsanalyse' 2024",
+          "url": "https://www.statnett.no/en/"
+        },
+        "grid_investment_usdbn": {
+          "value": 25.0,
+          "year": 2030,
+          "source": "Statnett Network Development Plan 2023",
+          "url": "https://www.statnett.no/en/"
+        },
+        "bandwidth_gbps": {
+          "value": 0.17,
+          "year": 2024,
+          "source": "Ookla Speedtest Global Index",
+          "url": "https://www.speedtest.net/global-index"
+        },
+        "construction_cost_usd_mw": {
+          "value": 11500000.0,
+          "year": 2024,
+          "source": "Turner & Townsend DC Cost Index 2024 — Oslo",
+          "url": "https://www.turnerandtownsend.com/"
+        },
+        "power_cost_usd_kwh": {
+          "value": 0.08,
+          "year": 2024,
+          "source": "NVE industrial tariff",
+          "url": "https://www.nve.no/"
+        },
+        "dc_capacity_live_mw": {
+          "value": 130,
+          "year": 2024,
+          "source": "datacentermap.com + Statkraft hyperscale partnership announcements",
+          "url": "https://www.datacentermap.com/"
+        },
+        "dc_capacity_planned_mw": {
+          "value": 250,
+          "year": 2024,
+          "source": "datacentermap.com + Statkraft/Bulk hyperscale pipeline",
+          "url": "https://www.datacentermap.com/"
+        },
+        "power_per_capita_kwh": {
+          "value": 28598.236,
+          "year": 2025,
+          "source": "Our World in Data (Ember 'Yearly Electricity Data')",
+          "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation"
+        },
+        "carbon_intensity_gco2_kwh": {
+          "value": 28.11,
+          "year": 2025,
+          "source": "Our World in Data (Ember 'Carbon intensity of electricity')",
+          "url": "https://ourworldindata.org/grapher/carbon-intensity-electricity"
+        },
+        "tertiary_grad_pct": {
+          "value": 32.1868255742863,
+          "year": 2023,
+          "source": "World Bank Indicators — Educational attainment ≥ Bachelor's (% of pop 25+, SE.TER.CUAT.BA.ZS)",
+          "url": "https://data.worldbank.org/indicator/SE.TER.CUAT.BA.ZS"
+        }
+      }
+    },
+    {
+      "iso2": "DK",
+      "name": "Denmark",
+      "flag": "🇩🇰",
+      "region": "Northern Europe",
+      "anchors": {
+        "capital": {
+          "name": "Copenhagen",
+          "lon": 12.5683,
+          "lat": 55.6761
+        },
+        "dc_metro": {
+          "name": "Copenhagen",
+          "lon": 12.5683,
+          "lat": 55.6761
+        }
+      },
+      "factors": {
+        "demand_2027_twh": {
+          "value": 8.0,
+          "year": 2027,
+          "source": "Energinet long-term forecast + IEA Electricity 2024 (Nordic hyperscale cluster)",
+          "url": "https://www.iea.org/reports/electricity-2024",
+          "note": "DC share of national electricity forecast to reach ~14% by 2030"
+        },
+        "grid_connect_years": {
+          "value": 6.0,
+          "year": 2024,
+          "source": "Energinet Langtidsudviklingsplan 2024",
+          "url": "https://en.energinet.dk/"
+        },
+        "grid_investment_usdbn": {
+          "value": 18.0,
+          "year": 2030,
+          "source": "Energinet 'Sustainable transmission' 2024",
+          "url": "https://en.energinet.dk/"
+        },
+        "bandwidth_gbps": {
+          "value": 0.25,
+          "year": 2024,
+          "source": "Ookla Speedtest Global Index",
+          "url": "https://www.speedtest.net/global-index"
+        },
+        "construction_cost_usd_mw": {
+          "value": 10500000.0,
+          "year": 2024,
+          "source": "Cushman & Wakefield Global DC Construction Cost Guide 2024 — Copenhagen",
+          "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-construction-cost-guide"
+        },
+        "power_cost_usd_kwh": {
+          "value": 0.17,
+          "year": 2024,
+          "source": "Eurostat NRG_PC_205 — Band IE",
+          "url": "https://ec.europa.eu/eurostat/web/energy/database"
+        },
+        "dc_capacity_live_mw": {
+          "value": 250,
+          "year": 2024,
+          "source": "JLL EMEA Data Centres Q4 2024 — Copenhagen + hyperscale campuses",
+          "url": "https://www.jll.com/en/insights"
+        },
+        "dc_capacity_planned_mw": {
+          "value": 400,
+          "year": 2024,
+          "source": "JLL EMEA Data Centres Q4 2024 — Microsoft, Meta, AWS pipelines",
+          "url": "https://www.jll.com/en/insights"
+        },
+        "power_per_capita_kwh": {
+          "value": 5547.6743,
+          "year": 2025,
+          "source": "Our World in Data (Ember 'Yearly Electricity Data')",
+          "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation"
+        },
+        "carbon_intensity_gco2_kwh": {
+          "value": 114.41,
+          "year": 2025,
+          "source": "Our World in Data (Ember 'Carbon intensity of electricity')",
+          "url": "https://ourworldindata.org/grapher/carbon-intensity-electricity"
+        },
+        "tertiary_grad_pct": {
+          "value": 33.6215669364704,
+          "year": 2023,
+          "source": "World Bank Indicators — Educational attainment ≥ Bachelor's (% of pop 25+, SE.TER.CUAT.BA.ZS)",
+          "url": "https://data.worldbank.org/indicator/SE.TER.CUAT.BA.ZS"
+        }
+      }
+    },
+    {
+      "iso2": "FI",
+      "name": "Finland",
+      "flag": "🇫🇮",
+      "region": "Northern Europe",
+      "anchors": {
+        "capital": {
+          "name": "Helsinki",
+          "lon": 24.9384,
+          "lat": 60.1699
+        },
+        "dc_metro": {
+          "name": "Helsinki",
+          "lon": 24.9384,
+          "lat": 60.1699
+        }
+      },
+      "factors": {
+        "demand_2027_twh": {
+          "value": 4.0,
+          "year": 2027,
+          "source": "Fingrid long-term forecast 2024",
+          "url": "https://www.fingrid.fi/en/"
+        },
+        "grid_connect_years": {
+          "value": 4.0,
+          "year": 2024,
+          "source": "Fingrid Verkkokehittämissuunnitelma 2024",
+          "url": "https://www.fingrid.fi/en/"
+        },
+        "grid_investment_usdbn": {
+          "value": 12.0,
+          "year": 2030,
+          "source": "Fingrid Verkkokehittämissuunnitelma 2024",
+          "url": "https://www.fingrid.fi/en/"
+        },
+        "bandwidth_gbps": {
+          "value": 0.16,
+          "year": 2024,
+          "source": "Ookla Speedtest Global Index",
+          "url": "https://www.speedtest.net/global-index"
+        },
+        "construction_cost_usd_mw": {
+          "value": 10000000.0,
+          "year": 2024,
+          "source": "Turner & Townsend DC Cost Index 2024 — Helsinki",
+          "url": "https://www.turnerandtownsend.com/"
+        },
+        "power_cost_usd_kwh": {
+          "value": 0.09,
+          "year": 2024,
+          "source": "Eurostat NRG_PC_205 — Band IE",
+          "url": "https://ec.europa.eu/eurostat/web/energy/database"
+        },
+        "dc_capacity_live_mw": {
+          "value": 130,
+          "year": 2024,
+          "source": "datacentermap.com + Google Hamina campus + Microsoft Espoo",
+          "url": "https://www.datacentermap.com/"
+        },
+        "dc_capacity_planned_mw": {
+          "value": 300,
+          "year": 2024,
+          "source": "datacentermap.com + Microsoft Espoo + Google Hamina expansion",
+          "url": "https://www.datacentermap.com/"
+        },
+        "power_per_capita_kwh": {
+          "value": 14635.462,
+          "year": 2025,
+          "source": "Our World in Data (Ember 'Yearly Electricity Data')",
+          "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation"
+        },
+        "carbon_intensity_gco2_kwh": {
+          "value": 57.47,
+          "year": 2025,
+          "source": "Our World in Data (Ember 'Carbon intensity of electricity')",
+          "url": "https://ourworldindata.org/grapher/carbon-intensity-electricity"
+        },
+        "tertiary_grad_pct": {
+          "value": 29.8881473990903,
+          "year": 2023,
+          "source": "World Bank Indicators — Educational attainment ≥ Bachelor's (% of pop 25+, SE.TER.CUAT.BA.ZS)",
+          "url": "https://data.worldbank.org/indicator/SE.TER.CUAT.BA.ZS"
+        }
+      }
+    },
+    {
+      "iso2": "IS",
+      "name": "Iceland",
+      "flag": "🇮🇸",
+      "region": "Northern Europe",
+      "anchors": {
+        "capital": {
+          "name": "Reykjavik",
+          "lon": -21.9426,
+          "lat": 64.1466
+        },
+        "dc_metro": {
+          "name": "Reykjavik",
+          "lon": -21.9426,
+          "lat": 64.1466
+        }
+      },
+      "factors": {
+        "grid_connect_years": {
+          "value": 3.0,
+          "year": 2024,
+          "source": "Landsnet Kerfisáætlun 2024-2033",
+          "url": "https://www.landsnet.is/english/"
+        },
+        "bandwidth_gbps": {
+          "value": 0.28,
+          "year": 2024,
+          "source": "Ookla Speedtest Global Index",
+          "url": "https://www.speedtest.net/global-index"
+        },
+        "power_cost_usd_kwh": {
+          "value": 0.05,
+          "year": 2024,
+          "source": "Landsvirkjun industrial tariff (hydropower)",
+          "url": "https://www.landsvirkjun.com/"
+        },
+        "power_per_capita_kwh": {
+          "value": 48423.5,
+          "year": 2024,
+          "source": "Our World in Data (Ember 'Yearly Electricity Data')",
+          "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation"
+        },
+        "carbon_intensity_gco2_kwh": {
+          "value": 27.82,
+          "year": 2024,
+          "source": "Our World in Data (Ember 'Carbon intensity of electricity')",
+          "url": "https://ourworldindata.org/grapher/carbon-intensity-electricity"
+        },
+        "rd_techs_per_million": {
+          "value": 2371.46113,
+          "year": 2017,
+          "source": "World Bank Indicators — Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",
+          "url": "https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6"
+        },
+        "tertiary_grad_pct": {
+          "value": 34.4636962573314,
+          "year": 2023,
+          "source": "World Bank Indicators — Educational attainment ≥ Bachelor's (% of pop 25+, SE.TER.CUAT.BA.ZS)",
+          "url": "https://data.worldbank.org/indicator/SE.TER.CUAT.BA.ZS"
+        }
+      }
+    },
+    {
+      "iso2": "ES",
+      "name": "Spain",
+      "flag": "🇪🇸",
+      "region": "Southern Europe",
+      "anchors": {
+        "capital": {
+          "name": "Madrid",
+          "lon": -3.7038,
+          "lat": 40.4168
+        },
+        "dc_metro": {
+          "name": "Madrid",
+          "lon": -3.7038,
+          "lat": 40.4168
+        }
+      },
+      "factors": {
+        "demand_2027_twh": {
+          "value": 5.0,
+          "year": 2027,
+          "source": "JLL EMEA Data Centres Q4 2024 — Madrid emerging cluster",
+          "url": "https://www.jll.com/en/insights"
+        },
+        "grid_connect_years": {
+          "value": 4.0,
+          "year": 2024,
+          "source": "REE 'Planificación de la red de transporte 2021-2026'",
+          "url": "https://www.ree.es/en"
+        },
+        "grid_investment_usdbn": {
+          "value": 35.0,
+          "year": 2030,
+          "source": "REE 'Planificación de la red de transporte 2021-2026' + 2027-2030 outlook",
+          "url": "https://www.ree.es/en"
+        },
+        "bandwidth_gbps": {
+          "value": 0.23,
+          "year": 2024,
+          "source": "Ookla Speedtest Global Index",
+          "url": "https://www.speedtest.net/global-index"
+        },
+        "bandwidth_2030_gbps": {
+          "value": 1.0,
+          "year": 2030,
+          "source": "Plan España Digital 2026 (extended)",
+          "url": "https://espanadigital.gob.es/"
+        },
+        "construction_cost_usd_mw": {
+          "value": 9500000.0,
+          "year": 2024,
+          "source": "Cushman & Wakefield Global DC Construction Cost Guide 2024 — Madrid",
+          "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-construction-cost-guide"
+        },
+        "power_cost_usd_kwh": {
+          "value": 0.15,
+          "year": 2024,
+          "source": "Eurostat NRG_PC_205 — Band IE",
+          "url": "https://ec.europa.eu/eurostat/web/energy/database"
+        },
+        "dc_capacity_live_mw": {
+          "value": 280,
+          "year": 2024,
+          "source": "JLL EMEA Data Centres Q4 2024 — Madrid emerging market",
+          "url": "https://www.jll.com/en/insights"
+        },
+        "dc_capacity_planned_mw": {
+          "value": 600,
+          "year": 2024,
+          "source": "JLL EMEA Data Centres Q4 2024 — Madrid pipeline boom",
+          "url": "https://www.jll.com/en/insights"
+        },
+        "power_per_capita_kwh": {
+          "value": 6011.4897,
+          "year": 2025,
+          "source": "Our World in Data (Ember 'Yearly Electricity Data')",
+          "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation"
+        },
+        "carbon_intensity_gco2_kwh": {
+          "value": 153.6,
+          "year": 2025,
+          "source": "Our World in Data (Ember 'Carbon intensity of electricity')",
+          "url": "https://ourworldindata.org/grapher/carbon-intensity-electricity"
+        },
+        "rd_techs_per_million": {
+          "value": 1264.92042,
+          "year": 2017,
+          "source": "World Bank Indicators — Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",
+          "url": "https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6"
+        },
+        "tertiary_grad_pct": {
+          "value": 25.0426560264041,
+          "year": 2023,
+          "source": "World Bank Indicators — Educational attainment ≥ Bachelor's (% of pop 25+, SE.TER.CUAT.BA.ZS)",
+          "url": "https://data.worldbank.org/indicator/SE.TER.CUAT.BA.ZS"
+        }
+      }
+    },
+    {
+      "iso2": "PT",
+      "name": "Portugal",
+      "flag": "🇵🇹",
+      "region": "Southern Europe",
+      "anchors": {
+        "capital": {
+          "name": "Lisbon",
+          "lon": -9.1393,
+          "lat": 38.7223
+        },
+        "dc_metro": {
+          "name": "Lisbon",
+          "lon": -9.1393,
+          "lat": 38.7223
+        }
+      },
+      "factors": {
+        "grid_connect_years": {
+          "value": 4.0,
+          "year": 2024,
+          "source": "REN PDIRT-E 2024",
+          "url": "https://www.ren.pt/en-GB/"
+        },
+        "grid_investment_usdbn": {
+          "value": 6.0,
+          "year": 2030,
+          "source": "REN PDIRT-E 2024",
+          "url": "https://www.ren.pt/"
+        },
+        "bandwidth_gbps": {
+          "value": 0.17,
+          "year": 2024,
+          "source": "Ookla Speedtest Global Index",
+          "url": "https://www.speedtest.net/global-index"
+        },
+        "construction_cost_usd_mw": {
+          "value": 9000000.0,
+          "year": 2024,
+          "source": "Turner & Townsend DC Cost Index 2024 — Lisbon",
+          "url": "https://www.turnerandtownsend.com/"
+        },
+        "power_cost_usd_kwh": {
+          "value": 0.16,
+          "year": 2024,
+          "source": "Eurostat NRG_PC_205 — Band IE",
+          "url": "https://ec.europa.eu/eurostat/web/energy/database"
+        },
+        "dc_capacity_live_mw": {
+          "value": 80,
+          "year": 2024,
+          "source": "datacentermap.com + Start Campus Sines announcement",
+          "url": "https://www.datacentermap.com/"
+        },
+        "dc_capacity_planned_mw": {
+          "value": 400,
+          "year": 2024,
+          "source": "Start Campus Sines + datacentermap.com",
+          "url": "https://www.datacentermap.com/"
+        },
+        "power_per_capita_kwh": {
+          "value": 4910.76,
+          "year": 2025,
+          "source": "Our World in Data (Ember 'Yearly Electricity Data')",
+          "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation"
+        },
+        "carbon_intensity_gco2_kwh": {
+          "value": 127.91,
+          "year": 2025,
+          "source": "Our World in Data (Ember 'Carbon intensity of electricity')",
+          "url": "https://ourworldindata.org/grapher/carbon-intensity-electricity"
+        },
+        "rd_techs_per_million": {
+          "value": 780.06385,
+          "year": 2017,
+          "source": "World Bank Indicators — Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",
+          "url": "https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6"
+        },
+        "tertiary_grad_pct": {
+          "value": 23.5028353899237,
+          "year": 2023,
+          "source": "World Bank Indicators — Educational attainment ≥ Bachelor's (% of pop 25+, SE.TER.CUAT.BA.ZS)",
+          "url": "https://data.worldbank.org/indicator/SE.TER.CUAT.BA.ZS"
+        }
+      }
+    },
+    {
+      "iso2": "IT",
+      "name": "Italy",
+      "flag": "🇮🇹",
+      "region": "Southern Europe",
+      "anchors": {
+        "capital": {
+          "name": "Rome",
+          "lon": 12.4964,
+          "lat": 41.9028
+        },
+        "dc_metro": {
+          "name": "Milan",
+          "lon": 9.19,
+          "lat": 45.4642
+        }
+      },
+      "factors": {
+        "demand_2027_twh": {
+          "value": 4.0,
+          "year": 2027,
+          "source": "JLL EMEA Data Centres Q4 2024 — Milan emerging cluster",
+          "url": "https://www.jll.com/en/insights"
+        },
+        "grid_connect_years": {
+          "value": 4.5,
+          "year": 2024,
+          "source": "Terna Piano di Sviluppo 2024",
+          "url": "https://www.terna.it/en"
+        },
+        "grid_investment_usdbn": {
+          "value": 55.0,
+          "year": 2030,
+          "source": "Terna 'Piano di Sviluppo' 2024",
+          "url": "https://www.terna.it/en"
+        },
+        "bandwidth_gbps": {
+          "value": 0.12,
+          "year": 2024,
+          "source": "Ookla Speedtest Global Index",
+          "url": "https://www.speedtest.net/global-index"
+        },
+        "bandwidth_2030_gbps": {
+          "value": 1.0,
+          "year": 2030,
+          "source": "Italia Domani Banda Ultra Larga",
+          "url": "https://italiadomani.gov.it/"
+        },
+        "construction_cost_usd_mw": {
+          "value": 9500000.0,
+          "year": 2024,
+          "source": "Cushman & Wakefield Global DC Construction Cost Guide 2024 — Milan",
+          "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-construction-cost-guide"
+        },
+        "power_cost_usd_kwh": {
+          "value": 0.21,
+          "year": 2024,
+          "source": "Eurostat NRG_PC_205 — Band IE",
+          "url": "https://ec.europa.eu/eurostat/web/energy/database"
+        },
+        "dc_capacity_live_mw": {
+          "value": 220,
+          "year": 2024,
+          "source": "JLL EMEA Data Centres Q4 2024 — Milan emerging market",
+          "url": "https://www.jll.com/en/insights"
+        },
+        "dc_capacity_planned_mw": {
+          "value": 500,
+          "year": 2024,
+          "source": "JLL EMEA Data Centres Q4 2024 — Milan pipeline",
+          "url": "https://www.jll.com/en/insights"
+        },
+        "power_per_capita_kwh": {
+          "value": 4475.346,
+          "year": 2025,
+          "source": "Our World in Data (Ember 'Yearly Electricity Data')",
+          "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation"
+        },
+        "carbon_intensity_gco2_kwh": {
+          "value": 284.78,
+          "year": 2025,
+          "source": "Our World in Data (Ember 'Carbon intensity of electricity')",
+          "url": "https://ourworldindata.org/grapher/carbon-intensity-electricity"
+        },
+        "tertiary_grad_pct": {
+          "value": 17.5816398207436,
+          "year": 2023,
+          "source": "World Bank Indicators — Educational attainment ≥ Bachelor's (% of pop 25+, SE.TER.CUAT.BA.ZS)",
+          "url": "https://data.worldbank.org/indicator/SE.TER.CUAT.BA.ZS"
+        }
+      }
+    },
+    {
+      "iso2": "GR",
+      "name": "Greece",
+      "flag": "🇬🇷",
+      "region": "Southern Europe",
+      "anchors": {
+        "capital": {
+          "name": "Athens",
+          "lon": 23.7275,
+          "lat": 37.9838
+        },
+        "dc_metro": {
+          "name": "Athens",
+          "lon": 23.7275,
+          "lat": 37.9838
+        }
+      },
+      "factors": {
+        "grid_connect_years": {
+          "value": 5.0,
+          "year": 2024,
+          "source": "IPTO/ADMIE Ten-Year Network Development Plan 2024-2033",
+          "url": "https://www.admie.gr/en"
+        },
+        "grid_investment_usdbn": {
+          "value": 7.5,
+          "year": 2030,
+          "source": "ADMIE Ten-Year Network Development Plan 2024-2033",
+          "url": "https://www.admie.gr/en"
+        },
+        "bandwidth_gbps": {
+          "value": 0.1,
+          "year": 2024,
+          "source": "Ookla Speedtest Global Index",
+          "url": "https://www.speedtest.net/global-index"
+        },
+        "construction_cost_usd_mw": {
+          "value": 8500000.0,
+          "year": 2024,
+          "source": "Turner & Townsend DC Cost Index 2024 — Athens",
+          "url": "https://www.turnerandtownsend.com/"
+        },
+        "power_cost_usd_kwh": {
+          "value": 0.17,
+          "year": 2024,
+          "source": "Eurostat NRG_PC_205 — Band IE",
+          "url": "https://ec.europa.eu/eurostat/web/energy/database"
+        },
+        "dc_capacity_live_mw": {
+          "value": 35,
+          "year": 2024,
+          "source": "datacentermap.com — Athens emerging",
+          "url": "https://www.datacentermap.com/"
+        },
+        "dc_capacity_planned_mw": {
+          "value": 250,
+          "year": 2024,
+          "source": "datacentermap.com + Microsoft + Lamda hyperscale announcements",
+          "url": "https://www.datacentermap.com/"
+        },
+        "power_per_capita_kwh": {
+          "value": 5862.853,
+          "year": 2025,
+          "source": "Our World in Data (Ember 'Yearly Electricity Data')",
+          "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation"
+        },
+        "carbon_intensity_gco2_kwh": {
+          "value": 315.09,
+          "year": 2025,
+          "source": "Our World in Data (Ember 'Carbon intensity of electricity')",
+          "url": "https://ourworldindata.org/grapher/carbon-intensity-electricity"
+        },
+        "tertiary_grad_pct": {
+          "value": 28.0326523757238,
+          "year": 2023,
+          "source": "World Bank Indicators — Educational attainment ≥ Bachelor's (% of pop 25+, SE.TER.CUAT.BA.ZS)",
+          "url": "https://data.worldbank.org/indicator/SE.TER.CUAT.BA.ZS"
+        }
+      }
+    },
+    {
+      "iso2": "MT",
+      "name": "Malta",
+      "flag": "🇲🇹",
+      "region": "Southern Europe",
+      "anchors": {
+        "capital": {
+          "name": "Valletta",
+          "lon": 14.5146,
+          "lat": 35.8989
+        },
+        "dc_metro": {
+          "name": "Valletta",
+          "lon": 14.5146,
+          "lat": 35.8989
+        }
+      },
+      "factors": {
+        "power_per_capita_kwh": {
+          "value": 4015.3574,
+          "year": 2025,
+          "source": "Our World in Data (Ember 'Yearly Electricity Data')",
+          "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation"
+        },
+        "carbon_intensity_gco2_kwh": {
+          "value": 484.02,
+          "year": 2025,
+          "source": "Our World in Data (Ember 'Carbon intensity of electricity')",
+          "url": "https://ourworldindata.org/grapher/carbon-intensity-electricity"
+        },
+        "rd_techs_per_million": {
+          "value": 885.98028,
+          "year": 2017,
+          "source": "World Bank Indicators — Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",
+          "url": "https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6"
+        },
+        "tertiary_grad_pct": {
+          "value": 26.3049825063073,
+          "year": 2023,
+          "source": "World Bank Indicators — Educational attainment ≥ Bachelor's (% of pop 25+, SE.TER.CUAT.BA.ZS)",
+          "url": "https://data.worldbank.org/indicator/SE.TER.CUAT.BA.ZS"
+        }
+      }
+    },
+    {
+      "iso2": "CY",
+      "name": "Cyprus",
+      "flag": "🇨🇾",
+      "region": "Southern Europe",
+      "anchors": {
+        "capital": {
+          "name": "Nicosia",
+          "lon": 33.3823,
+          "lat": 35.1856
+        },
+        "dc_metro": {
+          "name": "Nicosia",
+          "lon": 33.3823,
+          "lat": 35.1856
+        }
+      },
+      "factors": {
+        "power_per_capita_kwh": {
+          "value": 4311.4956,
+          "year": 2025,
+          "source": "Our World in Data (Ember 'Yearly Electricity Data')",
+          "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation"
+        },
+        "carbon_intensity_gco2_kwh": {
+          "value": 489.0,
+          "year": 2025,
+          "source": "Our World in Data (Ember 'Carbon intensity of electricity')",
+          "url": "https://ourworldindata.org/grapher/carbon-intensity-electricity"
+        },
+        "rd_techs_per_million": {
+          "value": 325.14267,
+          "year": 2017,
+          "source": "World Bank Indicators — Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",
+          "url": "https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6"
+        },
+        "tertiary_grad_pct": {
+          "value": 34.7165099830882,
+          "year": 2023,
+          "source": "World Bank Indicators — Educational attainment ≥ Bachelor's (% of pop 25+, SE.TER.CUAT.BA.ZS)",
+          "url": "https://data.worldbank.org/indicator/SE.TER.CUAT.BA.ZS"
+        }
+      }
+    },
+    {
+      "iso2": "PL",
+      "name": "Poland",
+      "flag": "🇵🇱",
+      "region": "Central & Eastern Europe",
+      "anchors": {
+        "capital": {
+          "name": "Warsaw",
+          "lon": 21.0122,
+          "lat": 52.2297
+        },
+        "dc_metro": {
+          "name": "Warsaw",
+          "lon": 21.0122,
+          "lat": 52.2297
+        }
+      },
+      "factors": {
+        "demand_2027_twh": {
+          "value": 2.0,
+          "year": 2027,
+          "source": "JLL EMEA Data Centres Q4 2024 — Warsaw emerging cluster",
+          "url": "https://www.jll.com/en/insights"
+        },
+        "grid_connect_years": {
+          "value": 5.0,
+          "year": 2024,
+          "source": "PSE Plan rozwoju sieci 2025-2034",
+          "url": "https://www.pse.pl/"
+        },
+        "grid_investment_usdbn": {
+          "value": 28.0,
+          "year": 2030,
+          "source": "PSE 10-year plan 2025-2034",
+          "url": "https://www.pse.pl/"
+        },
+        "bandwidth_gbps": {
+          "value": 0.13,
+          "year": 2024,
+          "source": "Ookla Speedtest Global Index",
+          "url": "https://www.speedtest.net/global-index"
+        },
+        "construction_cost_usd_mw": {
+          "value": 8500000.0,
+          "year": 2024,
+          "source": "Cushman & Wakefield Global DC Construction Cost Guide 2024 — Warsaw",
+          "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-construction-cost-guide"
+        },
+        "power_cost_usd_kwh": {
+          "value": 0.13,
+          "year": 2024,
+          "source": "Eurostat NRG_PC_205 — Band IE",
+          "url": "https://ec.europa.eu/eurostat/web/energy/database"
+        },
+        "dc_capacity_live_mw": {
+          "value": 130,
+          "year": 2024,
+          "source": "JLL EMEA Data Centres Q4 2024 — Warsaw emerging cluster",
+          "url": "https://www.jll.com/en/insights"
+        },
+        "dc_capacity_planned_mw": {
+          "value": 350,
+          "year": 2024,
+          "source": "JLL EMEA Data Centres Q4 2024 — Warsaw pipeline + AtmanData",
+          "url": "https://www.jll.com/en/insights"
+        },
+        "power_per_capita_kwh": {
+          "value": 4542.6284,
+          "year": 2025,
+          "source": "Our World in Data (Ember 'Yearly Electricity Data')",
+          "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation"
+        },
+        "carbon_intensity_gco2_kwh": {
+          "value": 588.6,
+          "year": 2025,
+          "source": "Our World in Data (Ember 'Carbon intensity of electricity')",
+          "url": "https://ourworldindata.org/grapher/carbon-intensity-electricity"
+        },
+        "rd_techs_per_million": {
+          "value": 415.27482,
+          "year": 2017,
+          "source": "World Bank Indicators — Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",
+          "url": "https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6"
+        },
+        "tertiary_grad_pct": {
+          "value": 27.7237205505371,
+          "year": 2021,
+          "source": "World Bank Indicators — Educational attainment ≥ Bachelor's (% of pop 25+, SE.TER.CUAT.BA.ZS)",
+          "url": "https://data.worldbank.org/indicator/SE.TER.CUAT.BA.ZS"
+        }
+      }
+    },
+    {
+      "iso2": "CZ",
+      "name": "Czechia",
+      "flag": "🇨🇿",
+      "region": "Central & Eastern Europe",
+      "anchors": {
+        "capital": {
+          "name": "Prague",
+          "lon": 14.4378,
+          "lat": 50.0755
+        },
+        "dc_metro": {
+          "name": "Prague",
+          "lon": 14.4378,
+          "lat": 50.0755
+        }
+      },
+      "factors": {
+        "grid_connect_years": {
+          "value": 5.0,
+          "year": 2024,
+          "source": "ČEPS Network Development Plan 2024",
+          "url": "https://www.ceps.cz/en/"
+        },
+        "bandwidth_gbps": {
+          "value": 0.13,
+          "year": 2024,
+          "source": "Ookla Speedtest Global Index",
+          "url": "https://www.speedtest.net/global-index"
+        },
+        "construction_cost_usd_mw": {
+          "value": 8500000.0,
+          "year": 2024,
+          "source": "Turner & Townsend DC Cost Index 2024 — Prague",
+          "url": "https://www.turnerandtownsend.com/"
+        },
+        "power_cost_usd_kwh": {
+          "value": 0.12,
+          "year": 2024,
+          "source": "Eurostat NRG_PC_205 — Band IE",
+          "url": "https://ec.europa.eu/eurostat/web/energy/database"
+        },
+        "dc_capacity_live_mw": {
+          "value": 75,
+          "year": 2024,
+          "source": "datacentermap.com — Prague",
+          "url": "https://www.datacentermap.com/"
+        },
+        "power_per_capita_kwh": {
+          "value": 7116.4375,
+          "year": 2025,
+          "source": "Our World in Data (Ember 'Yearly Electricity Data')",
+          "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation"
+        },
+        "carbon_intensity_gco2_kwh": {
+          "value": 401.46,
+          "year": 2025,
+          "source": "Our World in Data (Ember 'Carbon intensity of electricity')",
+          "url": "https://ourworldindata.org/grapher/carbon-intensity-electricity"
+        },
+        "rd_techs_per_million": {
+          "value": 2186.3591,
+          "year": 2018,
+          "source": "World Bank Indicators — Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",
+          "url": "https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6"
+        },
+        "tertiary_grad_pct": {
+          "value": 21.9581005821149,
+          "year": 2023,
+          "source": "World Bank Indicators — Educational attainment ≥ Bachelor's (% of pop 25+, SE.TER.CUAT.BA.ZS)",
+          "url": "https://data.worldbank.org/indicator/SE.TER.CUAT.BA.ZS"
+        }
+      }
+    },
+    {
+      "iso2": "SK",
+      "name": "Slovakia",
+      "flag": "🇸🇰",
+      "region": "Central & Eastern Europe",
+      "anchors": {
+        "capital": {
+          "name": "Bratislava",
+          "lon": 17.1077,
+          "lat": 48.1486
+        },
+        "dc_metro": {
+          "name": "Bratislava",
+          "lon": 17.1077,
+          "lat": 48.1486
+        }
+      },
+      "factors": {
+        "grid_connect_years": {
+          "value": 5.0,
+          "year": 2024,
+          "source": "SEPS 10-year development plan",
+          "url": "https://www.sepsas.sk/"
+        },
+        "power_per_capita_kwh": {
+          "value": 5315.191,
+          "year": 2025,
+          "source": "Our World in Data (Ember 'Yearly Electricity Data')",
+          "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation"
+        },
+        "carbon_intensity_gco2_kwh": {
+          "value": 94.85,
+          "year": 2025,
+          "source": "Our World in Data (Ember 'Carbon intensity of electricity')",
+          "url": "https://ourworldindata.org/grapher/carbon-intensity-electricity"
+        },
+        "rd_techs_per_million": {
+          "value": 520.62951,
+          "year": 2018,
+          "source": "World Bank Indicators — Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",
+          "url": "https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6"
+        },
+        "tertiary_grad_pct": {
+          "value": 25.2886278348116,
+          "year": 2023,
+          "source": "World Bank Indicators — Educational attainment ≥ Bachelor's (% of pop 25+, SE.TER.CUAT.BA.ZS)",
+          "url": "https://data.worldbank.org/indicator/SE.TER.CUAT.BA.ZS"
+        }
+      }
+    },
+    {
+      "iso2": "HU",
+      "name": "Hungary",
+      "flag": "🇭🇺",
+      "region": "Central & Eastern Europe",
+      "anchors": {
+        "capital": {
+          "name": "Budapest",
+          "lon": 19.0402,
+          "lat": 47.4979
+        },
+        "dc_metro": {
+          "name": "Budapest",
+          "lon": 19.0402,
+          "lat": 47.4979
+        }
+      },
+      "factors": {
+        "grid_connect_years": {
+          "value": 4.5,
+          "year": 2024,
+          "source": "MAVIR network development plan 2024",
+          "url": "https://www.mavir.hu/"
+        },
+        "bandwidth_gbps": {
+          "value": 0.14,
+          "year": 2024,
+          "source": "Ookla Speedtest Global Index",
+          "url": "https://www.speedtest.net/global-index"
+        },
+        "construction_cost_usd_mw": {
+          "value": 8000000.0,
+          "year": 2024,
+          "source": "Turner & Townsend DC Cost Index 2024 — Budapest",
+          "url": "https://www.turnerandtownsend.com/"
+        },
+        "power_cost_usd_kwh": {
+          "value": 0.12,
+          "year": 2024,
+          "source": "Eurostat NRG_PC_205 — Band IE",
+          "url": "https://ec.europa.eu/eurostat/web/energy/database"
+        },
+        "power_per_capita_kwh": {
+          "value": 4177.617,
+          "year": 2025,
+          "source": "Our World in Data (Ember 'Yearly Electricity Data')",
+          "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation"
+        },
+        "carbon_intensity_gco2_kwh": {
+          "value": 163.02,
+          "year": 2025,
+          "source": "Our World in Data (Ember 'Carbon intensity of electricity')",
+          "url": "https://ourworldindata.org/grapher/carbon-intensity-electricity"
+        },
+        "rd_techs_per_million": {
+          "value": 770.31206,
+          "year": 2017,
+          "source": "World Bank Indicators — Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",
+          "url": "https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6"
+        },
+        "tertiary_grad_pct": {
+          "value": 26.3525127220673,
+          "year": 2023,
+          "source": "World Bank Indicators — Educational attainment ≥ Bachelor's (% of pop 25+, SE.TER.CUAT.BA.ZS)",
+          "url": "https://data.worldbank.org/indicator/SE.TER.CUAT.BA.ZS"
+        }
+      }
+    },
+    {
+      "iso2": "RO",
+      "name": "Romania",
+      "flag": "🇷🇴",
+      "region": "Central & Eastern Europe",
+      "anchors": {
+        "capital": {
+          "name": "Bucharest",
+          "lon": 26.1025,
+          "lat": 44.4268
+        },
+        "dc_metro": {
+          "name": "Bucharest",
+          "lon": 26.1025,
+          "lat": 44.4268
+        }
+      },
+      "factors": {
+        "grid_connect_years": {
+          "value": 5.5,
+          "year": 2024,
+          "source": "Transelectrica Network Development Plan 2024",
+          "url": "https://www.transelectrica.ro/en"
+        },
+        "grid_investment_usdbn": {
+          "value": 8.0,
+          "year": 2030,
+          "source": "Transelectrica TYNDP 2024",
+          "url": "https://www.transelectrica.ro/en"
+        },
+        "bandwidth_gbps": {
+          "value": 0.18,
+          "year": 2024,
+          "source": "Ookla Speedtest Global Index",
+          "url": "https://www.speedtest.net/global-index"
+        },
+        "construction_cost_usd_mw": {
+          "value": 7500000.0,
+          "year": 2024,
+          "source": "Turner & Townsend DC Cost Index 2024 — Bucharest",
+          "url": "https://www.turnerandtownsend.com/"
+        },
+        "power_cost_usd_kwh": {
+          "value": 0.14,
+          "year": 2024,
+          "source": "Eurostat NRG_PC_205 — Band IE",
+          "url": "https://ec.europa.eu/eurostat/web/energy/database"
+        },
+        "dc_capacity_live_mw": {
+          "value": 70,
+          "year": 2024,
+          "source": "datacentermap.com — Bucharest",
+          "url": "https://www.datacentermap.com/"
+        },
+        "dc_capacity_planned_mw": {
+          "value": 80,
+          "year": 2024,
+          "source": "datacentermap.com — Bucharest pipeline",
+          "url": "https://www.datacentermap.com/"
+        },
+        "power_per_capita_kwh": {
+          "value": 2634.2434,
+          "year": 2025,
+          "source": "Our World in Data (Ember 'Yearly Electricity Data')",
+          "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation"
+        },
+        "carbon_intensity_gco2_kwh": {
+          "value": 250.75,
+          "year": 2025,
+          "source": "Our World in Data (Ember 'Carbon intensity of electricity')",
+          "url": "https://ourworldindata.org/grapher/carbon-intensity-electricity"
+        },
+        "rd_techs_per_million": {
+          "value": 278.82409,
+          "year": 2017,
+          "source": "World Bank Indicators — Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",
+          "url": "https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6"
+        },
+        "tertiary_grad_pct": {
+          "value": 14.6010893280568,
+          "year": 2023,
+          "source": "World Bank Indicators — Educational attainment ≥ Bachelor's (% of pop 25+, SE.TER.CUAT.BA.ZS)",
+          "url": "https://data.worldbank.org/indicator/SE.TER.CUAT.BA.ZS"
+        }
+      }
+    },
+    {
+      "iso2": "BG",
+      "name": "Bulgaria",
+      "flag": "🇧🇬",
+      "region": "Central & Eastern Europe",
+      "anchors": {
+        "capital": {
+          "name": "Sofia",
+          "lon": 23.3219,
+          "lat": 42.6977
+        },
+        "dc_metro": {
+          "name": "Sofia",
+          "lon": 23.3219,
+          "lat": 42.6977
+        }
+      },
+      "factors": {
+        "power_per_capita_kwh": {
+          "value": 5653.389,
+          "year": 2025,
+          "source": "Our World in Data (Ember 'Yearly Electricity Data')",
+          "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation"
+        },
+        "carbon_intensity_gco2_kwh": {
+          "value": 275.55,
+          "year": 2025,
+          "source": "Our World in Data (Ember 'Carbon intensity of electricity')",
+          "url": "https://ourworldindata.org/grapher/carbon-intensity-electricity"
+        },
+        "tertiary_grad_pct": {
+          "value": 26.3688540109966,
+          "year": 2023,
+          "source": "World Bank Indicators — Educational attainment ≥ Bachelor's (% of pop 25+, SE.TER.CUAT.BA.ZS)",
+          "url": "https://data.worldbank.org/indicator/SE.TER.CUAT.BA.ZS"
+        }
+      }
+    },
+    {
+      "iso2": "HR",
+      "name": "Croatia",
+      "flag": "🇭🇷",
+      "region": "Central & Eastern Europe",
+      "anchors": {
+        "capital": {
+          "name": "Zagreb",
+          "lon": 15.9819,
+          "lat": 45.815
+        },
+        "dc_metro": {
+          "name": "Zagreb",
+          "lon": 15.9819,
+          "lat": 45.815
+        }
+      },
+      "factors": {
+        "power_per_capita_kwh": {
+          "value": 3820.0034,
+          "year": 2025,
+          "source": "Our World in Data (Ember 'Yearly Electricity Data')",
+          "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation"
+        },
+        "carbon_intensity_gco2_kwh": {
+          "value": 158.5,
+          "year": 2025,
+          "source": "Our World in Data (Ember 'Carbon intensity of electricity')",
+          "url": "https://ourworldindata.org/grapher/carbon-intensity-electricity"
+        },
+        "rd_techs_per_million": {
+          "value": 714.10522,
+          "year": 2017,
+          "source": "World Bank Indicators — Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",
+          "url": "https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6"
+        },
+        "tertiary_grad_pct": {
+          "value": 21.9618380926261,
+          "year": 2023,
+          "source": "World Bank Indicators — Educational attainment ≥ Bachelor's (% of pop 25+, SE.TER.CUAT.BA.ZS)",
+          "url": "https://data.worldbank.org/indicator/SE.TER.CUAT.BA.ZS"
+        }
+      }
+    },
+    {
+      "iso2": "SI",
+      "name": "Slovenia",
+      "flag": "🇸🇮",
+      "region": "Central & Eastern Europe",
+      "anchors": {
+        "capital": {
+          "name": "Ljubljana",
+          "lon": 14.5058,
+          "lat": 46.0569
+        },
+        "dc_metro": {
+          "name": "Ljubljana",
+          "lon": 14.5058,
+          "lat": 46.0569
+        }
+      },
+      "factors": {
+        "power_per_capita_kwh": {
+          "value": 7009.688,
+          "year": 2025,
+          "source": "Our World in Data (Ember 'Yearly Electricity Data')",
+          "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation"
+        },
+        "carbon_intensity_gco2_kwh": {
+          "value": 183.29,
+          "year": 2025,
+          "source": "Our World in Data (Ember 'Carbon intensity of electricity')",
+          "url": "https://ourworldindata.org/grapher/carbon-intensity-electricity"
+        },
+        "rd_techs_per_million": {
+          "value": 1814.20289,
+          "year": 2017,
+          "source": "World Bank Indicators — Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",
+          "url": "https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6"
+        },
+        "tertiary_grad_pct": {
+          "value": 22.0416035512248,
+          "year": 2023,
+          "source": "World Bank Indicators — Educational attainment ≥ Bachelor's (% of pop 25+, SE.TER.CUAT.BA.ZS)",
+          "url": "https://data.worldbank.org/indicator/SE.TER.CUAT.BA.ZS"
+        }
+      }
+    },
+    {
+      "iso2": "RS",
+      "name": "Serbia",
+      "flag": "🇷🇸",
+      "region": "Central & Eastern Europe",
+      "anchors": {
+        "capital": {
+          "name": "Belgrade",
+          "lon": 20.4489,
+          "lat": 44.7866
+        },
+        "dc_metro": {
+          "name": "Belgrade",
+          "lon": 20.4489,
+          "lat": 44.7866
+        }
+      },
+      "factors": {
+        "power_per_capita_kwh": {
+          "value": 5474.6284,
+          "year": 2025,
+          "source": "Our World in Data (Ember 'Yearly Electricity Data')",
+          "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation"
+        },
+        "carbon_intensity_gco2_kwh": {
+          "value": 695.8,
+          "year": 2025,
+          "source": "Our World in Data (Ember 'Carbon intensity of electricity')",
+          "url": "https://ourworldindata.org/grapher/carbon-intensity-electricity"
+        },
+        "rd_techs_per_million": {
+          "value": 412.03292,
+          "year": 2018,
+          "source": "World Bank Indicators — Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",
+          "url": "https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6"
+        },
+        "tertiary_grad_pct": {
+          "value": 18.6692014707128,
+          "year": 2023,
+          "source": "World Bank Indicators — Educational attainment ≥ Bachelor's (% of pop 25+, SE.TER.CUAT.BA.ZS)",
+          "url": "https://data.worldbank.org/indicator/SE.TER.CUAT.BA.ZS"
+        }
+      }
+    },
+    {
+      "iso2": "EE",
+      "name": "Estonia",
+      "flag": "🇪🇪",
+      "region": "Central & Eastern Europe",
+      "anchors": {
+        "capital": {
+          "name": "Tallinn",
+          "lon": 24.7536,
+          "lat": 59.437
+        },
+        "dc_metro": {
+          "name": "Tallinn",
+          "lon": 24.7536,
+          "lat": 59.437
+        }
+      },
+      "factors": {
+        "grid_connect_years": {
+          "value": 4.0,
+          "year": 2024,
+          "source": "Elering ENDP 2024",
+          "url": "https://elering.ee/en"
+        },
+        "bandwidth_gbps": {
+          "value": 0.15,
+          "year": 2024,
+          "source": "Ookla Speedtest Global Index",
+          "url": "https://www.speedtest.net/global-index"
+        },
+        "power_cost_usd_kwh": {
+          "value": 0.13,
+          "year": 2024,
+          "source": "Eurostat NRG_PC_205 — Band IE",
+          "url": "https://ec.europa.eu/eurostat/web/energy/database"
+        },
+        "dc_capacity_live_mw": {
+          "value": 25,
+          "year": 2024,
+          "source": "datacentermap.com — Tallinn",
+          "url": "https://www.datacentermap.com/"
+        },
+        "power_per_capita_kwh": {
+          "value": 4545.333,
+          "year": 2025,
+          "source": "Our World in Data (Ember 'Yearly Electricity Data')",
+          "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation"
+        },
+        "carbon_intensity_gco2_kwh": {
+          "value": 319.15,
+          "year": 2025,
+          "source": "Our World in Data (Ember 'Carbon intensity of electricity')",
+          "url": "https://ourworldindata.org/grapher/carbon-intensity-electricity"
+        },
+        "rd_techs_per_million": {
+          "value": 654.84807,
+          "year": 2017,
+          "source": "World Bank Indicators — Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",
+          "url": "https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6"
+        },
+        "tertiary_grad_pct": {
+          "value": 32.9437276359698,
+          "year": 2023,
+          "source": "World Bank Indicators — Educational attainment ≥ Bachelor's (% of pop 25+, SE.TER.CUAT.BA.ZS)",
+          "url": "https://data.worldbank.org/indicator/SE.TER.CUAT.BA.ZS"
+        }
+      }
+    },
+    {
+      "iso2": "LV",
+      "name": "Latvia",
+      "flag": "🇱🇻",
+      "region": "Central & Eastern Europe",
+      "anchors": {
+        "capital": {
+          "name": "Riga",
+          "lon": 24.1052,
+          "lat": 56.9496
+        },
+        "dc_metro": {
+          "name": "Riga",
+          "lon": 24.1052,
+          "lat": 56.9496
+        }
+      },
+      "factors": {
+        "grid_connect_years": {
+          "value": 4.0,
+          "year": 2024,
+          "source": "AST Latvijas elektrotīkla attīstības plāns 2024",
+          "url": "https://www.ast.lv/en"
+        },
+        "bandwidth_gbps": {
+          "value": 0.11,
+          "year": 2024,
+          "source": "Ookla Speedtest Global Index",
+          "url": "https://www.speedtest.net/global-index"
+        },
+        "power_per_capita_kwh": {
+          "value": 3382.6797,
+          "year": 2025,
+          "source": "Our World in Data (Ember 'Yearly Electricity Data')",
+          "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation"
+        },
+        "carbon_intensity_gco2_kwh": {
+          "value": 138.76,
+          "year": 2025,
+          "source": "Our World in Data (Ember 'Carbon intensity of electricity')",
+          "url": "https://ourworldindata.org/grapher/carbon-intensity-electricity"
+        },
+        "tertiary_grad_pct": {
+          "value": 33.2018814850714,
+          "year": 2023,
+          "source": "World Bank Indicators — Educational attainment ≥ Bachelor's (% of pop 25+, SE.TER.CUAT.BA.ZS)",
+          "url": "https://data.worldbank.org/indicator/SE.TER.CUAT.BA.ZS"
+        }
+      }
+    },
+    {
+      "iso2": "LT",
+      "name": "Lithuania",
+      "flag": "🇱🇹",
+      "region": "Central & Eastern Europe",
+      "anchors": {
+        "capital": {
+          "name": "Vilnius",
+          "lon": 25.2797,
+          "lat": 54.6872
+        },
+        "dc_metro": {
+          "name": "Vilnius",
+          "lon": 25.2797,
+          "lat": 54.6872
+        }
+      },
+      "factors": {
+        "grid_connect_years": {
+          "value": 4.0,
+          "year": 2024,
+          "source": "Litgrid Network Development Plan 2024",
+          "url": "https://www.litgrid.eu/"
+        },
+        "bandwidth_gbps": {
+          "value": 0.14,
+          "year": 2024,
+          "source": "Ookla Speedtest Global Index",
+          "url": "https://www.speedtest.net/global-index"
+        },
+        "power_per_capita_kwh": {
+          "value": 3141.1763,
+          "year": 2025,
+          "source": "Our World in Data (Ember 'Yearly Electricity Data')",
+          "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation"
+        },
+        "carbon_intensity_gco2_kwh": {
+          "value": 138.36,
+          "year": 2025,
+          "source": "Our World in Data (Ember 'Carbon intensity of electricity')",
+          "url": "https://ourworldindata.org/grapher/carbon-intensity-electricity"
+        },
+        "tertiary_grad_pct": {
+          "value": 41.3070548478587,
+          "year": 2023,
+          "source": "World Bank Indicators — Educational attainment ≥ Bachelor's (% of pop 25+, SE.TER.CUAT.BA.ZS)",
+          "url": "https://data.worldbank.org/indicator/SE.TER.CUAT.BA.ZS"
+        }
+      }
+    },
+    {
+      "iso2": "AE",
+      "name": "United Arab Emirates",
+      "flag": "🇦🇪",
+      "region": "Middle East",
+      "anchors": {
+        "capital": {
+          "name": "Abu Dhabi",
+          "lon": 54.3773,
+          "lat": 24.4539
+        },
+        "dc_metro": {
+          "name": "Dubai",
+          "lon": 55.2708,
+          "lat": 25.2048
+        }
+      },
+      "factors": {
+        "demand_2027_twh": {
+          "value": 4.5,
+          "year": 2027,
+          "source": "Cushman & Wakefield Global DC Market 2024 — Dubai + Abu Dhabi growth",
+          "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-market-comparison"
+        },
+        "grid_connect_years": {
+          "value": 2.0,
+          "year": 2024,
+          "source": "EWEC / DEWA / TAQA — hyperscale DC connection precedents 2023-2024",
+          "url": "https://www.dewa.gov.ae/"
+        },
+        "grid_investment_usdbn": {
+          "value": 30.0,
+          "year": 2030,
+          "source": "DEWA Strategy 2030 + EWEC + TAQA transmission capex",
+          "url": "https://www.dewa.gov.ae/"
+        },
+        "bandwidth_gbps": {
+          "value": 0.34,
+          "year": 2024,
+          "source": "Ookla Speedtest Global Index",
+          "url": "https://www.speedtest.net/global-index"
+        },
+        "bandwidth_2030_gbps": {
+          "value": 1.5,
+          "year": 2030,
+          "source": "UAE Digital Government Strategy 2025-2030",
+          "url": "https://u.ae/"
+        },
+        "construction_cost_usd_mw": {
+          "value": 9500000.0,
+          "year": 2024,
+          "source": "Cushman & Wakefield Global DC Construction Cost Guide 2024 — Dubai",
+          "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-construction-cost-guide"
+        },
+        "power_cost_usd_kwh": {
+          "value": 0.06,
+          "year": 2024,
+          "source": "DEWA industrial tariff (Dubai)",
+          "url": "https://www.dewa.gov.ae/"
+        },
+        "dc_capacity_live_mw": {
+          "value": 250,
+          "year": 2024,
+          "source": "Cushman & Wakefield Global DC Market 2024 — Dubai + Abu Dhabi",
+          "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-market-comparison"
+        },
+        "dc_capacity_planned_mw": {
+          "value": 450,
+          "year": 2024,
+          "source": "Cushman & Wakefield Global DC Market 2024 — Dubai + AD pipelines",
+          "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-market-comparison"
+        },
+        "power_per_capita_kwh": {
+          "value": 16074.892,
+          "year": 2024,
+          "source": "Our World in Data (Ember 'Yearly Electricity Data')",
+          "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation"
+        },
+        "carbon_intensity_gco2_kwh": {
+          "value": 467.51,
+          "year": 2024,
+          "source": "Our World in Data (Ember 'Carbon intensity of electricity')",
+          "url": "https://ourworldindata.org/grapher/carbon-intensity-electricity"
+        },
+        "rd_techs_per_million": {
+          "value": 889.5377,
+          "year": 2018,
+          "source": "World Bank Indicators — Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",
+          "url": "https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6"
+        },
+        "tertiary_grad_pct": {
+          "value": 52.7169189453125,
+          "year": 2023,
+          "source": "World Bank Indicators — Educational attainment ≥ Bachelor's (% of pop 25+, SE.TER.CUAT.BA.ZS)",
+          "url": "https://data.worldbank.org/indicator/SE.TER.CUAT.BA.ZS"
+        }
+      }
+    },
+    {
+      "iso2": "SA",
+      "name": "Saudi Arabia",
+      "flag": "🇸🇦",
+      "region": "Middle East",
+      "anchors": {
+        "capital": {
+          "name": "Riyadh",
+          "lon": 46.6753,
+          "lat": 24.7136
+        },
+        "dc_metro": {
+          "name": "Riyadh",
+          "lon": 46.6753,
+          "lat": 24.7136
+        }
+      },
+      "factors": {
+        "demand_2027_twh": {
+          "value": 3.5,
+          "year": 2027,
+          "source": "Cushman & Wakefield Global DC Market 2024 — Riyadh hyperscale build-out",
+          "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-market-comparison"
+        },
+        "grid_connect_years": {
+          "value": 2.5,
+          "year": 2024,
+          "source": "Saudi Electricity Company — Vision 2030 hyperscale connection programme",
+          "url": "https://www.se.com.sa/en-us/"
+        },
+        "grid_investment_usdbn": {
+          "value": 120.0,
+          "year": 2030,
+          "source": "Vision 2030 — National Renewable Energy Programme grid capex",
+          "url": "https://www.vision2030.gov.sa/"
+        },
+        "bandwidth_gbps": {
+          "value": 0.09,
+          "year": 2024,
+          "source": "Ookla Speedtest Global Index",
+          "url": "https://www.speedtest.net/global-index"
+        },
+        "bandwidth_2030_gbps": {
+          "value": 1.0,
+          "year": 2030,
+          "source": "CST Saudi Arabia Communications Strategy 2030",
+          "url": "https://www.cst.gov.sa/"
+        },
+        "construction_cost_usd_mw": {
+          "value": 9000000.0,
+          "year": 2024,
+          "source": "Cushman & Wakefield Global DC Construction Cost Guide 2024 — Riyadh",
+          "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-construction-cost-guide"
+        },
+        "power_cost_usd_kwh": {
+          "value": 0.05,
+          "year": 2024,
+          "source": "Saudi Electricity Company industrial tariff",
+          "url": "https://www.se.com.sa/"
+        },
+        "dc_capacity_live_mw": {
+          "value": 180,
+          "year": 2024,
+          "source": "Cushman & Wakefield Global DC Market 2024 — Riyadh hyperscale",
+          "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-market-comparison"
+        },
+        "dc_capacity_planned_mw": {
+          "value": 600,
+          "year": 2024,
+          "source": "Cushman & Wakefield Global DC Market 2024 — Vision 2030 hyperscale build",
+          "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-market-comparison"
+        },
+        "power_per_capita_kwh": {
+          "value": 13386.431,
+          "year": 2024,
+          "source": "Our World in Data (Ember 'Yearly Electricity Data')",
+          "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation"
+        },
+        "carbon_intensity_gco2_kwh": {
+          "value": 691.95,
+          "year": 2024,
+          "source": "Our World in Data (Ember 'Carbon intensity of electricity')",
+          "url": "https://ourworldindata.org/grapher/carbon-intensity-electricity"
+        },
+        "tertiary_grad_pct": {
+          "value": 30.8887484783962,
+          "year": 2023,
+          "source": "World Bank Indicators — Educational attainment ≥ Bachelor's (% of pop 25+, SE.TER.CUAT.BA.ZS)",
+          "url": "https://data.worldbank.org/indicator/SE.TER.CUAT.BA.ZS"
+        }
+      }
+    },
+    {
+      "iso2": "QA",
+      "name": "Qatar",
+      "flag": "🇶🇦",
+      "region": "Middle East",
+      "anchors": {
+        "capital": {
+          "name": "Doha",
+          "lon": 51.531,
+          "lat": 25.2854
+        },
+        "dc_metro": {
+          "name": "Doha",
+          "lon": 51.531,
+          "lat": 25.2854
+        }
+      },
+      "factors": {
+        "grid_connect_years": {
+          "value": 2.5,
+          "year": 2024,
+          "source": "Kahramaa industrial connection programme",
+          "url": "https://www.km.qa/"
+        },
+        "grid_investment_usdbn": {
+          "value": 8.0,
+          "year": 2030,
+          "source": "Kahramaa transmission expansion programme",
+          "url": "https://www.km.qa/"
+        },
+        "bandwidth_gbps": {
+          "value": 0.21,
+          "year": 2024,
+          "source": "Ookla Speedtest Global Index",
+          "url": "https://www.speedtest.net/global-index"
+        },
+        "construction_cost_usd_mw": {
+          "value": 9500000.0,
+          "year": 2024,
+          "source": "Cushman & Wakefield Global DC Construction Cost Guide 2024 — Doha",
+          "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-construction-cost-guide"
+        },
+        "power_cost_usd_kwh": {
+          "value": 0.04,
+          "year": 2024,
+          "source": "Kahramaa industrial tariff",
+          "url": "https://www.km.qa/"
+        },
+        "dc_capacity_live_mw": {
+          "value": 55,
+          "year": 2024,
+          "source": "datacentermap.com + Microsoft Qatar Cloud Region",
+          "url": "https://www.datacentermap.com/"
+        },
+        "dc_capacity_planned_mw": {
+          "value": 150,
+          "year": 2024,
+          "source": "Microsoft + Google + Ooredoo announcements",
+          "url": "https://www.datacentermap.com/"
+        },
+        "power_per_capita_kwh": {
+          "value": 18030.156,
+          "year": 2025,
+          "source": "Our World in Data (Ember 'Yearly Electricity Data')",
+          "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation"
+        },
+        "carbon_intensity_gco2_kwh": {
+          "value": 581.52,
+          "year": 2025,
+          "source": "Our World in Data (Ember 'Carbon intensity of electricity')",
+          "url": "https://ourworldindata.org/grapher/carbon-intensity-electricity"
+        },
+        "rd_techs_per_million": {
+          "value": 397.09787,
+          "year": 2018,
+          "source": "World Bank Indicators — Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",
+          "url": "https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6"
+        },
+        "tertiary_grad_pct": {
+          "value": 30.3933792114258,
+          "year": 2022,
+          "source": "World Bank Indicators — Educational attainment ≥ Bachelor's (% of pop 25+, SE.TER.CUAT.BA.ZS)",
+          "url": "https://data.worldbank.org/indicator/SE.TER.CUAT.BA.ZS"
+        }
+      }
+    },
+    {
+      "iso2": "BH",
+      "name": "Bahrain",
+      "flag": "🇧🇭",
+      "region": "Middle East",
+      "anchors": {
+        "capital": {
+          "name": "Manama",
+          "lon": 50.586,
+          "lat": 26.2235
+        },
+        "dc_metro": {
+          "name": "Manama",
+          "lon": 50.586,
+          "lat": 26.2235
+        }
+      },
+      "factors": {
+        "grid_connect_years": {
+          "value": 2.5,
+          "year": 2024,
+          "source": "Electricity & Water Authority connection benchmark",
+          "url": "https://www.ewa.bh/"
+        },
+        "power_cost_usd_kwh": {
+          "value": 0.04,
+          "year": 2024,
+          "source": "EWA industrial tariff",
+          "url": "https://www.ewa.bh/"
+        },
+        "dc_capacity_live_mw": {
+          "value": 50,
+          "year": 2024,
+          "source": "datacentermap.com + AWS Bahrain Region",
+          "url": "https://www.datacentermap.com/"
+        },
+        "power_per_capita_kwh": {
+          "value": 23614.566,
+          "year": 2024,
+          "source": "Our World in Data (Ember 'Yearly Electricity Data')",
+          "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation"
+        },
+        "carbon_intensity_gco2_kwh": {
+          "value": 902.24,
+          "year": 2024,
+          "source": "Our World in Data (Ember 'Carbon intensity of electricity')",
+          "url": "https://ourworldindata.org/grapher/carbon-intensity-electricity"
+        },
+        "tertiary_grad_pct": {
+          "value": 29.5776996612549,
+          "year": 2023,
+          "source": "World Bank Indicators — Educational attainment ≥ Bachelor's (% of pop 25+, SE.TER.CUAT.BA.ZS)",
+          "url": "https://data.worldbank.org/indicator/SE.TER.CUAT.BA.ZS"
+        }
+      }
+    },
+    {
+      "iso2": "KW",
+      "name": "Kuwait",
+      "flag": "🇰🇼",
+      "region": "Middle East",
+      "anchors": {
+        "capital": {
+          "name": "Kuwait City",
+          "lon": 47.9774,
+          "lat": 29.3759
+        },
+        "dc_metro": {
+          "name": "Kuwait City",
+          "lon": 47.9774,
+          "lat": 29.3759
+        }
+      },
+      "factors": {
+        "power_cost_usd_kwh": {
+          "value": 0.03,
+          "year": 2024,
+          "source": "MEW industrial tariff",
+          "url": "https://www.mew.gov.kw/"
+        },
+        "power_per_capita_kwh": {
+          "value": 18402.018,
+          "year": 2025,
+          "source": "Our World in Data (Ember 'Yearly Electricity Data')",
+          "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation"
+        },
+        "carbon_intensity_gco2_kwh": {
+          "value": 635.31,
+          "year": 2025,
+          "source": "Our World in Data (Ember 'Carbon intensity of electricity')",
+          "url": "https://ourworldindata.org/grapher/carbon-intensity-electricity"
+        },
+        "rd_techs_per_million": {
+          "value": 45.19843,
+          "year": 2018,
+          "source": "World Bank Indicators — Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",
+          "url": "https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6"
+        },
+        "tertiary_grad_pct": {
+          "value": 11.1163301467896,
+          "year": 2018,
+          "source": "World Bank Indicators — Educational attainment ≥ Bachelor's (% of pop 25+, SE.TER.CUAT.BA.ZS)",
+          "url": "https://data.worldbank.org/indicator/SE.TER.CUAT.BA.ZS"
+        }
+      }
+    },
+    {
+      "iso2": "OM",
+      "name": "Oman",
+      "flag": "🇴🇲",
+      "region": "Middle East",
+      "anchors": {
+        "capital": {
+          "name": "Muscat",
+          "lon": 58.54,
+          "lat": 23.5859
+        },
+        "dc_metro": {
+          "name": "Muscat",
+          "lon": 58.54,
+          "lat": 23.5859
+        }
+      },
+      "factors": {
+        "power_cost_usd_kwh": {
+          "value": 0.05,
+          "year": 2024,
+          "source": "Authority for Public Services Regulation",
+          "url": "https://www.apsr.om/"
+        },
+        "power_per_capita_kwh": {
+          "value": 9616.547,
+          "year": 2025,
+          "source": "Our World in Data (Ember 'Yearly Electricity Data')",
+          "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation"
+        },
+        "carbon_intensity_gco2_kwh": {
+          "value": 544.47,
+          "year": 2025,
+          "source": "Our World in Data (Ember 'Carbon intensity of electricity')",
+          "url": "https://ourworldindata.org/grapher/carbon-intensity-electricity"
+        },
+        "rd_techs_per_million": {
+          "value": 32.77024,
+          "year": 2018,
+          "source": "World Bank Indicators — Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",
+          "url": "https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6"
+        },
+        "tertiary_grad_pct": {
+          "value": 19.1144905090332,
+          "year": 2022,
+          "source": "World Bank Indicators — Educational attainment ≥ Bachelor's (% of pop 25+, SE.TER.CUAT.BA.ZS)",
+          "url": "https://data.worldbank.org/indicator/SE.TER.CUAT.BA.ZS"
+        }
+      }
+    },
+    {
+      "iso2": "IL",
+      "name": "Israel",
+      "flag": "🇮🇱",
+      "region": "Middle East",
+      "anchors": {
+        "capital": {
+          "name": "Jerusalem",
+          "lon": 35.2137,
+          "lat": 31.7683
+        },
+        "dc_metro": {
+          "name": "Tel Aviv",
+          "lon": 34.7818,
+          "lat": 32.0853
+        }
+      },
+      "factors": {
+        "demand_2027_twh": {
+          "value": 2.0,
+          "year": 2027,
+          "source": "Cushman & Wakefield Global DC Market 2024 — Tel Aviv",
+          "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-market-comparison"
+        },
+        "grid_connect_years": {
+          "value": 3.0,
+          "year": 2024,
+          "source": "Noga / Israel Electric Authority 2024 plans",
+          "url": "https://www.noga-iso.co.il/en"
+        },
+        "grid_investment_usdbn": {
+          "value": 12.0,
+          "year": 2030,
+          "source": "Israel Electricity Authority — 2030 transmission plan",
+          "url": "https://www.gov.il/en/departments/electricity_authority"
+        },
+        "bandwidth_gbps": {
+          "value": 0.21,
+          "year": 2024,
+          "source": "Ookla Speedtest Global Index",
+          "url": "https://www.speedtest.net/global-index"
+        },
+        "construction_cost_usd_mw": {
+          "value": 10000000.0,
+          "year": 2024,
+          "source": "Turner & Townsend DC Cost Index 2024 — Tel Aviv",
+          "url": "https://www.turnerandtownsend.com/"
+        },
+        "power_cost_usd_kwh": {
+          "value": 0.1,
+          "year": 2024,
+          "source": "Israel Electricity Authority industrial tariff",
+          "url": "https://www.gov.il/en/departments/electricity_authority"
+        },
+        "dc_capacity_live_mw": {
+          "value": 70,
+          "year": 2024,
+          "source": "datacentermap.com — Tel Aviv",
+          "url": "https://www.datacentermap.com/"
+        },
+        "dc_capacity_planned_mw": {
+          "value": 200,
+          "year": 2024,
+          "source": "datacentermap.com + AWS Israel Region build-out",
+          "url": "https://www.datacentermap.com/"
+        },
+        "power_per_capita_kwh": {
+          "value": 8626.503,
+          "year": 2025,
+          "source": "Our World in Data (Ember 'Yearly Electricity Data')",
+          "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation"
+        },
+        "carbon_intensity_gco2_kwh": {
+          "value": 492.69,
+          "year": 2025,
+          "source": "Our World in Data (Ember 'Carbon intensity of electricity')",
+          "url": "https://ourworldindata.org/grapher/carbon-intensity-electricity"
+        },
+        "tertiary_grad_pct": {
+          "value": 38.2999787289694,
+          "year": 2023,
+          "source": "World Bank Indicators — Educational attainment ≥ Bachelor's (% of pop 25+, SE.TER.CUAT.BA.ZS)",
+          "url": "https://data.worldbank.org/indicator/SE.TER.CUAT.BA.ZS"
+        }
+      }
+    },
+    {
+      "iso2": "TR",
+      "name": "Türkiye",
+      "flag": "🇹🇷",
+      "region": "Middle East",
+      "anchors": {
+        "capital": {
+          "name": "Ankara",
+          "lon": 32.8597,
+          "lat": 39.9334
+        },
+        "dc_metro": {
+          "name": "Istanbul",
+          "lon": 28.9784,
+          "lat": 41.0082
+        }
+      },
+      "factors": {
+        "grid_connect_years": {
+          "value": 4.0,
+          "year": 2024,
+          "source": "TEİAŞ ten-year network development plan",
+          "url": "https://www.teias.gov.tr/"
+        },
+        "grid_investment_usdbn": {
+          "value": 25.0,
+          "year": 2030,
+          "source": "TEİAŞ ten-year network development plan",
+          "url": "https://www.teias.gov.tr/"
+        },
+        "bandwidth_gbps": {
+          "value": 0.08,
+          "year": 2024,
+          "source": "Ookla Speedtest Global Index",
+          "url": "https://www.speedtest.net/global-index"
+        },
+        "construction_cost_usd_mw": {
+          "value": 7500000.0,
+          "year": 2024,
+          "source": "Turner & Townsend DC Cost Index 2024 — Istanbul",
+          "url": "https://www.turnerandtownsend.com/"
+        },
+        "power_cost_usd_kwh": {
+          "value": 0.08,
+          "year": 2024,
+          "source": "EPDK industrial tariff",
+          "url": "https://www.epdk.gov.tr/"
+        },
+        "dc_capacity_live_mw": {
+          "value": 100,
+          "year": 2024,
+          "source": "datacentermap.com — Istanbul cluster",
+          "url": "https://www.datacentermap.com/"
+        },
+        "dc_capacity_planned_mw": {
+          "value": 150,
+          "year": 2024,
+          "source": "datacentermap.com — Istanbul pipeline",
+          "url": "https://www.datacentermap.com/"
+        },
+        "power_per_capita_kwh": {
+          "value": 4035.562,
+          "year": 2025,
+          "source": "Our World in Data (Ember 'Yearly Electricity Data')",
+          "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation"
+        },
+        "carbon_intensity_gco2_kwh": {
+          "value": 474.74,
+          "year": 2025,
+          "source": "Our World in Data (Ember 'Carbon intensity of electricity')",
+          "url": "https://ourworldindata.org/grapher/carbon-intensity-electricity"
+        },
+        "rd_techs_per_million": {
+          "value": 353.73836,
+          "year": 2017,
+          "source": "World Bank Indicators — Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",
+          "url": "https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6"
+        },
+        "tertiary_grad_pct": {
+          "value": 21.8643391177776,
+          "year": 2023,
+          "source": "World Bank Indicators — Educational attainment ≥ Bachelor's (% of pop 25+, SE.TER.CUAT.BA.ZS)",
+          "url": "https://data.worldbank.org/indicator/SE.TER.CUAT.BA.ZS"
+        }
+      }
+    },
+    {
+      "iso2": "JO",
+      "name": "Jordan",
+      "flag": "🇯🇴",
+      "region": "Middle East",
+      "anchors": {
+        "capital": {
+          "name": "Amman",
+          "lon": 35.9106,
+          "lat": 31.9454
+        },
+        "dc_metro": {
+          "name": "Amman",
+          "lon": 35.9106,
+          "lat": 31.9454
+        }
+      },
+      "factors": {
+        "power_per_capita_kwh": {
+          "value": 2048.8389,
+          "year": 2024,
+          "source": "Our World in Data (Ember 'Yearly Electricity Data')",
+          "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation"
+        },
+        "carbon_intensity_gco2_kwh": {
+          "value": 529.79,
+          "year": 2024,
+          "source": "Our World in Data (Ember 'Carbon intensity of electricity')",
+          "url": "https://ourworldindata.org/grapher/carbon-intensity-electricity"
+        },
+        "rd_techs_per_million": {
+          "value": 108.88597,
+          "year": 2015,
+          "source": "World Bank Indicators — Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",
+          "url": "https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6"
+        },
+        "tertiary_grad_pct": {
+          "value": 23.2269191741943,
+          "year": 2023,
+          "source": "World Bank Indicators — Educational attainment ≥ Bachelor's (% of pop 25+, SE.TER.CUAT.BA.ZS)",
+          "url": "https://data.worldbank.org/indicator/SE.TER.CUAT.BA.ZS"
+        }
+      }
+    },
+    {
+      "iso2": "ZA",
+      "name": "South Africa",
+      "flag": "🇿🇦",
+      "region": "Africa",
+      "anchors": {
+        "capital": {
+          "name": "Pretoria",
+          "lon": 28.1881,
+          "lat": -25.7479
+        },
+        "dc_metro": {
+          "name": "Johannesburg",
+          "lon": 28.0473,
+          "lat": -26.2041
+        }
+      },
+      "factors": {
+        "demand_2027_twh": {
+          "value": 2.5,
+          "year": 2027,
+          "source": "JLL EMEA Data Centres Q4 2024 — Johannesburg + Cape Town",
+          "url": "https://www.jll.com/en/insights"
+        },
+        "grid_connect_years": {
+          "value": 6.0,
+          "year": 2024,
+          "source": "Eskom Transmission Development Plan 2024-2033",
+          "url": "https://www.eskom.co.za/",
+          "note": "Load-shedding context; private wheeling deals materially shorter for hyperscale."
+        },
+        "grid_investment_usdbn": {
+          "value": 25.0,
+          "year": 2030,
+          "source": "Eskom Transmission Development Plan 2024-2033",
+          "url": "https://www.eskom.co.za/"
+        },
+        "bandwidth_gbps": {
+          "value": 0.07,
+          "year": 2024,
+          "source": "Ookla Speedtest Global Index",
+          "url": "https://www.speedtest.net/global-index"
+        },
+        "construction_cost_usd_mw": {
+          "value": 8000000.0,
+          "year": 2024,
+          "source": "Cushman & Wakefield Global DC Construction Cost Guide 2024 — Johannesburg",
+          "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-construction-cost-guide"
+        },
+        "power_cost_usd_kwh": {
+          "value": 0.09,
+          "year": 2024,
+          "source": "NERSA Eskom industrial tariff",
+          "url": "https://www.nersa.org.za/"
+        },
+        "dc_capacity_live_mw": {
+          "value": 220,
+          "year": 2024,
+          "source": "JLL EMEA Data Centres Q4 2024 — Johannesburg + Cape Town",
+          "url": "https://www.jll.com/en/insights"
+        },
+        "dc_capacity_planned_mw": {
+          "value": 300,
+          "year": 2024,
+          "source": "JLL EMEA Data Centres Q4 2024 — Microsoft, AWS, Africa Data Centres",
+          "url": "https://www.jll.com/en/insights"
+        },
+        "power_per_capita_kwh": {
+          "value": 3749.3442,
+          "year": 2025,
+          "source": "Our World in Data (Ember 'Yearly Electricity Data')",
+          "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation"
+        },
+        "carbon_intensity_gco2_kwh": {
+          "value": 699.29,
+          "year": 2025,
+          "source": "Our World in Data (Ember 'Carbon intensity of electricity')",
+          "url": "https://ourworldindata.org/grapher/carbon-intensity-electricity"
+        },
+        "rd_techs_per_million": {
+          "value": 129.50941,
+          "year": 2017,
+          "source": "World Bank Indicators — Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",
+          "url": "https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6"
+        },
+        "tertiary_grad_pct": {
+          "value": 7.01721000671387,
+          "year": 2023,
+          "source": "World Bank Indicators — Educational attainment ≥ Bachelor's (% of pop 25+, SE.TER.CUAT.BA.ZS)",
+          "url": "https://data.worldbank.org/indicator/SE.TER.CUAT.BA.ZS"
+        }
+      }
+    },
+    {
+      "iso2": "EG",
+      "name": "Egypt",
+      "flag": "🇪🇬",
+      "region": "Africa",
+      "anchors": {
+        "capital": {
+          "name": "Cairo",
+          "lon": 31.2357,
+          "lat": 30.0444
+        },
+        "dc_metro": {
+          "name": "Cairo",
+          "lon": 31.2357,
+          "lat": 30.0444
+        }
+      },
+      "factors": {
+        "grid_connect_years": {
+          "value": 4.0,
+          "year": 2024,
+          "source": "EETC network plan",
+          "url": "https://www.eetc.net.eg/"
+        },
+        "grid_investment_usdbn": {
+          "value": 10.0,
+          "year": 2030,
+          "source": "EETC 2030 network plan",
+          "url": "https://www.eetc.net.eg/"
+        },
+        "bandwidth_gbps": {
+          "value": 0.06,
+          "year": 2024,
+          "source": "Ookla Speedtest Global Index",
+          "url": "https://www.speedtest.net/global-index"
+        },
+        "construction_cost_usd_mw": {
+          "value": 7000000.0,
+          "year": 2024,
+          "source": "Cushman & Wakefield Global DC Construction Cost Guide 2024 — Cairo",
+          "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-construction-cost-guide"
+        },
+        "power_cost_usd_kwh": {
+          "value": 0.06,
+          "year": 2024,
+          "source": "EgyptERA industrial tariff",
+          "url": "http://egyptera.org/"
+        },
+        "dc_capacity_live_mw": {
+          "value": 50,
+          "year": 2024,
+          "source": "datacentermap.com — Cairo",
+          "url": "https://www.datacentermap.com/"
+        },
+        "dc_capacity_planned_mw": {
+          "value": 100,
+          "year": 2024,
+          "source": "datacentermap.com — Cairo pipeline",
+          "url": "https://www.datacentermap.com/"
+        },
+        "power_per_capita_kwh": {
+          "value": 2075.8496,
+          "year": 2025,
+          "source": "Our World in Data (Ember 'Yearly Electricity Data')",
+          "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation"
+        },
+        "carbon_intensity_gco2_kwh": {
+          "value": 563.23,
+          "year": 2025,
+          "source": "Our World in Data (Ember 'Carbon intensity of electricity')",
+          "url": "https://ourworldindata.org/grapher/carbon-intensity-electricity"
+        },
+        "rd_techs_per_million": {
+          "value": 369.55568,
+          "year": 2018,
+          "source": "World Bank Indicators — Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",
+          "url": "https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6"
+        },
+        "tertiary_grad_pct": {
+          "value": 18.0522908453089,
+          "year": 2023,
+          "source": "World Bank Indicators — Educational attainment ≥ Bachelor's (% of pop 25+, SE.TER.CUAT.BA.ZS)",
+          "url": "https://data.worldbank.org/indicator/SE.TER.CUAT.BA.ZS"
+        }
+      }
+    },
+    {
+      "iso2": "MA",
+      "name": "Morocco",
+      "flag": "🇲🇦",
+      "region": "Africa",
+      "anchors": {
+        "capital": {
+          "name": "Rabat",
+          "lon": -6.8498,
+          "lat": 34.0209
+        },
+        "dc_metro": {
+          "name": "Casablanca",
+          "lon": -7.5898,
+          "lat": 33.5731
+        }
+      },
+      "factors": {
+        "grid_connect_years": {
+          "value": 4.0,
+          "year": 2024,
+          "source": "ONEE network development plan",
+          "url": "https://www.one.org.ma/"
+        },
+        "grid_investment_usdbn": {
+          "value": 8.0,
+          "year": 2030,
+          "source": "ONEE network development plan",
+          "url": "https://www.one.org.ma/"
+        },
+        "bandwidth_gbps": {
+          "value": 0.06,
+          "year": 2024,
+          "source": "Ookla Speedtest Global Index",
+          "url": "https://www.speedtest.net/global-index"
+        },
+        "construction_cost_usd_mw": {
+          "value": 7000000.0,
+          "year": 2024,
+          "source": "Turner & Townsend DC Cost Index 2024 — Casablanca",
+          "url": "https://www.turnerandtownsend.com/"
+        },
+        "power_cost_usd_kwh": {
+          "value": 0.1,
+          "year": 2024,
+          "source": "ONEE industrial tariff",
+          "url": "https://www.one.org.ma/"
+        },
+        "dc_capacity_live_mw": {
+          "value": 35,
+          "year": 2024,
+          "source": "datacentermap.com — Casablanca",
+          "url": "https://www.datacentermap.com/"
+        },
+        "dc_capacity_planned_mw": {
+          "value": 90,
+          "year": 2024,
+          "source": "datacentermap.com — Casablanca pipeline",
+          "url": "https://www.datacentermap.com/"
+        },
+        "power_per_capita_kwh": {
+          "value": 1157.9261,
+          "year": 2025,
+          "source": "Our World in Data (Ember 'Yearly Electricity Data')",
+          "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation"
+        },
+        "carbon_intensity_gco2_kwh": {
+          "value": 596.4,
+          "year": 2025,
+          "source": "Our World in Data (Ember 'Carbon intensity of electricity')",
+          "url": "https://ourworldindata.org/grapher/carbon-intensity-electricity"
+        },
+        "rd_techs_per_million": {
+          "value": 40.25476,
+          "year": 2016,
+          "source": "World Bank Indicators — Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",
+          "url": "https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6"
+        }
+      }
+    },
+    {
+      "iso2": "NG",
+      "name": "Nigeria",
+      "flag": "🇳🇬",
+      "region": "Africa",
+      "anchors": {
+        "capital": {
+          "name": "Abuja",
+          "lon": 7.4951,
+          "lat": 9.0765
+        },
+        "dc_metro": {
+          "name": "Lagos",
+          "lon": 3.3792,
+          "lat": 6.5244
+        }
+      },
+      "factors": {
+        "grid_connect_years": {
+          "value": 5.0,
+          "year": 2024,
+          "source": "TCN Transmission Expansion Plan 2024",
+          "url": "https://www.tcn.org.ng/"
+        },
+        "grid_investment_usdbn": {
+          "value": 7.0,
+          "year": 2030,
+          "source": "TCN Transmission Expansion Plan 2024",
+          "url": "https://www.tcn.org.ng/"
+        },
+        "bandwidth_gbps": {
+          "value": 0.02,
+          "year": 2024,
+          "source": "Ookla Speedtest Global Index",
+          "url": "https://www.speedtest.net/global-index"
+        },
+        "construction_cost_usd_mw": {
+          "value": 8500000.0,
+          "year": 2024,
+          "source": "Turner & Townsend DC Cost Index 2024 — Lagos (import cost premium)",
+          "url": "https://www.turnerandtownsend.com/"
+        },
+        "power_cost_usd_kwh": {
+          "value": 0.11,
+          "year": 2024,
+          "source": "NERC Multi-Year Tariff Order",
+          "url": "https://nerc.gov.ng/"
+        },
+        "dc_capacity_live_mw": {
+          "value": 65,
+          "year": 2024,
+          "source": "datacentermap.com — Lagos",
+          "url": "https://www.datacentermap.com/"
+        },
+        "dc_capacity_planned_mw": {
+          "value": 130,
+          "year": 2024,
+          "source": "datacentermap.com — Lagos pipeline",
+          "url": "https://www.datacentermap.com/"
+        },
+        "power_per_capita_kwh": {
+          "value": 174.88481,
+          "year": 2025,
+          "source": "Our World in Data (Ember 'Yearly Electricity Data')",
+          "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation"
+        },
+        "carbon_intensity_gco2_kwh": {
+          "value": 455.71,
+          "year": 2025,
+          "source": "Our World in Data (Ember 'Carbon intensity of electricity')",
+          "url": "https://ourworldindata.org/grapher/carbon-intensity-electricity"
+        },
+        "tertiary_grad_pct": {
+          "value": 3.80241384950738,
+          "year": 2023,
+          "source": "World Bank Indicators — Educational attainment ≥ Bachelor's (% of pop 25+, SE.TER.CUAT.BA.ZS)",
+          "url": "https://data.worldbank.org/indicator/SE.TER.CUAT.BA.ZS"
+        }
+      }
+    },
+    {
+      "iso2": "KE",
+      "name": "Kenya",
+      "flag": "🇰🇪",
+      "region": "Africa",
+      "anchors": {
+        "capital": {
+          "name": "Nairobi",
+          "lon": 36.8219,
+          "lat": -1.2921
+        },
+        "dc_metro": {
+          "name": "Nairobi",
+          "lon": 36.8219,
+          "lat": -1.2921
+        }
+      },
+      "factors": {
+        "grid_connect_years": {
+          "value": 4.0,
+          "year": 2024,
+          "source": "KETRACO Transmission Master Plan",
+          "url": "https://www.ketraco.co.ke/"
+        },
+        "bandwidth_gbps": {
+          "value": 0.03,
+          "year": 2024,
+          "source": "Ookla Speedtest Global Index",
+          "url": "https://www.speedtest.net/global-index"
+        },
+        "construction_cost_usd_mw": {
+          "value": 8000000.0,
+          "year": 2024,
+          "source": "Turner & Townsend DC Cost Index 2024 — Nairobi",
+          "url": "https://www.turnerandtownsend.com/"
+        },
+        "power_cost_usd_kwh": {
+          "value": 0.13,
+          "year": 2024,
+          "source": "EPRA industrial tariff",
+          "url": "https://www.epra.go.ke/"
+        },
+        "dc_capacity_live_mw": {
+          "value": 40,
+          "year": 2024,
+          "source": "datacentermap.com — Nairobi",
+          "url": "https://www.datacentermap.com/"
+        },
+        "dc_capacity_planned_mw": {
+          "value": 90,
+          "year": 2024,
+          "source": "datacentermap.com — Nairobi pipeline",
+          "url": "https://www.datacentermap.com/"
+        },
+        "power_per_capita_kwh": {
+          "value": 244.03601,
+          "year": 2025,
+          "source": "Our World in Data (Ember 'Yearly Electricity Data')",
+          "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation"
+        },
+        "carbon_intensity_gco2_kwh": {
+          "value": 95.44,
+          "year": 2025,
+          "source": "Our World in Data (Ember 'Carbon intensity of electricity')",
+          "url": "https://ourworldindata.org/grapher/carbon-intensity-electricity"
+        },
+        "tertiary_grad_pct": {
+          "value": 5.47591018676758,
+          "year": 2022,
+          "source": "World Bank Indicators — Educational attainment ≥ Bachelor's (% of pop 25+, SE.TER.CUAT.BA.ZS)",
+          "url": "https://data.worldbank.org/indicator/SE.TER.CUAT.BA.ZS"
+        }
+      }
+    },
+    {
+      "iso2": "TN",
+      "name": "Tunisia",
+      "flag": "🇹🇳",
+      "region": "Africa",
+      "anchors": {
+        "capital": {
+          "name": "Tunis",
+          "lon": 10.1815,
+          "lat": 36.8065
+        },
+        "dc_metro": {
+          "name": "Tunis",
+          "lon": 10.1815,
+          "lat": 36.8065
+        }
+      },
+      "factors": {
+        "bandwidth_gbps": {
+          "value": 0.04,
+          "year": 2024,
+          "source": "Ookla Speedtest Global Index",
+          "url": "https://www.speedtest.net/global-index"
+        },
+        "power_per_capita_kwh": {
+          "value": 1806.686,
+          "year": 2025,
+          "source": "Our World in Data (Ember 'Yearly Electricity Data')",
+          "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation"
+        },
+        "carbon_intensity_gco2_kwh": {
+          "value": 560.29,
+          "year": 2025,
+          "source": "Our World in Data (Ember 'Carbon intensity of electricity')",
+          "url": "https://ourworldindata.org/grapher/carbon-intensity-electricity"
+        },
+        "rd_techs_per_million": {
+          "value": 61.73693,
+          "year": 2018,
+          "source": "World Bank Indicators — Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",
+          "url": "https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6"
+        },
+        "tertiary_grad_pct": {
+          "value": 12.8028297424316,
+          "year": 2023,
+          "source": "World Bank Indicators — Educational attainment ≥ Bachelor's (% of pop 25+, SE.TER.CUAT.BA.ZS)",
+          "url": "https://data.worldbank.org/indicator/SE.TER.CUAT.BA.ZS"
+        }
+      }
+    },
+    {
+      "iso2": "DZ",
+      "name": "Algeria",
+      "flag": "🇩🇿",
+      "region": "Africa",
+      "anchors": {
+        "capital": {
+          "name": "Algiers",
+          "lon": 3.0588,
+          "lat": 36.7538
+        },
+        "dc_metro": {
+          "name": "Algiers",
+          "lon": 3.0588,
+          "lat": 36.7538
+        }
+      },
+      "factors": {
+        "power_per_capita_kwh": {
+          "value": 2058.3455,
+          "year": 2024,
+          "source": "Our World in Data (Ember 'Yearly Electricity Data')",
+          "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation"
+        },
+        "carbon_intensity_gco2_kwh": {
+          "value": 632.94,
+          "year": 2024,
+          "source": "Our World in Data (Ember 'Carbon intensity of electricity')",
+          "url": "https://ourworldindata.org/grapher/carbon-intensity-electricity"
+        },
+        "rd_techs_per_million": {
+          "value": 41.86166,
+          "year": 2017,
+          "source": "World Bank Indicators — Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",
+          "url": "https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6"
+        },
+        "tertiary_grad_pct": {
+          "value": 11.4359302520752,
+          "year": 2019,
+          "source": "World Bank Indicators — Educational attainment ≥ Bachelor's (% of pop 25+, SE.TER.CUAT.BA.ZS)",
+          "url": "https://data.worldbank.org/indicator/SE.TER.CUAT.BA.ZS"
+        }
+      }
+    }
+  ]
+}

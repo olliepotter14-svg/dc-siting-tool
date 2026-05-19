@@ -15,6 +15,19 @@
   status = 302
   force = true
 
+# Clean URL for the EMEA market comparison tool
+[[redirects]]
+  from = "/markets"
+  to = "/DC Market Comparison/index.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/markets/*"
+  to = "/DC Market Comparison/:splat"
+  status = 200
+  force = true
+
 [build.environment]
   GIT_LFS_ENABLED = "true"
 

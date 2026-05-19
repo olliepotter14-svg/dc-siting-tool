@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DC Market Comparison — EMEA Data Centre Market Intelligence</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://api.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.css" rel="stylesheet" />
+  <script src="https://api.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.js"></script>
+  <script src="config.js"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="mobile-tab-map">
+
+  <!-- Mobile tab bar (visible only at narrow widths via CSS) -->
+  <nav class="mobile-tabs" id="mobile-tabs">
+    <button data-mobile-tab="settings">⚙ Settings</button>
+    <button data-mobile-tab="map" class="active">🗺 Map</button>
+    <button data-mobile-tab="rank">★ Rankings</button>
+  </nav>
+
+  <aside id="sidebar">
+
+    <div class="sidebar-header">
+      <div class="logo">
+        <span class="logo-icon">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="1" y="1" width="26" height="26" rx="6" stroke="#00E5FF" stroke-width="1.5"/>
+            <circle cx="14" cy="14" r="10" stroke="#00E5FF" stroke-width="1" stroke-opacity="0.5" fill="none"/>
+            <circle cx="14" cy="14" r="6"  stroke="#00E5FF" stroke-width="1" stroke-opacity="0.7" fill="none"/>
+            <circle cx="14" cy="14" r="2.5" fill="#00E5FF"/>
+            <circle cx="6"  cy="14" r="1.5" fill="#00E5FF"/>
+            <circle cx="22" cy="14" r="1.5" fill="#00E5FF"/>
+            <circle cx="14" cy="6"  r="1.5" fill="#00E5FF"/>
+            <circle cx="14" cy="22" r="1.5" fill="#00E5FF"/>
+          </svg>
+        </span>
+        <div>
+          <div class="logo-title">DC Market Comparison</div>
+          <div class="logo-sub">EMEA Market Intelligence</div>
+        </div>
+        <button id="sources-btn" class="sources-btn" title="View data sources">ⓘ</button>
+      </div>
+    </div>
+
+    <div class="stats-bar">
+      <div class="stat">
+        <span class="stat-value" id="stat-countries">—</span>
+        <span class="stat-label">markets</span>
+      </div>
+      <div class="stat">
+        <span class="stat-value" id="stat-factors">13</span>
+        <span class="stat-label">factors</span>
+      </div>
+    </div>
+
+    <div class="filter-section">
+
+      <div class="filter-label">Latency reach</div>
+      <div class="btn-group" id="latency-ms-toggle">
+        <button data-ms="0">Off</button>
+        <button data-ms="5">5 ms</button>
+        <button data-ms="10" class="active">10 ms</button>
+        <button data-ms="20">20 ms</button>
+        <button data-ms="50">50 ms</button>
+      </div>
+      <div class="latency-meta" id="latency-meta">
+        Click any country on the map (or in the rankings) to anchor the latency sphere. Radius assumes 200 km/ms (theoretical fibre limit; real production paths add 15–30% routing overhead).
+      </div>
+
+      <div class="filter-label mt">Map overlays</div>
+      <div class="overlay-chips" id="overlay-chips">
+        <button class="overlay-chip" data-layer="ixps"   title="Carrier-neutral internet exchanges (PeeringDB)">◎ IXPs</button>
+        <button class="overlay-chip" data-layer="grid"   title="High-voltage transmission lines (OSM)">— HV grid</button>
+        <button class="overlay-chip" data-layer="dcs"    title="Operational + planned data-centre facilities">▢ DC sites</button>
+      </div>
+
+      <div class="weights-panel">
+        <div class="weights-header">
+          <span class="weights-title">Composite score weighting</span>
+          <span class="weights-meta" id="weights-meta">10 scored factors</span>
+        </div>
+        <div class="weights-help">Higher number = more important. 0 turns the factor off.</div>
+        <div class="weights-presets" id="weights-presets">
+          <button data-preset="reset"      title="All weights = 5 (balanced)">Reset</button>
+          <button data-preset="power"      title="Heavy on grid headroom, connection speed, electricity cost">Power</button>
+          <button data-preset="cost"       title="Heavy on construction + power cost">Cost</button>
+          <button data-preset="sustain"    title="Heavy on grid carbon + renewables">Sustain</button>
+          <button data-preset="latency"    title="Heavy on bandwidth + grid speed">Latency</button>
+          <button data-preset="off"        title="Turn composite off">Off</button>
+        </div>
+        <div class="weights-sliders" id="weights-sliders"></div>
+      </div>
+
+    </div>
+
+  </aside>
+
+  <div id="map"></div>
+
+  <!-- Floating colour-by control over the map (top-left of map area) -->
+  <div class="map-colour-control">
+    <span class="map-colour-label">Colour markers by</span>
+    <div class="select-wrap">
+      <select id="colour-by-select">
+        <option value="">— none (cyan) —</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Loading overlay — visible until map is ready -->
+  <div id="load-overlay">
+    <div id="load-card">
+      <div id="load-logo">
+        <svg width="22" height="22" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" style="vertical-align:middle;margin-right:8px">
+          <rect x="1" y="1" width="26" height="26" rx="6" stroke="#00E5FF" stroke-width="1.5"/>
+          <circle cx="14" cy="14" r="10" stroke="#00E5FF" stroke-width="1" stroke-opacity="0.5" fill="none"/>
+          <circle cx="14" cy="14" r="6"  stroke="#00E5FF" stroke-width="1" stroke-opacity="0.7" fill="none"/>
+          <circle cx="14" cy="14" r="2.5" fill="#00E5FF"/>
+        </svg>DC Market Comparison
+      </div>
+      <div id="load-status">Initialising…</div>
+      <div id="load-bar-track">
+        <div id="load-bar-fill"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Right-side rankings panel (F26) -->
+  <aside id="ranking-panel" class="ranking-panel">
+    <div class="ranking-panel-header">
+      <div class="ranking-panel-title-row">
+        <span class="ranking-panel-title">Rankings</span>
+        <span class="list-count-badge" id="list-count">48</span>
+      </div>
+      <div class="select-wrap ranking-rankby">
+        <select id="rankby-select" title="Sort markets by"></select>
+      </div>
+    </div>
+    <div class="compare-bar">
+      <span class="compare-bar-label" id="compare-bar-label">No markets selected</span>
+      <button class="compare-bar-btn" id="compare-open-btn" disabled>Compare</button>
+      <button class="compare-bar-clear" id="compare-clear-btn" title="Clear selection" hidden>✕</button>
+    </div>
+    <div class="ranking-panel-meta" id="ranking-panel-meta"></div>
+    <div class="ranking-panel-body" id="ranking-panel-body"></div>
+  </aside>
+
+  <!-- Detail panel — overlays the rankings panel when a country is selected -->
+  <div id="detail-panel" class="detail-panel hidden">
+    <button id="detail-close" class="detail-close" title="Close">✕</button>
+    <div id="detail-content"></div>
+  </div>
+
+  <!-- Map legend (Feature 17 wires content) -->
+  <div class="map-legend hidden" id="map-legend">
+    <div id="legend-items"></div>
+  </div>
+
+  <!-- Sources modal (F19) -->
+  <div id="sources-modal" class="sources-modal hidden">
+    <div class="sources-modal-backdrop"></div>
+    <div class="sources-modal-card">
+      <button id="sources-close" class="sources-close">✕</button>
+      <h2 class="sources-title">Data sources</h2>
+      <p class="sources-intro">Every factor value in this tool links to its source. Below is the master list of the datasets behind the 13 factors and the three map overlays.</p>
+      <div class="sources-list">
+        <div class="sources-group">
+          <div class="sources-group-title">Demand</div>
+          <div class="sources-item"><strong>Compute demand 2027 (TWh)</strong><br><a href="https://www.iea.org/reports/electricity-2024" target="_blank" rel="noopener">IEA Electricity 2024</a> + national TSO long-term forecasts (BMWK, EirGrid, RTE, Energinet, Statnett, Fingrid). Cushman & Wakefield and JLL cross-checks for emerging markets.</div>
+        </div>
+        <div class="sources-group">
+          <div class="sources-group-title">Grid</div>
+          <div class="sources-item"><strong>Connection timeline (years)</strong><br>Each national TSO's published 2024 connection-queue statistics — NESO TEC Register, EirGrid, Bundesnetzagentur, TenneT, RTE, Terna, REE, Svenska kraftnät, PSE, etc.</div>
+          <div class="sources-item"><strong>Power production per capita (kWh/yr)</strong><br><a href="https://ourworldindata.org/grapher/per-capita-electricity-generation" target="_blank" rel="noopener">Our World in Data (Ember 'Yearly Electricity Data')</a> — fetched live by <code>fetch_ember.py</code>.</div>
+          <div class="sources-item"><strong>Forecast grid investment (USD bn)</strong><br>National TSO 10-year network development plans (BMWK Stromnetz 2030, RIIO-T3, RTE Schéma, Terna PdS, etc.).</div>
+        </div>
+        <div class="sources-group">
+          <div class="sources-group-title">Fibre</div>
+          <div class="sources-item"><strong>Bandwidth (Gbps)</strong><br><a href="https://www.speedtest.net/global-index" target="_blank" rel="noopener">Ookla Speedtest Global Index</a> (Q1 2024 median fixed-broadband download).</div>
+          <div class="sources-item"><strong>2030 forecast (Gbps)</strong><br>National gigabit strategies (BMDV, Plan France Très Haut Débit, EU Gigabit Society 2030) + Analysys Mason.</div>
+        </div>
+        <div class="sources-group">
+          <div class="sources-group-title">Differentiators</div>
+          <div class="sources-item"><strong>Construction cost (USD/MW)</strong><br><a href="https://www.cushmanwakefield.com/en/insights/global-data-center-construction-cost-guide" target="_blank" rel="noopener">Cushman & Wakefield Global DC Construction Cost Guide 2024</a> + <a href="https://www.turnerandtownsend.com/" target="_blank" rel="noopener">Turner & Townsend Data Centre Cost Index 2024</a>.</div>
+          <div class="sources-item"><strong>Power cost (USD/kWh)</strong><br><a href="https://ec.europa.eu/eurostat/web/energy/database" target="_blank" rel="noopener">Eurostat NRG_PC_205</a> (EU industrial Band IE) + each national regulator's published industrial tariff (Ofgem, DEWA, SEC, etc.).</div>
+          <div class="sources-item"><strong>R&D techs / million + Tertiary graduate %</strong><br><a href="https://data.worldbank.org/" target="_blank" rel="noopener">World Bank Indicators API</a> (<code>SP.POP.TECH.RD.P6</code>, <code>SE.TER.CUAT.BA.ZS</code>) — fetched live by <code>fetch_world_bank.py</code>.</div>
+          <div class="sources-item"><strong>Grid carbon intensity (gCO₂/kWh)</strong><br><a href="https://ourworldindata.org/grapher/carbon-intensity-electricity" target="_blank" rel="noopener">Our World in Data (Ember)</a> — fetched live by <code>fetch_ember.py</code>.</div>
+        </div>
+        <div class="sources-group">
+          <div class="sources-group-title">Market maturity</div>
+          <div class="sources-item"><strong>Live + planned DC capacity (MW)</strong><br><a href="https://www.cushmanwakefield.com/en/insights/global-data-center-market-comparison" target="_blank" rel="noopener">Cushman & Wakefield Global DC Market 2024</a> + JLL EMEA Data Centres Q4 2024 + <a href="https://www.datacentermap.com/" target="_blank" rel="noopener">datacentermap.com</a> for smaller markets.</div>
+        </div>
+        <div class="sources-group">
+          <div class="sources-group-title">Map overlays</div>
+          <div class="sources-item"><strong>IXPs + DC facilities</strong><br><a href="https://www.peeringdb.com/" target="_blank" rel="noopener">PeeringDB</a> — fetched live by <code>fetch_overlays.py</code>.</div>
+          <div class="sources-item"><strong>HV transmission grid (≥380 kV)</strong><br><a href="https://www.openstreetmap.org/" target="_blank" rel="noopener">OpenStreetMap</a> via Overpass API.</div>
+        </div>
+      </div>
+      <div class="sources-footer">All values carry <code>{value, year, source, url}</code>. To refresh: <code>python3 scripts/fetch_ember.py</code>, <code>python3 scripts/fetch_world_bank.py</code>, <code>python3 scripts/fetch_overlays.py</code>, then <code>python3 scripts/build_markets_dataset.py</code>.</div>
+    </div>
+  </div>
+
+  <!-- Compare drawer (F18) — slides up from the bottom when Compare clicked -->
+  <div class="compare-drawer hidden" id="compare-drawer">
+    <div class="compare-drawer-header">
+      <span class="compare-drawer-title">Side-by-side comparison</span>
+      <button class="compare-drawer-close" id="compare-drawer-close">✕</button>
+    </div>
+    <div class="compare-drawer-body" id="compare-drawer-body"></div>
+  </div>
+
+  <script src="markets.js?v=18"></script>
+</body>
+</html>

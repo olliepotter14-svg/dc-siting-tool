@@ -1,0 +1,16 @@
+# Local stub for the DC Market Comparison sub-app.
+#
+# This tool ships as part of the parent dc-siting-tool repo. The parent
+# Netlify config publishes the repo root; this sub-app is therefore reachable
+# at /DC%20Market%20Comparison/ by default. Feature 19 (deploy) will move it
+# behind a /markets/ redirect in the parent netlify.toml.
+#
+# Keep this file local-only — it is not consumed by Netlify directly.
+
+[build]
+  publish = "."
+
+[[headers]]
+  for = "/data/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
