@@ -64,9 +64,10 @@
         "operator_type": "hyperscale",
         "city": "London",
         "country": "GB",
-        "mw": 100,
+        "mw": 175,
         "status": "operational",
-        "url": "https://datacenters.microsoft.com/region/europe/"
+        "url": "https://datacenters.microsoft.com/region/europe/",
+        "note": "AI DC Index estimate across multiple London sites; Microsoft does not publish per-region MW"
       }
     },
     {
@@ -808,9 +809,10 @@
         "operator_type": "hyperscale",
         "city": "Paris",
         "country": "FR",
-        "mw": 100,
+        "mw": 175,
         "status": "operational",
-        "url": "https://aws.amazon.com/about-aws/global-infrastructure/regions_az/"
+        "url": "https://aws.amazon.com/about-aws/global-infrastructure/regions_az/",
+        "note": "EU-WEST-3 region; conservative AI DC Index estimate"
       }
     },
     {
@@ -1795,7 +1797,7 @@
         "country": "SA",
         "mw": 60,
         "status": "operational",
-        "url": "https://www.stc.com.sa/"
+        "url": "https://www.datacenterdynamics.com/en/news/saudi-telecom-company-stc-data-centers/"
       }
     },
     {
@@ -1874,7 +1876,7 @@
         "operator_type": "hyperscale",
         "city": "Doha",
         "country": "QA",
-        "mw": 55,
+        "mw": 80,
         "status": "operational",
         "url": "https://datacenters.microsoft.com/region/europe/"
       }
@@ -1976,7 +1978,7 @@
         "country": "EG",
         "mw": 20,
         "status": "operational",
-        "url": "https://te.eg/wps/portal/te"
+        "url": "https://www.datacentermap.com/"
       }
     },
     {

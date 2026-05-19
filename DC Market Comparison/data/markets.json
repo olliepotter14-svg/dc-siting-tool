@@ -65,7 +65,8 @@
           "value": 1.0,
           "year": 2030,
           "source": "Analysys Mason — UK FTTP rollout trajectory",
-          "url": "https://www.analysysmason.com/"
+          "url": "https://www.analysysmason.com/",
+          "note": "Policy target, not analyst-forecast median speed"
         },
         "construction_cost_usd_mw": {
           "value": 11500000.0,
@@ -80,9 +81,9 @@
           "url": "https://www.ofgem.gov.uk/"
         },
         "dc_capacity_live_mw": {
-          "value": 1100,
-          "year": 2024,
-          "source": "Cushman & Wakefield Global DC Market 2024 — London/Slough cluster",
+          "value": 1400,
+          "year": 2025,
+          "source": "Cushman & Wakefield Global DC Market H1 2025 + JLL EMEA Data Centres Q1 2025 (national totals)",
           "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-market-comparison"
         },
         "dc_capacity_planned_mw": {
@@ -164,7 +165,8 @@
           "value": 1.0,
           "year": 2030,
           "source": "Ireland's National Broadband Plan + EU Gigabit",
-          "url": "https://www.gov.ie/en/publication/c1b0c-national-broadband-plan/"
+          "url": "https://www.gov.ie/en/publication/c1b0c-national-broadband-plan/",
+          "note": "Policy target, not analyst-forecast median speed"
         },
         "construction_cost_usd_mw": {
           "value": 12500000.0,
@@ -179,9 +181,9 @@
           "url": "https://www.cru.ie/"
         },
         "dc_capacity_live_mw": {
-          "value": 950,
-          "year": 2024,
-          "source": "Cushman & Wakefield Global DC Market 2024 — Dublin cluster",
+          "value": 1150,
+          "year": 2025,
+          "source": "Cushman & Wakefield Global DC Market H1 2025 + JLL EMEA Data Centres Q1 2025 (national totals)",
           "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-market-comparison"
         },
         "dc_capacity_planned_mw": {
@@ -262,7 +264,8 @@
           "value": 2.0,
           "year": 2030,
           "source": "Plan France Très Haut Débit 'Tous fibrés en 2030'",
-          "url": "https://www.economie.gouv.fr/"
+          "url": "https://www.economie.gouv.fr/",
+          "note": "Policy target, not analyst-forecast median speed"
         },
         "construction_cost_usd_mw": {
           "value": 10500000.0,
@@ -335,8 +338,8 @@
         "demand_2027_twh": {
           "value": 24.0,
           "year": 2027,
-          "source": "IEA Electricity 2024 — Germany DCs 16 TWh (2022) → 22 TWh (2026 forecast)",
-          "url": "https://www.iea.org/reports/electricity-2024"
+          "source": "Bitkom DC trajectory: 20 TWh (2024) → ~31 TWh (2030); 24 TWh in 2027 mid-trajectory",
+          "url": "https://www.bitkom.org/"
         },
         "grid_connect_years": {
           "value": 4.0,
@@ -361,7 +364,8 @@
           "value": 1.0,
           "year": 2030,
           "source": "BMDV Gigabitstrategie 2030",
-          "url": "https://bmdv.bund.de/"
+          "url": "https://bmdv.bund.de/",
+          "note": "Policy target, not analyst-forecast median speed"
         },
         "construction_cost_usd_mw": {
           "value": 11000000.0,
@@ -376,9 +380,9 @@
           "url": "https://ec.europa.eu/eurostat/web/energy/database"
         },
         "dc_capacity_live_mw": {
-          "value": 850,
-          "year": 2024,
-          "source": "Cushman & Wakefield Global DC Market 2024 — Frankfurt + Berlin",
+          "value": 980,
+          "year": 2025,
+          "source": "Cushman & Wakefield Global DC Market H1 2025 + JLL EMEA Data Centres Q1 2025 (national totals)",
           "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-market-comparison"
         },
         "dc_capacity_planned_mw": {
@@ -435,7 +439,8 @@
           "value": 12.0,
           "year": 2027,
           "source": "Stedin Amsterdam DSO connection forecasts + IEA Electricity 2024",
-          "url": "https://www.iea.org/reports/electricity-2024"
+          "url": "https://www.iea.org/reports/electricity-2024",
+          "note": "At upper end of credible range; assumes full Microsoft + Google pipeline lights up"
         },
         "grid_connect_years": {
           "value": 7.0,
@@ -460,7 +465,8 @@
           "value": 1.0,
           "year": 2030,
           "source": "EU Gigabit Society targets (Dutch trajectory)",
-          "url": "https://digital-strategy.ec.europa.eu/"
+          "url": "https://digital-strategy.ec.europa.eu/",
+          "note": "Policy target, not analyst-forecast median speed"
         },
         "construction_cost_usd_mw": {
           "value": 11000000.0,
@@ -475,9 +481,9 @@
           "url": "https://ec.europa.eu/eurostat/web/energy/database"
         },
         "dc_capacity_live_mw": {
-          "value": 600,
-          "year": 2024,
-          "source": "Cushman & Wakefield Global DC Market 2024 — Amsterdam cluster",
+          "value": 850,
+          "year": 2025,
+          "source": "Cushman & Wakefield Global DC Market H1 2025 + JLL EMEA Data Centres Q1 2025 (national totals)",
           "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-market-comparison"
         },
         "dc_capacity_planned_mw": {
@@ -878,7 +884,8 @@
           "value": 1.0,
           "year": 2030,
           "source": "PTS Bredbandsstrategi 2030",
-          "url": "https://pts.se/en/"
+          "url": "https://pts.se/en/",
+          "note": "Policy target, not analyst-forecast median speed"
         },
         "construction_cost_usd_mw": {
           "value": 10000000.0,
@@ -893,9 +900,9 @@
           "url": "https://ec.europa.eu/eurostat/web/energy/database"
         },
         "dc_capacity_live_mw": {
-          "value": 220,
-          "year": 2024,
-          "source": "JLL EMEA Data Centres Q4 2024 — Stockholm + Nordic hyperscale",
+          "value": 500,
+          "year": 2025,
+          "source": "Cushman & Wakefield Global DC Market H1 2025 + JLL EMEA Data Centres Q1 2025 (national totals)",
           "url": "https://www.jll.com/en/insights"
         },
         "dc_capacity_planned_mw": {
@@ -967,9 +974,9 @@
           "url": "https://www.speedtest.net/global-index"
         },
         "construction_cost_usd_mw": {
-          "value": 11500000.0,
+          "value": 10500000.0,
           "year": 2024,
-          "source": "Turner & Townsend DC Cost Index 2024 — Oslo",
+          "source": "Cushman & Wakefield Global DC Construction Cost Guide 2024 — Oslo",
           "url": "https://www.turnerandtownsend.com/"
         },
         "power_cost_usd_kwh": {
@@ -1208,7 +1215,7 @@
           "url": "https://www.landsnet.is/english/"
         },
         "bandwidth_gbps": {
-          "value": 0.28,
+          "value": 0.3,
           "year": 2024,
           "source": "Ookla Speedtest Global Index",
           "url": "https://www.speedtest.net/global-index"
@@ -1291,7 +1298,8 @@
           "value": 1.0,
           "year": 2030,
           "source": "Plan España Digital 2026 (extended)",
-          "url": "https://espanadigital.gob.es/"
+          "url": "https://espanadigital.gob.es/",
+          "note": "Policy target, not analyst-forecast median speed"
         },
         "construction_cost_usd_mw": {
           "value": 9500000.0,
@@ -1475,7 +1483,8 @@
           "value": 1.0,
           "year": 2030,
           "source": "Italia Domani Banda Ultra Larga",
-          "url": "https://italiadomani.gov.it/"
+          "url": "https://italiadomani.gov.it/",
+          "note": "Policy target, not analyst-forecast median speed"
         },
         "construction_cost_usd_mw": {
           "value": 9500000.0,
@@ -2434,7 +2443,7 @@
           "url": "https://www.dewa.gov.ae/"
         },
         "bandwidth_gbps": {
-          "value": 0.34,
+          "value": 0.31,
           "year": 2024,
           "source": "Ookla Speedtest Global Index",
           "url": "https://www.speedtest.net/global-index"
@@ -2443,7 +2452,8 @@
           "value": 1.5,
           "year": 2030,
           "source": "UAE Digital Government Strategy 2025-2030",
-          "url": "https://u.ae/"
+          "url": "https://u.ae/",
+          "note": "Policy target, not analyst-forecast median speed"
         },
         "construction_cost_usd_mw": {
           "value": 9500000.0,
@@ -2458,9 +2468,9 @@
           "url": "https://www.dewa.gov.ae/"
         },
         "dc_capacity_live_mw": {
-          "value": 250,
-          "year": 2024,
-          "source": "Cushman & Wakefield Global DC Market 2024 — Dubai + Abu Dhabi",
+          "value": 350,
+          "year": 2025,
+          "source": "Cushman & Wakefield Global DC Market H1 2025 + JLL EMEA Data Centres Q1 2025 (national totals)",
           "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-market-comparison"
         },
         "dc_capacity_planned_mw": {
@@ -2528,7 +2538,7 @@
         "grid_investment_usdbn": {
           "value": 120.0,
           "year": 2030,
-          "source": "Vision 2030 — National Renewable Energy Programme grid capex",
+          "source": "Saudi Electricity Company $58.7 bn 2025-2030 transmission+distribution programme + wider $120 bn build-out commentary",
           "url": "https://www.vision2030.gov.sa/"
         },
         "bandwidth_gbps": {
@@ -2541,7 +2551,8 @@
           "value": 1.0,
           "year": 2030,
           "source": "CST Saudi Arabia Communications Strategy 2030",
-          "url": "https://www.cst.gov.sa/"
+          "url": "https://www.cst.gov.sa/",
+          "note": "Policy target, not analyst-forecast median speed"
         },
         "construction_cost_usd_mw": {
           "value": 9000000.0,
