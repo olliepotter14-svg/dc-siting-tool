@@ -878,202 +878,246 @@
       "unit": "USD/MW"
     },
     "CH": {
-      "value": 14200000.0,
+      "value": 13300000,
       "year": 2024,
-      "source": "Turner & Townsend Data Centre Cost Index 2024 — Zurich US$14.2/W (most expensive globally alongside Tokyo & Singapore)",
-      "url": "https://reports.turnerandtownsend.com/dcci-2024/data-centre-cost-trends",
-      "confidence": "estimate"
+      "source": "Turner & Townsend Data Centre Cost Index 2024, Figure 3 (p3) — Zurich: US$13.30/W",
+      "url": "https://reports.turnerandtownsend.com/dcci-2024/",
+      "evidence_url": "https://assets.foleon.com/eu-central-1/de-uploads-7e3kk3/48604/dcci_2024.1fcf2085d9b8.pdf",
+      "confidence": "verified",
+      "note": "Zurich anchor; T&T 2024 DCCI Figure 3."
     },
     "IE": {
-      "value": 10000000.0,
+      "value": 9400000,
       "year": 2024,
-      "source": "Turner & Townsend Data Centre Cost Index 2024 — Dublin US$10.0/W",
-      "url": "https://reports.turnerandtownsend.com/dcci-2024/data-centre-cost-trends",
-      "note": "Corrected down from prior $12.5M/MW estimate; T&T 2024 DCCI lists Dublin at $10.0/W.",
-      "confidence": "estimate"
+      "source": "Turner & Townsend Data Centre Cost Index 2024, Figure 3 (p3) — Dublin: US$9.40/W",
+      "url": "https://reports.turnerandtownsend.com/dcci-2024/",
+      "evidence_url": "https://assets.foleon.com/eu-central-1/de-uploads-7e3kk3/48604/dcci_2024.1fcf2085d9b8.pdf",
+      "confidence": "verified",
+      "note": "Dublin anchor; T&T 2024 DCCI Figure 3."
     },
     "GB": {
-      "value": 11500000.0,
+      "value": 11200000,
       "year": 2024,
-      "source": "Cushman & Wakefield Global DC Construction Cost Guide 2024 — London/Slough",
-      "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-construction-cost-guide",
-      "confidence": "estimate"
+      "source": "Turner & Townsend Data Centre Cost Index 2024, Figure 3 (p3) — London: US$11.20/W",
+      "url": "https://reports.turnerandtownsend.com/dcci-2024/",
+      "evidence_url": "https://assets.foleon.com/eu-central-1/de-uploads-7e3kk3/48604/dcci_2024.1fcf2085d9b8.pdf",
+      "confidence": "verified",
+      "note": "London anchor; T&T 2024 DCCI Figure 3."
     },
     "DE": {
-      "value": 11000000.0,
+      "value": 10800000,
       "year": 2024,
-      "source": "Cushman & Wakefield Global DC Construction Cost Guide 2024 — Frankfurt",
-      "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-construction-cost-guide",
-      "confidence": "estimate"
+      "source": "Turner & Townsend Data Centre Cost Index 2024, Figure 3 (p3) — Frankfurt: US$10.80/W",
+      "url": "https://reports.turnerandtownsend.com/dcci-2024/",
+      "evidence_url": "https://assets.foleon.com/eu-central-1/de-uploads-7e3kk3/48604/dcci_2024.1fcf2085d9b8.pdf",
+      "confidence": "verified",
+      "note": "Frankfurt anchor; T&T 2024 DCCI Figure 3."
     },
     "NL": {
-      "value": 11000000.0,
+      "value": 9600000,
       "year": 2024,
-      "source": "Cushman & Wakefield Global DC Construction Cost Guide 2024 — Amsterdam",
-      "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-construction-cost-guide",
-      "confidence": "estimate"
+      "source": "Turner & Townsend Data Centre Cost Index 2024, Figure 3 (p3) — Amsterdam: US$9.60/W",
+      "url": "https://reports.turnerandtownsend.com/dcci-2024/",
+      "evidence_url": "https://assets.foleon.com/eu-central-1/de-uploads-7e3kk3/48604/dcci_2024.1fcf2085d9b8.pdf",
+      "confidence": "verified",
+      "note": "Amsterdam anchor; T&T 2024 DCCI Figure 3."
     },
     "NO": {
-      "value": 10500000.0,
+      "value": 11500000,
       "year": 2024,
-      "source": "Cushman & Wakefield Global DC Construction Cost Guide 2024 — Oslo",
+      "source": "Turner & Townsend Data Centre Cost Index 2024, Figure 3 (p3) — Oslo: US$11.50/W",
       "url": "https://reports.turnerandtownsend.com/dcci-2024/",
-      "confidence": "estimate"
+      "evidence_url": "https://assets.foleon.com/eu-central-1/de-uploads-7e3kk3/48604/dcci_2024.1fcf2085d9b8.pdf",
+      "confidence": "verified",
+      "note": "Oslo anchor; T&T 2024 DCCI Figure 3."
     },
     "DK": {
-      "value": 10500000.0,
+      "value": 11200000,
       "year": 2024,
-      "source": "Cushman & Wakefield Global DC Construction Cost Guide 2024 — Copenhagen",
-      "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-construction-cost-guide",
-      "confidence": "estimate"
+      "source": "Turner & Townsend Data Centre Cost Index 2024, Figure 3 (p3) — Copenhagen: US$11.20/W",
+      "url": "https://reports.turnerandtownsend.com/dcci-2024/",
+      "evidence_url": "https://assets.foleon.com/eu-central-1/de-uploads-7e3kk3/48604/dcci_2024.1fcf2085d9b8.pdf",
+      "confidence": "verified",
+      "note": "Copenhagen anchor; T&T 2024 DCCI Figure 3."
     },
     "SE": {
-      "value": 10000000.0,
+      "value": 11200000,
       "year": 2024,
-      "source": "Cushman & Wakefield Global DC Construction Cost Guide 2024 — Stockholm",
-      "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-construction-cost-guide",
-      "confidence": "estimate"
+      "source": "Turner & Townsend Data Centre Cost Index 2024, Figure 3 (p3) — Stockholm: US$11.20/W",
+      "url": "https://reports.turnerandtownsend.com/dcci-2024/",
+      "evidence_url": "https://assets.foleon.com/eu-central-1/de-uploads-7e3kk3/48604/dcci_2024.1fcf2085d9b8.pdf",
+      "confidence": "verified",
+      "note": "Stockholm anchor; T&T 2024 DCCI Figure 3."
     },
     "FI": {
-      "value": 10000000.0,
+      "value": 11500000,
       "year": 2024,
-      "source": "Turner & Townsend DC Cost Index 2024 — Helsinki",
+      "source": "Turner & Townsend Data Centre Cost Index 2024, Figure 3 (p3) — Helsinki: US$11.50/W",
       "url": "https://reports.turnerandtownsend.com/dcci-2024/",
-      "confidence": "estimate"
+      "evidence_url": "https://assets.foleon.com/eu-central-1/de-uploads-7e3kk3/48604/dcci_2024.1fcf2085d9b8.pdf",
+      "confidence": "verified",
+      "note": "Helsinki anchor; T&T 2024 DCCI Figure 3."
     },
     "FR": {
-      "value": 10500000.0,
+      "value": 9600000,
       "year": 2024,
-      "source": "Cushman & Wakefield Global DC Construction Cost Guide 2024 — Paris",
-      "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-construction-cost-guide",
-      "confidence": "estimate"
+      "source": "Turner & Townsend Data Centre Cost Index 2024, Figure 3 (p3) — Paris: US$9.60/W",
+      "url": "https://reports.turnerandtownsend.com/dcci-2024/",
+      "evidence_url": "https://assets.foleon.com/eu-central-1/de-uploads-7e3kk3/48604/dcci_2024.1fcf2085d9b8.pdf",
+      "confidence": "verified",
+      "note": "Paris anchor; T&T 2024 DCCI Figure 3."
     },
     "BE": {
       "value": 10500000.0,
       "year": 2024,
-      "source": "Cushman & Wakefield Global DC Construction Cost Guide 2024 — Brussels",
-      "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-construction-cost-guide",
-      "confidence": "estimate"
+      "source": "Regional estimate — Brussels is not in DCCI 2024 or C&W published index; figure derived from neighbouring markets",
+      "url": "https://reports.turnerandtownsend.com/dcci-2024/",
+      "confidence": "estimate",
+      "note": "No primary per-city citation; estimate based on regional comparables."
     },
     "LU": {
       "value": 11000000.0,
       "year": 2024,
-      "source": "Cushman & Wakefield Global DC Construction Cost Guide 2024 — Luxembourg",
-      "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-construction-cost-guide",
-      "confidence": "estimate"
+      "source": "Regional estimate — Luxembourg is not in DCCI 2024 or C&W published index; figure derived from neighbouring markets",
+      "url": "https://reports.turnerandtownsend.com/dcci-2024/",
+      "confidence": "estimate",
+      "note": "No primary per-city citation; estimate based on regional comparables."
     },
     "AT": {
-      "value": 10000000.0,
+      "value": 11000000,
       "year": 2024,
-      "source": "Cushman & Wakefield Global DC Construction Cost Guide 2024 — Vienna",
-      "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-construction-cost-guide",
-      "confidence": "estimate"
+      "source": "Turner & Townsend Data Centre Cost Index 2024, Figure 3 (p3) — Vienna: US$11.00/W",
+      "url": "https://reports.turnerandtownsend.com/dcci-2024/",
+      "evidence_url": "https://assets.foleon.com/eu-central-1/de-uploads-7e3kk3/48604/dcci_2024.1fcf2085d9b8.pdf",
+      "confidence": "verified",
+      "note": "Vienna anchor; T&T 2024 DCCI Figure 3."
     },
     "ES": {
-      "value": 10000000.0,
+      "value": 9200000,
       "year": 2024,
-      "source": "Turner & Townsend Data Centre Cost Index 2024 — Madrid US$10.0/W",
-      "url": "https://reports.turnerandtownsend.com/dcci-2024/data-centre-cost-trends",
-      "note": "Updated to T&T 2024 DCCI Madrid figure ($10.0/W); Madrid now overtaking several US markets per T&T commentary.",
-      "confidence": "estimate"
+      "source": "Turner & Townsend Data Centre Cost Index 2024, Figure 3 (p3) — Madrid: US$9.20/W",
+      "url": "https://reports.turnerandtownsend.com/dcci-2024/",
+      "evidence_url": "https://assets.foleon.com/eu-central-1/de-uploads-7e3kk3/48604/dcci_2024.1fcf2085d9b8.pdf",
+      "confidence": "verified",
+      "note": "Madrid anchor; T&T 2024 DCCI Figure 3."
     },
     "PT": {
-      "value": 9000000.0,
+      "value": 9500000,
       "year": 2024,
-      "source": "Turner & Townsend DC Cost Index 2024 — Lisbon",
+      "source": "Turner & Townsend Data Centre Cost Index 2024, Figure 3 (p3) — Lisbon: US$9.50/W",
       "url": "https://reports.turnerandtownsend.com/dcci-2024/",
-      "confidence": "estimate"
+      "evidence_url": "https://assets.foleon.com/eu-central-1/de-uploads-7e3kk3/48604/dcci_2024.1fcf2085d9b8.pdf",
+      "confidence": "verified",
+      "note": "Lisbon anchor; T&T 2024 DCCI Figure 3."
     },
     "IT": {
-      "value": 9500000.0,
+      "value": 9300000,
       "year": 2024,
-      "source": "Cushman & Wakefield Global DC Construction Cost Guide 2024 — Milan",
-      "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-construction-cost-guide",
-      "confidence": "estimate"
+      "source": "Turner & Townsend Data Centre Cost Index 2024, Figure 3 (p3) — Milan: US$9.30/W",
+      "url": "https://reports.turnerandtownsend.com/dcci-2024/",
+      "evidence_url": "https://assets.foleon.com/eu-central-1/de-uploads-7e3kk3/48604/dcci_2024.1fcf2085d9b8.pdf",
+      "confidence": "verified",
+      "note": "Milan anchor; T&T 2024 DCCI Figure 3."
     },
     "GR": {
-      "value": 8500000.0,
+      "value": 7300000,
       "year": 2024,
-      "source": "Turner & Townsend DC Cost Index 2024 — Athens",
+      "source": "Turner & Townsend Data Centre Cost Index 2024, Figure 3 (p3) — Athens: US$7.30/W",
       "url": "https://reports.turnerandtownsend.com/dcci-2024/",
-      "confidence": "estimate"
+      "evidence_url": "https://assets.foleon.com/eu-central-1/de-uploads-7e3kk3/48604/dcci_2024.1fcf2085d9b8.pdf",
+      "confidence": "verified",
+      "note": "Athens anchor; T&T 2024 DCCI Figure 3."
     },
     "PL": {
-      "value": 8500000.0,
+      "value": 8500000,
       "year": 2024,
-      "source": "Cushman & Wakefield Global DC Construction Cost Guide 2024 — Warsaw",
-      "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-construction-cost-guide",
-      "confidence": "estimate"
+      "source": "Turner & Townsend Data Centre Cost Index 2024, Figure 3 (p3) — Warsaw: US$8.50/W",
+      "url": "https://reports.turnerandtownsend.com/dcci-2024/",
+      "evidence_url": "https://assets.foleon.com/eu-central-1/de-uploads-7e3kk3/48604/dcci_2024.1fcf2085d9b8.pdf",
+      "confidence": "verified",
+      "note": "Warsaw anchor; T&T 2024 DCCI Figure 3."
     },
     "CZ": {
       "value": 8500000.0,
       "year": 2024,
-      "source": "Turner & Townsend DC Cost Index 2024 — Prague",
+      "source": "Regional estimate — Prague is not in DCCI 2024 or C&W published index; figure derived from neighbouring markets",
       "url": "https://reports.turnerandtownsend.com/dcci-2024/",
-      "confidence": "estimate"
+      "confidence": "estimate",
+      "note": "No primary per-city citation; estimate based on regional comparables."
     },
     "HU": {
       "value": 8000000.0,
       "year": 2024,
-      "source": "Turner & Townsend DC Cost Index 2024 — Budapest",
+      "source": "Regional estimate — Budapest is not in DCCI 2024 or C&W published index; figure derived from neighbouring markets",
       "url": "https://reports.turnerandtownsend.com/dcci-2024/",
-      "confidence": "estimate"
+      "confidence": "estimate",
+      "note": "No primary per-city citation; estimate based on regional comparables."
     },
     "RO": {
       "value": 7500000.0,
       "year": 2024,
-      "source": "Turner & Townsend DC Cost Index 2024 — Bucharest",
+      "source": "Regional estimate — Bucharest is not in DCCI 2024 or C&W published index; figure derived from neighbouring markets",
       "url": "https://reports.turnerandtownsend.com/dcci-2024/",
-      "confidence": "estimate"
+      "confidence": "estimate",
+      "note": "No primary per-city citation; estimate based on regional comparables."
     },
     "AE": {
-      "value": 9500000.0,
+      "value": 8800000,
       "year": 2024,
-      "source": "Cushman & Wakefield Global DC Construction Cost Guide 2024 — Dubai",
-      "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-construction-cost-guide",
-      "confidence": "estimate"
+      "source": "Turner & Townsend Data Centre Cost Index 2024, Figure 3 (p3) — UAE: US$8.80/W",
+      "url": "https://reports.turnerandtownsend.com/dcci-2024/",
+      "evidence_url": "https://assets.foleon.com/eu-central-1/de-uploads-7e3kk3/48604/dcci_2024.1fcf2085d9b8.pdf",
+      "confidence": "verified",
+      "note": "UAE anchor; T&T 2024 DCCI Figure 3."
     },
     "SA": {
-      "value": 9000000.0,
+      "value": 10800000,
       "year": 2024,
-      "source": "Cushman & Wakefield Global DC Construction Cost Guide 2024 — Riyadh",
-      "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-construction-cost-guide",
-      "confidence": "estimate"
+      "source": "Turner & Townsend Data Centre Cost Index 2024, Figure 3 (p3) — Kingdom of Saudi Arabia: US$10.80/W",
+      "url": "https://reports.turnerandtownsend.com/dcci-2024/",
+      "evidence_url": "https://assets.foleon.com/eu-central-1/de-uploads-7e3kk3/48604/dcci_2024.1fcf2085d9b8.pdf",
+      "confidence": "verified",
+      "note": "Kingdom of Saudi Arabia anchor; T&T 2024 DCCI Figure 3."
     },
     "QA": {
       "value": 9500000.0,
       "year": 2024,
-      "source": "Cushman & Wakefield Global DC Construction Cost Guide 2024 — Doha",
-      "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-construction-cost-guide",
-      "confidence": "estimate"
+      "source": "Regional estimate — Doha is not in DCCI 2024 or C&W published index; figure derived from neighbouring markets",
+      "url": "https://reports.turnerandtownsend.com/dcci-2024/",
+      "confidence": "estimate",
+      "note": "No primary per-city citation; estimate based on regional comparables."
     },
     "IL": {
       "value": 10000000.0,
       "year": 2024,
-      "source": "Turner & Townsend DC Cost Index 2024 — Tel Aviv",
+      "source": "Regional estimate — Tel Aviv is not in DCCI 2024 or C&W published index; figure derived from neighbouring markets",
       "url": "https://reports.turnerandtownsend.com/dcci-2024/",
-      "confidence": "estimate"
+      "confidence": "estimate",
+      "note": "No primary per-city citation; estimate based on regional comparables."
     },
     "TR": {
       "value": 7500000.0,
       "year": 2024,
-      "source": "Turner & Townsend DC Cost Index 2024 — Istanbul",
+      "source": "Regional estimate — Istanbul is not in DCCI 2024 or C&W published index; figure derived from neighbouring markets",
       "url": "https://reports.turnerandtownsend.com/dcci-2024/",
-      "confidence": "estimate"
+      "confidence": "estimate",
+      "note": "No primary per-city citation; estimate based on regional comparables."
     },
     "EG": {
       "value": 7000000.0,
       "year": 2024,
-      "source": "Cushman & Wakefield Global DC Construction Cost Guide 2024 — Cairo",
-      "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-construction-cost-guide",
-      "confidence": "estimate"
+      "source": "Regional estimate — Cairo is not in DCCI 2024 or C&W published index; figure derived from neighbouring markets",
+      "url": "https://reports.turnerandtownsend.com/dcci-2024/",
+      "confidence": "estimate",
+      "note": "No primary per-city citation; estimate based on regional comparables."
     },
     "MA": {
       "value": 7000000.0,
       "year": 2024,
-      "source": "Turner & Townsend DC Cost Index 2024 — Casablanca",
+      "source": "Regional estimate — Casablanca is not in DCCI 2024 or C&W published index; figure derived from neighbouring markets",
       "url": "https://reports.turnerandtownsend.com/dcci-2024/",
-      "confidence": "estimate"
+      "confidence": "estimate",
+      "note": "No primary per-city citation; estimate based on regional comparables."
     }
   },
   "power_cost_usd_kwh": {
@@ -1088,48 +1132,6 @@
       "url": "https://www.ofgem.gov.uk/",
       "confidence": "estimate"
     },
-    "IE": {
-      "value": 0.3,
-      "year": 2024,
-      "source": "CRU industrial electricity tariff",
-      "url": "https://www.cru.ie/",
-      "confidence": "estimate"
-    },
-    "DE": {
-      "value": 0.2,
-      "year": 2024,
-      "source": "Eurostat NRG_PC_205 — Band IE (large industrial)",
-      "url": "https://ec.europa.eu/eurostat/web/energy/database",
-      "confidence": "estimate"
-    },
-    "FR": {
-      "value": 0.16,
-      "year": 2024,
-      "source": "Eurostat NRG_PC_205 — Band IE",
-      "url": "https://ec.europa.eu/eurostat/web/energy/database",
-      "confidence": "estimate"
-    },
-    "NL": {
-      "value": 0.2,
-      "year": 2024,
-      "source": "Eurostat NRG_PC_205 — Band IE",
-      "url": "https://ec.europa.eu/eurostat/web/energy/database",
-      "confidence": "estimate"
-    },
-    "BE": {
-      "value": 0.19,
-      "year": 2024,
-      "source": "Eurostat NRG_PC_205 — Band IE",
-      "url": "https://ec.europa.eu/eurostat/web/energy/database",
-      "confidence": "estimate"
-    },
-    "LU": {
-      "value": 0.17,
-      "year": 2024,
-      "source": "Eurostat NRG_PC_205 — Band IE",
-      "url": "https://ec.europa.eu/eurostat/web/energy/database",
-      "confidence": "estimate"
-    },
     "CH": {
       "value": 0.18,
       "year": 2024,
@@ -1137,109 +1139,11 @@
       "url": "https://www.elcom.admin.ch/",
       "confidence": "estimate"
     },
-    "AT": {
-      "value": 0.22,
-      "year": 2024,
-      "source": "Eurostat NRG_PC_205 — Band IE",
-      "url": "https://ec.europa.eu/eurostat/web/energy/database",
-      "confidence": "estimate"
-    },
-    "SE": {
-      "value": 0.1,
-      "year": 2024,
-      "source": "Eurostat NRG_PC_205 — Band IE",
-      "url": "https://ec.europa.eu/eurostat/web/energy/database",
-      "confidence": "estimate"
-    },
-    "NO": {
-      "value": 0.08,
-      "year": 2024,
-      "source": "NVE industrial tariff",
-      "url": "https://www.nve.no/",
-      "confidence": "estimate"
-    },
-    "DK": {
-      "value": 0.17,
-      "year": 2024,
-      "source": "Eurostat NRG_PC_205 — Band IE",
-      "url": "https://ec.europa.eu/eurostat/web/energy/database",
-      "confidence": "estimate"
-    },
-    "FI": {
-      "value": 0.09,
-      "year": 2024,
-      "source": "Eurostat NRG_PC_205 — Band IE",
-      "url": "https://ec.europa.eu/eurostat/web/energy/database",
-      "confidence": "estimate"
-    },
     "IS": {
       "value": 0.05,
       "year": 2024,
       "source": "Landsvirkjun industrial tariff (hydropower)",
       "url": "https://www.landsvirkjun.com/",
-      "confidence": "estimate"
-    },
-    "ES": {
-      "value": 0.15,
-      "year": 2024,
-      "source": "Eurostat NRG_PC_205 — Band IE",
-      "url": "https://ec.europa.eu/eurostat/web/energy/database",
-      "confidence": "estimate"
-    },
-    "PT": {
-      "value": 0.16,
-      "year": 2024,
-      "source": "Eurostat NRG_PC_205 — Band IE",
-      "url": "https://ec.europa.eu/eurostat/web/energy/database",
-      "confidence": "estimate"
-    },
-    "IT": {
-      "value": 0.17,
-      "year": 2024,
-      "source": "Eurostat NRG_PC_205 — Band IE (2024 H2: ~€0.16/kWh ≈ $0.17)",
-      "url": "https://ec.europa.eu/eurostat/web/energy/database",
-      "confidence": "estimate"
-    },
-    "GR": {
-      "value": 0.17,
-      "year": 2024,
-      "source": "Eurostat NRG_PC_205 — Band IE",
-      "url": "https://ec.europa.eu/eurostat/web/energy/database",
-      "confidence": "estimate"
-    },
-    "PL": {
-      "value": 0.13,
-      "year": 2024,
-      "source": "Eurostat NRG_PC_205 — Band IE",
-      "url": "https://ec.europa.eu/eurostat/web/energy/database",
-      "confidence": "estimate"
-    },
-    "CZ": {
-      "value": 0.12,
-      "year": 2024,
-      "source": "Eurostat NRG_PC_205 — Band IE",
-      "url": "https://ec.europa.eu/eurostat/web/energy/database",
-      "confidence": "estimate"
-    },
-    "HU": {
-      "value": 0.12,
-      "year": 2024,
-      "source": "Eurostat NRG_PC_205 — Band IE",
-      "url": "https://ec.europa.eu/eurostat/web/energy/database",
-      "confidence": "estimate"
-    },
-    "RO": {
-      "value": 0.14,
-      "year": 2024,
-      "source": "Eurostat NRG_PC_205 — Band IE",
-      "url": "https://ec.europa.eu/eurostat/web/energy/database",
-      "confidence": "estimate"
-    },
-    "EE": {
-      "value": 0.13,
-      "year": 2024,
-      "source": "Eurostat NRG_PC_205 — Band IE",
-      "url": "https://ec.europa.eu/eurostat/web/energy/database",
       "confidence": "estimate"
     },
     "AE": {
@@ -1289,13 +1193,6 @@
       "year": 2024,
       "source": "Israel Electricity Authority industrial tariff",
       "url": "https://www.gov.il/en/departments/electricity_authority",
-      "confidence": "estimate"
-    },
-    "TR": {
-      "value": 0.08,
-      "year": 2024,
-      "source": "EPDK industrial tariff",
-      "url": "https://www.epdk.gov.tr/",
       "confidence": "estimate"
     },
     "EG": {

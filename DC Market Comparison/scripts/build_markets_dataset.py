@@ -43,6 +43,7 @@ RAW_SOURCES: dict[str, str] = {
     "carbon_intensity_gco2_kwh": "ember_carbon_intensity.json",  # F14
     "rd_techs_per_million":      "worldbank_rd_techs.json",      # F13a
     "tertiary_grad_pct":         "worldbank_tertiary.json",      # F13b
+    "power_cost_usd_kwh":        "eurostat_power_cost.json",     # F8 (EU/EFTA only)
 }
 
 

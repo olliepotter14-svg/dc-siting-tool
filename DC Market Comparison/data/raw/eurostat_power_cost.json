@@ -1,0 +1,344 @@
+{
+  "EU27_2020": {
+    "value": 0.1392,
+    "year": 2024,
+    "source": "Eurostat NRG_PC_205, band IE (20,000–69,999 MWh) — 2024-S2, EUR×1.08",
+    "url": "https://ec.europa.eu/eurostat/databrowser/view/nrg_pc_205/default/table?lang=en",
+    "evidence_url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/NRG_PC_205?format=JSON&time=2024-S2&nrg_cons=MWH20000-69999&currency=EUR&unit=KWH&tax=X_TAX",
+    "confidence": "verified",
+    "note": "Auto-fetched from Eurostat API; 0.1289 EUR/kWh × 1.08 USD/EUR = 0.1392."
+  },
+  "EA": {
+    "value": 0.1422,
+    "year": 2024,
+    "source": "Eurostat NRG_PC_205, band IE (20,000–69,999 MWh) — 2024-S2, EUR×1.08",
+    "url": "https://ec.europa.eu/eurostat/databrowser/view/nrg_pc_205/default/table?lang=en",
+    "evidence_url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/NRG_PC_205?format=JSON&time=2024-S2&nrg_cons=MWH20000-69999&currency=EUR&unit=KWH&tax=X_TAX",
+    "confidence": "verified",
+    "note": "Auto-fetched from Eurostat API; 0.1317 EUR/kWh × 1.08 USD/EUR = 0.1422."
+  },
+  "BE": {
+    "value": 0.1236,
+    "year": 2024,
+    "source": "Eurostat NRG_PC_205, band IE (20,000–69,999 MWh) — 2024-S2, EUR×1.08",
+    "url": "https://ec.europa.eu/eurostat/databrowser/view/nrg_pc_205/default/table?lang=en",
+    "evidence_url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/NRG_PC_205?format=JSON&time=2024-S2&nrg_cons=MWH20000-69999&currency=EUR&unit=KWH&tax=X_TAX",
+    "confidence": "verified",
+    "note": "Auto-fetched from Eurostat API; 0.1144 EUR/kWh × 1.08 USD/EUR = 0.1236."
+  },
+  "BG": {
+    "value": 0.1634,
+    "year": 2024,
+    "source": "Eurostat NRG_PC_205, band IE (20,000–69,999 MWh) — 2024-S2, EUR×1.08",
+    "url": "https://ec.europa.eu/eurostat/databrowser/view/nrg_pc_205/default/table?lang=en",
+    "evidence_url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/NRG_PC_205?format=JSON&time=2024-S2&nrg_cons=MWH20000-69999&currency=EUR&unit=KWH&tax=X_TAX",
+    "confidence": "verified",
+    "note": "Auto-fetched from Eurostat API; 0.1513 EUR/kWh × 1.08 USD/EUR = 0.1634."
+  },
+  "CZ": {
+    "value": 0.1782,
+    "year": 2024,
+    "source": "Eurostat NRG_PC_205, band IE (20,000–69,999 MWh) — 2024-S2, EUR×1.08",
+    "url": "https://ec.europa.eu/eurostat/databrowser/view/nrg_pc_205/default/table?lang=en",
+    "evidence_url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/NRG_PC_205?format=JSON&time=2024-S2&nrg_cons=MWH20000-69999&currency=EUR&unit=KWH&tax=X_TAX",
+    "confidence": "verified",
+    "note": "Auto-fetched from Eurostat API; 0.165 EUR/kWh × 1.08 USD/EUR = 0.1782."
+  },
+  "DK": {
+    "value": 0.1283,
+    "year": 2024,
+    "source": "Eurostat NRG_PC_205, band IE (20,000–69,999 MWh) — 2024-S2, EUR×1.08",
+    "url": "https://ec.europa.eu/eurostat/databrowser/view/nrg_pc_205/default/table?lang=en",
+    "evidence_url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/NRG_PC_205?format=JSON&time=2024-S2&nrg_cons=MWH20000-69999&currency=EUR&unit=KWH&tax=X_TAX",
+    "confidence": "verified",
+    "note": "Auto-fetched from Eurostat API; 0.1188 EUR/kWh × 1.08 USD/EUR = 0.1283."
+  },
+  "DE": {
+    "value": 0.163,
+    "year": 2024,
+    "source": "Eurostat NRG_PC_205, band IE (20,000–69,999 MWh) — 2024-S2, EUR×1.08",
+    "url": "https://ec.europa.eu/eurostat/databrowser/view/nrg_pc_205/default/table?lang=en",
+    "evidence_url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/NRG_PC_205?format=JSON&time=2024-S2&nrg_cons=MWH20000-69999&currency=EUR&unit=KWH&tax=X_TAX",
+    "confidence": "verified",
+    "note": "Auto-fetched from Eurostat API; 0.1509 EUR/kWh × 1.08 USD/EUR = 0.163."
+  },
+  "EE": {
+    "value": 0.1406,
+    "year": 2024,
+    "source": "Eurostat NRG_PC_205, band IE (20,000–69,999 MWh) — 2024-S2, EUR×1.08",
+    "url": "https://ec.europa.eu/eurostat/databrowser/view/nrg_pc_205/default/table?lang=en",
+    "evidence_url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/NRG_PC_205?format=JSON&time=2024-S2&nrg_cons=MWH20000-69999&currency=EUR&unit=KWH&tax=X_TAX",
+    "confidence": "verified",
+    "note": "Auto-fetched from Eurostat API; 0.1302 EUR/kWh × 1.08 USD/EUR = 0.1406."
+  },
+  "IE": {
+    "value": 0.2253,
+    "year": 2024,
+    "source": "Eurostat NRG_PC_205, band IE (20,000–69,999 MWh) — 2024-S2, EUR×1.08",
+    "url": "https://ec.europa.eu/eurostat/databrowser/view/nrg_pc_205/default/table?lang=en",
+    "evidence_url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/NRG_PC_205?format=JSON&time=2024-S2&nrg_cons=MWH20000-69999&currency=EUR&unit=KWH&tax=X_TAX",
+    "confidence": "verified",
+    "note": "Auto-fetched from Eurostat API; 0.2086 EUR/kWh × 1.08 USD/EUR = 0.2253."
+  },
+  "GR": {
+    "value": 0.1652,
+    "year": 2024,
+    "source": "Eurostat NRG_PC_205, band IE (20,000–69,999 MWh) — 2024-S2, EUR×1.08",
+    "url": "https://ec.europa.eu/eurostat/databrowser/view/nrg_pc_205/default/table?lang=en",
+    "evidence_url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/NRG_PC_205?format=JSON&time=2024-S2&nrg_cons=MWH20000-69999&currency=EUR&unit=KWH&tax=X_TAX",
+    "confidence": "verified",
+    "note": "Auto-fetched from Eurostat API; 0.153 EUR/kWh × 1.08 USD/EUR = 0.1652."
+  },
+  "ES": {
+    "value": 0.1149,
+    "year": 2024,
+    "source": "Eurostat NRG_PC_205, band IE (20,000–69,999 MWh) — 2024-S2, EUR×1.08",
+    "url": "https://ec.europa.eu/eurostat/databrowser/view/nrg_pc_205/default/table?lang=en",
+    "evidence_url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/NRG_PC_205?format=JSON&time=2024-S2&nrg_cons=MWH20000-69999&currency=EUR&unit=KWH&tax=X_TAX",
+    "confidence": "verified",
+    "note": "Auto-fetched from Eurostat API; 0.1064 EUR/kWh × 1.08 USD/EUR = 0.1149."
+  },
+  "FR": {
+    "value": 0.1084,
+    "year": 2024,
+    "source": "Eurostat NRG_PC_205, band IE (20,000–69,999 MWh) — 2024-S2, EUR×1.08",
+    "url": "https://ec.europa.eu/eurostat/databrowser/view/nrg_pc_205/default/table?lang=en",
+    "evidence_url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/NRG_PC_205?format=JSON&time=2024-S2&nrg_cons=MWH20000-69999&currency=EUR&unit=KWH&tax=X_TAX",
+    "confidence": "verified",
+    "note": "Auto-fetched from Eurostat API; 0.1004 EUR/kWh × 1.08 USD/EUR = 0.1084."
+  },
+  "HR": {
+    "value": 0.1548,
+    "year": 2024,
+    "source": "Eurostat NRG_PC_205, band IE (20,000–69,999 MWh) — 2024-S2, EUR×1.08",
+    "url": "https://ec.europa.eu/eurostat/databrowser/view/nrg_pc_205/default/table?lang=en",
+    "evidence_url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/NRG_PC_205?format=JSON&time=2024-S2&nrg_cons=MWH20000-69999&currency=EUR&unit=KWH&tax=X_TAX",
+    "confidence": "verified",
+    "note": "Auto-fetched from Eurostat API; 0.1433 EUR/kWh × 1.08 USD/EUR = 0.1548."
+  },
+  "IT": {
+    "value": 0.1619,
+    "year": 2024,
+    "source": "Eurostat NRG_PC_205, band IE (20,000–69,999 MWh) — 2024-S2, EUR×1.08",
+    "url": "https://ec.europa.eu/eurostat/databrowser/view/nrg_pc_205/default/table?lang=en",
+    "evidence_url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/NRG_PC_205?format=JSON&time=2024-S2&nrg_cons=MWH20000-69999&currency=EUR&unit=KWH&tax=X_TAX",
+    "confidence": "verified",
+    "note": "Auto-fetched from Eurostat API; 0.1499 EUR/kWh × 1.08 USD/EUR = 0.1619."
+  },
+  "CY": {
+    "value": 0.1967,
+    "year": 2024,
+    "source": "Eurostat NRG_PC_205, band IE (20,000–69,999 MWh) — 2024-S2, EUR×1.08",
+    "url": "https://ec.europa.eu/eurostat/databrowser/view/nrg_pc_205/default/table?lang=en",
+    "evidence_url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/NRG_PC_205?format=JSON&time=2024-S2&nrg_cons=MWH20000-69999&currency=EUR&unit=KWH&tax=X_TAX",
+    "confidence": "verified",
+    "note": "Auto-fetched from Eurostat API; 0.1821 EUR/kWh × 1.08 USD/EUR = 0.1967."
+  },
+  "LV": {
+    "value": 0.113,
+    "year": 2024,
+    "source": "Eurostat NRG_PC_205, band IE (20,000–69,999 MWh) — 2024-S2, EUR×1.08",
+    "url": "https://ec.europa.eu/eurostat/databrowser/view/nrg_pc_205/default/table?lang=en",
+    "evidence_url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/NRG_PC_205?format=JSON&time=2024-S2&nrg_cons=MWH20000-69999&currency=EUR&unit=KWH&tax=X_TAX",
+    "confidence": "verified",
+    "note": "Auto-fetched from Eurostat API; 0.1046 EUR/kWh × 1.08 USD/EUR = 0.113."
+  },
+  "LT": {
+    "value": 0.1367,
+    "year": 2024,
+    "source": "Eurostat NRG_PC_205, band IE (20,000–69,999 MWh) — 2024-S2, EUR×1.08",
+    "url": "https://ec.europa.eu/eurostat/databrowser/view/nrg_pc_205/default/table?lang=en",
+    "evidence_url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/NRG_PC_205?format=JSON&time=2024-S2&nrg_cons=MWH20000-69999&currency=EUR&unit=KWH&tax=X_TAX",
+    "confidence": "verified",
+    "note": "Auto-fetched from Eurostat API; 0.1266 EUR/kWh × 1.08 USD/EUR = 0.1367."
+  },
+  "LU": {
+    "value": 0.1266,
+    "year": 2024,
+    "source": "Eurostat NRG_PC_205, band IE (20,000–69,999 MWh) — 2024-S2, EUR×1.08",
+    "url": "https://ec.europa.eu/eurostat/databrowser/view/nrg_pc_205/default/table?lang=en",
+    "evidence_url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/NRG_PC_205?format=JSON&time=2024-S2&nrg_cons=MWH20000-69999&currency=EUR&unit=KWH&tax=X_TAX",
+    "confidence": "verified",
+    "note": "Auto-fetched from Eurostat API; 0.1172 EUR/kWh × 1.08 USD/EUR = 0.1266."
+  },
+  "HU": {
+    "value": 0.1863,
+    "year": 2024,
+    "source": "Eurostat NRG_PC_205, band IE (20,000–69,999 MWh) — 2024-S2, EUR×1.08",
+    "url": "https://ec.europa.eu/eurostat/databrowser/view/nrg_pc_205/default/table?lang=en",
+    "evidence_url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/NRG_PC_205?format=JSON&time=2024-S2&nrg_cons=MWH20000-69999&currency=EUR&unit=KWH&tax=X_TAX",
+    "confidence": "verified",
+    "note": "Auto-fetched from Eurostat API; 0.1725 EUR/kWh × 1.08 USD/EUR = 0.1863."
+  },
+  "MT": {
+    "value": 0.1081,
+    "year": 2024,
+    "source": "Eurostat NRG_PC_205, band IE (20,000–69,999 MWh) — 2024-S2, EUR×1.08",
+    "url": "https://ec.europa.eu/eurostat/databrowser/view/nrg_pc_205/default/table?lang=en",
+    "evidence_url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/NRG_PC_205?format=JSON&time=2024-S2&nrg_cons=MWH20000-69999&currency=EUR&unit=KWH&tax=X_TAX",
+    "confidence": "verified",
+    "note": "Auto-fetched from Eurostat API; 0.1001 EUR/kWh × 1.08 USD/EUR = 0.1081."
+  },
+  "NL": {
+    "value": 0.1378,
+    "year": 2024,
+    "source": "Eurostat NRG_PC_205, band IE (20,000–69,999 MWh) — 2024-S2, EUR×1.08",
+    "url": "https://ec.europa.eu/eurostat/databrowser/view/nrg_pc_205/default/table?lang=en",
+    "evidence_url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/NRG_PC_205?format=JSON&time=2024-S2&nrg_cons=MWH20000-69999&currency=EUR&unit=KWH&tax=X_TAX",
+    "confidence": "verified",
+    "note": "Auto-fetched from Eurostat API; 0.1276 EUR/kWh × 1.08 USD/EUR = 0.1378."
+  },
+  "AT": {
+    "value": 0.167,
+    "year": 2024,
+    "source": "Eurostat NRG_PC_205, band IE (20,000–69,999 MWh) — 2024-S2, EUR×1.08",
+    "url": "https://ec.europa.eu/eurostat/databrowser/view/nrg_pc_205/default/table?lang=en",
+    "evidence_url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/NRG_PC_205?format=JSON&time=2024-S2&nrg_cons=MWH20000-69999&currency=EUR&unit=KWH&tax=X_TAX",
+    "confidence": "verified",
+    "note": "Auto-fetched from Eurostat API; 0.1546 EUR/kWh × 1.08 USD/EUR = 0.167."
+  },
+  "PL": {
+    "value": 0.1217,
+    "year": 2024,
+    "source": "Eurostat NRG_PC_205, band IE (20,000–69,999 MWh) — 2024-S2, EUR×1.08",
+    "url": "https://ec.europa.eu/eurostat/databrowser/view/nrg_pc_205/default/table?lang=en",
+    "evidence_url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/NRG_PC_205?format=JSON&time=2024-S2&nrg_cons=MWH20000-69999&currency=EUR&unit=KWH&tax=X_TAX",
+    "confidence": "verified",
+    "note": "Auto-fetched from Eurostat API; 0.1127 EUR/kWh × 1.08 USD/EUR = 0.1217."
+  },
+  "PT": {
+    "value": 0.1144,
+    "year": 2024,
+    "source": "Eurostat NRG_PC_205, band IE (20,000–69,999 MWh) — 2024-S2, EUR×1.08",
+    "url": "https://ec.europa.eu/eurostat/databrowser/view/nrg_pc_205/default/table?lang=en",
+    "evidence_url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/NRG_PC_205?format=JSON&time=2024-S2&nrg_cons=MWH20000-69999&currency=EUR&unit=KWH&tax=X_TAX",
+    "confidence": "verified",
+    "note": "Auto-fetched from Eurostat API; 0.1059 EUR/kWh × 1.08 USD/EUR = 0.1144."
+  },
+  "RO": {
+    "value": 0.1571,
+    "year": 2024,
+    "source": "Eurostat NRG_PC_205, band IE (20,000–69,999 MWh) — 2024-S2, EUR×1.08",
+    "url": "https://ec.europa.eu/eurostat/databrowser/view/nrg_pc_205/default/table?lang=en",
+    "evidence_url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/NRG_PC_205?format=JSON&time=2024-S2&nrg_cons=MWH20000-69999&currency=EUR&unit=KWH&tax=X_TAX",
+    "confidence": "verified",
+    "note": "Auto-fetched from Eurostat API; 0.1455 EUR/kWh × 1.08 USD/EUR = 0.1571."
+  },
+  "SI": {
+    "value": 0.1561,
+    "year": 2024,
+    "source": "Eurostat NRG_PC_205, band IE (20,000–69,999 MWh) — 2024-S2, EUR×1.08",
+    "url": "https://ec.europa.eu/eurostat/databrowser/view/nrg_pc_205/default/table?lang=en",
+    "evidence_url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/NRG_PC_205?format=JSON&time=2024-S2&nrg_cons=MWH20000-69999&currency=EUR&unit=KWH&tax=X_TAX",
+    "confidence": "verified",
+    "note": "Auto-fetched from Eurostat API; 0.1445 EUR/kWh × 1.08 USD/EUR = 0.1561."
+  },
+  "SK": {
+    "value": 0.1711,
+    "year": 2024,
+    "source": "Eurostat NRG_PC_205, band IE (20,000–69,999 MWh) — 2024-S2, EUR×1.08",
+    "url": "https://ec.europa.eu/eurostat/databrowser/view/nrg_pc_205/default/table?lang=en",
+    "evidence_url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/NRG_PC_205?format=JSON&time=2024-S2&nrg_cons=MWH20000-69999&currency=EUR&unit=KWH&tax=X_TAX",
+    "confidence": "verified",
+    "note": "Auto-fetched from Eurostat API; 0.1584 EUR/kWh × 1.08 USD/EUR = 0.1711."
+  },
+  "FI": {
+    "value": 0.0557,
+    "year": 2024,
+    "source": "Eurostat NRG_PC_205, band IE (20,000–69,999 MWh) — 2024-S2, EUR×1.08",
+    "url": "https://ec.europa.eu/eurostat/databrowser/view/nrg_pc_205/default/table?lang=en",
+    "evidence_url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/NRG_PC_205?format=JSON&time=2024-S2&nrg_cons=MWH20000-69999&currency=EUR&unit=KWH&tax=X_TAX",
+    "confidence": "verified",
+    "note": "Auto-fetched from Eurostat API; 0.0516 EUR/kWh × 1.08 USD/EUR = 0.0557."
+  },
+  "SE": {
+    "value": 0.064,
+    "year": 2024,
+    "source": "Eurostat NRG_PC_205, band IE (20,000–69,999 MWh) — 2024-S2, EUR×1.08",
+    "url": "https://ec.europa.eu/eurostat/databrowser/view/nrg_pc_205/default/table?lang=en",
+    "evidence_url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/NRG_PC_205?format=JSON&time=2024-S2&nrg_cons=MWH20000-69999&currency=EUR&unit=KWH&tax=X_TAX",
+    "confidence": "verified",
+    "note": "Auto-fetched from Eurostat API; 0.0593 EUR/kWh × 1.08 USD/EUR = 0.064."
+  },
+  "NO": {
+    "value": 0.047,
+    "year": 2024,
+    "source": "Eurostat NRG_PC_205, band IE (20,000–69,999 MWh) — 2024-S2, EUR×1.08",
+    "url": "https://ec.europa.eu/eurostat/databrowser/view/nrg_pc_205/default/table?lang=en",
+    "evidence_url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/NRG_PC_205?format=JSON&time=2024-S2&nrg_cons=MWH20000-69999&currency=EUR&unit=KWH&tax=X_TAX",
+    "confidence": "verified",
+    "note": "Auto-fetched from Eurostat API; 0.0435 EUR/kWh × 1.08 USD/EUR = 0.047."
+  },
+  "BA": {
+    "value": 0.0946,
+    "year": 2024,
+    "source": "Eurostat NRG_PC_205, band IE (20,000–69,999 MWh) — 2024-S2, EUR×1.08",
+    "url": "https://ec.europa.eu/eurostat/databrowser/view/nrg_pc_205/default/table?lang=en",
+    "evidence_url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/NRG_PC_205?format=JSON&time=2024-S2&nrg_cons=MWH20000-69999&currency=EUR&unit=KWH&tax=X_TAX",
+    "confidence": "verified",
+    "note": "Auto-fetched from Eurostat API; 0.0876 EUR/kWh × 1.08 USD/EUR = 0.0946."
+  },
+  "ME": {
+    "value": 0.0485,
+    "year": 2024,
+    "source": "Eurostat NRG_PC_205, band IE (20,000–69,999 MWh) — 2024-S2, EUR×1.08",
+    "url": "https://ec.europa.eu/eurostat/databrowser/view/nrg_pc_205/default/table?lang=en",
+    "evidence_url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/NRG_PC_205?format=JSON&time=2024-S2&nrg_cons=MWH20000-69999&currency=EUR&unit=KWH&tax=X_TAX",
+    "confidence": "verified",
+    "note": "Auto-fetched from Eurostat API; 0.0449 EUR/kWh × 1.08 USD/EUR = 0.0485."
+  },
+  "MD": {
+    "value": 0.0913,
+    "year": 2024,
+    "source": "Eurostat NRG_PC_205, band IE (20,000–69,999 MWh) — 2024-S2, EUR×1.08",
+    "url": "https://ec.europa.eu/eurostat/databrowser/view/nrg_pc_205/default/table?lang=en",
+    "evidence_url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/NRG_PC_205?format=JSON&time=2024-S2&nrg_cons=MWH20000-69999&currency=EUR&unit=KWH&tax=X_TAX",
+    "confidence": "verified",
+    "note": "Auto-fetched from Eurostat API; 0.0845 EUR/kWh × 1.08 USD/EUR = 0.0913."
+  },
+  "MK": {
+    "value": 0.1389,
+    "year": 2024,
+    "source": "Eurostat NRG_PC_205, band IE (20,000–69,999 MWh) — 2024-S2, EUR×1.08",
+    "url": "https://ec.europa.eu/eurostat/databrowser/view/nrg_pc_205/default/table?lang=en",
+    "evidence_url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/NRG_PC_205?format=JSON&time=2024-S2&nrg_cons=MWH20000-69999&currency=EUR&unit=KWH&tax=X_TAX",
+    "confidence": "verified",
+    "note": "Auto-fetched from Eurostat API; 0.1286 EUR/kWh × 1.08 USD/EUR = 0.1389."
+  },
+  "GE": {
+    "value": 0.0831,
+    "year": 2024,
+    "source": "Eurostat NRG_PC_205, band IE (20,000–69,999 MWh) — 2024-S2, EUR×1.08",
+    "url": "https://ec.europa.eu/eurostat/databrowser/view/nrg_pc_205/default/table?lang=en",
+    "evidence_url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/NRG_PC_205?format=JSON&time=2024-S2&nrg_cons=MWH20000-69999&currency=EUR&unit=KWH&tax=X_TAX",
+    "confidence": "verified",
+    "note": "Auto-fetched from Eurostat API; 0.0769 EUR/kWh × 1.08 USD/EUR = 0.0831."
+  },
+  "AL": {
+    "value": 0.1395,
+    "year": 2024,
+    "source": "Eurostat NRG_PC_205, band IE (20,000–69,999 MWh) — 2024-S2, EUR×1.08",
+    "url": "https://ec.europa.eu/eurostat/databrowser/view/nrg_pc_205/default/table?lang=en",
+    "evidence_url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/NRG_PC_205?format=JSON&time=2024-S2&nrg_cons=MWH20000-69999&currency=EUR&unit=KWH&tax=X_TAX",
+    "confidence": "verified",
+    "note": "Auto-fetched from Eurostat API; 0.1292 EUR/kWh × 1.08 USD/EUR = 0.1395."
+  },
+  "RS": {
+    "value": 0.1192,
+    "year": 2024,
+    "source": "Eurostat NRG_PC_205, band IE (20,000–69,999 MWh) — 2024-S2, EUR×1.08",
+    "url": "https://ec.europa.eu/eurostat/databrowser/view/nrg_pc_205/default/table?lang=en",
+    "evidence_url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/NRG_PC_205?format=JSON&time=2024-S2&nrg_cons=MWH20000-69999&currency=EUR&unit=KWH&tax=X_TAX",
+    "confidence": "verified",
+    "note": "Auto-fetched from Eurostat API; 0.1104 EUR/kWh × 1.08 USD/EUR = 0.1192."
+  },
+  "TR": {
+    "value": 0.0881,
+    "year": 2024,
+    "source": "Eurostat NRG_PC_205, band IE (20,000–69,999 MWh) — 2024-S2, EUR×1.08",
+    "url": "https://ec.europa.eu/eurostat/databrowser/view/nrg_pc_205/default/table?lang=en",
+    "evidence_url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/NRG_PC_205?format=JSON&time=2024-S2&nrg_cons=MWH20000-69999&currency=EUR&unit=KWH&tax=X_TAX",
+    "confidence": "verified",
+    "note": "Auto-fetched from Eurostat API; 0.0816 EUR/kWh × 1.08 USD/EUR = 0.0881."
+  }
+}
