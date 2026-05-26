@@ -1074,11 +1074,20 @@
       "confidence": "estimate"
     },
     "GR": {
-      "value": 7.5,
+      "value": 4.5,
       "year": 2030,
-      "source": "ADMIE Ten-Year Network Development Plan 2024-2033",
-      "url": "https://www.admie.gr/en",
-      "confidence": "estimate"
+      "source": "IPTO/ADMIE Ten-Year Network Development Plan 2024-2033 — €4.1 bn (~USD 4.5 bn) transmission investment committed. Audit correction from prior $7.5bn estimate.",
+      "url": "https://www.admie.gr/en/grid/development/ten-year-development-plan",
+      "evidence_url": "https://www.admie.gr/en/kentro-typoy/press-releases/international-interconnections-centre-iptos-ten-year-development-plan",
+      "confidence": "verified",
+      "sources": [
+        {
+          "name": "IPTO Ten-Year Network Development Plan 2024-2033 — €4.1bn transmission investment committed",
+          "value": 4.5,
+          "url": "https://www.admie.gr/en/kentro-typoy/press-releases/international-interconnections-centre-iptos-ten-year-development-plan"
+        }
+      ],
+      "note": "Corrected from prior $7.5bn estimate after 26-May audit; IPTO publishes €4.1bn committed transmission capex."
     },
     "PT": {
       "value": 6.0,
@@ -1187,11 +1196,12 @@
       "confidence": "estimate"
     },
     "SE": {
-      "value": 0.22,
+      "value": 0.28,
       "year": 2024,
-      "source": "Ookla Speedtest Global Index",
+      "source": "Speedtest Global Index — Sweden median fixed broadband download speed 2024 (audit corrected to closer-to-published median)",
       "url": "https://www.speedtest.net/global-index/sweden",
-      "confidence": "estimate"
+      "confidence": "estimate",
+      "note": "Corrected from 0.22 Gbps after audit cross-check; Speedtest 2024 median ~280 Mbps. Stays ESTIMATE — Speedtest blocked from automated verification."
     },
     "IL": {
       "value": 0.21,
@@ -1222,11 +1232,12 @@
       "confidence": "estimate"
     },
     "NO": {
-      "value": 0.17,
+      "value": 0.23,
       "year": 2024,
-      "source": "Ookla Speedtest Global Index",
+      "source": "Speedtest Global Index — Norway median fixed broadband download speed 2024 (audit corrected to closer-to-published median)",
       "url": "https://www.speedtest.net/global-index/norway",
-      "confidence": "estimate"
+      "confidence": "estimate",
+      "note": "Corrected from 0.17 Gbps after audit cross-check; Speedtest 2024 median ~230 Mbps. Speedtest blocked from automated verification so stays ESTIMATE."
     },
     "PT": {
       "value": 0.17,
