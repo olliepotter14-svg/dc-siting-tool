@@ -152,13 +152,13 @@
       "unit": "years"
     },
     "GB": {
-      "value": 6.0,
+      "value": 6.67,
       "value_low": 5.0,
-      "value_high": 7.0,
+      "value_high": 8.0,
       "year": 2025,
-      "source": "JLL Research 2025 — Average grid connection lead times for new 50 MW data centers | Ofgem 2023 (via BCG Mind the Queue Sep 2025) — multi-source range 5.0-7.0 yrs, avg 6.0",
-      "url": "https://www.jll.com/en-uk/insights/emea-data-centre-report",
-      "evidence_url": "https://www.jll.com/en-uk/insights/emea-data-centre-report",
+      "source": "JLL Research 2025 — Average grid connection lead t | Ofgem 2023 (via BCG Mind the Queue Sep 2025) | Ember 'Grids for data centres in Europe' 2025 — multi-source range 5.0-8.0 yrs, avg 6.7",
+      "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
+      "evidence_url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
       "confidence": "verified",
       "sources": [
         {
@@ -170,18 +170,23 @@
           "name": "Ofgem 2023 (via BCG Mind the Queue Sep 2025)",
           "value": 5.0,
           "url": "https://web-assets.bcg.com/e1/b9/9e57a115499785a8902f77636824/mind-the-queue-connection-reform-for-the-electricity-grid-r.pdf"
+        },
+        {
+          "name": "Ember 'Grids for data centres in Europe' 2025, chart 'Faster grid connection is well correlated with stronger data centre market growth' — Years in grid connection queue (average), based on multiple sources",
+          "value": 8.0,
+          "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf"
         }
       ],
-      "note": "2 primary source(s); when sources disagree, value is the arithmetic mean. Range shown as low-high."
+      "note": "3 primary sources; value is arithmetic mean. Range shown as low-high."
     },
     "IE": {
-      "value": 10.0,
-      "value_low": 10.0,
+      "value": 9.67,
+      "value_low": 9.0,
       "value_high": 10.0,
       "year": 2025,
-      "source": "JLL Research 2025 | Ember 'Grids for data centres in Europe' 2025 p17 — multi-source range 10.0-10.0 yrs, avg 10.0",
-      "url": "https://www.jll.com/en-uk/insights/emea-data-centre-report",
-      "evidence_url": "https://www.jll.com/en-uk/insights/emea-data-centre-report",
+      "source": "JLL Research 2025 | Ember 'Grids for data centres in Europe' 2025 p17 | Ember 'Grids for data centres in Europe' 2025 — multi-source range 9.0-10.0 yrs, avg 9.7",
+      "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
+      "evidence_url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
       "confidence": "verified",
       "sources": [
         {
@@ -193,18 +198,23 @@
           "name": "Ember 'Grids for data centres in Europe' 2025 p17: FLAP-D average 7-10 years, up to 13",
           "value": 10.0,
           "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf"
+        },
+        {
+          "name": "Ember 'Grids for data centres in Europe' 2025, chart 'Faster grid connection is well correlated with stronger data centre market growth' — Years in grid connection queue (average), based on multiple sources (*effective ban on new data centres)",
+          "value": 9.0,
+          "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf"
         }
       ],
-      "note": "2 primary source(s); when sources disagree, value is the arithmetic mean. Range shown as low-high."
+      "note": "3 primary sources; value is arithmetic mean. Range shown as low-high."
     },
     "DE": {
-      "value": 6.33,
+      "value": 6.5,
       "value_low": 5.0,
       "value_high": 7.0,
       "year": 2025,
-      "source": "JLL Research 2025 — Average grid connection lead times for new 50 MW data centers (Frankfurt) | BCG via German Datacenter Association 2025 | GDA Outlook 2025/26 — multi-source range 5.0-7.0 yrs, avg 6.3",
-      "url": "https://www.jll.com/en-uk/insights/emea-data-centre-report",
-      "evidence_url": "https://www.jll.com/en-uk/insights/emea-data-centre-report",
+      "source": "JLL Research 2025 — Average grid connection lead t | BCG via German Datacenter Association 2025 | GDA Outlook 2025/26 | Ember 'Grids for data centres in Europe' 2025 — multi-source range 5.0-7.0 yrs, avg 6.5",
+      "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
+      "evidence_url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
       "confidence": "verified",
       "sources": [
         {
@@ -221,18 +231,23 @@
           "name": "GDA Outlook 2025/26: lead times of at least 5 years in Frankfurt",
           "value": 5.0,
           "url": "https://www.germandatacenters.com/fileadmin/documents/publications/GDC-Outlook-en_2025.pdf"
+        },
+        {
+          "name": "Ember 'Grids for data centres in Europe' 2025, chart 'Faster grid connection is well correlated with stronger data centre market growth' — Years in grid connection queue (average), based on multiple sources",
+          "value": 7.0,
+          "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf"
         }
       ],
-      "note": "3 primary source(s); when sources disagree, value is the arithmetic mean. Range shown as low-high."
+      "note": "4 primary sources; value is arithmetic mean. Range shown as low-high."
     },
     "NL": {
-      "value": 10.0,
-      "value_low": 10.0,
+      "value": 9.67,
+      "value_low": 9.0,
       "value_high": 10.0,
       "year": 2025,
-      "source": "JLL Research 2025 — Average grid connection lead times for new 50 MW data centers (Amsterdam) | BCG via PPC Land / Netbeheerder NL 2025 — multi-source range 10.0-10.0 yrs, avg 10.0",
-      "url": "https://www.jll.com/en-uk/insights/emea-data-centre-report",
-      "evidence_url": "https://www.jll.com/en-uk/insights/emea-data-centre-report",
+      "source": "JLL Research 2025 — Average grid connection lead t | BCG via PPC Land / Netbeheerder NL 2025 | Ember 'Grids for data centres in Europe' 2025 — multi-source range 9.0-10.0 yrs, avg 9.7",
+      "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
+      "evidence_url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
       "confidence": "verified",
       "sources": [
         {
@@ -244,9 +259,14 @@
           "name": "BCG via PPC Land / Netbeheerder NL 2025: \"up to 10-year wait times for new data center connections\"",
           "value": 10.0,
           "url": "https://web-assets.bcg.com/e1/b9/9e57a115499785a8902f77636824/mind-the-queue-connection-reform-for-the-electricity-grid-r.pdf"
+        },
+        {
+          "name": "Ember 'Grids for data centres in Europe' 2025, chart 'Faster grid connection is well correlated with stronger data centre market growth' — Years in grid connection queue (average), based on multiple sources (*effective ban on new data centres)",
+          "value": 9.0,
+          "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf"
         }
       ],
-      "note": "2 primary source(s); when sources disagree, value is the arithmetic mean. Range shown as low-high."
+      "note": "3 primary sources; value is arithmetic mean. Range shown as low-high."
     },
     "BE": {
       "value": 4.0,
@@ -410,11 +430,11 @@
       "note": "1 primary source(s); when sources disagree, value is the arithmetic mean. Range shown as low-high."
     },
     "NO": {
-      "value": 4.0,
-      "value_low": 4.0,
+      "value": 3.0,
+      "value_low": 2.0,
       "value_high": 4.0,
       "year": 2025,
-      "source": "Ember 'Grids for data centres in Europe' 2025 p18 — multi-source range 4.0-4.0 yrs, avg 4.0",
+      "source": "Ember 'Grids for data centres in Europe' 2025 p18 | Ember 'Grids for data centres in Europe' 2025 — multi-source range 2.0-4.0 yrs, avg 3.0",
       "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
       "evidence_url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
       "confidence": "verified",
@@ -423,9 +443,14 @@
           "name": "Ember 'Grids for data centres in Europe' 2025 p18: Nordics fast-connection group",
           "value": 4.0,
           "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf"
+        },
+        {
+          "name": "Ember 'Grids for data centres in Europe' 2025, chart 'Faster grid connection is well correlated with stronger data centre market growth' — Years in grid connection queue (average), based on multiple sources",
+          "value": 2.0,
+          "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf"
         }
       ],
-      "note": "1 primary source(s); when sources disagree, value is the arithmetic mean. Range shown as low-high."
+      "note": "2 primary sources; value is arithmetic mean. Range shown as low-high."
     },
     "DK": {
       "value": 4.0,
@@ -487,13 +512,13 @@
       "note": "2 primary source(s); when sources disagree, value is the arithmetic mean. Range shown as low-high."
     },
     "ES": {
-      "value": 3.25,
+      "value": 3.83,
       "value_low": 2.5,
-      "value_high": 4.0,
+      "value_high": 5.0,
       "year": 2025,
-      "source": "Strategic Energy Europe / idcnova 2025 | Latitude Media 2025 — multi-source range 2.5-4.0 yrs, avg 3.2",
-      "url": "https://strategicenergy.eu/spanish-energy-companies-gear-up-to-power-data-centres-12-gw-at-stake-and-over-e30-billion-in-investment/",
-      "evidence_url": "https://strategicenergy.eu/spanish-energy-companies-gear-up-to-power-data-centres-12-gw-at-stake-and-over-e30-billion-in-investment/",
+      "source": "Strategic Energy Europe / idcnova 2025 | Latitude Media 2025 | Ember 'Grids for data centres in Europe' 2025 — multi-source range 2.5-5.0 yrs, avg 3.8",
+      "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
+      "evidence_url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
       "confidence": "verified",
       "sources": [
         {
@@ -505,9 +530,14 @@
           "name": "Latitude Media 2025: \"Italy and Spain — projects with land and permits unable to secure firm delivery dates\"",
           "value": 4.0,
           "url": "https://www.latitudemedia.com/news/report-global-grid-congestion-puts-20-of-data-center-projects-at-risk/"
+        },
+        {
+          "name": "Ember 'Grids for data centres in Europe' 2025, chart 'Faster grid connection is well correlated with stronger data centre market growth' — Years in grid connection queue (average), based on multiple sources",
+          "value": 5.0,
+          "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf"
         }
       ],
-      "note": "2 primary source(s); when sources disagree, value is the arithmetic mean. Range shown as low-high."
+      "note": "3 primary sources; value is arithmetic mean. Range shown as low-high."
     },
     "PT": {
       "value": 3.1,
@@ -540,7 +570,7 @@
       "value_low": 3.0,
       "value_high": 3.0,
       "year": 2025,
-      "source": "Ember 'Grids for data centres in Europe' 2025 p18 — multi-source range 3.0-3.0 yrs, avg 3.0",
+      "source": "Ember 'Grids for data centres in Europe' 2025 p18 | Ember 'Grids for data centres in Europe' 2025 — multi-source range 3.0-3.0 yrs, avg 3.0",
       "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
       "evidence_url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
       "confidence": "verified",
@@ -549,9 +579,14 @@
           "name": "Ember 'Grids for data centres in Europe' 2025 p18: 'Italy – where data centres wait as little as three years in the grid connection queue'",
           "value": 3.0,
           "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf"
+        },
+        {
+          "name": "Ember 'Grids for data centres in Europe' 2025, chart 'Faster grid connection is well correlated with stronger data centre market growth' — Years in grid connection queue (average), based on multiple sources",
+          "value": 3.0,
+          "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf"
         }
       ],
-      "note": "1 primary source(s); when sources disagree, value is the arithmetic mean. Range shown as low-high."
+      "note": "2 primary sources; value is arithmetic mean. Range shown as low-high."
     },
     "GR": {
       "value": 3.1,
