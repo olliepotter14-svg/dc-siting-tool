@@ -71,19 +71,19 @@
       "value": 5.0,
       "year": 2027,
       "source": "JLL EMEA Data Centres Q4 2024 — Madrid emerging cluster",
-      "url": "https://www.jll.com/en/insights"
+      "url": "https://www.jll.com/en-uk/insights/emea-data-centre-report"
     },
     "IT": {
       "value": 4.0,
       "year": 2027,
       "source": "JLL EMEA Data Centres Q4 2024 — Milan emerging cluster",
-      "url": "https://www.jll.com/en/insights"
+      "url": "https://www.jll.com/en-uk/insights/emea-data-centre-report"
     },
     "PL": {
       "value": 2.0,
       "year": 2027,
       "source": "JLL EMEA Data Centres Q4 2024 — Warsaw emerging cluster",
-      "url": "https://www.jll.com/en/insights"
+      "url": "https://www.jll.com/en-uk/insights/emea-data-centre-report"
     },
     "AE": {
       "value": 4.5,
@@ -484,199 +484,199 @@
       "value": 0.31,
       "year": 2024,
       "source": "Ookla Speedtest Global Index",
-      "url": "https://www.speedtest.net/global-index"
+      "url": "https://www.speedtest.net/global-index/united-arab-emirates"
     },
     "IS": {
       "value": 0.3,
       "year": 2024,
       "source": "Ookla Speedtest Global Index",
-      "url": "https://www.speedtest.net/global-index"
+      "url": "https://www.speedtest.net/global-index/iceland"
     },
     "FR": {
       "value": 0.27,
       "year": 2024,
       "source": "Ookla Speedtest Global Index",
-      "url": "https://www.speedtest.net/global-index"
+      "url": "https://www.speedtest.net/global-index/france"
     },
     "DK": {
       "value": 0.25,
       "year": 2024,
       "source": "Ookla Speedtest Global Index",
-      "url": "https://www.speedtest.net/global-index"
+      "url": "https://www.speedtest.net/global-index/denmark"
     },
     "CH": {
       "value": 0.25,
       "year": 2024,
       "source": "Ookla Speedtest Global Index",
-      "url": "https://www.speedtest.net/global-index"
+      "url": "https://www.speedtest.net/global-index/switzerland"
     },
     "ES": {
       "value": 0.23,
       "year": 2024,
       "source": "Ookla Speedtest Global Index",
-      "url": "https://www.speedtest.net/global-index"
+      "url": "https://www.speedtest.net/global-index/spain"
     },
     "SE": {
       "value": 0.22,
       "year": 2024,
       "source": "Ookla Speedtest Global Index",
-      "url": "https://www.speedtest.net/global-index"
+      "url": "https://www.speedtest.net/global-index/sweden"
     },
     "IL": {
       "value": 0.21,
       "year": 2024,
       "source": "Ookla Speedtest Global Index",
-      "url": "https://www.speedtest.net/global-index"
+      "url": "https://www.speedtest.net/global-index/israel"
     },
     "IE": {
       "value": 0.2,
       "year": 2024,
       "source": "Ookla Speedtest Global Index",
-      "url": "https://www.speedtest.net/global-index"
+      "url": "https://www.speedtest.net/global-index/ireland"
     },
     "LU": {
       "value": 0.19,
       "year": 2024,
       "source": "Ookla Speedtest Global Index",
-      "url": "https://www.speedtest.net/global-index"
+      "url": "https://www.speedtest.net/global-index/luxembourg"
     },
     "RO": {
       "value": 0.18,
       "year": 2024,
       "source": "Ookla Speedtest Global Index",
-      "url": "https://www.speedtest.net/global-index"
+      "url": "https://www.speedtest.net/global-index/romania"
     },
     "NO": {
       "value": 0.17,
       "year": 2024,
       "source": "Ookla Speedtest Global Index",
-      "url": "https://www.speedtest.net/global-index"
+      "url": "https://www.speedtest.net/global-index/norway"
     },
     "PT": {
       "value": 0.17,
       "year": 2024,
       "source": "Ookla Speedtest Global Index",
-      "url": "https://www.speedtest.net/global-index"
+      "url": "https://www.speedtest.net/global-index/portugal"
     },
     "FI": {
       "value": 0.16,
       "year": 2024,
       "source": "Ookla Speedtest Global Index",
-      "url": "https://www.speedtest.net/global-index"
+      "url": "https://www.speedtest.net/global-index/finland"
     },
     "NL": {
       "value": 0.16,
       "year": 2024,
       "source": "Ookla Speedtest Global Index",
-      "url": "https://www.speedtest.net/global-index"
+      "url": "https://www.speedtest.net/global-index/netherlands"
     },
     "EE": {
       "value": 0.15,
       "year": 2024,
       "source": "Ookla Speedtest Global Index",
-      "url": "https://www.speedtest.net/global-index"
+      "url": "https://www.speedtest.net/global-index/estonia"
     },
     "LT": {
       "value": 0.14,
       "year": 2024,
       "source": "Ookla Speedtest Global Index",
-      "url": "https://www.speedtest.net/global-index"
+      "url": "https://www.speedtest.net/global-index/lithuania"
     },
     "HU": {
       "value": 0.14,
       "year": 2024,
       "source": "Ookla Speedtest Global Index",
-      "url": "https://www.speedtest.net/global-index"
+      "url": "https://www.speedtest.net/global-index/hungary"
     },
     "GB": {
       "value": 0.14,
       "year": 2024,
       "source": "Ookla Speedtest Global Index",
-      "url": "https://www.speedtest.net/global-index"
+      "url": "https://www.speedtest.net/global-index/united-kingdom"
     },
     "PL": {
       "value": 0.13,
       "year": 2024,
       "source": "Ookla Speedtest Global Index",
-      "url": "https://www.speedtest.net/global-index"
+      "url": "https://www.speedtest.net/global-index/poland"
     },
     "CZ": {
       "value": 0.13,
       "year": 2024,
       "source": "Ookla Speedtest Global Index",
-      "url": "https://www.speedtest.net/global-index"
+      "url": "https://www.speedtest.net/global-index/czechia"
     },
     "IT": {
       "value": 0.12,
       "year": 2024,
       "source": "Ookla Speedtest Global Index",
-      "url": "https://www.speedtest.net/global-index"
+      "url": "https://www.speedtest.net/global-index/italy"
     },
     "BE": {
       "value": 0.12,
       "year": 2024,
       "source": "Ookla Speedtest Global Index",
-      "url": "https://www.speedtest.net/global-index"
+      "url": "https://www.speedtest.net/global-index/belgium"
     },
     "LV": {
       "value": 0.11,
       "year": 2024,
       "source": "Ookla Speedtest Global Index",
-      "url": "https://www.speedtest.net/global-index"
+      "url": "https://www.speedtest.net/global-index/latvia"
     },
     "GR": {
       "value": 0.1,
       "year": 2024,
       "source": "Ookla Speedtest Global Index",
-      "url": "https://www.speedtest.net/global-index"
+      "url": "https://www.speedtest.net/global-index/greece"
     },
     "DE": {
       "value": 0.1,
       "year": 2024,
       "source": "Ookla Speedtest Global Index",
-      "url": "https://www.speedtest.net/global-index"
+      "url": "https://www.speedtest.net/global-index/germany"
     },
     "AT": {
       "value": 0.09,
       "year": 2024,
       "source": "Ookla Speedtest Global Index",
-      "url": "https://www.speedtest.net/global-index"
+      "url": "https://www.speedtest.net/global-index/austria"
     },
     "SA": {
       "value": 0.09,
       "year": 2024,
       "source": "Ookla Speedtest Global Index",
-      "url": "https://www.speedtest.net/global-index"
+      "url": "https://www.speedtest.net/global-index/saudi-arabia"
     },
     "QA": {
       "value": 0.21,
       "year": 2024,
       "source": "Ookla Speedtest Global Index",
-      "url": "https://www.speedtest.net/global-index"
+      "url": "https://www.speedtest.net/global-index/qatar"
     },
     "TR": {
       "value": 0.08,
       "year": 2024,
       "source": "Ookla Speedtest Global Index",
-      "url": "https://www.speedtest.net/global-index"
+      "url": "https://www.speedtest.net/global-index/turkey"
     },
     "EG": {
       "value": 0.06,
       "year": 2024,
       "source": "Ookla Speedtest Global Index",
-      "url": "https://www.speedtest.net/global-index"
+      "url": "https://www.speedtest.net/global-index/egypt"
     },
     "MA": {
       "value": 0.06,
       "year": 2024,
       "source": "Ookla Speedtest Global Index",
-      "url": "https://www.speedtest.net/global-index"
+      "url": "https://www.speedtest.net/global-index/morocco"
     },
     "TN": {
       "value": 0.04,
       "year": 2024,
       "source": "Ookla Speedtest Global Index",
-      "url": "https://www.speedtest.net/global-index"
+      "url": "https://www.speedtest.net/global-index/tunisia"
     }
   },
   "bandwidth_2030_gbps": {
@@ -795,7 +795,7 @@
       "value": 10500000.0,
       "year": 2024,
       "source": "Cushman & Wakefield Global DC Construction Cost Guide 2024 — Oslo",
-      "url": "https://www.turnerandtownsend.com/"
+      "url": "https://reports.turnerandtownsend.com/dcci-2024/"
     },
     "DK": {
       "value": 10500000.0,
@@ -813,7 +813,7 @@
       "value": 10000000.0,
       "year": 2024,
       "source": "Turner & Townsend DC Cost Index 2024 — Helsinki",
-      "url": "https://www.turnerandtownsend.com/"
+      "url": "https://reports.turnerandtownsend.com/dcci-2024/"
     },
     "FR": {
       "value": 10500000.0,
@@ -850,7 +850,7 @@
       "value": 9000000.0,
       "year": 2024,
       "source": "Turner & Townsend DC Cost Index 2024 — Lisbon",
-      "url": "https://www.turnerandtownsend.com/"
+      "url": "https://reports.turnerandtownsend.com/dcci-2024/"
     },
     "IT": {
       "value": 9500000.0,
@@ -862,7 +862,7 @@
       "value": 8500000.0,
       "year": 2024,
       "source": "Turner & Townsend DC Cost Index 2024 — Athens",
-      "url": "https://www.turnerandtownsend.com/"
+      "url": "https://reports.turnerandtownsend.com/dcci-2024/"
     },
     "PL": {
       "value": 8500000.0,
@@ -874,19 +874,19 @@
       "value": 8500000.0,
       "year": 2024,
       "source": "Turner & Townsend DC Cost Index 2024 — Prague",
-      "url": "https://www.turnerandtownsend.com/"
+      "url": "https://reports.turnerandtownsend.com/dcci-2024/"
     },
     "HU": {
       "value": 8000000.0,
       "year": 2024,
       "source": "Turner & Townsend DC Cost Index 2024 — Budapest",
-      "url": "https://www.turnerandtownsend.com/"
+      "url": "https://reports.turnerandtownsend.com/dcci-2024/"
     },
     "RO": {
       "value": 7500000.0,
       "year": 2024,
       "source": "Turner & Townsend DC Cost Index 2024 — Bucharest",
-      "url": "https://www.turnerandtownsend.com/"
+      "url": "https://reports.turnerandtownsend.com/dcci-2024/"
     },
     "AE": {
       "value": 9500000.0,
@@ -910,13 +910,13 @@
       "value": 10000000.0,
       "year": 2024,
       "source": "Turner & Townsend DC Cost Index 2024 — Tel Aviv",
-      "url": "https://www.turnerandtownsend.com/"
+      "url": "https://reports.turnerandtownsend.com/dcci-2024/"
     },
     "TR": {
       "value": 7500000.0,
       "year": 2024,
       "source": "Turner & Townsend DC Cost Index 2024 — Istanbul",
-      "url": "https://www.turnerandtownsend.com/"
+      "url": "https://reports.turnerandtownsend.com/dcci-2024/"
     },
     "EG": {
       "value": 7000000.0,
@@ -928,7 +928,7 @@
       "value": 7000000.0,
       "year": 2024,
       "source": "Turner & Townsend DC Cost Index 2024 — Casablanca",
-      "url": "https://www.turnerandtownsend.com/"
+      "url": "https://reports.turnerandtownsend.com/dcci-2024/"
     }
   },
   "power_cost_usd_kwh": {
@@ -1174,37 +1174,37 @@
       "value": 280,
       "year": 2024,
       "source": "JLL EMEA Data Centres Q4 2024 — Madrid emerging market",
-      "url": "https://www.jll.com/en/insights"
+      "url": "https://www.jll.com/en-uk/insights/emea-data-centre-report"
     },
     "IT": {
       "value": 220,
       "year": 2024,
       "source": "JLL EMEA Data Centres Q4 2024 — Milan emerging market",
-      "url": "https://www.jll.com/en/insights"
+      "url": "https://www.jll.com/en-uk/insights/emea-data-centre-report"
     },
     "SE": {
       "value": 500,
       "year": 2025,
       "source": "Cushman & Wakefield Global DC Market H1 2025 + JLL EMEA Data Centres Q1 2025 (national totals)",
-      "url": "https://www.jll.com/en/insights"
+      "url": "https://www.jll.com/en-uk/insights/emea-data-centre-report"
     },
     "DK": {
       "value": 250,
       "year": 2024,
       "source": "JLL EMEA Data Centres Q4 2024 — Copenhagen + hyperscale campuses",
-      "url": "https://www.jll.com/en/insights"
+      "url": "https://www.jll.com/en-uk/insights/emea-data-centre-report"
     },
     "NO": {
       "value": 130,
       "year": 2024,
       "source": "datacentermap.com + Statkraft hyperscale partnership announcements",
-      "url": "https://www.datacentermap.com/"
+      "url": "https://www.datacentermap.com/norway/"
     },
     "FI": {
       "value": 130,
       "year": 2024,
       "source": "datacentermap.com + Google Hamina campus + Microsoft Espoo",
-      "url": "https://www.datacentermap.com/"
+      "url": "https://www.datacentermap.com/finland/"
     },
     "CH": {
       "value": 200,
@@ -1216,55 +1216,55 @@
       "value": 110,
       "year": 2024,
       "source": "datacentermap.com — Vienna",
-      "url": "https://www.datacentermap.com/"
+      "url": "https://www.datacentermap.com/austria/"
     },
     "BE": {
       "value": 110,
       "year": 2024,
       "source": "datacentermap.com — Brussels",
-      "url": "https://www.datacentermap.com/"
+      "url": "https://www.datacentermap.com/belgium/"
     },
     "LU": {
       "value": 90,
       "year": 2024,
       "source": "datacentermap.com + LuxConnect public reporting",
-      "url": "https://www.datacentermap.com/"
+      "url": "https://www.datacentermap.com/luxembourg/"
     },
     "PT": {
       "value": 80,
       "year": 2024,
       "source": "datacentermap.com + Start Campus Sines announcement",
-      "url": "https://www.datacentermap.com/"
+      "url": "https://www.datacentermap.com/portugal/"
     },
     "PL": {
       "value": 130,
       "year": 2024,
       "source": "JLL EMEA Data Centres Q4 2024 — Warsaw emerging cluster",
-      "url": "https://www.jll.com/en/insights"
+      "url": "https://www.jll.com/en-uk/insights/emea-data-centre-report"
     },
     "CZ": {
       "value": 75,
       "year": 2024,
       "source": "datacentermap.com — Prague",
-      "url": "https://www.datacentermap.com/"
+      "url": "https://www.datacentermap.com/czech-republic/"
     },
     "GR": {
       "value": 35,
       "year": 2024,
       "source": "datacentermap.com — Athens emerging",
-      "url": "https://www.datacentermap.com/"
+      "url": "https://www.datacentermap.com/greece/"
     },
     "RO": {
       "value": 70,
       "year": 2024,
       "source": "datacentermap.com — Bucharest",
-      "url": "https://www.datacentermap.com/"
+      "url": "https://www.datacentermap.com/romania/"
     },
     "EE": {
       "value": 25,
       "year": 2024,
       "source": "datacentermap.com — Tallinn",
-      "url": "https://www.datacentermap.com/"
+      "url": "https://www.datacentermap.com/estonia/"
     },
     "AE": {
       "value": 350,
@@ -1282,37 +1282,37 @@
       "value": 55,
       "year": 2024,
       "source": "datacentermap.com + Microsoft Qatar Cloud Region",
-      "url": "https://www.datacentermap.com/"
+      "url": "https://www.datacentermap.com/qatar/"
     },
     "BH": {
       "value": 50,
       "year": 2024,
       "source": "datacentermap.com + AWS Bahrain Region",
-      "url": "https://www.datacentermap.com/"
+      "url": "https://www.datacentermap.com/bahrain/"
     },
     "IL": {
       "value": 70,
       "year": 2024,
       "source": "datacentermap.com — Tel Aviv",
-      "url": "https://www.datacentermap.com/"
+      "url": "https://www.datacentermap.com/israel/"
     },
     "TR": {
       "value": 100,
       "year": 2024,
       "source": "datacentermap.com — Istanbul cluster",
-      "url": "https://www.datacentermap.com/"
+      "url": "https://www.datacentermap.com/turkey/"
     },
     "EG": {
       "value": 50,
       "year": 2024,
       "source": "datacentermap.com — Cairo",
-      "url": "https://www.datacentermap.com/"
+      "url": "https://www.datacentermap.com/egypt/"
     },
     "MA": {
       "value": 35,
       "year": 2024,
       "source": "datacentermap.com — Casablanca",
-      "url": "https://www.datacentermap.com/"
+      "url": "https://www.datacentermap.com/morocco/"
     }
   },
   "dc_capacity_planned_mw": {
@@ -1354,37 +1354,37 @@
       "value": 600,
       "year": 2024,
       "source": "JLL EMEA Data Centres Q4 2024 — Madrid pipeline boom",
-      "url": "https://www.jll.com/en/insights"
+      "url": "https://www.jll.com/en-uk/insights/emea-data-centre-report"
     },
     "IT": {
       "value": 500,
       "year": 2024,
       "source": "JLL EMEA Data Centres Q4 2024 — Milan pipeline",
-      "url": "https://www.jll.com/en/insights"
+      "url": "https://www.jll.com/en-uk/insights/emea-data-centre-report"
     },
     "SE": {
       "value": 350,
       "year": 2024,
       "source": "JLL EMEA Data Centres Q4 2024 — Stockholm + hyperscale pipeline",
-      "url": "https://www.jll.com/en/insights"
+      "url": "https://www.jll.com/en-uk/insights/emea-data-centre-report"
     },
     "DK": {
       "value": 400,
       "year": 2024,
       "source": "JLL EMEA Data Centres Q4 2024 — Microsoft, Meta, AWS pipelines",
-      "url": "https://www.jll.com/en/insights"
+      "url": "https://www.jll.com/en-uk/insights/emea-data-centre-report"
     },
     "NO": {
       "value": 250,
       "year": 2024,
       "source": "datacentermap.com + Statkraft/Bulk hyperscale pipeline",
-      "url": "https://www.datacentermap.com/"
+      "url": "https://www.datacentermap.com/norway/"
     },
     "FI": {
       "value": 300,
       "year": 2024,
       "source": "datacentermap.com + Microsoft Espoo + Google Hamina expansion",
-      "url": "https://www.datacentermap.com/"
+      "url": "https://www.datacentermap.com/finland/"
     },
     "CH": {
       "value": 180,
@@ -1396,37 +1396,37 @@
       "value": 130,
       "year": 2024,
       "source": "datacentermap.com + Google St-Ghislain expansion",
-      "url": "https://www.datacentermap.com/"
+      "url": "https://www.datacentermap.com/belgium/"
     },
     "AT": {
       "value": 100,
       "year": 2024,
       "source": "datacentermap.com — Vienna pipeline",
-      "url": "https://www.datacentermap.com/"
+      "url": "https://www.datacentermap.com/austria/"
     },
     "PT": {
       "value": 400,
       "year": 2024,
       "source": "Start Campus Sines + datacentermap.com",
-      "url": "https://www.datacentermap.com/"
+      "url": "https://www.datacentermap.com/portugal/"
     },
     "PL": {
       "value": 350,
       "year": 2024,
       "source": "JLL EMEA Data Centres Q4 2024 — Warsaw pipeline + AtmanData",
-      "url": "https://www.jll.com/en/insights"
+      "url": "https://www.jll.com/en-uk/insights/emea-data-centre-report"
     },
     "GR": {
       "value": 250,
       "year": 2024,
       "source": "datacentermap.com + Microsoft + Lamda hyperscale announcements",
-      "url": "https://www.datacentermap.com/"
+      "url": "https://www.datacentermap.com/greece/"
     },
     "RO": {
       "value": 80,
       "year": 2024,
       "source": "datacentermap.com — Bucharest pipeline",
-      "url": "https://www.datacentermap.com/"
+      "url": "https://www.datacentermap.com/romania/"
     },
     "AE": {
       "value": 450,
@@ -1444,31 +1444,31 @@
       "value": 150,
       "year": 2024,
       "source": "Microsoft + Google + Ooredoo announcements",
-      "url": "https://www.datacentermap.com/"
+      "url": "https://www.datacentermap.com/qatar/"
     },
     "IL": {
       "value": 200,
       "year": 2024,
       "source": "datacentermap.com + AWS Israel Region build-out",
-      "url": "https://www.datacentermap.com/"
+      "url": "https://www.datacentermap.com/israel/"
     },
     "TR": {
       "value": 150,
       "year": 2024,
       "source": "datacentermap.com — Istanbul pipeline",
-      "url": "https://www.datacentermap.com/"
+      "url": "https://www.datacentermap.com/turkey/"
     },
     "EG": {
       "value": 100,
       "year": 2024,
       "source": "datacentermap.com — Cairo pipeline",
-      "url": "https://www.datacentermap.com/"
+      "url": "https://www.datacentermap.com/egypt/"
     },
     "MA": {
       "value": 90,
       "year": 2024,
       "source": "datacentermap.com — Casablanca pipeline",
-      "url": "https://www.datacentermap.com/"
+      "url": "https://www.datacentermap.com/morocco/"
     }
   }
 }

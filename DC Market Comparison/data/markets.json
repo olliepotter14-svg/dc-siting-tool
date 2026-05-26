@@ -59,7 +59,7 @@
           "value": 0.14,
           "year": 2024,
           "source": "Ookla Speedtest Global Index",
-          "url": "https://www.speedtest.net/global-index"
+          "url": "https://www.speedtest.net/global-index/united-kingdom"
         },
         "bandwidth_2030_gbps": {
           "value": 1.0,
@@ -159,7 +159,7 @@
           "value": 0.2,
           "year": 2024,
           "source": "Ookla Speedtest Global Index",
-          "url": "https://www.speedtest.net/global-index"
+          "url": "https://www.speedtest.net/global-index/ireland"
         },
         "bandwidth_2030_gbps": {
           "value": 1.0,
@@ -259,7 +259,7 @@
           "value": 0.27,
           "year": 2024,
           "source": "Ookla Speedtest Global Index",
-          "url": "https://www.speedtest.net/global-index"
+          "url": "https://www.speedtest.net/global-index/france"
         },
         "bandwidth_2030_gbps": {
           "value": 1.0,
@@ -359,7 +359,7 @@
           "value": 0.1,
           "year": 2024,
           "source": "Ookla Speedtest Global Index",
-          "url": "https://www.speedtest.net/global-index"
+          "url": "https://www.speedtest.net/global-index/germany"
         },
         "bandwidth_2030_gbps": {
           "value": 1.0,
@@ -460,7 +460,7 @@
           "value": 0.16,
           "year": 2024,
           "source": "Ookla Speedtest Global Index",
-          "url": "https://www.speedtest.net/global-index"
+          "url": "https://www.speedtest.net/global-index/netherlands"
         },
         "bandwidth_2030_gbps": {
           "value": 1.0,
@@ -547,7 +547,7 @@
           "value": 0.12,
           "year": 2024,
           "source": "Ookla Speedtest Global Index",
-          "url": "https://www.speedtest.net/global-index"
+          "url": "https://www.speedtest.net/global-index/belgium"
         },
         "construction_cost_usd_mw": {
           "value": 10500000.0,
@@ -565,13 +565,13 @@
           "value": 110,
           "year": 2024,
           "source": "datacentermap.com — Brussels",
-          "url": "https://www.datacentermap.com/"
+          "url": "https://www.datacentermap.com/belgium/"
         },
         "dc_capacity_planned_mw": {
           "value": 130,
           "year": 2024,
           "source": "datacentermap.com + Google St-Ghislain expansion",
-          "url": "https://www.datacentermap.com/"
+          "url": "https://www.datacentermap.com/belgium/"
         },
         "power_per_capita_kwh": {
           "value": 6198.8667,
@@ -621,7 +621,7 @@
           "value": 0.19,
           "year": 2024,
           "source": "Ookla Speedtest Global Index",
-          "url": "https://www.speedtest.net/global-index"
+          "url": "https://www.speedtest.net/global-index/luxembourg"
         },
         "construction_cost_usd_mw": {
           "value": 11000000.0,
@@ -639,7 +639,7 @@
           "value": 90,
           "year": 2024,
           "source": "datacentermap.com + LuxConnect public reporting",
-          "url": "https://www.datacentermap.com/"
+          "url": "https://www.datacentermap.com/luxembourg/"
         },
         "power_per_capita_kwh": {
           "value": 2263.1948,
@@ -702,7 +702,7 @@
           "value": 0.25,
           "year": 2024,
           "source": "Ookla Speedtest Global Index",
-          "url": "https://www.speedtest.net/global-index"
+          "url": "https://www.speedtest.net/global-index/switzerland"
         },
         "construction_cost_usd_mw": {
           "value": 14200000.0,
@@ -788,7 +788,7 @@
           "value": 0.09,
           "year": 2024,
           "source": "Ookla Speedtest Global Index",
-          "url": "https://www.speedtest.net/global-index"
+          "url": "https://www.speedtest.net/global-index/austria"
         },
         "construction_cost_usd_mw": {
           "value": 10000000.0,
@@ -806,13 +806,13 @@
           "value": 110,
           "year": 2024,
           "source": "datacentermap.com — Vienna",
-          "url": "https://www.datacentermap.com/"
+          "url": "https://www.datacentermap.com/austria/"
         },
         "dc_capacity_planned_mw": {
           "value": 100,
           "year": 2024,
           "source": "datacentermap.com — Vienna pipeline",
-          "url": "https://www.datacentermap.com/"
+          "url": "https://www.datacentermap.com/austria/"
         },
         "power_per_capita_kwh": {
           "value": 8034.1665,
@@ -880,7 +880,7 @@
           "value": 0.22,
           "year": 2024,
           "source": "Ookla Speedtest Global Index",
-          "url": "https://www.speedtest.net/global-index"
+          "url": "https://www.speedtest.net/global-index/sweden"
         },
         "bandwidth_2030_gbps": {
           "value": 1.0,
@@ -905,13 +905,13 @@
           "value": 500,
           "year": 2025,
           "source": "Cushman & Wakefield Global DC Market H1 2025 + JLL EMEA Data Centres Q1 2025 (national totals)",
-          "url": "https://www.jll.com/en/insights"
+          "url": "https://www.jll.com/en-uk/insights/emea-data-centre-report"
         },
         "dc_capacity_planned_mw": {
           "value": 350,
           "year": 2024,
           "source": "JLL EMEA Data Centres Q4 2024 — Stockholm + hyperscale pipeline",
-          "url": "https://www.jll.com/en/insights"
+          "url": "https://www.jll.com/en-uk/insights/emea-data-centre-report"
         },
         "power_per_capita_kwh": {
           "value": 16019.127,
@@ -973,13 +973,13 @@
           "value": 0.17,
           "year": 2024,
           "source": "Ookla Speedtest Global Index",
-          "url": "https://www.speedtest.net/global-index"
+          "url": "https://www.speedtest.net/global-index/norway"
         },
         "construction_cost_usd_mw": {
           "value": 10500000.0,
           "year": 2024,
           "source": "Cushman & Wakefield Global DC Construction Cost Guide 2024 — Oslo",
-          "url": "https://www.turnerandtownsend.com/"
+          "url": "https://reports.turnerandtownsend.com/dcci-2024/"
         },
         "power_cost_usd_kwh": {
           "value": 0.08,
@@ -991,13 +991,13 @@
           "value": 130,
           "year": 2024,
           "source": "datacentermap.com + Statkraft hyperscale partnership announcements",
-          "url": "https://www.datacentermap.com/"
+          "url": "https://www.datacentermap.com/norway/"
         },
         "dc_capacity_planned_mw": {
           "value": 250,
           "year": 2024,
           "source": "datacentermap.com + Statkraft/Bulk hyperscale pipeline",
-          "url": "https://www.datacentermap.com/"
+          "url": "https://www.datacentermap.com/norway/"
         },
         "power_per_capita_kwh": {
           "value": 28598.236,
@@ -1060,7 +1060,7 @@
           "value": 0.25,
           "year": 2024,
           "source": "Ookla Speedtest Global Index",
-          "url": "https://www.speedtest.net/global-index"
+          "url": "https://www.speedtest.net/global-index/denmark"
         },
         "construction_cost_usd_mw": {
           "value": 10500000.0,
@@ -1078,13 +1078,13 @@
           "value": 250,
           "year": 2024,
           "source": "JLL EMEA Data Centres Q4 2024 — Copenhagen + hyperscale campuses",
-          "url": "https://www.jll.com/en/insights"
+          "url": "https://www.jll.com/en-uk/insights/emea-data-centre-report"
         },
         "dc_capacity_planned_mw": {
           "value": 400,
           "year": 2024,
           "source": "JLL EMEA Data Centres Q4 2024 — Microsoft, Meta, AWS pipelines",
-          "url": "https://www.jll.com/en/insights"
+          "url": "https://www.jll.com/en-uk/insights/emea-data-centre-report"
         },
         "power_per_capita_kwh": {
           "value": 5547.6743,
@@ -1146,13 +1146,13 @@
           "value": 0.16,
           "year": 2024,
           "source": "Ookla Speedtest Global Index",
-          "url": "https://www.speedtest.net/global-index"
+          "url": "https://www.speedtest.net/global-index/finland"
         },
         "construction_cost_usd_mw": {
           "value": 10000000.0,
           "year": 2024,
           "source": "Turner & Townsend DC Cost Index 2024 — Helsinki",
-          "url": "https://www.turnerandtownsend.com/"
+          "url": "https://reports.turnerandtownsend.com/dcci-2024/"
         },
         "power_cost_usd_kwh": {
           "value": 0.09,
@@ -1164,13 +1164,13 @@
           "value": 130,
           "year": 2024,
           "source": "datacentermap.com + Google Hamina campus + Microsoft Espoo",
-          "url": "https://www.datacentermap.com/"
+          "url": "https://www.datacentermap.com/finland/"
         },
         "dc_capacity_planned_mw": {
           "value": 300,
           "year": 2024,
           "source": "datacentermap.com + Microsoft Espoo + Google Hamina expansion",
-          "url": "https://www.datacentermap.com/"
+          "url": "https://www.datacentermap.com/finland/"
         },
         "power_per_capita_kwh": {
           "value": 14635.462,
@@ -1220,7 +1220,7 @@
           "value": 0.3,
           "year": 2024,
           "source": "Ookla Speedtest Global Index",
-          "url": "https://www.speedtest.net/global-index"
+          "url": "https://www.speedtest.net/global-index/iceland"
         },
         "power_cost_usd_kwh": {
           "value": 0.05,
@@ -1276,7 +1276,7 @@
           "value": 5.0,
           "year": 2027,
           "source": "JLL EMEA Data Centres Q4 2024 — Madrid emerging cluster",
-          "url": "https://www.jll.com/en/insights"
+          "url": "https://www.jll.com/en-uk/insights/emea-data-centre-report"
         },
         "grid_connect_years": {
           "value": 4.0,
@@ -1294,7 +1294,7 @@
           "value": 0.23,
           "year": 2024,
           "source": "Ookla Speedtest Global Index",
-          "url": "https://www.speedtest.net/global-index"
+          "url": "https://www.speedtest.net/global-index/spain"
         },
         "bandwidth_2030_gbps": {
           "value": 1.0,
@@ -1320,13 +1320,13 @@
           "value": 280,
           "year": 2024,
           "source": "JLL EMEA Data Centres Q4 2024 — Madrid emerging market",
-          "url": "https://www.jll.com/en/insights"
+          "url": "https://www.jll.com/en-uk/insights/emea-data-centre-report"
         },
         "dc_capacity_planned_mw": {
           "value": 600,
           "year": 2024,
           "source": "JLL EMEA Data Centres Q4 2024 — Madrid pipeline boom",
-          "url": "https://www.jll.com/en/insights"
+          "url": "https://www.jll.com/en-uk/insights/emea-data-centre-report"
         },
         "power_per_capita_kwh": {
           "value": 6011.4897,
@@ -1388,13 +1388,13 @@
           "value": 0.17,
           "year": 2024,
           "source": "Ookla Speedtest Global Index",
-          "url": "https://www.speedtest.net/global-index"
+          "url": "https://www.speedtest.net/global-index/portugal"
         },
         "construction_cost_usd_mw": {
           "value": 9000000.0,
           "year": 2024,
           "source": "Turner & Townsend DC Cost Index 2024 — Lisbon",
-          "url": "https://www.turnerandtownsend.com/"
+          "url": "https://reports.turnerandtownsend.com/dcci-2024/"
         },
         "power_cost_usd_kwh": {
           "value": 0.16,
@@ -1406,13 +1406,13 @@
           "value": 80,
           "year": 2024,
           "source": "datacentermap.com + Start Campus Sines announcement",
-          "url": "https://www.datacentermap.com/"
+          "url": "https://www.datacentermap.com/portugal/"
         },
         "dc_capacity_planned_mw": {
           "value": 400,
           "year": 2024,
           "source": "Start Campus Sines + datacentermap.com",
-          "url": "https://www.datacentermap.com/"
+          "url": "https://www.datacentermap.com/portugal/"
         },
         "power_per_capita_kwh": {
           "value": 4910.76,
@@ -1462,7 +1462,7 @@
           "value": 4.0,
           "year": 2027,
           "source": "JLL EMEA Data Centres Q4 2024 — Milan emerging cluster",
-          "url": "https://www.jll.com/en/insights"
+          "url": "https://www.jll.com/en-uk/insights/emea-data-centre-report"
         },
         "grid_connect_years": {
           "value": 4.5,
@@ -1480,7 +1480,7 @@
           "value": 0.12,
           "year": 2024,
           "source": "Ookla Speedtest Global Index",
-          "url": "https://www.speedtest.net/global-index"
+          "url": "https://www.speedtest.net/global-index/italy"
         },
         "bandwidth_2030_gbps": {
           "value": 1.0,
@@ -1505,13 +1505,13 @@
           "value": 220,
           "year": 2024,
           "source": "JLL EMEA Data Centres Q4 2024 — Milan emerging market",
-          "url": "https://www.jll.com/en/insights"
+          "url": "https://www.jll.com/en-uk/insights/emea-data-centre-report"
         },
         "dc_capacity_planned_mw": {
           "value": 500,
           "year": 2024,
           "source": "JLL EMEA Data Centres Q4 2024 — Milan pipeline",
-          "url": "https://www.jll.com/en/insights"
+          "url": "https://www.jll.com/en-uk/insights/emea-data-centre-report"
         },
         "power_per_capita_kwh": {
           "value": 4475.346,
@@ -1567,13 +1567,13 @@
           "value": 0.1,
           "year": 2024,
           "source": "Ookla Speedtest Global Index",
-          "url": "https://www.speedtest.net/global-index"
+          "url": "https://www.speedtest.net/global-index/greece"
         },
         "construction_cost_usd_mw": {
           "value": 8500000.0,
           "year": 2024,
           "source": "Turner & Townsend DC Cost Index 2024 — Athens",
-          "url": "https://www.turnerandtownsend.com/"
+          "url": "https://reports.turnerandtownsend.com/dcci-2024/"
         },
         "power_cost_usd_kwh": {
           "value": 0.17,
@@ -1585,13 +1585,13 @@
           "value": 35,
           "year": 2024,
           "source": "datacentermap.com — Athens emerging",
-          "url": "https://www.datacentermap.com/"
+          "url": "https://www.datacentermap.com/greece/"
         },
         "dc_capacity_planned_mw": {
           "value": 250,
           "year": 2024,
           "source": "datacentermap.com + Microsoft + Lamda hyperscale announcements",
-          "url": "https://www.datacentermap.com/"
+          "url": "https://www.datacentermap.com/greece/"
         },
         "power_per_capita_kwh": {
           "value": 5862.853,
@@ -1723,7 +1723,7 @@
           "value": 2.0,
           "year": 2027,
           "source": "JLL EMEA Data Centres Q4 2024 — Warsaw emerging cluster",
-          "url": "https://www.jll.com/en/insights"
+          "url": "https://www.jll.com/en-uk/insights/emea-data-centre-report"
         },
         "grid_connect_years": {
           "value": 5.0,
@@ -1741,7 +1741,7 @@
           "value": 0.13,
           "year": 2024,
           "source": "Ookla Speedtest Global Index",
-          "url": "https://www.speedtest.net/global-index"
+          "url": "https://www.speedtest.net/global-index/poland"
         },
         "construction_cost_usd_mw": {
           "value": 8500000.0,
@@ -1759,13 +1759,13 @@
           "value": 130,
           "year": 2024,
           "source": "JLL EMEA Data Centres Q4 2024 — Warsaw emerging cluster",
-          "url": "https://www.jll.com/en/insights"
+          "url": "https://www.jll.com/en-uk/insights/emea-data-centre-report"
         },
         "dc_capacity_planned_mw": {
           "value": 350,
           "year": 2024,
           "source": "JLL EMEA Data Centres Q4 2024 — Warsaw pipeline + AtmanData",
-          "url": "https://www.jll.com/en/insights"
+          "url": "https://www.jll.com/en-uk/insights/emea-data-centre-report"
         },
         "power_per_capita_kwh": {
           "value": 4542.6284,
@@ -1821,13 +1821,13 @@
           "value": 0.13,
           "year": 2024,
           "source": "Ookla Speedtest Global Index",
-          "url": "https://www.speedtest.net/global-index"
+          "url": "https://www.speedtest.net/global-index/czechia"
         },
         "construction_cost_usd_mw": {
           "value": 8500000.0,
           "year": 2024,
           "source": "Turner & Townsend DC Cost Index 2024 — Prague",
-          "url": "https://www.turnerandtownsend.com/"
+          "url": "https://reports.turnerandtownsend.com/dcci-2024/"
         },
         "power_cost_usd_kwh": {
           "value": 0.12,
@@ -1839,7 +1839,7 @@
           "value": 75,
           "year": 2024,
           "source": "datacentermap.com — Prague",
-          "url": "https://www.datacentermap.com/"
+          "url": "https://www.datacentermap.com/czech-republic/"
         },
         "power_per_capita_kwh": {
           "value": 7116.4375,
@@ -1945,13 +1945,13 @@
           "value": 0.14,
           "year": 2024,
           "source": "Ookla Speedtest Global Index",
-          "url": "https://www.speedtest.net/global-index"
+          "url": "https://www.speedtest.net/global-index/hungary"
         },
         "construction_cost_usd_mw": {
           "value": 8000000.0,
           "year": 2024,
           "source": "Turner & Townsend DC Cost Index 2024 — Budapest",
-          "url": "https://www.turnerandtownsend.com/"
+          "url": "https://reports.turnerandtownsend.com/dcci-2024/"
         },
         "power_cost_usd_kwh": {
           "value": 0.12,
@@ -2019,13 +2019,13 @@
           "value": 0.18,
           "year": 2024,
           "source": "Ookla Speedtest Global Index",
-          "url": "https://www.speedtest.net/global-index"
+          "url": "https://www.speedtest.net/global-index/romania"
         },
         "construction_cost_usd_mw": {
           "value": 7500000.0,
           "year": 2024,
           "source": "Turner & Townsend DC Cost Index 2024 — Bucharest",
-          "url": "https://www.turnerandtownsend.com/"
+          "url": "https://reports.turnerandtownsend.com/dcci-2024/"
         },
         "power_cost_usd_kwh": {
           "value": 0.14,
@@ -2037,13 +2037,13 @@
           "value": 70,
           "year": 2024,
           "source": "datacentermap.com — Bucharest",
-          "url": "https://www.datacentermap.com/"
+          "url": "https://www.datacentermap.com/romania/"
         },
         "dc_capacity_planned_mw": {
           "value": 80,
           "year": 2024,
           "source": "datacentermap.com — Bucharest pipeline",
-          "url": "https://www.datacentermap.com/"
+          "url": "https://www.datacentermap.com/romania/"
         },
         "power_per_capita_kwh": {
           "value": 2634.2434,
@@ -2269,7 +2269,7 @@
           "value": 0.15,
           "year": 2024,
           "source": "Ookla Speedtest Global Index",
-          "url": "https://www.speedtest.net/global-index"
+          "url": "https://www.speedtest.net/global-index/estonia"
         },
         "power_cost_usd_kwh": {
           "value": 0.13,
@@ -2281,7 +2281,7 @@
           "value": 25,
           "year": 2024,
           "source": "datacentermap.com — Tallinn",
-          "url": "https://www.datacentermap.com/"
+          "url": "https://www.datacentermap.com/estonia/"
         },
         "power_per_capita_kwh": {
           "value": 4545.333,
@@ -2337,7 +2337,7 @@
           "value": 0.11,
           "year": 2024,
           "source": "Ookla Speedtest Global Index",
-          "url": "https://www.speedtest.net/global-index"
+          "url": "https://www.speedtest.net/global-index/latvia"
         },
         "power_per_capita_kwh": {
           "value": 3382.6797,
@@ -2387,7 +2387,7 @@
           "value": 0.14,
           "year": 2024,
           "source": "Ookla Speedtest Global Index",
-          "url": "https://www.speedtest.net/global-index"
+          "url": "https://www.speedtest.net/global-index/lithuania"
         },
         "power_per_capita_kwh": {
           "value": 3141.1763,
@@ -2449,7 +2449,7 @@
           "value": 0.31,
           "year": 2024,
           "source": "Ookla Speedtest Global Index",
-          "url": "https://www.speedtest.net/global-index"
+          "url": "https://www.speedtest.net/global-index/united-arab-emirates"
         },
         "bandwidth_2030_gbps": {
           "value": 1.5,
@@ -2550,7 +2550,7 @@
           "value": 0.09,
           "year": 2024,
           "source": "Ookla Speedtest Global Index",
-          "url": "https://www.speedtest.net/global-index"
+          "url": "https://www.speedtest.net/global-index/saudi-arabia"
         },
         "bandwidth_2030_gbps": {
           "value": 1.0,
@@ -2637,7 +2637,7 @@
           "value": 0.21,
           "year": 2024,
           "source": "Ookla Speedtest Global Index",
-          "url": "https://www.speedtest.net/global-index"
+          "url": "https://www.speedtest.net/global-index/qatar"
         },
         "construction_cost_usd_mw": {
           "value": 9500000.0,
@@ -2655,13 +2655,13 @@
           "value": 55,
           "year": 2024,
           "source": "datacentermap.com + Microsoft Qatar Cloud Region",
-          "url": "https://www.datacentermap.com/"
+          "url": "https://www.datacentermap.com/qatar/"
         },
         "dc_capacity_planned_mw": {
           "value": 150,
           "year": 2024,
           "source": "Microsoft + Google + Ooredoo announcements",
-          "url": "https://www.datacentermap.com/"
+          "url": "https://www.datacentermap.com/qatar/"
         },
         "power_per_capita_kwh": {
           "value": 18030.156,
@@ -2723,7 +2723,7 @@
           "value": 50,
           "year": 2024,
           "source": "datacentermap.com + AWS Bahrain Region",
-          "url": "https://www.datacentermap.com/"
+          "url": "https://www.datacentermap.com/bahrain/"
         },
         "power_per_capita_kwh": {
           "value": 23614.566,
@@ -2885,13 +2885,13 @@
           "value": 0.21,
           "year": 2024,
           "source": "Ookla Speedtest Global Index",
-          "url": "https://www.speedtest.net/global-index"
+          "url": "https://www.speedtest.net/global-index/israel"
         },
         "construction_cost_usd_mw": {
           "value": 10000000.0,
           "year": 2024,
           "source": "Turner & Townsend DC Cost Index 2024 — Tel Aviv",
-          "url": "https://www.turnerandtownsend.com/"
+          "url": "https://reports.turnerandtownsend.com/dcci-2024/"
         },
         "power_cost_usd_kwh": {
           "value": 0.1,
@@ -2903,13 +2903,13 @@
           "value": 70,
           "year": 2024,
           "source": "datacentermap.com — Tel Aviv",
-          "url": "https://www.datacentermap.com/"
+          "url": "https://www.datacentermap.com/israel/"
         },
         "dc_capacity_planned_mw": {
           "value": 200,
           "year": 2024,
           "source": "datacentermap.com + AWS Israel Region build-out",
-          "url": "https://www.datacentermap.com/"
+          "url": "https://www.datacentermap.com/israel/"
         },
         "power_per_capita_kwh": {
           "value": 8626.503,
@@ -2965,13 +2965,13 @@
           "value": 0.08,
           "year": 2024,
           "source": "Ookla Speedtest Global Index",
-          "url": "https://www.speedtest.net/global-index"
+          "url": "https://www.speedtest.net/global-index/turkey"
         },
         "construction_cost_usd_mw": {
           "value": 7500000.0,
           "year": 2024,
           "source": "Turner & Townsend DC Cost Index 2024 — Istanbul",
-          "url": "https://www.turnerandtownsend.com/"
+          "url": "https://reports.turnerandtownsend.com/dcci-2024/"
         },
         "power_cost_usd_kwh": {
           "value": 0.08,
@@ -2983,13 +2983,13 @@
           "value": 100,
           "year": 2024,
           "source": "datacentermap.com — Istanbul cluster",
-          "url": "https://www.datacentermap.com/"
+          "url": "https://www.datacentermap.com/turkey/"
         },
         "dc_capacity_planned_mw": {
           "value": 150,
           "year": 2024,
           "source": "datacentermap.com — Istanbul pipeline",
-          "url": "https://www.datacentermap.com/"
+          "url": "https://www.datacentermap.com/turkey/"
         },
         "power_per_capita_kwh": {
           "value": 4035.562,
@@ -3095,7 +3095,7 @@
           "value": 0.06,
           "year": 2024,
           "source": "Ookla Speedtest Global Index",
-          "url": "https://www.speedtest.net/global-index"
+          "url": "https://www.speedtest.net/global-index/egypt"
         },
         "construction_cost_usd_mw": {
           "value": 7000000.0,
@@ -3113,13 +3113,13 @@
           "value": 50,
           "year": 2024,
           "source": "datacentermap.com — Cairo",
-          "url": "https://www.datacentermap.com/"
+          "url": "https://www.datacentermap.com/egypt/"
         },
         "dc_capacity_planned_mw": {
           "value": 100,
           "year": 2024,
           "source": "datacentermap.com — Cairo pipeline",
-          "url": "https://www.datacentermap.com/"
+          "url": "https://www.datacentermap.com/egypt/"
         },
         "power_per_capita_kwh": {
           "value": 2075.8496,
@@ -3181,13 +3181,13 @@
           "value": 0.06,
           "year": 2024,
           "source": "Ookla Speedtest Global Index",
-          "url": "https://www.speedtest.net/global-index"
+          "url": "https://www.speedtest.net/global-index/morocco"
         },
         "construction_cost_usd_mw": {
           "value": 7000000.0,
           "year": 2024,
           "source": "Turner & Townsend DC Cost Index 2024 — Casablanca",
-          "url": "https://www.turnerandtownsend.com/"
+          "url": "https://reports.turnerandtownsend.com/dcci-2024/"
         },
         "power_cost_usd_kwh": {
           "value": 0.1,
@@ -3199,13 +3199,13 @@
           "value": 35,
           "year": 2024,
           "source": "datacentermap.com — Casablanca",
-          "url": "https://www.datacentermap.com/"
+          "url": "https://www.datacentermap.com/morocco/"
         },
         "dc_capacity_planned_mw": {
           "value": 90,
           "year": 2024,
           "source": "datacentermap.com — Casablanca pipeline",
-          "url": "https://www.datacentermap.com/"
+          "url": "https://www.datacentermap.com/morocco/"
         },
         "power_per_capita_kwh": {
           "value": 1157.9261,
@@ -3249,7 +3249,7 @@
           "value": 0.04,
           "year": 2024,
           "source": "Ookla Speedtest Global Index",
-          "url": "https://www.speedtest.net/global-index"
+          "url": "https://www.speedtest.net/global-index/tunisia"
         },
         "power_per_capita_kwh": {
           "value": 1806.686,
