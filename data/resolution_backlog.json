@@ -1,0 +1,79 @@
+{
+  "generated": "2026-05-26T12:23:35",
+  "total_unmatched": 4,
+  "summary": {
+    "HIGH": 4,
+    "MEDIUM": 0,
+    "LOW": 0
+  },
+  "substations": [
+    {
+      "name": "Hunterston",
+      "voltage_kv": 400,
+      "lat": 55.7167,
+      "lng": -4.8833,
+      "tec_queue_mw": 1525.0,
+      "fabricated_headroom_mva": 400,
+      "current_score_50": 65.2,
+      "queue_pressure_pct": 907.5,
+      "parcels_as_best_sub": 1545,
+      "inferred_dno": "SPEN SPD",
+      "dno_data_status": "NOT_LOADED",
+      "fetch_hint": "SPEN SPD (Scotland) technical limits not yet fetched. Download from spenergynetworks.co.uk \u2192 LTDS \u2192 GSP winter import limits. Similar format to spen_spm_technical_limits.json.",
+      "name_near_misses": [],
+      "suggested_action": "Fetch SPEN SPD headroom data (not yet downloaded)",
+      "resolution_priority": "HIGH"
+    },
+    {
+      "name": "Tealing",
+      "voltage_kv": 275,
+      "lat": 56.5167,
+      "lng": -3.0,
+      "tec_queue_mw": 1670.8,
+      "fabricated_headroom_mva": 200,
+      "current_score_50": 60.0,
+      "queue_pressure_pct": 835.4,
+      "parcels_as_best_sub": 1232,
+      "inferred_dno": "SPEN SPD",
+      "dno_data_status": "NOT_LOADED",
+      "fetch_hint": "SPEN SPD (Scotland) technical limits not yet fetched. Download from spenergynetworks.co.uk \u2192 LTDS \u2192 GSP winter import limits. Similar format to spen_spm_technical_limits.json.",
+      "name_near_misses": [],
+      "suggested_action": "Fetch SPEN SPD headroom data (not yet downloaded)",
+      "resolution_priority": "HIGH"
+    },
+    {
+      "name": "Clydes Mill",
+      "voltage_kv": 275,
+      "lat": 55.8,
+      "lng": -4.0667,
+      "tec_queue_mw": 70,
+      "fabricated_headroom_mva": 140,
+      "current_score_50": 75.5,
+      "queue_pressure_pct": 50.0,
+      "parcels_as_best_sub": 976,
+      "inferred_dno": "SPEN SPD",
+      "dno_data_status": "NOT_LOADED",
+      "fetch_hint": "SPEN SPD (Scotland) technical limits not yet fetched. Download from spenergynetworks.co.uk \u2192 LTDS \u2192 GSP winter import limits. Similar format to spen_spm_technical_limits.json.",
+      "name_near_misses": [],
+      "suggested_action": "Fetch SPEN SPD headroom data (not yet downloaded)",
+      "resolution_priority": "HIGH"
+    },
+    {
+      "name": "Elvanfoot",
+      "voltage_kv": 400,
+      "lat": 55.4333,
+      "lng": -3.65,
+      "tec_queue_mw": 444.9,
+      "fabricated_headroom_mva": 350,
+      "current_score_50": 71.6,
+      "queue_pressure_pct": 127.1,
+      "parcels_as_best_sub": 397,
+      "inferred_dno": "SPEN SPD",
+      "dno_data_status": "NOT_LOADED",
+      "fetch_hint": "SPEN SPD (Scotland) technical limits not yet fetched. Download from spenergynetworks.co.uk \u2192 LTDS \u2192 GSP winter import limits. Similar format to spen_spm_technical_limits.json.",
+      "name_near_misses": [],
+      "suggested_action": "Fetch SPEN SPD headroom data (not yet downloaded)",
+      "resolution_priority": "HIGH"
+    }
+  ]
+}

@@ -52,6 +52,7 @@ const state = {
   showPowerlines:   true,
   showFibreRoutes:  false,
   showBtmAssets:    false,
+  showEaProjects:   false,
   areaSearch:       false,    // list filtered to current viewport
   filters: {
     region:           "all",
@@ -270,7 +271,7 @@ function hideLoadOverlay() {
 // ── Load data ─────────────────────────────────────────────────────
 map.on("load", () => {
   const parcelPromise = fetchWithProgress(
-    "data/uk_industrial_parcels.geojson?v=7",
+    "data/uk_industrial_parcels.geojson?v=8",
     (loaded, total) => {
       const pct = total ? Math.round(loaded / total * 100) : null;
       setLoadingMsg("Downloading parcel data…", "", pct ?? 10);
@@ -279,12 +280,13 @@ map.on("load", () => {
 
   Promise.all([
     parcelPromise,
-    fetch("data/uk_substations.json?v=7").then(r => r.json()),
-    fetch("data/uk_powerlines.geojson?v=7").then(r => r.json()),
-    fetch("data/uk_fibre_routes.geojson?v=7").then(r => r.json()),
+    fetch("data/uk_substations.json?v=8").then(r => r.json()),
+    fetch("data/uk_powerlines.geojson?v=8").then(r => r.json()),
+    fetch("data/uk_fibre_routes.geojson?v=8").then(r => r.json()),
     fetch("data/uk_btm_assets.json?v=1").then(r => r.json()).catch(() => []),
+    fetch("data/ea_projects.geojson?v=11").then(r => r.json()).catch(() => ({type:"FeatureCollection",features:[]})),
   ])
-  .then(([geojson, subsRaw, powerlines, fibreRoutes, btmAssets]) => {
+  .then(([geojson, subsRaw, powerlines, fibreRoutes, btmAssets, eaProjects]) => {
     setLoadingMsg("Building map layers…", "", 95);
     state.allFeatures = geojson.features;
     state.substations = Array.isArray(subsRaw) ? subsRaw
@@ -296,6 +298,7 @@ map.on("load", () => {
     addPowerlineLayer(powerlines);
     addFibreRouteLayer(fibreRoutes);
     addBtmLayer(btmAssets);
+    addEaProjectsLayer(eaProjects);
     // Small delay so the map tiles have a moment to render before overlay lifts
     setTimeout(() => {
       hideLoadOverlay();
@@ -1052,6 +1055,9 @@ function initUI() {
         ["btm-ring-132", "btm-dot-132", "btm-ring-66", "btm-dot-66"].forEach(id => {
           if (map.getLayer(id)) map.setLayoutProperty(id, "visibility", on ? "visible" : "none");
         });
+      } else if (layer === "ea") {
+        state.showEaProjects = on;
+        if (map.getLayer("ea-projects")) map.setLayoutProperty("ea-projects", "visibility", on ? "visible" : "none");
       }
     });
   });
@@ -1648,5 +1654,143 @@ function addBtmLayer(assets) {
       map.getCanvas().style.cursor = "";
       btmPopup.remove();
     });
+  });
+}
+
+// ── EA Register projects layer ────────────────────────────────────
+// Each point is a consented (Gate-2) connection-pipeline project from
+// NESO's Existing Agreements Register, positioned at the lat/lng of
+// its connection-point substation. Coloured by technology, sized by MW.
+function addEaProjectsLayer(geojson) {
+  if (!geojson || !geojson.features || geojson.features.length === 0) return;
+
+  map.addSource("ea-projects", { type: "geojson", data: geojson });
+
+  // ── Colour palette ────────────────────────────────────────────────
+  // Deliberately avoids the red/amber/green/teal traffic-light family
+  // so the EA layer reads as its own thing on top of the parcel/sub
+  // colour modes (which already use that palette for scores).
+  const EA_COLORS = {
+    demand:         "#FF4FF0",  // magenta — DC/hydrogen/industry pulling power
+    battery:        "#FF8A00",  // orange — storage
+    solar:          "#FFE600",  // bright yellow — solar
+    wind:           "#4FC3FF",  // sky blue — wind
+    gas:            "#A1887F",  // warm taupe — unabated gas
+    nuclear:        "#B388FF",  // lilac — nuclear
+    interconnector: "#80DEEA",  // pale cyan — cross-border
+    other:          "#9E9E9E",  // mid grey — fallback
+  };
+  const colorByTech = [
+    "match", ["get", "tech_cat"],
+    "demand",        EA_COLORS.demand,
+    "battery",       EA_COLORS.battery,
+    "solar",         EA_COLORS.solar,
+    "wind",          EA_COLORS.wind,
+    "gas",           EA_COLORS.gas,
+    "nuclear",       EA_COLORS.nuclear,
+    "interconnector",EA_COLORS.interconnector,
+                     EA_COLORS.other,
+  ];
+
+  // ── Icon glyphs (Unicode — no sprite build needed) ────────────────
+  // Each tech category gets a different shape so the layer is readable
+  // at a glance without relying on colour:
+  //   demand  ▼  downward triangle — pulling power off the grid
+  //   battery ▰  filled rectangle — battery cell
+  //   solar   ☀  sun glyph
+  //   wind    ✱  spinning star — turbine blades
+  //   gas     ▲  upward triangle — flame
+  //   nuclear ⬢  hexagon — atomic
+  //   interc. ⇌  bidirectional arrow — cross-border flow
+  //   other   ●  filled disc
+  const iconByTech = [
+    "match", ["get", "tech_cat"],
+    "demand",        "▼",
+    "battery",       "▰",
+    "solar",         "☀",
+    "wind",          "✱",
+    "gas",           "▲",
+    "nuclear",       "⬢",
+    "interconnector","⇌",
+                     "●",
+  ];
+
+  // Glyph size scales with MW: small projects ~11px, hyperscale ~22px.
+  const sizeByMw = [
+    "interpolate", ["linear"], ["get", "mw"],
+    0, 11, 50, 13, 200, 16, 500, 19, 2000, 24,
+  ];
+
+  // ── Project glyphs ────────────────────────────────────────────────
+  // Point features only. Gate-1 'with reservation' projects (next wave
+  // working through reform) are dimmed to distinguish from the fully
+  // consented Gate-2 list.
+  map.addLayer({
+    id: "ea-projects",
+    type: "symbol",
+    source: "ea-projects",
+    filter: ["==", ["geometry-type"], "Point"],
+    layout: {
+      visibility: state.showEaProjects ? "visible" : "none",
+      "text-field":            iconByTech,
+      "text-size":             sizeByMw,
+      "text-allow-overlap":    true,    // never hide for label collision
+      "text-ignore-placement": true,
+      "text-anchor":           "center",
+      "text-font":             ["Open Sans Semibold", "Arial Unicode MS Bold"],
+    },
+    paint: {
+      "text-color":         colorByTech,
+      "text-halo-color":    "#0A0E1C",  // dark halo so glyphs pop on dark map
+      "text-halo-width":    1.6,
+      "text-halo-blur":     0.5,
+      "text-opacity": [
+        "case",
+        ["get", "gate1_reserved"], 0.6,
+        0.95,
+      ],
+    },
+  });
+
+  // ── Hover popup with project details ──────────────────────────────
+  const eaPopup = new mapboxgl.Popup({ closeButton: false, offset: 8, maxWidth: "260px" });
+  const GLYPHS = { demand:"▼", battery:"▰", solar:"☀", wind:"✱",
+                   gas:"▲", nuclear:"⬢", interconnector:"⇌" };
+
+  map.on("mouseenter", "ea-projects", (e) => {
+    map.getCanvas().style.cursor = "pointer";
+    const p = e.features[0].properties;
+    const col = EA_COLORS[p.tech_cat] || EA_COLORS.other;
+    const glyph = GLYPHS[p.tech_cat] || "●";
+    const sourceLabels = {
+      REPD:       "BEIS REPD",
+      MANUAL:     "Operator/planning record",
+      OSM:        "OpenStreetMap",
+      substation: "Substation fallback — no site source matched",
+    };
+    const srcLabel = sourceLabels[p.geocode_source] || "Substation fallback";
+    const locatedTag = p.located
+      ? `<span style="color:#00E5FF">⌖</span> Site: ${srcLabel}`
+      : `<span style="color:#FFB300">◌</span> ${srcLabel}`;
+    const gate1Tag = p.gate1_reserved
+      ? `<div style="font-size:10px;color:#FFB300;margin-top:4px;font-weight:600">⏳ Gate 1 'with reservation' — next-wave project</div>`
+      : "";
+    eaPopup.setLngLat(e.features[0].geometry.coordinates)
+      .setHTML(`
+        <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:${col};margin-bottom:6px">
+          <span style="font-size:14px;margin-right:4px">${glyph}</span> ${p.tech} · ${p.mw} MW
+        </div>
+        <div style="font-size:13px;font-weight:700;color:#F0F4FF;margin-bottom:6px;line-height:1.3">${p.project}</div>
+        <div style="font-size:11px;color:#8B92A5">Connects at: <strong style="color:#B0BEC5">${p.sub_name}</strong></div>
+        ${p.date ? `<div style="font-size:11px;color:#8B92A5">Energising: <strong style="color:#B0BEC5">${p.date}</strong></div>` : ""}
+        ${p.repd_postcode ? `<div style="font-size:11px;color:#8B92A5">Site: <strong style="color:#B0BEC5">${p.repd_postcode}</strong>${p.repd_status ? ` · ${p.repd_status}` : ""}</div>` : ""}
+        ${gate1Tag}
+        <div style="font-size:10px;color:#4A5068;margin-top:6px;line-height:1.4">${locatedTag}</div>
+        <div style="font-size:10px;color:#4A5068;line-height:1.4">NESO EA Register — Gate 2 consented</div>
+      `).addTo(map);
+  });
+  map.on("mouseleave", "ea-projects", () => {
+    map.getCanvas().style.cursor = "";
+    eaPopup.remove();
   });
 }

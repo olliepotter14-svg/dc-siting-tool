@@ -1,0 +1,167 @@
+{
+  "summary": {
+    "target_dataset": "ukpn-grid-supply-points-overview",
+    "access_status": "BLOCKED - requires free account registration",
+    "error": "ForbiddenAccess: You don't have permission to access the requested resource",
+    "portal_message": "To view this data please register and login",
+    "data_visible_api_flag": false,
+    "endpoints_tried": {
+      "records_v2.1": {
+        "url": "https://ukpowernetworks.opendatasoft.com/api/explore/v2.1/catalog/datasets/ukpn-grid-supply-points-overview/records?limit=100",
+        "http_status": 403
+      },
+      "export_csv": {
+        "url": "https://ukpowernetworks.opendatasoft.com/api/explore/v2.1/catalog/datasets/ukpn-grid-supply-points-overview/exports/csv",
+        "http_status": 403
+      },
+      "export_json": {
+        "url": "https://ukpowernetworks.opendatasoft.com/api/explore/v2.1/catalog/datasets/ukpn-grid-supply-points-overview/exports/json",
+        "http_status": 403
+      },
+      "records_v2": {
+        "url": "https://ukpowernetworks.opendatasoft.com/api/v2/catalog/datasets/ukpn-grid-supply-points-overview/records?rows=100",
+        "http_status": 403
+      },
+      "browser_useragent": {
+        "note": "User-Agent: Chrome 120",
+        "http_status": 403
+      },
+      "referer_origin": {
+        "note": "Referer + Origin headers matching portal domain",
+        "http_status": 403
+      },
+      "session_cookie": {
+        "note": "Obtained session cookie from homepage, used for API request",
+        "http_status": 403
+      },
+      "appendix_g_aggregated": {
+        "url": "https://ukpowernetworks.opendatasoft.com/api/explore/v2.1/catalog/datasets/ukpn-appendix-g-aggregated/records?limit=100",
+        "http_status": 403
+      }
+    }
+  },
+  "field_schema_from_metadata": [
+    {
+      "name": "dno",
+      "label": "DNO",
+      "type": "text"
+    },
+    {
+      "name": "floc",
+      "label": "Site Functional Location",
+      "type": "text"
+    },
+    {
+      "name": "gsp",
+      "label": "Grid Supply Point (GSP)",
+      "type": "text"
+    },
+    {
+      "name": "minimum_observed_power_flow",
+      "label": "Minimum Observed Power Flow",
+      "type": "double"
+    },
+    {
+      "name": "maximum_observed_power_flow",
+      "label": "Maximum Observed Power Flow",
+      "type": "double"
+    },
+    {
+      "name": "asset_import_limit",
+      "label": "Asset Import Limit",
+      "type": "text"
+    },
+    {
+      "name": "asset_export_limit",
+      "label": "Asset Export Limit",
+      "type": "int"
+    },
+    {
+      "name": "technical_limit_import_summer",
+      "label": "Technical Limit Import Summer",
+      "type": "text"
+    },
+    {
+      "name": "technical_limit_import_winter",
+      "label": "Technical Limit Import Winter",
+      "type": "text"
+    },
+    {
+      "name": "technical_limit_import_access_period",
+      "label": "Technical Limit Import Access Period",
+      "type": "text"
+    },
+    {
+      "name": "technical_limit_export",
+      "label": "Technical Limit Export",
+      "type": "text"
+    },
+    {
+      "name": "export_capacity_utilisation",
+      "label": "Export Capacity Utilisation",
+      "type": "double"
+    },
+    {
+      "name": "import_capacity_utilisation",
+      "label": "Import Capacity Utilisation",
+      "type": "double"
+    },
+    {
+      "name": "technical_limits_available",
+      "label": "Technical Limits Available",
+      "type": "text"
+    },
+    {
+      "name": "geo_point_2d",
+      "label": "Geo Point",
+      "type": "geo_point_2d"
+    }
+  ],
+  "related_datasets_also_blocked_403": [
+    "ukpn-grid-supply-points",
+    "ukpn-gsp-narrative",
+    "ukpn-gsp-project-status",
+    "ukpn-gsp-insights",
+    "ukpn-appendix-g",
+    "ukpn-appendix-g-aggregated",
+    "ukpn-appendix-g-summary",
+    "ukpn-appendix-g-project-progression",
+    "ukpn-appendix-g-site-specific-conditions",
+    "ukpn-data-centre-demand-profiles",
+    "ukpn-large-demand-list",
+    "ukpn-data-centres-by-local-authority",
+    "ukpn-grid-transformers",
+    "ukpn-super-grid-transformer",
+    "ukpn-primary-transformers"
+  ],
+  "publicly_accessible_related_datasets_200": {
+    "ukpn-overall-queue-insights": {
+      "url": "https://ukpowernetworks.opendatasoft.com/api/explore/v2.1/catalog/datasets/ukpn-overall-queue-insights/records?limit=100",
+      "total_count": 20,
+      "fields": [
+        "technology",
+        "status",
+        "contracted_ders_mw"
+      ],
+      "note": "Aggregate DER queue data by technology type and gate status - no site-level detail"
+    },
+    "ukpn-connections-reform-local-authority": {
+      "url": "https://ukpowernetworks.opendatasoft.com/api/explore/v2.1/catalog/datasets/ukpn-connections-reform-local-authority/records?limit=100",
+      "total_count": 133,
+      "fields": [
+        "name",
+        "code",
+        "geo_point",
+        "eligible_export_capacity_for_connections_reform_mw",
+        "export_capacity_now_in_the_transmission_queue_mw",
+        "connected_export_capacity_mw",
+        "renewables_and_storage_export_capacity_mw_connected_and_contracted",
+        "category_renewables_and_storage_export_capacity_mw_connected_and_contracted",
+        "geo_shape"
+      ],
+      "note": "Local authority level capacity data - useful but not GSP/substation level"
+    }
+  },
+  "registration_url": "https://ukpowernetworks.opendatasoft.com/pages/home/",
+  "notes": "Free account registration required. The portal shows 'PLEASE LOGIN TO VIEW DATASETS'. The metadata API (dataset schema) is publicly accessible but records/exports are not. The attachment xlsx files are data governance triage documents, not the actual dataset."
+}

@@ -1,0 +1,673 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>UK Grid Connections Queue · Before & After Reform</title>
+<meta name="color-scheme" content="light" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+:root {
+  --bg:#ffffff; --bg-subtle:#fafafa;
+  --text:#1a1a2e; --text-muted:#5a6373; --text-faint:#94a0b0;
+  --border:#e6e9ee; --border-strong:#c8d0db;
+  --accent:#16b67e; --accent-soft:rgba(22,182,126,.12); --accent-dark:#0f7e57;
+  --warn:#c44545; --warn-soft:rgba(196,69,69,.12); --warn-line:rgba(196,69,69,.35);
+  --signal:#d4a738; --signal-soft:rgba(212,167,56,.14);
+  --neutral-bar:#94a0b0;
+  --font-sans:"Geist",-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;
+  --font-mono:"Geist Mono",ui-monospace,"SF Mono",monospace;
+}
+* { box-sizing:border-box; }
+html,body { margin:0; padding:0; background:var(--bg-subtle); font-family:var(--font-sans); color:var(--text); }
+
+.deck { max-width:1280px; margin:0 auto; padding:32px 16px 80px; }
+
+.slide {
+  background:white;
+  border:1px solid var(--border);
+  border-radius:8px;
+  box-shadow:0 1px 3px rgba(15,23,42,.04),0 4px 16px rgba(15,23,42,.03);
+  padding:36px 44px 32px;
+  margin-bottom:24px;
+  display:flex; flex-direction:column;
+}
+
+.slide-header { border-bottom:1px solid var(--border); padding-bottom:18px; margin-bottom:26px; }
+.slide-kicker {
+  font-size:10.5px; letter-spacing:.1em; text-transform:uppercase;
+  color:var(--accent-dark); font-weight:600; margin-bottom:8px;
+}
+.slide-kicker.warn { color:var(--warn); }
+.slide-kicker.signal { color:var(--signal); }
+
+/* ── Drill-down context strip ───────────────────────────────── */
+.drill {
+  display:flex; align-items:center; gap:10px;
+  margin:0 0 16px;
+  font-family:var(--font-mono); font-size:10.5px;
+  text-transform:uppercase; letter-spacing:.07em;
+  color:var(--text-faint);
+}
+.drill-step {
+  display:inline-flex; align-items:center; gap:6px;
+  padding:4px 10px;
+  border:1px solid var(--border);
+  background:white;
+  border-radius:999px;
+  color:var(--text-faint);
+  white-space:nowrap;
+}
+.drill-step .v {
+  font-weight:600;
+  color:var(--text-muted);
+}
+.drill-step.done {
+  border-color:var(--border-strong);
+  background:var(--bg-subtle);
+}
+.drill-step.here {
+  border-color:var(--accent);
+  background:var(--accent-soft);
+  color:var(--accent-dark);
+}
+.drill-step.here .v { color:var(--accent-dark); }
+.drill-arrow {
+  color:var(--text-faint);
+  font-size:13px;
+  font-family:var(--font-sans);
+}
+
+/* Hero bar — the "you are zooming into THIS slice" visual */
+.zoom-bar {
+  margin:0 0 22px;
+  background:var(--bg-subtle);
+  border:1px solid var(--border);
+  border-radius:6px;
+  padding:14px 18px;
+}
+.zoom-bar-head {
+  display:flex; justify-content:space-between; align-items:baseline;
+  margin-bottom:8px;
+}
+.zoom-bar-title {
+  font-family:var(--font-mono); font-size:10.5px;
+  text-transform:uppercase; letter-spacing:.08em;
+  color:var(--text-muted); font-weight:600;
+}
+.zoom-bar-total {
+  font-family:var(--font-mono); font-size:11px;
+  color:var(--text-faint);
+}
+.zoom-bar-track {
+  display:flex; height:22px; gap:2px;
+  border-radius:3px; overflow:hidden;
+}
+.zoom-seg {
+  height:100%;
+  display:flex; align-items:center; justify-content:center;
+  font-family:var(--font-mono); font-size:10.5px; font-weight:600;
+  color:white;
+  white-space:nowrap; overflow:hidden;
+  transition:opacity .14s;
+}
+.zoom-seg.muted { background:#d3d8df; color:var(--text-muted); }
+.zoom-seg.highlight { background:var(--accent); }
+.zoom-seg.highlight.signal { background:var(--signal); color:#5a4818; }
+.zoom-seg.highlight.warn { background:var(--warn); }
+.zoom-seg.zombie {
+  background:transparent;
+  border:1.5px dashed var(--warn);
+  color:var(--warn);
+}
+.zoom-bar-foot {
+  display:flex; justify-content:space-between; align-items:baseline;
+  margin-top:8px;
+  font-family:var(--font-mono); font-size:10px;
+  color:var(--text-faint);
+  text-transform:uppercase; letter-spacing:.06em;
+}
+.zoom-arrow-down {
+  text-align:center;
+  margin:0 auto;
+  font-size:24px; color:var(--accent); line-height:1;
+  margin-top:-4px; margin-bottom:14px;
+}
+.slide-title {
+  font-size:26px; font-weight:600; letter-spacing:-.015em;
+  color:var(--text); line-height:1.28; margin:0; max-width:1100px;
+}
+.slide-subtitle {
+  font-size:14px; color:var(--text-muted); margin-top:10px;
+  max-width:980px; line-height:1.55;
+}
+
+/* ── Big-number tiles ───────────────────────────────────────── */
+.bignum-row { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin-bottom:20px; }
+.bignum-tile {
+  background:var(--bg-subtle); border:1px solid var(--border);
+  border-radius:6px; padding:22px 22px 20px;
+  display:flex; flex-direction:column;
+}
+.bignum-tile.accent { border-top:3px solid var(--accent); }
+.bignum-tile.warn   { border-top:3px solid var(--warn); }
+.bignum-tile.signal { border-top:3px solid var(--signal); }
+.bignum-tile.neutral { border-top:3px solid var(--border-strong); }
+.bignum-tile .v {
+  font-family:var(--font-sans); font-size:46px; font-weight:600;
+  letter-spacing:-.03em; line-height:1.0; color:var(--text);
+}
+.bignum-tile.accent .v { color:var(--accent-dark); }
+.bignum-tile.warn   .v { color:var(--warn); }
+.bignum-tile.signal .v { color:var(--signal); }
+.bignum-tile .unit { font-size:18px; font-weight:500; color:var(--text-muted); margin-left:4px; }
+.bignum-tile .lbl  { font-size:12px; color:var(--text-muted); margin-top:14px; line-height:1.5; }
+.bignum-tile .lbl b { color:var(--text); font-weight:600; }
+
+/* ── Horizontal bar charts ──────────────────────────────────── */
+.tbar-row {
+  display:grid;
+  grid-template-columns:240px 1fr 100px;
+  align-items:center;
+  gap:14px;
+  padding:8px 4px;
+  border-radius:5px;
+  transition:background .14s;
+}
+.tbar-row:hover { background:var(--bg-subtle); }
+.tbar-name {
+  font-size:13px; font-weight:500; color:var(--text);
+  letter-spacing:-.005em; text-align:right;
+  line-height:1.3;
+}
+.tbar-name .sub {
+  display:block; font-family:var(--font-mono); font-size:10px;
+  color:var(--text-faint); font-weight:400;
+  text-transform:uppercase; letter-spacing:.04em;
+  margin-top:3px;
+}
+.tbar-track {
+  position:relative; height:18px;
+  background:white; border:1px solid var(--border);
+  border-radius:3px; overflow:hidden;
+}
+.tbar-fill {
+  position:absolute; left:0; top:0; height:100%;
+  transition:width .65s cubic-bezier(.16,1,.3,1);
+  border-radius:2px;
+  display:flex; align-items:center; padding-left:9px;
+  font-family:var(--font-mono); font-size:10.5px; font-weight:600;
+  color:white; white-space:nowrap;
+}
+.tbar-fill.neutral  { background:var(--neutral-bar); }
+.tbar-fill.accent   { background:var(--accent); }
+.tbar-fill.signal   { background:var(--signal); }
+.tbar-fill.warn-out {
+  background:transparent;
+  border:1.5px dashed var(--warn);
+  color:var(--warn);
+}
+.tbar-fill.accent-out {
+  background:transparent;
+  border:1.5px solid var(--accent-dark);
+  color:var(--accent-dark);
+}
+.tbar-value {
+  font-family:var(--font-mono); font-size:14px; font-weight:600;
+  font-variant-numeric:tabular-nums; color:var(--text);
+  line-height:1.15;
+}
+.tbar-value.accent { color:var(--accent-dark); }
+.tbar-value.warn   { color:var(--warn); }
+.tbar-value.signal { color:var(--signal); }
+.tbar-value .pct {
+  display:block; font-size:10px; color:var(--text-faint);
+  font-weight:500; margin-top:2px;
+}
+
+/* ── Key insight callout ────────────────────────────────────── */
+.key-insight {
+  background:rgba(22,182,126,.07);
+  border:1px solid rgba(22,182,126,.28);
+  border-radius:6px;
+  padding:14px 18px;
+  margin-top:20px;
+}
+.key-insight.warn { background:var(--warn-soft); border-color:var(--warn-line); }
+.key-insight.signal {
+  background:var(--signal-soft);
+  border-color:rgba(212,167,56,.35);
+}
+.key-insight-label {
+  font-size:10.5px; letter-spacing:.1em; text-transform:uppercase;
+  color:var(--accent-dark); font-weight:600; margin-bottom:6px;
+}
+.key-insight.warn .key-insight-label { color:var(--warn); }
+.key-insight.signal .key-insight-label { color:#9c7a1a; }
+.key-insight p {
+  font-size:13.5px; color:var(--text); line-height:1.55; margin:0;
+}
+.key-insight strong { font-weight:600; }
+.key-insight em { font-style:normal; color:var(--accent-dark); font-weight:600; }
+.key-insight.warn em { color:var(--warn); }
+.key-insight.signal em { color:#9c7a1a; }
+
+/* ── Slide footer ───────────────────────────────────────────── */
+.slide-footer {
+  border-top:1px solid var(--border);
+  padding-top:14px; margin-top:24px;
+  display:flex; justify-content:space-between; align-items:baseline;
+  font-size:10.5px; color:var(--text-faint); letter-spacing:.02em;
+}
+.slide-footer .src { max-width:75%; }
+.slide-footer .ex { font-family:var(--font-mono); }
+
+/* ── Deck-level intro ───────────────────────────────────────── */
+.deck-header { padding:8px 4px 24px; }
+.deck-crumb { font-family:var(--font-mono); font-size:11px; color:var(--text-faint); text-transform:uppercase; letter-spacing:.1em; }
+.deck-title { font-size:30px; font-weight:600; letter-spacing:-.02em; color:var(--text); margin:8px 0 6px; }
+.deck-sub { font-size:14px; color:var(--text-muted); max-width:780px; line-height:1.55; }
+
+@media (max-width: 960px) {
+  .slide { padding:24px 22px; }
+  .bignum-row { grid-template-columns:repeat(2,1fr); }
+  .tbar-row { grid-template-columns:160px 1fr 80px; }
+  .slide-title { font-size:20px; }
+  .deck-title { font-size:24px; }
+}
+</style>
+</head>
+<body>
+
+<div class="deck">
+
+  <!-- ── DECK HEADER ─────────────────────────────────────────────── -->
+  <div class="deck-header">
+    <div class="deck-crumb">DC Site Finder · Methodology supplement</div>
+    <h1 class="deck-title">UK grid connections queue — before & after the 2025 Connections Reform</h1>
+    <p class="deck-sub">A 244 GW filter applied to a 738 GW queue. Why our siting tool now scores against NESO's Existing Agreements Register, and what that register actually contains — including the demand-side signal that was invisible pre-reform.</p>
+  </div>
+
+  <!-- ── SLIDE 1 — HEADLINE TILES ───────────────────────────────── -->
+  <div class="slide">
+    <div class="slide-header">
+      <div class="drill">
+        <span class="drill-step here"><span class="v">L1</span> Universe view</span>
+        <span class="drill-arrow">→</span>
+        <span class="drill-step"><span class="v">L2</span> Queue reform</span>
+        <span class="drill-arrow">→</span>
+        <span class="drill-step"><span class="v">L3</span> EA composition</span>
+        <span class="drill-arrow">→</span>
+        <span class="drill-step"><span class="v">L4</span> Demand pool</span>
+      </div>
+      <div class="slide-kicker">Level 1 · Headline</div>
+      <h2 class="slide-title">The pre-reform queue was 3.7× what the UK needs by 2030 — NESO's Gate 2 readiness test removed 244 GW of zombie projects</h2>
+      <p class="slide-subtitle">The Existing Agreements (EA) Register replaces the TEC queue as the authoritative list of connection projects that have demonstrated deliverability. Our siting tool's queue-pressure scores now draw from it directly.</p>
+    </div>
+
+    <div class="bignum-row">
+      <div class="bignum-tile neutral">
+        <div class="v">738<span class="unit">GW</span></div>
+        <div class="lbl"><b>Pre-reform total queue</b> — TEC Register applications, early 2024. 3.7× the UK's 2030 capacity target.</div>
+      </div>
+      <div class="bignum-tile accent">
+        <div class="v">494<span class="unit">GW</span></div>
+        <div class="lbl"><b>EA Register (consented)</b> — Gate-2 successful + grandfathered agreements. The source we now score against.</div>
+      </div>
+      <div class="bignum-tile warn">
+        <div class="v">244<span class="unit">GW</span></div>
+        <div class="lbl"><b>"Zombie" pool removed</b> — demoted to Gate 1 holding, withdrawn, or excluded from the register entirely.</div>
+      </div>
+      <div class="bignum-tile signal">
+        <div class="v">49<span class="unit">GW</span></div>
+        <div class="lbl"><b>Demand-side capacity</b> — 119 projects (data centres, hydrogen, industry) now visible nationally for the first time.</div>
+      </div>
+    </div>
+
+    <div class="key-insight">
+      <div class="key-insight-label">Why this matters</div>
+      <p>The old TEC queue was so bloated with speculative entries that every substation looked saturated — "queue pressure" was an information-free metric. The EA Register restores the signal: a substation's queue MW now reflects projects that have actually proved they can deliver under NESO's new readiness test. <em>Substations whose queue pressure looks high in the new model are high for real, not for show.</em></p>
+    </div>
+
+    <div class="slide-footer">
+      <div class="src">Sources · NESO Connections Reform Results (May 2026) · NESO EA Register · BEIS REPD Q1 2026</div>
+      <div class="ex">Slide 1 of 4</div>
+    </div>
+  </div>
+
+  <!-- ── SLIDE 2 — QUEUE REFORM BARS ─────────────────────────────── -->
+  <div class="slide">
+    <div class="slide-header">
+      <div class="drill">
+        <span class="drill-step done"><span class="v">L1</span> Universe</span>
+        <span class="drill-arrow">→</span>
+        <span class="drill-step here"><span class="v">L2</span> Queue reform</span>
+        <span class="drill-arrow">→</span>
+        <span class="drill-step"><span class="v">L3</span> EA composition</span>
+        <span class="drill-arrow">→</span>
+        <span class="drill-step"><span class="v">L4</span> Demand pool</span>
+      </div>
+      <div class="slide-kicker">Level 2 · Drilling into the 738 GW universe</div>
+      <h2 class="slide-title">A 33% reduction in queued capacity — but still 2.5× the 200 GW needed by 2030</h2>
+      <p class="slide-subtitle">All four pools below scaled to the 738 GW pre-reform maximum. The EA Register and the zombie pool together reconstruct the original queue.</p>
+    </div>
+
+    <div class="zoom-bar">
+      <div class="zoom-bar-head">
+        <div class="zoom-bar-title">Zooming into · Pre-reform total queue</div>
+        <div class="zoom-bar-total">738 GW · 100%</div>
+      </div>
+      <div class="zoom-bar-track">
+        <div class="zoom-seg highlight" style="width:66.9%">494 GW · EA Register (consented)</div>
+        <div class="zoom-seg zombie" style="width:33.1%">244 GW · Zombie pool</div>
+      </div>
+      <div class="zoom-bar-foot">
+        <span>Slide expands this split into 4 component bars</span>
+        <span>Next ↓ Inside the 494 GW EA Register</span>
+      </div>
+    </div>
+
+    <div class="tbar-row">
+      <div class="tbar-name">Pre-reform total queue
+        <span class="sub">TEC Register · early 2024</span>
+      </div>
+      <div class="tbar-track">
+        <div class="tbar-fill neutral" style="width:100%">738 GW</div>
+      </div>
+      <div class="tbar-value">738<span class="pct">3.7× target</span></div>
+    </div>
+
+    <div class="tbar-row">
+      <div class="tbar-name">EA Register (consented)
+        <span class="sub">Gate 2 successful + grandfathered</span>
+      </div>
+      <div class="tbar-track">
+        <div class="tbar-fill accent" style="width:66.9%">494 GW</div>
+      </div>
+      <div class="tbar-value accent">494<span class="pct">2.5× target</span></div>
+    </div>
+
+    <div class="tbar-row">
+      <div class="tbar-name">Gate 1 / "zombie" pool
+        <span class="sub">Demoted, withdrawn or pending</span>
+      </div>
+      <div class="tbar-track">
+        <div class="tbar-fill warn-out" style="width:33.1%">244 GW</div>
+      </div>
+      <div class="tbar-value warn">244<span class="pct">−33% of queue</span></div>
+    </div>
+
+    <div class="tbar-row">
+      <div class="tbar-name">UK 2030 target need
+        <span class="sub">Clean Power 2030 benchmark</span>
+      </div>
+      <div class="tbar-track">
+        <div class="tbar-fill accent-out" style="width:27.1%">~200 GW</div>
+      </div>
+      <div class="tbar-value">~200<span class="pct">benchmark</span></div>
+    </div>
+
+    <div class="key-insight">
+      <div class="key-insight-label">So what</div>
+      <p>The reform was effective but not over-aggressive: the consented EA Register is still <em>~2.5× UK 2030 demand</em>. There is genuine capacity headroom in the queue — the question for any new project (a data centre included) is which substations have the slack and which don't. That's what our siting tool now answers using the right denominator.</p>
+    </div>
+
+    <div class="slide-footer">
+      <div class="src">Source · NESO Connections Reform Results (Walker Morris analysis, Knight Frank Connection Reform Update Dec 2025)</div>
+      <div class="ex">Slide 2 of 4</div>
+    </div>
+  </div>
+
+  <!-- ── SLIDE 3 — EA COMPOSITION ────────────────────────────────── -->
+  <div class="slide">
+    <div class="slide-header">
+      <div class="drill">
+        <span class="drill-step done"><span class="v">L1</span> Universe</span>
+        <span class="drill-arrow">→</span>
+        <span class="drill-step done"><span class="v">L2</span> Queue reform</span>
+        <span class="drill-arrow">→</span>
+        <span class="drill-step here"><span class="v">L3</span> EA composition</span>
+        <span class="drill-arrow">→</span>
+        <span class="drill-step"><span class="v">L4</span> Demand pool</span>
+      </div>
+      <div class="slide-kicker signal">Level 3 · Drilling into the 494 GW EA Register</div>
+      <h2 class="slide-title">Battery storage dominates the consented queue at 87 GW — but demand is now a 49 GW signal that was invisible pre-reform</h2>
+      <p class="slide-subtitle">EA Register composition by technology · 494 GW across 3,506 projects. Demand highlighted as the materially new dataset — the old TEC Register tracked generation only.</p>
+    </div>
+
+    <div class="zoom-bar">
+      <div class="zoom-bar-head">
+        <div class="zoom-bar-title">Zooming into · EA Register (consented connection capacity)</div>
+        <div class="zoom-bar-total">494 GW · 100% of consented</div>
+      </div>
+      <div class="zoom-bar-track">
+        <div class="zoom-seg muted" style="width:17.6%">Battery 87</div>
+        <div class="zoom-seg highlight signal" style="width:10.0%">Demand 49</div>
+        <div class="zoom-seg muted" style="width:8.1%">Solar 40</div>
+        <div class="zoom-seg muted" style="width:6.1%">Other 30</div>
+        <div class="zoom-seg muted" style="width:2.4%">Inter 12</div>
+        <div class="zoom-seg muted" style="width:5.5%">Wind+Gas+Nuc</div>
+        <div class="zoom-seg muted" style="width:50.3%">Tail (small entries)</div>
+      </div>
+      <div class="zoom-bar-foot">
+        <span>Demand highlighted · the new signal vs the old generation-only TEC queue</span>
+        <span>Next ↓ Inside the 49 GW demand pool</span>
+      </div>
+    </div>
+
+    <div class="tbar-row">
+      <div class="tbar-name">Battery storage
+        <span class="sub">1,547 projects · dominant new tech</span>
+      </div>
+      <div class="tbar-track">
+        <div class="tbar-fill accent" style="width:100%">87 GW</div>
+      </div>
+      <div class="tbar-value accent">87<span class="pct">17.6%</span></div>
+    </div>
+
+    <div class="tbar-row">
+      <div class="tbar-name">Demand
+        <span class="sub">119 projects · DC, H₂, industry · NEW</span>
+      </div>
+      <div class="tbar-track">
+        <div class="tbar-fill signal" style="width:56.3%">49 GW</div>
+      </div>
+      <div class="tbar-value signal">49<span class="pct">10.0%</span></div>
+    </div>
+
+    <div class="tbar-row">
+      <div class="tbar-name">Solar PV
+        <span class="sub">1,134 projects</span>
+      </div>
+      <div class="tbar-track">
+        <div class="tbar-fill neutral" style="width:46.0%">40 GW</div>
+      </div>
+      <div class="tbar-value">40<span class="pct">8.1%</span></div>
+    </div>
+
+    <div class="tbar-row">
+      <div class="tbar-name">Other (LDES, CCS, hydro, tidal)
+        <span class="sub">~75 projects across categories</span>
+      </div>
+      <div class="tbar-track">
+        <div class="tbar-fill neutral" style="width:34.5%">30 GW</div>
+      </div>
+      <div class="tbar-value">30<span class="pct">6.1%</span></div>
+    </div>
+
+    <div class="tbar-row">
+      <div class="tbar-name">Interconnectors
+        <span class="sub">15 projects · UK-Europe HVDC</span>
+      </div>
+      <div class="tbar-track">
+        <div class="tbar-fill neutral" style="width:13.8%">12 GW</div>
+      </div>
+      <div class="tbar-value">12<span class="pct">2.4%</span></div>
+    </div>
+
+    <div class="tbar-row">
+      <div class="tbar-name">Wind (onshore + offshore)
+        <span class="sub">421 projects · understated, see note</span>
+      </div>
+      <div class="tbar-track">
+        <div class="tbar-fill neutral" style="width:8.0%">7 GW</div>
+      </div>
+      <div class="tbar-value">7<span class="pct">1.4%</span></div>
+    </div>
+
+    <div class="tbar-row">
+      <div class="tbar-name">Unabated gas
+        <span class="sub">53 projects · OCGT/CCGT</span>
+      </div>
+      <div class="tbar-track">
+        <div class="tbar-fill neutral" style="width:6.2%">5 GW</div>
+      </div>
+      <div class="tbar-value">5<span class="pct">1.1%</span></div>
+    </div>
+
+    <div class="tbar-row">
+      <div class="tbar-name">Nuclear
+        <span class="sub">2 projects · Hinkley C tranches</span>
+      </div>
+      <div class="tbar-track">
+        <div class="tbar-fill neutral" style="width:5.8%">5 GW</div>
+      </div>
+      <div class="tbar-value">5<span class="pct">1.0%</span></div>
+    </div>
+
+    <div class="key-insight signal">
+      <div class="key-insight-label">So what</div>
+      <p>Storage and demand together represent <em>~28% of all committed connection capacity</em> — categories that were invisible (demand) or underweighted (battery) in the pre-reform queue. The DC siting tool's queue-pressure model now captures both at every substation it scores.</p>
+    </div>
+
+    <div class="slide-footer">
+      <div class="src">Source · NESO EA Register · note: large offshore wind connects via NESO's separate Holistic Network Design pathway and is not fully reflected here</div>
+      <div class="ex">Slide 3 of 4</div>
+    </div>
+  </div>
+
+  <!-- ── SLIDE 4 — DEMAND BREAKDOWN ──────────────────────────────── -->
+  <div class="slide">
+    <div class="slide-header">
+      <div class="drill">
+        <span class="drill-step done"><span class="v">L1</span> Universe</span>
+        <span class="drill-arrow">→</span>
+        <span class="drill-step done"><span class="v">L2</span> Queue reform</span>
+        <span class="drill-arrow">→</span>
+        <span class="drill-step done"><span class="v">L3</span> EA composition</span>
+        <span class="drill-arrow">→</span>
+        <span class="drill-step here"><span class="v">L4</span> Demand pool</span>
+      </div>
+      <div class="slide-kicker warn">Level 4 · Drilling into the 49 GW demand pool</div>
+      <h2 class="slide-title">Three-fifths of the 49 GW demand pool sits in undifferentiated "Connection Nodes" — multi-tenant by design</h2>
+      <p class="slide-subtitle">Sub-categorisation derived by parsing project names in the EA Register. The register itself does not break out demand types — NESO created Connection Nodes specifically to host a mix of DC, H₂ and BESS at one site.</p>
+    </div>
+
+    <div class="zoom-bar">
+      <div class="zoom-bar-head">
+        <div class="zoom-bar-title">Zooming into · Transmission Connected Demand projects</div>
+        <div class="zoom-bar-total">49 GW · 119 projects · 100% of demand</div>
+      </div>
+      <div class="zoom-bar-track">
+        <div class="zoom-seg muted" style="width:58.5%">Connection Nodes 29 GW · undecomposable</div>
+        <div class="zoom-seg highlight signal" style="width:17.8%">DC 8.8</div>
+        <div class="zoom-seg muted" style="width:13.5%">H₂ 6.7</div>
+        <div class="zoom-seg muted" style="width:10.2%">Industry + Giga + CCS 5.0</div>
+      </div>
+      <div class="zoom-bar-foot">
+        <span>Data Centres highlighted · the explicit floor for queued DC demand</span>
+        <span>End of drill-down</span>
+      </div>
+    </div>
+
+    <div class="tbar-row">
+      <div class="tbar-name">Connection Nodes / Energy Centres
+        <span class="sub">84 projects · multi-tenant, undecomposable</span>
+      </div>
+      <div class="tbar-track">
+        <div class="tbar-fill neutral" style="width:100%">29 GW</div>
+      </div>
+      <div class="tbar-value">29<span class="pct">58.5%</span></div>
+    </div>
+
+    <div class="tbar-row">
+      <div class="tbar-name">Data Centres
+        <span class="sub">18 projects · explicitly DC-named</span>
+      </div>
+      <div class="tbar-track">
+        <div class="tbar-fill signal" style="width:30.4%">8.8 GW</div>
+      </div>
+      <div class="tbar-value signal">8.8<span class="pct">17.8%</span></div>
+    </div>
+
+    <div class="tbar-row">
+      <div class="tbar-name">Hydrogen / Electrolysers
+        <span class="sub">10 projects · gas terminals + ports</span>
+      </div>
+      <div class="tbar-track">
+        <div class="tbar-fill accent" style="width:23.1%">6.7 GW</div>
+      </div>
+      <div class="tbar-value accent">6.7<span class="pct">13.5%</span></div>
+    </div>
+
+    <div class="tbar-row">
+      <div class="tbar-name">Heavy industry (steel etc.)
+        <span class="sub">2 projects · Teesside enhancements</span>
+      </div>
+      <div class="tbar-track">
+        <div class="tbar-fill neutral" style="width:8.3%">2.4 GW</div>
+      </div>
+      <div class="tbar-value">2.4<span class="pct">4.9%</span></div>
+    </div>
+
+    <div class="tbar-row">
+      <div class="tbar-name">Gigafactories
+        <span class="sub">Cottam Giga · West Burton Giga</span>
+      </div>
+      <div class="tbar-track">
+        <div class="tbar-fill neutral" style="width:6.9%">2.0 GW</div>
+      </div>
+      <div class="tbar-value">2.0<span class="pct">4.0%</span></div>
+    </div>
+
+    <div class="tbar-row">
+      <div class="tbar-name">CCS / power
+        <span class="sub">2 projects</span>
+      </div>
+      <div class="tbar-track">
+        <div class="tbar-fill neutral" style="width:1.9%">0.6 GW</div>
+      </div>
+      <div class="tbar-value">0.6<span class="pct">1.1%</span></div>
+    </div>
+
+    <div class="tbar-row">
+      <div class="tbar-name">Rail electrification
+        <span class="sub">1 project</span>
+      </div>
+      <div class="tbar-track">
+        <div class="tbar-fill neutral" style="width:0.2%">52 MW</div>
+      </div>
+      <div class="tbar-value">0.05<span class="pct">0.1%</span></div>
+    </div>
+
+    <div class="key-insight warn">
+      <div class="key-insight-label">Caveat</div>
+      <p>The 29 GW "Connection Nodes" bucket isn't a failure of parsing — it's by design. NESO created multi-tenant nodes ("Power Park Rugby", "Trent Valley North Connection Node B", "GEC Ethos Green") to host a cluster of downstream uses at one connection point. <em>True demand-type splits require cross-referencing planning applications or operator press releases per project</em> — the EA Register on its own doesn't decompose them.</p>
+    </div>
+
+    <div class="key-insight signal" style="margin-top:12px">
+      <div class="key-insight-label">Pin for the room</div>
+      <p>Explicitly named data centres total <em>8.8 GW</em> across 18 EA-Register projects — the floor. If 30% of the 29 GW of Connection Node capacity ultimately connects DC load (a defensible mid-case), <em>total queued DC demand approaches 17.5 GW</em> — comparable to the entire 2024 UK DC build-out base.</p>
+    </div>
+
+    <div class="slide-footer">
+      <div class="src">Source · NESO EA Register heuristic classification by project name · planning portals would be required for full decomposition</div>
+      <div class="ex">Slide 4 of 4</div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

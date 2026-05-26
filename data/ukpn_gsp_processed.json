@@ -1,0 +1,542 @@
+[
+  {
+    "gsp": "ACTON LANE",
+    "max_observed_mw": 45.62,
+    "headroom_mw": 74.4,
+    "headroom_source": "asset_limit",
+    "utilisation_pct": 38.013577212889984,
+    "tech_limits": "RED",
+    "asset_import_limit": "120"
+  },
+  {
+    "gsp": "BARKING WEST (EPN)",
+    "max_observed_mw": 53.18,
+    "headroom_mw": 346.8,
+    "headroom_source": "asset_limit",
+    "utilisation_pct": 13.2940700884277,
+    "tech_limits": "RED",
+    "asset_import_limit": "400"
+  },
+  {
+    "gsp": "BARKING WEST (LPN)",
+    "max_observed_mw": 145.47,
+    "headroom_mw": 254.5,
+    "headroom_source": "asset_limit",
+    "utilisation_pct": 36.36676657226445,
+    "tech_limits": "RED",
+    "asset_import_limit": "400"
+  },
+  {
+    "gsp": "BRIMSDOWN (LPN)",
+    "max_observed_mw": 104.39,
+    "headroom_mw": 615.6,
+    "headroom_source": "asset_limit",
+    "utilisation_pct": 14.49911787516843,
+    "tech_limits": "RED",
+    "asset_import_limit": "720"
+  },
+  {
+    "gsp": "HURST (SPN)",
+    "max_observed_mw": 0.0,
+    "headroom_mw": null,
+    "headroom_source": "none",
+    "utilisation_pct": 0.0,
+    "tech_limits": "RED",
+    "asset_import_limit": "N/A"
+  },
+  {
+    "gsp": "LALEHAM",
+    "max_observed_mw": 74.3,
+    "headroom_mw": null,
+    "headroom_source": "none",
+    "utilisation_pct": 0.0,
+    "tech_limits": "RED",
+    "asset_import_limit": "N/A"
+  },
+  {
+    "gsp": "LITTLEBROOK (SPN)",
+    "max_observed_mw": 9.84,
+    "headroom_mw": 470.2,
+    "headroom_source": "asset_limit",
+    "utilisation_pct": 2.049252129278548,
+    "tech_limits": "RED",
+    "asset_import_limit": "480"
+  },
+  {
+    "gsp": "LODGE ROAD",
+    "max_observed_mw": 292.15,
+    "headroom_mw": 607.9,
+    "headroom_source": "asset_limit",
+    "utilisation_pct": 32.461287816365555,
+    "tech_limits": "RED",
+    "asset_import_limit": "900"
+  },
+  {
+    "gsp": "MILL HILL",
+    "max_observed_mw": 214.81,
+    "headroom_mw": 385.2,
+    "headroom_source": "asset_limit",
+    "utilisation_pct": 35.80205690275612,
+    "tech_limits": "RED",
+    "asset_import_limit": "600"
+  },
+  {
+    "gsp": "SELLINDGE",
+    "max_observed_mw": 175.86,
+    "headroom_mw": 99.9,
+    "headroom_source": "tech_limit",
+    "utilisation_pct": 73.27449486094459,
+    "tech_limits": "GREEN",
+    "asset_import_limit": "240"
+  },
+  {
+    "gsp": "ST JOHNS WOOD",
+    "max_observed_mw": 596.98,
+    "headroom_mw": 603.0,
+    "headroom_source": "asset_limit",
+    "utilisation_pct": 49.74852026099032,
+    "tech_limits": "RED",
+    "asset_import_limit": "1200"
+  },
+  {
+    "gsp": "WALPOLE",
+    "max_observed_mw": 337.91,
+    "headroom_mw": 622.1,
+    "headroom_source": "asset_limit",
+    "utilisation_pct": 35.19886061090872,
+    "tech_limits": "RED",
+    "asset_import_limit": "960"
+  },
+  {
+    "gsp": "WARLEY",
+    "max_observed_mw": 192.65,
+    "headroom_mw": 19.8,
+    "headroom_source": "tech_limit",
+    "utilisation_pct": 40.136012136227016,
+    "tech_limits": "GREEN",
+    "asset_import_limit": "480"
+  },
+  {
+    "gsp": "WEST THURROCK",
+    "max_observed_mw": 32.86,
+    "headroom_mw": 67.1,
+    "headroom_source": "asset_limit",
+    "utilisation_pct": 32.86176694510192,
+    "tech_limits": "RED",
+    "asset_import_limit": "100"
+  },
+  {
+    "gsp": "WILLESDEN 132",
+    "max_observed_mw": 176.9,
+    "headroom_mw": 543.1,
+    "headroom_source": "asset_limit",
+    "utilisation_pct": 24.568833596033905,
+    "tech_limits": "RED",
+    "asset_import_limit": "720"
+  },
+  {
+    "gsp": "WIMBLEDON 1&2",
+    "max_observed_mw": 250.71,
+    "headroom_mw": -70.7,
+    "headroom_source": "asset_limit",
+    "utilisation_pct": 139.28345229769445,
+    "tech_limits": "RED",
+    "asset_import_limit": "180"
+  },
+  {
+    "gsp": "WIMBLEDON 3&4",
+    "max_observed_mw": 507.01,
+    "headroom_mw": 213.0,
+    "headroom_source": "asset_limit",
+    "utilisation_pct": 70.41745033647335,
+    "tech_limits": "RED",
+    "asset_import_limit": "720"
+  },
+  {
+    "gsp": "AMERSHAM",
+    "max_observed_mw": 56.02,
+    "headroom_mw": 0.5,
+    "headroom_source": "tech_limit",
+    "utilisation_pct": 23.342711096426843,
+    "tech_limits": "GREEN",
+    "asset_import_limit": "240"
+  },
+  {
+    "gsp": "BARKING C (EPN)",
+    "max_observed_mw": 52.49,
+    "headroom_mw": 547.5,
+    "headroom_source": "asset_limit",
+    "utilisation_pct": 8.7476384527798,
+    "tech_limits": "RED",
+    "asset_import_limit": "600"
+  },
+  {
+    "gsp": "BARKING C (LPN)",
+    "max_observed_mw": 35.39,
+    "headroom_mw": 564.6,
+    "headroom_source": "asset_limit",
+    "utilisation_pct": 5.8989765622718195,
+    "tech_limits": "RED",
+    "asset_import_limit": "600"
+  },
+  {
+    "gsp": "BEDDINGTON (LPN)",
+    "max_observed_mw": 137.05,
+    "headroom_mw": -17.1,
+    "headroom_source": "asset_limit",
+    "utilisation_pct": 22.840862154860496,
+    "tech_limits": "RED",
+    "asset_import_limit": "120"
+  },
+  {
+    "gsp": "BEDDINGTON (SPN)",
+    "max_observed_mw": 403.34,
+    "headroom_mw": 316.7,
+    "headroom_source": "asset_limit",
+    "utilisation_pct": 56.01966679409115,
+    "tech_limits": "RED",
+    "asset_import_limit": "720"
+  },
+  {
+    "gsp": "BOLNEY",
+    "max_observed_mw": 636.07,
+    "headroom_mw": 201.8,
+    "headroom_source": "tech_limit",
+    "utilisation_pct": 57.61547778666428,
+    "tech_limits": "GREEN",
+    "asset_import_limit": "1104"
+  },
+  {
+    "gsp": "BRAINTREE",
+    "max_observed_mw": 131.85,
+    "headroom_mw": 5.0,
+    "headroom_source": "tech_limit",
+    "utilisation_pct": 96.37848489658406,
+    "tech_limits": "GREEN",
+    "asset_import_limit": "240"
+  },
+  {
+    "gsp": "CANTERBURY NORTH",
+    "max_observed_mw": 198.38,
+    "headroom_mw": 2.5,
+    "headroom_source": "tech_limit",
+    "utilisation_pct": 82.65663878023847,
+    "tech_limits": "GREEN",
+    "asset_import_limit": "240"
+  },
+  {
+    "gsp": "ELSTREE",
+    "max_observed_mw": 349.21,
+    "headroom_mw": 29.6,
+    "headroom_source": "tech_limit",
+    "utilisation_pct": 36.37613870726813,
+    "tech_limits": "GREEN",
+    "asset_import_limit": "960"
+  },
+  {
+    "gsp": "HACKNEY 66",
+    "max_observed_mw": 154.58,
+    "headroom_mw": 25.4,
+    "headroom_source": "asset_limit",
+    "utilisation_pct": 85.87963104248044,
+    "tech_limits": "RED",
+    "asset_import_limit": "180"
+  },
+  {
+    "gsp": "ISLINGTON",
+    "max_observed_mw": 158.09,
+    "headroom_mw": 321.9,
+    "headroom_source": "asset_limit",
+    "utilisation_pct": 32.93537058106635,
+    "tech_limits": "RED",
+    "asset_import_limit": "480"
+  },
+  {
+    "gsp": "KEMSLEY",
+    "max_observed_mw": 94.39,
+    "headroom_mw": 94.3,
+    "headroom_source": "tech_limit",
+    "utilisation_pct": 19.664845487144163,
+    "tech_limits": "GREEN",
+    "asset_import_limit": "480"
+  },
+  {
+    "gsp": "RYE HOUSE",
+    "max_observed_mw": 274.6,
+    "headroom_mw": -0.6,
+    "headroom_source": "tech_limit",
+    "utilisation_pct": 57.20827651144453,
+    "tech_limits": "GREEN",
+    "asset_import_limit": "480"
+  },
+  {
+    "gsp": "TILBURY SGTs 1&7",
+    "max_observed_mw": 0.0,
+    "headroom_mw": null,
+    "headroom_source": "none",
+    "utilisation_pct": 0.0,
+    "tech_limits": "",
+    "asset_import_limit": ""
+  },
+  {
+    "gsp": "WYMONDLEY",
+    "max_observed_mw": 193.0,
+    "headroom_mw": 46.5,
+    "headroom_source": "tech_limit",
+    "utilisation_pct": 80.41854471102124,
+    "tech_limits": "GREEN",
+    "asset_import_limit": "240"
+  },
+  {
+    "gsp": "BRAMFORD",
+    "max_observed_mw": 492.64,
+    "headroom_mw": 26.0,
+    "headroom_source": "tech_limit",
+    "utilisation_pct": 51.31663967331717,
+    "tech_limits": "GREEN",
+    "asset_import_limit": "960"
+  },
+  {
+    "gsp": "BRIMSDOWN (EPN)",
+    "max_observed_mw": 204.9,
+    "headroom_mw": 1.7,
+    "headroom_source": "tech_limit",
+    "utilisation_pct": 28.458305321370357,
+    "tech_limits": "GREEN",
+    "asset_import_limit": "720"
+  },
+  {
+    "gsp": "BURWELL",
+    "max_observed_mw": 303.71,
+    "headroom_mw": -0.0,
+    "headroom_source": "tech_limit",
+    "utilisation_pct": 100.00491498476902,
+    "tech_limits": "GREEN",
+    "asset_import_limit": "480"
+  },
+  {
+    "gsp": "CHESSINGTON",
+    "max_observed_mw": 218.44,
+    "headroom_mw": 381.6,
+    "headroom_source": "asset_limit",
+    "utilisation_pct": 36.40667943565417,
+    "tech_limits": "RED",
+    "asset_import_limit": "600"
+  },
+  {
+    "gsp": "CITY ROAD",
+    "max_observed_mw": 672.08,
+    "headroom_mw": 527.9,
+    "headroom_source": "asset_limit",
+    "utilisation_pct": 56.00647733698874,
+    "tech_limits": "RED",
+    "asset_import_limit": "1200"
+  },
+  {
+    "gsp": "EATON SOCON",
+    "max_observed_mw": 191.78,
+    "headroom_mw": 86.9,
+    "headroom_source": "tech_limit",
+    "utilisation_pct": 39.953459613671235,
+    "tech_limits": "GREEN",
+    "asset_import_limit": "480"
+  },
+  {
+    "gsp": "GRENDON",
+    "max_observed_mw": 26.72,
+    "headroom_mw": null,
+    "headroom_source": "none",
+    "utilisation_pct": 0.0,
+    "tech_limits": "RED",
+    "asset_import_limit": "N/A"
+  },
+  {
+    "gsp": "HACKNEY 132",
+    "max_observed_mw": 128.13,
+    "headroom_mw": 351.9,
+    "headroom_source": "asset_limit",
+    "utilisation_pct": 26.693685085351497,
+    "tech_limits": "RED",
+    "asset_import_limit": "480"
+  },
+  {
+    "gsp": "HURST (LPN)",
+    "max_observed_mw": 237.36,
+    "headroom_mw": 242.6,
+    "headroom_source": "asset_limit",
+    "utilisation_pct": 49.44965632720313,
+    "tech_limits": "RED",
+    "asset_import_limit": "480"
+  },
+  {
+    "gsp": "KINGSNORTH",
+    "max_observed_mw": 196.35,
+    "headroom_mw": 43.7,
+    "headroom_source": "asset_limit",
+    "utilisation_pct": 81.81269607721363,
+    "tech_limits": "RED",
+    "asset_import_limit": "240"
+  },
+  {
+    "gsp": "LITTLEBROOK (LPN)",
+    "max_observed_mw": 141.1,
+    "headroom_mw": 4.7,
+    "headroom_source": "tech_limit",
+    "utilisation_pct": 29.396009536782973,
+    "tech_limits": "GREEN",
+    "asset_import_limit": "480"
+  },
+  {
+    "gsp": "NEW CROSS 132",
+    "max_observed_mw": 57.06,
+    "headroom_mw": 422.9,
+    "headroom_source": "asset_limit",
+    "utilisation_pct": 11.887300081387938,
+    "tech_limits": "RED",
+    "asset_import_limit": "480"
+  },
+  {
+    "gsp": "NEW CROSS 66",
+    "max_observed_mw": 142.88,
+    "headroom_mw": 397.1,
+    "headroom_source": "asset_limit",
+    "utilisation_pct": 26.45945349002494,
+    "tech_limits": "RED",
+    "asset_import_limit": "540"
+  },
+  {
+    "gsp": "NINFIELD",
+    "max_observed_mw": 387.81,
+    "headroom_mw": 102.9,
+    "headroom_source": "tech_limit",
+    "utilisation_pct": 53.86209733958793,
+    "tech_limits": "GREEN",
+    "asset_import_limit": "720"
+  },
+  {
+    "gsp": "NORTHFLEET EAST",
+    "max_observed_mw": 363.01,
+    "headroom_mw": 97.0,
+    "headroom_source": "tech_limit",
+    "utilisation_pct": 50.418563831308795,
+    "tech_limits": "GREEN",
+    "asset_import_limit": "720"
+  },
+  {
+    "gsp": "NORWICH",
+    "max_observed_mw": 452.2,
+    "headroom_mw": 4.2,
+    "headroom_source": "tech_limit",
+    "utilisation_pct": 99.07904733935588,
+    "tech_limits": "GREEN",
+    "asset_import_limit": "960"
+  },
+  {
+    "gsp": "PELHAM",
+    "max_observed_mw": 168.02,
+    "headroom_mw": 129.9,
+    "headroom_source": "tech_limit",
+    "utilisation_pct": 70.0076775765625,
+    "tech_limits": "GREEN",
+    "asset_import_limit": "240"
+  },
+  {
+    "gsp": "RAYLEIGH",
+    "max_observed_mw": 408.2,
+    "headroom_mw": 234.8,
+    "headroom_source": "tech_limit",
+    "utilisation_pct": 63.482985013312444,
+    "tech_limits": "GREEN",
+    "asset_import_limit": "720"
+  },
+  {
+    "gsp": "REDBRIDGE",
+    "max_observed_mw": 122.5,
+    "headroom_mw": 77.5,
+    "headroom_source": "asset_limit",
+    "utilisation_pct": 61.249998092651346,
+    "tech_limits": "RED",
+    "asset_import_limit": "200"
+  },
+  {
+    "gsp": "RICHBOROUGH",
+    "max_observed_mw": 84.06,
+    "headroom_mw": 49.9,
+    "headroom_source": "tech_limit",
+    "utilisation_pct": 35.02594078352025,
+    "tech_limits": "GREEN",
+    "asset_import_limit": "240"
+  },
+  {
+    "gsp": "SUNDON",
+    "max_observed_mw": 413.0,
+    "headroom_mw": 307.0,
+    "headroom_source": "asset_limit",
+    "utilisation_pct": 57.36070657441344,
+    "tech_limits": "RED",
+    "asset_import_limit": "720"
+  },
+  {
+    "gsp": "TILBURY",
+    "max_observed_mw": 127.33,
+    "headroom_mw": 592.7,
+    "headroom_source": "asset_limit",
+    "utilisation_pct": 17.685330809274,
+    "tech_limits": "GREEN",
+    "asset_import_limit": "720"
+  },
+  {
+    "gsp": "TILBURY SGTs 2&8",
+    "max_observed_mw": 0.0,
+    "headroom_mw": null,
+    "headroom_source": "none",
+    "utilisation_pct": 0.0,
+    "tech_limits": "",
+    "asset_import_limit": ""
+  },
+  {
+    "gsp": "TOTTENHAM",
+    "max_observed_mw": 290.88,
+    "headroom_mw": 369.1,
+    "headroom_source": "asset_limit",
+    "utilisation_pct": 44.07220675743636,
+    "tech_limits": "RED",
+    "asset_import_limit": "660"
+  },
+  {
+    "gsp": "WATFORD SOUTH",
+    "max_observed_mw": 230.95,
+    "headroom_mw": 11.7,
+    "headroom_source": "tech_limit",
+    "utilisation_pct": 34.99302901964956,
+    "tech_limits": "GREEN",
+    "asset_import_limit": "660"
+  },
+  {
+    "gsp": "WEST HAM",
+    "max_observed_mw": 404.19,
+    "headroom_mw": 315.8,
+    "headroom_source": "asset_limit",
+    "utilisation_pct": 56.13801377146308,
+    "tech_limits": "RED",
+    "asset_import_limit": "720"
+  },
+  {
+    "gsp": "WEST WEYBRIDGE",
+    "max_observed_mw": 364.26,
+    "headroom_mw": 295.7,
+    "headroom_source": "asset_limit",
+    "utilisation_pct": 55.190340207796574,
+    "tech_limits": "RED",
+    "asset_import_limit": "660"
+  },
+  {
+    "gsp": "WILLESDEN 66",
+    "max_observed_mw": 110.54,
+    "headroom_mw": 249.5,
+    "headroom_source": "asset_limit",
+    "utilisation_pct": 30.705343441582833,
+    "tech_limits": "RED",
+    "asset_import_limit": "360"
+  }
+]

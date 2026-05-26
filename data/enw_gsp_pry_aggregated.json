@@ -1,0 +1,104 @@
+{
+  "100091": {
+    "total_dem_hr_firm_mw": 92.2,
+    "pry_count": 27,
+    "lat": 53.413603,
+    "lon": -2.261219
+  },
+  "100092": {
+    "total_dem_hr_firm_mw": 78.1,
+    "pry_count": 16,
+    "lat": 53.43765,
+    "lon": -2.350016
+  },
+  "200220": {
+    "total_dem_hr_firm_mw": 143.1,
+    "pry_count": 46,
+    "lat": 53.542276,
+    "lon": -2.375566
+  },
+  "200334": {
+    "total_dem_hr_firm_mw": 9.6,
+    "pry_count": 4,
+    "lat": 53.447974,
+    "lon": -2.571294
+  },
+  "200419": {
+    "total_dem_hr_firm_mw": 35.8,
+    "pry_count": 5,
+    "lat": 53.562901,
+    "lon": -2.846958
+  },
+  "200440": {
+    "total_dem_hr_firm_mw": 9.0,
+    "pry_count": 7,
+    "lat": 53.535569,
+    "lon": -2.657243
+  },
+  "303024": {
+    "total_dem_hr_firm_mw": 24.9,
+    "pry_count": 4,
+    "lat": 53.261253,
+    "lon": -2.123227
+  },
+  "305932": {
+    "total_dem_hr_firm_mw": 130.5,
+    "pry_count": 22,
+    "lat": 53.532397,
+    "lon": -2.15894
+  },
+  "305951": {
+    "total_dem_hr_firm_mw": 191.0,
+    "pry_count": 24,
+    "lat": 53.685371,
+    "lon": -2.27014
+  },
+  "305953": {
+    "total_dem_hr_firm_mw": 62.9,
+    "pry_count": 22,
+    "lat": 53.410401,
+    "lon": -2.159019
+  },
+  "307574": {
+    "total_dem_hr_firm_mw": 170.6,
+    "pry_count": 29,
+    "lat": 53.456462,
+    "lon": -2.080167
+  },
+  "400085": {
+    "total_dem_hr_firm_mw": 161.2,
+    "pry_count": 26,
+    "lat": 53.824711,
+    "lon": -2.309473
+  },
+  "400125": {
+    "total_dem_hr_firm_mw": 21.2,
+    "pry_count": 4,
+    "lat": 53.908626,
+    "lon": -2.932018
+  },
+  "400240_400241": {
+    "total_dem_hr_firm_mw": 323.4,
+    "pry_count": 54,
+    "lat": 53.761996,
+    "lon": -2.787482
+  },
+  "609000": {
+    "total_dem_hr_firm_mw": 47.5,
+    "pry_count": 24,
+    "lat": 54.450483,
+    "lon": -2.666904
+  },
+  "609600": {
+    "total_dem_hr_firm_mw": 303.8,
+    "pry_count": 43,
+    "lat": 54.600898,
+    "lon": -3.157597
+  },
+  "609900": {
+    "total_dem_hr_firm_mw": 27.1,
+    "pry_count": 10,
+    "lat": 54.053182,
+    "lon": -2.797057
+  }
+}

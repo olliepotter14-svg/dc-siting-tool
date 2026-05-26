@@ -1,0 +1,128 @@
+[
+  {
+    "licence_area": "SPM",
+    "gsp_name": "Birkenhead",
+    "gsp_technical_export_limit_mw_at_all_times": 74.4,
+    "gsp_technical_import_limit_winter_mw_01_dec_28_feb": -250.4,
+    "gsp_technical_import_limit_access_period_mw_01_mar_31_may_01_sep_30_nov": -246.9,
+    "gsp_technical_import_limit_summer_solar_max_mw_01_jun_31_aug": -226.5,
+    "gsp_technical_import_limit_summer_solar_min_mw_01_jun_31_aug": -149.4
+  },
+  {
+    "licence_area": "SPM",
+    "gsp_name": "Capenhurst",
+    "gsp_technical_export_limit_mw_at_all_times": 59.7,
+    "gsp_technical_import_limit_winter_mw_01_dec_28_feb": -222.1,
+    "gsp_technical_import_limit_access_period_mw_01_mar_31_may_01_sep_30_nov": -211.3,
+    "gsp_technical_import_limit_summer_solar_max_mw_01_jun_31_aug": -176.3,
+    "gsp_technical_import_limit_summer_solar_min_mw_01_jun_31_aug": -138.7
+  },
+  {
+    "licence_area": "SPM",
+    "gsp_name": "Legacy",
+    "gsp_technical_export_limit_mw_at_all_times": 134.0,
+    "gsp_technical_import_limit_winter_mw_01_dec_28_feb": -265.3,
+    "gsp_technical_import_limit_access_period_mw_01_mar_31_may_01_sep_30_nov": -264.8,
+    "gsp_technical_import_limit_summer_solar_max_mw_01_jun_31_aug": -211.6,
+    "gsp_technical_import_limit_summer_solar_min_mw_01_jun_31_aug": -147.1
+  },
+  {
+    "licence_area": "SPM",
+    "gsp_name": "St. Asaph",
+    "gsp_technical_export_limit_mw_at_all_times": 172.7,
+    "gsp_technical_import_limit_winter_mw_01_dec_28_feb": -53.2,
+    "gsp_technical_import_limit_access_period_mw_01_mar_31_may_01_sep_30_nov": -47.1,
+    "gsp_technical_import_limit_summer_solar_max_mw_01_jun_31_aug": -66.5,
+    "gsp_technical_import_limit_summer_solar_min_mw_01_jun_31_aug": -57.0
+  },
+  {
+    "licence_area": "SPM",
+    "gsp_name": "Lister Drive",
+    "gsp_technical_export_limit_mw_at_all_times": -34.6,
+    "gsp_technical_import_limit_winter_mw_01_dec_28_feb": -331.6,
+    "gsp_technical_import_limit_access_period_mw_01_mar_31_may_01_sep_30_nov": -314.3,
+    "gsp_technical_import_limit_summer_solar_max_mw_01_jun_31_aug": -247.0,
+    "gsp_technical_import_limit_summer_solar_min_mw_01_jun_31_aug": -156.7
+  },
+  {
+    "licence_area": "SPM",
+    "gsp_name": "Kirkby",
+    "gsp_technical_export_limit_mw_at_all_times": 37.6,
+    "gsp_technical_import_limit_winter_mw_01_dec_28_feb": -307.0,
+    "gsp_technical_import_limit_access_period_mw_01_mar_31_may_01_sep_30_nov": -295.6,
+    "gsp_technical_import_limit_summer_solar_max_mw_01_jun_31_aug": -226.1,
+    "gsp_technical_import_limit_summer_solar_min_mw_01_jun_31_aug": -146.8
+  },
+  {
+    "licence_area": "SPM",
+    "gsp_name": "Connahs Quay",
+    "gsp_technical_export_limit_mw_at_all_times": 226.6,
+    "gsp_technical_import_limit_winter_mw_01_dec_28_feb": -209.4,
+    "gsp_technical_import_limit_access_period_mw_01_mar_31_may_01_sep_30_nov": -193.8,
+    "gsp_technical_import_limit_summer_solar_max_mw_01_jun_31_aug": -168.5,
+    "gsp_technical_import_limit_summer_solar_min_mw_01_jun_31_aug": -147.3
+  },
+  {
+    "licence_area": "SPM",
+    "gsp_name": "Frodsham",
+    "gsp_technical_export_limit_mw_at_all_times": 67.2,
+    "gsp_technical_import_limit_winter_mw_01_dec_28_feb": -109.7,
+    "gsp_technical_import_limit_access_period_mw_01_mar_31_may_01_sep_30_nov": -112.5,
+    "gsp_technical_import_limit_summer_solar_max_mw_01_jun_31_aug": -59.7,
+    "gsp_technical_import_limit_summer_solar_min_mw_01_jun_31_aug": -53.6
+  },
+  {
+    "licence_area": "SPM",
+    "gsp_name": "Ince",
+    "gsp_technical_export_limit_mw_at_all_times": 213.9,
+    "gsp_technical_import_limit_winter_mw_01_dec_28_feb": -120.4,
+    "gsp_technical_import_limit_access_period_mw_01_mar_31_may_01_sep_30_nov": -103.1,
+    "gsp_technical_import_limit_summer_solar_max_mw_01_jun_31_aug": -132.9,
+    "gsp_technical_import_limit_summer_solar_min_mw_01_jun_31_aug": -104.3
+  },
+  {
+    "licence_area": "SPM",
+    "gsp_name": "Rainhill",
+    "gsp_technical_export_limit_mw_at_all_times": 37.7,
+    "gsp_technical_import_limit_winter_mw_01_dec_28_feb": -430.3,
+    "gsp_technical_import_limit_access_period_mw_01_mar_31_may_01_sep_30_nov": -394.3,
+    "gsp_technical_import_limit_summer_solar_max_mw_01_jun_31_aug": -307.4,
+    "gsp_technical_import_limit_summer_solar_min_mw_01_jun_31_aug": -220.3
+  },
+  {
+    "licence_area": "SPM",
+    "gsp_name": "Cellarhead",
+    "gsp_technical_export_limit_mw_at_all_times": 47.2,
+    "gsp_technical_import_limit_winter_mw_01_dec_28_feb": -188.1,
+    "gsp_technical_import_limit_access_period_mw_01_mar_31_may_01_sep_30_nov": -135.4,
+    "gsp_technical_import_limit_summer_solar_max_mw_01_jun_31_aug": -100.2,
+    "gsp_technical_import_limit_summer_solar_min_mw_01_jun_31_aug": -79.7
+  },
+  {
+    "licence_area": "SPM",
+    "gsp_name": "Pentir",
+    "gsp_technical_export_limit_mw_at_all_times": 156.9,
+    "gsp_technical_import_limit_winter_mw_01_dec_28_feb": -75.0,
+    "gsp_technical_import_limit_access_period_mw_01_mar_31_may_01_sep_30_nov": -73.3,
+    "gsp_technical_import_limit_summer_solar_max_mw_01_jun_31_aug": -86.4,
+    "gsp_technical_import_limit_summer_solar_min_mw_01_jun_31_aug": -57.6
+  },
+  {
+    "licence_area": "SPM",
+    "gsp_name": "Carrington",
+    "gsp_technical_export_limit_mw_at_all_times": 302.5,
+    "gsp_technical_import_limit_winter_mw_01_dec_28_feb": -202.4,
+    "gsp_technical_import_limit_access_period_mw_01_mar_31_may_01_sep_30_nov": -186.4,
+    "gsp_technical_import_limit_summer_solar_max_mw_01_jun_31_aug": -164.2,
+    "gsp_technical_import_limit_summer_solar_min_mw_01_jun_31_aug": -121.2
+  },
+  {
+    "licence_area": "SPM",
+    "gsp_name": "Fiddlers Ferry",
+    "gsp_technical_export_limit_mw_at_all_times": -2.2,
+    "gsp_technical_import_limit_winter_mw_01_dec_28_feb": -163.0,
+    "gsp_technical_import_limit_access_period_mw_01_mar_31_may_01_sep_30_nov": -150.7,
+    "gsp_technical_import_limit_summer_solar_max_mw_01_jun_31_aug": -171.6,
+    "gsp_technical_import_limit_summer_solar_min_mw_01_jun_31_aug": -150.5
+  }
+]

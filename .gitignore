@@ -14,3 +14,5 @@ data/ssen_substation_locations.csv
 # Editor
 .vscode/
 *.swp
+*.bak.geojson
+logs/

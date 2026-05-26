@@ -1,0 +1,103 @@
+{
+  "_meta": {
+    "description": "Hand-curated lat/lng for high-MW EA Register projects not in REPD. Sources are public — operator announcements, planning portals, OS maps, news coverage. Used as a third geocoder by scripts/join_ea_to_repd.py after REPD lookup and before substation fallback.",
+    "last_updated": "2026-05-26"
+  },
+  "_entries": {
+    "Hinkley Point C": {
+      "lat": 51.2086, "lng": -3.1271,
+      "source": "EDF Energy site, OS NGR ST205465",
+      "notes": "Reactor footprint, ~3km north of Hinkley Point substation"
+    },
+    "Aquind Interconnector": {
+      "lat": 50.7794, "lng": -1.0492,
+      "source": "Aquind planning application, Eastney Beach Portsmouth landing point",
+      "notes": "UK-France HVDC; lands at Eastney, cables to Lovedean GSP"
+    },
+    "NeuConnect Interconnector": {
+      "lat": 51.4523, "lng": 0.7000,
+      "source": "NeuConnect project page, Isle of Grain UK landing",
+      "notes": "UK-Germany HVDC, 1.4 GW, connects to Grain GSP"
+    },
+    "Nautilus": {
+      "lat": 52.1791, "lng": 1.5639,
+      "source": "Nautilus project documents, proposed Friston Suffolk landing",
+      "notes": "UK-Belgium interconnector, planned 1.5 GW"
+    },
+    "Eggborough CCGT - OCGT - BESS": {
+      "lat": 53.7000, "lng": -1.1383,
+      "source": "OS map, former Eggborough coal station footprint",
+      "notes": "EP UK Investments redevelopment; CCGT/OCGT/BESS site"
+    },
+    "STALLINGBOROUGH CARBON CAPTURE CCGT": {
+      "lat": 53.5897, "lng": -0.2114,
+      "source": "Stallingborough industrial estate, Humber CCS cluster",
+      "notes": "VPI Holding CCS project, North Lincs"
+    },
+    "Relode Immingham": {
+      "lat": 53.6224, "lng": -0.2126,
+      "source": "Immingham Port industrial area",
+      "notes": "Hydrogen/electrolyser project at Immingham"
+    },
+    "Kintore Electrolysis": {
+      "lat": 57.5511, "lng": -1.8395,
+      "source": "Storegga Acorn Project site, St Fergus Gas Terminal",
+      "notes": "Three EA Register entries totalling 2.5 GW electrolyser capacity at St Fergus"
+    },
+    "Cottam Giga": {
+      "lat": 53.3014, "lng": -0.7821,
+      "source": "Former Cottam Power Station footprint, OS NGR SK820795",
+      "notes": "Gigafactory development on ex-coal-station brownfield"
+    },
+    "IPC Grid Tremorfa": {
+      "lat": 51.4760, "lng": -3.1614,
+      "source": "Tremorfa Steelworks footprint, Cardiff",
+      "notes": "Industrial estate adjacent to Tata Steel Cardiff"
+    },
+    "Thurrock Power Station": {
+      "lat": 51.4762, "lng": 0.3411,
+      "source": "Thurrock Power Project planning application",
+      "notes": "Three EA entries at same site — Tilbury/Thurrock CCGT"
+    },
+    "Rampion Extension Offshore Wind Farm": {
+      "lat": 50.6500, "lng": -0.3500,
+      "source": "Rampion 2 array boundary centroid (offshore)",
+      "notes": "Sussex coast offshore wind farm extension"
+    },
+    "Morecambe Offshore Wind Farm": {
+      "lat": 53.9500, "lng": -3.4000,
+      "source": "Cobra/Flotation Energy project boundary, Morecambe Bay",
+      "notes": "Floating offshore wind off Lancashire coast"
+    },
+    "Salamander Offshore Wind Farm": {
+      "lat": 57.7000, "lng": -1.5000,
+      "source": "Salamander Floating Wind project area, off Peterhead",
+      "notes": "Pilot floating offshore wind off Aberdeenshire"
+    },
+    "CENOS": {
+      "lat": 58.5000, "lng": -3.5000,
+      "source": "CENOS floating wind project area, north of mainland Scotland",
+      "notes": "Floating offshore wind north of Caithness"
+    },
+    "Trafford 2 BESS": {
+      "lat": 53.4628, "lng": -2.3458,
+      "source": "Trafford Park industrial area, Manchester",
+      "notes": "Two 1.4 GW BESS entries co-located"
+    },
+    "Sundon DC": {
+      "lat": 51.9500, "lng": -0.5000,
+      "source": "Sundon GSP area, Bedfordshire (approximate — exact site not public)",
+      "notes": "600 MW data centre near Sundon substation"
+    },
+    "Horsey": {
+      "lat": 51.1372, "lng": -3.0117,
+      "source": "Horsey, Somerset (near Bridgwater) — assumed based on connection point",
+      "notes": "500 MW project near Bridgwater"
+    },
+    "Eaton Socon": {
+      "lat": 52.2240, "lng": -0.2960,
+      "source": "Eaton Socon, Cambridgeshire",
+      "notes": "Eaton Socon connection node"
+    }
+  }
+}

@@ -1,12 +1,39 @@
 {
+  "0": {
+    "headroom_mw": 7.6,
+    "capacity_mw": null,
+    "max_demand_mw": null,
+    "ltds_utilisation": null,
+    "committed_util": null,
+    "committed_headroom": 7.6,
+    "source": "NPg NDP Demand Headroom dataset, DFES 2026 - Holistic Transition scenario, summed across 2 primary substations; committed reference year = 2030",
+    "quality": "direct_headroom",
+    "dno": "NPG",
+    "raw_name": "0"
+  },
   "abernethy": {
     "headroom_mw": 44.7,
     "capacity_mw": 120.0,
     "max_demand_mw": 75.3,
-    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
-    "quality": "nameplate_proxy",
+    "ltds_utilisation": 62.8,
+    "committed_util": 358.3,
+    "committed_headroom": -309.9,
+    "source": "SSEN Headroom Dashboard: firm capacity (N-1 from nameplate) \u2212 peak demand; committed pipeline = peak + contracted demand (excl & incl BESS)",
+    "quality": "direct_headroom",
     "dno": "SSEN",
-    "raw_name": "Abernethy"
+    "raw_name": "Abernethy GSP"
+  },
+  "aberthaw": {
+    "headroom_mw": 1010.6,
+    "capacity_mw": 1043.4,
+    "max_demand_mw": 32.8,
+    "ltds_utilisation": 3.1,
+    "committed_util": 73.1,
+    "committed_headroom": 281.0,
+    "source": "NGED LTDS Table 3a (firm capacity \u2212 current peak demand; 5-yr forecast as committed pipeline)",
+    "quality": "direct_headroom",
+    "dno": "NGED",
+    "raw_name": "Cardiff East / Aberthaw"
   },
   "aberthaw and cardiff east": {
     "headroom_mw": null,
@@ -18,13 +45,28 @@
     "raw_name": "Aberthaw and Cardiff East"
   },
   "abham": {
-    "headroom_mw": null,
-    "capacity_mw": 382.7,
-    "max_demand_mw": null,
-    "source": "NGED GSP Technical Limits (import TL only, no demand data)",
-    "quality": "technical_limit_only",
+    "headroom_mw": 2978.1,
+    "capacity_mw": 3896.1,
+    "max_demand_mw": 918.0,
+    "ltds_utilisation": 23.6,
+    "committed_util": 75.0,
+    "committed_headroom": 973.2,
+    "source": "NGED LTDS Table 3a (firm capacity \u2212 current peak demand; 5-yr forecast as committed pipeline)",
+    "quality": "direct_headroom",
     "dno": "NGED",
-    "raw_name": "Abham"
+    "raw_name": "Abham / Exeter / Landulph 132kV"
+  },
+  "abham exeter landulph": {
+    "headroom_mw": 2978.1,
+    "capacity_mw": 3896.1,
+    "max_demand_mw": 918.0,
+    "ltds_utilisation": 23.6,
+    "committed_util": 75.0,
+    "committed_headroom": 973.2,
+    "source": "NGED LTDS Table 3a (firm capacity \u2212 current peak demand; 5-yr forecast as committed pipeline)",
+    "quality": "direct_headroom",
+    "dno": "NGED",
+    "raw_name": "Abham / Exeter / Landulph 132kV"
   },
   "acton lane": {
     "headroom_mw": 74.4,
@@ -51,19 +93,37 @@
     "headroom_mw": 89.5,
     "capacity_mw": 120.0,
     "max_demand_mw": 30.5,
-    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
-    "quality": "nameplate_proxy",
+    "ltds_utilisation": 25.4,
+    "committed_util": 195.9,
+    "committed_headroom": -115.1,
+    "source": "SSEN Headroom Dashboard: firm capacity (N-1 from nameplate) \u2212 peak demand; committed pipeline = peak + contracted demand (excl & incl BESS)",
+    "quality": "direct_headroom",
     "dno": "SSEN",
-    "raw_name": "Alness"
+    "raw_name": "Alness GSP"
   },
   "alverdiscott": {
-    "headroom_mw": null,
-    "capacity_mw": 257.0,
-    "max_demand_mw": null,
-    "source": "NGED GSP Technical Limits (import TL only, no demand data)",
-    "quality": "technical_limit_only",
+    "headroom_mw": 2506.2,
+    "capacity_mw": 3168.9,
+    "max_demand_mw": 662.6,
+    "ltds_utilisation": 20.9,
+    "committed_util": 64.0,
+    "committed_headroom": 1140.9,
+    "source": "NGED LTDS Table 3a (firm capacity \u2212 current peak demand; 5-yr forecast as committed pipeline)",
+    "quality": "direct_headroom",
     "dno": "NGED",
-    "raw_name": "Alverdiscott"
+    "raw_name": "Alverdiscott / Indian Queens 132kV"
+  },
+  "alverdiscott indian queens": {
+    "headroom_mw": 2506.2,
+    "capacity_mw": 3168.9,
+    "max_demand_mw": 662.6,
+    "ltds_utilisation": 20.9,
+    "committed_util": 64.0,
+    "committed_headroom": 1140.9,
+    "source": "NGED LTDS Table 3a (firm capacity \u2212 current peak demand; 5-yr forecast as committed pipeline)",
+    "quality": "direct_headroom",
+    "dno": "NGED",
+    "raw_name": "Alverdiscott / Indian Queens 132kV"
   },
   "amersham": {
     "headroom_mw": 73.2,
@@ -78,40 +138,52 @@
     "raw_name": "Amersham"
   },
   "arbroath": {
-    "headroom_mw": 0,
+    "headroom_mw": -13.8,
     "capacity_mw": 45.0,
     "max_demand_mw": 58.8,
-    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
-    "quality": "nameplate_proxy",
+    "ltds_utilisation": 130.6,
+    "committed_util": 719.5,
+    "committed_headroom": -278.8,
+    "source": "SSEN Headroom Dashboard: firm capacity (N-1 from nameplate) \u2212 peak demand; committed pipeline = peak + contracted demand (excl & incl BESS)",
+    "quality": "direct_headroom",
     "dno": "SSEN",
-    "raw_name": "Arbroath"
+    "raw_name": "Arbroath GSP"
   },
   "ardkinglas": {
     "headroom_mw": 45.0,
     "capacity_mw": 45.0,
     "max_demand_mw": 0.0,
-    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
-    "quality": "nameplate_proxy",
+    "ltds_utilisation": 0.0,
+    "committed_util": 0.0,
+    "committed_headroom": 45.0,
+    "source": "SSEN Headroom Dashboard: firm capacity (N-1 from nameplate) \u2212 peak demand; committed pipeline = peak + contracted demand (excl & incl BESS)",
+    "quality": "direct_headroom",
     "dno": "SSEN",
-    "raw_name": "Ardkinglas"
+    "raw_name": "Ardkinglas GSP"
   },
   "ardmore": {
     "headroom_mw": 23.8,
     "capacity_mw": 60.0,
     "max_demand_mw": 36.2,
-    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
-    "quality": "nameplate_proxy",
+    "ltds_utilisation": 60.3,
+    "committed_util": 121.6,
+    "committed_headroom": -13.0,
+    "source": "SSEN Headroom Dashboard: firm capacity (N-1 from nameplate) \u2212 peak demand; committed pipeline = peak + contracted demand (excl & incl BESS)",
+    "quality": "direct_headroom",
     "dno": "SSEN",
-    "raw_name": "Ardmore"
+    "raw_name": "Ardmore GSP"
   },
   "axminster": {
     "headroom_mw": 142.5,
     "capacity_mw": 240.0,
     "max_demand_mw": 97.5,
-    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand) \u2014 SHARED SITE",
-    "quality": "nameplate_proxy",
+    "ltds_utilisation": 40.6,
+    "committed_util": 127.3,
+    "committed_headroom": -65.6,
+    "source": "SSEN Headroom Dashboard: firm capacity (N-1 from nameplate) \u2212 peak demand; committed pipeline = peak + contracted demand (excl & incl BESS) \u2014 SHARED SITE",
+    "quality": "direct_headroom",
     "dno": "SSEN",
-    "raw_name": "Axminster"
+    "raw_name": "Axminster GSP"
   },
   "barking 132kv": {
     "headroom_mw": 84.0,
@@ -171,10 +243,13 @@
     "headroom_mw": 18.4,
     "capacity_mw": 45.0,
     "max_demand_mw": 26.6,
-    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
-    "quality": "nameplate_proxy",
+    "ltds_utilisation": 59.2,
+    "committed_util": 301.0,
+    "committed_headroom": -90.5,
+    "source": "SSEN Headroom Dashboard: firm capacity (N-1 from nameplate) \u2212 peak demand; committed pipeline = peak + contracted demand (excl & incl BESS)",
+    "quality": "direct_headroom",
     "dno": "SSEN",
-    "raw_name": "Beauly"
+    "raw_name": "Beauly GSP"
   },
   "beddington": {
     "headroom_mw": 671.3,
@@ -189,31 +264,40 @@
     "raw_name": "Beddington"
   },
   "berkswell": {
-    "headroom_mw": null,
-    "capacity_mw": 302.6,
-    "max_demand_mw": null,
-    "source": "NGED GSP Technical Limits (import TL only, no demand data)",
-    "quality": "technical_limit_only",
+    "headroom_mw": 1351.2,
+    "capacity_mw": 1944.0,
+    "max_demand_mw": 592.8,
+    "ltds_utilisation": 30.5,
+    "committed_util": 43.3,
+    "committed_headroom": 1102.4,
+    "source": "NGED LTDS Table 3a (firm capacity \u2212 current peak demand; 5-yr forecast as committed pipeline)",
+    "quality": "direct_headroom",
     "dno": "NGED",
-    "raw_name": "Berkswell"
+    "raw_name": "Berkswell 132kV"
   },
   "berryburn": {
     "headroom_mw": 120.0,
     "capacity_mw": 120.0,
     "max_demand_mw": 0.0,
-    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
-    "quality": "nameplate_proxy",
+    "ltds_utilisation": 0.0,
+    "committed_util": 87.1,
+    "committed_headroom": 15.5,
+    "source": "SSEN Headroom Dashboard: firm capacity (N-1 from nameplate) \u2212 peak demand; committed pipeline = peak + contracted demand (excl & incl BESS)",
+    "quality": "direct_headroom",
     "dno": "SSEN",
-    "raw_name": "Berryburn"
+    "raw_name": "Berryburn GSP"
   },
   "bicker fen": {
-    "headroom_mw": null,
-    "capacity_mw": 160.1,
-    "max_demand_mw": null,
-    "source": "NGED GSP Technical Limits (import TL only, no demand data)",
-    "quality": "technical_limit_only",
+    "headroom_mw": 594.3,
+    "capacity_mw": 940.0,
+    "max_demand_mw": 345.7,
+    "ltds_utilisation": 36.8,
+    "committed_util": 48.0,
+    "committed_headroom": 488.9,
+    "source": "NGED LTDS Table 3a (firm capacity \u2212 current peak demand; 5-yr forecast as committed pipeline)",
+    "quality": "direct_headroom",
     "dno": "NGED",
-    "raw_name": "Bicker Fen"
+    "raw_name": "Bicker Fen 132kV"
   },
   "birkenhead": {
     "headroom_mw": null,
@@ -225,28 +309,37 @@
     "raw_name": "Birkenhead"
   },
   "bishops wood": {
-    "headroom_mw": null,
-    "capacity_mw": 470.6,
-    "max_demand_mw": null,
-    "source": "NGED GSP Technical Limits (import TL only, no demand data)",
-    "quality": "technical_limit_only",
+    "headroom_mw": 2287.2,
+    "capacity_mw": 2966.2,
+    "max_demand_mw": 679.0,
+    "ltds_utilisation": 22.9,
+    "committed_util": 27.1,
+    "committed_headroom": 2161.7,
+    "source": "NGED LTDS Table 3a (firm capacity \u2212 current peak demand; 5-yr forecast as committed pipeline)",
+    "quality": "direct_headroom",
     "dno": "NGED",
-    "raw_name": "Bishops Wood"
+    "raw_name": "Bishops Wood 132kV"
   },
   "blyth 132kv": {
-    "headroom_mw": 46.0,
+    "headroom_mw": 82.5,
     "capacity_mw": 260.0,
-    "max_demand_mw": 23.0,
-    "source": "Northern Powergrid GSP Heatmap (direct demand headroom)",
+    "max_demand_mw": 180.7,
+    "ltds_utilisation": 69.5,
+    "committed_util": 68.3,
+    "committed_headroom": 82.5,
+    "source": "NPg NDP Demand Headroom dataset, DFES 2026 - Holistic Transition scenario, summed across 5 primary substations; committed reference year = 2030",
     "quality": "direct_headroom",
     "dno": "NPG",
     "raw_name": "Blyth 132kV"
   },
   "blyth 66kv": {
-    "headroom_mw": 0.0,
+    "headroom_mw": 100.7,
     "capacity_mw": 140.0,
-    "max_demand_mw": 127.0,
-    "source": "Northern Powergrid GSP Heatmap (direct demand headroom)",
+    "max_demand_mw": 21.1,
+    "ltds_utilisation": 15.1,
+    "committed_util": 28.0,
+    "committed_headroom": 100.7,
+    "source": "NPg NDP Demand Headroom dataset, DFES 2026 - Holistic Transition scenario, summed across 11 primary substations; committed reference year = 2030",
     "quality": "direct_headroom",
     "dno": "NPG",
     "raw_name": "Blyth 66kV"
@@ -255,10 +348,31 @@
     "headroom_mw": 33.5,
     "capacity_mw": 60.0,
     "max_demand_mw": 26.5,
-    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
-    "quality": "nameplate_proxy",
+    "ltds_utilisation": 44.2,
+    "committed_util": 206.2,
+    "committed_headroom": -63.7,
+    "source": "SSEN Headroom Dashboard: firm capacity (N-1 from nameplate) \u2212 peak demand; committed pipeline = peak + contracted demand (excl & incl BESS)",
+    "quality": "direct_headroom",
     "dno": "SSEN",
-    "raw_name": "Boat of Garten"
+    "raw_name": "Boat of Garten GSP"
+  },
+  "bold": {
+    "headroom_mw": -139.1,
+    "capacity_mw": null,
+    "max_demand_mw": null,
+    "source": "ENW Heatmap Tool (May 2026) \u2014 GSP Demand Headroom sheet, firm (non-inverter)",
+    "quality": "direct_headroom",
+    "dno": "ENW",
+    "raw_name": "Bold GSP (132)"
+  },
+  "bold gsp": {
+    "headroom_mw": -139.1,
+    "capacity_mw": null,
+    "max_demand_mw": null,
+    "source": "ENW Heatmap Tool (May 2026) \u2014 GSP Demand Headroom sheet, firm (non-inverter)",
+    "quality": "direct_headroom",
+    "dno": "ENW",
+    "raw_name": "Bold GSP (132)"
   },
   "bolney": {
     "headroom_mw": 977.5,
@@ -285,25 +399,34 @@
     "headroom_mw": 97.9,
     "capacity_mw": 240.0,
     "max_demand_mw": 142.1,
-    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
-    "quality": "nameplate_proxy",
+    "ltds_utilisation": 59.2,
+    "committed_util": 185.4,
+    "committed_headroom": -205.0,
+    "source": "SSEN Headroom Dashboard: firm capacity (N-1 from nameplate) \u2212 peak demand; committed pipeline = peak + contracted demand (excl & incl BESS)",
+    "quality": "direct_headroom",
     "dno": "SSEN",
-    "raw_name": "Botley Wood"
+    "raw_name": "Botley Wood GSP"
   },
   "braco west": {
     "headroom_mw": 73.0,
     "capacity_mw": 120.0,
     "max_demand_mw": 47.0,
-    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
-    "quality": "nameplate_proxy",
+    "ltds_utilisation": 39.1,
+    "committed_util": 216.6,
+    "committed_headroom": -139.9,
+    "source": "SSEN Headroom Dashboard: firm capacity (N-1 from nameplate) \u2212 peak demand; committed pipeline = peak + contracted demand (excl & incl BESS)",
+    "quality": "direct_headroom",
     "dno": "SSEN",
-    "raw_name": "Braco West"
+    "raw_name": "Braco West GSP"
   },
   "bradford west": {
-    "headroom_mw": 285.5,
+    "headroom_mw": 667.9,
     "capacity_mw": 720.0,
-    "max_demand_mw": 372.0,
-    "source": "Northern Powergrid GSP Heatmap (direct demand headroom)",
+    "max_demand_mw": 1.7,
+    "ltds_utilisation": 0.2,
+    "committed_util": 7.2,
+    "committed_headroom": 667.9,
+    "source": "NPg NDP Demand Headroom dataset, DFES 2026 - Holistic Transition scenario, summed across 48 primary substations; committed reference year = 2030",
     "quality": "direct_headroom",
     "dno": "NPG",
     "raw_name": "Bradford West"
@@ -332,6 +455,30 @@
     "dno": "UKPN",
     "raw_name": "Bramford"
   },
+  "bramley (ames-that)": {
+    "headroom_mw": 57.0,
+    "capacity_mw": 240.0,
+    "max_demand_mw": 183.0,
+    "ltds_utilisation": 76.3,
+    "committed_util": 116.0,
+    "committed_headroom": -38.4,
+    "source": "SSEN Headroom Dashboard: firm capacity (N-1 from nameplate) \u2212 peak demand; committed pipeline = peak + contracted demand (excl & incl BESS)",
+    "quality": "direct_headroom",
+    "dno": "SSEN",
+    "raw_name": "Bramley (Ames-That) GSP"
+  },
+  "bramley (basi)": {
+    "headroom_mw": 110.8,
+    "capacity_mw": 240.0,
+    "max_demand_mw": 129.2,
+    "ltds_utilisation": 53.8,
+    "committed_util": 90.4,
+    "committed_headroom": 23.1,
+    "source": "SSEN Headroom Dashboard: firm capacity (N-1 from nameplate) \u2212 peak demand; committed pipeline = peak + contracted demand (excl & incl BESS)",
+    "quality": "direct_headroom",
+    "dno": "SSEN",
+    "raw_name": "Bramley (Basi) GSP"
+  },
   "bramley amesthat": {
     "headroom_mw": 57.0,
     "capacity_mw": 240.0,
@@ -350,23 +497,50 @@
     "dno": "SSEN",
     "raw_name": "Bramley (Basi)"
   },
+  "bredbury": {
+    "headroom_mw": 130.7,
+    "capacity_mw": null,
+    "max_demand_mw": null,
+    "source": "ENW Heatmap Tool (May 2026) \u2014 GSP Demand Headroom sheet, firm (non-inverter)",
+    "quality": "direct_headroom",
+    "dno": "ENW",
+    "raw_name": "Bredbury (132)"
+  },
   "bridge of dun": {
     "headroom_mw": 29.6,
     "capacity_mw": 60.0,
     "max_demand_mw": 30.4,
-    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
-    "quality": "nameplate_proxy",
+    "ltds_utilisation": 50.7,
+    "committed_util": 231.4,
+    "committed_headroom": -78.9,
+    "source": "SSEN Headroom Dashboard: firm capacity (N-1 from nameplate) \u2212 peak demand; committed pipeline = peak + contracted demand (excl & incl BESS)",
+    "quality": "direct_headroom",
     "dno": "SSEN",
-    "raw_name": "Bridge of Dun"
+    "raw_name": "Bridge of Dun GSP"
   },
   "bridgwater": {
-    "headroom_mw": null,
-    "capacity_mw": 132.5,
-    "max_demand_mw": null,
-    "source": "NGED GSP Technical Limits (import TL only, no demand data)",
-    "quality": "technical_limit_only",
+    "headroom_mw": 996.0,
+    "capacity_mw": 1265.0,
+    "max_demand_mw": 269.1,
+    "ltds_utilisation": 21.3,
+    "committed_util": 72.2,
+    "committed_headroom": 351.9,
+    "source": "NGED LTDS Table 3a (firm capacity \u2212 current peak demand; 5-yr forecast as committed pipeline)",
+    "quality": "direct_headroom",
     "dno": "NGED",
-    "raw_name": "Bridgwater"
+    "raw_name": "Bridgwater / Taunton 132kV"
+  },
+  "bridgwater taunton": {
+    "headroom_mw": 996.0,
+    "capacity_mw": 1265.0,
+    "max_demand_mw": 269.1,
+    "ltds_utilisation": 21.3,
+    "committed_util": 72.2,
+    "committed_headroom": 351.9,
+    "source": "NGED LTDS Table 3a (firm capacity \u2212 current peak demand; 5-yr forecast as committed pipeline)",
+    "quality": "direct_headroom",
+    "dno": "NGED",
+    "raw_name": "Bridgwater / Taunton 132kV"
   },
   "brimsdown": {
     "headroom_mw": 358.8,
@@ -384,28 +558,37 @@
     "headroom_mw": 11.4,
     "capacity_mw": 30.0,
     "max_demand_mw": 18.6,
-    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
-    "quality": "nameplate_proxy",
+    "ltds_utilisation": 62.1,
+    "committed_util": 125.7,
+    "committed_headroom": -7.7,
+    "source": "SSEN Headroom Dashboard: firm capacity (N-1 from nameplate) \u2212 peak demand; committed pipeline = peak + contracted demand (excl & incl BESS)",
+    "quality": "direct_headroom",
     "dno": "SSEN",
-    "raw_name": "Broadford"
+    "raw_name": "Broadford GSP"
   },
   "brora": {
     "headroom_mw": 34.3,
     "capacity_mw": 45.0,
     "max_demand_mw": 10.7,
-    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
-    "quality": "nameplate_proxy",
+    "ltds_utilisation": 23.8,
+    "committed_util": 29.5,
+    "committed_headroom": 31.7,
+    "source": "SSEN Headroom Dashboard: firm capacity (N-1 from nameplate) \u2212 peak demand; committed pipeline = peak + contracted demand (excl & incl BESS)",
+    "quality": "direct_headroom",
     "dno": "SSEN",
-    "raw_name": "Brora"
+    "raw_name": "Brora GSP"
   },
   "burghmuir": {
     "headroom_mw": 47.6,
     "capacity_mw": 90.0,
     "max_demand_mw": 42.4,
-    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
-    "quality": "nameplate_proxy",
+    "ltds_utilisation": 47.1,
+    "committed_util": 217.7,
+    "committed_headroom": -106.0,
+    "source": "SSEN Headroom Dashboard: firm capacity (N-1 from nameplate) \u2212 peak demand; committed pipeline = peak + contracted demand (excl & incl BESS)",
+    "quality": "direct_headroom",
     "dno": "SSEN",
-    "raw_name": "Burghmuir"
+    "raw_name": "Burghmuir GSP"
   },
   "burwell": {
     "headroom_mw": 428.6,
@@ -420,37 +603,49 @@
     "raw_name": "Burwell"
   },
   "bushbury": {
-    "headroom_mw": null,
-    "capacity_mw": 167.3,
-    "max_demand_mw": null,
-    "source": "NGED GSP Technical Limits (import TL only, no demand data)",
-    "quality": "technical_limit_only",
+    "headroom_mw": 1107.0,
+    "capacity_mw": 1296.0,
+    "max_demand_mw": 189.0,
+    "ltds_utilisation": 14.6,
+    "committed_util": 21.9,
+    "committed_headroom": 1012.5,
+    "source": "NGED LTDS Table 3a (firm capacity \u2212 current peak demand; 5-yr forecast as committed pipeline)",
+    "quality": "direct_headroom",
     "dno": "NGED",
-    "raw_name": "Bushbury"
+    "raw_name": "Bushbury 132kV"
   },
   "bustleholm": {
-    "headroom_mw": null,
-    "capacity_mw": 340.1,
-    "max_demand_mw": null,
-    "source": "NGED GSP Technical Limits (import TL only, no demand data)",
-    "quality": "technical_limit_only",
+    "headroom_mw": 1493.9,
+    "capacity_mw": 1860.0,
+    "max_demand_mw": 366.1,
+    "ltds_utilisation": 19.7,
+    "committed_util": 23.6,
+    "committed_headroom": 1420.5,
+    "source": "NGED LTDS Table 3a (firm capacity \u2212 current peak demand; 5-yr forecast as committed pipeline)",
+    "quality": "direct_headroom",
     "dno": "NGED",
-    "raw_name": "Bustleholm"
+    "raw_name": "Bustleholm 132kV"
   },
   "cairnford": {
     "headroom_mw": 120.0,
     "capacity_mw": 120.0,
     "max_demand_mw": 0.0,
-    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
-    "quality": "nameplate_proxy",
+    "ltds_utilisation": 0.0,
+    "committed_util": 43.3,
+    "committed_headroom": 68.0,
+    "source": "SSEN Headroom Dashboard: firm capacity (N-1 from nameplate) \u2212 peak demand; committed pipeline = peak + contracted demand (excl & incl BESS)",
+    "quality": "direct_headroom",
     "dno": "SSEN",
-    "raw_name": "Cairnford"
+    "raw_name": "Cairnford GSP"
   },
   "camblesforth": {
-    "headroom_mw": 159.8,
+    "headroom_mw": 30.1,
     "capacity_mw": 200.0,
-    "max_demand_mw": 31.0,
-    "source": "Northern Powergrid GSP Heatmap (direct demand headroom)",
+    "max_demand_mw": 166.8,
+    "ltds_utilisation": 83.4,
+    "committed_util": 84.9,
+    "committed_headroom": 30.1,
+    "source": "NPg NDP Demand Headroom dataset, DFES 2026 - Holistic Transition scenario, summed across 5 primary substations; committed reference year = 2030",
     "quality": "direct_headroom",
     "dno": "NPG",
     "raw_name": "Camblesforth"
@@ -485,6 +680,30 @@
     "dno": "SPEN",
     "raw_name": "Capenhurst"
   },
+  "cardiff east": {
+    "headroom_mw": 1010.6,
+    "capacity_mw": 1043.4,
+    "max_demand_mw": 32.8,
+    "ltds_utilisation": 3.1,
+    "committed_util": 73.1,
+    "committed_headroom": 281.0,
+    "source": "NGED LTDS Table 3a (firm capacity \u2212 current peak demand; 5-yr forecast as committed pipeline)",
+    "quality": "direct_headroom",
+    "dno": "NGED",
+    "raw_name": "Cardiff East / Aberthaw"
+  },
+  "cardiff east aberthaw": {
+    "headroom_mw": 1010.6,
+    "capacity_mw": 1043.4,
+    "max_demand_mw": 32.8,
+    "ltds_utilisation": 3.1,
+    "committed_util": 73.1,
+    "committed_headroom": 281.0,
+    "source": "NGED LTDS Table 3a (firm capacity \u2212 current peak demand; 5-yr forecast as committed pipeline)",
+    "quality": "direct_headroom",
+    "dno": "NGED",
+    "raw_name": "Cardiff East / Aberthaw"
+  },
   "carradale": {
     "headroom_mw": 120.0,
     "capacity_mw": 120.0,
@@ -494,50 +713,95 @@
     "dno": "SSEN",
     "raw_name": "Carradale 2"
   },
+  "carradale 1": {
+    "headroom_mw": 101.7,
+    "capacity_mw": 120.0,
+    "max_demand_mw": 18.3,
+    "ltds_utilisation": 15.2,
+    "committed_util": 18.6,
+    "committed_headroom": 97.7,
+    "source": "SSEN Headroom Dashboard: firm capacity (N-1 from nameplate) \u2212 peak demand; committed pipeline = peak + contracted demand (excl & incl BESS)",
+    "quality": "direct_headroom",
+    "dno": "SSEN",
+    "raw_name": "Carradale 1 GSP"
+  },
+  "carradale 2": {
+    "headroom_mw": 120.0,
+    "capacity_mw": 120.0,
+    "max_demand_mw": 0.0,
+    "ltds_utilisation": 0.0,
+    "committed_util": 87.5,
+    "committed_headroom": 15.0,
+    "source": "SSEN Headroom Dashboard: firm capacity (N-1 from nameplate) \u2212 peak demand; committed pipeline = peak + contracted demand (excl & incl BESS)",
+    "quality": "direct_headroom",
+    "dno": "SSEN",
+    "raw_name": "Carradale 2 GSP"
+  },
   "carrington": {
-    "headroom_mw": null,
-    "capacity_mw": 202.4,
+    "headroom_mw": -48.4,
+    "capacity_mw": null,
     "max_demand_mw": null,
-    "source": "SPEN SPM Technical Limits (winter import limit, no demand data)",
-    "quality": "technical_limit_only",
-    "dno": "SPEN",
-    "raw_name": "Carrington"
+    "source": "ENW Heatmap Tool (May 2026) \u2014 GSP Demand Headroom sheet, firm (non-inverter)",
+    "quality": "direct_headroom",
+    "dno": "ENW",
+    "raw_name": "Carrington GSP (132)"
+  },
+  "carrington gsp": {
+    "headroom_mw": -48.4,
+    "capacity_mw": null,
+    "max_demand_mw": null,
+    "source": "ENW Heatmap Tool (May 2026) \u2014 GSP Demand Headroom sheet, firm (non-inverter)",
+    "quality": "direct_headroom",
+    "dno": "ENW",
+    "raw_name": "Carrington GSP (132)"
   },
   "cassley": {
     "headroom_mw": 28.0,
     "capacity_mw": 30.0,
     "max_demand_mw": 2.0,
-    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
-    "quality": "nameplate_proxy",
+    "ltds_utilisation": 6.6,
+    "committed_util": 7.4,
+    "committed_headroom": 27.8,
+    "source": "SSEN Headroom Dashboard: firm capacity (N-1 from nameplate) \u2212 peak demand; committed pipeline = peak + contracted demand (excl & incl BESS)",
+    "quality": "direct_headroom",
     "dno": "SSEN",
-    "raw_name": "Cassley"
+    "raw_name": "Cassley GSP"
   },
   "ceannacroc": {
     "headroom_mw": 22.6,
     "capacity_mw": 30.0,
     "max_demand_mw": 7.4,
-    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
-    "quality": "nameplate_proxy",
+    "ltds_utilisation": 24.6,
+    "committed_util": 24.8,
+    "committed_headroom": 22.6,
+    "source": "SSEN Headroom Dashboard: firm capacity (N-1 from nameplate) \u2212 peak demand; committed pipeline = peak + contracted demand (excl & incl BESS)",
+    "quality": "direct_headroom",
     "dno": "SSEN",
-    "raw_name": "Ceannacroc"
+    "raw_name": "Ceannacroc GSP"
   },
   "cellarhead": {
-    "headroom_mw": null,
-    "capacity_mw": 460.4,
-    "max_demand_mw": null,
-    "source": "NGED GSP Technical Limits (import TL only, no demand data)",
-    "quality": "technical_limit_only",
+    "headroom_mw": 2732.0,
+    "capacity_mw": 3416.5,
+    "max_demand_mw": 684.5,
+    "ltds_utilisation": 20.0,
+    "committed_util": 24.9,
+    "committed_headroom": 2564.8,
+    "source": "NGED LTDS Table 3a (firm capacity \u2212 current peak demand; 5-yr forecast as committed pipeline)",
+    "quality": "direct_headroom",
     "dno": "NGED",
-    "raw_name": "Cellarhead"
+    "raw_name": "Cellarhead 132kV"
   },
   "charleston": {
     "headroom_mw": 22.4,
     "capacity_mw": 90.0,
     "max_demand_mw": 67.6,
-    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
-    "quality": "nameplate_proxy",
+    "ltds_utilisation": 75.2,
+    "committed_util": 145.7,
+    "committed_headroom": -41.2,
+    "source": "SSEN Headroom Dashboard: firm capacity (N-1 from nameplate) \u2212 peak demand; committed pipeline = peak + contracted demand (excl & incl BESS)",
+    "quality": "direct_headroom",
     "dno": "SSEN",
-    "raw_name": "Charleston"
+    "raw_name": "Charleston GSP"
   },
   "chessington": {
     "headroom_mw": 281.7,
@@ -552,22 +816,28 @@
     "raw_name": "Chessington"
   },
   "chesterfield": {
-    "headroom_mw": null,
-    "capacity_mw": 514.0,
-    "max_demand_mw": null,
-    "source": "NGED GSP Technical Limits (import TL only, no demand data)",
-    "quality": "technical_limit_only",
+    "headroom_mw": 996.3,
+    "capacity_mw": 2089.5,
+    "max_demand_mw": 1093.2,
+    "ltds_utilisation": 52.3,
+    "committed_util": 71.5,
+    "committed_headroom": 594.9,
+    "source": "NGED LTDS Table 3a (firm capacity \u2212 current peak demand; 5-yr forecast as committed pipeline)",
+    "quality": "direct_headroom",
     "dno": "NGED",
-    "raw_name": "Chesterfield"
+    "raw_name": "Chesterfield 132kV"
   },
   "chickerell": {
     "headroom_mw": 152.3,
     "capacity_mw": 240.0,
     "max_demand_mw": 87.7,
-    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
-    "quality": "nameplate_proxy",
+    "ltds_utilisation": 36.5,
+    "committed_util": 91.1,
+    "committed_headroom": 21.3,
+    "source": "SSEN Headroom Dashboard: firm capacity (N-1 from nameplate) \u2212 peak demand; committed pipeline = peak + contracted demand (excl & incl BESS)",
+    "quality": "direct_headroom",
     "dno": "SSEN",
-    "raw_name": "Chickerell"
+    "raw_name": "Chickerell GSP"
   },
   "city road": {
     "headroom_mw": 980.2,
@@ -585,19 +855,25 @@
     "headroom_mw": 55.6,
     "capacity_mw": 60.0,
     "max_demand_mw": 4.4,
-    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
-    "quality": "nameplate_proxy",
+    "ltds_utilisation": 7.3,
+    "committed_util": 10.0,
+    "committed_headroom": 54.0,
+    "source": "SSEN Headroom Dashboard: firm capacity (N-1 from nameplate) \u2212 peak demand; committed pipeline = peak + contracted demand (excl & incl BESS)",
+    "quality": "direct_headroom",
     "dno": "SSEN",
-    "raw_name": "Clachan"
+    "raw_name": "Clachan GSP"
   },
   "clayhills": {
     "headroom_mw": 32.5,
     "capacity_mw": 60.0,
     "max_demand_mw": 27.5,
-    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
-    "quality": "nameplate_proxy",
+    "ltds_utilisation": 45.9,
+    "committed_util": 67.1,
+    "committed_headroom": 19.7,
+    "source": "SSEN Headroom Dashboard: firm capacity (N-1 from nameplate) \u2212 peak demand; committed pipeline = peak + contracted demand (excl & incl BESS)",
+    "quality": "direct_headroom",
     "dno": "SSEN",
-    "raw_name": "Clayhills"
+    "raw_name": "Clayhills GSP"
   },
   "cockenzie": {
     "headroom_mw": 41.3,
@@ -621,43 +897,58 @@
     "headroom_mw": 55.5,
     "capacity_mw": 120.0,
     "max_demand_mw": 64.5,
-    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
-    "quality": "nameplate_proxy",
+    "ltds_utilisation": 53.8,
+    "committed_util": 302.5,
+    "committed_headroom": -243.0,
+    "source": "SSEN Headroom Dashboard: firm capacity (N-1 from nameplate) \u2212 peak demand; committed pipeline = peak + contracted demand (excl & incl BESS)",
+    "quality": "direct_headroom",
     "dno": "SSEN",
-    "raw_name": "Coupar Angus"
+    "raw_name": "Coupar Angus GSP"
   },
   "coventry": {
-    "headroom_mw": null,
-    "capacity_mw": 503.3,
-    "max_demand_mw": null,
-    "source": "NGED GSP Technical Limits (import TL only, no demand data)",
-    "quality": "technical_limit_only",
+    "headroom_mw": 413.8,
+    "capacity_mw": 1317.5,
+    "max_demand_mw": 903.7,
+    "ltds_utilisation": 68.6,
+    "committed_util": 98.9,
+    "committed_headroom": 15.1,
+    "source": "NGED LTDS Table 3a (firm capacity \u2212 current peak demand; 5-yr forecast as committed pipeline)",
+    "quality": "direct_headroom",
     "dno": "NGED",
-    "raw_name": "Coventry"
+    "raw_name": "Coventry 132kV"
   },
   "cowley": {
     "headroom_mw": 294.2,
     "capacity_mw": 960.0,
     "max_demand_mw": 665.8,
-    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
-    "quality": "nameplate_proxy",
+    "ltds_utilisation": 69.3,
+    "committed_util": 146.5,
+    "committed_headroom": -446.1,
+    "source": "SSEN Headroom Dashboard: firm capacity (N-1 from nameplate) \u2212 peak demand; committed pipeline = peak + contracted demand (excl & incl BESS)",
+    "quality": "direct_headroom",
     "dno": "SSEN",
-    "raw_name": "Cowley"
+    "raw_name": "Cowley GSP"
   },
   "craigiebuckler": {
     "headroom_mw": 7.2,
     "capacity_mw": 30.0,
     "max_demand_mw": 22.8,
-    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
-    "quality": "nameplate_proxy",
+    "ltds_utilisation": 75.8,
+    "committed_util": 376.4,
+    "committed_headroom": -82.9,
+    "source": "SSEN Headroom Dashboard: firm capacity (N-1 from nameplate) \u2212 peak demand; committed pipeline = peak + contracted demand (excl & incl BESS)",
+    "quality": "direct_headroom",
     "dno": "SSEN",
-    "raw_name": "Craigiebuckler"
+    "raw_name": "Craigiebuckler GSP"
   },
   "creyke beck": {
-    "headroom_mw": 316.5,
+    "headroom_mw": 407.1,
     "capacity_mw": 720.0,
-    "max_demand_mw": 370.0,
-    "source": "Northern Powergrid GSP Heatmap (direct demand headroom)",
+    "max_demand_mw": 277.1,
+    "ltds_utilisation": 38.5,
+    "committed_util": 43.5,
+    "committed_headroom": 407.1,
+    "source": "NPg NDP Demand Headroom dataset, DFES 2026 - Holistic Transition scenario, summed across 41 primary substations; committed reference year = 2030",
     "quality": "direct_headroom",
     "dno": "NPG",
     "raw_name": "Creyke Beck"
@@ -666,10 +957,13 @@
     "headroom_mw": 120.0,
     "capacity_mw": 120.0,
     "max_demand_mw": 0.0,
-    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
-    "quality": "nameplate_proxy",
+    "ltds_utilisation": 0.0,
+    "committed_util": 80.0,
+    "committed_headroom": 24.0,
+    "source": "SSEN Headroom Dashboard: firm capacity (N-1 from nameplate) \u2212 peak demand; committed pipeline = peak + contracted demand (excl & incl BESS)",
+    "quality": "direct_headroom",
     "dno": "SSEN",
-    "raw_name": "Dallas"
+    "raw_name": "Dallas GSP"
   },
   "devol moor": {
     "headroom_mw": 35.4,
@@ -684,25 +978,34 @@
     "headroom_mw": 36.2,
     "capacity_mw": 90.0,
     "max_demand_mw": 53.8,
-    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
-    "quality": "nameplate_proxy",
+    "ltds_utilisation": 59.8,
+    "committed_util": 315.2,
+    "committed_headroom": -193.7,
+    "source": "SSEN Headroom Dashboard: firm capacity (N-1 from nameplate) \u2212 peak demand; committed pipeline = peak + contracted demand (excl & incl BESS)",
+    "quality": "direct_headroom",
     "dno": "SSEN",
-    "raw_name": "Dounreay"
+    "raw_name": "Dounreay GSP"
   },
   "drakelow": {
-    "headroom_mw": null,
-    "capacity_mw": 143.9,
-    "max_demand_mw": null,
-    "source": "NGED GSP Technical Limits (import TL only, no demand data)",
-    "quality": "technical_limit_only",
+    "headroom_mw": 611.5,
+    "capacity_mw": 983.0,
+    "max_demand_mw": 371.5,
+    "ltds_utilisation": 37.8,
+    "committed_util": 53.5,
+    "committed_headroom": 456.9,
+    "source": "NGED LTDS Table 3a (firm capacity \u2212 current peak demand; 5-yr forecast as committed pipeline)",
+    "quality": "direct_headroom",
     "dno": "NGED",
-    "raw_name": "Drakelow"
+    "raw_name": "Drakelow 132kV"
   },
   "drax": {
-    "headroom_mw": 203.9,
+    "headroom_mw": 85.4,
     "capacity_mw": 260.0,
-    "max_demand_mw": 54.0,
-    "source": "Northern Powergrid GSP Heatmap (direct demand headroom)",
+    "max_demand_mw": 159.0,
+    "ltds_utilisation": 61.2,
+    "committed_util": 67.2,
+    "committed_headroom": 85.4,
+    "source": "NPg NDP Demand Headroom dataset, DFES 2026 - Holistic Transition scenario, summed across 5 primary substations; committed reference year = 2030",
     "quality": "direct_headroom",
     "dno": "NPG",
     "raw_name": "Drax"
@@ -711,64 +1014,85 @@
     "headroom_mw": 21.9,
     "capacity_mw": 60.0,
     "max_demand_mw": 38.1,
-    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
-    "quality": "nameplate_proxy",
+    "ltds_utilisation": 63.6,
+    "committed_util": 151.7,
+    "committed_headroom": -31.0,
+    "source": "SSEN Headroom Dashboard: firm capacity (N-1 from nameplate) \u2212 peak demand; committed pipeline = peak + contracted demand (excl & incl BESS)",
+    "quality": "direct_headroom",
     "dno": "SSEN",
-    "raw_name": "Dudhope"
+    "raw_name": "Dudhope GSP"
   },
   "dunbeath": {
     "headroom_mw": 15.0,
     "capacity_mw": 15.0,
     "max_demand_mw": 0.0,
-    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
-    "quality": "nameplate_proxy",
+    "ltds_utilisation": 0.0,
+    "committed_util": 0.0,
+    "committed_headroom": 15.0,
+    "source": "SSEN Headroom Dashboard: firm capacity (N-1 from nameplate) \u2212 peak demand; committed pipeline = peak + contracted demand (excl & incl BESS)",
+    "quality": "direct_headroom",
     "dno": "SSEN",
-    "raw_name": "Dunbeath"
+    "raw_name": "Dunbeath GSP"
   },
   "dunoon": {
     "headroom_mw": 19.2,
     "capacity_mw": 45.0,
     "max_demand_mw": 25.8,
-    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
-    "quality": "nameplate_proxy",
+    "ltds_utilisation": 57.4,
+    "committed_util": 171.7,
+    "committed_headroom": -32.3,
+    "source": "SSEN Headroom Dashboard: firm capacity (N-1 from nameplate) \u2212 peak demand; committed pipeline = peak + contracted demand (excl & incl BESS)",
+    "quality": "direct_headroom",
     "dno": "SSEN",
-    "raw_name": "Dunoon"
+    "raw_name": "Dunoon GSP"
   },
   "dunvegan": {
     "headroom_mw": 52.0,
     "capacity_mw": 60.0,
     "max_demand_mw": 8.1,
-    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
-    "quality": "nameplate_proxy",
+    "ltds_utilisation": 13.4,
+    "committed_util": 21.8,
+    "committed_headroom": 46.9,
+    "source": "SSEN Headroom Dashboard: firm capacity (N-1 from nameplate) \u2212 peak demand; committed pipeline = peak + contracted demand (excl & incl BESS)",
+    "quality": "direct_headroom",
     "dno": "SSEN",
-    "raw_name": "Dunvegan"
+    "raw_name": "Dunvegan GSP"
   },
   "dyce": {
     "headroom_mw": 55.2,
     "capacity_mw": 90.0,
     "max_demand_mw": 34.8,
-    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
-    "quality": "nameplate_proxy",
+    "ltds_utilisation": 38.6,
+    "committed_util": 304.0,
+    "committed_headroom": -183.6,
+    "source": "SSEN Headroom Dashboard: firm capacity (N-1 from nameplate) \u2212 peak demand; committed pipeline = peak + contracted demand (excl & incl BESS)",
+    "quality": "direct_headroom",
     "dno": "SSEN",
-    "raw_name": "Dyce"
+    "raw_name": "Dyce GSP"
   },
   "ealing": {
     "headroom_mw": 345.3,
     "capacity_mw": 540.0,
     "max_demand_mw": 194.7,
-    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
-    "quality": "nameplate_proxy",
+    "ltds_utilisation": 36.1,
+    "committed_util": 60.2,
+    "committed_headroom": 215.0,
+    "source": "SSEN Headroom Dashboard: firm capacity (N-1 from nameplate) \u2212 peak demand; committed pipeline = peak + contracted demand (excl & incl BESS)",
+    "quality": "direct_headroom",
     "dno": "SSEN",
-    "raw_name": "Ealing"
+    "raw_name": "Ealing GSP"
   },
   "east claydon": {
     "headroom_mw": 657.7,
     "capacity_mw": 720.0,
     "max_demand_mw": 62.3,
-    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand) \u2014 SHARED SITE",
-    "quality": "nameplate_proxy",
+    "ltds_utilisation": 8.6,
+    "committed_util": 59.4,
+    "committed_headroom": 292.0,
+    "source": "SSEN Headroom Dashboard: firm capacity (N-1 from nameplate) \u2212 peak demand; committed pipeline = peak + contracted demand (excl & incl BESS) \u2014 SHARED SITE",
+    "quality": "direct_headroom",
     "dno": "SSEN",
-    "raw_name": "East Claydon"
+    "raw_name": "East Claydon GSP"
   },
   "eaton socon": {
     "headroom_mw": 227.1,
@@ -795,16 +1119,22 @@
     "headroom_mw": 44.6,
     "capacity_mw": 90.0,
     "max_demand_mw": 45.4,
-    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
-    "quality": "nameplate_proxy",
+    "ltds_utilisation": 50.5,
+    "committed_util": 356.7,
+    "committed_headroom": -231.0,
+    "source": "SSEN Headroom Dashboard: firm capacity (N-1 from nameplate) \u2212 peak demand; committed pipeline = peak + contracted demand (excl & incl BESS)",
+    "quality": "direct_headroom",
     "dno": "SSEN",
-    "raw_name": "Elgin"
+    "raw_name": "Elgin GSP"
   },
   "elland": {
-    "headroom_mw": 270.9,
+    "headroom_mw": 427.7,
     "capacity_mw": 600.0,
-    "max_demand_mw": 299.0,
-    "source": "Northern Powergrid GSP Heatmap (direct demand headroom)",
+    "max_demand_mw": 125.6,
+    "ltds_utilisation": 20.9,
+    "committed_util": 28.7,
+    "committed_headroom": 427.7,
+    "source": "NPg NDP Demand Headroom dataset, DFES 2026 - Holistic Transition scenario, summed across 35 primary substations; committed reference year = 2030",
     "quality": "direct_headroom",
     "dno": "NPG",
     "raw_name": "Elland"
@@ -834,13 +1164,16 @@
     "raw_name": "Elstree Stanmore"
   },
   "enderby": {
-    "headroom_mw": null,
-    "capacity_mw": 523.5,
-    "max_demand_mw": null,
-    "source": "NGED GSP Technical Limits (import TL only, no demand data)",
-    "quality": "technical_limit_only",
+    "headroom_mw": -19.4,
+    "capacity_mw": 1012.1,
+    "max_demand_mw": 1031.6,
+    "ltds_utilisation": 101.9,
+    "committed_util": 140.3,
+    "committed_headroom": -407.8,
+    "source": "NGED LTDS Table 3a (firm capacity \u2212 current peak demand; 5-yr forecast as committed pipeline)",
+    "quality": "direct_headroom",
     "dno": "NGED",
-    "raw_name": "Enderby"
+    "raw_name": "Enderby 132kV"
   },
   "erskine": {
     "headroom_mw": 23.2,
@@ -852,55 +1185,73 @@
     "raw_name": "Erskine"
   },
   "exeter": {
-    "headroom_mw": null,
-    "capacity_mw": 259.0,
-    "max_demand_mw": null,
-    "source": "NGED GSP Technical Limits (import TL only, no demand data)",
-    "quality": "technical_limit_only",
+    "headroom_mw": 2978.1,
+    "capacity_mw": 3896.1,
+    "max_demand_mw": 918.0,
+    "ltds_utilisation": 23.6,
+    "committed_util": 75.0,
+    "committed_headroom": 973.2,
+    "source": "NGED LTDS Table 3a (firm capacity \u2212 current peak demand; 5-yr forecast as committed pipeline)",
+    "quality": "direct_headroom",
     "dno": "NGED",
-    "raw_name": "Exeter"
+    "raw_name": "Abham / Exeter / Landulph 132kV"
   },
   "fasnakyle": {
     "headroom_mw": 119.5,
     "capacity_mw": 120.0,
     "max_demand_mw": 0.5,
-    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
-    "quality": "nameplate_proxy",
+    "ltds_utilisation": 0.4,
+    "committed_util": 42.2,
+    "committed_headroom": 69.4,
+    "source": "SSEN Headroom Dashboard: firm capacity (N-1 from nameplate) \u2212 peak demand; committed pipeline = peak + contracted demand (excl & incl BESS)",
+    "quality": "direct_headroom",
     "dno": "SSEN",
-    "raw_name": "Fasnakyle"
+    "raw_name": "Fasnakyle GSP"
   },
   "fawley": {
     "headroom_mw": 301.6,
     "capacity_mw": 480.0,
     "max_demand_mw": 178.4,
-    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
-    "quality": "nameplate_proxy",
+    "ltds_utilisation": 37.2,
+    "committed_util": 68.4,
+    "committed_headroom": 151.7,
+    "source": "SSEN Headroom Dashboard: firm capacity (N-1 from nameplate) \u2212 peak demand; committed pipeline = peak + contracted demand (excl & incl BESS)",
+    "quality": "direct_headroom",
     "dno": "SSEN",
-    "raw_name": "Fawley"
+    "raw_name": "Fawley GSP"
   },
   "feckenham": {
-    "headroom_mw": null,
-    "capacity_mw": 238.3,
-    "max_demand_mw": null,
-    "source": "NGED GSP Technical Limits (import TL only, no demand data)",
-    "quality": "technical_limit_only",
+    "headroom_mw": 1020.6,
+    "capacity_mw": 1333.2,
+    "max_demand_mw": 312.6,
+    "ltds_utilisation": 23.4,
+    "committed_util": 28.2,
+    "committed_headroom": 957.8,
+    "source": "NGED LTDS Table 3a (firm capacity \u2212 current peak demand; 5-yr forecast as committed pipeline)",
+    "quality": "direct_headroom",
     "dno": "NGED",
-    "raw_name": "Feckenham"
+    "raw_name": "Feckenham 66kV"
   },
   "ferrybridge a": {
-    "headroom_mw": 36.3,
+    "headroom_mw": 50.2,
     "capacity_mw": 200.0,
-    "max_demand_mw": 86.0,
-    "source": "Northern Powergrid GSP Heatmap (direct demand headroom)",
+    "max_demand_mw": 136.9,
+    "ltds_utilisation": 68.5,
+    "committed_util": 74.9,
+    "committed_headroom": 50.2,
+    "source": "NPg NDP Demand Headroom dataset, DFES 2026 - Holistic Transition scenario, summed across 8 primary substations; committed reference year = 2030",
     "quality": "direct_headroom",
     "dno": "NPG",
     "raw_name": "Ferrybridge A"
   },
   "ferrybridge b": {
-    "headroom_mw": 171.7,
+    "headroom_mw": 294.6,
     "capacity_mw": 480.0,
-    "max_demand_mw": 223.0,
-    "source": "Northern Powergrid GSP Heatmap (direct demand headroom)",
+    "max_demand_mw": 143.5,
+    "ltds_utilisation": 29.9,
+    "committed_util": 38.6,
+    "committed_headroom": 294.6,
+    "source": "NPg NDP Demand Headroom dataset, DFES 2026 - Holistic Transition scenario, summed across 28 primary substations; committed reference year = 2030",
     "quality": "direct_headroom",
     "dno": "NPG",
     "raw_name": "Ferrybridge B"
@@ -909,19 +1260,25 @@
     "headroom_mw": 120.0,
     "capacity_mw": 120.0,
     "max_demand_mw": 0.0,
-    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
-    "quality": "nameplate_proxy",
+    "ltds_utilisation": 0.0,
+    "committed_util": 41.7,
+    "committed_headroom": 70.0,
+    "source": "SSEN Headroom Dashboard: firm capacity (N-1 from nameplate) \u2212 peak demand; committed pipeline = peak + contracted demand (excl & incl BESS)",
+    "quality": "direct_headroom",
     "dno": "SSEN",
-    "raw_name": "Fetteresso"
+    "raw_name": "Fetteresso GSP"
   },
   "fiddes": {
     "headroom_mw": 68.8,
     "capacity_mw": 90.0,
     "max_demand_mw": 21.2,
-    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
-    "quality": "nameplate_proxy",
+    "ltds_utilisation": 23.6,
+    "committed_util": 211.0,
+    "committed_headroom": -99.9,
+    "source": "SSEN Headroom Dashboard: firm capacity (N-1 from nameplate) \u2212 peak demand; committed pipeline = peak + contracted demand (excl & incl BESS)",
+    "quality": "direct_headroom",
     "dno": "SSEN",
-    "raw_name": "Fiddes"
+    "raw_name": "Fiddes GSP"
   },
   "fiddlers ferry": {
     "headroom_mw": null,
@@ -931,6 +1288,18 @@
     "quality": "technical_limit_only",
     "dno": "SPEN",
     "raw_name": "Fiddlers Ferry"
+  },
+  "fleet-bramley": {
+    "headroom_mw": 826.7,
+    "capacity_mw": 1920.0,
+    "max_demand_mw": 1093.3,
+    "ltds_utilisation": 56.9,
+    "committed_util": 99.1,
+    "committed_headroom": 17.2,
+    "source": "SSEN Headroom Dashboard: firm capacity (N-1 from nameplate) \u2212 peak demand; committed pipeline = peak + contracted demand (excl & incl BESS)",
+    "quality": "direct_headroom",
+    "dno": "SSEN",
+    "raw_name": "Fleet-Bramley GSP"
   },
   "fleetbramley": {
     "headroom_mw": 826.7,
@@ -945,25 +1314,34 @@
     "headroom_mw": 81.5,
     "capacity_mw": 90.0,
     "max_demand_mw": 8.5,
-    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
-    "quality": "nameplate_proxy",
+    "ltds_utilisation": 9.5,
+    "committed_util": 58.5,
+    "committed_headroom": 37.4,
+    "source": "SSEN Headroom Dashboard: firm capacity (N-1 from nameplate) \u2212 peak demand; committed pipeline = peak + contracted demand (excl & incl BESS)",
+    "quality": "direct_headroom",
     "dno": "SSEN",
-    "raw_name": "Fort Augustus"
+    "raw_name": "Fort Augustus GSP"
   },
   "fort william": {
     "headroom_mw": 47.0,
     "capacity_mw": 120.0,
     "max_demand_mw": 73.0,
-    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
-    "quality": "nameplate_proxy",
+    "ltds_utilisation": 60.8,
+    "committed_util": 70.4,
+    "committed_headroom": 35.5,
+    "source": "SSEN Headroom Dashboard: firm capacity (N-1 from nameplate) \u2212 peak demand; committed pipeline = peak + contracted demand (excl & incl BESS)",
+    "quality": "direct_headroom",
     "dno": "SSEN",
-    "raw_name": "Fort William"
+    "raw_name": "Fort William GSP"
   },
   "fourstones 20kv": {
-    "headroom_mw": 22.0,
+    "headroom_mw": 38.8,
     "capacity_mw": 60.0,
-    "max_demand_mw": 38.0,
-    "source": "Northern Powergrid GSP Heatmap (direct demand headroom)",
+    "max_demand_mw": 20.3,
+    "ltds_utilisation": 33.8,
+    "committed_util": 35.4,
+    "committed_headroom": 38.8,
+    "source": "NPg NDP Demand Headroom dataset, DFES 2026 - Holistic Transition scenario, summed across 1 primary substations; committed reference year = 2030",
     "quality": "direct_headroom",
     "dno": "NPG",
     "raw_name": "Fourstones 20kV"
@@ -981,10 +1359,13 @@
     "headroom_mw": 28.3,
     "capacity_mw": 45.0,
     "max_demand_mw": 16.7,
-    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
-    "quality": "nameplate_proxy",
+    "ltds_utilisation": 37.1,
+    "committed_util": 391.3,
+    "committed_headroom": -131.1,
+    "source": "SSEN Headroom Dashboard: firm capacity (N-1 from nameplate) \u2212 peak demand; committed pipeline = peak + contracted demand (excl & incl BESS)",
+    "quality": "direct_headroom",
     "dno": "SSEN",
-    "raw_name": "Fraserburgh"
+    "raw_name": "Fraserburgh GSP"
   },
   "frodsham": {
     "headroom_mw": null,
@@ -999,19 +1380,25 @@
     "headroom_mw": 60.0,
     "capacity_mw": 60.0,
     "max_demand_mw": 0.0,
-    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
-    "quality": "nameplate_proxy",
+    "ltds_utilisation": 0.0,
+    "committed_util": 0.0,
+    "committed_headroom": 60.0,
+    "source": "SSEN Headroom Dashboard: firm capacity (N-1 from nameplate) \u2212 peak demand; committed pipeline = peak + contracted demand (excl & incl BESS)",
+    "quality": "direct_headroom",
     "dno": "SSEN",
-    "raw_name": "Glenagnes"
+    "raw_name": "Glenagnes GSP"
   },
   "glenfarclas": {
     "headroom_mw": 90.0,
     "capacity_mw": 90.0,
     "max_demand_mw": 0.0,
-    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
-    "quality": "nameplate_proxy",
+    "ltds_utilisation": 0.0,
+    "committed_util": 0.0,
+    "committed_headroom": 90.0,
+    "source": "SSEN Headroom Dashboard: firm capacity (N-1 from nameplate) \u2212 peak demand; committed pipeline = peak + contracted demand (excl & incl BESS)",
+    "quality": "direct_headroom",
     "dno": "SSEN",
-    "raw_name": "Glenfarclas"
+    "raw_name": "Glenfarclas GSP"
   },
   "glenrothes": {
     "headroom_mw": 43.7,
@@ -1021,6 +1408,18 @@
     "quality": "direct_headroom",
     "dno": "SPEN SPD",
     "raw_name": "Glenrothes"
+  },
+  "grange": {
+    "headroom_mw": 55.5,
+    "capacity_mw": 58.5,
+    "max_demand_mw": 3.0,
+    "ltds_utilisation": 5.1,
+    "committed_util": 69.2,
+    "committed_headroom": 18.0,
+    "source": "NGED LTDS Table 3a (firm capacity \u2212 current peak demand; 5-yr forecast as committed pipeline)",
+    "quality": "direct_headroom",
+    "dno": "NGED",
+    "raw_name": "Grange 66"
   },
   "grangemouth": {
     "headroom_mw": 98.2,
@@ -1032,19 +1431,25 @@
     "raw_name": "Grangemouth A + Grangemouth C"
   },
   "grendon": {
-    "headroom_mw": null,
-    "capacity_mw": null,
-    "max_demand_mw": 26.7,
-    "source": "UKPN GSP Overview (asset limit proxy)",
-    "quality": "asset_limit_proxy",
-    "dno": "UKPN",
-    "raw_name": "GRENDON"
+    "headroom_mw": 701.7,
+    "capacity_mw": 1975.1,
+    "max_demand_mw": 1273.4,
+    "ltds_utilisation": 64.5,
+    "committed_util": 96.1,
+    "committed_headroom": 76.3,
+    "source": "NGED LTDS Table 3a (firm capacity \u2212 current peak demand; 5-yr forecast as committed pipeline)",
+    "quality": "direct_headroom",
+    "dno": "NGED",
+    "raw_name": "Grendon 132kV"
   },
   "grimsby west": {
-    "headroom_mw": 0.0,
+    "headroom_mw": 302.0,
     "capacity_mw": 260.0,
-    "max_demand_mw": 181.0,
-    "source": "Northern Powergrid GSP Heatmap (direct demand headroom)",
+    "max_demand_mw": -60.9,
+    "ltds_utilisation": 0.0,
+    "committed_util": 0.0,
+    "committed_headroom": 302.0,
+    "source": "NPg NDP Demand Headroom dataset, DFES 2026 - Holistic Transition scenario, summed across 19 primary substations; committed reference year = 2030",
     "quality": "direct_headroom",
     "dno": "NPG",
     "raw_name": "Grimsby West"
@@ -1053,10 +1458,13 @@
     "headroom_mw": 73.7,
     "capacity_mw": 90.0,
     "max_demand_mw": 16.3,
-    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
-    "quality": "nameplate_proxy",
+    "ltds_utilisation": 18.1,
+    "committed_util": 246.7,
+    "committed_headroom": -132.0,
+    "source": "SSEN Headroom Dashboard: firm capacity (N-1 from nameplate) \u2212 peak demand; committed pipeline = peak + contracted demand (excl & incl BESS)",
+    "quality": "direct_headroom",
     "dno": "SSEN",
-    "raw_name": "Grudie Bridge"
+    "raw_name": "Grudie Bridge GSP"
   },
   "hackney 132": {
     "headroom_mw": 351.9,
@@ -1100,20 +1508,44 @@
     "dno": "UKPN",
     "raw_name": "Hackney 66kV"
   },
+  "harker / hutton": {
+    "headroom_mw": -654.4,
+    "capacity_mw": null,
+    "max_demand_mw": null,
+    "source": "ENW Heatmap Tool (May 2026) \u2014 GSP Demand Headroom sheet, firm (non-inverter)",
+    "quality": "direct_headroom",
+    "dno": "ENW",
+    "raw_name": "Harker / Hutton GSP (132)"
+  },
+  "harker / hutton gsp": {
+    "headroom_mw": -654.4,
+    "capacity_mw": null,
+    "max_demand_mw": null,
+    "source": "ENW Heatmap Tool (May 2026) \u2014 GSP Demand Headroom sheet, firm (non-inverter)",
+    "quality": "direct_headroom",
+    "dno": "ENW",
+    "raw_name": "Harker / Hutton GSP (132)"
+  },
   "harris": {
     "headroom_mw": 57.3,
     "capacity_mw": 60.0,
     "max_demand_mw": 2.7,
-    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
-    "quality": "nameplate_proxy",
+    "ltds_utilisation": 4.5,
+    "committed_util": 5.0,
+    "committed_headroom": 57.0,
+    "source": "SSEN Headroom Dashboard: firm capacity (N-1 from nameplate) \u2212 peak demand; committed pipeline = peak + contracted demand (excl & incl BESS)",
+    "quality": "direct_headroom",
     "dno": "SSEN",
-    "raw_name": "Harris"
+    "raw_name": "Harris GSP"
   },
   "hartmoor": {
-    "headroom_mw": 37.8,
+    "headroom_mw": 73.2,
     "capacity_mw": 140.0,
-    "max_demand_mw": 89.0,
-    "source": "Northern Powergrid GSP Heatmap (direct demand headroom)",
+    "max_demand_mw": 59.9,
+    "ltds_utilisation": 42.8,
+    "committed_util": 47.7,
+    "committed_headroom": 73.2,
+    "source": "NPg NDP Demand Headroom dataset, DFES 2026 - Holistic Transition scenario, summed across 5 primary substations; committed reference year = 2030",
     "quality": "direct_headroom",
     "dno": "NPG",
     "raw_name": "Hartmoor"
@@ -1126,6 +1558,36 @@
     "quality": "direct_headroom",
     "dno": "NPG",
     "raw_name": "Hawthorn Pit Grid"
+  },
+  "hawthorn pit grid": {
+    "headroom_mw": 40.1,
+    "capacity_mw": 200.0,
+    "max_demand_mw": 150.7,
+    "ltds_utilisation": 75.3,
+    "committed_util": 79.9,
+    "committed_headroom": 40.1,
+    "source": "NPg NDP Demand Headroom dataset, DFES 2026 - Holistic Transition scenario, summed across 7 primary substations; committed reference year = 2030",
+    "quality": "direct_headroom",
+    "dno": "NPG",
+    "raw_name": "Hawthorn Pit Grid"
+  },
+  "heysham": {
+    "headroom_mw": 328.5,
+    "capacity_mw": null,
+    "max_demand_mw": null,
+    "source": "ENW Heatmap Tool (May 2026) \u2014 GSP Demand Headroom sheet, firm (non-inverter)",
+    "quality": "direct_headroom",
+    "dno": "ENW",
+    "raw_name": "Heysham GSP (132)"
+  },
+  "heysham gsp": {
+    "headroom_mw": 328.5,
+    "capacity_mw": null,
+    "max_demand_mw": null,
+    "source": "ENW Heatmap Tool (May 2026) \u2014 GSP Demand Headroom sheet, firm (non-inverter)",
+    "quality": "direct_headroom",
+    "dno": "ENW",
+    "raw_name": "Heysham GSP (132)"
   },
   "hurst": {
     "headroom_mw": 256.1,
@@ -1149,13 +1611,16 @@
     "raw_name": "Ince"
   },
   "indian queens": {
-    "headroom_mw": null,
-    "capacity_mw": 414.4,
-    "max_demand_mw": null,
-    "source": "NGED GSP Technical Limits (import TL only, no demand data)",
-    "quality": "technical_limit_only",
+    "headroom_mw": 2506.2,
+    "capacity_mw": 3168.9,
+    "max_demand_mw": 662.6,
+    "ltds_utilisation": 20.9,
+    "committed_util": 64.0,
+    "committed_headroom": 1140.9,
+    "source": "NGED LTDS Table 3a (firm capacity \u2212 current peak demand; 5-yr forecast as committed pipeline)",
+    "quality": "direct_headroom",
     "dno": "NGED",
-    "raw_name": "Indian Queens"
+    "raw_name": "Alverdiscott / Indian Queens 132kV"
   },
   "inverkip": {
     "headroom_mw": 48.4,
@@ -1170,10 +1635,25 @@
     "headroom_mw": 41.1,
     "capacity_mw": 105.0,
     "max_demand_mw": 63.9,
-    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
-    "quality": "nameplate_proxy",
+    "ltds_utilisation": 60.9,
+    "committed_util": 241.8,
+    "committed_headroom": -148.8,
+    "source": "SSEN Headroom Dashboard: firm capacity (N-1 from nameplate) \u2212 peak demand; committed pipeline = peak + contracted demand (excl & incl BESS)",
+    "quality": "direct_headroom",
     "dno": "SSEN",
-    "raw_name": "Inverness"
+    "raw_name": "Inverness GSP"
+  },
+  "iron acton": {
+    "headroom_mw": 3128.0,
+    "capacity_mw": 3888.3,
+    "max_demand_mw": 760.3,
+    "ltds_utilisation": 19.6,
+    "committed_util": 53.6,
+    "committed_headroom": 1804.2,
+    "source": "NGED LTDS Table 3a (firm capacity \u2212 current peak demand; 5-yr forecast as committed pipeline)",
+    "quality": "direct_headroom",
+    "dno": "NGED",
+    "raw_name": "Iron Acton 132kV"
   },
   "iron acton swe": {
     "headroom_mw": null,
@@ -1192,6 +1672,18 @@
     "quality": "technical_limit_only",
     "dno": "NGED",
     "raw_name": "Iron Acton (WM)"
+  },
+  "ironbridge & shrewsbury": {
+    "headroom_mw": 2400.9,
+    "capacity_mw": 2927.0,
+    "max_demand_mw": 526.1,
+    "ltds_utilisation": 18.0,
+    "committed_util": 22.7,
+    "committed_headroom": 2262.2,
+    "source": "NGED LTDS Table 3a (firm capacity \u2212 current peak demand; 5-yr forecast as committed pipeline)",
+    "quality": "direct_headroom",
+    "dno": "NGED",
+    "raw_name": "Ironbridge & Shrewsbury 132kV"
   },
   "ironbridge and shrewsbury": {
     "headroom_mw": null,
@@ -1218,25 +1710,34 @@
     "headroom_mw": 194.2,
     "capacity_mw": 720.0,
     "max_demand_mw": 525.8,
-    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
-    "quality": "nameplate_proxy",
+    "ltds_utilisation": 73.0,
+    "committed_util": 167.1,
+    "committed_headroom": -483.2,
+    "source": "SSEN Headroom Dashboard: firm capacity (N-1 from nameplate) \u2212 peak demand; committed pipeline = peak + contracted demand (excl & incl BESS)",
+    "quality": "direct_headroom",
     "dno": "SSEN",
-    "raw_name": "Iver 132kV"
+    "raw_name": "Iver 132kV GSP"
   },
   "iver 66kv": {
     "headroom_mw": 142.7,
     "capacity_mw": 300.0,
     "max_demand_mw": 157.3,
-    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
-    "quality": "nameplate_proxy",
+    "ltds_utilisation": 52.4,
+    "committed_util": 111.4,
+    "committed_headroom": -34.1,
+    "source": "SSEN Headroom Dashboard: firm capacity (N-1 from nameplate) \u2212 peak demand; committed pipeline = peak + contracted demand (excl & incl BESS)",
+    "quality": "direct_headroom",
     "dno": "SSEN",
-    "raw_name": "Iver 66kV"
+    "raw_name": "Iver 66kV GSP"
   },
   "jordanthorpe": {
-    "headroom_mw": 62.3,
+    "headroom_mw": 52.3,
     "capacity_mw": 120.0,
-    "max_demand_mw": 55.0,
-    "source": "Northern Powergrid GSP Heatmap (direct demand headroom)",
+    "max_demand_mw": 63.9,
+    "ltds_utilisation": 53.2,
+    "committed_util": 56.4,
+    "committed_headroom": 52.3,
+    "source": "NPg NDP Demand Headroom dataset, DFES 2026 - Holistic Transition scenario, summed across 5 primary substations; committed reference year = 2030",
     "quality": "direct_headroom",
     "dno": "NPG",
     "raw_name": "Jordanthorpe"
@@ -1251,13 +1752,34 @@
     "raw_name": "Kaimes"
   },
   "keadby": {
-    "headroom_mw": 0.0,
+    "headroom_mw": 346.3,
     "capacity_mw": 480.0,
-    "max_demand_mw": 278.0,
-    "source": "Northern Powergrid GSP Heatmap (direct demand headroom)",
+    "max_demand_mw": 70.6,
+    "ltds_utilisation": 14.7,
+    "committed_util": 27.9,
+    "committed_headroom": 346.3,
+    "source": "NPg NDP Demand Headroom dataset, DFES 2026 - Holistic Transition scenario, summed across 32 primary substations; committed reference year = 2030",
     "quality": "direct_headroom",
     "dno": "NPG",
     "raw_name": "Keadby"
+  },
+  "kearsley": {
+    "headroom_mw": -9.6,
+    "capacity_mw": null,
+    "max_demand_mw": null,
+    "source": "ENW Heatmap Tool (May 2026) \u2014 GSP Demand Headroom sheet, firm (non-inverter)",
+    "quality": "direct_headroom",
+    "dno": "ENW",
+    "raw_name": "Kearsley GSP (132)"
+  },
+  "kearsley gsp": {
+    "headroom_mw": -9.6,
+    "capacity_mw": null,
+    "max_demand_mw": null,
+    "source": "ENW Heatmap Tool (May 2026) \u2014 GSP Demand Headroom sheet, firm (non-inverter)",
+    "quality": "direct_headroom",
+    "dno": "ENW",
+    "raw_name": "Kearsley GSP (132)"
   },
   "keith": {
     "headroom_mw": 58.9,
@@ -1267,6 +1789,30 @@
     "quality": "nameplate_proxy",
     "dno": "SSEN",
     "raw_name": "Keith 2"
+  },
+  "keith 1": {
+    "headroom_mw": 66.2,
+    "capacity_mw": 90.0,
+    "max_demand_mw": 23.8,
+    "ltds_utilisation": 26.5,
+    "committed_util": 348.1,
+    "committed_headroom": -223.3,
+    "source": "SSEN Headroom Dashboard: firm capacity (N-1 from nameplate) \u2212 peak demand; committed pipeline = peak + contracted demand (excl & incl BESS)",
+    "quality": "direct_headroom",
+    "dno": "SSEN",
+    "raw_name": "Keith 1 GSP"
+  },
+  "keith 2": {
+    "headroom_mw": 58.9,
+    "capacity_mw": 90.0,
+    "max_demand_mw": 31.1,
+    "ltds_utilisation": 34.5,
+    "committed_util": 392.1,
+    "committed_headroom": -262.9,
+    "source": "SSEN Headroom Dashboard: firm capacity (N-1 from nameplate) \u2212 peak demand; committed pipeline = peak + contracted demand (excl & incl BESS)",
+    "quality": "direct_headroom",
+    "dno": "SSEN",
+    "raw_name": "Keith 2 GSP"
   },
   "kemsley": {
     "headroom_mw": 201.7,
@@ -1284,10 +1830,13 @@
     "headroom_mw": 35.6,
     "capacity_mw": 45.0,
     "max_demand_mw": 9.4,
-    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
-    "quality": "nameplate_proxy",
+    "ltds_utilisation": 21.0,
+    "committed_util": 282.7,
+    "committed_headroom": -82.2,
+    "source": "SSEN Headroom Dashboard: firm capacity (N-1 from nameplate) \u2212 peak demand; committed pipeline = peak + contracted demand (excl & incl BESS)",
+    "quality": "direct_headroom",
     "dno": "SSEN",
-    "raw_name": "Killin"
+    "raw_name": "Killin GSP"
   },
   "kincardine": {
     "headroom_mw": 45.2,
@@ -1314,19 +1863,25 @@
     "headroom_mw": 18.6,
     "capacity_mw": 45.0,
     "max_demand_mw": 26.4,
-    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
-    "quality": "nameplate_proxy",
+    "ltds_utilisation": 58.8,
+    "committed_util": 59.2,
+    "committed_headroom": 18.4,
+    "source": "SSEN Headroom Dashboard: firm capacity (N-1 from nameplate) \u2212 peak demand; committed pipeline = peak + contracted demand (excl & incl BESS)",
+    "quality": "direct_headroom",
     "dno": "SSEN",
-    "raw_name": "Kinlochleven"
+    "raw_name": "Kinlochleven GSP"
   },
   "kintore": {
     "headroom_mw": 3.6,
     "capacity_mw": 105.0,
     "max_demand_mw": 101.4,
-    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
-    "quality": "nameplate_proxy",
+    "ltds_utilisation": 96.6,
+    "committed_util": 313.8,
+    "committed_headroom": -224.5,
+    "source": "SSEN Headroom Dashboard: firm capacity (N-1 from nameplate) \u2212 peak demand; committed pipeline = peak + contracted demand (excl & incl BESS)",
+    "quality": "direct_headroom",
     "dno": "SSEN",
-    "raw_name": "Kintore"
+    "raw_name": "Kintore GSP"
   },
   "kirkby": {
     "headroom_mw": null,
@@ -1338,37 +1893,49 @@
     "raw_name": "Kirkby"
   },
   "kirkstall b": {
-    "headroom_mw": 199.8,
+    "headroom_mw": 365.6,
     "capacity_mw": 480.0,
-    "max_demand_mw": 227.0,
-    "source": "Northern Powergrid GSP Heatmap (direct demand headroom)",
+    "max_demand_mw": 67.5,
+    "ltds_utilisation": 14.1,
+    "committed_util": 23.8,
+    "committed_headroom": 365.6,
+    "source": "NPg NDP Demand Headroom dataset, DFES 2026 - Holistic Transition scenario, summed across 21 primary substations; committed reference year = 2030",
     "quality": "direct_headroom",
     "dno": "NPG",
     "raw_name": "Kirkstall B"
   },
   "kitwell": {
-    "headroom_mw": null,
-    "capacity_mw": 385.8,
-    "max_demand_mw": null,
-    "source": "NGED GSP Technical Limits (import TL only, no demand data)",
-    "quality": "technical_limit_only",
+    "headroom_mw": 1715.3,
+    "capacity_mw": 2100.0,
+    "max_demand_mw": 384.7,
+    "ltds_utilisation": 18.3,
+    "committed_util": 22.3,
+    "committed_headroom": 1632.2,
+    "source": "NGED LTDS Table 3a (firm capacity \u2212 current peak demand; 5-yr forecast as committed pipeline)",
+    "quality": "direct_headroom",
     "dno": "NGED",
-    "raw_name": "Kitwell"
+    "raw_name": "Kitwell 132kV"
   },
   "knaresborough": {
-    "headroom_mw": 91.4,
+    "headroom_mw": 207.7,
     "capacity_mw": 260.0,
-    "max_demand_mw": 151.0,
-    "source": "Northern Powergrid GSP Heatmap (direct demand headroom)",
+    "max_demand_mw": 86.4,
+    "ltds_utilisation": 33.2,
+    "committed_util": 20.1,
+    "committed_headroom": 207.7,
+    "source": "NPg NDP Demand Headroom dataset, DFES 2026 - Holistic Transition scenario, summed across 14 primary substations; committed reference year = 2030",
     "quality": "direct_headroom",
     "dno": "NPG",
     "raw_name": "Knaresborough"
   },
   "lackenby": {
-    "headroom_mw": 101.8,
+    "headroom_mw": 27.2,
     "capacity_mw": 260.0,
-    "max_demand_mw": 151.0,
-    "source": "Northern Powergrid GSP Heatmap (direct demand headroom)",
+    "max_demand_mw": 218.8,
+    "ltds_utilisation": 84.2,
+    "committed_util": 89.5,
+    "committed_headroom": 27.2,
+    "source": "NPg NDP Demand Headroom dataset, DFES 2026 - Holistic Transition scenario, summed across 6 primary substations; committed reference year = 2030",
     "quality": "direct_headroom",
     "dno": "NPG",
     "raw_name": "Lackenby"
@@ -1377,10 +1944,13 @@
     "headroom_mw": 81.9,
     "capacity_mw": 90.0,
     "max_demand_mw": 8.1,
-    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
-    "quality": "nameplate_proxy",
+    "ltds_utilisation": 9.0,
+    "committed_util": 125.6,
+    "committed_headroom": -23.0,
+    "source": "SSEN Headroom Dashboard: firm capacity (N-1 from nameplate) \u2212 peak demand; committed pipeline = peak + contracted demand (excl & incl BESS)",
+    "quality": "direct_headroom",
     "dno": "SSEN",
-    "raw_name": "Lairg"
+    "raw_name": "Lairg GSP"
   },
   "laleham": {
     "headroom_mw": 83.0,
@@ -1395,13 +1965,28 @@
     "raw_name": "Laleham"
   },
   "landulph": {
-    "headroom_mw": null,
-    "capacity_mw": 277.0,
-    "max_demand_mw": null,
-    "source": "NGED GSP Technical Limits (import TL only, no demand data)",
-    "quality": "technical_limit_only",
+    "headroom_mw": 2978.1,
+    "capacity_mw": 3896.1,
+    "max_demand_mw": 918.0,
+    "ltds_utilisation": 23.6,
+    "committed_util": 75.0,
+    "committed_headroom": 973.2,
+    "source": "NGED LTDS Table 3a (firm capacity \u2212 current peak demand; 5-yr forecast as committed pipeline)",
+    "quality": "direct_headroom",
     "dno": "NGED",
-    "raw_name": "Landulph"
+    "raw_name": "Abham / Exeter / Landulph 132kV"
+  },
+  "lea marston": {
+    "headroom_mw": 2608.7,
+    "capacity_mw": 3085.0,
+    "max_demand_mw": 476.3,
+    "ltds_utilisation": 15.4,
+    "committed_util": 20.1,
+    "committed_headroom": 2463.7,
+    "source": "NGED LTDS Table 3a (firm capacity \u2212 current peak demand; 5-yr forecast as committed pipeline)",
+    "quality": "direct_headroom",
+    "dno": "NGED",
+    "raw_name": "Lea Marston 132kV"
   },
   "lea marston wm": {
     "headroom_mw": null,
@@ -1467,46 +2052,61 @@
     "headroom_mw": 132.1,
     "capacity_mw": 720.0,
     "max_demand_mw": 587.9,
-    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
-    "quality": "nameplate_proxy",
+    "ltds_utilisation": 81.7,
+    "committed_util": 229.5,
+    "committed_headroom": -932.1,
+    "source": "SSEN Headroom Dashboard: firm capacity (N-1 from nameplate) \u2212 peak demand; committed pipeline = peak + contracted demand (excl & incl BESS)",
+    "quality": "direct_headroom",
     "dno": "SSEN",
-    "raw_name": "Lovedean"
+    "raw_name": "Lovedean GSP"
   },
   "lunanhead": {
     "headroom_mw": 38.7,
     "capacity_mw": 90.0,
     "max_demand_mw": 51.3,
-    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
-    "quality": "nameplate_proxy",
+    "ltds_utilisation": 57.0,
+    "committed_util": 340.2,
+    "committed_headroom": -216.1,
+    "source": "SSEN Headroom Dashboard: firm capacity (N-1 from nameplate) \u2212 peak demand; committed pipeline = peak + contracted demand (excl & incl BESS)",
+    "quality": "direct_headroom",
     "dno": "SSEN",
-    "raw_name": "Lunanhead"
+    "raw_name": "Lunanhead GSP"
   },
   "lyndhurst": {
-    "headroom_mw": 0,
+    "headroom_mw": -8.4,
     "capacity_mw": 60.0,
     "max_demand_mw": 68.4,
-    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
-    "quality": "nameplate_proxy",
+    "ltds_utilisation": 114.0,
+    "committed_util": 214.7,
+    "committed_headroom": -68.8,
+    "source": "SSEN Headroom Dashboard: firm capacity (N-1 from nameplate) \u2212 peak demand; committed pipeline = peak + contracted demand (excl & incl BESS)",
+    "quality": "direct_headroom",
     "dno": "SSEN",
-    "raw_name": "Lyndhurst"
+    "raw_name": "Lyndhurst GSP"
   },
   "macduff": {
     "headroom_mw": 68.0,
     "capacity_mw": 90.0,
     "max_demand_mw": 22.0,
-    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
-    "quality": "nameplate_proxy",
+    "ltds_utilisation": 24.4,
+    "committed_util": 221.4,
+    "committed_headroom": -109.3,
+    "source": "SSEN Headroom Dashboard: firm capacity (N-1 from nameplate) \u2212 peak demand; committed pipeline = peak + contracted demand (excl & incl BESS)",
+    "quality": "direct_headroom",
     "dno": "SSEN",
-    "raw_name": "Macduff"
+    "raw_name": "Macduff GSP"
   },
   "mannington": {
     "headroom_mw": 331.9,
     "capacity_mw": 960.0,
     "max_demand_mw": 628.1,
-    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
-    "quality": "nameplate_proxy",
+    "ltds_utilisation": 65.4,
+    "committed_util": 168.0,
+    "committed_headroom": -652.7,
+    "source": "SSEN Headroom Dashboard: firm capacity (N-1 from nameplate) \u2212 peak demand; committed pipeline = peak + contracted demand (excl & incl BESS)",
+    "quality": "direct_headroom",
     "dno": "SSEN",
-    "raw_name": "Mannington"
+    "raw_name": "Mannington GSP"
   },
   "margam": {
     "headroom_mw": null,
@@ -1521,10 +2121,13 @@
     "headroom_mw": 286.6,
     "capacity_mw": 720.0,
     "max_demand_mw": 433.4,
-    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
-    "quality": "nameplate_proxy",
+    "ltds_utilisation": 60.2,
+    "committed_util": 190.9,
+    "committed_headroom": -654.3,
+    "source": "SSEN Headroom Dashboard: firm capacity (N-1 from nameplate) \u2212 peak demand; committed pipeline = peak + contracted demand (excl & incl BESS)",
+    "quality": "direct_headroom",
     "dno": "SSEN",
-    "raw_name": "Melksham"
+    "raw_name": "Melksham GSP"
   },
   "mill hill": {
     "headroom_mw": 179.5,
@@ -1542,19 +2145,25 @@
     "headroom_mw": 15.7,
     "capacity_mw": 60.0,
     "max_demand_mw": 44.3,
-    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
-    "quality": "nameplate_proxy",
+    "ltds_utilisation": 73.9,
+    "committed_util": 269.1,
+    "committed_headroom": -101.4,
+    "source": "SSEN Headroom Dashboard: firm capacity (N-1 from nameplate) \u2212 peak demand; committed pipeline = peak + contracted demand (excl & incl BESS)",
+    "quality": "direct_headroom",
     "dno": "SSEN",
-    "raw_name": "Milton of Craigie"
+    "raw_name": "Milton of Craigie GSP"
   },
   "minety": {
     "headroom_mw": 363.3,
     "capacity_mw": 720.0,
     "max_demand_mw": 356.7,
-    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
-    "quality": "nameplate_proxy",
+    "ltds_utilisation": 49.5,
+    "committed_util": 132.8,
+    "committed_headroom": -236.2,
+    "source": "SSEN Headroom Dashboard: firm capacity (N-1 from nameplate) \u2212 peak demand; committed pipeline = peak + contracted demand (excl & incl BESS)",
+    "quality": "direct_headroom",
     "dno": "SSEN",
-    "raw_name": "Minety"
+    "raw_name": "Minety GSP"
   },
   "mybster": {
     "headroom_mw": 120.0,
@@ -1565,14 +2174,53 @@
     "dno": "SSEN",
     "raw_name": "Mybster 2"
   },
+  "mybster 1": {
+    "headroom_mw": 98.9,
+    "capacity_mw": 120.0,
+    "max_demand_mw": 21.1,
+    "ltds_utilisation": 17.6,
+    "committed_util": 96.0,
+    "committed_headroom": 4.8,
+    "source": "SSEN Headroom Dashboard: firm capacity (N-1 from nameplate) \u2212 peak demand; committed pipeline = peak + contracted demand (excl & incl BESS)",
+    "quality": "direct_headroom",
+    "dno": "SSEN",
+    "raw_name": "Mybster 1 GSP"
+  },
+  "mybster 2": {
+    "headroom_mw": 120.0,
+    "capacity_mw": 120.0,
+    "max_demand_mw": 0.0,
+    "ltds_utilisation": 0.0,
+    "committed_util": 63.6,
+    "committed_headroom": 43.7,
+    "source": "SSEN Headroom Dashboard: firm capacity (N-1 from nameplate) \u2212 peak demand; committed pipeline = peak + contracted demand (excl & incl BESS)",
+    "quality": "direct_headroom",
+    "dno": "SSEN",
+    "raw_name": "Mybster 2 GSP"
+  },
   "nairn": {
     "headroom_mw": 26.6,
     "capacity_mw": 60.0,
     "max_demand_mw": 33.4,
-    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
-    "quality": "nameplate_proxy",
+    "ltds_utilisation": 55.6,
+    "committed_util": 483.8,
+    "committed_headroom": -230.3,
+    "source": "SSEN Headroom Dashboard: firm capacity (N-1 from nameplate) \u2212 peak demand; committed pipeline = peak + contracted demand (excl & incl BESS)",
+    "quality": "direct_headroom",
     "dno": "SSEN",
-    "raw_name": "Nairn"
+    "raw_name": "Nairn GSP"
+  },
+  "nechells": {
+    "headroom_mw": 2467.3,
+    "capacity_mw": 2808.0,
+    "max_demand_mw": 340.7,
+    "ltds_utilisation": 12.1,
+    "committed_util": 15.6,
+    "committed_headroom": 2369.5,
+    "source": "NGED LTDS Table 3a (firm capacity \u2212 current peak demand; 5-yr forecast as committed pipeline)",
+    "quality": "direct_headroom",
+    "dno": "NGED",
+    "raw_name": "Nechells 132kV"
   },
   "nechells east": {
     "headroom_mw": null,
@@ -1584,10 +2232,13 @@
     "raw_name": "Nechells East"
   },
   "neepsend": {
-    "headroom_mw": 59.2,
+    "headroom_mw": 54.0,
     "capacity_mw": 140.0,
-    "max_demand_mw": 75.0,
-    "source": "Northern Powergrid GSP Heatmap (direct demand headroom)",
+    "max_demand_mw": 80.2,
+    "ltds_utilisation": 57.3,
+    "committed_util": 61.4,
+    "committed_headroom": 54.0,
+    "source": "NPg NDP Demand Headroom dataset, DFES 2026 - Holistic Transition scenario, summed across 7 primary substations; committed reference year = 2030",
     "quality": "direct_headroom",
     "dno": "NPG",
     "raw_name": "Neepsend"
@@ -1650,10 +2301,13 @@
     "headroom_mw": 169.5,
     "capacity_mw": 360.0,
     "max_demand_mw": 190.5,
-    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
-    "quality": "nameplate_proxy",
+    "ltds_utilisation": 52.9,
+    "committed_util": 79.2,
+    "committed_headroom": 74.8,
+    "source": "SSEN Headroom Dashboard: firm capacity (N-1 from nameplate) \u2212 peak demand; committed pipeline = peak + contracted demand (excl & incl BESS)",
+    "quality": "direct_headroom",
     "dno": "SSEN",
-    "raw_name": "North Hyde"
+    "raw_name": "North Hyde GSP"
   },
   "northfleet": {
     "headroom_mw": 649.6,
@@ -1677,19 +2331,25 @@
     "raw_name": "NORTHFLEET EAST"
   },
   "norton": {
-    "headroom_mw": 0.0,
+    "headroom_mw": 379.0,
     "capacity_mw": 720.0,
-    "max_demand_mw": 365.0,
-    "source": "Northern Powergrid GSP Heatmap (direct demand headroom)",
+    "max_demand_mw": 280.9,
+    "ltds_utilisation": 39.0,
+    "committed_util": 47.4,
+    "committed_headroom": 379.0,
+    "source": "NPg NDP Demand Headroom dataset, DFES 2026 - Holistic Transition scenario, summed across 38 primary substations; committed reference year = 2030",
     "quality": "direct_headroom",
     "dno": "NPG",
     "raw_name": "Norton"
   },
   "norton lees": {
-    "headroom_mw": 54.0,
+    "headroom_mw": 50.3,
     "capacity_mw": 120.0,
-    "max_demand_mw": 58.0,
-    "source": "Northern Powergrid GSP Heatmap (direct demand headroom)",
+    "max_demand_mw": 63.8,
+    "ltds_utilisation": 53.2,
+    "committed_util": 58.1,
+    "committed_headroom": 50.3,
+    "source": "NPg NDP Demand Headroom dataset, DFES 2026 - Holistic Transition scenario, summed across 5 primary substations; committed reference year = 2030",
     "quality": "direct_headroom",
     "dno": "NPG",
     "raw_name": "Norton Lees"
@@ -1710,55 +2370,82 @@
     "headroom_mw": 163.0,
     "capacity_mw": 480.0,
     "max_demand_mw": 317.0,
-    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
-    "quality": "nameplate_proxy",
+    "ltds_utilisation": 66.0,
+    "committed_util": 269.9,
+    "committed_headroom": -815.3,
+    "source": "SSEN Headroom Dashboard: firm capacity (N-1 from nameplate) \u2212 peak demand; committed pipeline = peak + contracted demand (excl & incl BESS)",
+    "quality": "direct_headroom",
     "dno": "SSEN",
-    "raw_name": "Nursling"
+    "raw_name": "Nursling GSP"
   },
   "ocker hill": {
-    "headroom_mw": null,
-    "capacity_mw": 101.9,
-    "max_demand_mw": null,
-    "source": "NGED GSP Technical Limits (import TL only, no demand data)",
-    "quality": "technical_limit_only",
+    "headroom_mw": 614.3,
+    "capacity_mw": 720.0,
+    "max_demand_mw": 105.7,
+    "ltds_utilisation": 14.7,
+    "committed_util": 17.1,
+    "committed_headroom": 596.8,
+    "source": "NGED LTDS Table 3a (firm capacity \u2212 current peak demand; 5-yr forecast as committed pipeline)",
+    "quality": "direct_headroom",
     "dno": "NGED",
-    "raw_name": "Ocker Hill"
+    "raw_name": "Ocker Hill 132kV"
   },
   "offerton": {
-    "headroom_mw": 77.4,
+    "headroom_mw": 26.8,
     "capacity_mw": 120.0,
-    "max_demand_mw": 38.0,
-    "source": "Northern Powergrid GSP Heatmap (direct demand headroom)",
+    "max_demand_mw": 90.0,
+    "ltds_utilisation": 75.0,
+    "committed_util": 77.7,
+    "committed_headroom": 26.8,
+    "source": "NPg NDP Demand Headroom dataset, DFES 2026 - Holistic Transition scenario, summed across 3 primary substations; committed reference year = 2030",
     "quality": "direct_headroom",
     "dno": "NPG",
     "raw_name": "Offerton"
   },
   "oldbury": {
-    "headroom_mw": null,
-    "capacity_mw": 84.4,
-    "max_demand_mw": null,
-    "source": "NGED GSP Technical Limits (import TL only, no demand data)",
-    "quality": "technical_limit_only",
+    "headroom_mw": 409.8,
+    "capacity_mw": 496.0,
+    "max_demand_mw": 86.2,
+    "ltds_utilisation": 17.4,
+    "committed_util": 20.6,
+    "committed_headroom": 393.7,
+    "source": "NGED LTDS Table 3a (firm capacity \u2212 current peak demand; 5-yr forecast as committed pipeline)",
+    "quality": "direct_headroom",
     "dno": "NGED",
-    "raw_name": "Oldbury"
+    "raw_name": "Oldbury 132kV"
   },
   "orrin": {
     "headroom_mw": 60.0,
     "capacity_mw": 60.0,
     "max_demand_mw": 0.0,
-    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
-    "quality": "nameplate_proxy",
+    "ltds_utilisation": 0.0,
+    "committed_util": 0.0,
+    "committed_headroom": 60.0,
+    "source": "SSEN Headroom Dashboard: firm capacity (N-1 from nameplate) \u2212 peak demand; committed pipeline = peak + contracted demand (excl & incl BESS)",
+    "quality": "direct_headroom",
     "dno": "SSEN",
-    "raw_name": "Orrin"
+    "raw_name": "Orrin GSP"
   },
   "osbaldwick": {
-    "headroom_mw": 207.3,
+    "headroom_mw": 243.2,
     "capacity_mw": 480.0,
-    "max_demand_mw": 261.0,
-    "source": "Northern Powergrid GSP Heatmap (direct demand headroom)",
+    "max_demand_mw": 193.6,
+    "ltds_utilisation": 40.3,
+    "committed_util": 49.3,
+    "committed_headroom": 243.2,
+    "source": "NPg NDP Demand Headroom dataset, DFES 2026 - Holistic Transition scenario, summed across 25 primary substations; committed reference year = 2030",
     "quality": "direct_headroom",
     "dno": "NPG",
     "raw_name": "Osbaldwick"
+  },
+  "padiham": {
+    "headroom_mw": -252.3,
+    "capacity_mw": null,
+    "max_demand_mw": null,
+    "source": "ENW Heatmap Tool (May 2026) \u2014 GSP Demand Headroom sheet, firm (non-inverter)",
+    "quality": "direct_headroom",
+    "dno": "ENW",
+    "raw_name": "Padiham (132)"
   },
   "pelham": {
     "headroom_mw": 248.8,
@@ -1773,22 +2460,28 @@
     "raw_name": "Pelham"
   },
   "pembroke": {
-    "headroom_mw": null,
-    "capacity_mw": 254.2,
-    "max_demand_mw": null,
-    "source": "NGED GSP Technical Limits (import TL only, no demand data)",
-    "quality": "technical_limit_only",
+    "headroom_mw": 365.5,
+    "capacity_mw": 381.5,
+    "max_demand_mw": 16.0,
+    "ltds_utilisation": 4.2,
+    "committed_util": 69.2,
+    "committed_headroom": 117.3,
+    "source": "NGED LTDS Table 3a (firm capacity \u2212 current peak demand; 5-yr forecast as committed pipeline)",
+    "quality": "direct_headroom",
     "dno": "NGED",
-    "raw_name": "Pembroke"
+    "raw_name": "Pembroke 132"
   },
   "penn": {
-    "headroom_mw": null,
-    "capacity_mw": 416.1,
-    "max_demand_mw": null,
-    "source": "NGED GSP Technical Limits (import TL only, no demand data)",
-    "quality": "technical_limit_only",
+    "headroom_mw": 1236.4,
+    "capacity_mw": 1571.0,
+    "max_demand_mw": 334.6,
+    "ltds_utilisation": 21.3,
+    "committed_util": 25.7,
+    "committed_headroom": 1167.5,
+    "source": "NGED LTDS Table 3a (firm capacity \u2212 current peak demand; 5-yr forecast as committed pipeline)",
+    "quality": "direct_headroom",
     "dno": "NGED",
-    "raw_name": "Penn"
+    "raw_name": "Penn 132kV"
   },
   "pentir": {
     "headroom_mw": null,
@@ -1799,32 +2492,89 @@
     "dno": "SPEN",
     "raw_name": "Pentir"
   },
+  "penwortham east / rochdale": {
+    "headroom_mw": 324.0,
+    "capacity_mw": null,
+    "max_demand_mw": null,
+    "source": "ENW Heatmap Tool (May 2026) \u2014 GSP Demand Headroom sheet, firm (non-inverter)",
+    "quality": "direct_headroom",
+    "dno": "ENW",
+    "raw_name": "Penwortham East / Rochdale SGT 1 GSP (132)"
+  },
+  "penwortham east / rochdale sgt 1 gsp": {
+    "headroom_mw": 324.0,
+    "capacity_mw": null,
+    "max_demand_mw": null,
+    "source": "ENW Heatmap Tool (May 2026) \u2014 GSP Demand Headroom sheet, firm (non-inverter)",
+    "quality": "direct_headroom",
+    "dno": "ENW",
+    "raw_name": "Penwortham East / Rochdale SGT 1 GSP (132)"
+  },
+  "penwortham west / stanah": {
+    "headroom_mw": 234.1,
+    "capacity_mw": null,
+    "max_demand_mw": null,
+    "source": "ENW Heatmap Tool (May 2026) \u2014 GSP Demand Headroom sheet, firm (non-inverter)",
+    "quality": "direct_headroom",
+    "dno": "ENW",
+    "raw_name": "Penwortham West / Stanah GSP (132)"
+  },
+  "penwortham west / stanah gsp": {
+    "headroom_mw": 234.1,
+    "capacity_mw": null,
+    "max_demand_mw": null,
+    "source": "ENW Heatmap Tool (May 2026) \u2014 GSP Demand Headroom sheet, firm (non-inverter)",
+    "quality": "direct_headroom",
+    "dno": "ENW",
+    "raw_name": "Penwortham West / Stanah GSP (132)"
+  },
   "persley": {
     "headroom_mw": 48.6,
     "capacity_mw": 90.0,
     "max_demand_mw": 41.4,
-    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
-    "quality": "nameplate_proxy",
+    "ltds_utilisation": 46.0,
+    "committed_util": 64.9,
+    "committed_headroom": 31.6,
+    "source": "SSEN Headroom Dashboard: firm capacity (N-1 from nameplate) \u2212 peak demand; committed pipeline = peak + contracted demand (excl & incl BESS)",
+    "quality": "direct_headroom",
     "dno": "SSEN",
-    "raw_name": "Persley"
+    "raw_name": "Persley GSP"
   },
   "peterhead grange": {
     "headroom_mw": 11.2,
     "capacity_mw": 45.0,
     "max_demand_mw": 33.8,
-    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
-    "quality": "nameplate_proxy",
+    "ltds_utilisation": 75.1,
+    "committed_util": 559.2,
+    "committed_headroom": -206.6,
+    "source": "SSEN Headroom Dashboard: firm capacity (N-1 from nameplate) \u2212 peak demand; committed pipeline = peak + contracted demand (excl & incl BESS)",
+    "quality": "direct_headroom",
     "dno": "SSEN",
-    "raw_name": "Peterhead Grange"
+    "raw_name": "Peterhead Grange GSP"
   },
   "peterhead shell": {
     "headroom_mw": 6.1,
     "capacity_mw": 15.0,
     "max_demand_mw": 8.9,
-    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
-    "quality": "nameplate_proxy",
+    "ltds_utilisation": 59.2,
+    "committed_util": 59.2,
+    "committed_headroom": 6.1,
+    "source": "SSEN Headroom Dashboard: firm capacity (N-1 from nameplate) \u2212 peak demand; committed pipeline = peak + contracted demand (excl & incl BESS)",
+    "quality": "direct_headroom",
     "dno": "SSEN",
-    "raw_name": "Peterhead Shell"
+    "raw_name": "Peterhead Shell GSP"
+  },
+  "pitsmoor 3/4": {
+    "headroom_mw": 63.4,
+    "capacity_mw": 120.0,
+    "max_demand_mw": 55.3,
+    "ltds_utilisation": 46.1,
+    "committed_util": 47.2,
+    "committed_headroom": 63.4,
+    "source": "NPg NDP Demand Headroom dataset, DFES 2026 - Holistic Transition scenario, summed across 5 primary substations; committed reference year = 2030",
+    "quality": "direct_headroom",
+    "dno": "NPG",
+    "raw_name": "Pitsmoor 3/4"
   },
   "pitsmoor 34": {
     "headroom_mw": 73.0,
@@ -1836,22 +2586,40 @@
     "raw_name": "Pitsmoor 3/4"
   },
   "poppleton": {
-    "headroom_mw": 64.2,
+    "headroom_mw": 37.8,
     "capacity_mw": 120.0,
-    "max_demand_mw": 38.0,
-    "source": "Northern Powergrid GSP Heatmap (direct demand headroom)",
+    "max_demand_mw": 79.2,
+    "ltds_utilisation": 66.0,
+    "committed_util": 68.5,
+    "committed_headroom": 37.8,
+    "source": "NPg NDP Demand Headroom dataset, DFES 2026 - Holistic Transition scenario, summed across 4 primary substations; committed reference year = 2030",
     "quality": "direct_headroom",
     "dno": "NPG",
     "raw_name": "Poppleton"
   },
   "port ann": {
-    "headroom_mw": 0,
+    "headroom_mw": -3.6,
     "capacity_mw": 30.0,
     "max_demand_mw": 33.6,
-    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
-    "quality": "nameplate_proxy",
+    "ltds_utilisation": 112.1,
+    "committed_util": 145.1,
+    "committed_headroom": -13.5,
+    "source": "SSEN Headroom Dashboard: firm capacity (N-1 from nameplate) \u2212 peak demand; committed pipeline = peak + contracted demand (excl & incl BESS)",
+    "quality": "direct_headroom",
     "dno": "SSEN",
-    "raw_name": "Port Ann"
+    "raw_name": "Port Ann GSP"
+  },
+  "port ham": {
+    "headroom_mw": 94.0,
+    "capacity_mw": 94.0,
+    "max_demand_mw": 0.0,
+    "ltds_utilisation": 0.0,
+    "committed_util": 1.9,
+    "committed_headroom": 92.3,
+    "source": "NGED LTDS Table 3a (firm capacity \u2212 current peak demand; 5-yr forecast as committed pipeline)",
+    "quality": "direct_headroom",
+    "dno": "NGED",
+    "raw_name": "Port ham 132kV"
   },
   "portham": {
     "headroom_mw": null,
@@ -1863,22 +2631,28 @@
     "raw_name": "Portham"
   },
   "pyle": {
-    "headroom_mw": null,
-    "capacity_mw": 100.8,
-    "max_demand_mw": null,
-    "source": "NGED GSP Technical Limits (import TL only, no demand data)",
-    "quality": "technical_limit_only",
+    "headroom_mw": 272.8,
+    "capacity_mw": 281.8,
+    "max_demand_mw": 9.0,
+    "ltds_utilisation": 3.2,
+    "committed_util": 70.1,
+    "committed_headroom": 84.4,
+    "source": "NGED LTDS Table 3a (firm capacity \u2212 current peak demand; 5-yr forecast as committed pipeline)",
+    "quality": "direct_headroom",
     "dno": "NGED",
-    "raw_name": "Pyle"
+    "raw_name": "Pyle 132"
   },
   "quoich": {
     "headroom_mw": 28.1,
     "capacity_mw": 30.0,
     "max_demand_mw": 1.9,
-    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
-    "quality": "nameplate_proxy",
+    "ltds_utilisation": 6.3,
+    "committed_util": 6.4,
+    "committed_headroom": 28.1,
+    "source": "SSEN Headroom Dashboard: firm capacity (N-1 from nameplate) \u2212 peak demand; committed pipeline = peak + contracted demand (excl & incl BESS)",
+    "quality": "direct_headroom",
     "dno": "SSEN",
-    "raw_name": "Quoich"
+    "raw_name": "Quoich GSP"
   },
   "rainhill": {
     "headroom_mw": null,
@@ -1893,28 +2667,37 @@
     "headroom_mw": 86.7,
     "capacity_mw": 90.0,
     "max_demand_mw": 3.3,
-    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
-    "quality": "nameplate_proxy",
+    "ltds_utilisation": 3.6,
+    "committed_util": 4.5,
+    "committed_headroom": 86.0,
+    "source": "SSEN Headroom Dashboard: firm capacity (N-1 from nameplate) \u2212 peak demand; committed pipeline = peak + contracted demand (excl & incl BESS)",
+    "quality": "direct_headroom",
     "dno": "SSEN",
-    "raw_name": "Rannoch"
+    "raw_name": "Rannoch GSP"
   },
   "rassau": {
-    "headroom_mw": null,
-    "capacity_mw": 156.5,
-    "max_demand_mw": null,
-    "source": "NGED GSP Technical Limits (import TL only, no demand data)",
-    "quality": "technical_limit_only",
+    "headroom_mw": 604.2,
+    "capacity_mw": 626.1,
+    "max_demand_mw": 21.8,
+    "ltds_utilisation": 3.5,
+    "committed_util": 58.3,
+    "committed_headroom": 261.3,
+    "source": "NGED LTDS Table 3a (firm capacity \u2212 current peak demand; 5-yr forecast as committed pipeline)",
+    "quality": "direct_headroom",
     "dno": "NGED",
-    "raw_name": "Rassau"
+    "raw_name": "Rassau 132"
   },
   "ratcliffe": {
-    "headroom_mw": null,
-    "capacity_mw": 387.4,
-    "max_demand_mw": null,
-    "source": "NGED GSP Technical Limits (import TL only, no demand data)",
-    "quality": "technical_limit_only",
+    "headroom_mw": 87.4,
+    "capacity_mw": 867.0,
+    "max_demand_mw": 779.6,
+    "ltds_utilisation": 89.9,
+    "committed_util": 119.1,
+    "committed_headroom": -165.7,
+    "source": "NGED LTDS Table 3a (firm capacity \u2212 current peak demand; 5-yr forecast as committed pipeline)",
+    "quality": "direct_headroom",
     "dno": "NGED",
-    "raw_name": "Ratcliffe"
+    "raw_name": "Ratcliffe 132kV"
   },
   "rayleigh": {
     "headroom_mw": 581.4,
@@ -1944,10 +2727,13 @@
     "headroom_mw": 6.5,
     "capacity_mw": 60.0,
     "max_demand_mw": 53.5,
-    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
-    "quality": "nameplate_proxy",
+    "ltds_utilisation": 89.2,
+    "committed_util": 324.4,
+    "committed_headroom": -134.6,
+    "source": "SSEN Headroom Dashboard: firm capacity (N-1 from nameplate) \u2212 peak demand; committed pipeline = peak + contracted demand (excl & incl BESS)",
+    "quality": "direct_headroom",
     "dno": "SSEN",
-    "raw_name": "Redmoss"
+    "raw_name": "Redmoss GSP"
   },
   "richborough": {
     "headroom_mw": 218.3,
@@ -1961,14 +2747,47 @@
     "dno": "UKPN",
     "raw_name": "Richborough"
   },
+  "rochdale": {
+    "headroom_mw": 131.1,
+    "capacity_mw": null,
+    "max_demand_mw": null,
+    "source": "ENW Heatmap Tool (May 2026) \u2014 GSP Demand Headroom sheet, firm (non-inverter)",
+    "quality": "direct_headroom",
+    "dno": "ENW",
+    "raw_name": "Rochdale GSP (132)"
+  },
+  "rochdale gsp": {
+    "headroom_mw": 131.1,
+    "capacity_mw": null,
+    "max_demand_mw": null,
+    "source": "ENW Heatmap Tool (May 2026) \u2014 GSP Demand Headroom sheet, firm (non-inverter)",
+    "quality": "direct_headroom",
+    "dno": "ENW",
+    "raw_name": "Rochdale GSP (132)"
+  },
   "rothienorman": {
     "headroom_mw": 118.7,
     "capacity_mw": 120.0,
     "max_demand_mw": 1.3,
-    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
-    "quality": "nameplate_proxy",
+    "ltds_utilisation": 1.1,
+    "committed_util": 188.5,
+    "committed_headroom": -106.1,
+    "source": "SSEN Headroom Dashboard: firm capacity (N-1 from nameplate) \u2212 peak demand; committed pipeline = peak + contracted demand (excl & incl BESS)",
+    "quality": "direct_headroom",
     "dno": "SSEN",
-    "raw_name": "Rothienorman"
+    "raw_name": "Rothienorman GSP"
+  },
+  "rugeley": {
+    "headroom_mw": 1556.4,
+    "capacity_mw": 1764.0,
+    "max_demand_mw": 207.6,
+    "ltds_utilisation": 11.8,
+    "committed_util": 15.1,
+    "committed_headroom": 1498.3,
+    "source": "NGED LTDS Table 3a (firm capacity \u2212 current peak demand; 5-yr forecast as committed pipeline)",
+    "quality": "direct_headroom",
+    "dno": "NGED",
+    "raw_name": "Rugeley 132kV"
   },
   "rye house": {
     "headroom_mw": 489.4,
@@ -1983,31 +2802,52 @@
     "raw_name": "Rye House"
   },
   "saltend north": {
-    "headroom_mw": 0.0,
+    "headroom_mw": 186.8,
     "capacity_mw": 200.0,
-    "max_demand_mw": 99.0,
-    "source": "Northern Powergrid GSP Heatmap (direct demand headroom)",
+    "max_demand_mw": 40.7,
+    "ltds_utilisation": 20.4,
+    "committed_util": 6.6,
+    "committed_headroom": 186.8,
+    "source": "NPg NDP Demand Headroom dataset, DFES 2026 - Holistic Transition scenario, summed across 10 primary substations; committed reference year = 2030",
     "quality": "direct_headroom",
     "dno": "NPG",
     "raw_name": "Saltend North"
   },
   "saltholme": {
-    "headroom_mw": 60.0,
+    "headroom_mw": 92.1,
     "capacity_mw": 260.0,
-    "max_demand_mw": 78.0,
-    "source": "Northern Powergrid GSP Heatmap (direct demand headroom)",
+    "max_demand_mw": 159.6,
+    "ltds_utilisation": 61.4,
+    "committed_util": 64.6,
+    "committed_headroom": 92.1,
+    "source": "NPg NDP Demand Headroom dataset, DFES 2026 - Holistic Transition scenario, summed across 3 primary substations; committed reference year = 2030",
     "quality": "direct_headroom",
     "dno": "NPG",
     "raw_name": "Saltholme"
   },
   "sandford": {
-    "headroom_mw": null,
-    "capacity_mw": 111.6,
-    "max_demand_mw": null,
-    "source": "NGED GSP Technical Limits (import TL only, no demand data)",
-    "quality": "technical_limit_only",
+    "headroom_mw": 366.5,
+    "capacity_mw": 508.3,
+    "max_demand_mw": 141.8,
+    "ltds_utilisation": 27.9,
+    "committed_util": 82.6,
+    "committed_headroom": 88.5,
+    "source": "NGED LTDS Table 3a (firm capacity \u2212 current peak demand; 5-yr forecast as committed pipeline)",
+    "quality": "direct_headroom",
     "dno": "NGED",
-    "raw_name": "Sandford"
+    "raw_name": "Sandford 132kV"
+  },
+  "seabank": {
+    "headroom_mw": 634.8,
+    "capacity_mw": 886.3,
+    "max_demand_mw": 251.5,
+    "ltds_utilisation": 28.4,
+    "committed_util": 84.7,
+    "committed_headroom": 135.5,
+    "source": "NGED LTDS Table 3a (firm capacity \u2212 current peak demand; 5-yr forecast as committed pipeline)",
+    "quality": "direct_headroom",
+    "dno": "NGED",
+    "raw_name": "Seabank 132kV"
   },
   "sellindge": {
     "headroom_mw": 313.7,
@@ -2022,10 +2862,13 @@
     "raw_name": "Sellindge"
   },
   "sheffield city": {
-    "headroom_mw": 35.2,
+    "headroom_mw": 102.8,
     "capacity_mw": 120.0,
-    "max_demand_mw": 84.0,
-    "source": "Northern Powergrid GSP Heatmap (direct demand headroom)",
+    "max_demand_mw": 15.5,
+    "ltds_utilisation": 12.9,
+    "committed_util": 14.3,
+    "committed_headroom": 102.8,
+    "source": "NPg NDP Demand Headroom dataset, DFES 2026 - Holistic Transition scenario, summed across 7 primary substations; committed reference year = 2030",
     "quality": "direct_headroom",
     "dno": "NPG",
     "raw_name": "Sheffield City"
@@ -2034,16 +2877,22 @@
     "headroom_mw": 70.2,
     "capacity_mw": 90.0,
     "max_demand_mw": 19.8,
-    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
-    "quality": "nameplate_proxy",
+    "ltds_utilisation": 22.0,
+    "committed_util": 22.4,
+    "committed_headroom": 69.8,
+    "source": "SSEN Headroom Dashboard: firm capacity (N-1 from nameplate) \u2212 peak demand; committed pipeline = peak + contracted demand (excl & incl BESS)",
+    "quality": "direct_headroom",
     "dno": "SSEN",
-    "raw_name": "Shin"
+    "raw_name": "Shin GSP"
   },
   "skelton grange": {
-    "headroom_mw": 55.1,
+    "headroom_mw": 716.2,
     "capacity_mw": 720.0,
-    "max_demand_mw": 504.0,
-    "source": "Northern Powergrid GSP Heatmap (direct demand headroom)",
+    "max_demand_mw": -50.6,
+    "ltds_utilisation": 0.0,
+    "committed_util": 0.5,
+    "committed_headroom": 716.2,
+    "source": "NPg NDP Demand Headroom dataset, DFES 2026 - Holistic Transition scenario, summed across 53 primary substations; committed reference year = 2030",
     "quality": "direct_headroom",
     "dno": "NPG",
     "raw_name": "Skelton Grange"
@@ -2052,16 +2901,40 @@
     "headroom_mw": 45.7,
     "capacity_mw": 50.0,
     "max_demand_mw": 4.3,
-    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
-    "quality": "nameplate_proxy",
+    "ltds_utilisation": 8.6,
+    "committed_util": 11.8,
+    "committed_headroom": 44.1,
+    "source": "SSEN Headroom Dashboard: firm capacity (N-1 from nameplate) \u2212 peak demand; committed pipeline = peak + contracted demand (excl & incl BESS)",
+    "quality": "direct_headroom",
     "dno": "SSEN",
-    "raw_name": "Sloy"
+    "raw_name": "Sloy GSP"
+  },
+  "south manchester": {
+    "headroom_mw": 187.1,
+    "capacity_mw": null,
+    "max_demand_mw": null,
+    "source": "ENW Heatmap Tool (May 2026) \u2014 GSP Demand Headroom sheet, firm (non-inverter)",
+    "quality": "direct_headroom",
+    "dno": "ENW",
+    "raw_name": "South Manchester GSP (132)"
+  },
+  "south manchester gsp": {
+    "headroom_mw": 187.1,
+    "capacity_mw": null,
+    "max_demand_mw": null,
+    "source": "ENW Heatmap Tool (May 2026) \u2014 GSP Demand Headroom sheet, firm (non-inverter)",
+    "quality": "direct_headroom",
+    "dno": "ENW",
+    "raw_name": "South Manchester GSP (132)"
   },
   "south shields": {
-    "headroom_mw": 28.1,
+    "headroom_mw": 56.9,
     "capacity_mw": 100.0,
-    "max_demand_mw": 48.0,
-    "source": "Northern Powergrid GSP Heatmap (direct demand headroom)",
+    "max_demand_mw": 40.3,
+    "ltds_utilisation": 40.3,
+    "committed_util": 43.1,
+    "committed_headroom": 56.9,
+    "source": "NPg NDP Demand Headroom dataset, DFES 2026 - Holistic Transition scenario, summed across 4 primary substations; committed reference year = 2030",
     "quality": "direct_headroom",
     "dno": "NPG",
     "raw_name": "South Shields"
@@ -2074,6 +2947,18 @@
     "quality": "direct_headroom",
     "dno": "NPG",
     "raw_name": "Spennymoor GSP"
+  },
+  "spennymoor gsp": {
+    "headroom_mw": 290.8,
+    "capacity_mw": 480.0,
+    "max_demand_mw": 142.4,
+    "ltds_utilisation": 29.7,
+    "committed_util": 39.4,
+    "committed_headroom": 290.8,
+    "source": "NPg NDP Demand Headroom dataset, DFES 2026 - Holistic Transition scenario, summed across 18 primary substations; committed reference year = 2030",
+    "quality": "direct_headroom",
+    "dno": "NPG",
+    "raw_name": "Spennymoor Gsp"
   },
   "st asaph": {
     "headroom_mw": null,
@@ -2088,19 +2973,25 @@
     "headroom_mw": 21.9,
     "capacity_mw": 30.0,
     "max_demand_mw": 8.1,
-    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
-    "quality": "nameplate_proxy",
+    "ltds_utilisation": 27.0,
+    "committed_util": 33.5,
+    "committed_headroom": 19.9,
+    "source": "SSEN Headroom Dashboard: firm capacity (N-1 from nameplate) \u2212 peak demand; committed pipeline = peak + contracted demand (excl & incl BESS)",
+    "quality": "direct_headroom",
     "dno": "SSEN",
-    "raw_name": "St Fergus"
+    "raw_name": "St Fergus GSP"
   },
   "st fillans": {
     "headroom_mw": 19.2,
     "capacity_mw": 25.0,
     "max_demand_mw": 5.8,
-    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
-    "quality": "nameplate_proxy",
+    "ltds_utilisation": 23.3,
+    "committed_util": 25.9,
+    "committed_headroom": 18.5,
+    "source": "SSEN Headroom Dashboard: firm capacity (N-1 from nameplate) \u2212 peak demand; committed pipeline = peak + contracted demand (excl & incl BESS)",
+    "quality": "direct_headroom",
     "dno": "SSEN",
-    "raw_name": "St Fillans"
+    "raw_name": "St Fillans GSP"
   },
   "st johns wood": {
     "headroom_mw": 464.5,
@@ -2114,50 +3005,83 @@
     "dno": "UKPN",
     "raw_name": "St Johns Wood"
   },
-  "staythorpe": {
-    "headroom_mw": null,
-    "capacity_mw": 208.3,
+  "stalybridge": {
+    "headroom_mw": 77.2,
+    "capacity_mw": null,
     "max_demand_mw": null,
-    "source": "NGED GSP Technical Limits (import TL only, no demand data)",
-    "quality": "technical_limit_only",
+    "source": "ENW Heatmap Tool (May 2026) \u2014 GSP Demand Headroom sheet, firm (non-inverter)",
+    "quality": "direct_headroom",
+    "dno": "ENW",
+    "raw_name": "Stalybridge GSP (132)"
+  },
+  "stalybridge gsp": {
+    "headroom_mw": 77.2,
+    "capacity_mw": null,
+    "max_demand_mw": null,
+    "source": "ENW Heatmap Tool (May 2026) \u2014 GSP Demand Headroom sheet, firm (non-inverter)",
+    "quality": "direct_headroom",
+    "dno": "ENW",
+    "raw_name": "Stalybridge GSP (132)"
+  },
+  "staythorpe": {
+    "headroom_mw": -114.5,
+    "capacity_mw": 211.5,
+    "max_demand_mw": 326.0,
+    "ltds_utilisation": 154.1,
+    "committed_util": 211.5,
+    "committed_headroom": -235.8,
+    "source": "NGED LTDS Table 3a (firm capacity \u2212 current peak demand; 5-yr forecast as committed pipeline)",
+    "quality": "direct_headroom",
     "dno": "NGED",
-    "raw_name": "Staythorpe"
+    "raw_name": "Staythorpe 132kV"
   },
   "stella north": {
-    "headroom_mw": 36.5,
+    "headroom_mw": 331.6,
     "capacity_mw": 260.0,
-    "max_demand_mw": 186.0,
-    "source": "Northern Powergrid GSP Heatmap (direct demand headroom)",
+    "max_demand_mw": -92.5,
+    "ltds_utilisation": 0.0,
+    "committed_util": 0.0,
+    "committed_headroom": 331.6,
+    "source": "NPg NDP Demand Headroom dataset, DFES 2026 - Holistic Transition scenario, summed across 19 primary substations; committed reference year = 2030",
     "quality": "direct_headroom",
     "dno": "NPG",
     "raw_name": "Stella North"
   },
   "stella south": {
-    "headroom_mw": 0.0,
+    "headroom_mw": 187.3,
     "capacity_mw": 260.0,
-    "max_demand_mw": 252.0,
-    "source": "Northern Powergrid GSP Heatmap (direct demand headroom)",
+    "max_demand_mw": 53.6,
+    "ltds_utilisation": 20.6,
+    "committed_util": 27.9,
+    "committed_headroom": 187.3,
+    "source": "NPg NDP Demand Headroom dataset, DFES 2026 - Holistic Transition scenario, summed across 12 primary substations; committed reference year = 2030",
     "quality": "direct_headroom",
     "dno": "NPG",
     "raw_name": "Stella South"
   },
   "stoke bardolph": {
-    "headroom_mw": null,
-    "capacity_mw": 103.6,
-    "max_demand_mw": null,
-    "source": "NGED GSP Technical Limits (import TL only, no demand data)",
-    "quality": "technical_limit_only",
+    "headroom_mw": 14.9,
+    "capacity_mw": 296.0,
+    "max_demand_mw": 281.1,
+    "ltds_utilisation": 95.0,
+    "committed_util": 121.4,
+    "committed_headroom": -63.3,
+    "source": "NGED LTDS Table 3a (firm capacity \u2212 current peak demand; 5-yr forecast as committed pipeline)",
+    "quality": "direct_headroom",
     "dno": "NGED",
-    "raw_name": "Stoke Bardolph"
+    "raw_name": "Stoke Bardolph 132kV"
   },
   "stornoway": {
     "headroom_mw": 38.4,
     "capacity_mw": 60.0,
     "max_demand_mw": 21.6,
-    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
-    "quality": "nameplate_proxy",
+    "ltds_utilisation": 36.1,
+    "committed_util": 91.2,
+    "committed_headroom": 5.3,
+    "source": "SSEN Headroom Dashboard: firm capacity (N-1 from nameplate) \u2212 peak demand; committed pipeline = peak + contracted demand (excl & incl BESS)",
+    "quality": "direct_headroom",
     "dno": "SSEN",
-    "raw_name": "Stornoway"
+    "raw_name": "Stornoway GSP"
   },
   "strathaven": {
     "headroom_mw": 56.2,
@@ -2172,19 +3096,25 @@
     "headroom_mw": 65.8,
     "capacity_mw": 90.0,
     "max_demand_mw": 24.2,
-    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand) \u2014 SHARED SITE",
-    "quality": "nameplate_proxy",
+    "ltds_utilisation": 26.8,
+    "committed_util": 29.7,
+    "committed_headroom": 63.2,
+    "source": "SSEN Headroom Dashboard: firm capacity (N-1 from nameplate) \u2212 peak demand; committed pipeline = peak + contracted demand (excl & incl BESS) \u2014 SHARED SITE",
+    "quality": "direct_headroom",
     "dno": "SSEN",
-    "raw_name": "Strathleven"
+    "raw_name": "Strathleven GSP"
   },
   "strichen": {
     "headroom_mw": 70.7,
     "capacity_mw": 90.0,
     "max_demand_mw": 19.3,
-    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
-    "quality": "nameplate_proxy",
+    "ltds_utilisation": 21.4,
+    "committed_util": 194.7,
+    "committed_headroom": -85.2,
+    "source": "SSEN Headroom Dashboard: firm capacity (N-1 from nameplate) \u2212 peak demand; committed pipeline = peak + contracted demand (excl & incl BESS)",
+    "quality": "direct_headroom",
     "dno": "SSEN",
-    "raw_name": "Strichen"
+    "raw_name": "Strichen GSP"
   },
   "sundon": {
     "headroom_mw": 792.6,
@@ -2199,40 +3129,64 @@
     "raw_name": "Sundon"
   },
   "swansea north": {
-    "headroom_mw": null,
-    "capacity_mw": 380.5,
-    "max_demand_mw": null,
-    "source": "NGED GSP Technical Limits (import TL only, no demand data)",
-    "quality": "technical_limit_only",
+    "headroom_mw": 1682.7,
+    "capacity_mw": 1754.6,
+    "max_demand_mw": 71.9,
+    "ltds_utilisation": 4.1,
+    "committed_util": 64.9,
+    "committed_headroom": 615.0,
+    "source": "NGED LTDS Table 3a (firm capacity \u2212 current peak demand; 5-yr forecast as committed pipeline)",
+    "quality": "direct_headroom",
     "dno": "NGED",
-    "raw_name": "Swansea North"
+    "raw_name": "Swansea North 132"
   },
   "tarland": {
     "headroom_mw": 11.5,
     "capacity_mw": 30.0,
     "max_demand_mw": 18.5,
-    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
-    "quality": "nameplate_proxy",
+    "ltds_utilisation": 61.8,
+    "committed_util": 256.7,
+    "committed_headroom": -47.0,
+    "source": "SSEN Headroom Dashboard: firm capacity (N-1 from nameplate) \u2212 peak demand; committed pipeline = peak + contracted demand (excl & incl BESS)",
+    "quality": "direct_headroom",
     "dno": "SSEN",
-    "raw_name": "Tarland"
+    "raw_name": "Tarland GSP"
   },
   "taunton": {
-    "headroom_mw": null,
-    "capacity_mw": 185.1,
-    "max_demand_mw": null,
-    "source": "NGED GSP Technical Limits (import TL only, no demand data)",
-    "quality": "technical_limit_only",
+    "headroom_mw": 996.0,
+    "capacity_mw": 1265.0,
+    "max_demand_mw": 269.1,
+    "ltds_utilisation": 21.3,
+    "committed_util": 72.2,
+    "committed_headroom": 351.9,
+    "source": "NGED LTDS Table 3a (firm capacity \u2212 current peak demand; 5-yr forecast as committed pipeline)",
+    "quality": "direct_headroom",
     "dno": "NGED",
-    "raw_name": "Taunton"
+    "raw_name": "Bridgwater / Taunton 132kV"
   },
   "taynuilt": {
     "headroom_mw": 56.9,
     "capacity_mw": 90.0,
     "max_demand_mw": 33.1,
-    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
-    "quality": "nameplate_proxy",
+    "ltds_utilisation": 36.8,
+    "committed_util": 109.8,
+    "committed_headroom": -8.8,
+    "source": "SSEN Headroom Dashboard: firm capacity (N-1 from nameplate) \u2212 peak demand; committed pipeline = peak + contracted demand (excl & incl BESS)",
+    "quality": "direct_headroom",
     "dno": "SSEN",
-    "raw_name": "Taynuilt"
+    "raw_name": "Taynuilt GSP"
+  },
+  "templeborough 275/33kv": {
+    "headroom_mw": 13.3,
+    "capacity_mw": 96.0,
+    "max_demand_mw": 82.4,
+    "ltds_utilisation": 85.8,
+    "committed_util": 86.2,
+    "committed_headroom": 13.3,
+    "source": "NPg NDP Demand Headroom dataset, DFES 2026 - Holistic Transition scenario, summed across 1 primary substations; committed reference year = 2030",
+    "quality": "direct_headroom",
+    "dno": "NPG",
+    "raw_name": "Templeborough 275/33kV"
   },
   "templeborough 27533kv": {
     "headroom_mw": 69.0,
@@ -2244,10 +3198,13 @@
     "raw_name": "Templeborough 275/33kV"
   },
   "thurcroft": {
-    "headroom_mw": 221.4,
+    "headroom_mw": 69.7,
     "capacity_mw": 360.0,
-    "max_demand_mw": 125.0,
-    "source": "Northern Powergrid GSP Heatmap (direct demand headroom)",
+    "max_demand_mw": 272.1,
+    "ltds_utilisation": 75.6,
+    "committed_util": 80.6,
+    "committed_headroom": 69.7,
+    "source": "NPg NDP Demand Headroom dataset, DFES 2026 - Holistic Transition scenario, summed across 11 primary substations; committed reference year = 2030",
     "quality": "direct_headroom",
     "dno": "NPG",
     "raw_name": "Thurcroft"
@@ -2256,10 +3213,13 @@
     "headroom_mw": 74.7,
     "capacity_mw": 120.0,
     "max_demand_mw": 45.3,
-    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
-    "quality": "nameplate_proxy",
+    "ltds_utilisation": 37.8,
+    "committed_util": 267.1,
+    "committed_headroom": -200.5,
+    "source": "SSEN Headroom Dashboard: firm capacity (N-1 from nameplate) \u2212 peak demand; committed pipeline = peak + contracted demand (excl & incl BESS)",
+    "quality": "direct_headroom",
     "dno": "SSEN",
-    "raw_name": "Thurso South"
+    "raw_name": "Thurso South GSP"
   },
   "tilbury": {
     "headroom_mw": 592.7,
@@ -2337,37 +3297,49 @@
     "headroom_mw": 6.1,
     "capacity_mw": 21.0,
     "max_demand_mw": 14.9,
-    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
-    "quality": "nameplate_proxy",
+    "ltds_utilisation": 70.9,
+    "committed_util": 94.4,
+    "committed_headroom": 1.2,
+    "source": "SSEN Headroom Dashboard: firm capacity (N-1 from nameplate) \u2212 peak demand; committed pipeline = peak + contracted demand (excl & incl BESS)",
+    "quality": "direct_headroom",
     "dno": "SSEN",
-    "raw_name": "Tummel Bridge"
+    "raw_name": "Tummel Bridge GSP"
   },
   "tynemouth": {
-    "headroom_mw": 87.5,
+    "headroom_mw": 140.9,
     "capacity_mw": 260.0,
-    "max_demand_mw": 152.0,
-    "source": "Northern Powergrid GSP Heatmap (direct demand headroom)",
+    "max_demand_mw": 106.9,
+    "ltds_utilisation": 41.1,
+    "committed_util": 45.8,
+    "committed_headroom": 140.9,
+    "source": "NPg NDP Demand Headroom dataset, DFES 2026 - Holistic Transition scenario, summed across 13 primary substations; committed reference year = 2030",
     "quality": "direct_headroom",
     "dno": "NPG",
     "raw_name": "Tynemouth"
   },
   "upper boat": {
-    "headroom_mw": null,
-    "capacity_mw": 201.6,
-    "max_demand_mw": null,
-    "source": "NGED GSP Technical Limits (import TL only, no demand data)",
-    "quality": "technical_limit_only",
+    "headroom_mw": 272.1,
+    "capacity_mw": 283.1,
+    "max_demand_mw": 11.0,
+    "ltds_utilisation": 3.9,
+    "committed_util": 71.6,
+    "committed_headroom": 80.5,
+    "source": "NGED LTDS Table 3a (firm capacity \u2212 current peak demand; 5-yr forecast as committed pipeline)",
+    "quality": "direct_headroom",
     "dno": "NGED",
-    "raw_name": "Upper Boat"
+    "raw_name": "Upper Boat 33"
   },
   "uskmouth": {
-    "headroom_mw": null,
-    "capacity_mw": 240.5,
-    "max_demand_mw": null,
-    "source": "NGED GSP Technical Limits (import TL only, no demand data)",
-    "quality": "technical_limit_only",
+    "headroom_mw": 515.4,
+    "capacity_mw": 533.3,
+    "max_demand_mw": 17.9,
+    "ltds_utilisation": 3.4,
+    "committed_util": 64.9,
+    "committed_headroom": 187.3,
+    "source": "NGED LTDS Table 3a (firm capacity \u2212 current peak demand; 5-yr forecast as committed pipeline)",
+    "quality": "direct_headroom",
     "dno": "NGED",
-    "raw_name": "Uskmouth"
+    "raw_name": "Uskmouth 132"
   },
   "walpole": {
     "headroom_mw": 651.7,
@@ -2393,6 +3365,24 @@
     "dno": "UKPN",
     "raw_name": "Warley"
   },
+  "washway farm / kirkby": {
+    "headroom_mw": -106.5,
+    "capacity_mw": null,
+    "max_demand_mw": null,
+    "source": "ENW Heatmap Tool (May 2026) \u2014 GSP Demand Headroom sheet, firm (non-inverter)",
+    "quality": "direct_headroom",
+    "dno": "ENW",
+    "raw_name": "Washway Farm / Kirkby GSP (132)"
+  },
+  "washway farm / kirkby gsp": {
+    "headroom_mw": -106.5,
+    "capacity_mw": null,
+    "max_demand_mw": null,
+    "source": "ENW Heatmap Tool (May 2026) \u2014 GSP Demand Headroom sheet, firm (non-inverter)",
+    "quality": "direct_headroom",
+    "dno": "ENW",
+    "raw_name": "Washway Farm / Kirkby GSP (132)"
+  },
   "watford south": {
     "headroom_mw": 276.8,
     "capacity_mw": 697.6,
@@ -2406,22 +3396,28 @@
     "raw_name": "Watford South"
   },
   "west boldon": {
-    "headroom_mw": 126.7,
+    "headroom_mw": 246.2,
     "capacity_mw": 360.0,
-    "max_demand_mw": 213.0,
-    "source": "Northern Powergrid GSP Heatmap (direct demand headroom)",
+    "max_demand_mw": 138.8,
+    "ltds_utilisation": 38.6,
+    "committed_util": 31.6,
+    "committed_headroom": 246.2,
+    "source": "NPg NDP Demand Headroom dataset, DFES 2026 - Holistic Transition scenario, summed across 18 primary substations; committed reference year = 2030",
     "quality": "direct_headroom",
     "dno": "NPG",
     "raw_name": "West Boldon"
   },
   "west burton": {
-    "headroom_mw": null,
-    "capacity_mw": 207.3,
-    "max_demand_mw": null,
-    "source": "NGED GSP Technical Limits (import TL only, no demand data)",
-    "quality": "technical_limit_only",
+    "headroom_mw": -276.7,
+    "capacity_mw": 223.8,
+    "max_demand_mw": 500.4,
+    "ltds_utilisation": 223.7,
+    "committed_util": 289.2,
+    "committed_headroom": -423.4,
+    "source": "NGED LTDS Table 3a (firm capacity \u2212 current peak demand; 5-yr forecast as committed pipeline)",
+    "quality": "direct_headroom",
     "dno": "NGED",
-    "raw_name": "West Burton"
+    "raw_name": "West Burton 132kV"
   },
   "west ham": {
     "headroom_mw": 526.3,
@@ -2435,11 +3431,35 @@
     "dno": "UKPN",
     "raw_name": "West Ham"
   },
+  "west melton / thorpe marsh": {
+    "headroom_mw": 602.9,
+    "capacity_mw": 360.0,
+    "max_demand_mw": -291.3,
+    "ltds_utilisation": 0.0,
+    "committed_util": 0.0,
+    "committed_headroom": 602.9,
+    "source": "NPg NDP Demand Headroom dataset, DFES 2026 - Holistic Transition scenario, summed across 38 primary substations; committed reference year = 2030",
+    "quality": "direct_headroom",
+    "dno": "NPG",
+    "raw_name": "West Melton / Thorpe Marsh"
+  },
   "west melton section": {
     "headroom_mw": 124.3,
     "capacity_mw": 360.0,
     "max_demand_mw": 212.0,
     "source": "Northern Powergrid GSP Heatmap (direct demand headroom)",
+    "quality": "direct_headroom",
+    "dno": "NPG",
+    "raw_name": "West Melton Section 3"
+  },
+  "west melton section 3": {
+    "headroom_mw": 451.6,
+    "capacity_mw": 360.0,
+    "max_demand_mw": -153.0,
+    "ltds_utilisation": 0.0,
+    "committed_util": 0.0,
+    "committed_headroom": 451.6,
+    "source": "NPg NDP Demand Headroom dataset, DFES 2026 - Holistic Transition scenario, summed across 31 primary substations; committed reference year = 2030",
     "quality": "direct_headroom",
     "dno": "NPG",
     "raw_name": "West Melton Section 3"
@@ -2486,14 +3506,35 @@
     "dno": "SPEN SPD",
     "raw_name": "Westfield"
   },
-  "willenhall": {
-    "headroom_mw": null,
-    "capacity_mw": 113.2,
+  "whitegate": {
+    "headroom_mw": 175.5,
+    "capacity_mw": null,
     "max_demand_mw": null,
-    "source": "NGED GSP Technical Limits (import TL only, no demand data)",
-    "quality": "technical_limit_only",
+    "source": "ENW Heatmap Tool (May 2026) \u2014 GSP Demand Headroom sheet, firm (non-inverter)",
+    "quality": "direct_headroom",
+    "dno": "ENW",
+    "raw_name": "Whitegate GSP (132)"
+  },
+  "whitegate gsp": {
+    "headroom_mw": 175.5,
+    "capacity_mw": null,
+    "max_demand_mw": null,
+    "source": "ENW Heatmap Tool (May 2026) \u2014 GSP Demand Headroom sheet, firm (non-inverter)",
+    "quality": "direct_headroom",
+    "dno": "ENW",
+    "raw_name": "Whitegate GSP (132)"
+  },
+  "willenhall": {
+    "headroom_mw": 920.8,
+    "capacity_mw": 1061.0,
+    "max_demand_mw": 140.2,
+    "ltds_utilisation": 13.2,
+    "committed_util": 15.7,
+    "committed_headroom": 894.3,
+    "source": "NGED LTDS Table 3a (firm capacity \u2212 current peak demand; 5-yr forecast as committed pipeline)",
+    "quality": "direct_headroom",
     "dno": "NGED",
-    "raw_name": "Willenhall"
+    "raw_name": "Willenhall 132kV"
   },
   "willesden": {
     "headroom_mw": 140.4,
@@ -2550,22 +3591,28 @@
     "raw_name": "Willesden Grid 66 kV"
   },
   "willington": {
-    "headroom_mw": null,
-    "capacity_mw": 0.0,
-    "max_demand_mw": null,
-    "source": "NGED GSP Technical Limits (import TL only, no demand data)",
-    "quality": "technical_limit_only",
+    "headroom_mw": 676.4,
+    "capacity_mw": 1679.8,
+    "max_demand_mw": 1003.4,
+    "ltds_utilisation": 59.7,
+    "committed_util": 93.3,
+    "committed_headroom": 112.8,
+    "source": "NGED LTDS Table 3a (firm capacity \u2212 current peak demand; 5-yr forecast as committed pipeline)",
+    "quality": "direct_headroom",
     "dno": "NGED",
-    "raw_name": "Willington"
+    "raw_name": "Willington 132kV"
   },
   "willowdale": {
     "headroom_mw": 34.9,
     "capacity_mw": 60.0,
     "max_demand_mw": 25.1,
-    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
-    "quality": "nameplate_proxy",
+    "ltds_utilisation": 41.8,
+    "committed_util": 56.0,
+    "committed_headroom": 26.4,
+    "source": "SSEN Headroom Dashboard: firm capacity (N-1 from nameplate) \u2212 peak demand; committed pipeline = peak + contracted demand (excl & incl BESS)",
+    "quality": "direct_headroom",
     "dno": "SSEN",
-    "raw_name": "Willowdale"
+    "raw_name": "Willowdale GSP"
   },
   "wimbledon 1&2 132kv": {
     "headroom_mw": 92.8,
@@ -2610,10 +3657,13 @@
     "raw_name": "WIMBLEDON 3&4"
   },
   "wincobank": {
-    "headroom_mw": 73.2,
+    "headroom_mw": 78.8,
     "capacity_mw": 120.0,
-    "max_demand_mw": 32.0,
-    "source": "Northern Powergrid GSP Heatmap (direct demand headroom)",
+    "max_demand_mw": 40.6,
+    "ltds_utilisation": 33.8,
+    "committed_util": 34.3,
+    "committed_headroom": 78.8,
+    "source": "NPg NDP Demand Headroom dataset, DFES 2026 - Holistic Transition scenario, summed across 4 primary substations; committed reference year = 2030",
     "quality": "direct_headroom",
     "dno": "NPG",
     "raw_name": "Wincobank"
@@ -2622,10 +3672,13 @@
     "headroom_mw": 55.2,
     "capacity_mw": 90.0,
     "max_demand_mw": 34.8,
-    "source": "SSEN Headroom Dashboard (nameplate firm capacity \u2212 max demand)",
-    "quality": "nameplate_proxy",
+    "ltds_utilisation": 38.7,
+    "committed_util": 52.7,
+    "committed_headroom": 42.6,
+    "source": "SSEN Headroom Dashboard: firm capacity (N-1 from nameplate) \u2212 peak demand; committed pipeline = peak + contracted demand (excl & incl BESS)",
+    "quality": "direct_headroom",
     "dno": "SSEN",
-    "raw_name": "Woodhill"
+    "raw_name": "Woodhill GSP"
   },
   "wymondley": {
     "headroom_mw": 300.6,
