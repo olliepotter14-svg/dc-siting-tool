@@ -1418,6 +1418,50 @@ select:hover { border-color: rgba(255,255,255,0.15); }
   border-color: rgba(255, 195, 111, 0.45);
   background: rgba(255, 195, 111, 0.08);
 }
+.conf-inferred {
+  color: #B59CFF;
+  border-color: rgba(181, 156, 255, 0.5);
+  background: rgba(181, 156, 255, 0.08);
+}
+
+.multi-sources {
+  margin-top: 4px;
+  font-size: 9.5px;
+  color: var(--text-low);
+}
+.multi-sources > summary {
+  cursor: pointer;
+  color: #00E5FF;
+  opacity: 0.75;
+  list-style: none;
+  user-select: none;
+}
+.multi-sources > summary::before {
+  content: '▸ ';
+  display: inline-block;
+  transition: transform 0.15s;
+}
+.multi-sources[open] > summary::before {
+  content: '▾ ';
+}
+.multi-sources ul {
+  margin: 4px 0 6px 18px;
+  padding: 0;
+  list-style: none;
+}
+.multi-sources li {
+  margin: 3px 0;
+  line-height: 1.4;
+}
+.multi-sources strong {
+  color: #00E5FF;
+  font-weight: 700;
+  margin-right: 4px;
+}
+.multi-sources a {
+  color: var(--text-low);
+  text-decoration: underline dotted;
+}
 
 .data-disclaimer {
   font-size: 10.5px;
@@ -1447,6 +1491,10 @@ select:hover { border-color: rgba(255,255,255,0.15); }
 .data-disclaimer .disc-estimate {
   color: #FFC36F;
   border-color: rgba(255, 195, 111, 0.45);
+}
+.data-disclaimer .disc-inferred {
+  color: #B59CFF;
+  border-color: rgba(181, 156, 255, 0.5);
 }
 
 /* ─── Detail Panel ───────────────────────────────────────────────── */

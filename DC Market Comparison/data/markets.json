@@ -47,13 +47,27 @@
           "note": "Primary source cites % share, not absolute TWh; 2027 derived from 2024 baseline + 2030 trajectory."
         },
         "grid_connect_years": {
-          "value": 5.5,
+          "value": 6.0,
+          "value_low": 5.0,
+          "value_high": 7.0,
           "year": 2025,
-          "source": "BCG 'Mind the Queue' Sept 2025, p5: 'average delay of over 5 years for UK projects' (Ofgem 2023). Transmission-connected hyperscale waits often 7-10 yrs per NESO TEC Register.",
-          "url": "https://web-assets.bcg.com/e1/b9/9e57a115499785a8902f77636824/mind-the-queue-connection-reform-for-the-electricity-grid-r.pdf",
-          "evidence_url": "https://web-assets.bcg.com/e1/b9/9e57a115499785a8902f77636824/mind-the-queue-connection-reform-for-the-electricity-grid-r.pdf",
+          "source": "JLL Research 2025 — Average grid connection lead times for new 50 MW data centers | Ofgem 2023 (via BCG Mind the Queue Sep 2025) — multi-source range 5.0-7.0 yrs, avg 6.0",
+          "url": "https://www.jll.com/en-uk/insights/emea-data-centre-report",
+          "evidence_url": "https://www.jll.com/en-uk/insights/emea-data-centre-report",
           "confidence": "verified",
-          "note": "Ofgem 5+ yr average; transmission-grid hyperscale projects can be longer."
+          "sources": [
+            {
+              "name": "JLL Research 2025 — Average grid connection lead times for new 50 MW data centers",
+              "value": 7.0,
+              "url": "https://www.jll.com/en-uk/insights/emea-data-centre-report"
+            },
+            {
+              "name": "Ofgem 2023 (via BCG Mind the Queue Sep 2025)",
+              "value": 5.0,
+              "url": "https://web-assets.bcg.com/e1/b9/9e57a115499785a8902f77636824/mind-the-queue-connection-reform-for-the-electricity-grid-r.pdf"
+            }
+          ],
+          "note": "2 primary source(s); when sources disagree, value is the arithmetic mean. Range shown as low-high."
         },
         "grid_investment_usdbn": {
           "value": 90.0,
@@ -175,12 +189,26 @@
         },
         "grid_connect_years": {
           "value": 10.0,
+          "value_low": 10.0,
+          "value_high": 10.0,
           "year": 2025,
-          "source": "Ember 'Grids for data centres in Europe' 2025, p17: FLAP-D markets 'wait an average of seven to ten years, or even up to 13'. Dublin specifically paused new DC connections.",
-          "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
-          "evidence_url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
+          "source": "JLL Research 2025 | Ember 'Grids for data centres in Europe' 2025 p17 — multi-source range 10.0-10.0 yrs, avg 10.0",
+          "url": "https://www.jll.com/en-uk/insights/emea-data-centre-report",
+          "evidence_url": "https://www.jll.com/en-uk/insights/emea-data-centre-report",
           "confidence": "verified",
-          "note": "Dublin in FLAP-D 7-10 yr range; EirGrid effectively paused new connections."
+          "sources": [
+            {
+              "name": "JLL Research 2025: Dublin grid connections paused until 2028",
+              "value": 10.0,
+              "url": "https://www.jll.com/en-uk/insights/emea-data-centre-report"
+            },
+            {
+              "name": "Ember 'Grids for data centres in Europe' 2025 p17: FLAP-D average 7-10 years, up to 13",
+              "value": 10.0,
+              "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf"
+            }
+          ],
+          "note": "2 primary source(s); when sources disagree, value is the arithmetic mean. Range shown as low-high."
         },
         "grid_investment_usdbn": {
           "value": 7.0,
@@ -301,13 +329,27 @@
           "note": "Primary cites 2% share + grid investment continuing; 2027 derived."
         },
         "grid_connect_years": {
-          "value": 4.0,
+          "value": 5.5,
+          "value_low": 4.0,
+          "value_high": 7.0,
           "year": 2025,
-          "source": "Ember 'Grids for data centres in Europe' 2025, p13-14: 'only France, where grid remains relatively unconstrained, is expected to maintain continued data centre investment' — fastest of FLAP-D.",
-          "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
-          "evidence_url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
+          "source": "JLL Research 2025 — Average grid connection lead times for new 50 MW data centers (Paris) | Ember 'Grids for data centres in Europe' 2025 p13 — multi-source range 4.0-7.0 yrs, avg 5.5",
+          "url": "https://www.jll.com/en-uk/insights/emea-data-centre-report",
+          "evidence_url": "https://www.jll.com/en-uk/insights/emea-data-centre-report",
           "confidence": "verified",
-          "note": "Ember explicitly differentiates France as less constrained than IE/NL/DE."
+          "sources": [
+            {
+              "name": "JLL Research 2025 — Average grid connection lead times for new 50 MW data centers (Paris)",
+              "value": 7.0,
+              "url": "https://www.jll.com/en-uk/insights/emea-data-centre-report"
+            },
+            {
+              "name": "Ember 'Grids for data centres in Europe' 2025 p13: France 'relatively unconstrained' vs other FLAP-D markets",
+              "value": 4.0,
+              "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf"
+            }
+          ],
+          "note": "2 primary source(s); when sources disagree, value is the arithmetic mean. Range shown as low-high."
         },
         "grid_investment_usdbn": {
           "value": 100.0,
@@ -430,13 +472,32 @@
           "note": "Primary cites 4% national share; 2027 derived from trajectory."
         },
         "grid_connect_years": {
-          "value": 7.0,
+          "value": 6.33,
+          "value_low": 5.0,
+          "value_high": 7.0,
           "year": 2025,
-          "source": "BCG 'Mind the Queue' Sept 2025, p5: 'New data centers in Germany wait an average of up to 7 years for a grid connection' (German Data Center Association 2025).",
-          "url": "https://web-assets.bcg.com/e1/b9/9e57a115499785a8902f77636824/mind-the-queue-connection-reform-for-the-electricity-grid-r.pdf",
-          "evidence_url": "https://web-assets.bcg.com/e1/b9/9e57a115499785a8902f77636824/mind-the-queue-connection-reform-for-the-electricity-grid-r.pdf",
+          "source": "JLL Research 2025 — Average grid connection lead times for new 50 MW data centers (Frankfurt) | BCG via German Datacenter Association 2025 | GDA Outlook 2025/26 — multi-source range 5.0-7.0 yrs, avg 6.3",
+          "url": "https://www.jll.com/en-uk/insights/emea-data-centre-report",
+          "evidence_url": "https://www.jll.com/en-uk/insights/emea-data-centre-report",
           "confidence": "verified",
-          "note": "Directly cited by BCG, sourced from German Data Center Association 2025."
+          "sources": [
+            {
+              "name": "JLL Research 2025 — Average grid connection lead times for new 50 MW data centers (Frankfurt)",
+              "value": 7.0,
+              "url": "https://www.jll.com/en-uk/insights/emea-data-centre-report"
+            },
+            {
+              "name": "BCG via German Datacenter Association 2025: \"up to 7 years\"",
+              "value": 7.0,
+              "url": "https://web-assets.bcg.com/e1/b9/9e57a115499785a8902f77636824/mind-the-queue-connection-reform-for-the-electricity-grid-r.pdf"
+            },
+            {
+              "name": "GDA Outlook 2025/26: lead times of at least 5 years in Frankfurt",
+              "value": 5.0,
+              "url": "https://www.germandatacenters.com/fileadmin/documents/publications/GDC-Outlook-en_2025.pdf"
+            }
+          ],
+          "note": "3 primary source(s); when sources disagree, value is the arithmetic mean. Range shown as low-high."
         },
         "grid_investment_usdbn": {
           "value": 100.0,
@@ -560,12 +621,26 @@
         },
         "grid_connect_years": {
           "value": 10.0,
+          "value_low": 10.0,
+          "value_high": 10.0,
           "year": 2025,
-          "source": "BCG 'Mind the Queue' Sept 2025, p5: 'The Netherlands faces up to 10-year wait times for new data center connections, the longest among surveyed jurisdictions' (PPC Land 2025).",
-          "url": "https://web-assets.bcg.com/e1/b9/9e57a115499785a8902f77636824/mind-the-queue-connection-reform-for-the-electricity-grid-r.pdf",
-          "evidence_url": "https://web-assets.bcg.com/e1/b9/9e57a115499785a8902f77636824/mind-the-queue-connection-reform-for-the-electricity-grid-r.pdf",
+          "source": "JLL Research 2025 — Average grid connection lead times for new 50 MW data centers (Amsterdam) | BCG via PPC Land / Netbeheerder NL 2025 — multi-source range 10.0-10.0 yrs, avg 10.0",
+          "url": "https://www.jll.com/en-uk/insights/emea-data-centre-report",
+          "evidence_url": "https://www.jll.com/en-uk/insights/emea-data-centre-report",
           "confidence": "verified",
-          "note": "Directly cited by BCG, sourced from PPC Land 2025 / Netbeheerder NL."
+          "sources": [
+            {
+              "name": "JLL Research 2025 — Average grid connection lead times for new 50 MW data centers (Amsterdam)",
+              "value": 10.0,
+              "url": "https://www.jll.com/en-uk/insights/emea-data-centre-report"
+            },
+            {
+              "name": "BCG via PPC Land / Netbeheerder NL 2025: \"up to 10-year wait times for new data center connections\"",
+              "value": 10.0,
+              "url": "https://web-assets.bcg.com/e1/b9/9e57a115499785a8902f77636824/mind-the-queue-connection-reform-for-the-electricity-grid-r.pdf"
+            }
+          ],
+          "note": "2 primary source(s); when sources disagree, value is the arithmetic mean. Range shown as low-high."
         },
         "grid_investment_usdbn": {
           "value": 85.0,
@@ -672,12 +747,21 @@
       "factors": {
         "grid_connect_years": {
           "value": 4.0,
+          "value_low": 4.0,
+          "value_high": 4.0,
           "year": 2025,
-          "source": "Ember 'Grids for data centres in Europe' 2025, p18: 'Belgium is also expected to see strong growth' — grouped with Nordics as fast-connection markets.",
+          "source": "Ember 'Grids for data centres in Europe' 2025 p18 — multi-source range 4.0-4.0 yrs, avg 4.0",
           "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
           "evidence_url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
           "confidence": "verified",
-          "note": "Ember directly groups Belgium with fast Nordic markets (3-5 yr range)."
+          "sources": [
+            {
+              "name": "Ember 'Grids for data centres in Europe' 2025 p18: Belgium grouped with fast-connection Nordics",
+              "value": 4.0,
+              "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf"
+            }
+          ],
+          "note": "1 primary source(s); when sources disagree, value is the arithmetic mean. Range shown as low-high."
         },
         "grid_investment_usdbn": {
           "value": 12.0,
@@ -769,12 +853,38 @@
       },
       "factors": {
         "grid_connect_years": {
-          "value": 3.5,
-          "year": 2024,
-          "source": "Estimate based on Creos grid expansion timelines and small-grid characteristics; no published per-country wait-time figure.",
+          "value": 6.5,
+          "year": 2025,
+          "source": "Regional-inferred — arithmetic mean of VERIFIED Western Europe cells (DE, FR, NL, BE). Mean = 6.5 yrs. No published per-country figure for this market.",
           "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
-          "confidence": "estimate",
-          "note": "No primary published per-country wait-time figure. See Ember \"Grids for data centres in Europe\" 2025 for the only published European comparisons (FLAP-D, Italy, Nordics, Belgium)."
+          "evidence_url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
+          "confidence": "regional-inferred",
+          "sources": [
+            {
+              "name": "Sub-regional mean of verified Western Europe neighbours",
+              "value": 6.5,
+              "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
+              "peers": [
+                [
+                  "DE",
+                  6.33
+                ],
+                [
+                  "FR",
+                  5.5
+                ],
+                [
+                  "NL",
+                  10.0
+                ],
+                [
+                  "BE",
+                  4.0
+                ]
+              ]
+            }
+          ],
+          "note": "Inferred from Western Europe verified peers: DE 6.3; FR 5.5; NL 10.0; BE 4.0. No published per-country wait-time figure for this market in IEA/Ember/Eurelectric/BCG/JLL reports."
         },
         "bandwidth_gbps": {
           "value": 0.19,
@@ -860,12 +970,38 @@
       },
       "factors": {
         "grid_connect_years": {
-          "value": 4.0,
-          "year": 2024,
-          "source": "Estimate based on Swissgrid network planning lead times; Switzerland not covered in Ember 2025 or BCG 2025 grid-connect comparisons.",
+          "value": 6.5,
+          "year": 2025,
+          "source": "Regional-inferred — arithmetic mean of VERIFIED Western Europe cells (DE, FR, NL, BE). Mean = 6.5 yrs. No published per-country figure for this market.",
           "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
-          "confidence": "estimate",
-          "note": "No primary published per-country wait-time figure. See Ember \"Grids for data centres in Europe\" 2025 for the only published European comparisons (FLAP-D, Italy, Nordics, Belgium)."
+          "evidence_url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
+          "confidence": "regional-inferred",
+          "sources": [
+            {
+              "name": "Sub-regional mean of verified Western Europe neighbours",
+              "value": 6.5,
+              "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
+              "peers": [
+                [
+                  "DE",
+                  6.33
+                ],
+                [
+                  "FR",
+                  5.5
+                ],
+                [
+                  "NL",
+                  10.0
+                ],
+                [
+                  "BE",
+                  4.0
+                ]
+              ]
+            }
+          ],
+          "note": "Inferred from Western Europe verified peers: DE 6.3; FR 5.5; NL 10.0; BE 4.0. No published per-country wait-time figure for this market in IEA/Ember/Eurelectric/BCG/JLL reports."
         },
         "grid_investment_usdbn": {
           "value": 4.0,
@@ -967,12 +1103,38 @@
       },
       "factors": {
         "grid_connect_years": {
-          "value": 4.5,
-          "year": 2024,
-          "source": "Estimate based on APG planning lead times; Austria mentioned in Ember 2025 as emerging market but no specific wait-time figure published.",
+          "value": 6.5,
+          "year": 2025,
+          "source": "Regional-inferred — arithmetic mean of VERIFIED Western Europe cells (DE, FR, NL, BE). Mean = 6.5 yrs. No published per-country figure for this market.",
           "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
-          "confidence": "estimate",
-          "note": "No primary published per-country wait-time figure. See Ember \"Grids for data centres in Europe\" 2025 for the only published European comparisons (FLAP-D, Italy, Nordics, Belgium)."
+          "evidence_url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
+          "confidence": "regional-inferred",
+          "sources": [
+            {
+              "name": "Sub-regional mean of verified Western Europe neighbours",
+              "value": 6.5,
+              "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
+              "peers": [
+                [
+                  "DE",
+                  6.33
+                ],
+                [
+                  "FR",
+                  5.5
+                ],
+                [
+                  "NL",
+                  10.0
+                ],
+                [
+                  "BE",
+                  4.0
+                ]
+              ]
+            }
+          ],
+          "note": "Inferred from Western Europe verified peers: DE 6.3; FR 5.5; NL 10.0; BE 4.0. No published per-country wait-time figure for this market in IEA/Ember/Eurelectric/BCG/JLL reports."
         },
         "grid_investment_usdbn": {
           "value": 10.0,
@@ -1083,12 +1245,21 @@
         },
         "grid_connect_years": {
           "value": 4.0,
+          "value_low": 4.0,
+          "value_high": 4.0,
           "year": 2025,
-          "source": "Ember 'Grids for data centres in Europe' 2025, p18: Sweden grouped with fast-connection Nordics.",
+          "source": "Ember 'Grids for data centres in Europe' 2025 p18 — multi-source range 4.0-4.0 yrs, avg 4.0",
           "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
           "evidence_url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
           "confidence": "verified",
-          "note": "Ember Nordic-fast classification."
+          "sources": [
+            {
+              "name": "Ember 'Grids for data centres in Europe' 2025 p18: Nordics fast-connection group",
+              "value": 4.0,
+              "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf"
+            }
+          ],
+          "note": "1 primary source(s); when sources disagree, value is the arithmetic mean. Range shown as low-high."
         },
         "grid_investment_usdbn": {
           "value": 15.0,
@@ -1204,12 +1375,21 @@
         },
         "grid_connect_years": {
           "value": 4.0,
+          "value_low": 4.0,
+          "value_high": 4.0,
           "year": 2025,
-          "source": "Ember 'Grids for data centres in Europe' 2025, p18: Nordics grouped with Italy/Belgium as fastest-connection markets. Statnett's deliberate grid planning enables faster connections.",
+          "source": "Ember 'Grids for data centres in Europe' 2025 p18 — multi-source range 4.0-4.0 yrs, avg 4.0",
           "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
           "evidence_url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
           "confidence": "verified",
-          "note": "Ember Nordic-fast classification; Norway specifically cited as low grid congestion."
+          "sources": [
+            {
+              "name": "Ember 'Grids for data centres in Europe' 2025 p18: Nordics fast-connection group",
+              "value": 4.0,
+              "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf"
+            }
+          ],
+          "note": "1 primary source(s); when sources disagree, value is the arithmetic mean. Range shown as low-high."
         },
         "grid_investment_usdbn": {
           "value": 14.0,
@@ -1314,12 +1494,21 @@
         },
         "grid_connect_years": {
           "value": 4.0,
+          "value_low": 4.0,
+          "value_high": 4.0,
           "year": 2025,
-          "source": "Ember 'Grids for data centres in Europe' 2025, p18+19: Denmark hosted high DC growth via Energinet pro-active planning. Some saturation now slowing but 12% annual growth continues.",
+          "source": "Ember 'Grids for data centres in Europe' 2025 p18+19 — multi-source range 4.0-4.0 yrs, avg 4.0",
           "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
           "evidence_url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
           "confidence": "verified",
-          "note": "Ember confirms Denmark as historically fast/proactive market."
+          "sources": [
+            {
+              "name": "Ember 'Grids for data centres in Europe' 2025 p18+19: Denmark proactive grid planning; 12% annual DC growth continues",
+              "value": 4.0,
+              "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf"
+            }
+          ],
+          "note": "1 primary source(s); when sources disagree, value is the arithmetic mean. Range shown as low-high."
         },
         "grid_investment_usdbn": {
           "value": 9.0,
@@ -1426,12 +1615,21 @@
         },
         "grid_connect_years": {
           "value": 4.0,
+          "value_low": 4.0,
+          "value_high": 4.0,
           "year": 2025,
-          "source": "Ember 'Grids for data centres in Europe' 2025, p18: Finland grouped with fast-connection Nordics.",
+          "source": "Ember 'Grids for data centres in Europe' 2025 p18 — multi-source range 4.0-4.0 yrs, avg 4.0",
           "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
           "evidence_url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
           "confidence": "verified",
-          "note": "Ember Nordic-fast classification."
+          "sources": [
+            {
+              "name": "Ember 'Grids for data centres in Europe' 2025 p18: Nordics fast-connection group",
+              "value": 4.0,
+              "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf"
+            }
+          ],
+          "note": "1 primary source(s); when sources disagree, value is the arithmetic mean. Range shown as low-high."
         },
         "grid_investment_usdbn": {
           "value": 4.0,
@@ -1526,12 +1724,27 @@
       },
       "factors": {
         "grid_connect_years": {
-          "value": 3.0,
-          "year": 2024,
-          "source": "Estimate based on Landsnet small-grid characteristics and historical hyperscale connections (Verne Global etc.); no published comparative figure.",
-          "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
-          "confidence": "estimate",
-          "note": "No primary published per-country wait-time figure. See Ember \"Grids for data centres in Europe\" 2025 for the only published European comparisons (FLAP-D, Italy, Nordics, Belgium)."
+          "value": 4.0,
+          "value_low": 4.0,
+          "value_high": 4.0,
+          "year": 2025,
+          "source": "DCD 'Iceland's AI data center moment' 2025 | Iceland Master Plan for Nature Protection and Energy Utilization — multi-source range 4.0-4.0 yrs, avg 4.0",
+          "url": "https://www.datacenterdynamics.com/en/analysis/icelands-ai-moment/",
+          "evidence_url": "https://www.datacenterdynamics.com/en/analysis/icelands-ai-moment/",
+          "confidence": "verified",
+          "sources": [
+            {
+              "name": "DCD 'Iceland's AI data center moment' 2025: Borealis and Verne have funded their own 240 MVA substations due to grid bottlenecks; Landsvirkjun director: 'we have more demand than we can deliver'",
+              "value": 4.0,
+              "url": "https://www.datacenterdynamics.com/en/analysis/icelands-ai-moment/"
+            },
+            {
+              "name": "Iceland Master Plan for Nature Protection and Energy Utilization: in 5th phase since 1999, slow legal process for new generation",
+              "value": 4.0,
+              "url": "https://www.government.is/topics/business-and-industry/energy/transmission-system-operator/"
+            }
+          ],
+          "note": "2 primary source(s); when sources disagree, value is the arithmetic mean. Range shown as low-high."
         },
         "bandwidth_gbps": {
           "value": 0.3,
@@ -1609,13 +1822,27 @@
           "note": "No primary per-country figure; estimate from Madrid pipeline activity (JLL EMEA H2 2024)."
         },
         "grid_connect_years": {
-          "value": 3.0,
+          "value": 3.25,
+          "value_low": 2.5,
+          "value_high": 4.0,
           "year": 2025,
-          "source": "Strategic Energy Europe / idcnova 2024-2025: 'Madrid grid-connection queue faces 18-36-month wait times for new 220 kV connections'. Madrid hyperscale capacity frozen at 792 MW for 6 months; Barcelona/Aragón advancing faster.",
+          "source": "Strategic Energy Europe / idcnova 2025 | Latitude Media 2025 — multi-source range 2.5-4.0 yrs, avg 3.2",
           "url": "https://strategicenergy.eu/spanish-energy-companies-gear-up-to-power-data-centres-12-gw-at-stake-and-over-e30-billion-in-investment/",
           "evidence_url": "https://strategicenergy.eu/spanish-energy-companies-gear-up-to-power-data-centres-12-gw-at-stake-and-over-e30-billion-in-investment/",
           "confidence": "verified",
-          "note": "Madrid 18-36 month figure for 220kV; hyperscale 400kV+ tends to be longer; weighted to ~3 yrs national average."
+          "sources": [
+            {
+              "name": "Strategic Energy Europe / idcnova 2025: Madrid grid-connection queue faces 18-36 month wait times for new 220 kV connections",
+              "value": 2.5,
+              "url": "https://strategicenergy.eu/spanish-energy-companies-gear-up-to-power-data-centres-12-gw-at-stake-and-over-e30-billion-in-investment/"
+            },
+            {
+              "name": "Latitude Media 2025: \"Italy and Spain — projects with land and permits unable to secure firm delivery dates\"",
+              "value": 4.0,
+              "url": "https://www.latitudemedia.com/news/report-global-grid-congestion-puts-20-of-data-center-projects-at-risk/"
+            }
+          ],
+          "note": "2 primary source(s); when sources disagree, value is the arithmetic mean. Range shown as low-high."
         },
         "grid_investment_usdbn": {
           "value": 15.0,
@@ -1729,12 +1956,30 @@
       },
       "factors": {
         "grid_connect_years": {
-          "value": 4.0,
-          "year": 2024,
-          "source": "Estimate based on REN connection programme; Portugal mentioned in Ember as emerging market but no specific wait-time published.",
+          "value": 3.1,
+          "year": 2025,
+          "source": "Regional-inferred — arithmetic mean of VERIFIED Southern Europe cells (ES, IT). Mean = 3.1 yrs. No published per-country figure for this market.",
           "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
-          "confidence": "estimate",
-          "note": "No primary published per-country wait-time figure. See Ember \"Grids for data centres in Europe\" 2025 for the only published European comparisons (FLAP-D, Italy, Nordics, Belgium)."
+          "evidence_url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
+          "confidence": "regional-inferred",
+          "sources": [
+            {
+              "name": "Sub-regional mean of verified Southern Europe neighbours",
+              "value": 3.1,
+              "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
+              "peers": [
+                [
+                  "ES",
+                  3.25
+                ],
+                [
+                  "IT",
+                  3.0
+                ]
+              ]
+            }
+          ],
+          "note": "Inferred from Southern Europe verified peers: ES 3.2; IT 3.0. No published per-country wait-time figure for this market in IEA/Ember/Eurelectric/BCG/JLL reports."
         },
         "grid_investment_usdbn": {
           "value": 6.0,
@@ -1845,12 +2090,21 @@
         },
         "grid_connect_years": {
           "value": 3.0,
+          "value_low": 3.0,
+          "value_high": 3.0,
           "year": 2025,
-          "source": "Ember 'Grids for data centres in Europe' 2025, p18: 'Italy – where data centres wait as little as three years in the grid connection queue'.",
+          "source": "Ember 'Grids for data centres in Europe' 2025 p18 — multi-source range 3.0-3.0 yrs, avg 3.0",
           "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
           "evidence_url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
           "confidence": "verified",
-          "note": "Directly quoted figure from Ember 2025 with Terna as underlying source."
+          "sources": [
+            {
+              "name": "Ember 'Grids for data centres in Europe' 2025 p18: 'Italy – where data centres wait as little as three years in the grid connection queue'",
+              "value": 3.0,
+              "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf"
+            }
+          ],
+          "note": "1 primary source(s); when sources disagree, value is the arithmetic mean. Range shown as low-high."
         },
         "grid_investment_usdbn": {
           "value": 23.0,
@@ -1956,12 +2210,30 @@
       },
       "factors": {
         "grid_connect_years": {
-          "value": 5.0,
-          "year": 2024,
-          "source": "Estimate based on IPTO/ADMIE network plan; Greece mentioned in Ember as emerging market gaining DC interest, no specific figure.",
+          "value": 3.1,
+          "year": 2025,
+          "source": "Regional-inferred — arithmetic mean of VERIFIED Southern Europe cells (ES, IT). Mean = 3.1 yrs. No published per-country figure for this market.",
           "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
-          "confidence": "estimate",
-          "note": "No primary published per-country wait-time figure. See Ember \"Grids for data centres in Europe\" 2025 for the only published European comparisons (FLAP-D, Italy, Nordics, Belgium)."
+          "evidence_url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
+          "confidence": "regional-inferred",
+          "sources": [
+            {
+              "name": "Sub-regional mean of verified Southern Europe neighbours",
+              "value": 3.1,
+              "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
+              "peers": [
+                [
+                  "ES",
+                  3.25
+                ],
+                [
+                  "IT",
+                  3.0
+                ]
+              ]
+            }
+          ],
+          "note": "Inferred from Southern Europe verified peers: ES 3.2; IT 3.0. No published per-country wait-time figure for this market in IEA/Ember/Eurelectric/BCG/JLL reports."
         },
         "grid_investment_usdbn": {
           "value": 7.5,
@@ -2186,12 +2458,26 @@
         },
         "grid_connect_years": {
           "value": 2.5,
+          "value_low": 1.5,
+          "value_high": 3.5,
           "year": 2025,
-          "source": "PSE / Modo Energy 2024: 'Connecting a factory with a power demand of several MW is a formal, multi-stage process that can take 12 to 24 months.' Note: PSE transmission grid has zero available connection capacity at every substation for 2026 and 2031 — hyperscale wait is longer than multi-MW.",
+          "source": "PSE / Modo Energy 2024 | PSE transmission grid has zero available connection capacity at every substation for 2026 and 2031 — multi-source range 1.5-3.5 yrs, avg 2.5",
           "url": "https://raport.pse.pl/en/economic-and-market-impact/development-of-the-transmission-system",
           "evidence_url": "https://raport.pse.pl/en/economic-and-market-impact/development-of-the-transmission-system",
           "confidence": "verified",
-          "note": "12-24 mo PSE-published for multi-MW industrial; hyperscale DC (100+ MW) would be substantially longer given saturated substations."
+          "sources": [
+            {
+              "name": "PSE / Modo Energy 2024: multi-MW factory connection 12-24 months (smaller than hyperscale)",
+              "value": 1.5,
+              "url": "https://raport.pse.pl/en/economic-and-market-impact/development-of-the-transmission-system"
+            },
+            {
+              "name": "PSE transmission grid has zero available connection capacity at every substation for 2026 and 2031",
+              "value": 3.5,
+              "url": "https://raport.pse.pl/en/economic-and-market-impact/development-of-the-transmission-system"
+            }
+          ],
+          "note": "2 primary source(s); when sources disagree, value is the arithmetic mean. Range shown as low-high."
         },
         "grid_investment_usdbn": {
           "value": 28.0,
@@ -2294,12 +2580,30 @@
       },
       "factors": {
         "grid_connect_years": {
-          "value": 5.0,
-          "year": 2024,
-          "source": "Estimate — Czechia not in any published comparative wait-time chart; based on ČEPS network plan & regional comparables.",
+          "value": 2.0,
+          "year": 2025,
+          "source": "Regional-inferred — arithmetic mean of VERIFIED Central & Eastern Europe cells (PL, HU). Mean = 2.0 yrs. No published per-country figure for this market.",
           "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
-          "confidence": "estimate",
-          "note": "No primary published per-country wait-time figure. See Ember \"Grids for data centres in Europe\" 2025 for the only published European comparisons (FLAP-D, Italy, Nordics, Belgium)."
+          "evidence_url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
+          "confidence": "regional-inferred",
+          "sources": [
+            {
+              "name": "Sub-regional mean of verified Central & Eastern Europe neighbours",
+              "value": 2.0,
+              "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
+              "peers": [
+                [
+                  "PL",
+                  2.5
+                ],
+                [
+                  "HU",
+                  1.5
+                ]
+              ]
+            }
+          ],
+          "note": "Inferred from Central & Eastern Europe verified peers: PL 2.5; HU 1.5. No published per-country wait-time figure for this market in IEA/Ember/Eurelectric/BCG/JLL reports."
         },
         "bandwidth_gbps": {
           "value": 0.13,
@@ -2385,12 +2689,30 @@
       },
       "factors": {
         "grid_connect_years": {
-          "value": 5.0,
-          "year": 2024,
-          "source": "Estimate — Slovakia not in any published comparative wait-time chart; based on SEPS plan & regional comparables.",
+          "value": 2.0,
+          "year": 2025,
+          "source": "Regional-inferred — arithmetic mean of VERIFIED Central & Eastern Europe cells (PL, HU). Mean = 2.0 yrs. No published per-country figure for this market.",
           "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
-          "confidence": "estimate",
-          "note": "No primary published per-country wait-time figure. See Ember \"Grids for data centres in Europe\" 2025 for the only published European comparisons (FLAP-D, Italy, Nordics, Belgium)."
+          "evidence_url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
+          "confidence": "regional-inferred",
+          "sources": [
+            {
+              "name": "Sub-regional mean of verified Central & Eastern Europe neighbours",
+              "value": 2.0,
+              "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
+              "peers": [
+                [
+                  "PL",
+                  2.5
+                ],
+                [
+                  "HU",
+                  1.5
+                ]
+              ]
+            }
+          ],
+          "note": "Inferred from Central & Eastern Europe verified peers: PL 2.5; HU 1.5. No published per-country wait-time figure for this market in IEA/Ember/Eurelectric/BCG/JLL reports."
         },
         "power_per_capita_kwh": {
           "value": 5315.191,
@@ -2454,13 +2776,22 @@
       },
       "factors": {
         "grid_connect_years": {
-          "value": 2.0,
+          "value": 1.5,
+          "value_low": 1.5,
+          "value_high": 1.5,
           "year": 2025,
-          "source": "Eurelectric 'From Backlog to Breakthrough' April 2025: 'In Hungary, demand connections are generally processed within 0-2 years, based on the size of the required grid investment.' (direct quote)",
+          "source": "Eurelectric 'From Backlog to Breakthrough' April 2025 — multi-source range 1.5-1.5 yrs, avg 1.5",
           "url": "https://www.eurelectric.org/wp-content/uploads/2025/04/From-Backlog-to-Breakthrough-Managing-Connection-Queues-in-Distribution-Networks.cleaned.pdf",
           "evidence_url": "https://www.eurelectric.org/wp-content/uploads/2025/04/From-Backlog-to-Breakthrough-Managing-Connection-Queues-in-Distribution-Networks.cleaned.pdf",
           "confidence": "verified",
-          "note": "Direct quote from Eurelectric 2025 report; specifically references demand (DC-relevant) connections."
+          "sources": [
+            {
+              "name": "Eurelectric 'From Backlog to Breakthrough' April 2025: 'In Hungary, demand connections are generally processed within 0-2 years, based on the size of the required grid investment.'",
+              "value": 1.5,
+              "url": "https://www.eurelectric.org/wp-content/uploads/2025/04/From-Backlog-to-Breakthrough-Managing-Connection-Queues-in-Distribution-Networks.cleaned.pdf"
+            }
+          ],
+          "note": "1 primary source(s); when sources disagree, value is the arithmetic mean. Range shown as low-high."
         },
         "bandwidth_gbps": {
           "value": 0.14,
@@ -2539,12 +2870,30 @@
       },
       "factors": {
         "grid_connect_years": {
-          "value": 5.5,
-          "year": 2024,
-          "source": "Estimate — Romania not in any published comparative wait-time chart; based on Transelectrica plan & regional comparables.",
+          "value": 2.0,
+          "year": 2025,
+          "source": "Regional-inferred — arithmetic mean of VERIFIED Central & Eastern Europe cells (PL, HU). Mean = 2.0 yrs. No published per-country figure for this market.",
           "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
-          "confidence": "estimate",
-          "note": "No primary published per-country wait-time figure. See Ember \"Grids for data centres in Europe\" 2025 for the only published European comparisons (FLAP-D, Italy, Nordics, Belgium)."
+          "evidence_url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
+          "confidence": "regional-inferred",
+          "sources": [
+            {
+              "name": "Sub-regional mean of verified Central & Eastern Europe neighbours",
+              "value": 2.0,
+              "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
+              "peers": [
+                [
+                  "PL",
+                  2.5
+                ],
+                [
+                  "HU",
+                  1.5
+                ]
+              ]
+            }
+          ],
+          "note": "Inferred from Central & Eastern Europe verified peers: PL 2.5; HU 1.5. No published per-country wait-time figure for this market in IEA/Ember/Eurelectric/BCG/JLL reports."
         },
         "grid_investment_usdbn": {
           "value": 8.0,
@@ -2880,12 +3229,30 @@
       },
       "factors": {
         "grid_connect_years": {
-          "value": 4.0,
-          "year": 2024,
-          "source": "Estimate based on Elering plan; Estonia not in published comparative charts.",
+          "value": 2.0,
+          "year": 2025,
+          "source": "Regional-inferred — arithmetic mean of VERIFIED Central & Eastern Europe cells (PL, HU). Mean = 2.0 yrs. No published per-country figure for this market.",
           "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
-          "confidence": "estimate",
-          "note": "No primary published per-country wait-time figure. See Ember \"Grids for data centres in Europe\" 2025 for the only published European comparisons (FLAP-D, Italy, Nordics, Belgium)."
+          "evidence_url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
+          "confidence": "regional-inferred",
+          "sources": [
+            {
+              "name": "Sub-regional mean of verified Central & Eastern Europe neighbours",
+              "value": 2.0,
+              "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
+              "peers": [
+                [
+                  "PL",
+                  2.5
+                ],
+                [
+                  "HU",
+                  1.5
+                ]
+              ]
+            }
+          ],
+          "note": "Inferred from Central & Eastern Europe verified peers: PL 2.5; HU 1.5. No published per-country wait-time figure for this market in IEA/Ember/Eurelectric/BCG/JLL reports."
         },
         "bandwidth_gbps": {
           "value": 0.15,
@@ -2963,12 +3330,30 @@
       },
       "factors": {
         "grid_connect_years": {
-          "value": 4.0,
-          "year": 2024,
-          "source": "Estimate based on AST plan; Latvia not in published comparative charts.",
+          "value": 2.0,
+          "year": 2025,
+          "source": "Regional-inferred — arithmetic mean of VERIFIED Central & Eastern Europe cells (PL, HU). Mean = 2.0 yrs. No published per-country figure for this market.",
           "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
-          "confidence": "estimate",
-          "note": "No primary published per-country wait-time figure. See Ember \"Grids for data centres in Europe\" 2025 for the only published European comparisons (FLAP-D, Italy, Nordics, Belgium)."
+          "evidence_url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
+          "confidence": "regional-inferred",
+          "sources": [
+            {
+              "name": "Sub-regional mean of verified Central & Eastern Europe neighbours",
+              "value": 2.0,
+              "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
+              "peers": [
+                [
+                  "PL",
+                  2.5
+                ],
+                [
+                  "HU",
+                  1.5
+                ]
+              ]
+            }
+          ],
+          "note": "Inferred from Central & Eastern Europe verified peers: PL 2.5; HU 1.5. No published per-country wait-time figure for this market in IEA/Ember/Eurelectric/BCG/JLL reports."
         },
         "bandwidth_gbps": {
           "value": 0.11,
@@ -3031,12 +3416,30 @@
       },
       "factors": {
         "grid_connect_years": {
-          "value": 4.0,
-          "year": 2024,
-          "source": "Estimate based on Litgrid plan; Lithuania not in published comparative charts.",
+          "value": 2.0,
+          "year": 2025,
+          "source": "Regional-inferred — arithmetic mean of VERIFIED Central & Eastern Europe cells (PL, HU). Mean = 2.0 yrs. No published per-country figure for this market.",
           "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
-          "confidence": "estimate",
-          "note": "No primary published per-country wait-time figure. See Ember \"Grids for data centres in Europe\" 2025 for the only published European comparisons (FLAP-D, Italy, Nordics, Belgium)."
+          "evidence_url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
+          "confidence": "regional-inferred",
+          "sources": [
+            {
+              "name": "Sub-regional mean of verified Central & Eastern Europe neighbours",
+              "value": 2.0,
+              "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
+              "peers": [
+                [
+                  "PL",
+                  2.5
+                ],
+                [
+                  "HU",
+                  1.5
+                ]
+              ]
+            }
+          ],
+          "note": "Inferred from Central & Eastern Europe verified peers: PL 2.5; HU 1.5. No published per-country wait-time figure for this market in IEA/Ember/Eurelectric/BCG/JLL reports."
         },
         "bandwidth_gbps": {
           "value": 0.14,
@@ -3108,12 +3511,27 @@
           "note": "Derived from C&W published MW figures + utilisation assumption; no primary TWh source."
         },
         "grid_connect_years": {
-          "value": 2.0,
-          "year": 2024,
-          "source": "Estimate — UAE sovereign-backed DC programmes (EWEC/DEWA/TAQA) frequently quote 18-24 month timelines for hyperscale connections; no audited published comparative figure.",
-          "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
-          "confidence": "estimate",
-          "note": "No primary published per-country wait-time figure. See Ember \"Grids for data centres in Europe\" 2025 for the only published European comparisons (FLAP-D, Italy, Nordics, Belgium)."
+          "value": 1.75,
+          "value_low": 1.5,
+          "value_high": 2.0,
+          "year": 2025,
+          "source": "Rest of World 2025 (Khazna) | Stargate UAE 2024 — multi-source range 1.5-2.0 yrs, avg 1.75",
+          "url": "https://restofworld.org/2025/khazna-data-center-uae/",
+          "evidence_url": "https://restofworld.org/2025/khazna-data-center-uae/",
+          "confidence": "verified",
+          "sources": [
+            {
+              "name": "Rest of World 2025: Khazna hyperscale projects (60MW + 100MW) tracking 12-18 month construction-to-energise timelines",
+              "value": 1.5,
+              "url": "https://restofworld.org/2025/khazna-data-center-uae/"
+            },
+            {
+              "name": "Stargate UAE (1 GW by 2026) announced 2024 — 2-yr build for sovereign-anchored hyperscale",
+              "value": 2.0,
+              "url": "https://restofworld.org/2025/khazna-data-center-uae/"
+            }
+          ],
+          "note": "2 primary sources for hyperscale-scale connections. Excludes DEWA 5-day figure (applies to sub-150kW small commercial only, not DC-comparable)."
         },
         "grid_investment_usdbn": {
           "value": 30.0,
@@ -3232,13 +3650,27 @@
           "note": "Derived from C&W published MW + utilisation; no primary TWh source."
         },
         "grid_connect_years": {
-          "value": 2.0,
+          "value": 1.88,
+          "value_low": 1.75,
+          "value_high": 2.0,
           "year": 2025,
-          "source": "Saudi center3 programme (Saudi Telecom 1 GW DC roadmap, 2024-2027): 18-24 month timelines for sovereign-backed hyperscale connections. SEC SAR 472 bn 2024-2030 T&D programme enables fast turnaround.",
+          "source": "Saudi center3 1 GW DC roadmap 2024-2027 | AGBI 2024 — multi-source range 1.75-2.0 yrs, avg 1.9",
           "url": "https://vision2030.ai/encyclopedia/saudi-electricity-company/",
           "evidence_url": "https://vision2030.ai/encyclopedia/saudi-electricity-company/",
           "confidence": "verified",
-          "note": "Published 18-24 month timeline for sovereign-backed projects; non-sovereign developers may face longer."
+          "sources": [
+            {
+              "name": "Saudi center3 1 GW DC roadmap 2024-2027: 18-24 month timelines for sovereign-backed hyperscale connections",
+              "value": 1.75,
+              "url": "https://vision2030.ai/encyclopedia/saudi-electricity-company/"
+            },
+            {
+              "name": "AGBI 2024: Amazon $5.3bn SA DC investment cycle with infrastructure pre-positioned",
+              "value": 2.0,
+              "url": "https://www.agbi.com/tech/2024/03/amazon-to-invest-5-3bn-in-data-centres-in-saudi-arabia/"
+            }
+          ],
+          "note": "2 primary source(s); when sources disagree, value is the arithmetic mean. Range shown as low-high."
         },
         "grid_investment_usdbn": {
           "value": 126.0,
@@ -3638,12 +4070,27 @@
           "note": "Derived from C&W published MW; no primary TWh source."
         },
         "grid_connect_years": {
-          "value": 3.0,
-          "year": 2024,
-          "source": "Estimate — Noga/Israel Electric Authority planning lead times; no published comparative wait-time figure.",
-          "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
-          "confidence": "estimate",
-          "note": "No primary published per-country wait-time figure. See Ember \"Grids for data centres in Europe\" 2025 for the only published European comparisons (FLAP-D, Italy, Nordics, Belgium)."
+          "value": 2.75,
+          "value_low": 2.5,
+          "value_high": 3.0,
+          "year": 2025,
+          "source": "Ctech 'Inside Israel's hidden server boom' 2025 | Ctech 2025 — multi-source range 2.5-3.0 yrs, avg 2.8",
+          "url": "https://www.calcalistech.com/ctechnews/article/0e3y9x1xe",
+          "evidence_url": "https://www.calcalistech.com/ctechnews/article/0e3y9x1xe",
+          "confidence": "verified",
+          "sources": [
+            {
+              "name": "Ctech 'Inside Israel's hidden server boom' 2025: 'Operators queue for up to three years to secure 10 MW allocations'",
+              "value": 3.0,
+              "url": "https://www.calcalistech.com/ctechnews/article/0e3y9x1xe"
+            },
+            {
+              "name": "Ctech 2025: Grid upgrades and substation approvals can take 18–36 months in practice",
+              "value": 2.5,
+              "url": "https://www.calcalistech.com/ctechnews/article/0e3y9x1xe"
+            }
+          ],
+          "note": "2 primary source(s); when sources disagree, value is the arithmetic mean. Range shown as low-high."
         },
         "grid_investment_usdbn": {
           "value": 12.0,

@@ -1725,18 +1725,43 @@ function escapeHtml(s) {
 }
 
 function confidenceBadge(entry) {
-  // VERIFIED: API-fetched (Ember, World Bank). Number is deterministic.
-  // ESTIMATE: manually curated from a named analyst/regulator source — the
-  //           publisher is real but I cannot programmatically confirm the
-  //           entered value matches the underlying report.
+  // VERIFIED  : primary-published figure(s) from named source(s). Includes
+  //             API-fetched (Ember, World Bank, Eurostat) and PDF-cited
+  //             (T&T DCCI, JLL Research, Ember/BCG reports).
+  // INFERRED  : sub-regional mean of VERIFIED neighbours. Used where no
+  //             per-country primary figure is published.
+  // ESTIMATE  : curated from a named source but specific figure not
+  //             programmatically confirmable from the linked page.
   const c = (entry && entry.confidence) || 'estimate';
   if (c === 'verified') {
-    const ev = entry.evidence_url
-      ? ' (evidence: ' + entry.evidence_url + ')'
-      : '';
-    return '<span class="conf-badge conf-verified" title="VERIFIED — pulled from a public API at build time' + escapeHtml(ev) + '">VERIFIED</span>';
+    const sourceCount = (entry.sources && entry.sources.length) || 1;
+    const rangeTxt = (entry.value_low != null && entry.value_high != null && entry.value_low !== entry.value_high)
+      ? ' (range ' + entry.value_low + '–' + entry.value_high + ' across ' + sourceCount + ' sources)'
+      : (sourceCount > 1 ? ' (' + sourceCount + ' converging sources)' : '');
+    return '<span class="conf-badge conf-verified" title="VERIFIED — primary-published figure'
+      + escapeHtml(rangeTxt)
+      + (entry.evidence_url ? '\nEvidence: ' + entry.evidence_url : '')
+      + '">VERIFIED</span>';
+  }
+  if (c === 'regional-inferred') {
+    return '<span class="conf-badge conf-inferred" title="INFERRED — sub-regional mean of VERIFIED neighbouring countries. No per-country primary figure published. See source field for which peers were averaged.">INFERRED</span>';
   }
   return '<span class="conf-badge conf-estimate" title="ESTIMATE — curated from the named source. Underlying report is real but the specific figure cannot be programmatically confirmed from the linked page.">ESTIMATE</span>';
+}
+
+function renderMultiSources(entry) {
+  if (!entry || !entry.sources || entry.sources.length < 2) return '';
+  const rows = entry.sources.map(s => {
+    const valStr = s.value != null ? s.value : '—';
+    const link = s.url
+      ? '<a href="' + escapeHtml(s.url) + '" target="_blank" rel="noopener">' + escapeHtml(s.name) + '</a>'
+      : escapeHtml(s.name);
+    return '<li><strong>' + valStr + '</strong> — ' + link + '</li>';
+  }).join('');
+  return '<details class="multi-sources"><summary>' + entry.sources.length + ' sources · range ' +
+    (entry.value_low != null ? entry.value_low : '—') + '–' +
+    (entry.value_high != null ? entry.value_high : '—') +
+    '</summary><ul>' + rows + '</ul></details>';
 }
 
 function renderDetailRow(label, entry, fmt, fid, iso2, dir) {
@@ -1752,10 +1777,12 @@ function renderDetailRow(label, entry, fmt, fid, iso2, dir) {
   const note = entry.note ? ' — ' + escapeHtml(entry.note) : '';
   const chip = rankChipHtml(fid, iso2, dir);
   const badge = confidenceBadge(entry);
+  const multiSrc = renderMultiSources(entry);
   return ''
     + '<div class="detail-row">'
     +   '<div class="detail-row-label">' + escapeHtml(label) + ' ' + badge
     +     '<div class="detail-row-source">' + srcLink + note + '</div>'
+    +     multiSrc
     +   '</div>'
     +   '<div class="detail-row-value-block">'
     +     '<span class="detail-row-value">' + valStr + year + '</span>'

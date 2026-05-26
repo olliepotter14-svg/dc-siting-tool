@@ -10,7 +10,7 @@
   <link href="https://api.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.css" rel="stylesheet" />
   <script src="https://api.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.js"></script>
   <script src="config.js"></script>
-  <link rel="stylesheet" href="style.css?v=32" />
+  <link rel="stylesheet" href="style.css?v=33" />
 </head>
 <body class="mobile-tab-map">
 
@@ -59,9 +59,11 @@
     <div class="data-disclaimer">
       Each value carries a confidence badge.
       <span class="disc-tag disc-verified">VERIFIED</span>
-      = pulled from a public API (Ember, World Bank).
+      = primary-published figure (API like Ember/World Bank/Eurostat, or named PDF like T&amp;T DCCI, JLL Research, Ember Grids 2025). Click into a cell to expand multi-source breakdowns where multiple primaries exist.
+      <span class="disc-tag disc-inferred">INFERRED</span>
+      = sub-regional mean of verified neighbouring countries (used where no per-country primary exists, e.g. CEE grid-connect times averaged from Poland + Hungary).
       <span class="disc-tag disc-estimate">ESTIMATE</span>
-      = curated from a named analyst/regulator source (T&amp;T DCCI, C&amp;W, JLL, national TSOs) where the specific figure isn't directly extractable from the linked page. Use as a side-by-side digest, not a primary-source database.
+      = analyst-derived from a named source where the specific figure isn't directly extractable.
     </div>
 
     <div class="filter-section">
@@ -221,6 +223,6 @@
     <div class="compare-drawer-body" id="compare-drawer-body"></div>
   </div>
 
-  <script src="markets.js?v=32"></script>
+  <script src="markets.js?v=33"></script>
 </body>
 </html>
