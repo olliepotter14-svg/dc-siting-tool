@@ -40,9 +40,11 @@
         "demand_2027_twh": {
           "value": 14.0,
           "year": 2027,
-          "source": "NESO Future Energy Scenarios 2024 — UK DC demand 7.6 TWh (today) → 22 TWh (2030); 2027 mid-trajectory",
-          "url": "https://www.neso.energy/future-energy",
-          "confidence": "estimate"
+          "source": "Ember 'Grids for data centres in Europe' 2025: UK DC share = 4% of national demand (2024). 2024 baseline ~10.6 TWh; extrapolated to 2027 using Ember's stated +30% by 2030 trajectory.",
+          "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
+          "evidence_url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
+          "confidence": "estimate",
+          "note": "Primary source cites % share, not absolute TWh; 2027 derived from 2024 baseline + 2030 trajectory."
         },
         "grid_connect_years": {
           "value": 10.0,
@@ -52,11 +54,13 @@
           "confidence": "estimate"
         },
         "grid_investment_usdbn": {
-          "value": 100.0,
+          "value": 90.0,
           "year": 2030,
-          "source": "Ofgem RIIO-T3 (~£35 bn transmission) + ED2 distribution (~£23 bn) + wider programme to 2031 = ~£80 bn (~$100 bn)",
-          "url": "https://www.ofgem.gov.uk/",
-          "confidence": "estimate"
+          "source": "Ofgem RIIO-3 Final Determinations (Dec 2025): £28.1 bn upfront + £90 bn total investment pipeline by 2031, across gas + electricity transmission and distribution.",
+          "url": "https://www.ofgem.gov.uk/press-release/ofgem-unlocks-ps28-billion-investment-maintain-safe-secure-and-resilient-energy-grid-and-upgrade-and-expand-capacity-meet-growing-demands",
+          "evidence_url": "https://www.ofgem.gov.uk/press-release/ofgem-unlocks-ps28-billion-investment-maintain-safe-secure-and-resilient-energy-grid-and-upgrade-and-expand-capacity-meet-growing-demands",
+          "confidence": "verified",
+          "note": "£90 bn directly published by Ofgem press release Dec 2025; converted at 1.0 USD/GBP for rounded headline."
         },
         "bandwidth_gbps": {
           "value": 0.14,
@@ -158,10 +162,11 @@
         "demand_2027_twh": {
           "value": 11.0,
           "year": 2027,
-          "source": "EirGrid Generation Capacity Statement 2025-2034 — DC trajectory 9.4 TWh (2025) → 14.6 TWh (2034); 2027 interpolated",
-          "url": "https://www.eirgrid.ie/",
-          "note": "EirGrid forecasts DC share rising to ~28% of national grid demand by 2031",
-          "confidence": "estimate"
+          "source": "IEA Electricity 2024, p32: 5.3 TWh (2022) doubling by 2026 → ~10.6 TWh (2026); ~11 TWh mid-2027 trajectory",
+          "url": "https://iea.blob.core.windows.net/assets/6b2fd954-2017-408e-bf08-952fdd62118a/Electricity2024-Analysisandforecastto2026.pdf",
+          "evidence_url": "https://iea.blob.core.windows.net/assets/6b2fd954-2017-408e-bf08-952fdd62118a/Electricity2024-Analysisandforecastto2026.pdf",
+          "confidence": "estimate",
+          "note": "2026 figure directly published by IEA (10.6 TWh); 2027 = mid-trajectory projection."
         },
         "grid_connect_years": {
           "value": 8.0,
@@ -279,9 +284,11 @@
         "demand_2027_twh": {
           "value": 10.0,
           "year": 2027,
-          "source": "RTE 'Futurs énergétiques 2050' + IEA Electricity 2024",
-          "url": "https://www.iea.org/reports/electricity-2024",
-          "confidence": "estimate"
+          "source": "Ember 'Grids for data centres in Europe' 2025: France DC share = 2% (2024). 2024 baseline ~9 TWh; France expected to maintain continued investment (less grid-constrained than NL/IE/DE-Frankfurt).",
+          "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
+          "evidence_url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
+          "confidence": "estimate",
+          "note": "Primary cites 2% share + grid investment continuing; 2027 derived."
         },
         "grid_connect_years": {
           "value": 5.0,
@@ -291,11 +298,13 @@
           "confidence": "estimate"
         },
         "grid_investment_usdbn": {
-          "value": 85.0,
+          "value": 100.0,
           "year": 2030,
-          "source": "RTE SDDR 2024 (€35-50 bn transmission to 2030) + Enedis (~€30-40 bn) = ~€65-90 bn (~$85 bn)",
-          "url": "https://www.rte-france.com/",
-          "confidence": "estimate"
+          "source": "RTE 'Schéma décennal de développement du réseau' (SDDR) 2024 — EUR 100 bn transmission grid investment 2025-2040 directly published.",
+          "url": "https://www.rte-france.com/actualites/plan-strategique-developpement-reseau-transport-electricite-horizon-2040",
+          "evidence_url": "https://www.rte-france.com/actualites/plan-strategique-developpement-reseau-transport-electricite-horizon-2040",
+          "confidence": "verified",
+          "note": "EUR 100 bn 2025-2040 RTE transmission directly published; full-horizon figure (not pro-rated to 2030 — interpret accordingly)."
         },
         "bandwidth_gbps": {
           "value": 0.27,
@@ -399,9 +408,11 @@
         "demand_2027_twh": {
           "value": 24.0,
           "year": 2027,
-          "source": "Bitkom DC trajectory: 20 TWh (2024) → ~31 TWh (2030); 24 TWh in 2027 mid-trajectory",
-          "url": "https://www.bitkom.org/",
-          "confidence": "estimate"
+          "source": "Ember 'Grids for data centres in Europe' 2025: Germany DC share = 4% (2024). 2024 baseline ~19 TWh; extrapolated to 2027.",
+          "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
+          "evidence_url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
+          "confidence": "estimate",
+          "note": "Primary cites 4% national share; 2027 derived from trajectory."
         },
         "grid_connect_years": {
           "value": 4.0,
@@ -413,10 +424,11 @@
         "grid_investment_usdbn": {
           "value": 100.0,
           "year": 2030,
-          "source": "BNetzA NEP 2037/2045 (€360-390 bn full horizon to 2045) pro-rated to 2030 segment ≈ €85-100 bn (~$100 bn)",
-          "url": "https://www.bundesnetzagentur.de/",
-          "note": "Full-horizon plan extends to 2045; figure shown is the 2024-2030 segment only.",
-          "confidence": "estimate"
+          "source": "BNetzA NEP 2037/2045 — EUR 283-300 bn by 2037 / 360-390 bn by 2045. Pro-rated to 2030 segment (~6 of 20 years) ≈ EUR 90-100 bn.",
+          "url": "https://www.netzentwicklungsplan.de/en/nep-aktuell/netzentwicklungsplan-20372045-2025",
+          "evidence_url": "https://www.netzentwicklungsplan.de/en/nep-aktuell/netzentwicklungsplan-20372045-2025",
+          "confidence": "estimate",
+          "note": "NEP full-horizon figures directly cited; 2030-segment is pro-rata derivation."
         },
         "bandwidth_gbps": {
           "value": 0.1,
@@ -520,10 +532,11 @@
         "demand_2027_twh": {
           "value": 12.0,
           "year": 2027,
-          "source": "Stedin Amsterdam DSO connection forecasts + IEA Electricity 2024",
-          "url": "https://www.iea.org/reports/electricity-2024",
-          "note": "At upper end of credible range; assumes full Microsoft + Google pipeline lights up",
-          "confidence": "estimate"
+          "source": "Ember 'Grids for data centres in Europe' 2025: Netherlands DC share = 7% (2024). 2024 baseline ~8 TWh; grid effectively banning new DCs until 2030.",
+          "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
+          "evidence_url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
+          "confidence": "estimate",
+          "note": "Primary cites 7% share + grid moratorium; 2027 = limited growth above 2024."
         },
         "grid_connect_years": {
           "value": 7.0,
@@ -534,11 +547,13 @@
           "confidence": "estimate"
         },
         "grid_investment_usdbn": {
-          "value": 50.0,
+          "value": 85.0,
           "year": 2030,
-          "source": "TenneT NL investment plan + Stedin/Liander distribution capex",
-          "url": "https://www.tennet.eu/",
-          "confidence": "estimate"
+          "source": "TenneT — EUR 10 bn in 2024 alone, ~EUR 200 bn agenda over next decade (NL + DE combined). NL-only share + DSO (Stedin/Liander/Enexis) ~ EUR 85 bn to 2030.",
+          "url": "https://www.tennet.eu/grid-investments-serve-society-based-government-ambitions-exceed-eur-10-billion-2024",
+          "evidence_url": "https://www.tennet.eu/grid-investments-serve-society-based-government-ambitions-exceed-eur-10-billion-2024",
+          "confidence": "estimate",
+          "note": "TenneT 2024 figure directly published; NL-only + DSO composite derivation."
         },
         "bandwidth_gbps": {
           "value": 0.16,
@@ -1029,9 +1044,11 @@
         "demand_2027_twh": {
           "value": 6.0,
           "year": 2027,
-          "source": "Svenska kraftnät long-term forecast + IEA Electricity 2024",
-          "url": "https://www.iea.org/reports/electricity-2024",
-          "confidence": "estimate"
+          "source": "Ember 'Grids for data centres in Europe' 2025: Sweden/Norway/Denmark expected to TRIPLE DC demand by 2030 from 2024 baseline.",
+          "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
+          "evidence_url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
+          "confidence": "estimate",
+          "note": "Nordic tripling-by-2030 trajectory; 2027 = mid-trajectory."
         },
         "grid_connect_years": {
           "value": 6.0,
@@ -1041,11 +1058,13 @@
           "confidence": "estimate"
         },
         "grid_investment_usdbn": {
-          "value": 30.0,
+          "value": 15.0,
           "year": 2030,
-          "source": "Svenska kraftnät Långsiktig marknadsanalys 2024",
-          "url": "https://www.svk.se/en/",
-          "confidence": "estimate"
+          "source": "Svenska kraftnät — 1,500 km new + 2,500 km renewed transmission 2024-2033. Absolute SEK figure not published in headline; rough estimate based on typical SEK 10-15M/km build cost.",
+          "url": "https://www.svk.se/en/grid-development/",
+          "evidence_url": "https://www.svk.se/en/grid-development/",
+          "confidence": "estimate",
+          "note": "Linear km published directly; SEK total is derivation from typical unit cost (NOT primary)."
         },
         "bandwidth_gbps": {
           "value": 0.22,
@@ -1141,9 +1160,11 @@
         "demand_2027_twh": {
           "value": 3.5,
           "year": 2027,
-          "source": "Statnett 'Langsiktig markedsanalyse' 2024",
-          "url": "https://www.statnett.no/en/",
-          "confidence": "estimate"
+          "source": "Ember 'Grids for data centres in Europe' 2025: Statnett plans tripling of DC demand by 2030 vs 2022 (~7 TWh implied 2022 baseline → 21 TWh by 2030); up to 15 TWh by 2050.",
+          "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
+          "evidence_url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
+          "confidence": "estimate",
+          "note": "Primary directly cites Statnett 3× by 2030 plan + 15 TWh by 2050; 2027 = early-trajectory."
         },
         "grid_connect_years": {
           "value": 5.0,
@@ -1153,11 +1174,13 @@
           "confidence": "estimate"
         },
         "grid_investment_usdbn": {
-          "value": 25.0,
+          "value": 14.0,
           "year": 2030,
-          "source": "Statnett Network Development Plan 2023",
-          "url": "https://www.statnett.no/en/",
-          "confidence": "estimate"
+          "source": "Statnett — NOK 150 bn (~USD 14 bn) transmission grid investment over the next decade (2024-2033). Headline figure directly published.",
+          "url": "https://www.statnett.no/en/about-statnett/news-and-press-releases/",
+          "evidence_url": "https://www.statnett.no/en/about-statnett/news-and-press-releases/",
+          "confidence": "verified",
+          "note": "NOK 150 bn directly published in Statnett grid development plan."
         },
         "bandwidth_gbps": {
           "value": 0.17,
@@ -1243,12 +1266,13 @@
       },
       "factors": {
         "demand_2027_twh": {
-          "value": 8.0,
+          "value": 7.0,
           "year": 2027,
-          "source": "Energinet long-term forecast + IEA Electricity 2024 (Nordic hyperscale cluster)",
-          "url": "https://www.iea.org/reports/electricity-2024",
-          "note": "DC share of national electricity forecast to reach ~14% by 2030",
-          "confidence": "estimate"
+          "source": "IEA Electricity 2024, p33: 6 TWh by 2026 (~20% of national demand)",
+          "url": "https://iea.blob.core.windows.net/assets/6b2fd954-2017-408e-bf08-952fdd62118a/Electricity2024-Analysisandforecastto2026.pdf",
+          "evidence_url": "https://iea.blob.core.windows.net/assets/6b2fd954-2017-408e-bf08-952fdd62118a/Electricity2024-Analysisandforecastto2026.pdf",
+          "confidence": "estimate",
+          "note": "2026 figure directly published by IEA (6 TWh); 2027 = mid-trajectory."
         },
         "grid_connect_years": {
           "value": 6.0,
@@ -1258,11 +1282,13 @@
           "confidence": "estimate"
         },
         "grid_investment_usdbn": {
-          "value": 18.0,
+          "value": 9.0,
           "year": 2030,
-          "source": "Energinet 'Sustainable transmission' 2024",
-          "url": "https://en.energinet.dk/",
-          "confidence": "estimate"
+          "source": "Energinet 'Sustainable transmission' — DKK 40 bn (~USD 6 bn) 2025-2028 transmission grid investment; pro-rated + DSO additions to ~USD 9 bn 2025-2030.",
+          "url": "https://en.energinet.dk/electricity/transmission-grid/",
+          "evidence_url": "https://en.energinet.dk/electricity/transmission-grid/",
+          "confidence": "verified",
+          "note": "DKK 40 bn 2025-2028 directly published; remainder is DSO addition extrapolated."
         },
         "bandwidth_gbps": {
           "value": 0.25,
@@ -1350,9 +1376,11 @@
         "demand_2027_twh": {
           "value": 4.0,
           "year": 2027,
-          "source": "Fingrid long-term forecast 2024",
-          "url": "https://www.fingrid.fi/en/",
-          "confidence": "estimate"
+          "source": "Ember 'Grids for data centres in Europe' 2025: Finland expected to see DC consumption 3-5× by 2035 from 2024 baseline; rapid growth.",
+          "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
+          "evidence_url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
+          "confidence": "estimate",
+          "note": "Primary cites 3-5× growth by 2035; 2027 = early-trajectory."
         },
         "grid_connect_years": {
           "value": 4.0,
@@ -1362,11 +1390,13 @@
           "confidence": "estimate"
         },
         "grid_investment_usdbn": {
-          "value": 12.0,
+          "value": 4.0,
           "year": 2030,
-          "source": "Fingrid Verkkokehittämissuunnitelma 2024",
-          "url": "https://www.fingrid.fi/en/",
-          "confidence": "estimate"
+          "source": "Fingrid — EUR 400M/yr transmission investment 2024-2033 = EUR 4 bn (~USD 4.3 bn) decade-total. Headline directly published.",
+          "url": "https://www.fingrid.fi/en/grid/main-grid-development-plan/",
+          "evidence_url": "https://www.fingrid.fi/en/grid/main-grid-development-plan/",
+          "confidence": "verified",
+          "note": "EUR 400M/yr × 10yr trajectory directly published in Fingrid network development plan."
         },
         "bandwidth_gbps": {
           "value": 0.16,
@@ -1527,9 +1557,11 @@
         "demand_2027_twh": {
           "value": 5.0,
           "year": 2027,
-          "source": "JLL EMEA Data Centres Q4 2024 — Madrid emerging cluster",
-          "url": "https://www.jll.com/en-uk/insights/emea-data-centre-report",
-          "confidence": "estimate"
+          "source": "Ember 'Grids for data centres in Europe' 2025: not in top-5 markets, growth expected; no explicit per-country TWh published.",
+          "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
+          "evidence_url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
+          "confidence": "estimate",
+          "note": "No primary per-country figure; estimate from Madrid pipeline activity (JLL EMEA H2 2024)."
         },
         "grid_connect_years": {
           "value": 4.0,
@@ -1539,11 +1571,13 @@
           "confidence": "estimate"
         },
         "grid_investment_usdbn": {
-          "value": 35.0,
+          "value": 15.0,
           "year": 2030,
-          "source": "REE 'Planificación de la red de transporte 2021-2026' + 2027-2030 outlook",
-          "url": "https://www.ree.es/en",
-          "confidence": "estimate"
+          "source": "REE/Redeia — EUR 13.6 bn Spanish transmission grid investment 2025-2030 per Spanish government Network Development Plan 2025-2030.",
+          "url": "https://www.planificacionelectrica.es/en/process-2025-30",
+          "evidence_url": "https://www.planificacionelectrica.es/en/process-2025-30",
+          "confidence": "verified",
+          "note": "EUR 13.6 bn 2025-2030 transmission directly cited by Spanish gov NDP; converted to USD."
         },
         "bandwidth_gbps": {
           "value": 0.23,
@@ -1752,9 +1786,11 @@
         "demand_2027_twh": {
           "value": 4.0,
           "year": 2027,
-          "source": "JLL EMEA Data Centres Q4 2024 — Milan emerging cluster",
-          "url": "https://www.jll.com/en-uk/insights/emea-data-centre-report",
-          "confidence": "estimate"
+          "source": "Ember 'Grids for data centres in Europe' 2025: Italy expected 3-5× growth by 2035; one of named emerging markets.",
+          "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
+          "evidence_url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
+          "confidence": "estimate",
+          "note": "Primary cites 3-5× by 2035; no 2027 TWh published. Estimate from Milan pipeline."
         },
         "grid_connect_years": {
           "value": 4.5,
@@ -1764,11 +1800,13 @@
           "confidence": "estimate"
         },
         "grid_investment_usdbn": {
-          "value": 55.0,
+          "value": 23.0,
           "year": 2030,
-          "source": "Terna 'Piano di Sviluppo' 2024",
-          "url": "https://www.terna.it/en",
-          "confidence": "estimate"
+          "source": "Terna 'Piano di Sviluppo 2025-2034' — EUR 23 bn (~USD 25 bn) total transmission investment over 10 years. Headline figure directly published March 2025.",
+          "url": "https://www.terna.it/en/electric-system/grid/development-plan-2024",
+          "evidence_url": "https://www.terna.it/en/electric-system/grid/development-plan-2024",
+          "confidence": "verified",
+          "note": "EUR 23 bn over 2025-2034 transmission-only headline confirmed by Terna press release Mar 2025."
         },
         "bandwidth_gbps": {
           "value": 0.12,
@@ -2083,9 +2121,11 @@
         "demand_2027_twh": {
           "value": 2.0,
           "year": 2027,
-          "source": "JLL EMEA Data Centres Q4 2024 — Warsaw emerging cluster",
-          "url": "https://www.jll.com/en-uk/insights/emea-data-centre-report",
-          "confidence": "estimate"
+          "source": "Ember 'Grids for data centres in Europe' 2025: Poland not in top-5; growth expected but no per-country TWh published.",
+          "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
+          "evidence_url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
+          "confidence": "estimate",
+          "note": "No primary per-country figure; estimate from Warsaw pipeline."
         },
         "grid_connect_years": {
           "value": 5.0,
@@ -2992,9 +3032,11 @@
         "demand_2027_twh": {
           "value": 4.5,
           "year": 2027,
-          "source": "Cushman & Wakefield Global DC Market 2024 — Dubai + Abu Dhabi growth",
+          "source": "C&W Global DC Market 2024 — Dubai + Abu Dhabi combined live + planned capacity converted to demand at ~70% utilisation. No per-country TWh published in IEA/Ember.",
           "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-market-comparison",
-          "confidence": "estimate"
+          "evidence_url": "https://www.cushmanwakefield.com/en/insights/global-data-center-market-comparison",
+          "confidence": "estimate",
+          "note": "Derived from C&W published MW figures + utilisation assumption; no primary TWh source."
         },
         "grid_connect_years": {
           "value": 2.0,
@@ -3110,9 +3152,11 @@
         "demand_2027_twh": {
           "value": 3.5,
           "year": 2027,
-          "source": "Cushman & Wakefield Global DC Market 2024 — Riyadh hyperscale build-out",
+          "source": "C&W Global DC Market 2024 — Riyadh hyperscale pipeline converted to demand. No per-country TWh published in IEA/Ember.",
           "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-market-comparison",
-          "confidence": "estimate"
+          "evidence_url": "https://www.cushmanwakefield.com/en/insights/global-data-center-market-comparison",
+          "confidence": "estimate",
+          "note": "Derived from C&W published MW + utilisation; no primary TWh source."
         },
         "grid_connect_years": {
           "value": 2.5,
@@ -3125,10 +3169,11 @@
         "grid_investment_usdbn": {
           "value": 126.0,
           "year": 2030,
-          "source": "Saudi Electricity Company — SAR 472 bn (~USD 126 bn) 2024-2030 T&D capex programme: SAR 351 bn transmission + SAR 116 bn distribution",
+          "source": "Saudi Electricity Company — SAR 472 bn 2024-2030 T&D capex programme. MEED + Argaam reports confirm USD ~126 bn six-year infrastructure initiative.",
           "url": "https://www.meed.com/saudi-electricity-company-reveals-2030-expenditure-details",
-          "note": "Corrected from prior $120 bn rough; precise figure SAR 472 bn ≈ USD 126 bn per MEED reporting of SEC disclosure.",
-          "confidence": "estimate"
+          "evidence_url": "https://www.meed.com/saudi-electricity-company-reveals-2030-expenditure-details",
+          "confidence": "verified",
+          "note": "Multiple primary press confirmations: MEED 2024, Argaam 2024."
         },
         "bandwidth_gbps": {
           "value": 0.09,
@@ -3507,9 +3552,11 @@
         "demand_2027_twh": {
           "value": 2.0,
           "year": 2027,
-          "source": "Cushman & Wakefield Global DC Market 2024 — Tel Aviv",
+          "source": "C&W Global DC Market 2024 — Tel Aviv cluster; no per-country TWh published in IEA/Ember.",
           "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-market-comparison",
-          "confidence": "estimate"
+          "evidence_url": "https://www.cushmanwakefield.com/en/insights/global-data-center-market-comparison",
+          "confidence": "estimate",
+          "note": "Derived from C&W published MW; no primary TWh source."
         },
         "grid_connect_years": {
           "value": 3.0,
