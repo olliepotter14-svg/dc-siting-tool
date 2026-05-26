@@ -98,6 +98,36 @@
         </select>
       </div>
 
+      <!-- Scoring weights — adjust dimension importance -->
+      <div class="filter-label mt" id="weights-toggle">
+        <span>Scoring weights</span>
+        <span class="weights-caret">▾</span>
+      </div>
+      <div class="weights-panel" id="weights-panel">
+        <p class="weights-hint">Adjust how much each dimension counts toward the composite. Values normalise to 100%.</p>
+        <div class="weight-row">
+          <span class="weight-name">Power</span>
+          <input type="range" class="weight-slider" data-dim="power" min="0" max="100" value="40" />
+          <span class="weight-val" data-dim="power">40%</span>
+        </div>
+        <div class="weight-row">
+          <span class="weight-name">Permissioning</span>
+          <input type="range" class="weight-slider" data-dim="permissioning" min="0" max="100" value="30" />
+          <span class="weight-val" data-dim="permissioning">30%</span>
+        </div>
+        <div class="weight-row">
+          <span class="weight-name">Fibre</span>
+          <input type="range" class="weight-slider" data-dim="fibre" min="0" max="100" value="20" />
+          <span class="weight-val" data-dim="fibre">20%</span>
+        </div>
+        <div class="weight-row">
+          <span class="weight-name">Buildability</span>
+          <input type="range" class="weight-slider" data-dim="buildability" min="0" max="100" value="10" />
+          <span class="weight-val" data-dim="buildability">10%</span>
+        </div>
+        <button class="weight-reset" id="weight-reset-btn">Reset to default (40/30/20/10)</button>
+      </div>
+
       <!-- Hard exclusion toggle -->
       <div class="toggle-row">
         <span class="toggle-label-text">Exclude flood zone 3</span>
@@ -188,6 +218,6 @@
     <input name="district" />
   </form>
 
-  <script src="map.js?v=13"></script>
+  <script src="map.js?v=15"></script>
 </body>
 </html>

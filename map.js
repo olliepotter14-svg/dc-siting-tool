@@ -48,6 +48,9 @@ const state = {
   activeId:         null,
   colorMode:        "composite", // "type" | "power" | "composite"
   mwValue:          50,       // numeric MW — any value
+  // Scoring weights (raw 0-100 slider values; normalised at use time).
+  // Default split mirrors the original baked-in composite: 40/30/20/10.
+  weights: { power: 40, permissioning: 30, fibre: 20, buildability: 10 },
   showSubstations:  true,
   showPowerlines:   true,
   showFibreRoutes:  false,
@@ -129,17 +132,61 @@ function getPowerScore(props, mw) {
   return lerp(s50, s100, (mw - 50) / 50);
 }
 
-/** Interpolate composite score. Falls back to power score if composite not yet enriched. */
+/** Normalised composite weights — sum = 1 (or default split if all zero). */
+function normalisedWeights() {
+  const w = state.weights;
+  const sum = (w.power|0) + (w.permissioning|0) + (w.fibre|0) + (w.buildability|0);
+  if (sum <= 0) return { power: .40, permissioning: .30, fibre: .20, buildability: .10 };
+  return {
+    power:         w.power         / sum,
+    permissioning: w.permissioning / sum,
+    fibre:         w.fibre         / sum,
+    buildability:  w.buildability  / sum,
+  };
+}
+
+/** Compute composite from sub-scores using current weights — runtime version
+ *  so user-adjusted weights take effect without re-enriching the GeoJSON. */
 function getCompositeScore(props, mw) {
   mw = mw || state.mwValue;
-  const s20  = props.composite_score_20  ?? null;
-  const s50  = props.composite_score_50  ?? null;
-  const s100 = props.composite_score_100 ?? null;
-  if (s20 === null) return getPowerScore(props, mw);  // pre-enrichment fallback
-  if (mw <= 20)  return s20;
-  if (mw >= 100) return s100;
-  if (mw <= 50)  return lerp(s20, s50, (mw - 20) / 30);
-  return lerp(s50, s100, (mw - 50) / 50);
+  // Flood Zone 3 and other hard exclusions zero the score entirely
+  if (props.hard_excluded) return 0;
+  // Pre-enrichment fallback — power only
+  if (props.permissioning_score == null && props.fibre_score == null) {
+    return getPowerScore(props, mw);
+  }
+  const w = normalisedWeights();
+  return (
+    getPowerScore(props, mw)         * w.power +
+    (props.permissioning_score ?? 0) * w.permissioning +
+    (props.fibre_score ?? 0)         * w.fibre +
+    (props.buildability_score ?? 0)  * w.buildability
+  );
+}
+
+/**
+ * Push current weighted composite_score_20/50/100 back into each feature's
+ * properties so Mapbox style expressions (which read those props directly)
+ * pick them up. Called whenever weights change.
+ */
+function recomputeComposites() {
+  const w = normalisedWeights();
+  for (const f of state.allFeatures) {
+    const p = f.properties;
+    if (p.hard_excluded) {
+      p.composite_score_20 = 0;
+      p.composite_score_50 = 0;
+      p.composite_score_100 = 0;
+      continue;
+    }
+    const perm  = p.permissioning_score ?? 0;
+    const fibre = p.fibre_score         ?? 0;
+    const build = p.buildability_score  ?? 0;
+    const base  = perm * w.permissioning + fibre * w.fibre + build * w.buildability;
+    p.composite_score_20  = Math.round(((p.power_score_20  ?? 0) * w.power + base) * 10) / 10;
+    p.composite_score_50  = Math.round(((p.power_score_50  ?? 0) * w.power + base) * 10) / 10;
+    p.composite_score_100 = Math.round(((p.power_score_100 ?? 0) * w.power + base) * 10) / 10;
+  }
 }
 
 /** Return the active sort score based on colorMode. */
@@ -284,7 +331,7 @@ map.on("load", () => {
     fetch("data/uk_powerlines.geojson?v=8").then(r => r.json()),
     fetch("data/uk_fibre_routes.geojson?v=8").then(r => r.json()),
     fetch("data/uk_btm_assets.json?v=1").then(r => r.json()).catch(() => []),
-    fetch("data/ea_projects.geojson?v=11").then(r => r.json()).catch(() => ({type:"FeatureCollection",features:[]})),
+    fetch("data/ea_projects.geojson?v=12").then(r => r.json()).catch(() => ({type:"FeatureCollection",features:[]})),
   ])
   .then(([geojson, subsRaw, powerlines, fibreRoutes, btmAssets, eaProjects]) => {
     setLoadingMsg("Building map layers…", "", 95);
@@ -1033,6 +1080,52 @@ function initUI() {
   document.querySelectorAll(".mw-btn").forEach(btn => {
     btn.addEventListener("click", () => setMwValue(parseInt(btn.dataset.mw, 10)));
   });
+
+  // ── Scoring weight sliders ─────────────────────────────────────
+  // Each slider feeds state.weights; we re-normalise on every change,
+  // update the visible labels, recompute composite_score_* across all
+  // features in place, and refresh the map source + parcel list so
+  // colours, list ranking and the detail panel all reflect new weights.
+  function refreshWeightLabels() {
+    const w = normalisedWeights();
+    document.querySelectorAll(".weight-val").forEach(el => {
+      const dim = el.dataset.dim;
+      const pct = Math.round((w[dim] || 0) * 100);
+      el.textContent = pct + "%";
+    });
+  }
+  function applyWeightChange() {
+    refreshWeightLabels();
+    if (!state.allFeatures.length) return;
+    recomputeComposites();
+    if (map.getSource("parcels")) {
+      map.getSource("parcels").setData(buildFilteredGeoJSON());
+    }
+    refreshParcelColors();
+    applyFilters();   // re-rank list + score histograms
+  }
+  document.querySelectorAll(".weight-slider").forEach(sl => {
+    sl.addEventListener("input", (e) => {
+      const dim = e.target.dataset.dim;
+      state.weights[dim] = parseInt(e.target.value, 10) || 0;
+      // Throttle: only re-render on 'change' (mouseup) for heavy work,
+      // but live-update the labels on every 'input' tick.
+      refreshWeightLabels();
+    });
+    sl.addEventListener("change", applyWeightChange);
+  });
+  document.getElementById("weight-reset-btn")?.addEventListener("click", () => {
+    state.weights = { power: 40, permissioning: 30, fibre: 20, buildability: 10 };
+    document.querySelectorAll(".weight-slider").forEach(s => {
+      s.value = state.weights[s.dataset.dim];
+    });
+    applyWeightChange();
+  });
+  // Collapsible header
+  document.getElementById("weights-toggle")?.addEventListener("click", (e) => {
+    e.currentTarget.classList.toggle("collapsed");
+  });
+  refreshWeightLabels();
 
   // Overlay chip toggles (substations / powerlines / fibre)
   document.querySelectorAll(".overlay-chip").forEach(chip => {
