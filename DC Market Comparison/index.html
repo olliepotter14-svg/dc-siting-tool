@@ -10,7 +10,7 @@
   <link href="https://api.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.css" rel="stylesheet" />
   <script src="https://api.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.js"></script>
   <script src="config.js"></script>
-  <link rel="stylesheet" href="style.css?v=27" />
+  <link rel="stylesheet" href="style.css?v=28" />
 </head>
 <body class="mobile-tab-map">
 
@@ -54,6 +54,14 @@
         <span class="stat-value" id="stat-factors">13</span>
         <span class="stat-label">factors</span>
       </div>
+    </div>
+
+    <div class="data-disclaimer">
+      Each value carries a confidence badge.
+      <span class="disc-tag disc-verified">VERIFIED</span>
+      = pulled from a public API (Ember, World Bank).
+      <span class="disc-tag disc-estimate">ESTIMATE</span>
+      = curated from a named analyst/regulator source (T&amp;T DCCI, C&amp;W, JLL, national TSOs) where the specific figure isn't directly extractable from the linked page. Use as a side-by-side digest, not a primary-source database.
     </div>
 
     <div class="filter-section">
@@ -213,6 +221,6 @@
     <div class="compare-drawer-body" id="compare-drawer-body"></div>
   </div>
 
-  <script src="markets.js?v=27"></script>
+  <script src="markets.js?v=28"></script>
 </body>
 </html>

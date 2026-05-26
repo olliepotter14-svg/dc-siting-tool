@@ -3,288 +3,384 @@
     "value": 2058.3455,
     "year": 2024,
     "source": "Our World in Data (Ember 'Yearly Electricity Data')",
-    "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation"
+    "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation",
+    "confidence": "verified",
+    "evidence_url": "https://ember-climate.org/data-catalogue/yearly-electricity-data/"
   },
   "AT": {
     "value": 8034.1665,
     "year": 2025,
     "source": "Our World in Data (Ember 'Yearly Electricity Data')",
-    "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation"
+    "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation",
+    "confidence": "verified",
+    "evidence_url": "https://ember-climate.org/data-catalogue/yearly-electricity-data/"
   },
   "BH": {
     "value": 23614.566,
     "year": 2024,
     "source": "Our World in Data (Ember 'Yearly Electricity Data')",
-    "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation"
+    "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation",
+    "confidence": "verified",
+    "evidence_url": "https://ember-climate.org/data-catalogue/yearly-electricity-data/"
   },
   "BE": {
     "value": 6198.8667,
     "year": 2025,
     "source": "Our World in Data (Ember 'Yearly Electricity Data')",
-    "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation"
+    "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation",
+    "confidence": "verified",
+    "evidence_url": "https://ember-climate.org/data-catalogue/yearly-electricity-data/"
   },
   "BG": {
     "value": 5653.389,
     "year": 2025,
     "source": "Our World in Data (Ember 'Yearly Electricity Data')",
-    "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation"
+    "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation",
+    "confidence": "verified",
+    "evidence_url": "https://ember-climate.org/data-catalogue/yearly-electricity-data/"
   },
   "HR": {
     "value": 3820.0034,
     "year": 2025,
     "source": "Our World in Data (Ember 'Yearly Electricity Data')",
-    "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation"
+    "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation",
+    "confidence": "verified",
+    "evidence_url": "https://ember-climate.org/data-catalogue/yearly-electricity-data/"
   },
   "CY": {
     "value": 4311.4956,
     "year": 2025,
     "source": "Our World in Data (Ember 'Yearly Electricity Data')",
-    "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation"
+    "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation",
+    "confidence": "verified",
+    "evidence_url": "https://ember-climate.org/data-catalogue/yearly-electricity-data/"
   },
   "CZ": {
     "value": 7116.4375,
     "year": 2025,
     "source": "Our World in Data (Ember 'Yearly Electricity Data')",
-    "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation"
+    "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation",
+    "confidence": "verified",
+    "evidence_url": "https://ember-climate.org/data-catalogue/yearly-electricity-data/"
   },
   "DK": {
     "value": 5547.6743,
     "year": 2025,
     "source": "Our World in Data (Ember 'Yearly Electricity Data')",
-    "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation"
+    "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation",
+    "confidence": "verified",
+    "evidence_url": "https://ember-climate.org/data-catalogue/yearly-electricity-data/"
   },
   "EG": {
     "value": 2075.8496,
     "year": 2025,
     "source": "Our World in Data (Ember 'Yearly Electricity Data')",
-    "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation"
+    "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation",
+    "confidence": "verified",
+    "evidence_url": "https://ember-climate.org/data-catalogue/yearly-electricity-data/"
   },
   "EE": {
     "value": 4545.333,
     "year": 2025,
     "source": "Our World in Data (Ember 'Yearly Electricity Data')",
-    "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation"
+    "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation",
+    "confidence": "verified",
+    "evidence_url": "https://ember-climate.org/data-catalogue/yearly-electricity-data/"
   },
   "FI": {
     "value": 14635.462,
     "year": 2025,
     "source": "Our World in Data (Ember 'Yearly Electricity Data')",
-    "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation"
+    "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation",
+    "confidence": "verified",
+    "evidence_url": "https://ember-climate.org/data-catalogue/yearly-electricity-data/"
   },
   "FR": {
     "value": 8551.734,
     "year": 2025,
     "source": "Our World in Data (Ember 'Yearly Electricity Data')",
-    "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation"
+    "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation",
+    "confidence": "verified",
+    "evidence_url": "https://ember-climate.org/data-catalogue/yearly-electricity-data/"
   },
   "DE": {
     "value": 5952.6562,
     "year": 2025,
     "source": "Our World in Data (Ember 'Yearly Electricity Data')",
-    "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation"
+    "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation",
+    "confidence": "verified",
+    "evidence_url": "https://ember-climate.org/data-catalogue/yearly-electricity-data/"
   },
   "GR": {
     "value": 5862.853,
     "year": 2025,
     "source": "Our World in Data (Ember 'Yearly Electricity Data')",
-    "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation"
+    "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation",
+    "confidence": "verified",
+    "evidence_url": "https://ember-climate.org/data-catalogue/yearly-electricity-data/"
   },
   "HU": {
     "value": 4177.617,
     "year": 2025,
     "source": "Our World in Data (Ember 'Yearly Electricity Data')",
-    "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation"
+    "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation",
+    "confidence": "verified",
+    "evidence_url": "https://ember-climate.org/data-catalogue/yearly-electricity-data/"
   },
   "IS": {
     "value": 48423.5,
     "year": 2024,
     "source": "Our World in Data (Ember 'Yearly Electricity Data')",
-    "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation"
+    "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation",
+    "confidence": "verified",
+    "evidence_url": "https://ember-climate.org/data-catalogue/yearly-electricity-data/"
   },
   "IE": {
     "value": 5830.783,
     "year": 2025,
     "source": "Our World in Data (Ember 'Yearly Electricity Data')",
-    "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation"
+    "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation",
+    "confidence": "verified",
+    "evidence_url": "https://ember-climate.org/data-catalogue/yearly-electricity-data/"
   },
   "IL": {
     "value": 8626.503,
     "year": 2025,
     "source": "Our World in Data (Ember 'Yearly Electricity Data')",
-    "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation"
+    "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation",
+    "confidence": "verified",
+    "evidence_url": "https://ember-climate.org/data-catalogue/yearly-electricity-data/"
   },
   "IT": {
     "value": 4475.346,
     "year": 2025,
     "source": "Our World in Data (Ember 'Yearly Electricity Data')",
-    "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation"
+    "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation",
+    "confidence": "verified",
+    "evidence_url": "https://ember-climate.org/data-catalogue/yearly-electricity-data/"
   },
   "JO": {
     "value": 2048.8389,
     "year": 2024,
     "source": "Our World in Data (Ember 'Yearly Electricity Data')",
-    "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation"
+    "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation",
+    "confidence": "verified",
+    "evidence_url": "https://ember-climate.org/data-catalogue/yearly-electricity-data/"
   },
   "KE": {
     "value": 244.03601,
     "year": 2025,
     "source": "Our World in Data (Ember 'Yearly Electricity Data')",
-    "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation"
+    "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation",
+    "confidence": "verified",
+    "evidence_url": "https://ember-climate.org/data-catalogue/yearly-electricity-data/"
   },
   "KW": {
     "value": 18402.018,
     "year": 2025,
     "source": "Our World in Data (Ember 'Yearly Electricity Data')",
-    "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation"
+    "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation",
+    "confidence": "verified",
+    "evidence_url": "https://ember-climate.org/data-catalogue/yearly-electricity-data/"
   },
   "LV": {
     "value": 3382.6797,
     "year": 2025,
     "source": "Our World in Data (Ember 'Yearly Electricity Data')",
-    "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation"
+    "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation",
+    "confidence": "verified",
+    "evidence_url": "https://ember-climate.org/data-catalogue/yearly-electricity-data/"
   },
   "LT": {
     "value": 3141.1763,
     "year": 2025,
     "source": "Our World in Data (Ember 'Yearly Electricity Data')",
-    "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation"
+    "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation",
+    "confidence": "verified",
+    "evidence_url": "https://ember-climate.org/data-catalogue/yearly-electricity-data/"
   },
   "LU": {
     "value": 2263.1948,
     "year": 2025,
     "source": "Our World in Data (Ember 'Yearly Electricity Data')",
-    "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation"
+    "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation",
+    "confidence": "verified",
+    "evidence_url": "https://ember-climate.org/data-catalogue/yearly-electricity-data/"
   },
   "MT": {
     "value": 4015.3574,
     "year": 2025,
     "source": "Our World in Data (Ember 'Yearly Electricity Data')",
-    "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation"
+    "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation",
+    "confidence": "verified",
+    "evidence_url": "https://ember-climate.org/data-catalogue/yearly-electricity-data/"
   },
   "MA": {
     "value": 1157.9261,
     "year": 2025,
     "source": "Our World in Data (Ember 'Yearly Electricity Data')",
-    "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation"
+    "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation",
+    "confidence": "verified",
+    "evidence_url": "https://ember-climate.org/data-catalogue/yearly-electricity-data/"
   },
   "NL": {
     "value": 7356.0425,
     "year": 2025,
     "source": "Our World in Data (Ember 'Yearly Electricity Data')",
-    "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation"
+    "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation",
+    "confidence": "verified",
+    "evidence_url": "https://ember-climate.org/data-catalogue/yearly-electricity-data/"
   },
   "NG": {
     "value": 174.88481,
     "year": 2025,
     "source": "Our World in Data (Ember 'Yearly Electricity Data')",
-    "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation"
+    "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation",
+    "confidence": "verified",
+    "evidence_url": "https://ember-climate.org/data-catalogue/yearly-electricity-data/"
   },
   "NO": {
     "value": 28598.236,
     "year": 2025,
     "source": "Our World in Data (Ember 'Yearly Electricity Data')",
-    "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation"
+    "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation",
+    "confidence": "verified",
+    "evidence_url": "https://ember-climate.org/data-catalogue/yearly-electricity-data/"
   },
   "OM": {
     "value": 9616.547,
     "year": 2025,
     "source": "Our World in Data (Ember 'Yearly Electricity Data')",
-    "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation"
+    "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation",
+    "confidence": "verified",
+    "evidence_url": "https://ember-climate.org/data-catalogue/yearly-electricity-data/"
   },
   "PL": {
     "value": 4542.6284,
     "year": 2025,
     "source": "Our World in Data (Ember 'Yearly Electricity Data')",
-    "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation"
+    "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation",
+    "confidence": "verified",
+    "evidence_url": "https://ember-climate.org/data-catalogue/yearly-electricity-data/"
   },
   "PT": {
     "value": 4910.76,
     "year": 2025,
     "source": "Our World in Data (Ember 'Yearly Electricity Data')",
-    "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation"
+    "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation",
+    "confidence": "verified",
+    "evidence_url": "https://ember-climate.org/data-catalogue/yearly-electricity-data/"
   },
   "QA": {
     "value": 18030.156,
     "year": 2025,
     "source": "Our World in Data (Ember 'Yearly Electricity Data')",
-    "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation"
+    "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation",
+    "confidence": "verified",
+    "evidence_url": "https://ember-climate.org/data-catalogue/yearly-electricity-data/"
   },
   "RO": {
     "value": 2634.2434,
     "year": 2025,
     "source": "Our World in Data (Ember 'Yearly Electricity Data')",
-    "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation"
+    "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation",
+    "confidence": "verified",
+    "evidence_url": "https://ember-climate.org/data-catalogue/yearly-electricity-data/"
   },
   "SA": {
     "value": 13386.431,
     "year": 2024,
     "source": "Our World in Data (Ember 'Yearly Electricity Data')",
-    "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation"
+    "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation",
+    "confidence": "verified",
+    "evidence_url": "https://ember-climate.org/data-catalogue/yearly-electricity-data/"
   },
   "RS": {
     "value": 5474.6284,
     "year": 2025,
     "source": "Our World in Data (Ember 'Yearly Electricity Data')",
-    "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation"
+    "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation",
+    "confidence": "verified",
+    "evidence_url": "https://ember-climate.org/data-catalogue/yearly-electricity-data/"
   },
   "SK": {
     "value": 5315.191,
     "year": 2025,
     "source": "Our World in Data (Ember 'Yearly Electricity Data')",
-    "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation"
+    "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation",
+    "confidence": "verified",
+    "evidence_url": "https://ember-climate.org/data-catalogue/yearly-electricity-data/"
   },
   "SI": {
     "value": 7009.688,
     "year": 2025,
     "source": "Our World in Data (Ember 'Yearly Electricity Data')",
-    "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation"
+    "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation",
+    "confidence": "verified",
+    "evidence_url": "https://ember-climate.org/data-catalogue/yearly-electricity-data/"
   },
   "ZA": {
     "value": 3749.3442,
     "year": 2025,
     "source": "Our World in Data (Ember 'Yearly Electricity Data')",
-    "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation"
+    "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation",
+    "confidence": "verified",
+    "evidence_url": "https://ember-climate.org/data-catalogue/yearly-electricity-data/"
   },
   "ES": {
     "value": 6011.4897,
     "year": 2025,
     "source": "Our World in Data (Ember 'Yearly Electricity Data')",
-    "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation"
+    "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation",
+    "confidence": "verified",
+    "evidence_url": "https://ember-climate.org/data-catalogue/yearly-electricity-data/"
   },
   "SE": {
     "value": 16019.127,
     "year": 2025,
     "source": "Our World in Data (Ember 'Yearly Electricity Data')",
-    "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation"
+    "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation",
+    "confidence": "verified",
+    "evidence_url": "https://ember-climate.org/data-catalogue/yearly-electricity-data/"
   },
   "CH": {
     "value": 7250.6973,
     "year": 2025,
     "source": "Our World in Data (Ember 'Yearly Electricity Data')",
-    "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation"
+    "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation",
+    "confidence": "verified",
+    "evidence_url": "https://ember-climate.org/data-catalogue/yearly-electricity-data/"
   },
   "TN": {
     "value": 1806.686,
     "year": 2025,
     "source": "Our World in Data (Ember 'Yearly Electricity Data')",
-    "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation"
+    "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation",
+    "confidence": "verified",
+    "evidence_url": "https://ember-climate.org/data-catalogue/yearly-electricity-data/"
   },
   "TR": {
     "value": 4035.562,
     "year": 2025,
     "source": "Our World in Data (Ember 'Yearly Electricity Data')",
-    "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation"
+    "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation",
+    "confidence": "verified",
+    "evidence_url": "https://ember-climate.org/data-catalogue/yearly-electricity-data/"
   },
   "AE": {
     "value": 16074.892,
     "year": 2024,
     "source": "Our World in Data (Ember 'Yearly Electricity Data')",
-    "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation"
+    "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation",
+    "confidence": "verified",
+    "evidence_url": "https://ember-climate.org/data-catalogue/yearly-electricity-data/"
   },
   "GB": {
     "value": 4202.795,
     "year": 2025,
     "source": "Our World in Data (Ember 'Yearly Electricity Data')",
-    "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation"
+    "url": "https://ourworldindata.org/grapher/per-capita-electricity-generation",
+    "confidence": "verified",
+    "evidence_url": "https://ember-climate.org/data-catalogue/yearly-electricity-data/"
   }
 }

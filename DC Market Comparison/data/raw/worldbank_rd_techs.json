@@ -2,193 +2,257 @@
   "DZ": {
     "value": 41.86166,
     "year": 2017,
-    "source": "World Bank Indicators \u2014 Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",
-    "url": "https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6"
+    "source": "World Bank Indicators — Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",
+    "url": "https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6",
+    "confidence": "verified",
+    "evidence_url": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TECH.RD.P6"
   },
   "AT": {
     "value": 2648.10229,
     "year": 2017,
-    "source": "World Bank Indicators \u2014 Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",
-    "url": "https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6"
+    "source": "World Bank Indicators — Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",
+    "url": "https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6",
+    "confidence": "verified",
+    "evidence_url": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TECH.RD.P6"
   },
   "HR": {
     "value": 714.10522,
     "year": 2017,
-    "source": "World Bank Indicators \u2014 Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",
-    "url": "https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6"
+    "source": "World Bank Indicators — Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",
+    "url": "https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6",
+    "confidence": "verified",
+    "evidence_url": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TECH.RD.P6"
   },
   "CY": {
     "value": 325.14267,
     "year": 2017,
-    "source": "World Bank Indicators \u2014 Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",
-    "url": "https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6"
+    "source": "World Bank Indicators — Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",
+    "url": "https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6",
+    "confidence": "verified",
+    "evidence_url": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TECH.RD.P6"
   },
   "CZ": {
     "value": 2186.3591,
     "year": 2018,
-    "source": "World Bank Indicators \u2014 Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",
-    "url": "https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6"
+    "source": "World Bank Indicators — Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",
+    "url": "https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6",
+    "confidence": "verified",
+    "evidence_url": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TECH.RD.P6"
   },
   "EG": {
     "value": 369.55568,
     "year": 2018,
-    "source": "World Bank Indicators \u2014 Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",
-    "url": "https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6"
+    "source": "World Bank Indicators — Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",
+    "url": "https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6",
+    "confidence": "verified",
+    "evidence_url": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TECH.RD.P6"
   },
   "EE": {
     "value": 654.84807,
     "year": 2017,
-    "source": "World Bank Indicators \u2014 Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",
-    "url": "https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6"
+    "source": "World Bank Indicators — Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",
+    "url": "https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6",
+    "confidence": "verified",
+    "evidence_url": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TECH.RD.P6"
   },
   "FR": {
     "value": 1805.54395,
     "year": 2017,
-    "source": "World Bank Indicators \u2014 Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",
-    "url": "https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6"
+    "source": "World Bank Indicators — Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",
+    "url": "https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6",
+    "confidence": "verified",
+    "evidence_url": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TECH.RD.P6"
   },
   "DE": {
     "value": 2006.65327,
     "year": 2017,
-    "source": "World Bank Indicators \u2014 Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",
-    "url": "https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6"
+    "source": "World Bank Indicators — Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",
+    "url": "https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6",
+    "confidence": "verified",
+    "evidence_url": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TECH.RD.P6"
   },
   "HU": {
     "value": 770.31206,
     "year": 2017,
-    "source": "World Bank Indicators \u2014 Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",
-    "url": "https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6"
+    "source": "World Bank Indicators — Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",
+    "url": "https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6",
+    "confidence": "verified",
+    "evidence_url": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TECH.RD.P6"
   },
   "IS": {
     "value": 2371.46113,
     "year": 2017,
-    "source": "World Bank Indicators \u2014 Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",
-    "url": "https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6"
+    "source": "World Bank Indicators — Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",
+    "url": "https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6",
+    "confidence": "verified",
+    "evidence_url": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TECH.RD.P6"
   },
   "IE": {
     "value": 1164.60931,
     "year": 2017,
-    "source": "World Bank Indicators \u2014 Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",
-    "url": "https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6"
+    "source": "World Bank Indicators — Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",
+    "url": "https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6",
+    "confidence": "verified",
+    "evidence_url": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TECH.RD.P6"
   },
   "JO": {
     "value": 108.88597,
     "year": 2015,
-    "source": "World Bank Indicators \u2014 Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",
-    "url": "https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6"
+    "source": "World Bank Indicators — Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",
+    "url": "https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6",
+    "confidence": "verified",
+    "evidence_url": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TECH.RD.P6"
   },
   "KW": {
     "value": 45.19843,
     "year": 2018,
-    "source": "World Bank Indicators \u2014 Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",
-    "url": "https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6"
+    "source": "World Bank Indicators — Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",
+    "url": "https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6",
+    "confidence": "verified",
+    "evidence_url": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TECH.RD.P6"
   },
   "LU": {
     "value": 3166.02186,
     "year": 2017,
-    "source": "World Bank Indicators \u2014 Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",
-    "url": "https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6"
+    "source": "World Bank Indicators — Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",
+    "url": "https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6",
+    "confidence": "verified",
+    "evidence_url": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TECH.RD.P6"
   },
   "MT": {
     "value": 885.98028,
     "year": 2017,
-    "source": "World Bank Indicators \u2014 Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",
-    "url": "https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6"
+    "source": "World Bank Indicators — Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",
+    "url": "https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6",
+    "confidence": "verified",
+    "evidence_url": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TECH.RD.P6"
   },
   "MA": {
     "value": 40.25476,
     "year": 2016,
-    "source": "World Bank Indicators \u2014 Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",
-    "url": "https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6"
+    "source": "World Bank Indicators — Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",
+    "url": "https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6",
+    "confidence": "verified",
+    "evidence_url": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TECH.RD.P6"
   },
   "OM": {
     "value": 32.77024,
     "year": 2018,
-    "source": "World Bank Indicators \u2014 Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",
-    "url": "https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6"
+    "source": "World Bank Indicators — Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",
+    "url": "https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6",
+    "confidence": "verified",
+    "evidence_url": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TECH.RD.P6"
   },
   "PL": {
     "value": 415.27482,
     "year": 2017,
-    "source": "World Bank Indicators \u2014 Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",
-    "url": "https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6"
+    "source": "World Bank Indicators — Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",
+    "url": "https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6",
+    "confidence": "verified",
+    "evidence_url": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TECH.RD.P6"
   },
   "PT": {
     "value": 780.06385,
     "year": 2017,
-    "source": "World Bank Indicators \u2014 Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",
-    "url": "https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6"
+    "source": "World Bank Indicators — Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",
+    "url": "https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6",
+    "confidence": "verified",
+    "evidence_url": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TECH.RD.P6"
   },
   "QA": {
     "value": 397.09787,
     "year": 2018,
-    "source": "World Bank Indicators \u2014 Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",
-    "url": "https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6"
+    "source": "World Bank Indicators — Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",
+    "url": "https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6",
+    "confidence": "verified",
+    "evidence_url": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TECH.RD.P6"
   },
   "RO": {
     "value": 278.82409,
     "year": 2017,
-    "source": "World Bank Indicators \u2014 Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",
-    "url": "https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6"
+    "source": "World Bank Indicators — Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",
+    "url": "https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6",
+    "confidence": "verified",
+    "evidence_url": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TECH.RD.P6"
   },
   "RS": {
     "value": 412.03292,
     "year": 2018,
-    "source": "World Bank Indicators \u2014 Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",
-    "url": "https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6"
+    "source": "World Bank Indicators — Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",
+    "url": "https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6",
+    "confidence": "verified",
+    "evidence_url": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TECH.RD.P6"
   },
   "SK": {
     "value": 520.62951,
     "year": 2018,
-    "source": "World Bank Indicators \u2014 Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",
-    "url": "https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6"
+    "source": "World Bank Indicators — Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",
+    "url": "https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6",
+    "confidence": "verified",
+    "evidence_url": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TECH.RD.P6"
   },
   "SI": {
     "value": 1814.20289,
     "year": 2017,
-    "source": "World Bank Indicators \u2014 Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",
-    "url": "https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6"
+    "source": "World Bank Indicators — Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",
+    "url": "https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6",
+    "confidence": "verified",
+    "evidence_url": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TECH.RD.P6"
   },
   "ZA": {
     "value": 129.50941,
     "year": 2017,
-    "source": "World Bank Indicators \u2014 Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",
-    "url": "https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6"
+    "source": "World Bank Indicators — Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",
+    "url": "https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6",
+    "confidence": "verified",
+    "evidence_url": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TECH.RD.P6"
   },
   "ES": {
     "value": 1264.92042,
     "year": 2017,
-    "source": "World Bank Indicators \u2014 Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",
-    "url": "https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6"
+    "source": "World Bank Indicators — Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",
+    "url": "https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6",
+    "confidence": "verified",
+    "evidence_url": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TECH.RD.P6"
   },
   "CH": {
     "value": 2619.74154,
     "year": 2017,
-    "source": "World Bank Indicators \u2014 Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",
-    "url": "https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6"
+    "source": "World Bank Indicators — Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",
+    "url": "https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6",
+    "confidence": "verified",
+    "evidence_url": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TECH.RD.P6"
   },
   "TN": {
     "value": 61.73693,
     "year": 2018,
-    "source": "World Bank Indicators \u2014 Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",
-    "url": "https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6"
+    "source": "World Bank Indicators — Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",
+    "url": "https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6",
+    "confidence": "verified",
+    "evidence_url": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TECH.RD.P6"
   },
   "TR": {
     "value": 353.73836,
     "year": 2017,
-    "source": "World Bank Indicators \u2014 Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",
-    "url": "https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6"
+    "source": "World Bank Indicators — Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",
+    "url": "https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6",
+    "confidence": "verified",
+    "evidence_url": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TECH.RD.P6"
   },
   "AE": {
     "value": 889.5377,
     "year": 2018,
-    "source": "World Bank Indicators \u2014 Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",
-    "url": "https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6"
+    "source": "World Bank Indicators — Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",
+    "url": "https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6",
+    "confidence": "verified",
+    "evidence_url": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TECH.RD.P6"
   },
   "GB": {
     "value": 1305.4251,
     "year": 2016,
-    "source": "World Bank Indicators \u2014 Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",
-    "url": "https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6"
+    "source": "World Bank Indicators — Technicians in R&D (per million people, SP.POP.TECH.RD.P6)",
+    "url": "https://data.worldbank.org/indicator/SP.POP.TECH.RD.P6",
+    "confidence": "verified",
+    "evidence_url": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TECH.RD.P6"
   }
 }

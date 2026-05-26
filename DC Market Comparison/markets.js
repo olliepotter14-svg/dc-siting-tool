@@ -1724,6 +1724,21 @@ function escapeHtml(s) {
   }[ch]));
 }
 
+function confidenceBadge(entry) {
+  // VERIFIED: API-fetched (Ember, World Bank). Number is deterministic.
+  // ESTIMATE: manually curated from a named analyst/regulator source — the
+  //           publisher is real but I cannot programmatically confirm the
+  //           entered value matches the underlying report.
+  const c = (entry && entry.confidence) || 'estimate';
+  if (c === 'verified') {
+    const ev = entry.evidence_url
+      ? ' (evidence: ' + entry.evidence_url + ')'
+      : '';
+    return '<span class="conf-badge conf-verified" title="VERIFIED — pulled from a public API at build time' + escapeHtml(ev) + '">VERIFIED</span>';
+  }
+  return '<span class="conf-badge conf-estimate" title="ESTIMATE — curated from the named source. Underlying report is real but the specific figure cannot be programmatically confirmed from the linked page.">ESTIMATE</span>';
+}
+
 function renderDetailRow(label, entry, fmt, fid, iso2, dir) {
   if (!entry || entry.value == null) {
     return '<div class="detail-row"><span class="detail-row-label">' + escapeHtml(label) + '</span>'
@@ -1736,9 +1751,10 @@ function renderDetailRow(label, entry, fmt, fid, iso2, dir) {
     : escapeHtml(entry.source || '');
   const note = entry.note ? ' — ' + escapeHtml(entry.note) : '';
   const chip = rankChipHtml(fid, iso2, dir);
+  const badge = confidenceBadge(entry);
   return ''
     + '<div class="detail-row">'
-    +   '<div class="detail-row-label">' + escapeHtml(label)
+    +   '<div class="detail-row-label">' + escapeHtml(label) + ' ' + badge
     +     '<div class="detail-row-source">' + srcLink + note + '</div>'
     +   '</div>'
     +   '<div class="detail-row-value-block">'

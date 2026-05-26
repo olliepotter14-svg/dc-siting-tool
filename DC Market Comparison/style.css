@@ -1396,6 +1396,59 @@ select:hover { border-color: rgba(255,255,255,0.15); }
   cursor: help;
 }
 
+.conf-badge {
+  display: inline-block;
+  font-size: 8.5px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  padding: 1px 5px;
+  border-radius: 3px;
+  margin-left: 6px;
+  vertical-align: 2px;
+  cursor: help;
+  border: 1px solid;
+}
+.conf-verified {
+  color: #6FE89C;
+  border-color: rgba(111, 232, 156, 0.45);
+  background: rgba(111, 232, 156, 0.08);
+}
+.conf-estimate {
+  color: #FFC36F;
+  border-color: rgba(255, 195, 111, 0.45);
+  background: rgba(255, 195, 111, 0.08);
+}
+
+.data-disclaimer {
+  font-size: 10.5px;
+  line-height: 1.55;
+  color: var(--text-low);
+  padding: 10px 14px;
+  margin: 6px 12px 12px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-left: 3px solid #FFC36F;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.02);
+}
+.data-disclaimer .disc-tag {
+  display: inline-block;
+  font-size: 8.5px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  padding: 1px 5px;
+  border-radius: 3px;
+  border: 1px solid;
+  margin: 0 1px;
+}
+.data-disclaimer .disc-verified {
+  color: #6FE89C;
+  border-color: rgba(111, 232, 156, 0.45);
+}
+.data-disclaimer .disc-estimate {
+  color: #FFC36F;
+  border-color: rgba(255, 195, 111, 0.45);
+}
+
 /* ─── Detail Panel ───────────────────────────────────────────────── */
 
 .detail-panel {
