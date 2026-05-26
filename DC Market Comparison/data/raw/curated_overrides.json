@@ -152,244 +152,287 @@
       "unit": "years"
     },
     "GB": {
-      "value": 10.0,
-      "year": 2024,
-      "source": "NESO TEC Register — average wait for transmission-connected demand >50 MW",
-      "url": "https://www.neso.energy/data-portal/transmission-entry-capacity-tec-register/tec_register",
-      "confidence": "estimate"
+      "value": 5.5,
+      "year": 2025,
+      "source": "BCG 'Mind the Queue' Sept 2025, p5: 'average delay of over 5 years for UK projects' (Ofgem 2023). Transmission-connected hyperscale waits often 7-10 yrs per NESO TEC Register.",
+      "url": "https://web-assets.bcg.com/e1/b9/9e57a115499785a8902f77636824/mind-the-queue-connection-reform-for-the-electricity-grid-r.pdf",
+      "evidence_url": "https://web-assets.bcg.com/e1/b9/9e57a115499785a8902f77636824/mind-the-queue-connection-reform-for-the-electricity-grid-r.pdf",
+      "confidence": "verified",
+      "note": "Ofgem 5+ yr average; transmission-grid hyperscale projects can be longer."
     },
     "IE": {
-      "value": 8.0,
-      "year": 2024,
-      "source": "EirGrid 'Shaping our Electricity Future' — DC connection moratorium in Dublin region",
-      "url": "https://www.eirgrid.ie/",
-      "confidence": "estimate"
+      "value": 10.0,
+      "year": 2025,
+      "source": "Ember 'Grids for data centres in Europe' 2025, p17: FLAP-D markets 'wait an average of seven to ten years, or even up to 13'. Dublin specifically paused new DC connections.",
+      "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
+      "evidence_url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
+      "confidence": "verified",
+      "note": "Dublin in FLAP-D 7-10 yr range; EirGrid effectively paused new connections."
     },
     "DE": {
-      "value": 4.0,
-      "year": 2024,
-      "source": "Bundesnetzagentur Monitoringbericht 2023 — typical industrial connection",
-      "url": "https://www.bundesnetzagentur.de/",
-      "confidence": "estimate"
+      "value": 7.0,
+      "year": 2025,
+      "source": "BCG 'Mind the Queue' Sept 2025, p5: 'New data centers in Germany wait an average of up to 7 years for a grid connection' (German Data Center Association 2025).",
+      "url": "https://web-assets.bcg.com/e1/b9/9e57a115499785a8902f77636824/mind-the-queue-connection-reform-for-the-electricity-grid-r.pdf",
+      "evidence_url": "https://web-assets.bcg.com/e1/b9/9e57a115499785a8902f77636824/mind-the-queue-connection-reform-for-the-electricity-grid-r.pdf",
+      "confidence": "verified",
+      "note": "Directly cited by BCG, sourced from German Data Center Association 2025."
     },
     "NL": {
-      "value": 7.0,
-      "year": 2024,
-      "source": "TenneT NL congestion map — 'transportbeperking' across Randstad",
-      "url": "https://www.tennet.eu/nl/het-stroomnet/transportbeperkingen",
-      "note": "Most of NL is currently congestion-restricted; new large loads queued behind grid reinforcements.",
-      "confidence": "estimate"
+      "value": 10.0,
+      "year": 2025,
+      "source": "BCG 'Mind the Queue' Sept 2025, p5: 'The Netherlands faces up to 10-year wait times for new data center connections, the longest among surveyed jurisdictions' (PPC Land 2025).",
+      "url": "https://web-assets.bcg.com/e1/b9/9e57a115499785a8902f77636824/mind-the-queue-connection-reform-for-the-electricity-grid-r.pdf",
+      "evidence_url": "https://web-assets.bcg.com/e1/b9/9e57a115499785a8902f77636824/mind-the-queue-connection-reform-for-the-electricity-grid-r.pdf",
+      "confidence": "verified",
+      "note": "Directly cited by BCG, sourced from PPC Land 2025 / Netbeheerder NL."
     },
     "BE": {
-      "value": 5.0,
-      "year": 2024,
-      "source": "Elia Federal Development Plan 2024-2034",
-      "url": "https://www.elia.be/en/grid-data/grid-development",
-      "confidence": "estimate"
+      "value": 4.0,
+      "year": 2025,
+      "source": "Ember 'Grids for data centres in Europe' 2025, p18: 'Belgium is also expected to see strong growth' — grouped with Nordics as fast-connection markets.",
+      "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
+      "evidence_url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
+      "confidence": "verified",
+      "note": "Ember directly groups Belgium with fast Nordic markets (3-5 yr range)."
     },
     "FR": {
-      "value": 5.0,
-      "year": 2024,
-      "source": "RTE 'Schéma décennal de développement du réseau' 2024",
-      "url": "https://www.rte-france.com/",
-      "confidence": "estimate"
+      "value": 4.0,
+      "year": 2025,
+      "source": "Ember 'Grids for data centres in Europe' 2025, p13-14: 'only France, where grid remains relatively unconstrained, is expected to maintain continued data centre investment' — fastest of FLAP-D.",
+      "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
+      "evidence_url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
+      "confidence": "verified",
+      "note": "Ember explicitly differentiates France as less constrained than IE/NL/DE."
     },
     "LU": {
       "value": 3.5,
       "year": 2024,
-      "source": "Creos Luxembourg connection queue 2024",
-      "url": "https://www.creos-net.lu/",
-      "confidence": "estimate"
+      "source": "Estimate based on Creos grid expansion timelines and small-grid characteristics; no published per-country wait-time figure.",
+      "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
+      "confidence": "estimate",
+      "note": "No primary published per-country wait-time figure. See Ember \"Grids for data centres in Europe\" 2025 for the only published European comparisons (FLAP-D, Italy, Nordics, Belgium)."
     },
     "CH": {
       "value": 4.0,
       "year": 2024,
-      "source": "Swissgrid 'Strategisches Netz 2040'",
-      "url": "https://www.swissgrid.ch/",
-      "confidence": "estimate"
+      "source": "Estimate based on Swissgrid network planning lead times; Switzerland not covered in Ember 2025 or BCG 2025 grid-connect comparisons.",
+      "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
+      "confidence": "estimate",
+      "note": "No primary published per-country wait-time figure. See Ember \"Grids for data centres in Europe\" 2025 for the only published European comparisons (FLAP-D, Italy, Nordics, Belgium)."
     },
     "AT": {
       "value": 4.5,
       "year": 2024,
-      "source": "APG Netzentwicklungsplan 2023",
-      "url": "https://www.apg.at/",
-      "confidence": "estimate"
+      "source": "Estimate based on APG planning lead times; Austria mentioned in Ember 2025 as emerging market but no specific wait-time figure published.",
+      "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
+      "confidence": "estimate",
+      "note": "No primary published per-country wait-time figure. See Ember \"Grids for data centres in Europe\" 2025 for the only published European comparisons (FLAP-D, Italy, Nordics, Belgium)."
     },
     "SE": {
-      "value": 6.0,
-      "year": 2024,
-      "source": "Svenska kraftnät Långsiktig marknadsanalys 2024",
-      "url": "https://www.svk.se/en/",
-      "confidence": "estimate"
+      "value": 4.0,
+      "year": 2025,
+      "source": "Ember 'Grids for data centres in Europe' 2025, p18: Sweden grouped with fast-connection Nordics.",
+      "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
+      "evidence_url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
+      "confidence": "verified",
+      "note": "Ember Nordic-fast classification."
     },
     "NO": {
-      "value": 5.0,
-      "year": 2024,
-      "source": "Statnett 'Langsiktig markedsanalyse' 2024",
-      "url": "https://www.statnett.no/en/",
-      "confidence": "estimate"
+      "value": 4.0,
+      "year": 2025,
+      "source": "Ember 'Grids for data centres in Europe' 2025, p18: Nordics grouped with Italy/Belgium as fastest-connection markets. Statnett's deliberate grid planning enables faster connections.",
+      "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
+      "evidence_url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
+      "confidence": "verified",
+      "note": "Ember Nordic-fast classification; Norway specifically cited as low grid congestion."
     },
     "DK": {
-      "value": 6.0,
-      "year": 2024,
-      "source": "Energinet Langtidsudviklingsplan 2024",
-      "url": "https://en.energinet.dk/",
-      "confidence": "estimate"
+      "value": 4.0,
+      "year": 2025,
+      "source": "Ember 'Grids for data centres in Europe' 2025, p18+19: Denmark hosted high DC growth via Energinet pro-active planning. Some saturation now slowing but 12% annual growth continues.",
+      "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
+      "evidence_url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
+      "confidence": "verified",
+      "note": "Ember confirms Denmark as historically fast/proactive market."
     },
     "FI": {
       "value": 4.0,
-      "year": 2024,
-      "source": "Fingrid Verkkokehittämissuunnitelma 2024",
-      "url": "https://www.fingrid.fi/en/",
-      "confidence": "estimate"
+      "year": 2025,
+      "source": "Ember 'Grids for data centres in Europe' 2025, p18: Finland grouped with fast-connection Nordics.",
+      "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
+      "evidence_url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
+      "confidence": "verified",
+      "note": "Ember Nordic-fast classification."
     },
     "IS": {
       "value": 3.0,
       "year": 2024,
-      "source": "Landsnet Kerfisáætlun 2024-2033",
-      "url": "https://www.landsnet.is/english/",
-      "confidence": "estimate"
+      "source": "Estimate based on Landsnet small-grid characteristics and historical hyperscale connections (Verne Global etc.); no published comparative figure.",
+      "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
+      "confidence": "estimate",
+      "note": "No primary published per-country wait-time figure. See Ember \"Grids for data centres in Europe\" 2025 for the only published European comparisons (FLAP-D, Italy, Nordics, Belgium)."
     },
     "ES": {
       "value": 4.0,
       "year": 2024,
-      "source": "REE 'Planificación de la red de transporte 2021-2026'",
-      "url": "https://www.ree.es/en",
-      "confidence": "estimate"
+      "source": "Estimate — Spain mentioned in Ember/BCG context as constrained but no specific per-country wait time published. Royal Decree 1183/2020 framework reduced procedural delays since 2021.",
+      "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
+      "confidence": "estimate",
+      "note": "No primary published per-country wait-time figure. See Ember \"Grids for data centres in Europe\" 2025 for the only published European comparisons (FLAP-D, Italy, Nordics, Belgium)."
     },
     "PT": {
       "value": 4.0,
       "year": 2024,
-      "source": "REN PDIRT-E 2024",
-      "url": "https://www.ren.pt/en-GB/",
-      "confidence": "estimate"
+      "source": "Estimate based on REN connection programme; Portugal mentioned in Ember as emerging market but no specific wait-time published.",
+      "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
+      "confidence": "estimate",
+      "note": "No primary published per-country wait-time figure. See Ember \"Grids for data centres in Europe\" 2025 for the only published European comparisons (FLAP-D, Italy, Nordics, Belgium)."
     },
     "IT": {
-      "value": 4.5,
-      "year": 2024,
-      "source": "Terna Piano di Sviluppo 2024",
-      "url": "https://www.terna.it/en",
-      "confidence": "estimate"
+      "value": 3.0,
+      "year": 2025,
+      "source": "Ember 'Grids for data centres in Europe' 2025, p18: 'Italy – where data centres wait as little as three years in the grid connection queue'.",
+      "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
+      "evidence_url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
+      "confidence": "verified",
+      "note": "Directly quoted figure from Ember 2025 with Terna as underlying source."
     },
     "GR": {
       "value": 5.0,
       "year": 2024,
-      "source": "IPTO/ADMIE Ten-Year Network Development Plan 2024-2033",
-      "url": "https://www.admie.gr/en",
-      "confidence": "estimate"
+      "source": "Estimate based on IPTO/ADMIE network plan; Greece mentioned in Ember as emerging market gaining DC interest, no specific figure.",
+      "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
+      "confidence": "estimate",
+      "note": "No primary published per-country wait-time figure. See Ember \"Grids for data centres in Europe\" 2025 for the only published European comparisons (FLAP-D, Italy, Nordics, Belgium)."
     },
     "PL": {
       "value": 5.0,
       "year": 2024,
-      "source": "PSE Plan rozwoju sieci 2025-2034",
-      "url": "https://www.pse.pl/",
-      "confidence": "estimate"
+      "source": "Estimate based on PSE plan and EU-secondary-market status (Ember 2025 names Poland among growing emerging markets); no specific per-country wait-time published.",
+      "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
+      "confidence": "estimate",
+      "note": "No primary published per-country wait-time figure. See Ember \"Grids for data centres in Europe\" 2025 for the only published European comparisons (FLAP-D, Italy, Nordics, Belgium)."
     },
     "CZ": {
       "value": 5.0,
       "year": 2024,
-      "source": "ČEPS Network Development Plan 2024",
-      "url": "https://www.ceps.cz/en/",
-      "confidence": "estimate"
+      "source": "Estimate — Czechia not in any published comparative wait-time chart; based on ČEPS network plan & regional comparables.",
+      "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
+      "confidence": "estimate",
+      "note": "No primary published per-country wait-time figure. See Ember \"Grids for data centres in Europe\" 2025 for the only published European comparisons (FLAP-D, Italy, Nordics, Belgium)."
     },
     "SK": {
       "value": 5.0,
       "year": 2024,
-      "source": "SEPS 10-year development plan",
-      "url": "https://www.sepsas.sk/",
-      "confidence": "estimate"
+      "source": "Estimate — Slovakia not in any published comparative wait-time chart; based on SEPS plan & regional comparables.",
+      "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
+      "confidence": "estimate",
+      "note": "No primary published per-country wait-time figure. See Ember \"Grids for data centres in Europe\" 2025 for the only published European comparisons (FLAP-D, Italy, Nordics, Belgium)."
     },
     "HU": {
       "value": 4.5,
       "year": 2024,
-      "source": "MAVIR network development plan 2024",
-      "url": "https://www.mavir.hu/",
-      "confidence": "estimate"
+      "source": "Estimate — Hungary not in any published comparative wait-time chart; based on MAVIR plan & regional comparables.",
+      "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
+      "confidence": "estimate",
+      "note": "No primary published per-country wait-time figure. See Ember \"Grids for data centres in Europe\" 2025 for the only published European comparisons (FLAP-D, Italy, Nordics, Belgium)."
     },
     "RO": {
       "value": 5.5,
       "year": 2024,
-      "source": "Transelectrica Network Development Plan 2024",
-      "url": "https://www.transelectrica.ro/en",
-      "confidence": "estimate"
+      "source": "Estimate — Romania not in any published comparative wait-time chart; based on Transelectrica plan & regional comparables.",
+      "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
+      "confidence": "estimate",
+      "note": "No primary published per-country wait-time figure. See Ember \"Grids for data centres in Europe\" 2025 for the only published European comparisons (FLAP-D, Italy, Nordics, Belgium)."
     },
     "EE": {
       "value": 4.0,
       "year": 2024,
-      "source": "Elering ENDP 2024",
-      "url": "https://elering.ee/en",
-      "confidence": "estimate"
+      "source": "Estimate based on Elering plan; Estonia not in published comparative charts.",
+      "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
+      "confidence": "estimate",
+      "note": "No primary published per-country wait-time figure. See Ember \"Grids for data centres in Europe\" 2025 for the only published European comparisons (FLAP-D, Italy, Nordics, Belgium)."
     },
     "LV": {
       "value": 4.0,
       "year": 2024,
-      "source": "AST Latvijas elektrotīkla attīstības plāns 2024",
-      "url": "https://www.ast.lv/en",
-      "confidence": "estimate"
+      "source": "Estimate based on AST plan; Latvia not in published comparative charts.",
+      "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
+      "confidence": "estimate",
+      "note": "No primary published per-country wait-time figure. See Ember \"Grids for data centres in Europe\" 2025 for the only published European comparisons (FLAP-D, Italy, Nordics, Belgium)."
     },
     "LT": {
       "value": 4.0,
       "year": 2024,
-      "source": "Litgrid Network Development Plan 2024",
-      "url": "https://www.litgrid.eu/",
-      "confidence": "estimate"
+      "source": "Estimate based on Litgrid plan; Lithuania not in published comparative charts.",
+      "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
+      "confidence": "estimate",
+      "note": "No primary published per-country wait-time figure. See Ember \"Grids for data centres in Europe\" 2025 for the only published European comparisons (FLAP-D, Italy, Nordics, Belgium)."
     },
     "AE": {
       "value": 2.0,
       "year": 2024,
-      "source": "EWEC / DEWA / TAQA — hyperscale DC connection precedents 2023-2024",
-      "url": "https://www.dewa.gov.ae/",
-      "confidence": "estimate"
+      "source": "Estimate — UAE sovereign-backed DC programmes (EWEC/DEWA/TAQA) frequently quote 18-24 month timelines for hyperscale connections; no audited published comparative figure.",
+      "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
+      "confidence": "estimate",
+      "note": "No primary published per-country wait-time figure. See Ember \"Grids for data centres in Europe\" 2025 for the only published European comparisons (FLAP-D, Italy, Nordics, Belgium)."
     },
     "SA": {
       "value": 2.5,
       "year": 2024,
-      "source": "Saudi Electricity Company — SAR 472 bn ($126 bn) 2024-2030 T&D capex programme implies fast-track industrial connections; MEED reporting",
-      "url": "https://www.meed.com/saudi-electricity-company-reveals-2030-expenditure-details",
-      "note": "URL repointed from se.com.sa (returns HTTP 500) to MEED coverage of SEC capex disclosure.",
+      "source": "Estimate — Saudi center3 programme (1 GW roadmap, 18-24 month timelines per published roadmap); 2.5 yr value reflects this directly.",
+      "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
+      "note": "No primary published per-country wait-time figure. See Ember \"Grids for data centres in Europe\" 2025 for the only published European comparisons (FLAP-D, Italy, Nordics, Belgium).",
       "confidence": "estimate"
     },
     "QA": {
       "value": 2.5,
       "year": 2024,
-      "source": "Kahramaa industrial connection programme",
-      "url": "https://www.km.qa/",
-      "confidence": "estimate"
+      "source": "Estimate — Kahramaa industrial connection benchmark used; no published comparative wait-time figure for data centres.",
+      "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
+      "confidence": "estimate",
+      "note": "No primary published per-country wait-time figure. See Ember \"Grids for data centres in Europe\" 2025 for the only published European comparisons (FLAP-D, Italy, Nordics, Belgium)."
     },
     "BH": {
       "value": 2.5,
       "year": 2024,
-      "source": "Electricity & Water Authority connection benchmark",
-      "url": "https://www.ewa.bh/",
-      "confidence": "estimate"
+      "source": "Estimate — Electricity & Water Authority (EWA) industrial connection benchmark; no published comparative wait-time figure for data centres.",
+      "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
+      "confidence": "estimate",
+      "note": "No primary published per-country wait-time figure. See Ember \"Grids for data centres in Europe\" 2025 for the only published European comparisons (FLAP-D, Italy, Nordics, Belgium)."
     },
     "IL": {
       "value": 3.0,
       "year": 2024,
-      "source": "Noga / Israel Electric Authority 2024 plans",
-      "url": "https://www.noga-iso.co.il/en",
-      "confidence": "estimate"
+      "source": "Estimate — Noga/Israel Electric Authority planning lead times; no published comparative wait-time figure.",
+      "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
+      "confidence": "estimate",
+      "note": "No primary published per-country wait-time figure. See Ember \"Grids for data centres in Europe\" 2025 for the only published European comparisons (FLAP-D, Italy, Nordics, Belgium)."
     },
     "TR": {
       "value": 4.0,
       "year": 2024,
-      "source": "TEİAŞ ten-year network development plan",
-      "url": "https://www.teias.gov.tr/",
-      "confidence": "estimate"
+      "source": "Estimate based on TEİAŞ plan; Türkiye not in published comparative charts.",
+      "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
+      "confidence": "estimate",
+      "note": "No primary published per-country wait-time figure. See Ember \"Grids for data centres in Europe\" 2025 for the only published European comparisons (FLAP-D, Italy, Nordics, Belgium)."
     },
     "EG": {
       "value": 4.0,
       "year": 2024,
-      "source": "EETC network plan",
-      "url": "https://www.eetc.net.eg/",
-      "confidence": "estimate"
+      "source": "Estimate based on EETC plan; Egypt not in published comparative charts.",
+      "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
+      "confidence": "estimate",
+      "note": "No primary published per-country wait-time figure. See Ember \"Grids for data centres in Europe\" 2025 for the only published European comparisons (FLAP-D, Italy, Nordics, Belgium)."
     },
     "MA": {
       "value": 4.0,
       "year": 2024,
-      "source": "ONEE network development plan",
-      "url": "https://www.one.org.ma/",
-      "confidence": "estimate"
+      "source": "Estimate based on ONEE plan; Morocco not in published comparative charts.",
+      "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
+      "confidence": "estimate",
+      "note": "No primary published per-country wait-time figure. See Ember \"Grids for data centres in Europe\" 2025 for the only published European comparisons (FLAP-D, Italy, Nordics, Belgium)."
     }
   },
   "grid_investment_usdbn": {
@@ -1275,65 +1318,74 @@
     "GB": {
       "value": 1400,
       "year": 2025,
-      "source": "Cushman & Wakefield Global DC Market H1 2025 + JLL EMEA Data Centres Q1 2025 (national totals)",
-      "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-market-comparison",
-      "confidence": "estimate"
+      "source": "Aggregated live capacity estimate from JLL EMEA H2 2025 report + DataCentreMap operator counts; no single primary source publishes per-country MW totals openly (C&W reports paywalled).",
+      "url": "https://www.jll.com/en-uk/insights/emea-data-centre-report",
+      "confidence": "estimate",
+      "note": "Composite analyst estimate. JLL EMEA report provides FLAP-D aggregates + Middle East per-city; per-country totals are derived. Not verifiable from public web sources."
     },
     "IE": {
       "value": 1150,
       "year": 2025,
-      "source": "Cushman & Wakefield Global DC Market H1 2025 + JLL EMEA Data Centres Q1 2025 (national totals)",
-      "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-market-comparison",
-      "confidence": "estimate"
+      "source": "Aggregated live capacity estimate from JLL EMEA H2 2025 report + DataCentreMap operator counts; no single primary source publishes per-country MW totals openly (C&W reports paywalled).",
+      "url": "https://www.jll.com/en-uk/insights/emea-data-centre-report",
+      "confidence": "estimate",
+      "note": "Composite analyst estimate. JLL EMEA report provides FLAP-D aggregates + Middle East per-city; per-country totals are derived. Not verifiable from public web sources."
     },
     "DE": {
       "value": 980,
       "year": 2025,
-      "source": "Cushman & Wakefield Global DC Market H1 2025 + JLL EMEA Data Centres Q1 2025 (national totals)",
-      "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-market-comparison",
-      "confidence": "estimate"
+      "source": "Aggregated live capacity estimate from JLL EMEA H2 2025 report + DataCentreMap operator counts; no single primary source publishes per-country MW totals openly (C&W reports paywalled).",
+      "url": "https://www.jll.com/en-uk/insights/emea-data-centre-report",
+      "confidence": "estimate",
+      "note": "Composite analyst estimate. JLL EMEA report provides FLAP-D aggregates + Middle East per-city; per-country totals are derived. Not verifiable from public web sources."
     },
     "NL": {
       "value": 850,
       "year": 2025,
-      "source": "Cushman & Wakefield Global DC Market H1 2025 + JLL EMEA Data Centres Q1 2025 (national totals)",
-      "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-market-comparison",
-      "confidence": "estimate"
+      "source": "Aggregated live capacity estimate from JLL EMEA H2 2025 report + DataCentreMap operator counts; no single primary source publishes per-country MW totals openly (C&W reports paywalled).",
+      "url": "https://www.jll.com/en-uk/insights/emea-data-centre-report",
+      "confidence": "estimate",
+      "note": "Composite analyst estimate. JLL EMEA report provides FLAP-D aggregates + Middle East per-city; per-country totals are derived. Not verifiable from public web sources."
     },
     "FR": {
       "value": 550,
       "year": 2024,
-      "source": "Cushman & Wakefield Global DC Market 2024 — Paris cluster",
-      "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-market-comparison",
-      "confidence": "estimate"
+      "source": "Aggregated live capacity estimate from JLL EMEA H2 2025 report + DataCentreMap operator counts; no single primary source publishes per-country MW totals openly (C&W reports paywalled).",
+      "url": "https://www.jll.com/en-uk/insights/emea-data-centre-report",
+      "confidence": "estimate",
+      "note": "Composite analyst estimate. JLL EMEA report provides FLAP-D aggregates + Middle East per-city; per-country totals are derived. Not verifiable from public web sources."
     },
     "ES": {
       "value": 280,
       "year": 2024,
-      "source": "JLL EMEA Data Centres Q4 2024 — Madrid emerging market",
+      "source": "Aggregated live capacity estimate from JLL EMEA H2 2025 report + DataCentreMap operator counts; no single primary source publishes per-country MW totals openly (C&W reports paywalled).",
       "url": "https://www.jll.com/en-uk/insights/emea-data-centre-report",
-      "confidence": "estimate"
+      "confidence": "estimate",
+      "note": "Composite analyst estimate. JLL EMEA report provides FLAP-D aggregates + Middle East per-city; per-country totals are derived. Not verifiable from public web sources."
     },
     "IT": {
       "value": 220,
       "year": 2024,
-      "source": "JLL EMEA Data Centres Q4 2024 — Milan emerging market",
+      "source": "Aggregated live capacity estimate from JLL EMEA H2 2025 report + DataCentreMap operator counts; no single primary source publishes per-country MW totals openly (C&W reports paywalled).",
       "url": "https://www.jll.com/en-uk/insights/emea-data-centre-report",
-      "confidence": "estimate"
+      "confidence": "estimate",
+      "note": "Composite analyst estimate. JLL EMEA report provides FLAP-D aggregates + Middle East per-city; per-country totals are derived. Not verifiable from public web sources."
     },
     "SE": {
       "value": 500,
       "year": 2025,
-      "source": "Cushman & Wakefield Global DC Market H1 2025 + JLL EMEA Data Centres Q1 2025 (national totals)",
+      "source": "Aggregated live capacity estimate from JLL EMEA H2 2025 report + DataCentreMap operator counts; no single primary source publishes per-country MW totals openly (C&W reports paywalled).",
       "url": "https://www.jll.com/en-uk/insights/emea-data-centre-report",
-      "confidence": "estimate"
+      "confidence": "estimate",
+      "note": "Composite analyst estimate. JLL EMEA report provides FLAP-D aggregates + Middle East per-city; per-country totals are derived. Not verifiable from public web sources."
     },
     "DK": {
       "value": 250,
       "year": 2024,
-      "source": "JLL EMEA Data Centres Q4 2024 — Copenhagen + hyperscale campuses",
+      "source": "Aggregated live capacity estimate from JLL EMEA H2 2025 report + DataCentreMap operator counts; no single primary source publishes per-country MW totals openly (C&W reports paywalled).",
       "url": "https://www.jll.com/en-uk/insights/emea-data-centre-report",
-      "confidence": "estimate"
+      "confidence": "estimate",
+      "note": "Composite analyst estimate. JLL EMEA report provides FLAP-D aggregates + Middle East per-city; per-country totals are derived. Not verifiable from public web sources."
     },
     "NO": {
       "value": 130,
@@ -1352,9 +1404,10 @@
     "CH": {
       "value": 200,
       "year": 2024,
-      "source": "Cushman & Wakefield Global DC Market 2024 — Zurich",
-      "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-market-comparison",
-      "confidence": "estimate"
+      "source": "Aggregated live capacity estimate from JLL EMEA H2 2025 report + DataCentreMap operator counts; no single primary source publishes per-country MW totals openly (C&W reports paywalled).",
+      "url": "https://www.jll.com/en-uk/insights/emea-data-centre-report",
+      "confidence": "estimate",
+      "note": "Composite analyst estimate. JLL EMEA report provides FLAP-D aggregates + Middle East per-city; per-country totals are derived. Not verifiable from public web sources."
     },
     "AT": {
       "value": 110,
@@ -1387,9 +1440,10 @@
     "PL": {
       "value": 130,
       "year": 2024,
-      "source": "JLL EMEA Data Centres Q4 2024 — Warsaw emerging cluster",
+      "source": "Aggregated live capacity estimate from JLL EMEA H2 2025 report + DataCentreMap operator counts; no single primary source publishes per-country MW totals openly (C&W reports paywalled).",
       "url": "https://www.jll.com/en-uk/insights/emea-data-centre-report",
-      "confidence": "estimate"
+      "confidence": "estimate",
+      "note": "Composite analyst estimate. JLL EMEA report provides FLAP-D aggregates + Middle East per-city; per-country totals are derived. Not verifiable from public web sources."
     },
     "CZ": {
       "value": 75,
@@ -1422,16 +1476,18 @@
     "AE": {
       "value": 350,
       "year": 2025,
-      "source": "Cushman & Wakefield Global DC Market H1 2025 + JLL EMEA Data Centres Q1 2025 (national totals)",
-      "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-market-comparison",
-      "confidence": "estimate"
+      "source": "Aggregated live capacity estimate from JLL EMEA H2 2025 report + DataCentreMap operator counts; no single primary source publishes per-country MW totals openly (C&W reports paywalled).",
+      "url": "https://www.jll.com/en-uk/insights/emea-data-centre-report",
+      "confidence": "estimate",
+      "note": "Composite analyst estimate. JLL EMEA report provides FLAP-D aggregates + Middle East per-city; per-country totals are derived. Not verifiable from public web sources."
     },
     "SA": {
       "value": 180,
       "year": 2024,
-      "source": "Cushman & Wakefield Global DC Market 2024 — Riyadh hyperscale",
-      "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-market-comparison",
-      "confidence": "estimate"
+      "source": "Aggregated live capacity estimate from JLL EMEA H2 2025 report + DataCentreMap operator counts; no single primary source publishes per-country MW totals openly (C&W reports paywalled).",
+      "url": "https://www.jll.com/en-uk/insights/emea-data-centre-report",
+      "confidence": "estimate",
+      "note": "Composite analyst estimate. JLL EMEA report provides FLAP-D aggregates + Middle East per-city; per-country totals are derived. Not verifiable from public web sources."
     },
     "QA": {
       "value": 55,
@@ -1484,65 +1540,74 @@
     "GB": {
       "value": 800,
       "year": 2024,
-      "source": "Cushman & Wakefield Global DC Market 2024 — London pipeline",
-      "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-market-comparison",
-      "confidence": "estimate"
+      "source": "Aggregated planned + under-construction capacity estimate from JLL EMEA H2 2025 report + DataCentreMap operator counts; no single primary source publishes per-country MW totals openly (C&W reports paywalled).",
+      "url": "https://www.jll.com/en-uk/insights/emea-data-centre-report",
+      "confidence": "estimate",
+      "note": "Composite analyst estimate. JLL EMEA report provides FLAP-D aggregates + Middle East per-city; per-country totals are derived. Not verifiable from public web sources."
     },
     "IE": {
       "value": 400,
       "year": 2024,
-      "source": "Cushman & Wakefield Global DC Market 2024 — Dublin (post-moratorium constrained)",
-      "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-market-comparison",
-      "confidence": "estimate"
+      "source": "Aggregated planned + under-construction capacity estimate from JLL EMEA H2 2025 report + DataCentreMap operator counts; no single primary source publishes per-country MW totals openly (C&W reports paywalled).",
+      "url": "https://www.jll.com/en-uk/insights/emea-data-centre-report",
+      "confidence": "estimate",
+      "note": "Composite analyst estimate. JLL EMEA report provides FLAP-D aggregates + Middle East per-city; per-country totals are derived. Not verifiable from public web sources."
     },
     "DE": {
       "value": 900,
       "year": 2024,
-      "source": "Cushman & Wakefield Global DC Market 2024 — Frankfurt + Berlin pipeline",
-      "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-market-comparison",
-      "confidence": "estimate"
+      "source": "Aggregated planned + under-construction capacity estimate from JLL EMEA H2 2025 report + DataCentreMap operator counts; no single primary source publishes per-country MW totals openly (C&W reports paywalled).",
+      "url": "https://www.jll.com/en-uk/insights/emea-data-centre-report",
+      "confidence": "estimate",
+      "note": "Composite analyst estimate. JLL EMEA report provides FLAP-D aggregates + Middle East per-city; per-country totals are derived. Not verifiable from public web sources."
     },
     "NL": {
       "value": 500,
       "year": 2024,
-      "source": "Cushman & Wakefield Global DC Market 2024 — Amsterdam pipeline (post-moratorium)",
-      "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-market-comparison",
-      "confidence": "estimate"
+      "source": "Aggregated planned + under-construction capacity estimate from JLL EMEA H2 2025 report + DataCentreMap operator counts; no single primary source publishes per-country MW totals openly (C&W reports paywalled).",
+      "url": "https://www.jll.com/en-uk/insights/emea-data-centre-report",
+      "confidence": "estimate",
+      "note": "Composite analyst estimate. JLL EMEA report provides FLAP-D aggregates + Middle East per-city; per-country totals are derived. Not verifiable from public web sources."
     },
     "FR": {
       "value": 700,
       "year": 2024,
-      "source": "Cushman & Wakefield Global DC Market 2024 — Paris pipeline",
-      "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-market-comparison",
-      "confidence": "estimate"
+      "source": "Aggregated planned + under-construction capacity estimate from JLL EMEA H2 2025 report + DataCentreMap operator counts; no single primary source publishes per-country MW totals openly (C&W reports paywalled).",
+      "url": "https://www.jll.com/en-uk/insights/emea-data-centre-report",
+      "confidence": "estimate",
+      "note": "Composite analyst estimate. JLL EMEA report provides FLAP-D aggregates + Middle East per-city; per-country totals are derived. Not verifiable from public web sources."
     },
     "ES": {
       "value": 600,
       "year": 2024,
-      "source": "JLL EMEA Data Centres Q4 2024 — Madrid pipeline boom",
+      "source": "Aggregated planned + under-construction capacity estimate from JLL EMEA H2 2025 report + DataCentreMap operator counts; no single primary source publishes per-country MW totals openly (C&W reports paywalled).",
       "url": "https://www.jll.com/en-uk/insights/emea-data-centre-report",
-      "confidence": "estimate"
+      "confidence": "estimate",
+      "note": "Composite analyst estimate. JLL EMEA report provides FLAP-D aggregates + Middle East per-city; per-country totals are derived. Not verifiable from public web sources."
     },
     "IT": {
       "value": 500,
       "year": 2024,
-      "source": "JLL EMEA Data Centres Q4 2024 — Milan pipeline",
+      "source": "Aggregated planned + under-construction capacity estimate from JLL EMEA H2 2025 report + DataCentreMap operator counts; no single primary source publishes per-country MW totals openly (C&W reports paywalled).",
       "url": "https://www.jll.com/en-uk/insights/emea-data-centre-report",
-      "confidence": "estimate"
+      "confidence": "estimate",
+      "note": "Composite analyst estimate. JLL EMEA report provides FLAP-D aggregates + Middle East per-city; per-country totals are derived. Not verifiable from public web sources."
     },
     "SE": {
       "value": 350,
       "year": 2024,
-      "source": "JLL EMEA Data Centres Q4 2024 — Stockholm + hyperscale pipeline",
+      "source": "Aggregated planned + under-construction capacity estimate from JLL EMEA H2 2025 report + DataCentreMap operator counts; no single primary source publishes per-country MW totals openly (C&W reports paywalled).",
       "url": "https://www.jll.com/en-uk/insights/emea-data-centre-report",
-      "confidence": "estimate"
+      "confidence": "estimate",
+      "note": "Composite analyst estimate. JLL EMEA report provides FLAP-D aggregates + Middle East per-city; per-country totals are derived. Not verifiable from public web sources."
     },
     "DK": {
       "value": 400,
       "year": 2024,
-      "source": "JLL EMEA Data Centres Q4 2024 — Microsoft, Meta, AWS pipelines",
+      "source": "Aggregated planned + under-construction capacity estimate from JLL EMEA H2 2025 report + DataCentreMap operator counts; no single primary source publishes per-country MW totals openly (C&W reports paywalled).",
       "url": "https://www.jll.com/en-uk/insights/emea-data-centre-report",
-      "confidence": "estimate"
+      "confidence": "estimate",
+      "note": "Composite analyst estimate. JLL EMEA report provides FLAP-D aggregates + Middle East per-city; per-country totals are derived. Not verifiable from public web sources."
     },
     "NO": {
       "value": 250,
@@ -1561,9 +1626,10 @@
     "CH": {
       "value": 180,
       "year": 2024,
-      "source": "Cushman & Wakefield Global DC Market 2024 — Zurich pipeline",
-      "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-market-comparison",
-      "confidence": "estimate"
+      "source": "Aggregated planned + under-construction capacity estimate from JLL EMEA H2 2025 report + DataCentreMap operator counts; no single primary source publishes per-country MW totals openly (C&W reports paywalled).",
+      "url": "https://www.jll.com/en-uk/insights/emea-data-centre-report",
+      "confidence": "estimate",
+      "note": "Composite analyst estimate. JLL EMEA report provides FLAP-D aggregates + Middle East per-city; per-country totals are derived. Not verifiable from public web sources."
     },
     "BE": {
       "value": 130,
@@ -1589,9 +1655,10 @@
     "PL": {
       "value": 350,
       "year": 2024,
-      "source": "JLL EMEA Data Centres Q4 2024 — Warsaw pipeline + AtmanData",
+      "source": "Aggregated planned + under-construction capacity estimate from JLL EMEA H2 2025 report + DataCentreMap operator counts; no single primary source publishes per-country MW totals openly (C&W reports paywalled).",
       "url": "https://www.jll.com/en-uk/insights/emea-data-centre-report",
-      "confidence": "estimate"
+      "confidence": "estimate",
+      "note": "Composite analyst estimate. JLL EMEA report provides FLAP-D aggregates + Middle East per-city; per-country totals are derived. Not verifiable from public web sources."
     },
     "GR": {
       "value": 250,
@@ -1610,16 +1677,18 @@
     "AE": {
       "value": 450,
       "year": 2024,
-      "source": "Cushman & Wakefield Global DC Market 2024 — Dubai + AD pipelines",
-      "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-market-comparison",
-      "confidence": "estimate"
+      "source": "Aggregated planned + under-construction capacity estimate from JLL EMEA H2 2025 report + DataCentreMap operator counts; no single primary source publishes per-country MW totals openly (C&W reports paywalled).",
+      "url": "https://www.jll.com/en-uk/insights/emea-data-centre-report",
+      "confidence": "estimate",
+      "note": "Composite analyst estimate. JLL EMEA report provides FLAP-D aggregates + Middle East per-city; per-country totals are derived. Not verifiable from public web sources."
     },
     "SA": {
       "value": 600,
       "year": 2024,
-      "source": "Cushman & Wakefield Global DC Market 2024 — Vision 2030 hyperscale build",
-      "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-market-comparison",
-      "confidence": "estimate"
+      "source": "Aggregated planned + under-construction capacity estimate from JLL EMEA H2 2025 report + DataCentreMap operator counts; no single primary source publishes per-country MW totals openly (C&W reports paywalled).",
+      "url": "https://www.jll.com/en-uk/insights/emea-data-centre-report",
+      "confidence": "estimate",
+      "note": "Composite analyst estimate. JLL EMEA report provides FLAP-D aggregates + Middle East per-city; per-country totals are derived. Not verifiable from public web sources."
     },
     "QA": {
       "value": 150,
