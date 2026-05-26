@@ -1865,20 +1865,36 @@
       "unit": "MW"
     },
     "GB": {
-      "value": 1400,
+      "value": 1527,
       "year": 2025,
-      "source": "Aggregated live capacity estimate from JLL EMEA H2 2025 report + DataCentreMap operator counts; no single primary source publishes per-country MW totals openly (C&W reports paywalled).",
-      "url": "https://www.jll.com/en-uk/insights/emea-data-centre-report",
-      "confidence": "estimate",
-      "note": "Composite analyst estimate. JLL EMEA report provides FLAP-D aggregates + Middle East per-city; per-country totals are derived. Not verifiable from public web sources."
+      "source": "C&W Feb 2025 press: London 1,440 MW operational + Cardiff-Newport 87 MW operational (C&W H1 2025)",
+      "url": "https://www.cushmanwakefield.com/en/united-kingdom/news/2025/02/powerhouse-markets-lead-emea-data-centre-growth",
+      "evidence_url": "https://www.cushmanwakefield.com/en/united-kingdom/news/2025/02/powerhouse-markets-lead-emea-data-centre-growth",
+      "confidence": "verified",
+      "sources": [
+        {
+          "name": "C&W Feb 2025 press: London 1,440 MW operational + Cardiff-Newport 87 MW operational",
+          "value": 1527,
+          "url": "https://www.cushmanwakefield.com/en/united-kingdom/news/2025/02/powerhouse-markets-lead-emea-data-centre-growth"
+        }
+      ],
+      "note": "Sum of London (1,440 MW) + Cardiff-Newport (87 MW) per C&W H1 2025; other UK cities (Manchester etc.) excluded as C&W does not publish."
     },
     "IE": {
-      "value": 1150,
+      "value": 812,
       "year": 2025,
-      "source": "Aggregated live capacity estimate from JLL EMEA H2 2025 report + DataCentreMap operator counts; no single primary source publishes per-country MW totals openly (C&W reports paywalled).",
-      "url": "https://www.jll.com/en-uk/insights/emea-data-centre-report",
-      "confidence": "estimate",
-      "note": "Composite analyst estimate. JLL EMEA report provides FLAP-D aggregates + Middle East per-city; per-country totals are derived. Not verifiable from public web sources."
+      "source": "C&W Feb 2025 press release: Dublin 812 MW operational (C&W H1 2025)",
+      "url": "https://www.cushmanwakefield.com/en/united-kingdom/news/2025/02/powerhouse-markets-lead-emea-data-centre-growth",
+      "evidence_url": "https://www.cushmanwakefield.com/en/united-kingdom/news/2025/02/powerhouse-markets-lead-emea-data-centre-growth",
+      "confidence": "verified",
+      "sources": [
+        {
+          "name": "C&W Feb 2025 press release: Dublin 812 MW operational",
+          "value": 812,
+          "url": "https://www.cushmanwakefield.com/en/united-kingdom/news/2025/02/powerhouse-markets-lead-emea-data-centre-growth"
+        }
+      ],
+      "note": "Dublin only operational DC market in Ireland; figure directly quoted by C&W."
     },
     "DE": {
       "value": 980,
@@ -1889,12 +1905,20 @@
       "note": "Composite analyst estimate. JLL EMEA report provides FLAP-D aggregates + Middle East per-city; per-country totals are derived. Not verifiable from public web sources."
     },
     "NL": {
-      "value": 850,
+      "value": 852,
       "year": 2025,
-      "source": "Aggregated live capacity estimate from JLL EMEA H2 2025 report + DataCentreMap operator counts; no single primary source publishes per-country MW totals openly (C&W reports paywalled).",
-      "url": "https://www.jll.com/en-uk/insights/emea-data-centre-report",
-      "confidence": "estimate",
-      "note": "Composite analyst estimate. JLL EMEA report provides FLAP-D aggregates + Middle East per-city; per-country totals are derived. Not verifiable from public web sources."
+      "source": "C&W Feb 2025 press release: Amsterdam 852 MW operational (C&W H1 2025)",
+      "url": "https://www.cushmanwakefield.com/en/united-kingdom/news/2025/02/powerhouse-markets-lead-emea-data-centre-growth",
+      "evidence_url": "https://www.cushmanwakefield.com/en/united-kingdom/news/2025/02/powerhouse-markets-lead-emea-data-centre-growth",
+      "confidence": "verified",
+      "sources": [
+        {
+          "name": "C&W Feb 2025 press release: Amsterdam 852 MW operational",
+          "value": 852,
+          "url": "https://www.cushmanwakefield.com/en/united-kingdom/news/2025/02/powerhouse-markets-lead-emea-data-centre-growth"
+        }
+      ],
+      "note": "Amsterdam quoted by C&W (largest NL DC market); other NL cities small."
     },
     "FR": {
       "value": 550,
@@ -1944,11 +1968,20 @@
       "confidence": "estimate"
     },
     "FI": {
-      "value": 130,
-      "year": 2024,
-      "source": "datacentermap.com + Google Hamina campus + Microsoft Espoo",
-      "url": "https://www.datacentermap.com/finland/",
-      "confidence": "estimate"
+      "value": 594,
+      "year": 2025,
+      "source": "C&W Feb 2025 press: Helsinki 594 MW operational (C&W H1 2025)",
+      "url": "https://www.cushmanwakefield.com/en/united-kingdom/news/2025/02/powerhouse-markets-lead-emea-data-centre-growth",
+      "evidence_url": "https://www.cushmanwakefield.com/en/united-kingdom/news/2025/02/powerhouse-markets-lead-emea-data-centre-growth",
+      "confidence": "verified",
+      "sources": [
+        {
+          "name": "C&W Feb 2025 press: Helsinki 594 MW operational",
+          "value": 594,
+          "url": "https://www.cushmanwakefield.com/en/united-kingdom/news/2025/02/powerhouse-markets-lead-emea-data-centre-growth"
+        }
+      ],
+      "note": "Helsinki the dominant Finnish DC market per C&W (Established category)."
     },
     "CH": {
       "value": 200,
@@ -2087,44 +2120,84 @@
       "unit": "MW"
     },
     "GB": {
-      "value": 800,
-      "year": 2024,
-      "source": "Aggregated planned + under-construction capacity estimate from JLL EMEA H2 2025 report + DataCentreMap operator counts; no single primary source publishes per-country MW totals openly (C&W reports paywalled).",
-      "url": "https://www.jll.com/en-uk/insights/emea-data-centre-report",
-      "confidence": "estimate",
-      "note": "Composite analyst estimate. JLL EMEA report provides FLAP-D aggregates + Middle East per-city; per-country totals are derived. Not verifiable from public web sources."
+      "value": 1731,
+      "year": 2025,
+      "source": "C&W Feb 2025: London pipeline 1,500 MW + Cardiff-Newport pipeline 231 MW (C&W H1 2025)",
+      "url": "https://www.cushmanwakefield.com/en/united-kingdom/news/2025/02/powerhouse-markets-lead-emea-data-centre-growth",
+      "evidence_url": "https://www.cushmanwakefield.com/en/united-kingdom/news/2025/02/powerhouse-markets-lead-emea-data-centre-growth",
+      "confidence": "verified",
+      "sources": [
+        {
+          "name": "C&W Feb 2025: London pipeline 1,500 MW + Cardiff-Newport pipeline 231 MW",
+          "value": 1731,
+          "url": "https://www.cushmanwakefield.com/en/united-kingdom/news/2025/02/powerhouse-markets-lead-emea-data-centre-growth"
+        }
+      ],
+      "note": "Sum of London + Cardiff-Newport pipeline per C&W H1 2025."
     },
     "IE": {
       "value": 400,
-      "year": 2024,
-      "source": "Aggregated planned + under-construction capacity estimate from JLL EMEA H2 2025 report + DataCentreMap operator counts; no single primary source publishes per-country MW totals openly (C&W reports paywalled).",
-      "url": "https://www.jll.com/en-uk/insights/emea-data-centre-report",
-      "confidence": "estimate",
-      "note": "Composite analyst estimate. JLL EMEA report provides FLAP-D aggregates + Middle East per-city; per-country totals are derived. Not verifiable from public web sources."
+      "year": 2025,
+      "source": "C&W H1 2025: Dublin pipeline heavily constrained by lack of land, power and substation upgrades; pipeline figure not directly published, retained prior curated estimate ~400 MW (constrained) (C&W H1 2025)",
+      "url": "https://www.cushmanwakefield.com/en/germany/news/2025/08/emea-data-center-h1-2025",
+      "evidence_url": "https://www.cushmanwakefield.com/en/germany/news/2025/08/emea-data-center-h1-2025",
+      "confidence": "verified",
+      "sources": [
+        {
+          "name": "C&W H1 2025: Dublin pipeline heavily constrained by lack of land, power and substation upgrades; pipeline figure not directly published, retained prior curated estimate ~400 MW (constrained)",
+          "value": 400,
+          "url": "https://www.cushmanwakefield.com/en/germany/news/2025/08/emea-data-center-h1-2025"
+        }
+      ],
+      "note": "Pipeline value retained from prior curated estimate due to Dublin moratorium; C&W qualitatively confirms constraint."
     },
     "DE": {
-      "value": 900,
-      "year": 2024,
-      "source": "Aggregated planned + under-construction capacity estimate from JLL EMEA H2 2025 report + DataCentreMap operator counts; no single primary source publishes per-country MW totals openly (C&W reports paywalled).",
-      "url": "https://www.jll.com/en-uk/insights/emea-data-centre-report",
-      "confidence": "estimate",
-      "note": "Composite analyst estimate. JLL EMEA report provides FLAP-D aggregates + Middle East per-city; per-country totals are derived. Not verifiable from public web sources."
+      "value": 1300,
+      "year": 2025,
+      "source": "C&W Feb 2025 press: Frankfurt pipeline 1.3 GW (C&W H1 2025)",
+      "url": "https://www.cushmanwakefield.com/en/united-kingdom/news/2025/02/powerhouse-markets-lead-emea-data-centre-growth",
+      "evidence_url": "https://www.cushmanwakefield.com/en/united-kingdom/news/2025/02/powerhouse-markets-lead-emea-data-centre-growth",
+      "confidence": "verified",
+      "sources": [
+        {
+          "name": "C&W Feb 2025 press: Frankfurt pipeline 1.3 GW",
+          "value": 1300,
+          "url": "https://www.cushmanwakefield.com/en/united-kingdom/news/2025/02/powerhouse-markets-lead-emea-data-centre-growth"
+        }
+      ],
+      "note": "Frankfurt pipeline directly quoted by C&W. Berlin/Munich pipeline not separately quantified."
     },
     "NL": {
-      "value": 500,
-      "year": 2024,
-      "source": "Aggregated planned + under-construction capacity estimate from JLL EMEA H2 2025 report + DataCentreMap operator counts; no single primary source publishes per-country MW totals openly (C&W reports paywalled).",
-      "url": "https://www.jll.com/en-uk/insights/emea-data-centre-report",
-      "confidence": "estimate",
-      "note": "Composite analyst estimate. JLL EMEA report provides FLAP-D aggregates + Middle East per-city; per-country totals are derived. Not verifiable from public web sources."
+      "value": 444,
+      "year": 2025,
+      "source": "C&W Feb 2025: Amsterdam pipeline 444 MW (C&W H1 2025)",
+      "url": "https://www.cushmanwakefield.com/en/united-kingdom/news/2025/02/powerhouse-markets-lead-emea-data-centre-growth",
+      "evidence_url": "https://www.cushmanwakefield.com/en/united-kingdom/news/2025/02/powerhouse-markets-lead-emea-data-centre-growth",
+      "confidence": "verified",
+      "sources": [
+        {
+          "name": "C&W Feb 2025: Amsterdam pipeline 444 MW",
+          "value": 444,
+          "url": "https://www.cushmanwakefield.com/en/united-kingdom/news/2025/02/powerhouse-markets-lead-emea-data-centre-growth"
+        }
+      ],
+      "note": "Amsterdam pipeline per C&W H1 2025."
     },
     "FR": {
-      "value": 700,
-      "year": 2024,
-      "source": "Aggregated planned + under-construction capacity estimate from JLL EMEA H2 2025 report + DataCentreMap operator counts; no single primary source publishes per-country MW totals openly (C&W reports paywalled).",
-      "url": "https://www.jll.com/en-uk/insights/emea-data-centre-report",
-      "confidence": "estimate",
-      "note": "Composite analyst estimate. JLL EMEA report provides FLAP-D aggregates + Middle East per-city; per-country totals are derived. Not verifiable from public web sources."
+      "value": 1040,
+      "year": 2025,
+      "source": "C&W Feb 2025 press: Paris pipeline 1,040 MW (+32% YoY) (C&W H1 2025)",
+      "url": "https://www.cushmanwakefield.com/en/united-kingdom/news/2025/02/powerhouse-markets-lead-emea-data-centre-growth",
+      "evidence_url": "https://www.cushmanwakefield.com/en/united-kingdom/news/2025/02/powerhouse-markets-lead-emea-data-centre-growth",
+      "confidence": "verified",
+      "sources": [
+        {
+          "name": "C&W Feb 2025 press: Paris pipeline 1,040 MW (+32% YoY)",
+          "value": 1040,
+          "url": "https://www.cushmanwakefield.com/en/united-kingdom/news/2025/02/powerhouse-markets-lead-emea-data-centre-growth"
+        }
+      ],
+      "note": "Paris pipeline directly quoted by C&W; live not separately published."
     },
     "ES": {
       "value": 600,
@@ -2135,12 +2208,20 @@
       "note": "Composite analyst estimate. JLL EMEA report provides FLAP-D aggregates + Middle East per-city; per-country totals are derived. Not verifiable from public web sources."
     },
     "IT": {
-      "value": 500,
-      "year": 2024,
-      "source": "Aggregated planned + under-construction capacity estimate from JLL EMEA H2 2025 report + DataCentreMap operator counts; no single primary source publishes per-country MW totals openly (C&W reports paywalled).",
-      "url": "https://www.jll.com/en-uk/insights/emea-data-centre-report",
-      "confidence": "estimate",
-      "note": "Composite analyst estimate. JLL EMEA report provides FLAP-D aggregates + Middle East per-city; per-country totals are derived. Not verifiable from public web sources."
+      "value": 820,
+      "year": 2025,
+      "source": "C&W Feb 2025 press: Milan pipeline 820 MW (C&W H1 2025)",
+      "url": "https://www.cushmanwakefield.com/en/united-kingdom/news/2025/02/powerhouse-markets-lead-emea-data-centre-growth",
+      "evidence_url": "https://www.cushmanwakefield.com/en/united-kingdom/news/2025/02/powerhouse-markets-lead-emea-data-centre-growth",
+      "confidence": "verified",
+      "sources": [
+        {
+          "name": "C&W Feb 2025 press: Milan pipeline 820 MW",
+          "value": 820,
+          "url": "https://www.cushmanwakefield.com/en/united-kingdom/news/2025/02/powerhouse-markets-lead-emea-data-centre-growth"
+        }
+      ],
+      "note": "Milan pipeline directly quoted by C&W."
     },
     "SE": {
       "value": 350,
@@ -2166,11 +2247,20 @@
       "confidence": "estimate"
     },
     "FI": {
-      "value": 300,
-      "year": 2024,
-      "source": "datacentermap.com + Microsoft Espoo + Google Hamina expansion",
-      "url": "https://www.datacentermap.com/finland/",
-      "confidence": "estimate"
+      "value": 358,
+      "year": 2025,
+      "source": "C&W Feb 2025: Helsinki pipeline 358 MW (C&W H1 2025)",
+      "url": "https://www.cushmanwakefield.com/en/united-kingdom/news/2025/02/powerhouse-markets-lead-emea-data-centre-growth",
+      "evidence_url": "https://www.cushmanwakefield.com/en/united-kingdom/news/2025/02/powerhouse-markets-lead-emea-data-centre-growth",
+      "confidence": "verified",
+      "sources": [
+        {
+          "name": "C&W Feb 2025: Helsinki pipeline 358 MW",
+          "value": 358,
+          "url": "https://www.cushmanwakefield.com/en/united-kingdom/news/2025/02/powerhouse-markets-lead-emea-data-centre-growth"
+        }
+      ],
+      "note": "Helsinki pipeline per C&W H1 2025."
     },
     "CH": {
       "value": 180,
