@@ -1,19 +1,19 @@
 [build]
   publish = "."
 
-# Redirect base URL to Manchester lead magnet
-# Remove these lines when you want to open the full tool publicly
-[[redirects]]
-  from = "/"
-  to = "/manchester.html"
-  status = 302
-  force = true
-
-[[redirects]]
-  from = "/index.html"
-  to = "/manchester.html"
-  status = 302
-  force = true
+# Manchester lead-magnet redirects temporarily disabled while the full
+# tool is being demoed. Re-enable post-demo to resume lead capture.
+# [[redirects]]
+#   from = "/"
+#   to = "/manchester.html"
+#   status = 302
+#   force = true
+#
+# [[redirects]]
+#   from = "/index.html"
+#   to = "/manchester.html"
+#   status = 302
+#   force = true
 
 # Clean URL for the EMEA market comparison tool
 [[redirects]]
