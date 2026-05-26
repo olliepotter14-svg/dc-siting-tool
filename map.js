@@ -1082,10 +1082,13 @@ function initUI() {
   });
 
   // ── Scoring weight sliders ─────────────────────────────────────
-  // Each slider feeds state.weights; we re-normalise on every change,
-  // update the visible labels, recompute composite_score_* across all
-  // features in place, and refresh the map source + parcel list so
-  // colours, list ranking and the detail panel all reflect new weights.
+  // Each slider feeds state.weights; recompute composite_score_* across
+  // all features in place, then push the new feature collection to the
+  // map source so colours, ranking and the detail panel all update.
+  //
+  // We update on the 'input' event (continuous during drag) with a single
+  // rAF throttle so the redraw piggybacks on the next browser paint —
+  // 63k parcels recompute in ~10ms so this stays smooth.
   function refreshWeightLabels() {
     const w = normalisedWeights();
     document.querySelectorAll(".weight-val").forEach(el => {
@@ -1094,25 +1097,31 @@ function initUI() {
       el.textContent = pct + "%";
     });
   }
+  let _weightRafPending = false;
   function applyWeightChange() {
     refreshWeightLabels();
-    if (!state.allFeatures.length) return;
-    recomputeComposites();
-    if (map.getSource("parcels")) {
-      map.getSource("parcels").setData(buildFilteredGeoJSON());
-    }
-    refreshParcelColors();
-    applyFilters();   // re-rank list + score histograms
+    if (_weightRafPending) return;
+    _weightRafPending = true;
+    requestAnimationFrame(() => {
+      _weightRafPending = false;
+      if (!state.allFeatures.length) return;
+      recomputeComposites();
+      // applyFilters() re-filters (composite-score filter), then calls
+      // updateMapData() which does setData with the fresh features +
+      // re-evaluates the colour expression on the new property values.
+      applyFilters();
+      refreshParcelColors();
+    });
   }
   document.querySelectorAll(".weight-slider").forEach(sl => {
-    sl.addEventListener("input", (e) => {
+    const handler = (e) => {
       const dim = e.target.dataset.dim;
-      state.weights[dim] = parseInt(e.target.value, 10) || 0;
-      // Throttle: only re-render on 'change' (mouseup) for heavy work,
-      // but live-update the labels on every 'input' tick.
-      refreshWeightLabels();
-    });
-    sl.addEventListener("change", applyWeightChange);
+      const v = parseInt(e.target.value, 10);
+      state.weights[dim] = isNaN(v) ? 0 : v;
+      applyWeightChange();
+    };
+    sl.addEventListener("input", handler);
+    sl.addEventListener("change", handler);
   });
   document.getElementById("weight-reset-btn")?.addEventListener("click", () => {
     state.weights = { power: 40, permissioning: 30, fibre: 20, buildability: 10 };
