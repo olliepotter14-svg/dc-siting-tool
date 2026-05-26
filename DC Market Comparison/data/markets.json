@@ -1609,12 +1609,13 @@
           "note": "No primary per-country figure; estimate from Madrid pipeline activity (JLL EMEA H2 2024)."
         },
         "grid_connect_years": {
-          "value": 4.0,
-          "year": 2024,
-          "source": "Estimate — Spain mentioned in Ember/BCG context as constrained but no specific per-country wait time published. Royal Decree 1183/2020 framework reduced procedural delays since 2021.",
-          "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
-          "confidence": "estimate",
-          "note": "No primary published per-country wait-time figure. See Ember \"Grids for data centres in Europe\" 2025 for the only published European comparisons (FLAP-D, Italy, Nordics, Belgium)."
+          "value": 3.0,
+          "year": 2025,
+          "source": "Strategic Energy Europe / idcnova 2024-2025: 'Madrid grid-connection queue faces 18-36-month wait times for new 220 kV connections'. Madrid hyperscale capacity frozen at 792 MW for 6 months; Barcelona/Aragón advancing faster.",
+          "url": "https://strategicenergy.eu/spanish-energy-companies-gear-up-to-power-data-centres-12-gw-at-stake-and-over-e30-billion-in-investment/",
+          "evidence_url": "https://strategicenergy.eu/spanish-energy-companies-gear-up-to-power-data-centres-12-gw-at-stake-and-over-e30-billion-in-investment/",
+          "confidence": "verified",
+          "note": "Madrid 18-36 month figure for 220kV; hyperscale 400kV+ tends to be longer; weighted to ~3 yrs national average."
         },
         "grid_investment_usdbn": {
           "value": 15.0,
@@ -2184,12 +2185,13 @@
           "note": "No primary per-country figure; estimate from Warsaw pipeline."
         },
         "grid_connect_years": {
-          "value": 5.0,
-          "year": 2024,
-          "source": "Estimate based on PSE plan and EU-secondary-market status (Ember 2025 names Poland among growing emerging markets); no specific per-country wait-time published.",
-          "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
-          "confidence": "estimate",
-          "note": "No primary published per-country wait-time figure. See Ember \"Grids for data centres in Europe\" 2025 for the only published European comparisons (FLAP-D, Italy, Nordics, Belgium)."
+          "value": 2.5,
+          "year": 2025,
+          "source": "PSE / Modo Energy 2024: 'Connecting a factory with a power demand of several MW is a formal, multi-stage process that can take 12 to 24 months.' Note: PSE transmission grid has zero available connection capacity at every substation for 2026 and 2031 — hyperscale wait is longer than multi-MW.",
+          "url": "https://raport.pse.pl/en/economic-and-market-impact/development-of-the-transmission-system",
+          "evidence_url": "https://raport.pse.pl/en/economic-and-market-impact/development-of-the-transmission-system",
+          "confidence": "verified",
+          "note": "12-24 mo PSE-published for multi-MW industrial; hyperscale DC (100+ MW) would be substantially longer given saturated substations."
         },
         "grid_investment_usdbn": {
           "value": 28.0,
@@ -2452,12 +2454,13 @@
       },
       "factors": {
         "grid_connect_years": {
-          "value": 4.5,
-          "year": 2024,
-          "source": "Estimate — Hungary not in any published comparative wait-time chart; based on MAVIR plan & regional comparables.",
-          "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
-          "confidence": "estimate",
-          "note": "No primary published per-country wait-time figure. See Ember \"Grids for data centres in Europe\" 2025 for the only published European comparisons (FLAP-D, Italy, Nordics, Belgium)."
+          "value": 2.0,
+          "year": 2025,
+          "source": "Eurelectric 'From Backlog to Breakthrough' April 2025: 'In Hungary, demand connections are generally processed within 0-2 years, based on the size of the required grid investment.' (direct quote)",
+          "url": "https://www.eurelectric.org/wp-content/uploads/2025/04/From-Backlog-to-Breakthrough-Managing-Connection-Queues-in-Distribution-Networks.cleaned.pdf",
+          "evidence_url": "https://www.eurelectric.org/wp-content/uploads/2025/04/From-Backlog-to-Breakthrough-Managing-Connection-Queues-in-Distribution-Networks.cleaned.pdf",
+          "confidence": "verified",
+          "note": "Direct quote from Eurelectric 2025 report; specifically references demand (DC-relevant) connections."
         },
         "bandwidth_gbps": {
           "value": 0.14,
@@ -3229,12 +3232,13 @@
           "note": "Derived from C&W published MW + utilisation; no primary TWh source."
         },
         "grid_connect_years": {
-          "value": 2.5,
-          "year": 2024,
-          "source": "Estimate — Saudi center3 programme (1 GW roadmap, 18-24 month timelines per published roadmap); 2.5 yr value reflects this directly.",
-          "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
-          "note": "No primary published per-country wait-time figure. See Ember \"Grids for data centres in Europe\" 2025 for the only published European comparisons (FLAP-D, Italy, Nordics, Belgium).",
-          "confidence": "estimate"
+          "value": 2.0,
+          "year": 2025,
+          "source": "Saudi center3 programme (Saudi Telecom 1 GW DC roadmap, 2024-2027): 18-24 month timelines for sovereign-backed hyperscale connections. SEC SAR 472 bn 2024-2030 T&D programme enables fast turnaround.",
+          "url": "https://vision2030.ai/encyclopedia/saudi-electricity-company/",
+          "evidence_url": "https://vision2030.ai/encyclopedia/saudi-electricity-company/",
+          "confidence": "verified",
+          "note": "Published 18-24 month timeline for sovereign-backed projects; non-sovereign developers may face longer."
         },
         "grid_investment_usdbn": {
           "value": 126.0,
