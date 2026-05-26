@@ -858,20 +858,34 @@
       "note": "2 primary source(s); when sources disagree, value is the arithmetic mean. Range shown as low-high."
     },
     "QA": {
-      "value": 2.5,
-      "year": 2024,
-      "source": "Estimate — Kahramaa industrial connection benchmark used; no published comparative wait-time figure for data centres.",
+      "value": 2.13,
+      "year": 2025,
+      "source": "Regional-inferred — arithmetic mean of VERIFIED Middle East cells for this factor (AE, SA, IL). Mean = 2.13. No published per-country figure for this market.",
       "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
-      "confidence": "estimate",
-      "note": "No primary published per-country wait-time figure. See Ember \"Grids for data centres in Europe\" 2025 for the only published European comparisons (FLAP-D, Italy, Nordics, Belgium)."
+      "confidence": "regional-inferred",
+      "note": "Inferred from Middle East verified peers. Old curated estimate was 2.5.",
+      "sources": [
+        {
+          "name": "Sub-regional mean of verified Middle East peers (3 cells)",
+          "value": 2.13,
+          "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf"
+        }
+      ]
     },
     "BH": {
-      "value": 2.5,
-      "year": 2024,
-      "source": "Estimate — Electricity & Water Authority (EWA) industrial connection benchmark; no published comparative wait-time figure for data centres.",
+      "value": 2.13,
+      "year": 2025,
+      "source": "Regional-inferred — arithmetic mean of VERIFIED Middle East cells for this factor (AE, SA, IL). Mean = 2.13. No published per-country figure for this market.",
       "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
-      "confidence": "estimate",
-      "note": "No primary published per-country wait-time figure. See Ember \"Grids for data centres in Europe\" 2025 for the only published European comparisons (FLAP-D, Italy, Nordics, Belgium)."
+      "confidence": "regional-inferred",
+      "note": "Inferred from Middle East verified peers. Old curated estimate was 2.5.",
+      "sources": [
+        {
+          "name": "Sub-regional mean of verified Middle East peers (3 cells)",
+          "value": 2.13,
+          "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf"
+        }
+      ]
     },
     "IL": {
       "value": 2.75,
@@ -898,27 +912,27 @@
     },
     "TR": {
       "value": 4.0,
-      "year": 2024,
-      "source": "Estimate based on TEİAŞ plan; Türkiye not in published comparative charts.",
-      "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
+      "year": 2025,
+      "source": "Estimate — Türkiye transmission applications rejected since Sept 2024 per Ember Türkiye Electricity Review 2025; published per-country DC wait-time figure not available. Regional Middle East proxy not used because Gulf sovereign-backed programmes (AE/SA) are not representative.",
+      "url": "https://ember-energy.org/app/uploads/2025/03/Turkiye-Electricity-Review-2025_11032025.pdf",
       "confidence": "estimate",
-      "note": "No primary published per-country wait-time figure. See Ember \"Grids for data centres in Europe\" 2025 for the only published European comparisons (FLAP-D, Italy, Nordics, Belgium)."
+      "note": "No primary published per-country wait-time figure. Regional proxy explicitly rejected — Gulf sovereign-fast averages would mislead."
     },
     "EG": {
       "value": 4.0,
-      "year": 2024,
-      "source": "Estimate based on EETC plan; Egypt not in published comparative charts.",
-      "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
+      "year": 2025,
+      "source": "Estimate — EETC network plan + reported grid capacity constraints. Regional Middle East proxy not used because Gulf sovereign-backed programmes (AE/SA) are not representative of Egyptian grid reality.",
+      "url": "http://egyptera.org/",
       "confidence": "estimate",
-      "note": "No primary published per-country wait-time figure. See Ember \"Grids for data centres in Europe\" 2025 for the only published European comparisons (FLAP-D, Italy, Nordics, Belgium)."
+      "note": "No primary published per-country wait-time figure. Regional proxy explicitly rejected — Gulf sovereign-fast averages would mislead."
     },
     "MA": {
       "value": 4.0,
-      "year": 2024,
-      "source": "Estimate based on ONEE plan; Morocco not in published comparative charts.",
-      "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
+      "year": 2025,
+      "source": "Estimate — ONEE network development plan. Regional Middle East proxy not used because Gulf sovereign-backed programmes (AE/SA) are not representative of Moroccan grid reality.",
+      "url": "https://www.one.org.ma/",
       "confidence": "estimate",
-      "note": "No primary published per-country wait-time figure. See Ember \"Grids for data centres in Europe\" 2025 for the only published European comparisons (FLAP-D, Italy, Nordics, Belgium)."
+      "note": "No primary published per-country wait-time figure. Regional proxy explicitly rejected — Gulf sovereign-fast averages would mislead."
     }
   },
   "grid_investment_usdbn": {
@@ -1554,20 +1568,34 @@
       "note": "Paris anchor; T&T 2024 DCCI Figure 3."
     },
     "BE": {
-      "value": 10500000.0,
-      "year": 2024,
-      "source": "Regional estimate — Brussels is not in DCCI 2024 or C&W published index; figure derived from neighbouring markets",
+      "value": 10700000.0,
+      "year": 2025,
+      "source": "Regional-inferred — arithmetic mean of VERIFIED Western Europe cells for this factor (GB, IE, FR, DE, NL, CH, AT). Mean = 10700000.0. No published per-country figure for this market.",
       "url": "https://reports.turnerandtownsend.com/dcci-2024/",
-      "confidence": "estimate",
-      "note": "No primary per-city citation; estimate based on regional comparables."
+      "confidence": "regional-inferred",
+      "note": "Inferred from Western Europe verified peers. Old curated estimate was 10500000.0.",
+      "sources": [
+        {
+          "name": "Sub-regional mean of verified Western Europe peers (7 cells)",
+          "value": 10700000.0,
+          "url": "https://reports.turnerandtownsend.com/dcci-2024/"
+        }
+      ]
     },
     "LU": {
-      "value": 11000000.0,
-      "year": 2024,
-      "source": "Regional estimate — Luxembourg is not in DCCI 2024 or C&W published index; figure derived from neighbouring markets",
+      "value": 10700000.0,
+      "year": 2025,
+      "source": "Regional-inferred — arithmetic mean of VERIFIED Western Europe cells for this factor (GB, IE, FR, DE, NL, CH, AT). Mean = 10700000.0. No published per-country figure for this market.",
       "url": "https://reports.turnerandtownsend.com/dcci-2024/",
-      "confidence": "estimate",
-      "note": "No primary per-city citation; estimate based on regional comparables."
+      "confidence": "regional-inferred",
+      "note": "Inferred from Western Europe verified peers. Old curated estimate was 11000000.0.",
+      "sources": [
+        {
+          "name": "Sub-regional mean of verified Western Europe peers (7 cells)",
+          "value": 10700000.0,
+          "url": "https://reports.turnerandtownsend.com/dcci-2024/"
+        }
+      ]
     },
     "AT": {
       "value": 11000000,
@@ -1625,27 +1653,48 @@
     },
     "CZ": {
       "value": 8500000.0,
-      "year": 2024,
-      "source": "Regional estimate — Prague is not in DCCI 2024 or C&W published index; figure derived from neighbouring markets",
+      "year": 2025,
+      "source": "Regional-inferred — arithmetic mean of VERIFIED Central & Eastern Europe cells for this factor (PL). Mean = 8500000.0. No published per-country figure for this market.",
       "url": "https://reports.turnerandtownsend.com/dcci-2024/",
-      "confidence": "estimate",
-      "note": "No primary per-city citation; estimate based on regional comparables."
+      "confidence": "regional-inferred",
+      "note": "Inferred from Central & Eastern Europe verified peers. Old curated estimate was 8500000.0.",
+      "sources": [
+        {
+          "name": "Sub-regional mean of verified Central & Eastern Europe peers (1 cells)",
+          "value": 8500000.0,
+          "url": "https://reports.turnerandtownsend.com/dcci-2024/"
+        }
+      ]
     },
     "HU": {
-      "value": 8000000.0,
-      "year": 2024,
-      "source": "Regional estimate — Budapest is not in DCCI 2024 or C&W published index; figure derived from neighbouring markets",
+      "value": 8500000.0,
+      "year": 2025,
+      "source": "Regional-inferred — arithmetic mean of VERIFIED Central & Eastern Europe cells for this factor (PL). Mean = 8500000.0. No published per-country figure for this market.",
       "url": "https://reports.turnerandtownsend.com/dcci-2024/",
-      "confidence": "estimate",
-      "note": "No primary per-city citation; estimate based on regional comparables."
+      "confidence": "regional-inferred",
+      "note": "Inferred from Central & Eastern Europe verified peers. Old curated estimate was 8000000.0.",
+      "sources": [
+        {
+          "name": "Sub-regional mean of verified Central & Eastern Europe peers (1 cells)",
+          "value": 8500000.0,
+          "url": "https://reports.turnerandtownsend.com/dcci-2024/"
+        }
+      ]
     },
     "RO": {
-      "value": 7500000.0,
-      "year": 2024,
-      "source": "Regional estimate — Bucharest is not in DCCI 2024 or C&W published index; figure derived from neighbouring markets",
+      "value": 8500000.0,
+      "year": 2025,
+      "source": "Regional-inferred — arithmetic mean of VERIFIED Central & Eastern Europe cells for this factor (PL). Mean = 8500000.0. No published per-country figure for this market.",
       "url": "https://reports.turnerandtownsend.com/dcci-2024/",
-      "confidence": "estimate",
-      "note": "No primary per-city citation; estimate based on regional comparables."
+      "confidence": "regional-inferred",
+      "note": "Inferred from Central & Eastern Europe verified peers. Old curated estimate was 7500000.0.",
+      "sources": [
+        {
+          "name": "Sub-regional mean of verified Central & Eastern Europe peers (1 cells)",
+          "value": 8500000.0,
+          "url": "https://reports.turnerandtownsend.com/dcci-2024/"
+        }
+      ]
     },
     "AE": {
       "value": 8800000,
@@ -1666,44 +1715,58 @@
       "note": "Kingdom of Saudi Arabia anchor; T&T 2024 DCCI Figure 3."
     },
     "QA": {
-      "value": 9500000.0,
-      "year": 2024,
-      "source": "Regional estimate — Doha is not in DCCI 2024 or C&W published index; figure derived from neighbouring markets",
+      "value": 9800000.0,
+      "year": 2025,
+      "source": "Regional-inferred — arithmetic mean of VERIFIED Middle East cells for this factor (AE, SA). Mean = 9800000.0. No published per-country figure for this market.",
       "url": "https://reports.turnerandtownsend.com/dcci-2024/",
-      "confidence": "estimate",
-      "note": "No primary per-city citation; estimate based on regional comparables."
+      "confidence": "regional-inferred",
+      "note": "Inferred from Middle East verified peers. Old curated estimate was 9500000.0.",
+      "sources": [
+        {
+          "name": "Sub-regional mean of verified Middle East peers (2 cells)",
+          "value": 9800000.0,
+          "url": "https://reports.turnerandtownsend.com/dcci-2024/"
+        }
+      ]
     },
     "IL": {
-      "value": 10000000.0,
-      "year": 2024,
-      "source": "Regional estimate — Tel Aviv is not in DCCI 2024 or C&W published index; figure derived from neighbouring markets",
+      "value": 9800000.0,
+      "year": 2025,
+      "source": "Regional-inferred — arithmetic mean of VERIFIED Middle East cells for this factor (AE, SA). Mean = 9800000.0. No published per-country figure for this market.",
       "url": "https://reports.turnerandtownsend.com/dcci-2024/",
-      "confidence": "estimate",
-      "note": "No primary per-city citation; estimate based on regional comparables."
+      "confidence": "regional-inferred",
+      "note": "Inferred from Middle East verified peers. Old curated estimate was 10000000.0.",
+      "sources": [
+        {
+          "name": "Sub-regional mean of verified Middle East peers (2 cells)",
+          "value": 9800000.0,
+          "url": "https://reports.turnerandtownsend.com/dcci-2024/"
+        }
+      ]
     },
     "TR": {
-      "value": 7500000.0,
-      "year": 2024,
-      "source": "Regional estimate — Istanbul is not in DCCI 2024 or C&W published index; figure derived from neighbouring markets",
-      "url": "https://reports.turnerandtownsend.com/dcci-2024/",
+      "value": 7500000,
+      "year": 2025,
+      "source": "Estimate — Istanbul not in T&T DCCI 2024 or C&W published indices. Earlier curated value from regional analyst estimates. Regional Middle East proxy not used because Gulf hyperscale construction costs (SA $10.8M, AE $8.8M) are not representative of Turkish market.",
+      "url": "https://www.turnerandtownsend.com/insights/data-centre-cost-index-2024/",
       "confidence": "estimate",
-      "note": "No primary per-city citation; estimate based on regional comparables."
+      "note": "No primary per-city cite available. Regional proxy explicitly rejected."
     },
     "EG": {
-      "value": 7000000.0,
-      "year": 2024,
-      "source": "Regional estimate — Cairo is not in DCCI 2024 or C&W published index; figure derived from neighbouring markets",
-      "url": "https://reports.turnerandtownsend.com/dcci-2024/",
+      "value": 7000000,
+      "year": 2025,
+      "source": "Estimate — Cairo not in T&T DCCI 2024 or C&W. Regional Middle East proxy not used.",
+      "url": "https://www.turnerandtownsend.com/insights/data-centre-cost-index-2024/",
       "confidence": "estimate",
-      "note": "No primary per-city citation; estimate based on regional comparables."
+      "note": "No primary per-city cite available. Regional proxy explicitly rejected."
     },
     "MA": {
-      "value": 7000000.0,
-      "year": 2024,
-      "source": "Regional estimate — Casablanca is not in DCCI 2024 or C&W published index; figure derived from neighbouring markets",
-      "url": "https://reports.turnerandtownsend.com/dcci-2024/",
+      "value": 7000000,
+      "year": 2025,
+      "source": "Estimate — Casablanca not in T&T DCCI 2024 or C&W. Regional Middle East proxy not used.",
+      "url": "https://www.turnerandtownsend.com/insights/data-centre-cost-index-2024/",
       "confidence": "estimate",
-      "note": "No primary per-city citation; estimate based on regional comparables."
+      "note": "No primary per-city cite available. Regional proxy explicitly rejected."
     }
   },
   "power_cost_usd_kwh": {
