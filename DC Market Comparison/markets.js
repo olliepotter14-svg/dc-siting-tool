@@ -200,6 +200,7 @@ async function loadCountries() {
 
   computeFactorRanks();
   computeFactorRanges();
+  computeRegionalMeans();
   state.weights = { ...WEIGHT_PRESETS.reset };  // default: all factors equally weighted
   computeCompositeScores();
 
@@ -879,6 +880,14 @@ const WEIGHT_PRESETS = {
 // Per-factor [min, max] across countries that have data — cached at load.
 const FACTOR_RANGES = {};
 
+// Per-region per-factor mean of raw values — used to impute scores for
+// sparse-data countries (e.g. Bahrain) so they're judged against a regional
+// baseline rather than over-weighted on the handful of factors they do have.
+// Shape: REGIONAL_MEANS[region][factorId] = { mean, n }
+const REGIONAL_MEANS = {};
+// Global fallback when a country's region has no data for the factor either.
+const GLOBAL_MEANS = {};
+
 function computeFactorRanges() {
   for (const f of SCORING_FACTORS) {
     const vals = state.markets
@@ -886,6 +895,31 @@ function computeFactorRanges() {
       .filter(v => typeof v === 'number');
     if (vals.length > 0) {
       FACTOR_RANGES[f.id] = { min: Math.min(...vals), max: Math.max(...vals) };
+      GLOBAL_MEANS[f.id] = { mean: vals.reduce((a, b) => a + b, 0) / vals.length, n: vals.length };
+    }
+  }
+}
+
+function computeRegionalMeans() {
+  for (const k of Object.keys(REGIONAL_MEANS)) delete REGIONAL_MEANS[k];
+  const byRegion = {};
+  for (const c of state.markets) {
+    const region = c.region || 'Unknown';
+    if (!byRegion[region]) byRegion[region] = [];
+    byRegion[region].push(c);
+  }
+  for (const [region, members] of Object.entries(byRegion)) {
+    REGIONAL_MEANS[region] = {};
+    for (const f of SCORING_FACTORS) {
+      const vals = members
+        .map(c => c.factors && c.factors[f.id] && c.factors[f.id].value)
+        .filter(v => typeof v === 'number');
+      if (vals.length > 0) {
+        REGIONAL_MEANS[region][f.id] = {
+          mean: vals.reduce((a, b) => a + b, 0) / vals.length,
+          n: vals.length,
+        };
+      }
     }
   }
 }
@@ -909,33 +943,60 @@ function computeCompositeScores() {
   }
   state.weightsActive = true;
 
-  // 1. Score each country. Missing data is excluded and weights renormalise.
+  // 1. Score each country. Missing factors are IMPUTED using the regional
+  //    mean (falling back to the global mean if the region has no data
+  //    either) so sparse-data markets like Bahrain are judged against a
+  //    full factor set rather than over-weighted on the few values they
+  //    happen to have. Imputed contributions are flagged so the UI can
+  //    show users what's real vs modelled.
   const rows = [];
   for (const c of state.markets) {
     let weighted = 0;
     let weightSum = 0;
     const contrib = {};
-    const missing = [];
+    const missing = [];   // truly no data anywhere — could not impute
+    const imputed = [];   // filled from region/global mean
     for (const f of SCORING_FACTORS) {
       const w = weights[f.id] || 0;
       if (w === 0) continue;
       const entry = c.factors && c.factors[f.id];
-      if (!entry || typeof entry.value !== 'number') {
-        missing.push(f.id);
-        continue;
+      let rawValue, source = null, sourceN = 0;
+      if (entry && typeof entry.value === 'number') {
+        rawValue = entry.value;
+      } else {
+        const regionStats = REGIONAL_MEANS[c.region] && REGIONAL_MEANS[c.region][f.id];
+        if (regionStats) {
+          rawValue = regionStats.mean;
+          source = 'region';
+          sourceN = regionStats.n;
+        } else if (GLOBAL_MEANS[f.id]) {
+          rawValue = GLOBAL_MEANS[f.id].mean;
+          source = 'global';
+          sourceN = GLOBAL_MEANS[f.id].n;
+        } else {
+          missing.push(f.id);
+          continue;
+        }
+        imputed.push(f.id);
       }
-      const norm = normalise(f.id, entry.value, f.dir);
+      const norm = normalise(f.id, rawValue, f.dir);
       weighted   += w * norm;
       weightSum  += w;
-      contrib[f.id] = { norm, weight: w, weightedContribution: w * norm };
+      contrib[f.id] = {
+        norm,
+        weight: w,
+        weightedContribution: w * norm,
+        imputed: source,         // null | 'region' | 'global'
+        imputedN: sourceN,
+      };
     }
     if (weightSum === 0) {
-      state.composite[c.iso2] = { score: null, contrib, missing };
+      state.composite[c.iso2] = { score: null, contrib, missing, imputed };
       continue;
     }
     const score = weighted / weightSum;
     rows.push({ iso2: c.iso2, score });
-    state.composite[c.iso2] = { score, contrib, missing };
+    state.composite[c.iso2] = { score, contrib, missing, imputed };
   }
 
   // 2. Assign ranks. Higher score = better = rank 1.
@@ -1541,8 +1602,13 @@ function rankRowEl(r, total, opt, isComposite) {
   let nameSub = '';
   if (isComposite) {
     const comp = state.composite[r.c.iso2];
-    if (comp && comp.missing && comp.missing.length > 0) {
-      nameSub = '<span class="rank-name-sub">' + comp.missing.length + ' factors missing</span>';
+    const impN  = comp && comp.imputed ? comp.imputed.length : 0;
+    const missN = comp && comp.missing ? comp.missing.length : 0;
+    if (impN > 0 || missN > 0) {
+      const parts = [];
+      if (impN > 0)  parts.push(impN + ' imputed');
+      if (missN > 0) parts.push(missN + ' missing');
+      nameSub = '<span class="rank-name-sub">' + parts.join(' · ') + '</span>';
     }
   } else if (r.source) {
     nameSub = '<span class="rank-name-sub" title="' + escapeHtml(r.source) + '">' + escapeHtml(truncate(r.source, 36)) + '</span>';
@@ -1727,8 +1793,13 @@ function renderScoreBreakdown(comp) {
            + '<div class="score-breakdown">';
   for (const r of rows) {
     const widthPct = maxWeighted > 0 ? (r.weightedContribution / maxWeighted) * 100 : 0;
-    html += '<div class="sb-row">'
-         +    '<span class="sb-label">' + escapeHtml(r.factor.label) + '</span>'
+    const impTag = r.imputed
+      ? '<span class="sb-imputed-tag" title="No data for this country — imputed from '
+        + (r.imputed === 'region' ? 'regional avg, n=' + r.imputedN : 'global avg, n=' + r.imputedN)
+        + '">~</span>'
+      : '';
+    html += '<div class="sb-row' + (r.imputed ? ' is-imputed' : '') + '">'
+         +    '<span class="sb-label">' + escapeHtml(r.factor.label) + impTag + '</span>'
          +    '<div class="sb-bar-wrap">'
          +      '<div class="sb-bar" style="width:' + widthPct.toFixed(0) + '%"></div>'
          +    '</div>'
@@ -1739,8 +1810,14 @@ function renderScoreBreakdown(comp) {
          +  '</div>';
   }
   html += '</div>';
+  const impCount = (comp.imputed || []).length;
+  if (impCount > 0) {
+    html += '<div class="sb-imputed-note">~ ' + impCount + ' factor'
+         + (impCount === 1 ? '' : 's')
+         + ' imputed from regional average</div>';
+  }
   if (comp.missing && comp.missing.length > 0) {
-    html += '<div class="sb-missing">Excluded (no data): '
+    html += '<div class="sb-missing">Excluded (no data anywhere): '
          + comp.missing.map(fid => {
              const f = SCORING_FACTORS.find(x => x.id === fid);
              return f ? f.label : fid;
@@ -1767,8 +1844,21 @@ function openDetailPanel(country) {
   if (state.weightsActive) {
     const comp = state.composite[country.iso2];
     if (comp && comp.score != null) {
-      const missingStr = comp.missing.length > 0
-        ? '<div class="detail-composite-meta">Missing data for ' + comp.missing.length + ' weighted factors — score normalised across the rest.</div>'
+      const impN = (comp.imputed || []).length;
+      const missN = (comp.missing || []).length;
+      let metaLine = '';
+      if (impN > 0 && missN > 0) {
+        metaLine = impN + ' factor' + (impN === 1 ? '' : 's') + ' imputed from regional avg · '
+                 + missN + ' excluded (no data anywhere).';
+      } else if (impN > 0) {
+        metaLine = impN + ' of ' + SCORING_FACTORS.length
+                 + ' factors imputed from regional avg (neighbouring countries).';
+      } else if (missN > 0) {
+        metaLine = missN + ' factor' + (missN === 1 ? '' : 's')
+                 + ' excluded — no data in country or region.';
+      }
+      const missingStr = metaLine
+        ? '<div class="detail-composite-meta">' + metaLine + '</div>'
         : '';
       html +=
         '<div class="detail-composite">'

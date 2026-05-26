@@ -1374,6 +1374,28 @@ select:hover { border-color: rgba(255,255,255,0.15); }
   font-style: italic;
 }
 
+.sb-imputed-note {
+  font-size: 9.5px;
+  color: #00E5FF;
+  opacity: 0.65;
+  margin-top: 7px;
+  line-height: 1.4;
+  font-style: italic;
+}
+
+.sb-row.is-imputed .sb-label,
+.sb-row.is-imputed .sb-norm {
+  opacity: 0.6;
+}
+
+.sb-imputed-tag {
+  color: #00E5FF;
+  opacity: 0.7;
+  margin-left: 4px;
+  font-weight: 700;
+  cursor: help;
+}
+
 /* ─── Detail Panel ───────────────────────────────────────────────── */
 
 .detail-panel {
