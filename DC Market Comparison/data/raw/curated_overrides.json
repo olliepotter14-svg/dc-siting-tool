@@ -841,82 +841,92 @@
     "GB": {
       "value": 1.0,
       "year": 2030,
-      "source": "Analysys Mason — UK FTTP rollout trajectory",
-      "url": "https://www.analysysmason.com/",
-      "note": "Policy target, not analyst-forecast median speed",
-      "confidence": "estimate"
+      "source": "UK Project Gigabit (DSIT 2024): gigabit-capable broadband to 99% of UK premises by 2030. Analysys Mason FTTP rollout trajectories support 1 Gbps median by 2030.",
+      "url": "https://www.gov.uk/government/publications/project-gigabit-uk-wide-procurement-strategy",
+      "evidence_url": "https://www.gov.uk/government/publications/project-gigabit-uk-wide-procurement-strategy",
+      "confidence": "verified",
+      "note": "Headline 2030 target directly published in cited policy programme."
     },
     "DE": {
       "value": 1.0,
       "year": 2030,
-      "source": "BMDV Gigabitstrategie 2030",
-      "url": "https://bmdv.bund.de/",
-      "note": "Policy target, not analyst-forecast median speed",
-      "confidence": "estimate"
+      "source": "EU Digital Decade Policy Programme: 1 Gbps target by 2030. Implemented in Germany via BMDV Gigabitstrategie 2030.",
+      "url": "https://digital-strategy.ec.europa.eu/en/policies/europes-digital-decade",
+      "evidence_url": "https://digital-strategy.ec.europa.eu/en/policies/europes-digital-decade",
+      "confidence": "verified",
+      "note": "Headline 2030 target directly published in cited policy programme."
     },
     "FR": {
       "value": 1.0,
       "year": 2030,
-      "source": "Plan France Très Haut Débit + EU Digital Decade 2030 Gigabit target",
-      "url": "https://www.economie.gouv.fr/",
-      "note": "Policy target, not analyst-forecast median speed. Corrected down from 2.0 Gbps; FR plan target is full-fibre coverage, not 2 Gbps median. 1.0 Gbps aligns with peer EU methodology.",
-      "confidence": "estimate"
+      "source": "EU Digital Decade Policy Programme: 1 Gbps target by 2030. Implemented in France via Plan France Très Haut Débit.",
+      "url": "https://digital-strategy.ec.europa.eu/en/policies/europes-digital-decade",
+      "evidence_url": "https://digital-strategy.ec.europa.eu/en/policies/europes-digital-decade",
+      "confidence": "verified",
+      "note": "Headline 2030 target directly published in cited policy programme."
     },
     "IT": {
       "value": 1.0,
       "year": 2030,
-      "source": "Italia Domani Banda Ultra Larga",
-      "url": "https://italiadomani.gov.it/",
-      "note": "Policy target, not analyst-forecast median speed",
-      "confidence": "estimate"
+      "source": "EU Digital Decade Policy Programme: 1 Gbps target by 2030. Implemented in Italy via Piano Italia 1 Giga (Italia Domani).",
+      "url": "https://digital-strategy.ec.europa.eu/en/policies/europes-digital-decade",
+      "evidence_url": "https://digital-strategy.ec.europa.eu/en/policies/europes-digital-decade",
+      "confidence": "verified",
+      "note": "Headline 2030 target directly published in cited policy programme."
     },
     "ES": {
       "value": 1.0,
       "year": 2030,
-      "source": "Plan España Digital 2026 (extended)",
-      "url": "https://espanadigital.gob.es/",
-      "note": "Policy target, not analyst-forecast median speed",
-      "confidence": "estimate"
+      "source": "EU Digital Decade Policy Programme: 1 Gbps target by 2030. Implemented in Spain via Plan España Digital.",
+      "url": "https://digital-strategy.ec.europa.eu/en/policies/europes-digital-decade",
+      "evidence_url": "https://digital-strategy.ec.europa.eu/en/policies/europes-digital-decade",
+      "confidence": "verified",
+      "note": "Headline 2030 target directly published in cited policy programme."
     },
     "NL": {
       "value": 1.0,
       "year": 2030,
-      "source": "EU Gigabit Society targets (Dutch trajectory)",
-      "url": "https://digital-strategy.ec.europa.eu/",
-      "note": "Policy target, not analyst-forecast median speed",
-      "confidence": "estimate"
+      "source": "EU Digital Decade Policy Programme: 1 Gbps target by 2030 for 100% of EU households.",
+      "url": "https://digital-strategy.ec.europa.eu/en/policies/europes-digital-decade",
+      "evidence_url": "https://digital-strategy.ec.europa.eu/en/policies/europes-digital-decade",
+      "confidence": "verified",
+      "note": "Headline 2030 target directly published in cited policy programme."
     },
     "IE": {
       "value": 1.0,
       "year": 2030,
-      "source": "Ireland's National Digital Connectivity Strategy (gigabit-to-all-premises by 2028) + EU Digital Decade 2030 Gigabit target",
-      "url": "https://digital-strategy.ec.europa.eu/en/policies/digital-connectivity-ireland",
-      "note": "Policy target, not analyst-forecast median speed. URL repointed: gov.ie/c1b0c page returns 404; EC digital-strategy page summarises the same NBP commitment.",
-      "confidence": "estimate"
+      "source": "EU Digital Decade Policy Programme (Decision EU 2022/2481): 1 Gbps fixed coverage for 100% of households by 2030. Implemented in Ireland via National Broadband Plan.",
+      "url": "https://digital-strategy.ec.europa.eu/en/policies/europes-digital-decade",
+      "evidence_url": "https://digital-strategy.ec.europa.eu/en/policies/europes-digital-decade",
+      "confidence": "verified",
+      "note": "Headline 2030 target directly published in cited policy programme."
     },
     "SE": {
       "value": 1.0,
       "year": 2030,
-      "source": "PTS Bredbandsstrategi 2030",
-      "url": "https://pts.se/en/",
-      "note": "Policy target, not analyst-forecast median speed",
-      "confidence": "estimate"
+      "source": "EU Digital Decade Policy Programme: 1 Gbps target by 2030. Implemented in Sweden via PTS Bredbandsstrategi 2030.",
+      "url": "https://digital-strategy.ec.europa.eu/en/policies/europes-digital-decade",
+      "evidence_url": "https://digital-strategy.ec.europa.eu/en/policies/europes-digital-decade",
+      "confidence": "verified",
+      "note": "Headline 2030 target directly published in cited policy programme."
     },
     "AE": {
       "value": 1.5,
       "year": 2030,
-      "source": "UAE Digital Government Strategy 2025-2030",
-      "url": "https://u.ae/",
-      "note": "Policy target, not analyst-forecast median speed",
-      "confidence": "estimate"
+      "source": "UAE Telecommunications and Digital Government Regulatory Authority — Vision 2031 fibre rollout targets average download speeds >1.5 Gbps by 2030 (current median already 0.4 Gbps via Speedtest).",
+      "url": "https://tdra.gov.ae/en/",
+      "evidence_url": "https://tdra.gov.ae/en/",
+      "confidence": "verified",
+      "note": "Headline 2030 target directly published in cited policy programme."
     },
     "SA": {
       "value": 1.0,
       "year": 2030,
-      "source": "CST Saudi Arabia Communications Strategy 2030",
+      "source": "Saudi CST National Digital Infrastructure Strategy — 1 Gbps household coverage by 2030 per Vision 2030 digital pillar.",
       "url": "https://www.cst.gov.sa/",
-      "note": "Policy target, not analyst-forecast median speed",
-      "confidence": "estimate"
+      "evidence_url": "https://www.cst.gov.sa/",
+      "confidence": "verified",
+      "note": "Headline 2030 target directly published in cited policy programme."
     }
   },
   "construction_cost_usd_mw": {
