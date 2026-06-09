@@ -6,11 +6,11 @@
   <title>DC Market Comparison — EMEA Data Centre Market Intelligence</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <link href="https://api.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.css" rel="stylesheet" />
   <script src="https://api.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.js"></script>
   <script src="config.js"></script>
-  <link rel="stylesheet" href="style.css?v=37" />
+  <link rel="stylesheet" href="style.css?v=51" />
 </head>
 <body class="mobile-tab-map">
 
@@ -27,14 +27,14 @@
       <div class="logo">
         <span class="logo-icon">
           <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="1" y="1" width="26" height="26" rx="6" stroke="#00E5FF" stroke-width="1.5"/>
-            <circle cx="14" cy="14" r="10" stroke="#00E5FF" stroke-width="1" stroke-opacity="0.5" fill="none"/>
-            <circle cx="14" cy="14" r="6"  stroke="#00E5FF" stroke-width="1" stroke-opacity="0.7" fill="none"/>
-            <circle cx="14" cy="14" r="2.5" fill="#00E5FF"/>
-            <circle cx="6"  cy="14" r="1.5" fill="#00E5FF"/>
-            <circle cx="22" cy="14" r="1.5" fill="#00E5FF"/>
-            <circle cx="14" cy="6"  r="1.5" fill="#00E5FF"/>
-            <circle cx="14" cy="22" r="1.5" fill="#00E5FF"/>
+            <rect x="1" y="1" width="26" height="26" rx="6" stroke="#2A45C8" stroke-width="1.5"/>
+            <circle cx="14" cy="14" r="10" stroke="#2A45C8" stroke-width="1" stroke-opacity="0.5" fill="none"/>
+            <circle cx="14" cy="14" r="6"  stroke="#2A45C8" stroke-width="1" stroke-opacity="0.7" fill="none"/>
+            <circle cx="14" cy="14" r="2.5" fill="#2A45C8"/>
+            <circle cx="6"  cy="14" r="1.5" fill="#2A45C8"/>
+            <circle cx="22" cy="14" r="1.5" fill="#2A45C8"/>
+            <circle cx="14" cy="6"  r="1.5" fill="#2A45C8"/>
+            <circle cx="14" cy="22" r="1.5" fill="#2A45C8"/>
           </svg>
         </span>
         <div>
@@ -51,24 +51,43 @@
         <span class="stat-label">markets</span>
       </div>
       <div class="stat">
-        <span class="stat-value" id="stat-factors">13</span>
+        <span class="stat-value" id="stat-factors">12</span>
         <span class="stat-label">factors</span>
       </div>
     </div>
 
-    <div class="data-disclaimer">
-      Each value carries a confidence badge.
-      <span class="disc-tag disc-verified">VERIFIED</span>
-      = primary-published figure (API like Ember/World Bank/Eurostat, or named PDF like T&amp;T DCCI, JLL Research, Ember Grids 2025). Click into a cell to expand multi-source breakdowns where multiple primaries exist.
-      <span class="disc-tag disc-inferred">INFERRED</span>
-      = sub-regional mean of verified neighbouring countries (used where no per-country primary exists, e.g. CEE grid-connect times averaged from Poland + Hungary).
-      <span class="disc-tag disc-estimate">ESTIMATE</span>
-      = analyst-derived from a named source where the specific figure isn't directly extractable.
+    <div class="value-prop">
+      <p class="value-prop-lead">Every EMEA data-centre market, ranked in one view.</p>
+      <div class="value-prop-links">
+        <button id="method-btn" class="method-link" type="button">How the score works ↗</button>
+        <button id="tour-btn" class="method-link" type="button">Take a tour ↗</button>
+      </div>
     </div>
 
     <div class="filter-section">
 
-      <div class="filter-label">Latency reach</div>
+      <div class="filter-label">Model a data centre</div>
+      <div class="model-controls">
+        <div class="model-row">
+          <span class="model-row-label">Size</span>
+          <div class="btn-group" id="model-size-toggle">
+            <button data-est-mw="25">25 MW</button>
+            <button data-est-mw="50" class="active">50 MW</button>
+            <button data-est-mw="100">100 MW</button>
+          </div>
+        </div>
+        <div class="model-row">
+          <span class="model-row-label">PUE</span>
+          <div class="btn-group" id="model-pue-toggle">
+            <button data-est-pue="1.2">1.2</button>
+            <button data-est-pue="1.3" class="active">1.3</button>
+            <button data-est-pue="1.5">1.5</button>
+          </div>
+        </div>
+        <div class="model-hint">Click any market to see its build cost, power cost &amp; CO₂ at this scenario.</div>
+      </div>
+
+      <div class="filter-label mt">Latency reach</div>
       <div class="btn-group" id="latency-ms-toggle">
         <button data-ms="0">Off</button>
         <button data-ms="5">5 ms</button>
@@ -83,14 +102,13 @@
       <div class="filter-label mt">Map overlays</div>
       <div class="overlay-chips" id="overlay-chips">
         <button class="overlay-chip" data-layer="ixps"   title="Carrier-neutral internet exchanges (PeeringDB)">◎ IXPs</button>
-        <button class="overlay-chip" data-layer="grid"   title="High-voltage transmission lines (OSM)">— HV grid</button>
         <button class="overlay-chip" data-layer="dcs"    title="Operational + planned data-centre facilities">▢ DC sites</button>
       </div>
 
       <div class="weights-panel">
         <div class="weights-header">
           <span class="weights-title">Composite score weighting</span>
-          <span class="weights-meta" id="weights-meta">10 scored factors</span>
+          <span class="weights-meta" id="weights-meta">9 scored factors</span>
         </div>
         <div class="weights-help">Higher number = more important. 0 turns the factor off.</div>
         <div class="weights-presets" id="weights-presets">
@@ -104,6 +122,14 @@
         <div class="weights-sliders" id="weights-sliders"></div>
       </div>
 
+      <a class="cta-block cta-block--side" href="mailto:oliverpotter3@hotmail.co.uk?subject=EMEA%20data-centre%20market%20insights" target="_blank" rel="noopener">
+        <div class="cta-text">
+          <div class="cta-title">Book an EMEA insights call</div>
+          <div class="cta-sub">Tailored market &amp; site guidance.</div>
+        </div>
+        <span class="cta-arrow">→</span>
+      </a>
+
     </div>
 
   </aside>
@@ -115,7 +141,7 @@
     <span class="map-colour-label">Colour markers by</span>
     <div class="select-wrap">
       <select id="colour-by-select">
-        <option value="">— none (cyan) —</option>
+        <option value="">— none —</option>
       </select>
     </div>
   </div>
@@ -125,10 +151,10 @@
     <div id="load-card">
       <div id="load-logo">
         <svg width="22" height="22" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" style="vertical-align:middle;margin-right:8px">
-          <rect x="1" y="1" width="26" height="26" rx="6" stroke="#00E5FF" stroke-width="1.5"/>
-          <circle cx="14" cy="14" r="10" stroke="#00E5FF" stroke-width="1" stroke-opacity="0.5" fill="none"/>
-          <circle cx="14" cy="14" r="6"  stroke="#00E5FF" stroke-width="1" stroke-opacity="0.7" fill="none"/>
-          <circle cx="14" cy="14" r="2.5" fill="#00E5FF"/>
+          <rect x="1" y="1" width="26" height="26" rx="6" stroke="#2A45C8" stroke-width="1.5"/>
+          <circle cx="14" cy="14" r="10" stroke="#2A45C8" stroke-width="1" stroke-opacity="0.5" fill="none"/>
+          <circle cx="14" cy="14" r="6"  stroke="#2A45C8" stroke-width="1" stroke-opacity="0.7" fill="none"/>
+          <circle cx="14" cy="14" r="2.5" fill="#2A45C8"/>
         </svg>DC Market Comparison
       </div>
       <div id="load-status">Initialising…</div>
@@ -180,24 +206,25 @@
       <div class="sources-list">
         <div class="sources-group">
           <div class="sources-group-title">Demand</div>
-          <div class="sources-item"><strong>Compute demand 2027 (TWh)</strong><br><a href="https://www.iea.org/reports/electricity-2024" target="_blank" rel="noopener">IEA Electricity 2024</a> + national TSO long-term forecasts (BMWK, EirGrid, RTE, Energinet, Statnett, Fingrid). Cushman & Wakefield and JLL cross-checks for emerging markets.</div>
+          <div class="sources-item"><strong>Addressable demand 2030</strong><br>Total addressable broadband demand by market (2030 horizon), from the EdenLab 'Inputs' demand model. Informational — not part of the composite score.</div>
         </div>
         <div class="sources-group">
           <div class="sources-group-title">Grid</div>
           <div class="sources-item"><strong>Connection timeline (years)</strong><br>Each national TSO's published 2024 connection-queue statistics — NESO TEC Register, EirGrid, Bundesnetzagentur, TenneT, RTE, Terna, REE, Svenska kraftnät, PSE, etc.</div>
           <div class="sources-item"><strong>Power production per capita (kWh/yr)</strong><br><a href="https://ourworldindata.org/grapher/per-capita-electricity-generation" target="_blank" rel="noopener">Our World in Data (Ember 'Yearly Electricity Data')</a> — fetched live by <code>fetch_ember.py</code>.</div>
-          <div class="sources-item"><strong>Forecast grid investment (USD bn)</strong><br>National TSO 10-year network development plans (BMWK Stromnetz 2030, RIIO-T3, RTE Schéma, Terna PdS, etc.).</div>
+          <div class="sources-item"><strong>Grid investment (annual €)</strong><br>National TSO/DSO network development plans &amp; press releases, expressed as annual EUR commitment.</div>
         </div>
         <div class="sources-group">
           <div class="sources-group-title">Fibre</div>
-          <div class="sources-item"><strong>Bandwidth (Gbps)</strong><br><a href="https://www.speedtest.net/global-index" target="_blank" rel="noopener">Ookla Speedtest Global Index</a> (Q1 2024 median fixed-broadband download).</div>
+          <div class="sources-item"><strong>Bandwidth (Gbps)</strong><br><a href="https://www2.telegeography.com/global-internet-map" target="_blank" rel="noopener">TeleGeography</a> — average international fibre bandwidth diameter.</div>
           <div class="sources-item"><strong>2030 forecast (Gbps)</strong><br>National gigabit strategies (BMDV, Plan France Très Haut Débit, EU Gigabit Society 2030) + Analysys Mason.</div>
         </div>
         <div class="sources-group">
           <div class="sources-group-title">Differentiators</div>
-          <div class="sources-item"><strong>Construction cost (USD/MW)</strong><br><a href="https://www.cushmanwakefield.com/en/insights/global-data-center-construction-cost-guide" target="_blank" rel="noopener">Cushman & Wakefield Global DC Construction Cost Guide 2024</a> + <a href="https://www.turnerandtownsend.com/" target="_blank" rel="noopener">Turner & Townsend Data Centre Cost Index 2024</a>.</div>
+          <div class="sources-item"><strong>Construction cost (US$/W)</strong><br>All-in build cost per watt from the <a href="https://www.turnerandtownsend.com/insights/data-centre-construction-cost-index-2025-2026/" target="_blank" rel="noopener">Turner &amp; Townsend Data Centre Construction Cost Index 2025-26</a> — published per-city figures (Zurich, London, Frankfurt, Paris, Amsterdam, Madrid, Dublin, Oslo); other markets scaled to that benchmark.</div>
           <div class="sources-item"><strong>Power cost (USD/kWh)</strong><br><a href="https://ec.europa.eu/eurostat/web/energy/database" target="_blank" rel="noopener">Eurostat NRG_PC_205</a> (EU industrial Band IE) + each national regulator's published industrial tariff (Ofgem, DEWA, SEC, etc.).</div>
-          <div class="sources-item"><strong>R&D techs / million + Tertiary graduate %</strong><br><a href="https://data.worldbank.org/" target="_blank" rel="noopener">World Bank Indicators API</a> (<code>SP.POP.TECH.RD.P6</code>, <code>SE.TER.CUAT.BA.ZS</code>) — fetched live by <code>fetch_world_bank.py</code>.</div>
+          <div class="sources-item"><strong>R&D technicians / million</strong><br><a href="https://ourworldindata.org/" target="_blank" rel="noopener">Our World in Data</a> (2022).</div>
+          <div class="sources-item"><strong>STEM graduate share</strong><br><a href="https://data.un.org/" target="_blank" rel="noopener">UN data</a> — share of tertiary graduates in Engineering, Manufacturing &amp; Construction.</div>
           <div class="sources-item"><strong>Grid carbon intensity (gCO₂/kWh)</strong><br><a href="https://ourworldindata.org/grapher/carbon-intensity-electricity" target="_blank" rel="noopener">Our World in Data (Ember)</a> — fetched live by <code>fetch_ember.py</code>.</div>
         </div>
         <div class="sources-group">
@@ -207,7 +234,6 @@
         <div class="sources-group">
           <div class="sources-group-title">Map overlays</div>
           <div class="sources-item"><strong>IXPs + DC facilities</strong><br><a href="https://www.peeringdb.com/" target="_blank" rel="noopener">PeeringDB</a> — fetched live by <code>fetch_overlays.py</code>.</div>
-          <div class="sources-item"><strong>HV transmission grid (≥380 kV)</strong><br><a href="https://www.openstreetmap.org/" target="_blank" rel="noopener">OpenStreetMap</a> via Overpass API.</div>
         </div>
       </div>
       <div class="sources-footer">All values carry <code>{value, year, source, url}</code>. To refresh: <code>python3 scripts/fetch_ember.py</code>, <code>python3 scripts/fetch_world_bank.py</code>, <code>python3 scripts/fetch_overlays.py</code>, then <code>python3 scripts/build_markets_dataset.py</code>.</div>
@@ -223,6 +249,44 @@
     <div class="compare-drawer-body" id="compare-drawer-body"></div>
   </div>
 
-  <script src="markets.js?v=37"></script>
+  <!-- Intro / method overlay — first run (localStorage) + reopened via "How the score works" -->
+  <div id="intro-overlay" class="intro-overlay hidden" aria-hidden="true">
+    <div class="intro-backdrop"></div>
+    <div class="intro-card" role="dialog" aria-label="How the market score works">
+      <button id="intro-close" class="intro-close" title="Close">✕</button>
+      <div class="intro-eyebrow">EMEA Data Centre Market Intelligence</div>
+      <h1 class="intro-title">Every EMEA data-centre market, ranked in one view.</h1>
+      <p class="intro-lead intro-problem">The data that decides a data-centre market — grid, power, fibre, cost, talent, carbon — sits across <strong>dozens of separate reports and platforms</strong>, making a like-for-like comparison slow and painful.</p>
+      <p class="intro-lead">This puts all <strong>45 EMEA markets</strong> in one ranked view — weighted to your strategy, with the reason behind <em>every</em> rank — so weeks of desk research become a shortlist you can defend in <strong>minutes</strong>.</p>
+
+      <div class="intro-cols">
+        <div class="intro-col intro-col--supply">
+          <div class="intro-col-head"><span class="intro-dot"></span>Supply-side readiness <span class="intro-tag">the score</span></div>
+          <ul class="intro-factors">
+            <li><b>Power &amp; grid</b> — connection wait, grid investment, power per capita</li>
+            <li><b>Connectivity</b> — international fibre bandwidth</li>
+            <li><b>Cost</b> — construction cost ($/W), power cost</li>
+            <li><b>Talent</b> — R&amp;D technicians, STEM graduate share</li>
+            <li><b>Sustainability</b> — grid carbon intensity</li>
+          </ul>
+        </div>
+        <div class="intro-col intro-col--demand">
+          <div class="intro-col-head"><span class="intro-dot intro-dot--demand"></span>Demand-side context <span class="intro-tag intro-tag--muted">not scored</span></div>
+          <ul class="intro-factors">
+            <li><b>Addressable demand</b> — projected to 2030</li>
+            <li><b>Market maturity</b> — live &amp; planned DC capacity</li>
+          </ul>
+          <p class="intro-note">Demand tells you how big the prize is; the supply score tells you how hard it is to capture. Drag the weight sliders to tune the score to your strategy.</p>
+        </div>
+      </div>
+
+      <div class="intro-footer">
+        <label class="intro-dontshow"><input type="checkbox" id="intro-dontshow"> Don't show this again</label>
+        <button id="intro-go" class="intro-go" type="button">Explore the map →</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="markets.js?v=51"></script>
 </body>
 </html>

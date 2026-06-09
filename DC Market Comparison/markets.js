@@ -21,9 +21,12 @@
 
 const EMEA_CENTER = [10, 45];      // lon, lat — slightly west to leave the rankings panel some breathing room
 const EMEA_ZOOM   = 3.0;            // shows from UK to Egypt with sidebar + rankings panel both visible
-const MAP_STYLE   = 'mapbox://styles/mapbox/dark-v11';
+const MAP_STYLE   = 'mapbox://styles/mapbox/light-v11';
 
 const FACTOR_COUNT = 13;            // 11 numeric + live MW + planned MW
+
+// Booking CTA target — swap for your scheduling link (Calendly, etc.).
+const BOOKING_URL = 'mailto:oliverpotter3@hotmail.co.uk?subject=EMEA%20data-centre%20market%20insights';
 
 /* ──────────────────────────────────────────────────────────────────
    2. App state — single source of truth
@@ -43,6 +46,8 @@ const state = {
   weights:           {},          // factor_id → 0..10  (F24)
   weightsActive:     true,        // toggle composite scoring globally
   composite:         {},          // iso2 → { score, rank, contributing, missing }  (F24)
+  modelMw:           50,          // cost/emissions estimator — data-centre IT size (MW)
+  modelPue:          1.3,         // cost/emissions estimator — power usage effectiveness
 };
 
 window.appState = state;          // expose for debugging
@@ -127,6 +132,7 @@ function initMap() {
 
   state.map.on('style.load', () => {
     console.log('[markets] basemap style loaded');
+    styleBasemap();
     setLoadStatus('Ready');
     setLoadProgress(100);
     setTimeout(hideLoadOverlay, 200);
@@ -161,6 +167,52 @@ function initMap() {
       hideLoadOverlay();
     }
   }, 3000);
+}
+
+// Recolour the stock light-v11 vector layers into a bespoke warm-paper
+// "atlas" that matches the editorial UI: cream land, soft water, ink hairline
+// borders, muted labels, and no road/POI/building clutter at country zoom.
+function styleBasemap() {
+  const LAND  = '#E7E1D3';   // warm paper, a touch lighter than the page
+  const WATER = '#CBD3D4';   // soft cool grey-blue
+  const LABEL = '#46423A';
+  const HALO  = '#EDE8DE';
+  let layers;
+  try { layers = state.map.getStyle().layers || []; } catch (e) { return; }
+  for (const l of layers) {
+    const id = l.id, t = l.type;
+    try {
+      if (t === 'background') {
+        state.map.setPaintProperty(id, 'background-color', LAND);
+      } else if (t === 'fill') {
+        if (/water|ocean|sea|river|lake|bathym/i.test(id)) state.map.setPaintProperty(id, 'fill-color', WATER);
+        else if (/building/i.test(id)) state.map.setPaintProperty(id, 'fill-opacity', 0);
+        else state.map.setPaintProperty(id, 'fill-color', LAND);
+      } else if (t === 'line') {
+        if (/water|river|canal|stream/i.test(id)) {
+          state.map.setPaintProperty(id, 'line-color', WATER);
+        } else if (/admin|boundary|country|state/i.test(id)) {
+          const major = /admin[-_]?0|country|dispute/i.test(id);
+          state.map.setPaintProperty(id, 'line-color', major ? 'rgba(27,26,23,0.32)' : 'rgba(27,26,23,0.10)');
+          if (!major) state.map.setPaintProperty(id, 'line-dasharray', [2, 2]);
+        } else if (/road|bridge|tunnel|rail|ferry|path|transit|aeroway|pier/i.test(id)) {
+          state.map.setLayoutProperty(id, 'visibility', 'none');
+        }
+      } else if (t === 'symbol') {
+        if (/road|poi|transit|waterway|airport|natural-point|water-point|ferry|rail/i.test(id)) {
+          state.map.setLayoutProperty(id, 'visibility', 'none');
+        } else {
+          state.map.setPaintProperty(id, 'text-color', LABEL);
+          state.map.setPaintProperty(id, 'text-halo-color', HALO);
+          state.map.setPaintProperty(id, 'text-halo-width', 1.1);
+        }
+      } else if (t === 'fill-extrusion') {
+        state.map.setPaintProperty(id, 'fill-extrusion-opacity', 0);
+      } else if (t === 'hillshade') {
+        state.map.setLayoutProperty(id, 'visibility', 'none');
+      }
+    } catch (e) { /* property not applicable to this layer — skip */ }
+  }
 }
 
 /* ──────────────────────────────────────────────────────────────────
@@ -260,20 +312,6 @@ const OVERLAYS = {
         'circle-stroke-color': '#10141C',
         'circle-stroke-width': 0.5,
         'circle-opacity':      0.8,
-      },
-    }],
-  },
-  grid: {
-    file: 'data/overlay_grid.geojson',
-    sourceId: 'overlay-grid-src',
-    interactive: false,
-    layers: [{
-      id: 'overlay-grid',
-      type: 'line',
-      paint: {
-        'line-color':   '#FFB300',
-        'line-width':   1.0,
-        'line-opacity': 0.55,
       },
     }],
   },
@@ -519,16 +557,15 @@ function computeMarkerLabel(c) {
   // Compact format — only the magnitude. Keep labels under ~5 chars so they
   // fit inside the circle at typical zoom.
   if (fid === 'composite_score')      return String(Math.round(value));
-  if (fid === 'demand_2027_twh')      return value.toFixed(1);
+  if (fid === 'demand_2027_twh')      return value >= 1000 ? (value / 1000).toFixed(1) + 'k' : String(Math.round(value));
   if (fid === 'grid_connect_years')   return value.toFixed(1);
   if (fid === 'power_per_capita_kwh') return value >= 1000 ? Math.round(value / 1000) + 'k' : String(Math.round(value));
-  if (fid === 'grid_investment_usdbn')return Math.round(value).toString();
+  if (fid === 'grid_investment_usdbn')return value >= 1e9 ? (value / 1e9).toFixed(1) + 'b' : Math.round(value / 1e6) + 'm';
   if (fid === 'bandwidth_gbps')       return value.toFixed(2);
-  if (fid === 'bandwidth_2030_gbps')  return value.toFixed(1);
-  if (fid === 'construction_cost_usd_mw') return (value / 1e6).toFixed(1);
+  if (fid === 'construction_cost_usd_mw') return '$' + value.toFixed(1);
   if (fid === 'power_cost_usd_kwh')   return value.toFixed(2);
   if (fid === 'rd_techs_per_million') return value >= 1000 ? Math.round(value / 1000) + 'k' : String(Math.round(value));
-  if (fid === 'tertiary_grad_pct')    return Math.round(value).toString();
+  if (fid === 'tertiary_grad_pct')    return Math.round(value * 100).toString();
   if (fid === 'carbon_intensity_gco2_kwh') return Math.round(value).toString();
   if (fid === 'dc_capacity_live_mw' || fid === 'dc_capacity_planned_mw') {
     return value >= 1000 ? (value / 1000).toFixed(1) + 'k' : String(Math.round(value));
@@ -558,14 +595,14 @@ function addCountriesSourceAndLayer() {
       ],
       'circle-color': [
         'case',
-        ['boolean', ['feature-state', 'active'], false], '#FFFFFF',
-        '#00E5FF',
+        ['boolean', ['feature-state', 'active'], false], '#1B1A17',
+        '#2A45C8',
       ],
-      'circle-stroke-width': 2,
+      'circle-stroke-width': 1.6,
       'circle-stroke-color': [
         'case',
-        ['boolean', ['feature-state', 'active'], false], '#00E5FF',
-        'rgba(10, 13, 18, 0.85)',
+        ['boolean', ['feature-state', 'active'], false], '#B5832A',
+        'rgba(255, 255, 255, 0.9)',
       ],
       'circle-opacity': 0.95,
     },
@@ -766,21 +803,33 @@ function renderCompareDrawer() {
 
 /* ── Map interactions ─────────────────────────────────────────── */
 
+let _marketHoverPopup = null;
+
 function wireMarkerInteractions() {
-  const hover = (e) => {
-    state.map.getCanvas().style.cursor = e.features && e.features.length ? 'pointer' : '';
-  };
+  _marketHoverPopup = new mapboxgl.Popup({
+    closeButton: false, closeOnClick: false, offset: 12, className: 'market-hover-popup',
+  });
 
   state.map.on('mouseenter', 'country-markers-hit', () => {
     state.map.getCanvas().style.cursor = 'pointer';
   });
+  state.map.on('mousemove', 'country-markers-hit', (e) => {
+    if (!e.features || !e.features[0]) return;
+    const iso2 = e.features[0].properties.iso2;
+    const country = state.markets.find(c => c.iso2 === iso2);
+    if (!country) return;
+    const a = currentAnchorFor(country);
+    _marketHoverPopup.setLngLat([a.lon, a.lat]).setHTML(marketHoverHtml(country)).addTo(state.map);
+  });
   state.map.on('mouseleave', 'country-markers-hit', () => {
     state.map.getCanvas().style.cursor = '';
+    if (_marketHoverPopup) _marketHoverPopup.remove();
   });
 
   state.map.on('click', 'country-markers-hit', (e) => {
     if (!e.features || !e.features[0]) return;
     const iso2 = e.features[0].properties.iso2;
+    if (_marketHoverPopup) _marketHoverPopup.remove();
     selectCountry(iso2, { fly: false, source: 'map' });
   });
 }
@@ -838,11 +887,10 @@ const SCORING_FACTORS = [
   { id: 'power_per_capita_kwh',      label: 'Power / capita',       dir: 'asc'  },
   { id: 'grid_investment_usdbn',     label: 'Grid investment',      dir: 'asc'  },
   { id: 'bandwidth_gbps',            label: 'Bandwidth',            dir: 'asc'  },
-  { id: 'bandwidth_2030_gbps',       label: 'Bandwidth 2030',       dir: 'asc'  },
   { id: 'construction_cost_usd_mw',  label: 'Construction cost',    dir: 'desc' },
   { id: 'power_cost_usd_kwh',        label: 'Power cost',           dir: 'desc' },
   { id: 'rd_techs_per_million',      label: 'R&D techs / million',  dir: 'asc'  },
-  { id: 'tertiary_grad_pct',         label: 'Tertiary graduate %',  dir: 'asc'  },
+  { id: 'tertiary_grad_pct',         label: 'STEM graduate share',  dir: 'asc'  },
   { id: 'carbon_intensity_gco2_kwh', label: 'Grid carbon intensity',dir: 'desc' },
 ];
 
@@ -852,25 +900,25 @@ const WEIGHT_PRESETS = {
     // Power access — heavy on grid headroom, connection speed, and cheap
     // electricity. Today the #1 siting blocker for hyperscale DCs.
     grid_connect_years: 10, power_per_capita_kwh: 9, grid_investment_usdbn: 8,
-    bandwidth_gbps: 2, bandwidth_2030_gbps: 1,
+    bandwidth_gbps: 2,
     construction_cost_usd_mw: 3, power_cost_usd_kwh: 8,
     rd_techs_per_million: 1, tertiary_grad_pct: 1, carbon_intensity_gco2_kwh: 3,
   },
   cost:    {
     grid_connect_years: 5, power_per_capita_kwh: 3, grid_investment_usdbn: 2,
-    bandwidth_gbps: 2, bandwidth_2030_gbps: 1,
+    bandwidth_gbps: 2,
     construction_cost_usd_mw: 10, power_cost_usd_kwh: 10,
     rd_techs_per_million: 2, tertiary_grad_pct: 2, carbon_intensity_gco2_kwh: 2,
   },
   sustain: {
     grid_connect_years: 5, power_per_capita_kwh: 7, grid_investment_usdbn: 5,
-    bandwidth_gbps: 2, bandwidth_2030_gbps: 2,
+    bandwidth_gbps: 2,
     construction_cost_usd_mw: 2, power_cost_usd_kwh: 4,
     rd_techs_per_million: 2, tertiary_grad_pct: 2, carbon_intensity_gco2_kwh: 10,
   },
   latency: {
     grid_connect_years: 4, power_per_capita_kwh: 3, grid_investment_usdbn: 3,
-    bandwidth_gbps: 10, bandwidth_2030_gbps: 8,
+    bandwidth_gbps: 10,
     construction_cost_usd_mw: 2, power_cost_usd_kwh: 3,
     rd_techs_per_million: 4, tertiary_grad_pct: 3, carbon_intensity_gco2_kwh: 2,
   },
@@ -1111,16 +1159,15 @@ function recomputeAndRefresh() {
 //            'neutral' → just scale by magnitude (e.g. demand, capacity — informational)
 const COLOUR_OPTIONS = [
   { id: 'composite_score',           label: '★ Composite score',    fmt: v => Math.round(v) + ' / 100',                dir: 'asc' },
-  { id: 'demand_2027_twh',           label: 'Compute demand 2027',  fmt: v => v.toFixed(1) + ' TWh',                   dir: 'neutral' },
+  { id: 'demand_2027_twh',           label: 'Addressable demand 2030', fmt: v => Math.round(v).toLocaleString(),        dir: 'neutral' },
   { id: 'grid_connect_years',        label: 'Grid connection wait', fmt: v => v.toFixed(1) + ' yrs',                   dir: 'desc' },
   { id: 'power_per_capita_kwh',      label: 'Power / capita',       fmt: v => Math.round(v).toLocaleString() + ' kWh', dir: 'asc' },
-  { id: 'grid_investment_usdbn',     label: 'Grid investment',      fmt: v => '$' + Math.round(v) + ' bn',             dir: 'asc' },
+  { id: 'grid_investment_usdbn',     label: 'Grid investment / yr', fmt: v => '€' + Math.round(v / 1e6).toLocaleString() + 'M/yr', dir: 'asc' },
   { id: 'bandwidth_gbps',            label: 'Bandwidth',            fmt: v => v.toFixed(2) + ' Gbps',                  dir: 'asc' },
-  { id: 'bandwidth_2030_gbps',       label: 'Bandwidth 2030',       fmt: v => v.toFixed(1) + ' Gbps',                  dir: 'asc' },
-  { id: 'construction_cost_usd_mw',  label: 'Construction cost',    fmt: v => '$' + (v / 1e6).toFixed(1) + 'M / MW',   dir: 'desc' },
+  { id: 'construction_cost_usd_mw',  label: 'Construction cost',    fmt: v => '$' + v.toFixed(1) + '/W',               dir: 'desc' },
   { id: 'power_cost_usd_kwh',        label: 'Power cost',           fmt: v => '$' + v.toFixed(3) + '/kWh',             dir: 'desc' },
   { id: 'rd_techs_per_million',      label: 'R&D techs / million',  fmt: v => Math.round(v).toLocaleString(),          dir: 'asc' },
-  { id: 'tertiary_grad_pct',         label: 'Tertiary graduate %',  fmt: v => v.toFixed(1) + ' %',                     dir: 'asc' },
+  { id: 'tertiary_grad_pct',         label: 'STEM graduate share',  fmt: v => Math.round(v * 100) + '%',               dir: 'asc' },
   { id: 'carbon_intensity_gco2_kwh', label: 'Grid carbon intensity',fmt: v => Math.round(v) + ' gCO₂/kWh',             dir: 'desc' },
   { id: 'dc_capacity_live_mw',       label: 'Live DC capacity',     fmt: v => Math.round(v) + ' MW',                   dir: 'neutral' },
   { id: 'dc_capacity_planned_mw',    label: 'Planned DC capacity',  fmt: v => Math.round(v) + ' MW',                   dir: 'neutral' },
@@ -1128,15 +1175,16 @@ const COLOUR_OPTIONS = [
 
 // Traffic-light red → amber → green ramp (5 stops).
 // Worst → red, best → green. Reverses when a factor is direction='desc'.
+// Deepened for legibility on the light/paper basemap.
 const COLOUR_RAMP = [
-  '#D32F2F',   // 0    — red (worst)
-  '#F57C00',   // 0.25 — deep orange
-  '#FBC02D',   // 0.50 — amber
-  '#9CCC65',   // 0.75 — lime
-  '#2E7D32',   // 1    — green (best)
+  '#B23A2E',   // 0    — deep red (worst)
+  '#CC6B2C',   // 0.25 — burnt orange
+  '#C99A2E',   // 0.50 — ochre
+  '#6E8C3A',   // 0.75 — olive
+  '#1F7A3D',   // 1    — deep green (best)
 ];
 const COLOUR_HIGH   = COLOUR_RAMP[COLOUR_RAMP.length - 1];
-const COLOUR_NODATA = '#3B4257'; // grey
+const COLOUR_NODATA = '#C2BCAD'; // warm grey
 
 function populateColourBySelect() {
   const sel = document.getElementById('colour-by-select');
@@ -1207,8 +1255,8 @@ function applyColourMode() {
     // Default: solid cyan with active-state override
     state.map.setPaintProperty('country-markers', 'circle-color', [
       'case',
-      ['boolean', ['feature-state', 'active'], false], '#FFFFFF',
-      '#00E5FF',
+      ['boolean', ['feature-state', 'active'], false], '#1B1A17',
+      '#2A45C8',
     ]);
     renderColourLegend(null);
     return;
@@ -1247,7 +1295,7 @@ function applyColourMode() {
 
   const colourExpr = [
     'case',
-    ['boolean', ['feature-state', 'active'], false], '#FFFFFF',
+    ['boolean', ['feature-state', 'active'], false], '#1B1A17',
     ['has', propKey],
     ['interpolate', ['linear'], ['get', propKey], ...stops],
     COLOUR_NODATA,
@@ -1627,6 +1675,11 @@ function rankRowEl(r, total, opt, isComposite) {
     if (e.target.classList.contains('rank-checkbox')) return;
     selectCountry(r.c.iso2, { fly: true, source: 'rank' });
   });
+  // Hover summary card
+  row.addEventListener('mouseenter', (e) => showHoverCardFor(r.c, e.clientX, e.clientY));
+  row.addEventListener('mousemove',  (e) => moveHoverCard(e.clientX, e.clientY));
+  row.addEventListener('mouseleave', hideHoverCard);
+
   const cb = row.querySelector('.rank-checkbox');
   cb.addEventListener('click', (e) => e.stopPropagation());
   cb.addEventListener('change', () => {
@@ -1656,19 +1709,18 @@ function truncate(s, n) { return s.length <= n ? s : s.slice(0, n - 1) + '…'; 
 //      'desc' → lower is better  (rank 1 = lowest value)
 //      'neutral' → rank by magnitude, but no normative meaning
 const PANEL_ROWS = [
-  ['Demand dynamics',     'Total compute demand 2027',  'demand_2027_twh',           v => v.toFixed(1) + ' TWh',                       'neutral'],
+  ['Demand dynamics',     'Addressable demand 2030',     'demand_2027_twh',           v => Math.round(v).toLocaleString(),              'neutral'],
 
   ['Supply — Grid',       'Connection timeline',         'grid_connect_years',        v => v.toFixed(1) + ' yrs',                       'desc'],
   ['Supply — Grid',       'Power production / capita',   'power_per_capita_kwh',      v => Math.round(v).toLocaleString() + ' kWh/yr',  'asc'],
-  ['Supply — Grid',       'Forecast grid investment',    'grid_investment_usdbn',     v => '$' + v.toFixed(0) + ' bn',                  'asc'],
+  ['Supply — Grid',       'Grid investment (annual)',    'grid_investment_usdbn',     v => '€' + Math.round(v / 1e6).toLocaleString() + 'M / yr', 'asc'],
 
   ['Supply — Fibre',      'Bandwidth (median)',          'bandwidth_gbps',            v => v.toFixed(2) + ' Gbps',                      'asc'],
-  ['Supply — Fibre',      '2030 broadband forecast',     'bandwidth_2030_gbps',       v => v.toFixed(1) + ' Gbps',                      'asc'],
 
-  ['Differentiators',     'DC construction cost',        'construction_cost_usd_mw',  v => '$' + (v / 1e6).toFixed(1) + 'M / MW',       'desc'],
+  ['Differentiators',     'DC construction cost',        'construction_cost_usd_mw',  v => '$' + v.toFixed(1) + ' /W',                  'desc'],
   ['Differentiators',     'Power cost',                  'power_cost_usd_kwh',        v => '$' + v.toFixed(3) + ' / kWh',               'desc'],
   ['Differentiators',     'R&D techs / million',         'rd_techs_per_million',      v => Math.round(v).toLocaleString(),              'asc'],
-  ['Differentiators',     'Tertiary graduate %',         'tertiary_grad_pct',         v => v.toFixed(1) + ' %',                         'asc'],
+  ['Differentiators',     'STEM graduate share',         'tertiary_grad_pct',         v => Math.round(v * 100) + '%',                   'asc'],
   ['Differentiators',     'Grid carbon intensity',       'carbon_intensity_gco2_kwh', v => Math.round(v) + ' gCO₂/kWh',                 'desc'],
 
   ['Market maturity',     'Live DC capacity',            'dc_capacity_live_mw',       v => Math.round(v).toLocaleString() + ' MW',      'neutral'],
@@ -1824,50 +1876,334 @@ function renderCapacityBar(factors) {
     + '</div>';
 }
 
-function renderScoreBreakdown(comp) {
-  // Per-factor contribution bars. Sorted by weighted contribution descending.
-  const rows = Object.entries(comp.contrib || {})
-    .map(([fid, c]) => ({ fid, ...c, factor: SCORING_FACTORS.find(f => f.id === fid) }))
-    .filter(r => r.factor)
-    .sort((a, b) => b.weightedContribution - a.weightedContribution);
-  if (rows.length === 0) return '';
-  const maxWeighted = Math.max(...rows.map(r => r.weightedContribution));
-  let html = '<div class="detail-section-title">Score breakdown</div>'
-           + '<div class="score-breakdown">';
-  for (const r of rows) {
-    const widthPct = maxWeighted > 0 ? (r.weightedContribution / maxWeighted) * 100 : 0;
-    const impTag = r.imputed
-      ? '<span class="sb-imputed-tag" title="No data for this country — imputed from '
-        + (r.imputed === 'region' ? 'regional avg, n=' + r.imputedN : 'global avg, n=' + r.imputedN)
-        + '">~</span>'
-      : '';
-    html += '<div class="sb-row' + (r.imputed ? ' is-imputed' : '') + '">'
-         +    '<span class="sb-label">' + escapeHtml(r.factor.label) + impTag + '</span>'
-         +    '<div class="sb-bar-wrap">'
-         +      '<div class="sb-bar" style="width:' + widthPct.toFixed(0) + '%"></div>'
-         +    '</div>'
-         +    '<span class="sb-numbers">'
-         +      '<span class="sb-norm">' + Math.round(r.norm) + '</span>'
-         +      '<span class="sb-weight">×' + r.weight + '</span>'
-         +    '</span>'
-         +  '</div>';
+// The 9 scored factors grouped into 5 plain-language buckets — the same
+// framing the intro overlay uses. Order matches the intro.
+const SUPPLY_BUCKETS = [
+  { key: 'power',   label: 'Power & grid',   factors: ['grid_connect_years', 'power_per_capita_kwh', 'grid_investment_usdbn'] },
+  { key: 'connect', label: 'Connectivity',   factors: ['bandwidth_gbps'] },
+  { key: 'cost',    label: 'Cost',           factors: ['construction_cost_usd_mw', 'power_cost_usd_kwh'] },
+  { key: 'talent',  label: 'Talent',         factors: ['rd_techs_per_million', 'tertiary_grad_pct'] },
+  { key: 'sustain', label: 'Sustainability', factors: ['carbon_intensity_gco2_kwh'] },
+];
+
+// fid -> { label, fmt, dir } from PANEL_ROWS, for raw-value formatting.
+const FACTOR_META = {};
+PANEL_ROWS.forEach(([section, label, fid, fmt, dir]) => { FACTOR_META[fid] = { label, fmt, dir, section }; });
+
+// Plain-language "why this matters" for each factor — surfaced on hover so a
+// newcomer understands what each data point means for siting a data centre.
+const FACTOR_WHY = {
+  grid_connect_years:        'Time to secure a grid connection — today the #1 schedule risk for a new data centre. Shorter is better.',
+  power_per_capita_kwh:      'Electricity generated per person — a proxy for a mature power system with capacity to spare for large new loads.',
+  grid_investment_usdbn:     'Money committed to expanding the grid — signals future headroom for energy-hungry data centres.',
+  bandwidth_gbps:            'Available fibre bandwidth — data centres need dense, high-capacity connectivity to carry traffic.',
+  construction_cost_usd_mw:  'All-in build cost per watt of IT capacity ($/W) — lower means cheaper capex to put megawatts on the floor.',
+  power_cost_usd_kwh:        'Industrial electricity price — the single largest ongoing running cost for a data centre. Lower is better.',
+  rd_techs_per_million:      'Depth of the technical workforce — skilled people available to build and operate facilities.',
+  tertiary_grad_pct:         'Share of graduates in engineering, manufacturing & construction — the local talent pipeline for the sector.',
+  carbon_intensity_gco2_kwh: 'Carbon emitted per kWh — lower makes it far easier to meet sustainability targets and sign green PPAs.',
+  demand_2027_twh:           'Projected addressable data-centre demand by 2030 — the size of the market opportunity (shown for context, not scored).',
+};
+function whyIcon(fid) {
+  const why = FACTOR_WHY[fid];
+  if (!why) return '';
+  return ' <span class="sc-why" tabindex="0" role="button" aria-label="Why it matters: ' + escapeHtml(why)
+    + '" data-why="' + escapeHtml(why) + '">i</span>';
+}
+
+// Custom tooltip for the "why it matters" markers (native title is unreliable
+// and slow). Delegated, so it works after the panel re-renders.
+let _whyTip = null;
+function wireWhyTips() {
+  _whyTip = document.createElement('div');
+  _whyTip.className = 'why-tip hidden';
+  document.body.appendChild(_whyTip);
+  const show = (el) => {
+    const txt = el.getAttribute('data-why');
+    if (!txt) return;
+    _whyTip.textContent = txt;
+    _whyTip.classList.remove('hidden');
+    const r = el.getBoundingClientRect();
+    const w = _whyTip.offsetWidth, h = _whyTip.offsetHeight;
+    let left = r.left + r.width / 2 - w / 2;
+    left = Math.max(10, Math.min(window.innerWidth - w - 10, left));
+    let top = r.top - h - 9;                 // above by default
+    if (top < 8) top = r.bottom + 9;         // flip below if no room
+    _whyTip.style.left = left + 'px';
+    _whyTip.style.top = top + 'px';
+  };
+  const hide = () => { if (_whyTip) _whyTip.classList.add('hidden'); };
+  document.addEventListener('mouseover', (e) => {
+    const el = e.target.closest && e.target.closest('.sc-why');
+    if (el) show(el);
+  });
+  document.addEventListener('mouseout', (e) => {
+    if (e.target.closest && e.target.closest('.sc-why')) hide();
+  });
+  document.addEventListener('focusin', (e) => {
+    if (e.target.closest && e.target.closest('.sc-why')) show(e.target.closest('.sc-why'));
+  });
+  document.addEventListener('focusout', hide);
+  // Hide on scroll inside the panel so it doesn't float detached.
+  document.addEventListener('scroll', hide, true);
+}
+
+function normColour(norm) {
+  // Map a 0-100 score onto the shared map ramp (clay → deep green) so the
+  // panel bar colour matches the market's colour on the map.
+  const idx = Math.max(0, Math.min(COLOUR_RAMP.length - 1, Math.round((norm / 100) * (COLOUR_RAMP.length - 1))));
+  return COLOUR_RAMP[idx];
+}
+
+// Market-perception verdicts grounded in 2026 industry commentary (JLL/CBRE/
+// C&W EMEA updates, DCD, Data Center Knowledge). One sharp line per notable
+// market; the long tail falls back to a score-band line. A separate dynamic
+// line ties it to the user's current weighting.
+const MARKET_VERDICTS = {
+  DE: 'The backbone of European interconnection — but with Frankfurt now power-bound, Germany’s 2030 strategy is pushing the build-out to Berlin and the regions.',
+  GB: 'Europe’s largest market — yet Slough and West London are power-starved, steering the next wave toward the UK regions.',
+  NL: 'A mature FLAP-D core capped by Amsterdam’s construction moratorium to ~2035; growth is leaking beyond the metro.',
+  FR: 'A stable FLAP-D anchor running on cheap, low-carbon nuclear power — though grid-connection queues keep lengthening.',
+  IE: 'A hyperscale heavyweight frozen by Ireland’s de-facto grid-connection moratorium; operators are already scouting alternatives.',
+  ES: 'The breakout challenger — a subsea gateway to Africa and the Middle East with hyperscaler-friendly policy and Europe’s fastest growth.',
+  IT: 'Southern Europe’s fastest riser, now ranked alongside the FLAP-D core; grid lead times are the main brake.',
+  SE: 'The Nordic heavyweight — abundant near-zero-carbon power and a deep pipeline; distance from the demand core is the trade-off.',
+  NO: '100% hydro power and land to spare — already landing AI-training clusters like OpenAI’s Stargate; remote from the core.',
+  FI: 'The Nordics’ fastest-growing node — repeat hyperscale bets (Hamina, TikTok) on cheap green power and free cooling.',
+  DK: 'Clean Nordic power and strong connectivity anchoring hyperscale cloud regions; grid headroom is the watch-point.',
+  IS: 'Near-100% renewable geothermal and hydro with natural cooling — a pure sustainability play, isolated by subsea latency.',
+  PL: 'CEE’s leader and the region’s sovereign-cloud hub, relieving Frankfurt — held back by a coal-heavy grid.',
+  AT: 'A rising CEE alternative pulling hyperscalers toward Vienna as the German core fills up.',
+  PT: 'An Atlantic subsea gateway (Sines) with green power — the emerging Iberian alternative to Madrid.',
+  BE: 'A well-connected near-core market in Amsterdam’s and Paris’s shadow; grid access is the binding constraint.',
+  CH: 'A premium, low-carbon, sovereignty-friendly market — and one of the most expensive places in Europe to build.',
+  CZ: 'A stable CEE alternative winning hyperscale attention as the German core saturates.',
+  RO: 'An emerging Black Sea connectivity hub — early-stage, but improving fast.',
+  HU: 'A CEE contender drawing cloud investment, with grid readiness and carbon the watch-points.',
+  GR: 'An emerging Eastern-Med crossroads where new subsea cables are landing — early in its build-out.',
+  TR: 'A fast-growing bridge between Europe and Asia on low-cost power — with a longer grid and risk story.',
+  AE: 'The Gulf’s AI magnet — gigawatt Stargate ambitions, cheap power and state backing — at the cost of a carbon-heavy grid.',
+  SA: 'Vision 2030 firepower and the cheapest power in EMEA fuelling gigawatt AI plans; grid carbon is the catch.',
+  QA: 'Cheap power and deep sovereign funding — a small but fast-moving Gulf market.',
+  IL: 'A deep-tech talent hub with strong cloud demand, constrained by scale and grid headroom.',
+  EG: 'A subsea-cable nexus linking Europe, Africa and Asia — strategic geography, nascent capacity.',
+  MA: 'North Africa’s Atlantic subsea gateway, positioning as a regional hub from a low base.',
+  LU: 'A connectivity- and sovereignty-rich micro-market; land and scale cap its ceiling.',
+};
+function narrativeVerdict(iso2, score) {
+  if (MARKET_VERDICTS[iso2]) return MARKET_VERDICTS[iso2];
+  if (score >= 68) return 'A top-tier market on the factors that decide a build.';
+  if (score >= 50) return 'A credible mid-pack market for the right strategy.';
+  return 'An emerging market — early in its build-out, with clear gaps to close.';
+}
+function dynamicVerdict(bucketScores) {
+  const present = bucketScores.filter(b => b.score != null);
+  if (present.length < 2) return '';
+  const top = present.reduce((a, b) => b.score > a.score ? b : a);
+  const bot = present.reduce((a, b) => b.score < a.score ? b : a);
+  if (top.key === bot.key) return '';
+  return 'At your weighting: strongest on <strong>' + top.label.toLowerCase()
+       + '</strong>, held back by <strong>' + bot.label.toLowerCase() + '</strong>.';
+}
+
+// The score scorecard: raw value -> 0-100 score -> x weight -> contribution,
+// grouped by the 5 plain buckets. This is the "how the score is built" view.
+function renderScorecard(country, comp) {
+  const contrib = comp.contrib || {};
+  const factors = country.factors || {};
+  // max weighted contribution across shown factors, for the contribution bars
+  const allWeighted = Object.values(contrib).map(c => c.weightedContribution || 0);
+  const maxWeighted = allWeighted.length ? Math.max(...allWeighted, 0.0001) : 1;
+
+  const bucketScores = [];
+  let bucketsHtml = '';
+
+  for (const bucket of SUPPLY_BUCKETS) {
+    const present = bucket.factors.filter(fid => contrib[fid]);
+    if (!present.length) continue;
+    const avg = present.reduce((s, fid) => s + contrib[fid].norm, 0) / present.length;
+    bucketScores.push({ key: bucket.key, label: bucket.label, score: avg });
+
+    let rowsHtml = '';
+    for (const fid of bucket.factors) {
+      const c = contrib[fid];
+      const meta = FACTOR_META[fid] || { label: fid, fmt: v => String(v), dir: 'asc' };
+      if (!c) {
+        rowsHtml += '<div class="sc-row sc-row--nodata">'
+          + '<div class="sc-row-head"><span class="sc-factor">' + escapeHtml(meta.label) + whyIcon(fid) + '</span></div>'
+          + '<div class="sc-row-meter"><span class="sc-raw">— no data</span></div></div>';
+        continue;
+      }
+      const rawEntry = factors[fid];
+      const rawStr = c.imputed
+        ? '<span class="sc-imputed" title="No country figure — imputed from ' + (c.imputed === 'region' ? 'regional' : 'global') + ' average">≈ ' + (c.imputed === 'region' ? 'regional' : 'global') + ' avg</span>'
+        : (rawEntry && rawEntry.value != null ? escapeHtml(meta.fmt(rawEntry.value)) : '—');
+      const norm = Math.round(c.norm);
+      const off  = c.weight === 0 ? ' sc-row--off' : '';
+      const chip = rankChipHtml(fid, country.iso2, meta.dir);
+      rowsHtml += '<div class="sc-row' + off + '">'
+        + '<div class="sc-row-head"><span class="sc-factor">' + escapeHtml(meta.label) + whyIcon(fid) + '</span>' + chip + '</div>'
+        + '<div class="sc-row-meter">'
+        +   '<span class="sc-raw" title="Raw value">' + rawStr + '</span>'
+        +   '<span class="sc-bar" title="Score 0–100 vs EMEA"><i style="width:' + norm + '%;background:' + normColour(c.norm) + '"></i></span>'
+        +   '<b class="sc-score">' + norm + '</b>'
+        +   '<span class="sc-weight" title="Weight in the composite">×' + c.weight + '</span>'
+        + '</div>'
+        + '</div>';
+    }
+
+    bucketsHtml += '<div class="sc-bucket">'
+      + '<div class="sc-bucket-head"><span class="sc-bucket-name">' + escapeHtml(bucket.label) + '</span>'
+      + '<span class="sc-bucket-score" title="Average score for this group">' + Math.round(avg) + '</span></div>'
+      + rowsHtml + '</div>';
   }
-  html += '</div>';
+
+  // ── Readiness block: verdict + live read + headline gauge ──
+  let readiness = '';
+  readiness += '<p class="detail-verdict">' + narrativeVerdict(country.iso2, comp.score) + '</p>';
+  const dyn = dynamicVerdict(bucketScores);
+  if (dyn) readiness += '<p class="detail-verdict-dyn">' + dyn + '</p>';
+  readiness += '<div class="readiness">'
+    + '<div class="readiness-top"><span class="readiness-label">Supply-side readiness</span>'
+    + '<span class="readiness-score">' + Math.round(comp.score) + '<small>/100</small></span></div>'
+    + '<div class="readiness-bar"><div class="readiness-fill" style="width:' + Math.round(comp.score) + '%"></div></div>'
+    + '<div class="readiness-sub">Rank ' + comp.rank + ' of ' + comp.total + ' EMEA markets</div>'
+    + '</div>';
+
+  // ── Build-up: how the score is built ──
+  let build = '<div class="scorecard">'
+    + '<div class="scorecard-head">How this score is built</div>'
+    + '<div class="scorecard-legend">Each factor’s <b>raw value</b> is scored <b>0–100</b> — where <b>100</b> = the best of all 45 markets and <b>0</b> = the worst — then multiplied by <b>the weight you set in the left panel</b> to build the composite. The <b>#</b> chip is the market’s rank on that factor.</div>'
+    + bucketsHtml
+    + '<div class="sc-total">Weighted average of the bars above = <b>' + Math.round(comp.score) + ' / 100</b></div>';
   const impCount = (comp.imputed || []).length;
-  if (impCount > 0) {
-    html += '<div class="sb-imputed-note">~ ' + impCount + ' factor'
-         + (impCount === 1 ? '' : 's')
-         + ' imputed from regional average</div>';
+  const missCount = (comp.missing || []).length;
+  if (impCount || missCount) {
+    let note = [];
+    if (impCount)  note.push('≈ ' + impCount + ' factor' + (impCount === 1 ? '' : 's') + ' imputed from regional average');
+    if (missCount) note.push(missCount + ' excluded (no data anywhere)');
+    build += '<div class="sc-foot-note">' + note.join(' · ') + '</div>';
   }
-  if (comp.missing && comp.missing.length > 0) {
-    html += '<div class="sb-missing">Excluded (no data anywhere): '
-         + comp.missing.map(fid => {
-             const f = SCORING_FACTORS.find(x => x.id === fid);
-             return f ? f.label : fid;
-           }).join(', ')
-         + '</div>';
+  build += '</div>';
+  return { readiness, build };
+}
+
+// Data-centre facilities indexed by ISO-2 once loaded:
+//   PROJECTS_BY_ISO   — flagship/hyperscale (operator + MW + status)
+//   FACILITIES_BY_ISO — full PeeringDB carrier-neutral facility list (the count)
+let PROJECTS_BY_ISO = null;
+let FACILITIES_BY_ISO = null;
+function indexByCountry(gj) {
+  const out = {};
+  (gj.features || []).forEach(f => {
+    const p = f.properties || {};
+    if (!p.country) return;
+    (out[p.country] = out[p.country] || []).push(p);
+  });
+  return out;
+}
+function refreshOpenPanel() {
+  const panel = document.getElementById('detail-panel');
+  if (state.selectedIso && panel && !panel.classList.contains('hidden')) {
+    const c = state.markets.find(x => x.iso2 === state.selectedIso);
+    if (c) openDetailPanel(c);
   }
-  return html;
+}
+function loadProjects() {
+  fetch('data/overlay_hyperscale.geojson').then(r => r.json())
+    .then(gj => { PROJECTS_BY_ISO = indexByCountry(gj); refreshOpenPanel(); })
+    .catch(() => {});
+  fetch('data/overlay_dc_sites.geojson').then(r => r.json())
+    .then(gj => { FACILITIES_BY_ISO = indexByCountry(gj); refreshOpenPanel(); })
+    .catch(() => {});
+}
+
+function renderProjects(iso2) {
+  const hs  = (PROJECTS_BY_ISO && PROJECTS_BY_ISO[iso2]) || [];
+  const fac = (FACILITIES_BY_ISO && FACILITIES_BY_ISO[iso2]) || [];
+  const total = fac.length || hs.length;
+  if (!total) return '';
+
+  const cap = 10;
+  const seen = new Set();
+  const rowFor = (name, sub, status, mw, url) => {
+    const uc = status === 'under_construction';
+    const mwHtml = mw != null ? '<span class="pj-mw">' + mw + ' MW</span>' : '';
+    const link = url ? ' <a class="pj-link" href="' + escapeHtml(url) + '" target="_blank" rel="noopener" title="Facility page">↗</a>' : '';
+    const subHtml = sub ? '<div class="pj-sub">' + escapeHtml(sub) + '</div>' : '';
+    return '<div class="pj-row"><span class="pj-dot ' + (uc ? 'pj-uc' : 'pj-op') + '" title="' + (uc ? 'Under construction' : 'Operational') + '"></span>'
+      + '<div class="pj-main"><div class="pj-name">' + escapeHtml(name) + link + '</div>' + subHtml + '</div>'
+      + mwHtml + '</div>';
+  };
+
+  let rows = '';
+  // Flagship / hyperscale first (they carry MW + operator), biggest first.
+  hs.slice().sort((a, b) => (b.mw || 0) - (a.mw || 0)).forEach(p => {
+    if (rows.split('pj-row').length - 1 >= cap) return;
+    const name = p.operator || p.name || 'Data centre';
+    seen.add((p.name || name).toLowerCase());
+    const sub = [(p.operator && p.name) ? p.name : null, p.city].filter(Boolean).join(' · ');
+    rows += rowFor(name, sub, p.status, p.mw, p.url);
+  });
+  // Then fill from the broader PeeringDB facility list.
+  for (const p of fac) {
+    if (rows.split('pj-row').length - 1 >= cap) break;
+    if (p.name && seen.has(p.name.toLowerCase())) continue;
+    rows += rowFor(p.name || 'Facility', p.city || '', p.status, null, p.url);
+  }
+
+  const hsN = hs.length;
+  const tag = total.toLocaleString() + ' facilities' + (hsN ? ' · ' + hsN + ' flagship' : '');
+  const shownCount = rows.split('pj-row').length - 1;
+  const more = total > shownCount ? '<div class="pj-more">+ ' + (total - shownCount).toLocaleString() + ' more in this market</div>' : '';
+  return '<div class="detail-projects">'
+    + '<div class="detail-section-title">Data centres here <span class="section-tag section-tag--neutral">' + tag + '</span></div>'
+    + '<div class="pj-list">' + rows + more + '</div>'
+    + '<div class="pj-foot">Carrier-neutral facilities (PeeringDB) enriched with flagship/hyperscale campuses (operator &amp; MW). Indicative, not exhaustive.</div>'
+    + '</div>';
+}
+
+// High-level cost & emissions estimate for the selected market at the chosen
+// size + PUE. Power cost ($/kWh) and carbon (gCO2/kWh) are solid absolute
+// figures; build cost is per-geography but its $/W basis is under review, so
+// it's clearly flagged as provisional.
+function fmtMoney(v) {
+  if (v == null || isNaN(v)) return '—';
+  if (v >= 1e9) return '$' + (v / 1e9).toFixed(1) + 'bn';
+  if (v >= 1e6) return '$' + (v / 1e6).toFixed(0) + 'M';
+  return '$' + Math.round(v).toLocaleString();
+}
+function estRow(label, value, sub, cls) {
+  return '<div class="est-row ' + (cls || '') + '">'
+    + '<div class="est-label">' + label + '<div class="est-sub">' + escapeHtml(sub) + '</div></div>'
+    + '<div class="est-val">' + value + '</div></div>';
+}
+function renderEstimate(country) {
+  const f = country.factors || {};
+  const pc = f.power_cost_usd_kwh ? f.power_cost_usd_kwh.value : null;          // $/kWh
+  const ci = f.carbon_intensity_gco2_kwh ? f.carbon_intensity_gco2_kwh.value : null; // gCO2/kWh
+  const cw = f.construction_cost_usd_mw ? f.construction_cost_usd_mw.value : null;    // $/W (provisional)
+  const mw = state.modelMw, pue = state.modelPue;
+  const energyKwh = mw * pue * 8760 * 1000;       // annual facility energy (kWh), nameplate
+
+  const powerCost = pc != null ? energyKwh * pc : null;       // $/yr
+  const emis      = ci != null ? energyKwh * ci / 1e6 : null;  // tCO2/yr
+  const capex     = cw != null ? cw * mw * 1e6 : null;         // $/W × W (provisional)
+
+  const rows =
+      estRow('Build cost', fmtMoney(capex),
+        cw != null ? '@ $' + cw.toFixed(1) + '/W (all-in, T&T 2025-26)' : 'no construction-cost data', '')
+    + estRow('Annual power cost', powerCost != null ? fmtMoney(powerCost) + '/yr' : '—',
+        pc != null ? '@ $' + pc.toFixed(3) + '/kWh' : 'no power-price data', '')
+    + estRow('Annual grid emissions', emis != null ? Math.round(emis).toLocaleString() + ' tCO₂/yr' : '—',
+        ci != null ? '@ ' + Math.round(ci) + ' gCO₂/kWh' : 'no carbon data', '');
+
+  return '<div class="estimate">'
+    + '<div class="detail-section-title">Cost &amp; emissions estimate'
+    +   ' <span class="est-scenario">' + mw + ' MW · PUE ' + pue.toFixed(1) + '</span></div>'
+    + '<div class="est-rows">' + rows + '</div>'
+    + '<div class="est-foot">≈ ' + Math.round(energyKwh / 1e6).toLocaleString() + ' MWh/yr at ' + mw + ' MW × PUE ' + pue.toFixed(1) + ' (8,760 h, nameplate). Adjust size &amp; PUE in the sidebar. High-level indicative figures.</div>'
+    + '</div>';
 }
 
 function openDetailPanel(country) {
@@ -1877,62 +2213,67 @@ function openDetailPanel(country) {
 
   const a = currentAnchorFor(country);
   const factors = country.factors || {};
+  const comp = state.weightsActive ? state.composite[country.iso2] : null;
+  const hasScore = comp && comp.score != null;
 
-  let html =
-    '<div class="detail-title">' + country.flag + ' ' + escapeHtml(country.name) + '</div>' +
-    '<div class="detail-region">' + escapeHtml(country.region) + ' · anchor: ' +
-      escapeHtml(a.name) + ' (' + a.lat.toFixed(2) + ', ' + a.lon.toFixed(2) + ')</div>';
+  // ── Header: rank eyebrow + serif name + region ──
+  let html = '<div class="detail-head">';
+  if (hasScore) {
+    html += '<div class="detail-rank-eyebrow">N°' + comp.rank
+          + '<span class="detail-rank-of"> of ' + comp.total + '</span></div>';
+  }
+  html += '<h2 class="detail-title">' + country.flag + ' ' + escapeHtml(country.name) + '</h2>'
+        + '<div class="detail-region">' + escapeHtml(country.region) + ' · ' + escapeHtml(a.name) + '</div>'
+        + '</div>';
 
-  // Composite score block — only if any weight is non-zero.
+  // ── Verdict + readiness gauge, then cost & emissions front-and-centre,
+  //    then the score build-up. ──
+  let buildHtml = '';
   if (state.weightsActive) {
-    const comp = state.composite[country.iso2];
-    if (comp && comp.score != null) {
-      const impN = (comp.imputed || []).length;
-      const missN = (comp.missing || []).length;
-      let metaLine = '';
-      if (impN > 0 && missN > 0) {
-        metaLine = impN + ' factor' + (impN === 1 ? '' : 's') + ' imputed from regional avg · '
-                 + missN + ' excluded (no data anywhere).';
-      } else if (impN > 0) {
-        metaLine = impN + ' of ' + SCORING_FACTORS.length
-                 + ' factors imputed from regional avg (neighbouring countries).';
-      } else if (missN > 0) {
-        metaLine = missN + ' factor' + (missN === 1 ? '' : 's')
-                 + ' excluded — no data in country or region.';
-      }
-      const missingStr = metaLine
-        ? '<div class="detail-composite-meta">' + metaLine + '</div>'
-        : '';
-      html +=
-        '<div class="detail-composite">'
-        + '<div>'
-        +   '<div class="detail-composite-label">Composite score</div>'
-        +   '<div class="detail-composite-value">' + Math.round(comp.score) + '</div>'
-        + '</div>'
-        + '<div class="detail-composite-rank">Rank<br><strong>#' + comp.rank + '</strong> of ' + comp.total + '</div>'
-        + '</div>'
-        + missingStr
-        + renderScoreBreakdown(comp);
+    if (hasScore) {
+      const sc = renderScorecard(country, comp);
+      html += sc.readiness;
+      buildHtml = sc.build;
     } else {
-      html += '<div class="detail-composite"><div><div class="detail-composite-label">Composite score</div>'
-            + '<div class="detail-composite-value" style="color:var(--text-low)">—</div></div>'
-            + '<div class="detail-composite-rank">No data for any weighted factor</div></div>';
+      html += '<p class="detail-verdict">Scoring is turned off (all weights are zero), or this market has no data for any weighted factor.</p>';
     }
   }
 
+  // ── High-level cost & emissions estimate (uses the sidebar size/PUE) ──
+  html += renderEstimate(country);
+
+  // ── How the score is built (after the headline + economics) ──
+  html += buildHtml;
+
+  // ── Demand-side context (explicitly not part of the score) ──
+  html += '<div class="detail-context">'
+        + '<div class="detail-section-title">Demand-side context' + whyIcon('demand_2027_twh') + ' <span class="section-tag">not scored</span></div>';
+  html += renderDetailRow(FACTOR_META['demand_2027_twh'].label, factors['demand_2027_twh'], FACTOR_META['demand_2027_twh'].fmt, 'demand_2027_twh', country.iso2, 'neutral');
+  html += renderCapacityBar(factors);
+  html += '</div>';
+
+  // ── Live & under-construction data centres in this market ──
+  html += renderProjects(country.iso2);
+
+  // ── Full data + sources, tucked away to keep the panel calm ──
+  let rowsHtml = '';
   let currentSection = null;
   for (const [section, label, factorId, fmt, dir] of PANEL_ROWS) {
+    if (factorId === 'demand_2027_twh') continue; // shown above as context
     if (section !== currentSection) {
-      html += '<div class="detail-section-title">' + escapeHtml(section) + '</div>';
+      rowsHtml += '<div class="detail-section-title detail-section-title--sub">' + escapeHtml(section) + '</div>';
       currentSection = section;
     }
-    html += renderDetailRow(label, factors[factorId], fmt, factorId, country.iso2, dir);
-    // After the planned-DC row at the very end of Market maturity, render a
-    // stacked bar visualising live vs planned MW for this country.
-    if (factorId === 'dc_capacity_planned_mw') {
-      html += renderCapacityBar(factors);
-    }
+    rowsHtml += renderDetailRow(label, factors[factorId], fmt, factorId, country.iso2, dir);
   }
+  html += '<details class="detail-sources"><summary>All data, sources &amp; confidence</summary>'
+        + '<div class="detail-sources-body">' + rowsHtml + '</div></details>';
+
+  // ── CTA — book an EMEA insights call (contextual to this market) ──
+  html += '<a class="cta-block" href="' + BOOKING_URL + '" target="_blank" rel="noopener">'
+        + '<div class="cta-text"><div class="cta-title">Go deeper on ' + escapeHtml(country.name) + '?</div>'
+        + '<div class="cta-sub">Book a call for tailored EMEA market &amp; site insights.</div></div>'
+        + '<span class="cta-arrow">→</span></a>';
 
   content.innerHTML = html;
   panel.classList.remove('hidden');
@@ -1945,6 +2286,24 @@ function openDetailPanel(country) {
 function wireDetailPanelClose() {
   const closeBtn = document.getElementById('detail-close');
   const panel    = document.getElementById('detail-panel');
+
+  // Cost-estimator size/PUE toggles — delegated on the persistent content
+  // container so they survive panel re-renders.
+  const content = document.getElementById('detail-content');
+  if (content) {
+    content.addEventListener('click', (e) => {
+      const mwBtn  = e.target.closest('[data-est-mw]');
+      const pueBtn = e.target.closest('[data-est-pue]');
+      if (mwBtn)       state.modelMw = +mwBtn.dataset.estMw;
+      else if (pueBtn) state.modelPue = +pueBtn.dataset.estPue;
+      else return;
+      if (state.selectedIso) {
+        const c = state.markets.find(x => x.iso2 === state.selectedIso);
+        if (c) openDetailPanel(c);
+      }
+    });
+  }
+
   if (closeBtn && panel) {
     closeBtn.addEventListener('click', () => {
       panel.classList.add('hidden');
@@ -1967,9 +2326,233 @@ function wireDetailPanelClose() {
 document.addEventListener('DOMContentLoaded', () => {
   wireDetailPanelClose();
   wireSourcesModal();
+  wireIntroOverlay();
+  wireTour();
+  wireWhyTips();
+  wireModelControls();
   wireMobileTabs();
+  loadProjects();
   initMap();
 });
+
+// Sidebar "model a data centre" scenario controls — feed the cost/emissions
+// estimate in the detail panel.
+function wireModelControls() {
+  ['model-size-toggle', 'model-pue-toggle'].forEach(id => {
+    const g = document.getElementById(id);
+    if (!g) return;
+    g.addEventListener('click', (e) => {
+      const b = e.target.closest('button');
+      if (!b) return;
+      if (b.dataset.estMw != null)       state.modelMw = +b.dataset.estMw;
+      else if (b.dataset.estPue != null) state.modelPue = +b.dataset.estPue;
+      else return;
+      g.querySelectorAll('button').forEach(x => x.classList.toggle('active', x === b));
+      if (state.selectedIso) {
+        const c = state.markets.find(x => x.iso2 === state.selectedIso);
+        if (c) openDetailPanel(c);
+      }
+    });
+  });
+}
+
+function wireIntroOverlay() {
+  const overlay = document.getElementById('intro-overlay');
+  if (!overlay) return;
+  const SEEN_KEY = 'dcmc_intro_seen_v1';
+  const dontShow = document.getElementById('intro-dontshow');
+  const show = () => { overlay.classList.remove('hidden'); overlay.setAttribute('aria-hidden', 'false'); };
+  const hide = () => {
+    overlay.classList.add('hidden');
+    overlay.setAttribute('aria-hidden', 'true');
+    if (dontShow && dontShow.checked) {
+      try { localStorage.setItem(SEEN_KEY, '1'); } catch (e) {}
+    }
+  };
+  // First-run: show unless the user has dismissed it permanently.
+  let seen = false;
+  try { seen = localStorage.getItem(SEEN_KEY) === '1'; } catch (e) {}
+  if (!seen) show();
+
+  const closeEl = document.getElementById('intro-close');
+  if (closeEl) closeEl.addEventListener('click', hide);
+  const goEl = document.getElementById('intro-go');
+  if (goEl) goEl.addEventListener('click', () => {
+    hide();
+    // First-time visitors get the guided tour right after the intro.
+    let tourDone = false;
+    try { tourDone = localStorage.getItem('dcmc_tour_done_v1') === '1'; } catch (e) {}
+    if (!tourDone) setTimeout(startTour, 380);
+  });
+  const back = overlay.querySelector('.intro-backdrop');
+  if (back) back.addEventListener('click', hide);
+  const methodBtn = document.getElementById('method-btn');
+  if (methodBtn) methodBtn.addEventListener('click', show);
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !overlay.classList.contains('hidden')) hide();
+  });
+}
+
+/* ── Market hover summary (rankings rows + map markers) ───────────── */
+
+function bucketScoresFor(iso2) {
+  const comp = state.composite[iso2];
+  if (!comp || !comp.contrib) return [];
+  const out = [];
+  for (const b of SUPPLY_BUCKETS) {
+    const present = b.factors.filter(f => comp.contrib[f]);
+    if (!present.length) continue;
+    const avg = present.reduce((s, f) => s + comp.contrib[f].norm, 0) / present.length;
+    out.push({ key: b.key, label: b.label, score: avg });
+  }
+  return out;
+}
+
+function marketHoverHtml(country) {
+  const comp = state.composite[country.iso2];
+  const name = escapeHtml(country.name);
+  if (!comp || comp.score == null) {
+    return '<div class="mh"><div class="mh-top"><span class="mh-flag">' + country.flag
+      + '</span><span class="mh-name">' + name + '</span></div>'
+      + '<div class="mh-sub">No composite score at the current weights</div></div>';
+  }
+  const score = Math.round(comp.score);
+  const bs = bucketScoresFor(country.iso2);
+  let tags = '';
+  if (bs.length >= 2) {
+    const top = bs.reduce((a, b) => b.score > a.score ? b : a);
+    const bot = bs.reduce((a, b) => b.score < a.score ? b : a);
+    tags = '<div class="mh-tags"><span class="mh-up">▲ ' + escapeHtml(top.label)
+         + '</span><span class="mh-down">▼ ' + escapeHtml(bot.label) + '</span></div>';
+  }
+  return '<div class="mh">'
+    + '<div class="mh-top"><span class="mh-flag">' + country.flag + '</span>'
+    +   '<span class="mh-name">' + name + '</span>'
+    +   '<span class="mh-rank">N°' + comp.rank + '</span></div>'
+    + '<div class="mh-score"><b style="color:' + normColour(score) + '">' + score
+    +   '</b><small>/100 readiness · rank ' + comp.rank + ' of ' + comp.total + '</small></div>'
+    + '<div class="mh-bar"><i style="width:' + score + '%;background:' + normColour(score) + '"></i></div>'
+    + tags
+    + '<div class="mh-hint">Click for the full breakdown</div>'
+    + '</div>';
+}
+
+let _hoverCard = null;
+function ensureHoverCard() {
+  if (!_hoverCard) {
+    _hoverCard = document.createElement('div');
+    _hoverCard.className = 'market-hovercard hidden';
+    document.body.appendChild(_hoverCard);
+  }
+  return _hoverCard;
+}
+function showHoverCardFor(country, x, y) {
+  const el = ensureHoverCard();
+  el.innerHTML = marketHoverHtml(country);
+  el.classList.remove('hidden');
+  moveHoverCard(x, y);
+}
+function moveHoverCard(x, y) {
+  if (!_hoverCard) return;
+  const pad = 16;
+  const w = _hoverCard.offsetWidth || 240;
+  const h = _hoverCard.offsetHeight || 120;
+  let nx = x - w - pad;                 // prefer left of cursor (rows are on the right edge)
+  if (nx < 8) nx = x + pad;
+  let ny = Math.max(8, Math.min(window.innerHeight - h - 8, y - h / 2));
+  _hoverCard.style.left = nx + 'px';
+  _hoverCard.style.top = ny + 'px';
+}
+function hideHoverCard() { if (_hoverCard) _hoverCard.classList.add('hidden'); }
+
+/* ── Guided tour (first run + "Take a tour") ──────────────────────── */
+
+const TOUR_STEPS = [
+  { sel: '.value-prop',         title: 'What this tool does',      body: 'It ranks 45 EMEA markets by how ready they are to host data centres — today’s leaders and the next wave of build-out.', place: 'right' },
+  { sel: '#ranking-panel',      title: 'The leaderboard',          body: 'Markets ranked best → worst by the composite score. Hover any row for a quick summary; click for the full breakdown.', place: 'left' },
+  { sel: '.weights-panel',      title: 'Tune it to your strategy', body: 'Drag the weights, or pick a preset (Power, Cost, Sustain…). The ranking and map re-sort instantly.', place: 'right' },
+  { sel: '.map-colour-control', title: 'Recolour the map',         body: 'Colour the markets by the composite score or any single factor to see patterns geographically.', place: 'bottom' },
+];
+let _tourIdx = 0, _tourEls = null, _tourTarget = null;
+
+function ensureTourEls() {
+  if (_tourEls) return _tourEls;
+  const backdrop = document.createElement('div');
+  backdrop.className = 'tour-backdrop hidden';
+  const pop = document.createElement('div');
+  pop.className = 'tour-pop hidden';
+  pop.innerHTML =
+      '<div class="tour-step-num"></div>'
+    + '<div class="tour-title"></div>'
+    + '<div class="tour-body"></div>'
+    + '<div class="tour-foot">'
+    +   '<button class="tour-skip" type="button">Skip</button>'
+    +   '<div class="tour-nav"><button class="tour-back" type="button">Back</button>'
+    +   '<button class="tour-next" type="button">Next</button></div>'
+    + '</div>';
+  document.body.appendChild(backdrop);
+  document.body.appendChild(pop);
+  backdrop.addEventListener('click', () => endTour(true));
+  pop.querySelector('.tour-skip').addEventListener('click', () => endTour(true));
+  pop.querySelector('.tour-back').addEventListener('click', () => { if (_tourIdx > 0) { _tourIdx--; showTourStep(); } });
+  pop.querySelector('.tour-next').addEventListener('click', () => {
+    if (_tourIdx < TOUR_STEPS.length - 1) { _tourIdx++; showTourStep(); } else endTour(true);
+  });
+  _tourEls = { backdrop, pop };
+  return _tourEls;
+}
+function clearTourHighlight() {
+  if (_tourTarget) { _tourTarget.classList.remove('tour-highlight'); _tourTarget = null; }
+}
+function showTourStep() {
+  const { backdrop, pop } = ensureTourEls();
+  const step = TOUR_STEPS[_tourIdx];
+  const target = document.querySelector(step.sel);
+  clearTourHighlight();
+  backdrop.classList.remove('hidden');
+  pop.classList.remove('hidden');
+  pop.querySelector('.tour-step-num').textContent = 'Step ' + (_tourIdx + 1) + ' of ' + TOUR_STEPS.length;
+  pop.querySelector('.tour-title').textContent = step.title;
+  pop.querySelector('.tour-body').textContent = step.body;
+  pop.querySelector('.tour-back').style.visibility = _tourIdx === 0 ? 'hidden' : 'visible';
+  pop.querySelector('.tour-next').textContent = _tourIdx === TOUR_STEPS.length - 1 ? 'Done' : 'Next';
+
+  if (!target) return;
+  _tourTarget = target;
+  target.classList.add('tour-highlight');
+  // Position the pop near the target, clamped to the viewport.
+  const r = target.getBoundingClientRect();
+  const pw = pop.offsetWidth || 280, ph = pop.offsetHeight || 140, gap = 14;
+  let left, top;
+  if (step.place === 'right')      { left = r.right + gap; top = r.top; }
+  else if (step.place === 'left')  { left = r.left - pw - gap; top = r.top + 20; }
+  else if (step.place === 'bottom'){ left = r.left; top = r.bottom + gap; }
+  else                             { left = r.left; top = r.top - ph - gap; }
+  left = Math.max(10, Math.min(window.innerWidth - pw - 10, left));
+  top  = Math.max(10, Math.min(window.innerHeight - ph - 10, top));
+  pop.style.left = left + 'px';
+  pop.style.top = top + 'px';
+}
+function startTour() {
+  _tourIdx = 0;
+  ensureTourEls();
+  showTourStep();
+}
+function endTour(markDone) {
+  clearTourHighlight();
+  if (_tourEls) { _tourEls.backdrop.classList.add('hidden'); _tourEls.pop.classList.add('hidden'); }
+  if (markDone) { try { localStorage.setItem('dcmc_tour_done_v1', '1'); } catch (e) {} }
+}
+function wireTour() {
+  const btn = document.getElementById('tour-btn');
+  if (btn) btn.addEventListener('click', startTour);
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && _tourEls && !_tourEls.pop.classList.contains('hidden')) endTour(true);
+  });
+  window.addEventListener('resize', () => {
+    if (_tourEls && !_tourEls.pop.classList.contains('hidden')) showTourStep();
+  });
+}
 
 function wireMobileTabs() {
   const bar = document.getElementById('mobile-tabs');

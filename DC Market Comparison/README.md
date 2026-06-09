@@ -75,17 +75,17 @@ For factors without a stable open API (DC construction cost, planned capacity, g
 
 | Source | Used for |
 |---|---|
-| **IEA Electricity 2024** | Compute demand 2027 (FLAP-D + Nordic markets) |
-| **Ember (via Our World in Data)** | Power per capita, grid carbon intensity |
-| **World Bank Indicators API** | R&D technicians per million, tertiary attainment |
+| **EdenLab 'Inputs' demand model** | Addressable broadband demand 2030 (informational) |
+| **Ember (via Our World in Data)** | Power per capita, grid carbon intensity, grid connection wait |
+| **Our World in Data** | R&D technicians per million (2022) |
+| **UN data** | STEM graduate share (Engineering/Manufacturing/Construction) |
 | **Eurostat NRG_PC_205** | Industrial power tariffs (EU) |
-| **National TSO reports** | Grid connection wait, forecast investment (per-country) |
-| **Cushman & Wakefield Global Data Center Construction Cost Guide 2024** | Construction cost USD/MW |
-| **Turner & Townsend Data Centre Cost Index 2024** | Construction cost (non-C&W markets) |
+| **National TSO/DSO plans & press releases** | Grid connection wait, annual grid investment (€) |
+| **Turner & Townsend Data Centre Construction Cost Index 2025-26** | Construction cost (all-in US$/W) — published per-city, others scaled to benchmark |
 | **Cushman & Wakefield Global Data Center Market Comparison 2024** | Live + planned DC capacity (FLAP-D + GCC) |
 | **JLL EMEA Data Centres Q4 2024** | Live + planned DC capacity (emerging) |
 | **datacentermap.com** | Facility counts for smaller markets |
-| **Ookla Speedtest Global Index** | Median fixed-broadband Gbps |
+| **TeleGeography** | Average fibre bandwidth (Gbps) |
 | **PeeringDB** | IXP and carrier-neutral facility overlays |
 | **OpenStreetMap Overpass** | HV (>=220 kV) transmission line overlay |
 

@@ -41,9 +41,12 @@ OUTPUT_PATH    = ROOT / "data" / "markets.json"
 RAW_SOURCES: dict[str, str] = {
     "power_per_capita_kwh":      "ember_per_capita.json",        # F7
     "carbon_intensity_gco2_kwh": "ember_carbon_intensity.json",  # F14
-    "rd_techs_per_million":      "worldbank_rd_techs.json",      # F13a
-    "tertiary_grad_pct":         "worldbank_tertiary.json",      # F13b
     "power_cost_usd_kwh":        "eurostat_power_cost.json",     # F8 (EU/EFTA only)
+    # rd_techs_per_million / tertiary_grad_pct: now curated-only, refreshed from the
+    # 2026 'Inputs' spreadsheet (Our World in Data / UN). Dropped from the fetch merge
+    # so the 8 markets absent from that dataset render 'no data' instead of mixing an
+    # older World Bank vintage (rd_techs) or a different metric (tertiary attainment %
+    # vs STEM-graduate share) into the same factor.
 }
 
 

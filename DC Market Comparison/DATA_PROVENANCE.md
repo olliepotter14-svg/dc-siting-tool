@@ -665,3 +665,47 @@ These two edits were applied in response to the "open items" flagged above:
 1. **`bandwidth_2030_gbps.FR`: 2.0 → 1.0 Gbps**. The "Plan France Très Haut Débit — Tous fibrés en 2030" is a *coverage* target, not a 2 Gbps *median* target. Bringing FR in line with peer EU methodology (1.0 Gbps EU Digital Decade headline) eliminates an outlier that audience members would challenge.
 2. **`overlay_hyperscale.geojson` — Microsoft Denmark East: MW 300 → 150**. The prior 300 MW was the aspirational multi-campus build envelope; the renewable-PPA-backed commitment Microsoft has publicly disclosed is ~130 MW. 150 MW is the conservative defensible figure.
 
+---
+
+## 2026-06-09 reconciliation against the 'Inputs' model spreadsheet (photo-sourced)
+
+The user supplied a clean, internally-consistent "Inputs" model spreadsheet as 15 photographs (`IMG_1299–1313`), covering 41 markets in a fixed order. It was transcribed to `data/raw/photo_inputs_2026.json` (staging) and reconciled cell-by-cell against the then-current `markets.json`. **Decisions were made by the user from a per-factor deviation report** (relative change + shift in each market's 0–100 in-range score). Out-of-scope rows (South Africa, Kenya, Azerbaijan, Kazakhstan) were excluded; 8 EMEA markets are absent from the spreadsheet (Malta, Cyprus, Slovenia, Bahrain, Israel, Jordan, Tunisia, Algeria).
+
+**Applied (accepted by user):**
+- **`bandwidth_gbps` — full replace (TeleGeography, 28 markets).** The prior values were in a broken sub-1-Gbps unit; replaced with average fibre bandwidth diameter (Gbps, 29–161 range).
+- **`rd_techs_per_million` — full replace (Our World in Data 2022, 37 markets).** Prior World Bank values ran 3–6× lower (different vintage). Factor is now curated-only (removed from `build_markets_dataset.py` `RAW_SOURCES`).
+- **`construction_cost_usd_mw` — redefined to a normalised $/W index (Eurostat / T&T / RLB / C&W, 27 markets).** Was absolute USD/MW; same direction (higher = costlier). Ranking largely unchanged; Egypt/Morocco flip cheap→expensive.
+- **`grid_investment_usdbn` — redefined to annual EUR (TSO/DSO press releases, 28 markets).** Fixes the prior full-TSO-horizon basis flagged in QA. **LOW-confidence transcription.**
+- **`tertiary_grad_pct` — redefined to STEM-graduate share (UN, fraction 0–1, 37 markets).** Was tertiary-attainment %. Reshuffles ranking (Kuwait/Romania/Portugal up; Luxembourg/Ireland/UK/NL/CH down). Now curated-only.
+- **`demand_2027_twh` → addressable demand 2030 (informational, 35 markets, coverage 15→35).** Complete metric change; relabelled (see unit labels in `markets.js`). Not scored. **LOW-confidence on Baltic rows.**
+- **`grid_connect_years` — gap-fills only (HR, OM, RS = 4 yrs each, Ember).** Current multi-source values kept; the photo's single-source, gap-heavy column was *not* adopted wholesale.
+
+**Rejected (kept current):**
+- **`power_cost_usd_kwh`** — photo values (WorldPopulationReview) resemble retail/household tariffs and would overstate DC industrial cost; kept the Eurostat industrial series.
+- **`power_per_capita_kwh`** — photo unit ("MW/pop-000s") was an odd single-digit scale with low-confidence transcription (Sweden unreadable); kept current kWh/capita.
+- **`carbon_intensity_gco2_kwh`** — not transcribed; current Ember data is already complete (45/45). The photo offers an Ember 2027–2030 forecast series if a future update is wanted.
+
+**Consistency rule applied:** for every *replaced/redefined* factor, the 8 non-photo markets were dropped (no-data → regional-mean imputation in scoring) so no factor mixes old and new units.
+
+**`needs_check` cells to spot-verify against the photos (or a future .xlsx):**
+- `bandwidth_gbps`: BG (94.34 — duplicates DK, possible misread).
+- `tertiary_grad_pct`: LT, IS.
+- `grid_connect_years` gap-fills: HR, OM, RS (single-source estimates).
+- `grid_investment_usdbn`: whole column LOW confidence (GB, EE noted); annual-vs-total basis assumed.
+- `demand_2027_twh` (addressable): FI, EE, LV, IS, BG; Baltic rows uncertain.
+- General: any value carrying `"needs_check": true` in `curated_overrides.json`.
+
+Staging file `data/raw/photo_inputs_2026.json` retains the full ordered transcription (with nulls for grey/blank cells) for re-verification.
+
+
+---
+
+## 2026-06 construction-cost reconciliation ($/W) + HV-grid overlay removal
+
+**Construction cost** was previously a relative index (~0.6–1.3) whose basis was flagged "under review". It is now stored as **all-in US$/W of IT load**, anchored to the **Turner & Townsend Data Centre Construction Cost Index 2025-26**:
+- **Published per-city figures used directly (confidence=verified):** Zurich $14.2/W, Oslo $12.4, London $12.0, Frankfurt $11.6, Paris $10.8, Amsterdam $10.8, Madrid $10.0, Dublin $10.0.
+- **All other markets (confidence=estimate):** prior relative index × 12.0 (the median anchor derived from the eight published markets vs our index), rounded to 0.1 $/W.
+- Rescaling is **score-neutral** for the eight published markets only in aggregate; because published values replace pure scaling for those, the construction factor's normalisation shifts slightly (more accurate). The detail-panel build-cost estimate now uses `capex = $/W × IT-watts` and the "provisional / under review" flag is removed.
+- Source: Turner & Townsend Data Centre Construction Cost Index 2025-26 (https://www.turnerandtownsend.com/insights/data-centre-construction-cost-index-2025-2026/).
+
+**HV-grid map overlay removed.** `data/overlay_grid.geojson` was never generated (the toggle errored). The chip and its `OVERLAYS.grid` config were removed; the IXP and DC-facility overlays are unaffected. Re-add later by generating the ≥380 kV layer via `scripts/fetch_overlays.py`.

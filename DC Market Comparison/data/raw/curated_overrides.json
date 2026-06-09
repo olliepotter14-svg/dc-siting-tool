@@ -4,146 +4,323 @@
     "schema_version": 1
   },
   "demand_2027_twh": {
-    "_meta": {
-      "factor": "Total data centre electricity demand forecast for ~2027 (TWh).",
-      "unit": "TWh",
-      "default_source": "IEA Electricity 2024 — DC/AI/crypto demand category (2026 forecast), extrapolated to 2027 using the report's reported growth trajectory. National scaling cross-checked against JLL EMEA Data Centres Q4 2024 and Cushman & Wakefield Global Data Center Market Comparison 2024. Numbers are analyst-derived estimates; replace with vendor-licensed forecasts where available.",
-      "default_url": "https://www.iea.org/reports/electricity-2024"
-    },
-    "IE": {
-      "value": 11.0,
-      "year": 2027,
-      "source": "IEA Electricity 2024, p32: 5.3 TWh (2022) doubling by 2026 → ~10.6 TWh (2026); ~11 TWh mid-2027 trajectory",
-      "url": "https://iea.blob.core.windows.net/assets/6b2fd954-2017-408e-bf08-952fdd62118a/Electricity2024-Analysisandforecastto2026.pdf",
-      "evidence_url": "https://iea.blob.core.windows.net/assets/6b2fd954-2017-408e-bf08-952fdd62118a/Electricity2024-Analysisandforecastto2026.pdf",
-      "confidence": "estimate",
-      "note": "2026 figure directly published by IEA (10.6 TWh); 2027 = mid-trajectory projection."
+    "DE": {
+      "value": 491,
+      "year": 2030,
+      "source": "Addressable broadband demand model (2030 horizon)",
+      "url": "",
+      "confidence": "low",
+      "note": "Redefined: Total Addressable Broadband Demand 2030 (model units). Was compute demand 2027 (TWh). Informational only (not scored). LOW-confidence on Baltic rows.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
     },
     "GB": {
-      "value": 14.0,
-      "year": 2027,
-      "source": "Ember 'Grids for data centres in Europe' 2025: UK DC share = 4% of national demand (2024). 2024 baseline ~10.6 TWh; extrapolated to 2027 using Ember's stated +30% by 2030 trajectory.",
-      "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
-      "evidence_url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
-      "confidence": "estimate",
-      "note": "Primary source cites % share, not absolute TWh; 2027 derived from 2024 baseline + 2030 trajectory."
-    },
-    "DE": {
-      "value": 24.0,
-      "year": 2027,
-      "source": "Ember 'Grids for data centres in Europe' 2025: Germany DC share = 4% (2024). 2024 baseline ~19 TWh; extrapolated to 2027.",
-      "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
-      "evidence_url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
-      "confidence": "estimate",
-      "note": "Primary cites 4% national share; 2027 derived from trajectory."
-    },
-    "NL": {
-      "value": 12.0,
-      "year": 2027,
-      "source": "Ember 'Grids for data centres in Europe' 2025: Netherlands DC share = 7% (2024). 2024 baseline ~8 TWh; grid effectively banning new DCs until 2030.",
-      "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
-      "evidence_url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
-      "confidence": "estimate",
-      "note": "Primary cites 7% share + grid moratorium; 2027 = limited growth above 2024."
+      "value": 477,
+      "year": 2030,
+      "source": "Addressable broadband demand model (2030 horizon)",
+      "url": "",
+      "confidence": "low",
+      "note": "Redefined: Total Addressable Broadband Demand 2030 (model units). Was compute demand 2027 (TWh). Informational only (not scored). LOW-confidence on Baltic rows.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
     },
     "FR": {
-      "value": 10.0,
-      "year": 2027,
-      "source": "Ember 'Grids for data centres in Europe' 2025: France DC share = 2% (2024). 2024 baseline ~9 TWh; France expected to maintain continued investment (less grid-constrained than NL/IE/DE-Frankfurt).",
-      "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
-      "evidence_url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
-      "confidence": "estimate",
-      "note": "Primary cites 2% share + grid investment continuing; 2027 derived."
-    },
-    "DK": {
-      "value": 7.0,
-      "year": 2027,
-      "source": "IEA Electricity 2024, p33: 6 TWh by 2026 (~20% of national demand)",
-      "url": "https://iea.blob.core.windows.net/assets/6b2fd954-2017-408e-bf08-952fdd62118a/Electricity2024-Analysisandforecastto2026.pdf",
-      "evidence_url": "https://iea.blob.core.windows.net/assets/6b2fd954-2017-408e-bf08-952fdd62118a/Electricity2024-Analysisandforecastto2026.pdf",
-      "confidence": "estimate",
-      "note": "2026 figure directly published by IEA (6 TWh); 2027 = mid-trajectory."
-    },
-    "SE": {
-      "value": 6.0,
-      "year": 2027,
-      "source": "Ember 'Grids for data centres in Europe' 2025: Sweden/Norway/Denmark expected to TRIPLE DC demand by 2030 from 2024 baseline.",
-      "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
-      "evidence_url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
-      "confidence": "estimate",
-      "note": "Nordic tripling-by-2030 trajectory; 2027 = mid-trajectory."
-    },
-    "NO": {
-      "value": 3.5,
-      "year": 2027,
-      "source": "Ember 'Grids for data centres in Europe' 2025: Statnett plans tripling of DC demand by 2030 vs 2022 (~7 TWh implied 2022 baseline → 21 TWh by 2030); up to 15 TWh by 2050.",
-      "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
-      "evidence_url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
-      "confidence": "estimate",
-      "note": "Primary directly cites Statnett 3× by 2030 plan + 15 TWh by 2050; 2027 = early-trajectory."
-    },
-    "FI": {
-      "value": 4.0,
-      "year": 2027,
-      "source": "Ember 'Grids for data centres in Europe' 2025: Finland expected to see DC consumption 3-5× by 2035 from 2024 baseline; rapid growth.",
-      "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
-      "evidence_url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
-      "confidence": "estimate",
-      "note": "Primary cites 3-5× growth by 2035; 2027 = early-trajectory."
-    },
-    "ES": {
-      "value": 5.0,
-      "year": 2027,
-      "source": "Ember 'Grids for data centres in Europe' 2025: not in top-5 markets, growth expected; no explicit per-country TWh published.",
-      "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
-      "evidence_url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
-      "confidence": "estimate",
-      "note": "No primary per-country figure; estimate from Madrid pipeline activity (JLL EMEA H2 2024)."
+      "value": 475,
+      "year": 2030,
+      "source": "Addressable broadband demand model (2030 horizon)",
+      "url": "",
+      "confidence": "low",
+      "note": "Redefined: Total Addressable Broadband Demand 2030 (model units). Was compute demand 2027 (TWh). Informational only (not scored). LOW-confidence on Baltic rows.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
     },
     "IT": {
-      "value": 4.0,
-      "year": 2027,
-      "source": "Ember 'Grids for data centres in Europe' 2025: Italy expected 3-5× growth by 2035; one of named emerging markets.",
-      "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
-      "evidence_url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
-      "confidence": "estimate",
-      "note": "Primary cites 3-5× by 2035; no 2027 TWh published. Estimate from Milan pipeline."
+      "value": 275,
+      "year": 2030,
+      "source": "Addressable broadband demand model (2030 horizon)",
+      "url": "",
+      "confidence": "low",
+      "note": "Redefined: Total Addressable Broadband Demand 2030 (model units). Was compute demand 2027 (TWh). Informational only (not scored). LOW-confidence on Baltic rows.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
     },
-    "PL": {
-      "value": 2.0,
-      "year": 2027,
-      "source": "Ember 'Grids for data centres in Europe' 2025: Poland not in top-5; growth expected but no per-country TWh published.",
-      "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
-      "evidence_url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
-      "confidence": "estimate",
-      "note": "No primary per-country figure; estimate from Warsaw pipeline."
+    "ES": {
+      "value": 329,
+      "year": 2030,
+      "source": "Addressable broadband demand model (2030 horizon)",
+      "url": "",
+      "confidence": "low",
+      "note": "Redefined: Total Addressable Broadband Demand 2030 (model units). Was compute demand 2027 (TWh). Informational only (not scored). LOW-confidence on Baltic rows.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
     },
-    "AE": {
-      "value": 4.5,
-      "year": 2027,
-      "source": "C&W Global DC Market 2024 — Dubai + Abu Dhabi combined live + planned capacity converted to demand at ~70% utilisation. No per-country TWh published in IEA/Ember.",
-      "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-market-comparison",
-      "evidence_url": "https://www.cushmanwakefield.com/en/insights/global-data-center-market-comparison",
-      "confidence": "estimate",
-      "note": "Derived from C&W published MW figures + utilisation assumption; no primary TWh source."
+    "TR": {
+      "value": 247,
+      "year": 2030,
+      "source": "Addressable broadband demand model (2030 horizon)",
+      "url": "",
+      "confidence": "low",
+      "note": "Redefined: Total Addressable Broadband Demand 2030 (model units). Was compute demand 2027 (TWh). Informational only (not scored). LOW-confidence on Baltic rows.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "NL": {
+      "value": 158,
+      "year": 2030,
+      "source": "Addressable broadband demand model (2030 horizon)",
+      "url": "",
+      "confidence": "low",
+      "note": "Redefined: Total Addressable Broadband Demand 2030 (model units). Was compute demand 2027 (TWh). Informational only (not scored). LOW-confidence on Baltic rows.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
     },
     "SA": {
-      "value": 3.5,
-      "year": 2027,
-      "source": "C&W Global DC Market 2024 — Riyadh hyperscale pipeline converted to demand. No per-country TWh published in IEA/Ember.",
-      "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-market-comparison",
-      "evidence_url": "https://www.cushmanwakefield.com/en/insights/global-data-center-market-comparison",
-      "confidence": "estimate",
-      "note": "Derived from C&W published MW + utilisation; no primary TWh source."
+      "value": 398,
+      "year": 2030,
+      "source": "Addressable broadband demand model (2030 horizon)",
+      "url": "",
+      "confidence": "low",
+      "note": "Redefined: Total Addressable Broadband Demand 2030 (model units). Was compute demand 2027 (TWh). Informational only (not scored). LOW-confidence on Baltic rows.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
     },
-    "IL": {
-      "value": 2.0,
-      "year": 2027,
-      "source": "C&W Global DC Market 2024 — Tel Aviv cluster; no per-country TWh published in IEA/Ember.",
-      "url": "https://www.cushmanwakefield.com/en/insights/global-data-center-market-comparison",
-      "evidence_url": "https://www.cushmanwakefield.com/en/insights/global-data-center-market-comparison",
-      "confidence": "estimate",
-      "note": "Derived from C&W published MW; no primary TWh source."
+    "PL": {
+      "value": 64,
+      "year": 2030,
+      "source": "Addressable broadband demand model (2030 horizon)",
+      "url": "",
+      "confidence": "low",
+      "note": "Redefined: Total Addressable Broadband Demand 2030 (model units). Was compute demand 2027 (TWh). Informational only (not scored). LOW-confidence on Baltic rows.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "CH": {
+      "value": 60,
+      "year": 2030,
+      "source": "Addressable broadband demand model (2030 horizon)",
+      "url": "",
+      "confidence": "low",
+      "note": "Redefined: Total Addressable Broadband Demand 2030 (model units). Was compute demand 2027 (TWh). Informational only (not scored). LOW-confidence on Baltic rows.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "BE": {
+      "value": 62,
+      "year": 2030,
+      "source": "Addressable broadband demand model (2030 horizon)",
+      "url": "",
+      "confidence": "low",
+      "note": "Redefined: Total Addressable Broadband Demand 2030 (model units). Was compute demand 2027 (TWh). Informational only (not scored). LOW-confidence on Baltic rows.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "SE": {
+      "value": 79,
+      "year": 2030,
+      "source": "Addressable broadband demand model (2030 horizon)",
+      "url": "",
+      "confidence": "low",
+      "note": "Redefined: Total Addressable Broadband Demand 2030 (model units). Was compute demand 2027 (TWh). Informational only (not scored). LOW-confidence on Baltic rows.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "IE": {
+      "value": 12,
+      "year": 2030,
+      "source": "Addressable broadband demand model (2030 horizon)",
+      "url": "",
+      "confidence": "low",
+      "note": "Redefined: Total Addressable Broadband Demand 2030 (model units). Was compute demand 2027 (TWh). Informational only (not scored). LOW-confidence on Baltic rows.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "AE": {
+      "value": 136,
+      "year": 2030,
+      "source": "Addressable broadband demand model (2030 horizon)",
+      "url": "",
+      "confidence": "low",
+      "note": "Redefined: Total Addressable Broadband Demand 2030 (model units). Was compute demand 2027 (TWh). Informational only (not scored). LOW-confidence on Baltic rows.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "AT": {
+      "value": 53,
+      "year": 2030,
+      "source": "Addressable broadband demand model (2030 horizon)",
+      "url": "",
+      "confidence": "low",
+      "note": "Redefined: Total Addressable Broadband Demand 2030 (model units). Was compute demand 2027 (TWh). Informational only (not scored). LOW-confidence on Baltic rows.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "NO": {
+      "value": 42,
+      "year": 2030,
+      "source": "Addressable broadband demand model (2030 horizon)",
+      "url": "",
+      "confidence": "low",
+      "note": "Redefined: Total Addressable Broadband Demand 2030 (model units). Was compute demand 2027 (TWh). Informational only (not scored). LOW-confidence on Baltic rows.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "DK": {
+      "value": 45,
+      "year": 2030,
+      "source": "Addressable broadband demand model (2030 horizon)",
+      "url": "",
+      "confidence": "low",
+      "note": "Redefined: Total Addressable Broadband Demand 2030 (model units). Was compute demand 2027 (TWh). Informational only (not scored). LOW-confidence on Baltic rows.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "RO": {
+      "value": 79,
+      "year": 2030,
+      "source": "Addressable broadband demand model (2030 horizon)",
+      "url": "",
+      "confidence": "low",
+      "note": "Redefined: Total Addressable Broadband Demand 2030 (model units). Was compute demand 2027 (TWh). Informational only (not scored). LOW-confidence on Baltic rows.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "CZ": {
+      "value": 48,
+      "year": 2030,
+      "source": "Addressable broadband demand model (2030 horizon)",
+      "url": "",
+      "confidence": "low",
+      "note": "Redefined: Total Addressable Broadband Demand 2030 (model units). Was compute demand 2027 (TWh). Informational only (not scored). LOW-confidence on Baltic rows.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "EG": {
+      "value": 102,
+      "year": 2030,
+      "source": "Addressable broadband demand model (2030 horizon)",
+      "url": "",
+      "confidence": "low",
+      "note": "Redefined: Total Addressable Broadband Demand 2030 (model units). Was compute demand 2027 (TWh). Informational only (not scored). LOW-confidence on Baltic rows.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "PT": {
+      "value": 67,
+      "year": 2030,
+      "source": "Addressable broadband demand model (2030 horizon)",
+      "url": "",
+      "confidence": "low",
+      "note": "Redefined: Total Addressable Broadband Demand 2030 (model units). Was compute demand 2027 (TWh). Informational only (not scored). LOW-confidence on Baltic rows.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "FI": {
+      "value": 89,
+      "year": 2030,
+      "source": "Addressable broadband demand model (2030 horizon)",
+      "url": "",
+      "confidence": "low",
+      "note": "Redefined: Total Addressable Broadband Demand 2030 (model units). Was compute demand 2027 (TWh). Informational only (not scored). LOW-confidence on Baltic rows.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)",
+      "needs_check": true
+    },
+    "GR": {
+      "value": 49,
+      "year": 2030,
+      "source": "Addressable broadband demand model (2030 horizon)",
+      "url": "",
+      "confidence": "low",
+      "note": "Redefined: Total Addressable Broadband Demand 2030 (model units). Was compute demand 2027 (TWh). Informational only (not scored). LOW-confidence on Baltic rows.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "HU": {
+      "value": 37,
+      "year": 2030,
+      "source": "Addressable broadband demand model (2030 horizon)",
+      "url": "",
+      "confidence": "low",
+      "note": "Redefined: Total Addressable Broadband Demand 2030 (model units). Was compute demand 2027 (TWh). Informational only (not scored). LOW-confidence on Baltic rows.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "QA": {
+      "value": 18,
+      "year": 2030,
+      "source": "Addressable broadband demand model (2030 horizon)",
+      "url": "",
+      "confidence": "low",
+      "note": "Redefined: Total Addressable Broadband Demand 2030 (model units). Was compute demand 2027 (TWh). Informational only (not scored). LOW-confidence on Baltic rows.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "MA": {
+      "value": 86,
+      "year": 2030,
+      "source": "Addressable broadband demand model (2030 horizon)",
+      "url": "",
+      "confidence": "low",
+      "note": "Redefined: Total Addressable Broadband Demand 2030 (model units). Was compute demand 2027 (TWh). Informational only (not scored). LOW-confidence on Baltic rows.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "KW": {
+      "value": 17,
+      "year": 2030,
+      "source": "Addressable broadband demand model (2030 horizon)",
+      "url": "",
+      "confidence": "low",
+      "note": "Redefined: Total Addressable Broadband Demand 2030 (model units). Was compute demand 2027 (TWh). Informational only (not scored). LOW-confidence on Baltic rows.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "SK": {
+      "value": 53,
+      "year": 2030,
+      "source": "Addressable broadband demand model (2030 horizon)",
+      "url": "",
+      "confidence": "low",
+      "note": "Redefined: Total Addressable Broadband Demand 2030 (model units). Was compute demand 2027 (TWh). Informational only (not scored). LOW-confidence on Baltic rows.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "BG": {
+      "value": 29,
+      "year": 2030,
+      "source": "Addressable broadband demand model (2030 horizon)",
+      "url": "",
+      "confidence": "low",
+      "note": "Redefined: Total Addressable Broadband Demand 2030 (model units). Was compute demand 2027 (TWh). Informational only (not scored). LOW-confidence on Baltic rows.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)",
+      "needs_check": true
+    },
+    "OM": {
+      "value": 17,
+      "year": 2030,
+      "source": "Addressable broadband demand model (2030 horizon)",
+      "url": "",
+      "confidence": "low",
+      "note": "Redefined: Total Addressable Broadband Demand 2030 (model units). Was compute demand 2027 (TWh). Informational only (not scored). LOW-confidence on Baltic rows.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "HR": {
+      "value": 17,
+      "year": 2030,
+      "source": "Addressable broadband demand model (2030 horizon)",
+      "url": "",
+      "confidence": "low",
+      "note": "Redefined: Total Addressable Broadband Demand 2030 (model units). Was compute demand 2027 (TWh). Informational only (not scored). LOW-confidence on Baltic rows.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "LU": {
+      "value": 26,
+      "year": 2030,
+      "source": "Addressable broadband demand model (2030 horizon)",
+      "url": "",
+      "confidence": "low",
+      "note": "Redefined: Total Addressable Broadband Demand 2030 (model units). Was compute demand 2027 (TWh). Informational only (not scored). LOW-confidence on Baltic rows.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "RS": {
+      "value": 18,
+      "year": 2030,
+      "source": "Addressable broadband demand model (2030 horizon)",
+      "url": "",
+      "confidence": "low",
+      "note": "Redefined: Total Addressable Broadband Demand 2030 (model units). Was compute demand 2027 (TWh). Informational only (not scored). LOW-confidence on Baltic rows.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "LT": {
+      "value": 49,
+      "year": 2030,
+      "source": "Addressable broadband demand model (2030 horizon)",
+      "url": "",
+      "confidence": "low",
+      "note": "Redefined: Total Addressable Broadband Demand 2030 (model units). Was compute demand 2027 (TWh). Informational only (not scored). LOW-confidence on Baltic rows.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "IS": {
+      "value": 8,
+      "year": 2030,
+      "source": "Addressable broadband demand model (2030 horizon)",
+      "url": "",
+      "confidence": "low",
+      "note": "Redefined: Total Addressable Broadband Demand 2030 (model units). Was compute demand 2027 (TWh). Informational only (not scored). LOW-confidence on Baltic rows.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)",
+      "needs_check": true
     }
   },
   "grid_connect_years": {
@@ -933,458 +1110,547 @@
       "url": "https://www.one.org.ma/",
       "confidence": "estimate",
       "note": "No primary published per-country wait-time figure. Regional proxy explicitly rejected — Gulf sovereign-fast averages would mislead."
+    },
+    "HR": {
+      "value": 4,
+      "year": 2025,
+      "source": "Ember",
+      "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
+      "confidence": "estimate",
+      "note": "Gap-fill from Ember single-source column (current tool had no value). Verify.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)",
+      "needs_check": true
+    },
+    "OM": {
+      "value": 4,
+      "year": 2025,
+      "source": "Ember",
+      "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
+      "confidence": "estimate",
+      "note": "Gap-fill from Ember single-source column (current tool had no value). Verify.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)",
+      "needs_check": true
+    },
+    "RS": {
+      "value": 4,
+      "year": 2025,
+      "source": "Ember",
+      "url": "https://ember-energy.org/app/uploads/2025/06/Report-Grids-for-data-centres-in-Europe-PDF.pdf",
+      "confidence": "estimate",
+      "note": "Gap-fill from Ember single-source column (current tool had no value). Verify.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)",
+      "needs_check": true
     }
   },
   "grid_investment_usdbn": {
-    "_meta": {
-      "factor": "Total forecast or committed transmission + distribution grid investment through 2030 (USD billion). Sourced from each national TSO's published 10-year network development plan (TYNDP for EU; equivalent national plans elsewhere). Converted to USD at end-2024 spot rate. Where the published plan extends beyond 2030 (e.g. 2045) the figure is pro-rated linearly.",
-      "unit": "USD bn"
+    "DE": {
+      "value": 7280000000,
+      "year": 2025,
+      "source": "National TSO/DSO plans & press releases (annual EUR)",
+      "url": "https://www.entsoe.eu/",
+      "confidence": "low",
+      "note": "Annual grid investment in EUR (absolute). Replaces prior USD-bn full-TSO-horizon figures (QA-flagged basis). LOW-confidence photo transcription.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
     },
     "GB": {
-      "value": 90.0,
-      "year": 2030,
-      "source": "Ofgem RIIO-3 Final Determinations (Dec 2025): £28.1 bn upfront + £90 bn total investment pipeline by 2031, across gas + electricity transmission and distribution.",
-      "url": "https://www.ofgem.gov.uk/press-release/ofgem-unlocks-ps28-billion-investment-maintain-safe-secure-and-resilient-energy-grid-and-upgrade-and-expand-capacity-meet-growing-demands",
-      "evidence_url": "https://www.ofgem.gov.uk/press-release/ofgem-unlocks-ps28-billion-investment-maintain-safe-secure-and-resilient-energy-grid-and-upgrade-and-expand-capacity-meet-growing-demands",
-      "confidence": "verified",
-      "note": "£90 bn directly published by Ofgem press release Dec 2025; converted at 1.0 USD/GBP for rounded headline."
-    },
-    "DE": {
-      "value": 100.0,
-      "year": 2030,
-      "source": "BNetzA NEP 2037/2045 — EUR 283-300 bn by 2037 / 360-390 bn by 2045. Pro-rated to 2030 segment (~6 of 20 years) ≈ EUR 90-100 bn.",
-      "url": "https://www.netzentwicklungsplan.de/en/nep-aktuell/netzentwicklungsplan-20372045-2025",
-      "evidence_url": "https://www.netzentwicklungsplan.de/en/nep-aktuell/netzentwicklungsplan-20372045-2025",
-      "confidence": "estimate",
-      "note": "NEP full-horizon figures directly cited; 2030-segment is pro-rata derivation."
+      "value": 2369996000,
+      "year": 2025,
+      "source": "National TSO/DSO plans & press releases (annual EUR)",
+      "url": "https://www.entsoe.eu/",
+      "confidence": "low",
+      "note": "Annual grid investment in EUR (absolute). Replaces prior USD-bn full-TSO-horizon figures (QA-flagged basis). LOW-confidence photo transcription.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)",
+      "needs_check": true
     },
     "FR": {
-      "value": 100.0,
-      "year": 2030,
-      "source": "RTE 'Schéma décennal de développement du réseau' (SDDR) 2024 — EUR 100 bn transmission grid investment 2025-2040 directly published.",
-      "url": "https://www.rte-france.com/actualites/plan-strategique-developpement-reseau-transport-electricite-horizon-2040",
-      "evidence_url": "https://www.rte-france.com/actualites/plan-strategique-developpement-reseau-transport-electricite-horizon-2040",
-      "confidence": "verified",
-      "note": "EUR 100 bn 2025-2040 RTE transmission directly published; full-horizon figure (not pro-rated to 2030 — interpret accordingly)."
+      "value": 7500000000,
+      "year": 2025,
+      "source": "National TSO/DSO plans & press releases (annual EUR)",
+      "url": "https://www.entsoe.eu/",
+      "confidence": "low",
+      "note": "Annual grid investment in EUR (absolute). Replaces prior USD-bn full-TSO-horizon figures (QA-flagged basis). LOW-confidence photo transcription.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
     },
     "IT": {
-      "value": 23.0,
-      "year": 2030,
-      "source": "Terna 'Piano di Sviluppo 2025-2034' — EUR 23 bn (~USD 25 bn) total transmission investment over 10 years. Headline figure directly published March 2025.",
-      "url": "https://www.terna.it/en/electric-system/grid/development-plan-2024",
-      "evidence_url": "https://www.terna.it/en/electric-system/grid/development-plan-2024",
-      "confidence": "verified",
-      "note": "EUR 23 bn over 2025-2034 transmission-only headline confirmed by Terna press release Mar 2025."
+      "value": 2300000000,
+      "year": 2025,
+      "source": "National TSO/DSO plans & press releases (annual EUR)",
+      "url": "https://www.entsoe.eu/",
+      "confidence": "low",
+      "note": "Annual grid investment in EUR (absolute). Replaces prior USD-bn full-TSO-horizon figures (QA-flagged basis). LOW-confidence photo transcription.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
     },
     "ES": {
-      "value": 15.0,
-      "year": 2030,
-      "source": "REE/Redeia — EUR 13.6 bn Spanish transmission grid investment 2025-2030 per Spanish government Network Development Plan 2025-2030.",
-      "url": "https://www.planificacionelectrica.es/en/process-2025-30",
-      "evidence_url": "https://www.planificacionelectrica.es/en/process-2025-30",
-      "confidence": "verified",
-      "note": "EUR 13.6 bn 2025-2030 transmission directly cited by Spanish gov NDP; converted to USD."
+      "value": 3200000000,
+      "year": 2025,
+      "source": "National TSO/DSO plans & press releases (annual EUR)",
+      "url": "https://www.entsoe.eu/",
+      "confidence": "low",
+      "note": "Annual grid investment in EUR (absolute). Replaces prior USD-bn full-TSO-horizon figures (QA-flagged basis). LOW-confidence photo transcription.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
     },
     "NL": {
-      "value": 85.0,
-      "year": 2030,
-      "source": "TenneT — EUR 10 bn in 2024 alone, ~EUR 200 bn agenda over next decade (NL + DE combined). NL-only share + DSO (Stedin/Liander/Enexis) ~ EUR 85 bn to 2030.",
-      "url": "https://www.tennet.eu/grid-investments-serve-society-based-government-ambitions-exceed-eur-10-billion-2024",
-      "evidence_url": "https://www.tennet.eu/grid-investments-serve-society-based-government-ambitions-exceed-eur-10-billion-2024",
-      "confidence": "estimate",
-      "note": "TenneT 2024 figure directly published; NL-only + DSO composite derivation."
-    },
-    "IE": {
-      "value": 7.0,
-      "year": 2030,
-      "source": "EirGrid Shaping Our Electricity Future + ESB Networks PR5",
-      "url": "https://www.eirgrid.ie/",
-      "confidence": "estimate"
-    },
-    "BE": {
-      "value": 12.0,
-      "year": 2030,
-      "source": "Elia Federal Development Plan 2024-2034",
-      "url": "https://www.elia.be/",
-      "confidence": "estimate"
-    },
-    "AT": {
-      "value": 10.0,
-      "year": 2030,
-      "source": "APG Netzentwicklungsplan 2023",
-      "url": "https://www.apg.at/",
-      "confidence": "estimate"
-    },
-    "CH": {
-      "value": 4.0,
-      "year": 2030,
-      "source": "Swissgrid Strategic Grid 2040 — CHF 5.5 bn (~USD 6 bn) total to 2040; ~CHF 3-4 bn (~USD 4 bn) to 2030 segment",
-      "url": "https://www.swissgrid.ch/en/home/projects/future-grid.html",
-      "note": "Corrected from prior $12 bn; Swissgrid Apr 2025 announcement confirms CHF 5.5 bn full programme value through 2040, of which the 2030 segment is ~70%.",
-      "confidence": "estimate"
-    },
-    "SE": {
-      "value": 15.0,
-      "year": 2030,
-      "source": "Svenska kraftnät — 1,500 km new + 2,500 km renewed transmission 2024-2033. Absolute SEK figure not published in headline; rough estimate based on typical SEK 10-15M/km build cost.",
-      "url": "https://www.svk.se/en/grid-development/",
-      "evidence_url": "https://www.svk.se/en/grid-development/",
-      "confidence": "estimate",
-      "note": "Linear km published directly; SEK total is derivation from typical unit cost (NOT primary)."
-    },
-    "NO": {
-      "value": 14.0,
-      "year": 2030,
-      "source": "Statnett — NOK 150 bn (~USD 14 bn) transmission grid investment over the next decade (2024-2033). Headline figure directly published.",
-      "url": "https://www.statnett.no/en/about-statnett/news-and-press-releases/",
-      "evidence_url": "https://www.statnett.no/en/about-statnett/news-and-press-releases/",
-      "confidence": "verified",
-      "note": "NOK 150 bn directly published in Statnett grid development plan."
-    },
-    "DK": {
-      "value": 9.0,
-      "year": 2030,
-      "source": "Energinet 'Sustainable transmission' — DKK 40 bn (~USD 6 bn) 2025-2028 transmission grid investment; pro-rated + DSO additions to ~USD 9 bn 2025-2030.",
-      "url": "https://en.energinet.dk/electricity/transmission-grid/",
-      "evidence_url": "https://en.energinet.dk/electricity/transmission-grid/",
-      "confidence": "verified",
-      "note": "DKK 40 bn 2025-2028 directly published; remainder is DSO addition extrapolated."
-    },
-    "FI": {
-      "value": 4.0,
-      "year": 2030,
-      "source": "Fingrid — EUR 400M/yr transmission investment 2024-2033 = EUR 4 bn (~USD 4.3 bn) decade-total. Headline directly published.",
-      "url": "https://www.fingrid.fi/en/grid/main-grid-development-plan/",
-      "evidence_url": "https://www.fingrid.fi/en/grid/main-grid-development-plan/",
-      "confidence": "verified",
-      "note": "EUR 400M/yr × 10yr trajectory directly published in Fingrid network development plan."
-    },
-    "PL": {
-      "value": 28.0,
-      "year": 2030,
-      "source": "PSE 10-year plan 2025-2034",
-      "url": "https://www.pse.pl/",
-      "confidence": "estimate"
-    },
-    "RO": {
-      "value": 8.0,
-      "year": 2030,
-      "source": "Transelectrica TYNDP 2024",
-      "url": "https://www.transelectrica.ro/en",
-      "confidence": "estimate"
-    },
-    "GR": {
-      "value": 4.5,
-      "year": 2030,
-      "source": "IPTO/ADMIE Ten-Year Network Development Plan 2024-2033 — €4.1 bn (~USD 4.5 bn) transmission investment committed. Audit correction from prior $7.5bn estimate.",
-      "url": "https://www.admie.gr/en/grid/development/ten-year-development-plan",
-      "evidence_url": "https://www.admie.gr/en/kentro-typoy/press-releases/international-interconnections-centre-iptos-ten-year-development-plan",
-      "confidence": "verified",
-      "sources": [
-        {
-          "name": "IPTO Ten-Year Network Development Plan 2024-2033 — €4.1bn transmission investment committed",
-          "value": 4.5,
-          "url": "https://www.admie.gr/en/kentro-typoy/press-releases/international-interconnections-centre-iptos-ten-year-development-plan"
-        }
-      ],
-      "note": "Corrected from prior $7.5bn estimate after 26-May audit; IPTO publishes €4.1bn committed transmission capex."
-    },
-    "PT": {
-      "value": 6.0,
-      "year": 2030,
-      "source": "REN PDIRT-E 2024",
-      "url": "https://www.ren.pt/",
-      "confidence": "estimate"
-    },
-    "AE": {
-      "value": 30.0,
-      "year": 2030,
-      "source": "DEWA Strategy 2030 + EWEC + TAQA transmission capex",
-      "url": "https://www.dewa.gov.ae/",
-      "confidence": "estimate"
+      "value": 2000000000,
+      "year": 2025,
+      "source": "National TSO/DSO plans & press releases (annual EUR)",
+      "url": "https://www.entsoe.eu/",
+      "confidence": "low",
+      "note": "Annual grid investment in EUR (absolute). Replaces prior USD-bn full-TSO-horizon figures (QA-flagged basis). LOW-confidence photo transcription.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
     },
     "SA": {
-      "value": 126.0,
-      "year": 2030,
-      "source": "Saudi Electricity Company — SAR 472 bn 2024-2030 T&D capex programme. MEED + Argaam reports confirm USD ~126 bn six-year infrastructure initiative.",
-      "url": "https://www.meed.com/saudi-electricity-company-reveals-2030-expenditure-details",
-      "evidence_url": "https://www.meed.com/saudi-electricity-company-reveals-2030-expenditure-details",
-      "confidence": "verified",
-      "note": "Multiple primary press confirmations: MEED 2024, Argaam 2024."
+      "value": 4000000000,
+      "year": 2025,
+      "source": "National TSO/DSO plans & press releases (annual EUR)",
+      "url": "https://www.entsoe.eu/",
+      "confidence": "low",
+      "note": "Annual grid investment in EUR (absolute). Replaces prior USD-bn full-TSO-horizon figures (QA-flagged basis). LOW-confidence photo transcription.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
     },
-    "QA": {
-      "value": 8.0,
-      "year": 2030,
-      "source": "Kahramaa transmission expansion programme",
-      "url": "https://www.km.qa/",
-      "confidence": "estimate"
+    "PL": {
+      "value": 1500000000,
+      "year": 2025,
+      "source": "National TSO/DSO plans & press releases (annual EUR)",
+      "url": "https://www.entsoe.eu/",
+      "confidence": "low",
+      "note": "Annual grid investment in EUR (absolute). Replaces prior USD-bn full-TSO-horizon figures (QA-flagged basis). LOW-confidence photo transcription.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
     },
-    "IL": {
-      "value": 12.0,
-      "year": 2030,
-      "source": "Israel Electricity Authority — 2030 transmission plan",
-      "url": "https://www.gov.il/en/departments/electricity_authority",
-      "confidence": "estimate"
+    "CH": {
+      "value": 360000000,
+      "year": 2025,
+      "source": "National TSO/DSO plans & press releases (annual EUR)",
+      "url": "https://www.entsoe.eu/",
+      "confidence": "low",
+      "note": "Annual grid investment in EUR (absolute). Replaces prior USD-bn full-TSO-horizon figures (QA-flagged basis). LOW-confidence photo transcription.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
     },
-    "TR": {
-      "value": 25.0,
-      "year": 2030,
-      "source": "TEİAŞ ten-year network development plan",
-      "url": "https://www.teias.gov.tr/",
-      "confidence": "estimate"
+    "BE": {
+      "value": 1880000000,
+      "year": 2025,
+      "source": "National TSO/DSO plans & press releases (annual EUR)",
+      "url": "https://www.entsoe.eu/",
+      "confidence": "low",
+      "note": "Annual grid investment in EUR (absolute). Replaces prior USD-bn full-TSO-horizon figures (QA-flagged basis). LOW-confidence photo transcription.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
     },
-    "EG": {
-      "value": 10.0,
-      "year": 2030,
-      "source": "EETC 2030 network plan",
-      "url": "https://www.eetc.net.eg/",
-      "confidence": "estimate"
+    "SE": {
+      "value": 900000000,
+      "year": 2025,
+      "source": "National TSO/DSO plans & press releases (annual EUR)",
+      "url": "https://www.entsoe.eu/",
+      "confidence": "low",
+      "note": "Annual grid investment in EUR (absolute). Replaces prior USD-bn full-TSO-horizon figures (QA-flagged basis). LOW-confidence photo transcription.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "IE": {
+      "value": 700000000,
+      "year": 2025,
+      "source": "National TSO/DSO plans & press releases (annual EUR)",
+      "url": "https://www.entsoe.eu/",
+      "confidence": "low",
+      "note": "Annual grid investment in EUR (absolute). Replaces prior USD-bn full-TSO-horizon figures (QA-flagged basis). LOW-confidence photo transcription.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "AE": {
+      "value": 1050000000,
+      "year": 2025,
+      "source": "National TSO/DSO plans & press releases (annual EUR)",
+      "url": "https://www.entsoe.eu/",
+      "confidence": "low",
+      "note": "Annual grid investment in EUR (absolute). Replaces prior USD-bn full-TSO-horizon figures (QA-flagged basis). LOW-confidence photo transcription.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "AT": {
+      "value": 1200000000,
+      "year": 2025,
+      "source": "National TSO/DSO plans & press releases (annual EUR)",
+      "url": "https://www.entsoe.eu/",
+      "confidence": "low",
+      "note": "Annual grid investment in EUR (absolute). Replaces prior USD-bn full-TSO-horizon figures (QA-flagged basis). LOW-confidence photo transcription.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "NO": {
+      "value": 750000000,
+      "year": 2025,
+      "source": "National TSO/DSO plans & press releases (annual EUR)",
+      "url": "https://www.entsoe.eu/",
+      "confidence": "low",
+      "note": "Annual grid investment in EUR (absolute). Replaces prior USD-bn full-TSO-horizon figures (QA-flagged basis). LOW-confidence photo transcription.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "DK": {
+      "value": 800000000,
+      "year": 2025,
+      "source": "National TSO/DSO plans & press releases (annual EUR)",
+      "url": "https://www.entsoe.eu/",
+      "confidence": "low",
+      "note": "Annual grid investment in EUR (absolute). Replaces prior USD-bn full-TSO-horizon figures (QA-flagged basis). LOW-confidence photo transcription.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "RO": {
+      "value": 188000000,
+      "year": 2025,
+      "source": "National TSO/DSO plans & press releases (annual EUR)",
+      "url": "https://www.entsoe.eu/",
+      "confidence": "low",
+      "note": "Annual grid investment in EUR (absolute). Replaces prior USD-bn full-TSO-horizon figures (QA-flagged basis). LOW-confidence photo transcription.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "CZ": {
+      "value": 400000000,
+      "year": 2025,
+      "source": "National TSO/DSO plans & press releases (annual EUR)",
+      "url": "https://www.entsoe.eu/",
+      "confidence": "low",
+      "note": "Annual grid investment in EUR (absolute). Replaces prior USD-bn full-TSO-horizon figures (QA-flagged basis). LOW-confidence photo transcription.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "PT": {
+      "value": 860000000,
+      "year": 2025,
+      "source": "National TSO/DSO plans & press releases (annual EUR)",
+      "url": "https://www.entsoe.eu/",
+      "confidence": "low",
+      "note": "Annual grid investment in EUR (absolute). Replaces prior USD-bn full-TSO-horizon figures (QA-flagged basis). LOW-confidence photo transcription.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "FI": {
+      "value": 400000000,
+      "year": 2025,
+      "source": "National TSO/DSO plans & press releases (annual EUR)",
+      "url": "https://www.entsoe.eu/",
+      "confidence": "low",
+      "note": "Annual grid investment in EUR (absolute). Replaces prior USD-bn full-TSO-horizon figures (QA-flagged basis). LOW-confidence photo transcription.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "GR": {
+      "value": 1100000000,
+      "year": 2025,
+      "source": "National TSO/DSO plans & press releases (annual EUR)",
+      "url": "https://www.entsoe.eu/",
+      "confidence": "low",
+      "note": "Annual grid investment in EUR (absolute). Replaces prior USD-bn full-TSO-horizon figures (QA-flagged basis). LOW-confidence photo transcription.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "HU": {
+      "value": 145000000,
+      "year": 2025,
+      "source": "National TSO/DSO plans & press releases (annual EUR)",
+      "url": "https://www.entsoe.eu/",
+      "confidence": "low",
+      "note": "Annual grid investment in EUR (absolute). Replaces prior USD-bn full-TSO-horizon figures (QA-flagged basis). LOW-confidence photo transcription.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
     },
     "MA": {
-      "value": 8.0,
-      "year": 2030,
-      "source": "ONEE network development plan",
-      "url": "https://www.one.org.ma/",
-      "confidence": "estimate"
+      "value": 300000000,
+      "year": 2025,
+      "source": "National TSO/DSO plans & press releases (annual EUR)",
+      "url": "https://www.entsoe.eu/",
+      "confidence": "low",
+      "note": "Annual grid investment in EUR (absolute). Replaces prior USD-bn full-TSO-horizon figures (QA-flagged basis). LOW-confidence photo transcription.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "KW": {
+      "value": 14000000,
+      "year": 2025,
+      "source": "National TSO/DSO plans & press releases (annual EUR)",
+      "url": "https://www.entsoe.eu/",
+      "confidence": "low",
+      "note": "Annual grid investment in EUR (absolute). Replaces prior USD-bn full-TSO-horizon figures (QA-flagged basis). LOW-confidence photo transcription.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "LU": {
+      "value": 200000000,
+      "year": 2025,
+      "source": "National TSO/DSO plans & press releases (annual EUR)",
+      "url": "https://www.entsoe.eu/",
+      "confidence": "low",
+      "note": "Annual grid investment in EUR (absolute). Replaces prior USD-bn full-TSO-horizon figures (QA-flagged basis). LOW-confidence photo transcription.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "IS": {
+      "value": 173500000,
+      "year": 2025,
+      "source": "National TSO/DSO plans & press releases (annual EUR)",
+      "url": "https://www.entsoe.eu/",
+      "confidence": "low",
+      "note": "Annual grid investment in EUR (absolute). Replaces prior USD-bn full-TSO-horizon figures (QA-flagged basis). LOW-confidence photo transcription.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "EE": {
+      "value": 3333333,
+      "year": 2025,
+      "source": "National TSO/DSO plans & press releases (annual EUR)",
+      "url": "https://www.entsoe.eu/",
+      "confidence": "low",
+      "note": "Annual grid investment in EUR (absolute). Replaces prior USD-bn full-TSO-horizon figures (QA-flagged basis). LOW-confidence photo transcription.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)",
+      "needs_check": true
+    },
+    "LV": {
+      "value": 140000000,
+      "year": 2025,
+      "source": "National TSO/DSO plans & press releases (annual EUR)",
+      "url": "https://www.entsoe.eu/",
+      "confidence": "low",
+      "note": "Annual grid investment in EUR (absolute). Replaces prior USD-bn full-TSO-horizon figures (QA-flagged basis). LOW-confidence photo transcription.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
     }
   },
   "bandwidth_gbps": {
-    "_meta": {
-      "factor": "Median fixed-broadband download speed (Gbps). Sourced from Ookla Speedtest Global Index (Q1 2024 monthly snapshot). Country-level medians across all consumer and business fixed connections.",
-      "unit": "Gbps"
-    },
-    "AE": {
-      "value": 0.31,
-      "year": 2024,
-      "source": "Ookla Speedtest Global Index",
-      "url": "https://www.speedtest.net/global-index/united-arab-emirates",
-      "confidence": "estimate"
-    },
-    "IS": {
-      "value": 0.3,
-      "year": 2024,
-      "source": "Ookla Speedtest Global Index",
-      "url": "https://www.speedtest.net/global-index/iceland",
-      "confidence": "estimate"
-    },
-    "FR": {
-      "value": 0.27,
-      "year": 2024,
-      "source": "Ookla Speedtest Global Index",
-      "url": "https://www.speedtest.net/global-index/france",
-      "confidence": "estimate"
-    },
-    "DK": {
-      "value": 0.25,
-      "year": 2024,
-      "source": "Ookla Speedtest Global Index",
-      "url": "https://www.speedtest.net/global-index/denmark",
-      "confidence": "estimate"
-    },
-    "CH": {
-      "value": 0.25,
-      "year": 2024,
-      "source": "Ookla Speedtest Global Index",
-      "url": "https://www.speedtest.net/global-index/switzerland",
-      "confidence": "estimate"
-    },
-    "ES": {
-      "value": 0.23,
-      "year": 2024,
-      "source": "Ookla Speedtest Global Index",
-      "url": "https://www.speedtest.net/global-index/spain",
-      "confidence": "estimate"
-    },
-    "SE": {
-      "value": 0.28,
-      "year": 2024,
-      "source": "Speedtest Global Index — Sweden median fixed broadband download speed 2024 (audit corrected to closer-to-published median)",
-      "url": "https://www.speedtest.net/global-index/sweden",
-      "confidence": "estimate",
-      "note": "Corrected from 0.22 Gbps after audit cross-check; Speedtest 2024 median ~280 Mbps. Stays ESTIMATE — Speedtest blocked from automated verification."
-    },
-    "IL": {
-      "value": 0.21,
-      "year": 2024,
-      "source": "Ookla Speedtest Global Index",
-      "url": "https://www.speedtest.net/global-index/israel",
-      "confidence": "estimate"
-    },
-    "IE": {
-      "value": 0.2,
-      "year": 2024,
-      "source": "Ookla Speedtest Global Index",
-      "url": "https://www.speedtest.net/global-index/ireland",
-      "confidence": "estimate"
-    },
-    "LU": {
-      "value": 0.19,
-      "year": 2024,
-      "source": "Ookla Speedtest Global Index",
-      "url": "https://www.speedtest.net/global-index/luxembourg",
-      "confidence": "estimate"
-    },
-    "RO": {
-      "value": 0.18,
-      "year": 2024,
-      "source": "Ookla Speedtest Global Index",
-      "url": "https://www.speedtest.net/global-index/romania",
-      "confidence": "estimate"
-    },
-    "NO": {
-      "value": 0.23,
-      "year": 2024,
-      "source": "Speedtest Global Index — Norway median fixed broadband download speed 2024 (audit corrected to closer-to-published median)",
-      "url": "https://www.speedtest.net/global-index/norway",
-      "confidence": "estimate",
-      "note": "Corrected from 0.17 Gbps after audit cross-check; Speedtest 2024 median ~230 Mbps. Speedtest blocked from automated verification so stays ESTIMATE."
-    },
-    "PT": {
-      "value": 0.17,
-      "year": 2024,
-      "source": "Ookla Speedtest Global Index",
-      "url": "https://www.speedtest.net/global-index/portugal",
-      "confidence": "estimate"
-    },
-    "FI": {
-      "value": 0.16,
-      "year": 2024,
-      "source": "Ookla Speedtest Global Index",
-      "url": "https://www.speedtest.net/global-index/finland",
-      "confidence": "estimate"
-    },
-    "NL": {
-      "value": 0.16,
-      "year": 2024,
-      "source": "Ookla Speedtest Global Index",
-      "url": "https://www.speedtest.net/global-index/netherlands",
-      "confidence": "estimate"
-    },
-    "EE": {
-      "value": 0.15,
-      "year": 2024,
-      "source": "Ookla Speedtest Global Index",
-      "url": "https://www.speedtest.net/global-index/estonia",
-      "confidence": "estimate"
-    },
-    "LT": {
-      "value": 0.14,
-      "year": 2024,
-      "source": "Ookla Speedtest Global Index",
-      "url": "https://www.speedtest.net/global-index/lithuania",
-      "confidence": "estimate"
-    },
-    "HU": {
-      "value": 0.14,
-      "year": 2024,
-      "source": "Ookla Speedtest Global Index",
-      "url": "https://www.speedtest.net/global-index/hungary",
-      "confidence": "estimate"
+    "DE": {
+      "value": 117.67,
+      "year": 2025,
+      "source": "TeleGeography",
+      "url": "https://www2.telegeography.com/global-internet-map",
+      "confidence": "medium",
+      "note": "Average fibre bandwidth diameter (Gbps). Replaces prior sub-1-Gbps values that were in the wrong unit.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
     },
     "GB": {
-      "value": 0.14,
-      "year": 2024,
-      "source": "Ookla Speedtest Global Index",
-      "url": "https://www.speedtest.net/global-index/united-kingdom",
-      "confidence": "estimate"
+      "value": 117.87,
+      "year": 2025,
+      "source": "TeleGeography",
+      "url": "https://www2.telegeography.com/global-internet-map",
+      "confidence": "medium",
+      "note": "Average fibre bandwidth diameter (Gbps). Replaces prior sub-1-Gbps values that were in the wrong unit.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
     },
-    "PL": {
-      "value": 0.13,
-      "year": 2024,
-      "source": "Ookla Speedtest Global Index",
-      "url": "https://www.speedtest.net/global-index/poland",
-      "confidence": "estimate"
-    },
-    "CZ": {
-      "value": 0.13,
-      "year": 2024,
-      "source": "Ookla Speedtest Global Index",
-      "url": "https://www.speedtest.net/global-index/czechia",
-      "confidence": "estimate"
+    "FR": {
+      "value": 161.14,
+      "year": 2025,
+      "source": "TeleGeography",
+      "url": "https://www2.telegeography.com/global-internet-map",
+      "confidence": "medium",
+      "note": "Average fibre bandwidth diameter (Gbps). Replaces prior sub-1-Gbps values that were in the wrong unit.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
     },
     "IT": {
-      "value": 0.12,
-      "year": 2024,
-      "source": "Ookla Speedtest Global Index",
-      "url": "https://www.speedtest.net/global-index/italy",
-      "confidence": "estimate"
+      "value": 114.58,
+      "year": 2025,
+      "source": "TeleGeography",
+      "url": "https://www2.telegeography.com/global-internet-map",
+      "confidence": "medium",
+      "note": "Average fibre bandwidth diameter (Gbps). Replaces prior sub-1-Gbps values that were in the wrong unit.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
     },
-    "BE": {
-      "value": 0.12,
-      "year": 2024,
-      "source": "Ookla Speedtest Global Index",
-      "url": "https://www.speedtest.net/global-index/belgium",
-      "confidence": "estimate"
-    },
-    "LV": {
-      "value": 0.11,
-      "year": 2024,
-      "source": "Ookla Speedtest Global Index",
-      "url": "https://www.speedtest.net/global-index/latvia",
-      "confidence": "estimate"
-    },
-    "GR": {
-      "value": 0.1,
-      "year": 2024,
-      "source": "Ookla Speedtest Global Index",
-      "url": "https://www.speedtest.net/global-index/greece",
-      "confidence": "estimate"
-    },
-    "DE": {
-      "value": 0.1,
-      "year": 2024,
-      "source": "Ookla Speedtest Global Index",
-      "url": "https://www.speedtest.net/global-index/germany",
-      "confidence": "estimate"
-    },
-    "AT": {
-      "value": 0.09,
-      "year": 2024,
-      "source": "Ookla Speedtest Global Index",
-      "url": "https://www.speedtest.net/global-index/austria",
-      "confidence": "estimate"
-    },
-    "SA": {
-      "value": 0.09,
-      "year": 2024,
-      "source": "Ookla Speedtest Global Index",
-      "url": "https://www.speedtest.net/global-index/saudi-arabia",
-      "confidence": "estimate"
-    },
-    "QA": {
-      "value": 0.21,
-      "year": 2024,
-      "source": "Ookla Speedtest Global Index",
-      "url": "https://www.speedtest.net/global-index/qatar",
-      "confidence": "estimate"
+    "ES": {
+      "value": 61.35,
+      "year": 2025,
+      "source": "TeleGeography",
+      "url": "https://www2.telegeography.com/global-internet-map",
+      "confidence": "medium",
+      "note": "Average fibre bandwidth diameter (Gbps). Replaces prior sub-1-Gbps values that were in the wrong unit.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
     },
     "TR": {
-      "value": 0.08,
-      "year": 2024,
-      "source": "Ookla Speedtest Global Index",
-      "url": "https://www.speedtest.net/global-index/turkey",
-      "confidence": "estimate"
+      "value": 111.98,
+      "year": 2025,
+      "source": "TeleGeography",
+      "url": "https://www2.telegeography.com/global-internet-map",
+      "confidence": "medium",
+      "note": "Average fibre bandwidth diameter (Gbps). Replaces prior sub-1-Gbps values that were in the wrong unit.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "NL": {
+      "value": 119.45,
+      "year": 2025,
+      "source": "TeleGeography",
+      "url": "https://www2.telegeography.com/global-internet-map",
+      "confidence": "medium",
+      "note": "Average fibre bandwidth diameter (Gbps). Replaces prior sub-1-Gbps values that were in the wrong unit.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "SA": {
+      "value": 57.41,
+      "year": 2025,
+      "source": "TeleGeography",
+      "url": "https://www2.telegeography.com/global-internet-map",
+      "confidence": "medium",
+      "note": "Average fibre bandwidth diameter (Gbps). Replaces prior sub-1-Gbps values that were in the wrong unit.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "PL": {
+      "value": 82.89,
+      "year": 2025,
+      "source": "TeleGeography",
+      "url": "https://www2.telegeography.com/global-internet-map",
+      "confidence": "medium",
+      "note": "Average fibre bandwidth diameter (Gbps). Replaces prior sub-1-Gbps values that were in the wrong unit.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "CH": {
+      "value": 69.97,
+      "year": 2025,
+      "source": "TeleGeography",
+      "url": "https://www2.telegeography.com/global-internet-map",
+      "confidence": "medium",
+      "note": "Average fibre bandwidth diameter (Gbps). Replaces prior sub-1-Gbps values that were in the wrong unit.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "BE": {
+      "value": 74.84,
+      "year": 2025,
+      "source": "TeleGeography",
+      "url": "https://www2.telegeography.com/global-internet-map",
+      "confidence": "medium",
+      "note": "Average fibre bandwidth diameter (Gbps). Replaces prior sub-1-Gbps values that were in the wrong unit.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "SE": {
+      "value": 85.57,
+      "year": 2025,
+      "source": "TeleGeography",
+      "url": "https://www2.telegeography.com/global-internet-map",
+      "confidence": "medium",
+      "note": "Average fibre bandwidth diameter (Gbps). Replaces prior sub-1-Gbps values that were in the wrong unit.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "IE": {
+      "value": 49.49,
+      "year": 2025,
+      "source": "TeleGeography",
+      "url": "https://www2.telegeography.com/global-internet-map",
+      "confidence": "medium",
+      "note": "Average fibre bandwidth diameter (Gbps). Replaces prior sub-1-Gbps values that were in the wrong unit.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "AE": {
+      "value": 55.32,
+      "year": 2025,
+      "source": "TeleGeography",
+      "url": "https://www2.telegeography.com/global-internet-map",
+      "confidence": "medium",
+      "note": "Average fibre bandwidth diameter (Gbps). Replaces prior sub-1-Gbps values that were in the wrong unit.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "AT": {
+      "value": 34.86,
+      "year": 2025,
+      "source": "TeleGeography",
+      "url": "https://www2.telegeography.com/global-internet-map",
+      "confidence": "medium",
+      "note": "Average fibre bandwidth diameter (Gbps). Replaces prior sub-1-Gbps values that were in the wrong unit.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "NO": {
+      "value": 69.48,
+      "year": 2025,
+      "source": "TeleGeography",
+      "url": "https://www2.telegeography.com/global-internet-map",
+      "confidence": "medium",
+      "note": "Average fibre bandwidth diameter (Gbps). Replaces prior sub-1-Gbps values that were in the wrong unit.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "DK": {
+      "value": 94.34,
+      "year": 2025,
+      "source": "TeleGeography",
+      "url": "https://www2.telegeography.com/global-internet-map",
+      "confidence": "medium",
+      "note": "Average fibre bandwidth diameter (Gbps). Replaces prior sub-1-Gbps values that were in the wrong unit.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "RO": {
+      "value": 79.23,
+      "year": 2025,
+      "source": "TeleGeography",
+      "url": "https://www2.telegeography.com/global-internet-map",
+      "confidence": "medium",
+      "note": "Average fibre bandwidth diameter (Gbps). Replaces prior sub-1-Gbps values that were in the wrong unit.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
     },
     "EG": {
-      "value": 0.06,
-      "year": 2024,
-      "source": "Ookla Speedtest Global Index",
-      "url": "https://www.speedtest.net/global-index/egypt",
-      "confidence": "estimate"
+      "value": 29.4,
+      "year": 2025,
+      "source": "TeleGeography",
+      "url": "https://www2.telegeography.com/global-internet-map",
+      "confidence": "medium",
+      "note": "Average fibre bandwidth diameter (Gbps). Replaces prior sub-1-Gbps values that were in the wrong unit.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "PT": {
+      "value": 44.86,
+      "year": 2025,
+      "source": "TeleGeography",
+      "url": "https://www2.telegeography.com/global-internet-map",
+      "confidence": "medium",
+      "note": "Average fibre bandwidth diameter (Gbps). Replaces prior sub-1-Gbps values that were in the wrong unit.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "FI": {
+      "value": 79.47,
+      "year": 2025,
+      "source": "TeleGeography",
+      "url": "https://www2.telegeography.com/global-internet-map",
+      "confidence": "medium",
+      "note": "Average fibre bandwidth diameter (Gbps). Replaces prior sub-1-Gbps values that were in the wrong unit.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "QA": {
+      "value": 41.91,
+      "year": 2025,
+      "source": "TeleGeography",
+      "url": "https://www2.telegeography.com/global-internet-map",
+      "confidence": "medium",
+      "note": "Average fibre bandwidth diameter (Gbps). Replaces prior sub-1-Gbps values that were in the wrong unit.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
     },
     "MA": {
-      "value": 0.06,
-      "year": 2024,
-      "source": "Ookla Speedtest Global Index",
-      "url": "https://www.speedtest.net/global-index/morocco",
-      "confidence": "estimate"
+      "value": 43.63,
+      "year": 2025,
+      "source": "TeleGeography",
+      "url": "https://www2.telegeography.com/global-internet-map",
+      "confidence": "medium",
+      "note": "Average fibre bandwidth diameter (Gbps). Replaces prior sub-1-Gbps values that were in the wrong unit.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
     },
-    "TN": {
-      "value": 0.04,
-      "year": 2024,
-      "source": "Ookla Speedtest Global Index",
-      "url": "https://www.speedtest.net/global-index/tunisia",
-      "confidence": "estimate"
+    "KW": {
+      "value": 32.69,
+      "year": 2025,
+      "source": "TeleGeography",
+      "url": "https://www2.telegeography.com/global-internet-map",
+      "confidence": "medium",
+      "note": "Average fibre bandwidth diameter (Gbps). Replaces prior sub-1-Gbps values that were in the wrong unit.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "BG": {
+      "value": 94.34,
+      "year": 2025,
+      "source": "TeleGeography",
+      "url": "https://www2.telegeography.com/global-internet-map",
+      "confidence": "medium",
+      "note": "Average fibre bandwidth diameter (Gbps). Replaces prior sub-1-Gbps values that were in the wrong unit.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)",
+      "needs_check": true
+    },
+    "OM": {
+      "value": 36.88,
+      "year": 2025,
+      "source": "TeleGeography",
+      "url": "https://www2.telegeography.com/global-internet-map",
+      "confidence": "medium",
+      "note": "Average fibre bandwidth diameter (Gbps). Replaces prior sub-1-Gbps values that were in the wrong unit.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "IS": {
+      "value": 31.93,
+      "year": 2025,
+      "source": "TeleGeography",
+      "url": "https://www2.telegeography.com/global-internet-map",
+      "confidence": "medium",
+      "note": "Average fibre bandwidth diameter (Gbps). Replaces prior sub-1-Gbps values that were in the wrong unit.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "LV": {
+      "value": 49.73,
+      "year": 2025,
+      "source": "TeleGeography",
+      "url": "https://www2.telegeography.com/global-internet-map",
+      "confidence": "medium",
+      "note": "Average fibre bandwidth diameter (Gbps). Replaces prior sub-1-Gbps values that were in the wrong unit.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
     }
   },
   "bandwidth_2030_gbps": {
@@ -1484,300 +1750,248 @@
     }
   },
   "construction_cost_usd_mw": {
-    "_meta": {
-      "factor": "All-in build cost per MW of operational IT load (USD/MW), including shell, MEP, and commissioning. Sourced from Cushman & Wakefield 'Global Data Center Construction Cost Guide 2024' and Turner & Townsend 'Data Centre Cost Index 2024' where both publish. National averages across primary DC metros — Zurich and Dublin top the published list (~USD 13-14M/MW), Egypt and Morocco bottom (~USD 7M/MW).",
-      "unit": "USD/MW"
-    },
-    "CH": {
-      "value": 13300000,
-      "year": 2024,
-      "source": "Turner & Townsend Data Centre Cost Index 2024, Figure 3 (p3) — Zurich: US$13.30/W",
-      "url": "https://reports.turnerandtownsend.com/dcci-2024/",
-      "evidence_url": "https://assets.foleon.com/eu-central-1/de-uploads-7e3kk3/48604/dcci_2024.1fcf2085d9b8.pdf",
+    "DE": {
+      "value": 11.6,
+      "year": 2025,
+      "source": "Turner & Townsend Data Centre Construction Cost Index 2025-26 (all-in US$/W of IT load)",
+      "url": "https://www.turnerandtownsend.com/insights/data-centre-construction-cost-index-2025-2026/",
       "confidence": "verified",
-      "note": "Zurich anchor; T&T 2024 DCCI Figure 3."
-    },
-    "IE": {
-      "value": 9400000,
-      "year": 2024,
-      "source": "Turner & Townsend Data Centre Cost Index 2024, Figure 3 (p3) — Dublin: US$9.40/W",
-      "url": "https://reports.turnerandtownsend.com/dcci-2024/",
-      "evidence_url": "https://assets.foleon.com/eu-central-1/de-uploads-7e3kk3/48604/dcci_2024.1fcf2085d9b8.pdf",
-      "confidence": "verified",
-      "note": "Dublin anchor; T&T 2024 DCCI Figure 3."
+      "note": "Published per-city figure.",
+      "provenance": "construction $/W reconciliation 2026-06"
     },
     "GB": {
-      "value": 11200000,
-      "year": 2024,
-      "source": "Turner & Townsend Data Centre Cost Index 2024, Figure 3 (p3) — London: US$11.20/W",
-      "url": "https://reports.turnerandtownsend.com/dcci-2024/",
-      "evidence_url": "https://assets.foleon.com/eu-central-1/de-uploads-7e3kk3/48604/dcci_2024.1fcf2085d9b8.pdf",
+      "value": 12.0,
+      "year": 2025,
+      "source": "Turner & Townsend Data Centre Construction Cost Index 2025-26 (all-in US$/W of IT load)",
+      "url": "https://www.turnerandtownsend.com/insights/data-centre-construction-cost-index-2025-2026/",
       "confidence": "verified",
-      "note": "London anchor; T&T 2024 DCCI Figure 3."
-    },
-    "DE": {
-      "value": 10800000,
-      "year": 2024,
-      "source": "Turner & Townsend Data Centre Cost Index 2024, Figure 3 (p3) — Frankfurt: US$10.80/W",
-      "url": "https://reports.turnerandtownsend.com/dcci-2024/",
-      "evidence_url": "https://assets.foleon.com/eu-central-1/de-uploads-7e3kk3/48604/dcci_2024.1fcf2085d9b8.pdf",
-      "confidence": "verified",
-      "note": "Frankfurt anchor; T&T 2024 DCCI Figure 3."
-    },
-    "NL": {
-      "value": 9600000,
-      "year": 2024,
-      "source": "Turner & Townsend Data Centre Cost Index 2024, Figure 3 (p3) — Amsterdam: US$9.60/W",
-      "url": "https://reports.turnerandtownsend.com/dcci-2024/",
-      "evidence_url": "https://assets.foleon.com/eu-central-1/de-uploads-7e3kk3/48604/dcci_2024.1fcf2085d9b8.pdf",
-      "confidence": "verified",
-      "note": "Amsterdam anchor; T&T 2024 DCCI Figure 3."
-    },
-    "NO": {
-      "value": 11500000,
-      "year": 2024,
-      "source": "Turner & Townsend Data Centre Cost Index 2024, Figure 3 (p3) — Oslo: US$11.50/W",
-      "url": "https://reports.turnerandtownsend.com/dcci-2024/",
-      "evidence_url": "https://assets.foleon.com/eu-central-1/de-uploads-7e3kk3/48604/dcci_2024.1fcf2085d9b8.pdf",
-      "confidence": "verified",
-      "note": "Oslo anchor; T&T 2024 DCCI Figure 3."
-    },
-    "DK": {
-      "value": 11200000,
-      "year": 2024,
-      "source": "Turner & Townsend Data Centre Cost Index 2024, Figure 3 (p3) — Copenhagen: US$11.20/W",
-      "url": "https://reports.turnerandtownsend.com/dcci-2024/",
-      "evidence_url": "https://assets.foleon.com/eu-central-1/de-uploads-7e3kk3/48604/dcci_2024.1fcf2085d9b8.pdf",
-      "confidence": "verified",
-      "note": "Copenhagen anchor; T&T 2024 DCCI Figure 3."
-    },
-    "SE": {
-      "value": 11200000,
-      "year": 2024,
-      "source": "Turner & Townsend Data Centre Cost Index 2024, Figure 3 (p3) — Stockholm: US$11.20/W",
-      "url": "https://reports.turnerandtownsend.com/dcci-2024/",
-      "evidence_url": "https://assets.foleon.com/eu-central-1/de-uploads-7e3kk3/48604/dcci_2024.1fcf2085d9b8.pdf",
-      "confidence": "verified",
-      "note": "Stockholm anchor; T&T 2024 DCCI Figure 3."
-    },
-    "FI": {
-      "value": 11500000,
-      "year": 2024,
-      "source": "Turner & Townsend Data Centre Cost Index 2024, Figure 3 (p3) — Helsinki: US$11.50/W",
-      "url": "https://reports.turnerandtownsend.com/dcci-2024/",
-      "evidence_url": "https://assets.foleon.com/eu-central-1/de-uploads-7e3kk3/48604/dcci_2024.1fcf2085d9b8.pdf",
-      "confidence": "verified",
-      "note": "Helsinki anchor; T&T 2024 DCCI Figure 3."
+      "note": "Published per-city figure.",
+      "provenance": "construction $/W reconciliation 2026-06"
     },
     "FR": {
-      "value": 9600000,
-      "year": 2024,
-      "source": "Turner & Townsend Data Centre Cost Index 2024, Figure 3 (p3) — Paris: US$9.60/W",
-      "url": "https://reports.turnerandtownsend.com/dcci-2024/",
-      "evidence_url": "https://assets.foleon.com/eu-central-1/de-uploads-7e3kk3/48604/dcci_2024.1fcf2085d9b8.pdf",
-      "confidence": "verified",
-      "note": "Paris anchor; T&T 2024 DCCI Figure 3."
-    },
-    "BE": {
-      "value": 10700000.0,
+      "value": 10.8,
       "year": 2025,
-      "source": "Regional-inferred — arithmetic mean of VERIFIED Western Europe cells for this factor (GB, IE, FR, DE, NL, CH, AT). Mean = 10700000.0. No published per-country figure for this market.",
-      "url": "https://reports.turnerandtownsend.com/dcci-2024/",
-      "confidence": "regional-inferred",
-      "note": "Inferred from Western Europe verified peers. Old curated estimate was 10500000.0.",
-      "sources": [
-        {
-          "name": "Sub-regional mean of verified Western Europe peers (7 cells)",
-          "value": 10700000.0,
-          "url": "https://reports.turnerandtownsend.com/dcci-2024/"
-        }
-      ]
-    },
-    "LU": {
-      "value": 10700000.0,
-      "year": 2025,
-      "source": "Regional-inferred — arithmetic mean of VERIFIED Western Europe cells for this factor (GB, IE, FR, DE, NL, CH, AT). Mean = 10700000.0. No published per-country figure for this market.",
-      "url": "https://reports.turnerandtownsend.com/dcci-2024/",
-      "confidence": "regional-inferred",
-      "note": "Inferred from Western Europe verified peers. Old curated estimate was 11000000.0.",
-      "sources": [
-        {
-          "name": "Sub-regional mean of verified Western Europe peers (7 cells)",
-          "value": 10700000.0,
-          "url": "https://reports.turnerandtownsend.com/dcci-2024/"
-        }
-      ]
-    },
-    "AT": {
-      "value": 11000000,
-      "year": 2024,
-      "source": "Turner & Townsend Data Centre Cost Index 2024, Figure 3 (p3) — Vienna: US$11.00/W",
-      "url": "https://reports.turnerandtownsend.com/dcci-2024/",
-      "evidence_url": "https://assets.foleon.com/eu-central-1/de-uploads-7e3kk3/48604/dcci_2024.1fcf2085d9b8.pdf",
+      "source": "Turner & Townsend Data Centre Construction Cost Index 2025-26 (all-in US$/W of IT load)",
+      "url": "https://www.turnerandtownsend.com/insights/data-centre-construction-cost-index-2025-2026/",
       "confidence": "verified",
-      "note": "Vienna anchor; T&T 2024 DCCI Figure 3."
-    },
-    "ES": {
-      "value": 9200000,
-      "year": 2024,
-      "source": "Turner & Townsend Data Centre Cost Index 2024, Figure 3 (p3) — Madrid: US$9.20/W",
-      "url": "https://reports.turnerandtownsend.com/dcci-2024/",
-      "evidence_url": "https://assets.foleon.com/eu-central-1/de-uploads-7e3kk3/48604/dcci_2024.1fcf2085d9b8.pdf",
-      "confidence": "verified",
-      "note": "Madrid anchor; T&T 2024 DCCI Figure 3."
-    },
-    "PT": {
-      "value": 9500000,
-      "year": 2024,
-      "source": "Turner & Townsend Data Centre Cost Index 2024, Figure 3 (p3) — Lisbon: US$9.50/W",
-      "url": "https://reports.turnerandtownsend.com/dcci-2024/",
-      "evidence_url": "https://assets.foleon.com/eu-central-1/de-uploads-7e3kk3/48604/dcci_2024.1fcf2085d9b8.pdf",
-      "confidence": "verified",
-      "note": "Lisbon anchor; T&T 2024 DCCI Figure 3."
+      "note": "Published per-city figure.",
+      "provenance": "construction $/W reconciliation 2026-06"
     },
     "IT": {
-      "value": 9300000,
-      "year": 2024,
-      "source": "Turner & Townsend Data Centre Cost Index 2024, Figure 3 (p3) — Milan: US$9.30/W",
-      "url": "https://reports.turnerandtownsend.com/dcci-2024/",
-      "evidence_url": "https://assets.foleon.com/eu-central-1/de-uploads-7e3kk3/48604/dcci_2024.1fcf2085d9b8.pdf",
-      "confidence": "verified",
-      "note": "Milan anchor; T&T 2024 DCCI Figure 3."
-    },
-    "GR": {
-      "value": 7300000,
-      "year": 2024,
-      "source": "Turner & Townsend Data Centre Cost Index 2024, Figure 3 (p3) — Athens: US$7.30/W",
-      "url": "https://reports.turnerandtownsend.com/dcci-2024/",
-      "evidence_url": "https://assets.foleon.com/eu-central-1/de-uploads-7e3kk3/48604/dcci_2024.1fcf2085d9b8.pdf",
-      "confidence": "verified",
-      "note": "Athens anchor; T&T 2024 DCCI Figure 3."
-    },
-    "PL": {
-      "value": 8500000,
-      "year": 2024,
-      "source": "Turner & Townsend Data Centre Cost Index 2024, Figure 3 (p3) — Warsaw: US$8.50/W",
-      "url": "https://reports.turnerandtownsend.com/dcci-2024/",
-      "evidence_url": "https://assets.foleon.com/eu-central-1/de-uploads-7e3kk3/48604/dcci_2024.1fcf2085d9b8.pdf",
-      "confidence": "verified",
-      "note": "Warsaw anchor; T&T 2024 DCCI Figure 3."
-    },
-    "CZ": {
-      "value": 8500000.0,
+      "value": 10.4,
       "year": 2025,
-      "source": "Regional-inferred — arithmetic mean of VERIFIED Central & Eastern Europe cells for this factor (PL). Mean = 8500000.0. No published per-country figure for this market.",
-      "url": "https://reports.turnerandtownsend.com/dcci-2024/",
-      "confidence": "regional-inferred",
-      "note": "Inferred from Central & Eastern Europe verified peers. Old curated estimate was 8500000.0.",
-      "sources": [
-        {
-          "name": "Sub-regional mean of verified Central & Eastern Europe peers (1 cells)",
-          "value": 8500000.0,
-          "url": "https://reports.turnerandtownsend.com/dcci-2024/"
-        }
-      ]
+      "source": "Scaled to the Turner & Townsend 2025-26 benchmark (US$/W) from the relative cost index",
+      "url": "https://www.turnerandtownsend.com/insights/data-centre-construction-cost-index-2025-2026/",
+      "confidence": "estimate",
+      "note": "Estimated: relative index x12 anchor (published cities: Zurich 14.2, London 12.0, Frankfurt 11.6, Paris/Amsterdam 10.8, Madrid/Dublin 10.0).",
+      "provenance": "construction $/W reconciliation 2026-06"
     },
-    "HU": {
-      "value": 8500000.0,
+    "ES": {
+      "value": 10.0,
       "year": 2025,
-      "source": "Regional-inferred — arithmetic mean of VERIFIED Central & Eastern Europe cells for this factor (PL). Mean = 8500000.0. No published per-country figure for this market.",
-      "url": "https://reports.turnerandtownsend.com/dcci-2024/",
-      "confidence": "regional-inferred",
-      "note": "Inferred from Central & Eastern Europe verified peers. Old curated estimate was 8000000.0.",
-      "sources": [
-        {
-          "name": "Sub-regional mean of verified Central & Eastern Europe peers (1 cells)",
-          "value": 8500000.0,
-          "url": "https://reports.turnerandtownsend.com/dcci-2024/"
-        }
-      ]
-    },
-    "RO": {
-      "value": 8500000.0,
-      "year": 2025,
-      "source": "Regional-inferred — arithmetic mean of VERIFIED Central & Eastern Europe cells for this factor (PL). Mean = 8500000.0. No published per-country figure for this market.",
-      "url": "https://reports.turnerandtownsend.com/dcci-2024/",
-      "confidence": "regional-inferred",
-      "note": "Inferred from Central & Eastern Europe verified peers. Old curated estimate was 7500000.0.",
-      "sources": [
-        {
-          "name": "Sub-regional mean of verified Central & Eastern Europe peers (1 cells)",
-          "value": 8500000.0,
-          "url": "https://reports.turnerandtownsend.com/dcci-2024/"
-        }
-      ]
-    },
-    "AE": {
-      "value": 8800000,
-      "year": 2024,
-      "source": "Turner & Townsend Data Centre Cost Index 2024, Figure 3 (p3) — UAE: US$8.80/W",
-      "url": "https://reports.turnerandtownsend.com/dcci-2024/",
-      "evidence_url": "https://assets.foleon.com/eu-central-1/de-uploads-7e3kk3/48604/dcci_2024.1fcf2085d9b8.pdf",
+      "source": "Turner & Townsend Data Centre Construction Cost Index 2025-26 (all-in US$/W of IT load)",
+      "url": "https://www.turnerandtownsend.com/insights/data-centre-construction-cost-index-2025-2026/",
       "confidence": "verified",
-      "note": "UAE anchor; T&T 2024 DCCI Figure 3."
-    },
-    "SA": {
-      "value": 10800000,
-      "year": 2024,
-      "source": "Turner & Townsend Data Centre Cost Index 2024, Figure 3 (p3) — Kingdom of Saudi Arabia: US$10.80/W",
-      "url": "https://reports.turnerandtownsend.com/dcci-2024/",
-      "evidence_url": "https://assets.foleon.com/eu-central-1/de-uploads-7e3kk3/48604/dcci_2024.1fcf2085d9b8.pdf",
-      "confidence": "verified",
-      "note": "Kingdom of Saudi Arabia anchor; T&T 2024 DCCI Figure 3."
-    },
-    "QA": {
-      "value": 9800000.0,
-      "year": 2025,
-      "source": "Regional-inferred — arithmetic mean of VERIFIED Middle East cells for this factor (AE, SA). Mean = 9800000.0. No published per-country figure for this market.",
-      "url": "https://reports.turnerandtownsend.com/dcci-2024/",
-      "confidence": "regional-inferred",
-      "note": "Inferred from Middle East verified peers. Old curated estimate was 9500000.0.",
-      "sources": [
-        {
-          "name": "Sub-regional mean of verified Middle East peers (2 cells)",
-          "value": 9800000.0,
-          "url": "https://reports.turnerandtownsend.com/dcci-2024/"
-        }
-      ]
-    },
-    "IL": {
-      "value": 9800000.0,
-      "year": 2025,
-      "source": "Regional-inferred — arithmetic mean of VERIFIED Middle East cells for this factor (AE, SA). Mean = 9800000.0. No published per-country figure for this market.",
-      "url": "https://reports.turnerandtownsend.com/dcci-2024/",
-      "confidence": "regional-inferred",
-      "note": "Inferred from Middle East verified peers. Old curated estimate was 10000000.0.",
-      "sources": [
-        {
-          "name": "Sub-regional mean of verified Middle East peers (2 cells)",
-          "value": 9800000.0,
-          "url": "https://reports.turnerandtownsend.com/dcci-2024/"
-        }
-      ]
+      "note": "Published per-city figure.",
+      "provenance": "construction $/W reconciliation 2026-06"
     },
     "TR": {
-      "value": 7500000,
+      "value": 9.7,
       "year": 2025,
-      "source": "Estimate — Istanbul not in T&T DCCI 2024 or C&W published indices. Earlier curated value from regional analyst estimates. Regional Middle East proxy not used because Gulf hyperscale construction costs (SA $10.8M, AE $8.8M) are not representative of Turkish market.",
-      "url": "https://www.turnerandtownsend.com/insights/data-centre-cost-index-2024/",
+      "source": "Scaled to the Turner & Townsend 2025-26 benchmark (US$/W) from the relative cost index",
+      "url": "https://www.turnerandtownsend.com/insights/data-centre-construction-cost-index-2025-2026/",
       "confidence": "estimate",
-      "note": "No primary per-city cite available. Regional proxy explicitly rejected."
+      "note": "Estimated: relative index x12 anchor (published cities: Zurich 14.2, London 12.0, Frankfurt 11.6, Paris/Amsterdam 10.8, Madrid/Dublin 10.0).",
+      "provenance": "construction $/W reconciliation 2026-06"
+    },
+    "NL": {
+      "value": 10.8,
+      "year": 2025,
+      "source": "Turner & Townsend Data Centre Construction Cost Index 2025-26 (all-in US$/W of IT load)",
+      "url": "https://www.turnerandtownsend.com/insights/data-centre-construction-cost-index-2025-2026/",
+      "confidence": "verified",
+      "note": "Published per-city figure.",
+      "provenance": "construction $/W reconciliation 2026-06"
+    },
+    "SA": {
+      "value": 11.8,
+      "year": 2025,
+      "source": "Scaled to the Turner & Townsend 2025-26 benchmark (US$/W) from the relative cost index",
+      "url": "https://www.turnerandtownsend.com/insights/data-centre-construction-cost-index-2025-2026/",
+      "confidence": "estimate",
+      "note": "Estimated: relative index x12 anchor (published cities: Zurich 14.2, London 12.0, Frankfurt 11.6, Paris/Amsterdam 10.8, Madrid/Dublin 10.0).",
+      "provenance": "construction $/W reconciliation 2026-06"
+    },
+    "PL": {
+      "value": 8.0,
+      "year": 2025,
+      "source": "Scaled to the Turner & Townsend 2025-26 benchmark (US$/W) from the relative cost index",
+      "url": "https://www.turnerandtownsend.com/insights/data-centre-construction-cost-index-2025-2026/",
+      "confidence": "estimate",
+      "note": "Estimated: relative index x12 anchor (published cities: Zurich 14.2, London 12.0, Frankfurt 11.6, Paris/Amsterdam 10.8, Madrid/Dublin 10.0).",
+      "provenance": "construction $/W reconciliation 2026-06"
+    },
+    "CH": {
+      "value": 14.2,
+      "year": 2025,
+      "source": "Turner & Townsend Data Centre Construction Cost Index 2025-26 (all-in US$/W of IT load)",
+      "url": "https://www.turnerandtownsend.com/insights/data-centre-construction-cost-index-2025-2026/",
+      "confidence": "verified",
+      "note": "Published per-city figure.",
+      "provenance": "construction $/W reconciliation 2026-06"
+    },
+    "BE": {
+      "value": 10.7,
+      "year": 2025,
+      "source": "Scaled to the Turner & Townsend 2025-26 benchmark (US$/W) from the relative cost index",
+      "url": "https://www.turnerandtownsend.com/insights/data-centre-construction-cost-index-2025-2026/",
+      "confidence": "estimate",
+      "note": "Estimated: relative index x12 anchor (published cities: Zurich 14.2, London 12.0, Frankfurt 11.6, Paris/Amsterdam 10.8, Madrid/Dublin 10.0).",
+      "provenance": "construction $/W reconciliation 2026-06"
+    },
+    "SE": {
+      "value": 11.2,
+      "year": 2025,
+      "source": "Scaled to the Turner & Townsend 2025-26 benchmark (US$/W) from the relative cost index",
+      "url": "https://www.turnerandtownsend.com/insights/data-centre-construction-cost-index-2025-2026/",
+      "confidence": "estimate",
+      "note": "Estimated: relative index x12 anchor (published cities: Zurich 14.2, London 12.0, Frankfurt 11.6, Paris/Amsterdam 10.8, Madrid/Dublin 10.0).",
+      "provenance": "construction $/W reconciliation 2026-06"
+    },
+    "IE": {
+      "value": 10.0,
+      "year": 2025,
+      "source": "Turner & Townsend Data Centre Construction Cost Index 2025-26 (all-in US$/W of IT load)",
+      "url": "https://www.turnerandtownsend.com/insights/data-centre-construction-cost-index-2025-2026/",
+      "confidence": "verified",
+      "note": "Published per-city figure.",
+      "provenance": "construction $/W reconciliation 2026-06"
+    },
+    "AE": {
+      "value": 9.8,
+      "year": 2025,
+      "source": "Scaled to the Turner & Townsend 2025-26 benchmark (US$/W) from the relative cost index",
+      "url": "https://www.turnerandtownsend.com/insights/data-centre-construction-cost-index-2025-2026/",
+      "confidence": "estimate",
+      "note": "Estimated: relative index x12 anchor (published cities: Zurich 14.2, London 12.0, Frankfurt 11.6, Paris/Amsterdam 10.8, Madrid/Dublin 10.0).",
+      "provenance": "construction $/W reconciliation 2026-06"
+    },
+    "AT": {
+      "value": 10.2,
+      "year": 2025,
+      "source": "Scaled to the Turner & Townsend 2025-26 benchmark (US$/W) from the relative cost index",
+      "url": "https://www.turnerandtownsend.com/insights/data-centre-construction-cost-index-2025-2026/",
+      "confidence": "estimate",
+      "note": "Estimated: relative index x12 anchor (published cities: Zurich 14.2, London 12.0, Frankfurt 11.6, Paris/Amsterdam 10.8, Madrid/Dublin 10.0).",
+      "provenance": "construction $/W reconciliation 2026-06"
+    },
+    "NO": {
+      "value": 12.4,
+      "year": 2025,
+      "source": "Turner & Townsend Data Centre Construction Cost Index 2025-26 (all-in US$/W of IT load)",
+      "url": "https://www.turnerandtownsend.com/insights/data-centre-construction-cost-index-2025-2026/",
+      "confidence": "verified",
+      "note": "Published per-city figure.",
+      "provenance": "construction $/W reconciliation 2026-06"
+    },
+    "DK": {
+      "value": 11.3,
+      "year": 2025,
+      "source": "Scaled to the Turner & Townsend 2025-26 benchmark (US$/W) from the relative cost index",
+      "url": "https://www.turnerandtownsend.com/insights/data-centre-construction-cost-index-2025-2026/",
+      "confidence": "estimate",
+      "note": "Estimated: relative index x12 anchor (published cities: Zurich 14.2, London 12.0, Frankfurt 11.6, Paris/Amsterdam 10.8, Madrid/Dublin 10.0).",
+      "provenance": "construction $/W reconciliation 2026-06"
+    },
+    "RO": {
+      "value": 7.6,
+      "year": 2025,
+      "source": "Scaled to the Turner & Townsend 2025-26 benchmark (US$/W) from the relative cost index",
+      "url": "https://www.turnerandtownsend.com/insights/data-centre-construction-cost-index-2025-2026/",
+      "confidence": "estimate",
+      "note": "Estimated: relative index x12 anchor (published cities: Zurich 14.2, London 12.0, Frankfurt 11.6, Paris/Amsterdam 10.8, Madrid/Dublin 10.0).",
+      "provenance": "construction $/W reconciliation 2026-06"
     },
     "EG": {
-      "value": 7000000,
+      "value": 11.2,
       "year": 2025,
-      "source": "Estimate — Cairo not in T&T DCCI 2024 or C&W. Regional Middle East proxy not used.",
-      "url": "https://www.turnerandtownsend.com/insights/data-centre-cost-index-2024/",
+      "source": "Scaled to the Turner & Townsend 2025-26 benchmark (US$/W) from the relative cost index",
+      "url": "https://www.turnerandtownsend.com/insights/data-centre-construction-cost-index-2025-2026/",
       "confidence": "estimate",
-      "note": "No primary per-city cite available. Regional proxy explicitly rejected."
+      "note": "Estimated: relative index x12 anchor (published cities: Zurich 14.2, London 12.0, Frankfurt 11.6, Paris/Amsterdam 10.8, Madrid/Dublin 10.0).",
+      "provenance": "construction $/W reconciliation 2026-06"
+    },
+    "PT": {
+      "value": 9.8,
+      "year": 2025,
+      "source": "Scaled to the Turner & Townsend 2025-26 benchmark (US$/W) from the relative cost index",
+      "url": "https://www.turnerandtownsend.com/insights/data-centre-construction-cost-index-2025-2026/",
+      "confidence": "estimate",
+      "note": "Estimated: relative index x12 anchor (published cities: Zurich 14.2, London 12.0, Frankfurt 11.6, Paris/Amsterdam 10.8, Madrid/Dublin 10.0).",
+      "provenance": "construction $/W reconciliation 2026-06"
+    },
+    "FI": {
+      "value": 11.2,
+      "year": 2025,
+      "source": "Scaled to the Turner & Townsend 2025-26 benchmark (US$/W) from the relative cost index",
+      "url": "https://www.turnerandtownsend.com/insights/data-centre-construction-cost-index-2025-2026/",
+      "confidence": "estimate",
+      "note": "Estimated: relative index x12 anchor (published cities: Zurich 14.2, London 12.0, Frankfurt 11.6, Paris/Amsterdam 10.8, Madrid/Dublin 10.0).",
+      "provenance": "construction $/W reconciliation 2026-06"
+    },
+    "QA": {
+      "value": 11.9,
+      "year": 2025,
+      "source": "Scaled to the Turner & Townsend 2025-26 benchmark (US$/W) from the relative cost index",
+      "url": "https://www.turnerandtownsend.com/insights/data-centre-construction-cost-index-2025-2026/",
+      "confidence": "estimate",
+      "note": "Estimated: relative index x12 anchor (published cities: Zurich 14.2, London 12.0, Frankfurt 11.6, Paris/Amsterdam 10.8, Madrid/Dublin 10.0).",
+      "provenance": "construction $/W reconciliation 2026-06"
     },
     "MA": {
-      "value": 7000000,
+      "value": 10.9,
       "year": 2025,
-      "source": "Estimate — Casablanca not in T&T DCCI 2024 or C&W. Regional Middle East proxy not used.",
-      "url": "https://www.turnerandtownsend.com/insights/data-centre-cost-index-2024/",
+      "source": "Scaled to the Turner & Townsend 2025-26 benchmark (US$/W) from the relative cost index",
+      "url": "https://www.turnerandtownsend.com/insights/data-centre-construction-cost-index-2025-2026/",
       "confidence": "estimate",
-      "note": "No primary per-city cite available. Regional proxy explicitly rejected."
+      "note": "Estimated: relative index x12 anchor (published cities: Zurich 14.2, London 12.0, Frankfurt 11.6, Paris/Amsterdam 10.8, Madrid/Dublin 10.0).",
+      "provenance": "construction $/W reconciliation 2026-06"
+    },
+    "KW": {
+      "value": 11.9,
+      "year": 2025,
+      "source": "Scaled to the Turner & Townsend 2025-26 benchmark (US$/W) from the relative cost index",
+      "url": "https://www.turnerandtownsend.com/insights/data-centre-construction-cost-index-2025-2026/",
+      "confidence": "estimate",
+      "note": "Estimated: relative index x12 anchor (published cities: Zurich 14.2, London 12.0, Frankfurt 11.6, Paris/Amsterdam 10.8, Madrid/Dublin 10.0).",
+      "provenance": "construction $/W reconciliation 2026-06"
+    },
+    "BG": {
+      "value": 10.0,
+      "year": 2025,
+      "source": "Scaled to the Turner & Townsend 2025-26 benchmark (US$/W) from the relative cost index",
+      "url": "https://www.turnerandtownsend.com/insights/data-centre-construction-cost-index-2025-2026/",
+      "confidence": "estimate",
+      "note": "Estimated: relative index x12 anchor (published cities: Zurich 14.2, London 12.0, Frankfurt 11.6, Paris/Amsterdam 10.8, Madrid/Dublin 10.0).",
+      "provenance": "construction $/W reconciliation 2026-06"
+    },
+    "OM": {
+      "value": 7.6,
+      "year": 2025,
+      "source": "Scaled to the Turner & Townsend 2025-26 benchmark (US$/W) from the relative cost index",
+      "url": "https://www.turnerandtownsend.com/insights/data-centre-construction-cost-index-2025-2026/",
+      "confidence": "estimate",
+      "note": "Estimated: relative index x12 anchor (published cities: Zurich 14.2, London 12.0, Frankfurt 11.6, Paris/Amsterdam 10.8, Madrid/Dublin 10.0).",
+      "provenance": "construction $/W reconciliation 2026-06"
+    },
+    "HR": {
+      "value": 9.8,
+      "year": 2025,
+      "source": "Scaled to the Turner & Townsend 2025-26 benchmark (US$/W) from the relative cost index",
+      "url": "https://www.turnerandtownsend.com/insights/data-centre-construction-cost-index-2025-2026/",
+      "confidence": "estimate",
+      "note": "Estimated: relative index x12 anchor (published cities: Zurich 14.2, London 12.0, Frankfurt 11.6, Paris/Amsterdam 10.8, Madrid/Dublin 10.0).",
+      "provenance": "construction $/W reconciliation 2026-06"
     }
   },
   "power_cost_usd_kwh": {
@@ -2374,6 +2588,678 @@
       "source": "datacentermap.com — Casablanca pipeline",
       "url": "https://www.datacentermap.com/morocco/",
       "confidence": "estimate"
+    }
+  },
+  "rd_techs_per_million": {
+    "DE": {
+      "value": 5536,
+      "year": 2022,
+      "source": "Our World in Data",
+      "url": "https://ourworldindata.org/grapher/researchers-in-rd-per-million-people",
+      "confidence": "medium",
+      "note": "R&D technicians per million people (2022).",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "GB": {
+      "value": 4491,
+      "year": 2022,
+      "source": "Our World in Data",
+      "url": "https://ourworldindata.org/grapher/researchers-in-rd-per-million-people",
+      "confidence": "medium",
+      "note": "R&D technicians per million people (2022).",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "FR": {
+      "value": 5175,
+      "year": 2022,
+      "source": "Our World in Data",
+      "url": "https://ourworldindata.org/grapher/researchers-in-rd-per-million-people",
+      "confidence": "medium",
+      "note": "R&D technicians per million people (2022).",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "IT": {
+      "value": 2678,
+      "year": 2022,
+      "source": "Our World in Data",
+      "url": "https://ourworldindata.org/grapher/researchers-in-rd-per-million-people",
+      "confidence": "medium",
+      "note": "R&D technicians per million people (2022).",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "ES": {
+      "value": 3252,
+      "year": 2022,
+      "source": "Our World in Data",
+      "url": "https://ourworldindata.org/grapher/researchers-in-rd-per-million-people",
+      "confidence": "medium",
+      "note": "R&D technicians per million people (2022).",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "TR": {
+      "value": 2000,
+      "year": 2022,
+      "source": "Our World in Data",
+      "url": "https://ourworldindata.org/grapher/researchers-in-rd-per-million-people",
+      "confidence": "medium",
+      "note": "R&D technicians per million people (2022).",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "NL": {
+      "value": 6074,
+      "year": 2022,
+      "source": "Our World in Data",
+      "url": "https://ourworldindata.org/grapher/researchers-in-rd-per-million-people",
+      "confidence": "medium",
+      "note": "R&D technicians per million people (2022).",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "SA": {
+      "value": 835,
+      "year": 2022,
+      "source": "Our World in Data",
+      "url": "https://ourworldindata.org/grapher/researchers-in-rd-per-million-people",
+      "confidence": "medium",
+      "note": "R&D technicians per million people (2022).",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "PL": {
+      "value": 3534,
+      "year": 2022,
+      "source": "Our World in Data",
+      "url": "https://ourworldindata.org/grapher/researchers-in-rd-per-million-people",
+      "confidence": "medium",
+      "note": "R&D technicians per million people (2022).",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "CH": {
+      "value": 6023,
+      "year": 2022,
+      "source": "Our World in Data",
+      "url": "https://ourworldindata.org/grapher/researchers-in-rd-per-million-people",
+      "confidence": "medium",
+      "note": "R&D technicians per million people (2022).",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "BE": {
+      "value": 6582,
+      "year": 2022,
+      "source": "Our World in Data",
+      "url": "https://ourworldindata.org/grapher/researchers-in-rd-per-million-people",
+      "confidence": "medium",
+      "note": "R&D technicians per million people (2022).",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "SE": {
+      "value": 8131,
+      "year": 2022,
+      "source": "Our World in Data",
+      "url": "https://ourworldindata.org/grapher/researchers-in-rd-per-million-people",
+      "confidence": "medium",
+      "note": "R&D technicians per million people (2022).",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "IE": {
+      "value": 5251,
+      "year": 2022,
+      "source": "Our World in Data",
+      "url": "https://ourworldindata.org/grapher/researchers-in-rd-per-million-people",
+      "confidence": "medium",
+      "note": "R&D technicians per million people (2022).",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "AE": {
+      "value": 2666,
+      "year": 2022,
+      "source": "Our World in Data",
+      "url": "https://ourworldindata.org/grapher/researchers-in-rd-per-million-people",
+      "confidence": "medium",
+      "note": "R&D technicians per million people (2022).",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "AT": {
+      "value": 6342,
+      "year": 2022,
+      "source": "Our World in Data",
+      "url": "https://ourworldindata.org/grapher/researchers-in-rd-per-million-people",
+      "confidence": "medium",
+      "note": "R&D technicians per million people (2022).",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "NO": {
+      "value": 7228,
+      "year": 2022,
+      "source": "Our World in Data",
+      "url": "https://ourworldindata.org/grapher/researchers-in-rd-per-million-people",
+      "confidence": "medium",
+      "note": "R&D technicians per million people (2022).",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "DK": {
+      "value": 7708,
+      "year": 2022,
+      "source": "Our World in Data",
+      "url": "https://ourworldindata.org/grapher/researchers-in-rd-per-million-people",
+      "confidence": "medium",
+      "note": "R&D technicians per million people (2022).",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "RO": {
+      "value": 985,
+      "year": 2022,
+      "source": "Our World in Data",
+      "url": "https://ourworldindata.org/grapher/researchers-in-rd-per-million-people",
+      "confidence": "medium",
+      "note": "R&D technicians per million people (2022).",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "CZ": {
+      "value": 4569,
+      "year": 2022,
+      "source": "Our World in Data",
+      "url": "https://ourworldindata.org/grapher/researchers-in-rd-per-million-people",
+      "confidence": "medium",
+      "note": "R&D technicians per million people (2022).",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "EG": {
+      "value": 841,
+      "year": 2022,
+      "source": "Our World in Data",
+      "url": "https://ourworldindata.org/grapher/researchers-in-rd-per-million-people",
+      "confidence": "medium",
+      "note": "R&D technicians per million people (2022).",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "PT": {
+      "value": 5743,
+      "year": 2022,
+      "source": "Our World in Data",
+      "url": "https://ourworldindata.org/grapher/researchers-in-rd-per-million-people",
+      "confidence": "medium",
+      "note": "R&D technicians per million people (2022).",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "FI": {
+      "value": 7871,
+      "year": 2022,
+      "source": "Our World in Data",
+      "url": "https://ourworldindata.org/grapher/researchers-in-rd-per-million-people",
+      "confidence": "medium",
+      "note": "R&D technicians per million people (2022).",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "GR": {
+      "value": 4326,
+      "year": 2022,
+      "source": "Our World in Data",
+      "url": "https://ourworldindata.org/grapher/researchers-in-rd-per-million-people",
+      "confidence": "medium",
+      "note": "R&D technicians per million people (2022).",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "HU": {
+      "value": 4452,
+      "year": 2022,
+      "source": "Our World in Data",
+      "url": "https://ourworldindata.org/grapher/researchers-in-rd-per-million-people",
+      "confidence": "medium",
+      "note": "R&D technicians per million people (2022).",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "QA": {
+      "value": 983,
+      "year": 2022,
+      "source": "Our World in Data",
+      "url": "https://ourworldindata.org/grapher/researchers-in-rd-per-million-people",
+      "confidence": "medium",
+      "note": "R&D technicians per million people (2022).",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "MA": {
+      "value": 1081,
+      "year": 2022,
+      "source": "Our World in Data",
+      "url": "https://ourworldindata.org/grapher/researchers-in-rd-per-million-people",
+      "confidence": "medium",
+      "note": "R&D technicians per million people (2022).",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "KW": {
+      "value": 182,
+      "year": 2022,
+      "source": "Our World in Data",
+      "url": "https://ourworldindata.org/grapher/researchers-in-rd-per-million-people",
+      "confidence": "medium",
+      "note": "R&D technicians per million people (2022).",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "SK": {
+      "value": 3211,
+      "year": 2022,
+      "source": "Our World in Data",
+      "url": "https://ourworldindata.org/grapher/researchers-in-rd-per-million-people",
+      "confidence": "medium",
+      "note": "R&D technicians per million people (2022).",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "BG": {
+      "value": 2339,
+      "year": 2022,
+      "source": "Our World in Data",
+      "url": "https://ourworldindata.org/grapher/researchers-in-rd-per-million-people",
+      "confidence": "medium",
+      "note": "R&D technicians per million people (2022).",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "OM": {
+      "value": 382,
+      "year": 2022,
+      "source": "Our World in Data",
+      "url": "https://ourworldindata.org/grapher/researchers-in-rd-per-million-people",
+      "confidence": "medium",
+      "note": "R&D technicians per million people (2022).",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "HR": {
+      "value": 2331,
+      "year": 2022,
+      "source": "Our World in Data",
+      "url": "https://ourworldindata.org/grapher/researchers-in-rd-per-million-people",
+      "confidence": "medium",
+      "note": "R&D technicians per million people (2022).",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "LU": {
+      "value": 4941,
+      "year": 2022,
+      "source": "Our World in Data",
+      "url": "https://ourworldindata.org/grapher/researchers-in-rd-per-million-people",
+      "confidence": "medium",
+      "note": "R&D technicians per million people (2022).",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "RS": {
+      "value": 2350,
+      "year": 2022,
+      "source": "Our World in Data",
+      "url": "https://ourworldindata.org/grapher/researchers-in-rd-per-million-people",
+      "confidence": "medium",
+      "note": "R&D technicians per million people (2022).",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "LT": {
+      "value": 3935,
+      "year": 2022,
+      "source": "Our World in Data",
+      "url": "https://ourworldindata.org/grapher/researchers-in-rd-per-million-people",
+      "confidence": "medium",
+      "note": "R&D technicians per million people (2022).",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "IS": {
+      "value": 6940,
+      "year": 2022,
+      "source": "Our World in Data",
+      "url": "https://ourworldindata.org/grapher/researchers-in-rd-per-million-people",
+      "confidence": "medium",
+      "note": "R&D technicians per million people (2022).",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "EE": {
+      "value": 4038,
+      "year": 2022,
+      "source": "Our World in Data",
+      "url": "https://ourworldindata.org/grapher/researchers-in-rd-per-million-people",
+      "confidence": "medium",
+      "note": "R&D technicians per million people (2022).",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "LV": {
+      "value": 2405,
+      "year": 2022,
+      "source": "Our World in Data",
+      "url": "https://ourworldindata.org/grapher/researchers-in-rd-per-million-people",
+      "confidence": "medium",
+      "note": "R&D technicians per million people (2022).",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    }
+  },
+  "tertiary_grad_pct": {
+    "DE": {
+      "value": 0.18,
+      "year": 2022,
+      "source": "UN data — share of tertiary graduates in Engineering/Manufacturing/Construction",
+      "url": "https://data.un.org/",
+      "confidence": "medium",
+      "note": "Redefined: fraction (0-1) of tertiary graduates in Engineering/Manufacturing/Construction. Was tertiary-attainment %.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "GB": {
+      "value": 0.089,
+      "year": 2022,
+      "source": "UN data — share of tertiary graduates in Engineering/Manufacturing/Construction",
+      "url": "https://data.un.org/",
+      "confidence": "medium",
+      "note": "Redefined: fraction (0-1) of tertiary graduates in Engineering/Manufacturing/Construction. Was tertiary-attainment %.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "FR": {
+      "value": 0.14,
+      "year": 2022,
+      "source": "UN data — share of tertiary graduates in Engineering/Manufacturing/Construction",
+      "url": "https://data.un.org/",
+      "confidence": "medium",
+      "note": "Redefined: fraction (0-1) of tertiary graduates in Engineering/Manufacturing/Construction. Was tertiary-attainment %.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "IT": {
+      "value": 0.16,
+      "year": 2022,
+      "source": "UN data — share of tertiary graduates in Engineering/Manufacturing/Construction",
+      "url": "https://data.un.org/",
+      "confidence": "medium",
+      "note": "Redefined: fraction (0-1) of tertiary graduates in Engineering/Manufacturing/Construction. Was tertiary-attainment %.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "ES": {
+      "value": 0.095,
+      "year": 2022,
+      "source": "UN data — share of tertiary graduates in Engineering/Manufacturing/Construction",
+      "url": "https://data.un.org/",
+      "confidence": "medium",
+      "note": "Redefined: fraction (0-1) of tertiary graduates in Engineering/Manufacturing/Construction. Was tertiary-attainment %.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "TR": {
+      "value": 0.09,
+      "year": 2022,
+      "source": "UN data — share of tertiary graduates in Engineering/Manufacturing/Construction",
+      "url": "https://data.un.org/",
+      "confidence": "medium",
+      "note": "Redefined: fraction (0-1) of tertiary graduates in Engineering/Manufacturing/Construction. Was tertiary-attainment %.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "NL": {
+      "value": 0.088,
+      "year": 2022,
+      "source": "UN data — share of tertiary graduates in Engineering/Manufacturing/Construction",
+      "url": "https://data.un.org/",
+      "confidence": "medium",
+      "note": "Redefined: fraction (0-1) of tertiary graduates in Engineering/Manufacturing/Construction. Was tertiary-attainment %.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "SA": {
+      "value": 0.09,
+      "year": 2022,
+      "source": "UN data — share of tertiary graduates in Engineering/Manufacturing/Construction",
+      "url": "https://data.un.org/",
+      "confidence": "medium",
+      "note": "Redefined: fraction (0-1) of tertiary graduates in Engineering/Manufacturing/Construction. Was tertiary-attainment %.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "PL": {
+      "value": 0.14,
+      "year": 2022,
+      "source": "UN data — share of tertiary graduates in Engineering/Manufacturing/Construction",
+      "url": "https://data.un.org/",
+      "confidence": "medium",
+      "note": "Redefined: fraction (0-1) of tertiary graduates in Engineering/Manufacturing/Construction. Was tertiary-attainment %.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "CH": {
+      "value": 0.14,
+      "year": 2022,
+      "source": "UN data — share of tertiary graduates in Engineering/Manufacturing/Construction",
+      "url": "https://data.un.org/",
+      "confidence": "medium",
+      "note": "Redefined: fraction (0-1) of tertiary graduates in Engineering/Manufacturing/Construction. Was tertiary-attainment %.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "BE": {
+      "value": 0.13,
+      "year": 2022,
+      "source": "UN data — share of tertiary graduates in Engineering/Manufacturing/Construction",
+      "url": "https://data.un.org/",
+      "confidence": "medium",
+      "note": "Redefined: fraction (0-1) of tertiary graduates in Engineering/Manufacturing/Construction. Was tertiary-attainment %.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "SE": {
+      "value": 0.25,
+      "year": 2022,
+      "source": "UN data — share of tertiary graduates in Engineering/Manufacturing/Construction",
+      "url": "https://data.un.org/",
+      "confidence": "medium",
+      "note": "Redefined: fraction (0-1) of tertiary graduates in Engineering/Manufacturing/Construction. Was tertiary-attainment %.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "IE": {
+      "value": 0.068,
+      "year": 2022,
+      "source": "UN data — share of tertiary graduates in Engineering/Manufacturing/Construction",
+      "url": "https://data.un.org/",
+      "confidence": "medium",
+      "note": "Redefined: fraction (0-1) of tertiary graduates in Engineering/Manufacturing/Construction. Was tertiary-attainment %.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "AE": {
+      "value": 0.14,
+      "year": 2022,
+      "source": "UN data — share of tertiary graduates in Engineering/Manufacturing/Construction",
+      "url": "https://data.un.org/",
+      "confidence": "medium",
+      "note": "Redefined: fraction (0-1) of tertiary graduates in Engineering/Manufacturing/Construction. Was tertiary-attainment %.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "AT": {
+      "value": 0.14,
+      "year": 2022,
+      "source": "UN data — share of tertiary graduates in Engineering/Manufacturing/Construction",
+      "url": "https://data.un.org/",
+      "confidence": "medium",
+      "note": "Redefined: fraction (0-1) of tertiary graduates in Engineering/Manufacturing/Construction. Was tertiary-attainment %.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "NO": {
+      "value": 0.12,
+      "year": 2022,
+      "source": "UN data — share of tertiary graduates in Engineering/Manufacturing/Construction",
+      "url": "https://data.un.org/",
+      "confidence": "medium",
+      "note": "Redefined: fraction (0-1) of tertiary graduates in Engineering/Manufacturing/Construction. Was tertiary-attainment %.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "DK": {
+      "value": 0.12,
+      "year": 2022,
+      "source": "UN data — share of tertiary graduates in Engineering/Manufacturing/Construction",
+      "url": "https://data.un.org/",
+      "confidence": "medium",
+      "note": "Redefined: fraction (0-1) of tertiary graduates in Engineering/Manufacturing/Construction. Was tertiary-attainment %.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "RO": {
+      "value": 0.21,
+      "year": 2022,
+      "source": "UN data — share of tertiary graduates in Engineering/Manufacturing/Construction",
+      "url": "https://data.un.org/",
+      "confidence": "medium",
+      "note": "Redefined: fraction (0-1) of tertiary graduates in Engineering/Manufacturing/Construction. Was tertiary-attainment %.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "CZ": {
+      "value": 0.15,
+      "year": 2022,
+      "source": "UN data — share of tertiary graduates in Engineering/Manufacturing/Construction",
+      "url": "https://data.un.org/",
+      "confidence": "medium",
+      "note": "Redefined: fraction (0-1) of tertiary graduates in Engineering/Manufacturing/Construction. Was tertiary-attainment %.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "EG": {
+      "value": 0.07,
+      "year": 2022,
+      "source": "UN data — share of tertiary graduates in Engineering/Manufacturing/Construction",
+      "url": "https://data.un.org/",
+      "confidence": "medium",
+      "note": "Redefined: fraction (0-1) of tertiary graduates in Engineering/Manufacturing/Construction. Was tertiary-attainment %.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "PT": {
+      "value": 0.23,
+      "year": 2022,
+      "source": "UN data — share of tertiary graduates in Engineering/Manufacturing/Construction",
+      "url": "https://data.un.org/",
+      "confidence": "medium",
+      "note": "Redefined: fraction (0-1) of tertiary graduates in Engineering/Manufacturing/Construction. Was tertiary-attainment %.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "FI": {
+      "value": 0.15,
+      "year": 2022,
+      "source": "UN data — share of tertiary graduates in Engineering/Manufacturing/Construction",
+      "url": "https://data.un.org/",
+      "confidence": "medium",
+      "note": "Redefined: fraction (0-1) of tertiary graduates in Engineering/Manufacturing/Construction. Was tertiary-attainment %.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "GR": {
+      "value": 0.077,
+      "year": 2022,
+      "source": "UN data — share of tertiary graduates in Engineering/Manufacturing/Construction",
+      "url": "https://data.un.org/",
+      "confidence": "medium",
+      "note": "Redefined: fraction (0-1) of tertiary graduates in Engineering/Manufacturing/Construction. Was tertiary-attainment %.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "HU": {
+      "value": 0.13,
+      "year": 2022,
+      "source": "UN data — share of tertiary graduates in Engineering/Manufacturing/Construction",
+      "url": "https://data.un.org/",
+      "confidence": "medium",
+      "note": "Redefined: fraction (0-1) of tertiary graduates in Engineering/Manufacturing/Construction. Was tertiary-attainment %.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "QA": {
+      "value": 0.21,
+      "year": 2022,
+      "source": "UN data — share of tertiary graduates in Engineering/Manufacturing/Construction",
+      "url": "https://data.un.org/",
+      "confidence": "medium",
+      "note": "Redefined: fraction (0-1) of tertiary graduates in Engineering/Manufacturing/Construction. Was tertiary-attainment %.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "MA": {
+      "value": 0.124,
+      "year": 2022,
+      "source": "UN data — share of tertiary graduates in Engineering/Manufacturing/Construction",
+      "url": "https://data.un.org/",
+      "confidence": "medium",
+      "note": "Redefined: fraction (0-1) of tertiary graduates in Engineering/Manufacturing/Construction. Was tertiary-attainment %.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "KW": {
+      "value": 0.25,
+      "year": 2022,
+      "source": "UN data — share of tertiary graduates in Engineering/Manufacturing/Construction",
+      "url": "https://data.un.org/",
+      "confidence": "medium",
+      "note": "Redefined: fraction (0-1) of tertiary graduates in Engineering/Manufacturing/Construction. Was tertiary-attainment %.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "SK": {
+      "value": 0.12,
+      "year": 2022,
+      "source": "UN data — share of tertiary graduates in Engineering/Manufacturing/Construction",
+      "url": "https://data.un.org/",
+      "confidence": "medium",
+      "note": "Redefined: fraction (0-1) of tertiary graduates in Engineering/Manufacturing/Construction. Was tertiary-attainment %.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "BG": {
+      "value": 0.15,
+      "year": 2022,
+      "source": "UN data — share of tertiary graduates in Engineering/Manufacturing/Construction",
+      "url": "https://data.un.org/",
+      "confidence": "medium",
+      "note": "Redefined: fraction (0-1) of tertiary graduates in Engineering/Manufacturing/Construction. Was tertiary-attainment %.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "OM": {
+      "value": 0.174,
+      "year": 2022,
+      "source": "UN data — share of tertiary graduates in Engineering/Manufacturing/Construction",
+      "url": "https://data.un.org/",
+      "confidence": "medium",
+      "note": "Redefined: fraction (0-1) of tertiary graduates in Engineering/Manufacturing/Construction. Was tertiary-attainment %.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "HR": {
+      "value": 0.15,
+      "year": 2022,
+      "source": "UN data — share of tertiary graduates in Engineering/Manufacturing/Construction",
+      "url": "https://data.un.org/",
+      "confidence": "medium",
+      "note": "Redefined: fraction (0-1) of tertiary graduates in Engineering/Manufacturing/Construction. Was tertiary-attainment %.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "LU": {
+      "value": 0.031,
+      "year": 2022,
+      "source": "UN data — share of tertiary graduates in Engineering/Manufacturing/Construction",
+      "url": "https://data.un.org/",
+      "confidence": "medium",
+      "note": "Redefined: fraction (0-1) of tertiary graduates in Engineering/Manufacturing/Construction. Was tertiary-attainment %.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "RS": {
+      "value": 0.16,
+      "year": 2022,
+      "source": "UN data — share of tertiary graduates in Engineering/Manufacturing/Construction",
+      "url": "https://data.un.org/",
+      "confidence": "medium",
+      "note": "Redefined: fraction (0-1) of tertiary graduates in Engineering/Manufacturing/Construction. Was tertiary-attainment %.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "LT": {
+      "value": 0.16,
+      "year": 2022,
+      "source": "UN data — share of tertiary graduates in Engineering/Manufacturing/Construction",
+      "url": "https://data.un.org/",
+      "confidence": "medium",
+      "note": "Redefined: fraction (0-1) of tertiary graduates in Engineering/Manufacturing/Construction. Was tertiary-attainment %.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)",
+      "needs_check": true
+    },
+    "IS": {
+      "value": 0.09,
+      "year": 2022,
+      "source": "UN data — share of tertiary graduates in Engineering/Manufacturing/Construction",
+      "url": "https://data.un.org/",
+      "confidence": "medium",
+      "note": "Redefined: fraction (0-1) of tertiary graduates in Engineering/Manufacturing/Construction. Was tertiary-attainment %.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)",
+      "needs_check": true
+    },
+    "EE": {
+      "value": 0.13,
+      "year": 2022,
+      "source": "UN data — share of tertiary graduates in Engineering/Manufacturing/Construction",
+      "url": "https://data.un.org/",
+      "confidence": "medium",
+      "note": "Redefined: fraction (0-1) of tertiary graduates in Engineering/Manufacturing/Construction. Was tertiary-attainment %.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+    },
+    "LV": {
+      "value": 0.11,
+      "year": 2022,
+      "source": "UN data — share of tertiary graduates in Engineering/Manufacturing/Construction",
+      "url": "https://data.un.org/",
+      "confidence": "medium",
+      "note": "Redefined: fraction (0-1) of tertiary graduates in Engineering/Manufacturing/Construction. Was tertiary-attainment %.",
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
     }
   }
 }
