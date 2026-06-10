@@ -1159,7 +1159,7 @@ function recomputeAndRefresh() {
 //            'neutral' → just scale by magnitude (e.g. demand, capacity — informational)
 const COLOUR_OPTIONS = [
   { id: 'composite_score',           label: '★ Composite score',    fmt: v => Math.round(v) + ' / 100',                dir: 'asc' },
-  { id: 'demand_2027_twh',           label: 'Addressable demand 2030', fmt: v => Math.round(v).toLocaleString(),        dir: 'neutral' },
+  { id: 'demand_2027_twh',           label: 'Addressable demand 2030', fmt: v => Math.round(v).toLocaleString() + ' EB', dir: 'neutral' },
   { id: 'grid_connect_years',        label: 'Grid connection wait', fmt: v => v.toFixed(1) + ' yrs',                   dir: 'desc' },
   { id: 'power_per_capita_kwh',      label: 'Power / capita',       fmt: v => Math.round(v).toLocaleString() + ' kWh', dir: 'asc' },
   { id: 'grid_investment_usdbn',     label: 'Grid investment / yr', fmt: v => '€' + Math.round(v / 1e6).toLocaleString() + 'M/yr', dir: 'asc' },
@@ -1709,7 +1709,7 @@ function truncate(s, n) { return s.length <= n ? s : s.slice(0, n - 1) + '…'; 
 //      'desc' → lower is better  (rank 1 = lowest value)
 //      'neutral' → rank by magnitude, but no normative meaning
 const PANEL_ROWS = [
-  ['Demand dynamics',     'Addressable demand 2030',     'demand_2027_twh',           v => Math.round(v).toLocaleString(),              'neutral'],
+  ['Demand dynamics',     'Addressable demand 2030',     'demand_2027_twh',           v => Math.round(v).toLocaleString() + ' EB',      'neutral'],
 
   ['Supply — Grid',       'Connection timeline',         'grid_connect_years',        v => v.toFixed(1) + ' yrs',                       'desc'],
   ['Supply — Grid',       'Power production / capita',   'power_per_capita_kwh',      v => Math.round(v).toLocaleString() + ' kWh/yr',  'asc'],
@@ -1904,7 +1904,7 @@ const FACTOR_WHY = {
   rd_techs_per_million:      'Depth of the technical workforce — skilled people available to build and operate facilities.',
   tertiary_grad_pct:         'Share of graduates in engineering, manufacturing & construction — the local talent pipeline for the sector.',
   carbon_intensity_gco2_kwh: 'Carbon emitted per kWh — lower makes it far easier to meet sustainability targets and sign green PPAs.',
-  demand_2027_twh:           'Relative size of the market’s addressable demand, indexed so 100 = EMEA’s largest market, with growth to 2030. A proxy for the size of the opportunity — shown for context, not scored.',
+  demand_2027_twh:           'Total addressable broadband demand (exabytes), 2025 and projected 2030 — a proxy for the size of the market opportunity. Shown for context, not part of the score.',
 };
 function whyIcon(fid) {
   const why = FACTOR_WHY[fid];
@@ -2404,41 +2404,34 @@ function bucketScoresFor(iso2) {
   return out;
 }
 
-// Largest 2030 demand across EMEA — used to rebase demand onto a 0-100 index
-// so the numbers mean something (100 = the biggest market). Cached.
-let _demandMax = null;
-function demandMax() {
-  if (_demandMax == null) {
-    _demandMax = 1;
-    for (const c of state.markets) {
-      const v = c.factors && c.factors.demand_2027_twh && c.factors.demand_2027_twh.value;
-      if (typeof v === 'number' && v > _demandMax) _demandMax = v;
-    }
-  }
-  return _demandMax;
-}
-
-// Market-demand block: leads with the growth multiple (unit-free, the real
-// signal), then a 2025 → 2030 demand index where 100 = EMEA's largest market.
+// Market-demand block: a two-bar chart (2025 vs 2030 addressable broadband
+// demand, in EB) with a growth callout. Real units, easy to read.
 function demandBlockHtml(country, variant) {
   const e = country.factors && country.factors.demand_2027_twh;
   if (!e || e.value == null) return '';
-  const max = demandMax();
-  const idxNow    = e.value_2025 != null ? Math.round(e.value_2025 / max * 100) : null;
-  const idxFuture = Math.round(e.value / max * 100);
+  const now = e.value_2025, future = e.value;
   const cls = variant === 'panel' ? 'dm dm--panel' : 'dm';
+  const peak = Math.max(future, now != null ? now : 0) || 1;
+  const fmtEB = v => Math.round(v).toLocaleString() + ' EB';
 
-  let hero = '';
-  if (e.value_2025 != null && e.value_2025 > 0) {
-    const x = e.value / e.value_2025;
-    hero = '<span class="dm-growth">▲ ' + (x >= 10 ? Math.round(x) : x.toFixed(1)) + '× by 2030</span>';
+  let callout = '';
+  if (now != null && now > 0) {
+    const pct = Math.round((future / now - 1) * 100);
+    callout = '<span class="dm-growth">+' + pct.toLocaleString() + '% to 2030</span>';
   }
-  const arc = idxNow != null
-    ? '<span class="dm-now">' + idxNow + '</span><span class="dm-arrow">→</span><span class="dm-future">' + idxFuture + '</span>'
-    : '<span class="dm-future">' + idxFuture + '</span>';
+  let bars = '';
+  if (now != null) {
+    bars += '<div class="dm-bar-row"><span class="dm-bar-yr">2025</span>'
+      + '<span class="dm-bar-track"><i class="dm-bar-fill dm-bar-now" style="width:' + (now / peak * 100).toFixed(1) + '%"></i></span>'
+      + '<span class="dm-bar-val">' + fmtEB(now) + '</span></div>';
+  }
+  bars += '<div class="dm-bar-row"><span class="dm-bar-yr">2030</span>'
+    + '<span class="dm-bar-track"><i class="dm-bar-fill dm-bar-future" style="width:' + (future / peak * 100).toFixed(1) + '%"></i></span>'
+    + '<span class="dm-bar-val">' + fmtEB(future) + '</span></div>';
+
   return '<div class="' + cls + '">'
-    + '<div class="dm-top"><span class="dm-label">Market demand growth</span>' + hero + '</div>'
-    + '<div class="dm-vals">' + arc + '<span class="dm-unit">demand index · 100 = EMEA’s largest market</span></div>'
+    + '<div class="dm-top"><span class="dm-label">Addressable demand <span class="dm-unit-tag">EB</span></span>' + callout + '</div>'
+    + '<div class="dm-bars">' + bars + '</div>'
     + '</div>';
 }
 
