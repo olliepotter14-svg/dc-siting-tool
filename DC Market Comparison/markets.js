@@ -1862,17 +1862,19 @@ function renderCapacityBar(factors) {
   const livePct    = (liveVal    / emeaMax) * 100;
   const plannedPct = (plannedVal / emeaMax) * 100;
 
+  const liveTxt    = typeof live    === 'number' ? liveVal.toLocaleString()    + ' MW' : '—';
+  const plannedTxt = typeof planned === 'number' ? plannedVal.toLocaleString() + ' MW' : '—';
   return ''
     + '<div class="capacity-bar-wrap">'
-    +   '<div class="capacity-bar-title">Capacity outlook · vs largest EMEA market</div>'
+    +   '<div class="capacity-bar-figs">'
+    +     '<div class="cap-fig"><span class="cap-fig-val">' + liveTxt + '</span><span class="cap-fig-lab"><span class="cap-dot cap-dot-live"></span>Live (operational)</span></div>'
+    +     '<div class="cap-fig"><span class="cap-fig-val">' + plannedTxt + '</span><span class="cap-fig-lab"><span class="cap-dot cap-dot-planned"></span>Planned + under construction</span></div>'
+    +   '</div>'
     +   '<div class="capacity-bar-track">'
     +     '<div class="capacity-bar-live"    style="width:' + livePct.toFixed(1)    + '%" title="Live: ' + liveVal + ' MW"></div>'
     +     '<div class="capacity-bar-planned" style="width:' + plannedPct.toFixed(1) + '%" title="Planned + under construction: ' + plannedVal + ' MW"></div>'
     +   '</div>'
-    +   '<div class="capacity-bar-legend">'
-    +     '<span class="capacity-bar-legend-item"><span class="capacity-bar-swatch capacity-bar-swatch-live"></span> Live ' + liveVal.toLocaleString() + ' MW</span>'
-    +     '<span class="capacity-bar-legend-item"><span class="capacity-bar-swatch capacity-bar-swatch-planned"></span> Planned + UC ' + plannedVal.toLocaleString() + ' MW</span>'
-    +   '</div>'
+    +   '<div class="capacity-bar-scale">Bar scaled vs EMEA’s largest market (' + Math.round(emeaMax).toLocaleString() + ' MW total)</div>'
     + '</div>';
 }
 
@@ -1902,7 +1904,7 @@ const FACTOR_WHY = {
   rd_techs_per_million:      'Depth of the technical workforce — skilled people available to build and operate facilities.',
   tertiary_grad_pct:         'Share of graduates in engineering, manufacturing & construction — the local talent pipeline for the sector.',
   carbon_intensity_gco2_kwh: 'Carbon emitted per kWh — lower makes it far easier to meet sustainability targets and sign green PPAs.',
-  demand_2027_twh:           'Projected addressable data-centre demand by 2030 — the size of the market opportunity (shown for context, not scored).',
+  demand_2027_twh:           'Relative size of the market’s addressable demand, indexed so 100 = EMEA’s largest market, with growth to 2030. A proxy for the size of the opportunity — shown for context, not scored.',
 };
 function whyIcon(fid) {
   const why = FACTOR_WHY[fid];
@@ -2402,26 +2404,41 @@ function bucketScoresFor(iso2) {
   return out;
 }
 
-// Market-demand block: current (2025) → projected (2030) with a growth multiple.
-// This is the "size of the prize" — surfaced prominently so it stands out.
+// Largest 2030 demand across EMEA — used to rebase demand onto a 0-100 index
+// so the numbers mean something (100 = the biggest market). Cached.
+let _demandMax = null;
+function demandMax() {
+  if (_demandMax == null) {
+    _demandMax = 1;
+    for (const c of state.markets) {
+      const v = c.factors && c.factors.demand_2027_twh && c.factors.demand_2027_twh.value;
+      if (typeof v === 'number' && v > _demandMax) _demandMax = v;
+    }
+  }
+  return _demandMax;
+}
+
+// Market-demand block: leads with the growth multiple (unit-free, the real
+// signal), then a 2025 → 2030 demand index where 100 = EMEA's largest market.
 function demandBlockHtml(country, variant) {
   const e = country.factors && country.factors.demand_2027_twh;
   if (!e || e.value == null) return '';
-  const now = e.value_2025, future = e.value;
+  const max = demandMax();
+  const idxNow    = e.value_2025 != null ? Math.round(e.value_2025 / max * 100) : null;
+  const idxFuture = Math.round(e.value / max * 100);
   const cls = variant === 'panel' ? 'dm dm--panel' : 'dm';
-  let growth = '';
-  if (now != null && now > 0) {
-    const x = future / now;
-    growth = '<span class="dm-growth">▲ ' + (x >= 10 ? Math.round(x) : x.toFixed(1)) + '×</span>';
+
+  let hero = '';
+  if (e.value_2025 != null && e.value_2025 > 0) {
+    const x = e.value / e.value_2025;
+    hero = '<span class="dm-growth">▲ ' + (x >= 10 ? Math.round(x) : x.toFixed(1)) + '× by 2030</span>';
   }
-  const arc = now != null
-    ? '<span class="dm-now">' + Math.round(now).toLocaleString() + '</span>'
-      + '<span class="dm-arrow">→</span>'
-      + '<span class="dm-future">' + Math.round(future).toLocaleString() + '</span>'
-    : '<span class="dm-future">' + Math.round(future).toLocaleString() + '</span>';
+  const arc = idxNow != null
+    ? '<span class="dm-now">' + idxNow + '</span><span class="dm-arrow">→</span><span class="dm-future">' + idxFuture + '</span>'
+    : '<span class="dm-future">' + idxFuture + '</span>';
   return '<div class="' + cls + '">'
-    + '<div class="dm-label">Market demand <span class="dm-yrs">2025 → 2030</span></div>'
-    + '<div class="dm-vals">' + arc + ' ' + growth + '</div>'
+    + '<div class="dm-top"><span class="dm-label">Market demand growth</span>' + hero + '</div>'
+    + '<div class="dm-vals">' + arc + '<span class="dm-unit">demand index · 100 = EMEA’s largest market</span></div>'
     + '</div>';
 }
 
