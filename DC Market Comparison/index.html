@@ -10,7 +10,7 @@
   <link href="https://api.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.css" rel="stylesheet" />
   <script src="https://api.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.js"></script>
   <script src="config.js"></script>
-  <link rel="stylesheet" href="style.css?v=59" />
+  <link rel="stylesheet" href="style.css?v=60" />
 </head>
 <body class="mobile-tab-map">
 
@@ -102,6 +102,7 @@
       <div class="filter-label mt">Map overlays</div>
       <div class="overlay-chips" id="overlay-chips">
         <button class="overlay-chip" data-layer="ixps"   title="Carrier-neutral internet exchanges (PeeringDB)">◎ IXPs</button>
+        <button class="overlay-chip" data-layer="grid"   title="High-voltage transmission grid ≥220 kV + HVDC (GridKit / ENTSO-E)">— HV grid</button>
         <button class="overlay-chip" data-layer="dcs"    title="Operational + planned data-centre facilities">▢ DC sites</button>
       </div>
 
@@ -122,7 +123,7 @@
         <div class="weights-sliders" id="weights-sliders"></div>
       </div>
 
-      <a class="cta-block cta-block--side" href="https://tidycal.com/naturetechmemos/20-minute-meeting" target="_blank" rel="noopener">
+      <a class="cta-block cta-block--side" href="mailto:opotter@deloitte.co.uk?subject=EMEA%20data-centre%20market%20insights" target="_blank" rel="noopener">
         <div class="cta-text">
           <div class="cta-title">Book an EMEA insights call</div>
           <div class="cta-sub">Tailored market &amp; site guidance.</div>
@@ -234,6 +235,7 @@
         <div class="sources-group">
           <div class="sources-group-title">Map overlays</div>
           <div class="sources-item"><strong>IXPs + DC facilities</strong><br><a href="https://www.peeringdb.com/" target="_blank" rel="noopener">PeeringDB</a> — fetched live by <code>fetch_overlays.py</code>.</div>
+          <div class="sources-item"><strong>HV transmission grid (≥220 kV + HVDC)</strong><br><a href="https://zenodo.org/records/55853" target="_blank" rel="noopener">GridKit extract of the ENTSO-E grid map</a> (CC-BY 4.0). Indicative geometry — not endorsed by ENTSO-E.</div>
         </div>
       </div>
       <div class="sources-footer">All values carry <code>{value, year, source, url}</code>. To refresh: <code>python3 scripts/fetch_ember.py</code>, <code>python3 scripts/fetch_world_bank.py</code>, <code>python3 scripts/fetch_overlays.py</code>, then <code>python3 scripts/build_markets_dataset.py</code>.</div>
@@ -287,6 +289,6 @@
     </div>
   </div>
 
-  <script src="markets.js?v=59"></script>
+  <script src="markets.js?v=60"></script>
 </body>
 </html>

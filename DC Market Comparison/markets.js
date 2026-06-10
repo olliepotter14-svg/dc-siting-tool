@@ -26,7 +26,7 @@ const MAP_STYLE   = 'mapbox://styles/mapbox/light-v11';
 const FACTOR_COUNT = 13;            // 11 numeric + live MW + planned MW
 
 // Booking CTA target — swap for your scheduling link (Calendly, etc.).
-const BOOKING_URL = 'https://tidycal.com/naturetechmemos/20-minute-meeting';
+const BOOKING_URL = 'mailto:opotter@deloitte.co.uk?subject=EMEA%20data-centre%20market%20insights';
 
 /* ──────────────────────────────────────────────────────────────────
    2. App state — single source of truth
@@ -290,6 +290,28 @@ async function loadCountries() {
 
 // Each entry describes one toggleable map overlay layer.
 const OVERLAYS = {
+  grid: {
+    file: 'data/overlay_grid.geojson',
+    sourceId: 'overlay-grid-src',
+    interactive: false,
+    layers: [{
+      id: 'overlay-grid',
+      type: 'line',
+      layout: { 'line-cap': 'round', 'line-join': 'round' },
+      paint: {
+        // Colour by voltage band; thicker + bluer at higher voltage. DC = ochre.
+        'line-color': ['match', ['get', 'band'],
+          'dc',  '#B5832A',
+          'shv', '#1B2F8A',
+          'ehv', '#2A45C8',
+          /* hv */ '#7C8AD6'],
+        'line-width': ['interpolate', ['linear'], ['zoom'],
+          2, ['match', ['get', 'band'], 'hv', 0.4, 0.7],
+          6, ['match', ['get', 'band'], 'hv', 1.0, 1.8]],
+        'line-opacity': 0.55,
+      },
+    }],
+  },
   ixps: {
     file: 'data/overlay_ixps.geojson',
     sourceId: 'overlay-ixps-src',
