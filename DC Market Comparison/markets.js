@@ -1700,13 +1700,9 @@ function rankRowEl(r, total, opt, isComposite) {
   let nameSub = '';
   if (isComposite) {
     const comp = state.composite[r.c.iso2];
-    const impN  = comp && comp.imputed ? comp.imputed.length : 0;
     const missN = comp && comp.missing ? comp.missing.length : 0;
-    if (impN > 0 || missN > 0) {
-      const parts = [];
-      if (impN > 0)  parts.push(impN + ' imputed');
-      if (missN > 0) parts.push(missN + ' missing');
-      nameSub = '<span class="rank-name-sub">' + parts.join(' · ') + '</span>';
+    if (missN > 0) {
+      nameSub = '<span class="rank-name-sub">' + missN + ' factor' + (missN === 1 ? '' : 's') + ' missing</span>';
     }
   } else if (r.source) {
     nameSub = '<span class="rank-name-sub" title="' + escapeHtml(r.source) + '">' + escapeHtml(truncate(r.source, 36)) + '</span>';
