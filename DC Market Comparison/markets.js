@@ -2435,6 +2435,31 @@ function demandBlockHtml(country, variant) {
     + '</div>';
 }
 
+// Compact DC-capacity bars (Live vs Planned+UC, MW) for the hover card —
+// same visual language as the demand chart.
+function capacityBlockHtml(country) {
+  const f = country.factors || {};
+  const live    = (f.dc_capacity_live_mw    || {}).value;
+  const planned = (f.dc_capacity_planned_mw || {}).value;
+  if (typeof live !== 'number' && typeof planned !== 'number') return '';
+  const liveVal = typeof live === 'number' ? live : 0;
+  const planVal = typeof planned === 'number' ? planned : 0;
+  const peak = Math.max(liveVal, planVal) || 1;
+  const fmtMW = v => Math.round(v).toLocaleString() + ' MW';
+  const total = liveVal + planVal;
+  const row = (lab, val, fillCls) =>
+    '<div class="dm-bar-row"><span class="dm-bar-yr dm-bar-yr--cap">' + lab + '</span>'
+    + '<span class="dm-bar-track"><i class="dm-bar-fill ' + fillCls + '" style="width:' + (val / peak * 100).toFixed(1) + '%"></i></span>'
+    + '<span class="dm-bar-val">' + fmtMW(val) + '</span></div>';
+  return '<div class="dm dm--cap">'
+    + '<div class="dm-top"><span class="dm-label">DC capacity <span class="dm-unit-tag dm-unit-tag--mw">MW</span></span>'
+    +   '<span class="dm-growth dm-growth--neutral">' + fmtMW(total) + ' total</span></div>'
+    + '<div class="dm-bars">'
+    +   row('Live', liveVal, 'cap-fill-live')
+    +   row('Plan', planVal, 'cap-fill-planned')
+    + '</div></div>';
+}
+
 function marketHoverHtml(country) {
   const comp = state.composite[country.iso2];
   const name = escapeHtml(country.name);
@@ -2460,6 +2485,7 @@ function marketHoverHtml(country) {
     +   '</b><small>/100 readiness · rank ' + comp.rank + ' of ' + comp.total + '</small></div>'
     + '<div class="mh-bar"><i style="width:' + score + '%;background:' + normColour(score) + '"></i></div>'
     + demandBlockHtml(country, 'hover')
+    + capacityBlockHtml(country)
     + tags
     + '<div class="mh-hint">Click for the full breakdown</div>'
     + '</div>';

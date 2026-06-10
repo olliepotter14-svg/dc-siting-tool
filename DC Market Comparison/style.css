@@ -2637,6 +2637,13 @@ select:hover { border-color: rgba(26,24,20,0.22); }
 .dm-bar-fill { display: block; height: 100%; border-radius: 3px; }
 .dm-bar-now    { background: var(--text-low); }
 .dm-bar-future { background: var(--gold); }
+.cap-fill-live    { background: #1F7A3D; }
+.cap-fill-planned { background: var(--gold); }
+.dm-bar-yr--cap { flex-basis: 34px; }
+.dm-unit-tag--mw { color: #1F7A3D; background: rgba(31,122,61,0.12); }
+.dm-growth--neutral { color: var(--text-mid); font-weight: 600; }
+.dm--cap { margin-top: 8px; }
+.dm--cap.dm { background: rgba(31,122,61,0.06); border-color: rgba(31,122,61,0.22); }
 .dm-bar-val { flex: 0 0 auto; font-size: 11px; font-weight: 600; color: var(--text-hi); }
 .dm--panel { margin-top: 4px; margin-bottom: 12px; padding: 12px 14px; }
 .dm--panel .dm-bar-track { height: 16px; }
