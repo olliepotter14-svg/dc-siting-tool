@@ -53,6 +53,7 @@ html, body {
   background: var(--bg-deep);
   color: var(--text-hi);
   overflow: hidden;
+  max-width: 100vw;
 }
 
 /* ─── Layout ─────────────────────────────────────────────────────── */
@@ -1447,20 +1448,38 @@ select:hover { border-color: rgba(26,24,20,0.22); }
   border: 1px solid;
 }
 .conf-verified {
-  color: #6FE89C;
-  border-color: rgba(111, 232, 156, 0.45);
-  background: rgba(111, 232, 156, 0.08);
+  color: #1F7A3D;
+  border-color: rgba(31, 122, 61, 0.4);
+  background: rgba(31, 122, 61, 0.08);
 }
 .conf-estimate {
-  color: #FFC36F;
-  border-color: rgba(255, 195, 111, 0.45);
-  background: rgba(255, 195, 111, 0.08);
+  color: #9A6B14;
+  border-color: rgba(181, 131, 42, 0.45);
+  background: var(--gold-faint);
 }
 .conf-inferred {
-  color: #B59CFF;
-  border-color: rgba(181, 156, 255, 0.5);
-  background: rgba(181, 156, 255, 0.08);
+  color: #4B3FB0;
+  border-color: rgba(75, 63, 176, 0.4);
+  background: rgba(75, 63, 176, 0.08);
 }
+
+/* Confidence legend in the sources modal */
+.conf-legend {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin: 4px 0 16px;
+  padding: 12px 14px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+.conf-legend-item {
+  font-size: 11.5px;
+  line-height: 1.4;
+  color: var(--text-mid);
+}
+.conf-legend-item .conf-badge { margin-left: 0; margin-right: 6px; }
 
 .multi-sources {
   margin-top: 4px;
@@ -2100,6 +2119,15 @@ select:hover { border-color: rgba(26,24,20,0.22); }
     max-height: calc(100vh - 96px);
   }
 
+  /* Legends use desktop sidebar/ranking offsets (= 100vw on mobile), which
+     would shove them off-screen and create horizontal overflow. Re-anchor. */
+  .map-legend { left: 8px; right: 8px; bottom: 12px; }
+  .dc-status-legend { left: 8px; right: auto; bottom: 12px; }
+  body.mobile-tab-rank .map-legend,
+  body.mobile-tab-settings .map-legend,
+  body.mobile-tab-rank .dc-status-legend,
+  body.mobile-tab-settings .dc-status-legend { display: none; }
+
   /* Sources modal full-screen on mobile */
   .sources-modal-card {
     width: calc(100vw - 16px);
@@ -2335,11 +2363,18 @@ select:hover { border-color: rgba(26,24,20,0.22); }
 .intro-go:hover { background: #1B2F8A; box-shadow: 0 6px 20px var(--cyan-glow); }
 
 @media (max-width: 640px) {
-  .intro-card { padding: 30px 22px 22px; }
-  .intro-title { font-size: 23px; }
+  .intro-overlay { padding: 10px; }
+  .intro-card { width: 100%; max-width: 100%; padding: 24px 16px 16px; max-height: calc(100vh - 20px); }
+  .intro-title { font-size: 21px; }
+  .intro-lead { font-size: 13px; }
   .intro-cols { grid-template-columns: 1fr; }
   .intro-footer { flex-direction: column-reverse; align-items: stretch; }
   .intro-go { width: 100%; }
+  /* Stop long tags/labels forcing the card wider than the screen. */
+  .intro-eyebrow { letter-spacing: 0.1em; }
+  .intro-col-head { flex-wrap: wrap; }
+  .intro-tag, .section-tag { white-space: normal; }
+  .intro-close { top: 10px; right: 10px; }
 }
 
 /* ─── Detail panel — editorial scorecard ─────────────────────────────── */

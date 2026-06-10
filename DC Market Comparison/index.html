@@ -10,7 +10,7 @@
   <link href="https://api.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.css" rel="stylesheet" />
   <script src="https://api.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.js"></script>
   <script src="config.js"></script>
-  <link rel="stylesheet" href="style.css?v=61" />
+  <link rel="stylesheet" href="style.css?v=65" />
 </head>
 <body class="mobile-tab-map">
 
@@ -203,8 +203,14 @@
     <div class="sources-modal-backdrop"></div>
     <div class="sources-modal-card">
       <button id="sources-close" class="sources-close">✕</button>
-      <h2 class="sources-title">Data sources</h2>
-      <p class="sources-intro">Every factor value in this tool links to its source. Below is the master list of the datasets behind the 13 factors and the three map overlays.</p>
+      <h2 class="sources-title">Data sources &amp; confidence</h2>
+      <p class="sources-intro">Every factor value links to its source. Each carries a confidence badge — shown against the values in a market's analysis panel:</p>
+      <div class="conf-legend">
+        <div class="conf-legend-item"><span class="conf-badge conf-verified">VERIFIED</span> Primary published figure (named source/API).</div>
+        <div class="conf-legend-item"><span class="conf-badge conf-inferred">INFERRED</span> Sub-regional mean of verified neighbours, where no per-country figure exists.</div>
+        <div class="conf-legend-item"><span class="conf-badge conf-estimate">ESTIMATE</span> Derived from a named source or benchmark (e.g. construction $/W scaled from the published T&amp;T cities).</div>
+      </div>
+      <p class="sources-intro">The datasets behind the 12 factors and three map overlays:</p>
       <div class="sources-list">
         <div class="sources-group">
           <div class="sources-group-title">Demand</div>
@@ -290,6 +296,6 @@
     </div>
   </div>
 
-  <script src="markets.js?v=61"></script>
+  <script src="markets.js?v=65"></script>
 </body>
 </html>
