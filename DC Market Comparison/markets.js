@@ -42,7 +42,7 @@ const state = {
   latencyAnchorIso:  null,        // F5 — auto-set from state.selectedIso when a country is clicked
   latencyMs:         10,          // F5 — default 10 ms so clicking a country immediately draws a sphere
   colourBy:          null,        // factor key — F17
-  sizeBy:            null,         // size-by-capacity reverted — markers stay uniform
+  sizeBy:            'demand_2027_twh',  // marker radius scales with addressable demand (size = the prize)
   weights:           {},          // factor_id → 0..10  (F24)
   weightsActive:     true,        // toggle composite scoring globally
   composite:         {},          // iso2 → { score, rank, contributing, missing }  (F24)
@@ -819,6 +819,30 @@ function renderCompareDrawer() {
     html += '</tr>';
   }
 
+  // ── Economics section: build cost / annual power cost / annual CO₂ at the
+  //    current Model-a-data-centre scenario (lower is better for all three). ──
+  const mw = state.modelMw, pue = state.modelPue;
+  const energyKwh = mw * pue * 8760 * 1000;
+  const econ = [
+    { label: 'Build cost', calc: c => { const v = (c.factors.construction_cost_usd_mw || {}).value; return v != null ? v * mw * 1e6 : null; }, fmt: fmtMoney },
+    { label: 'Annual power cost', calc: c => { const v = (c.factors.power_cost_usd_kwh || {}).value; return v != null ? energyKwh * v : null; }, fmt: v => fmtMoney(v) + '/yr' },
+    { label: 'Annual grid emissions', calc: c => { const v = (c.factors.carbon_intensity_gco2_kwh || {}).value; return v != null ? energyKwh * v / 1e6 : null; }, fmt: v => Math.round(v).toLocaleString() + ' tCO₂/yr' },
+  ];
+  html += '<tr class="section-row"><td colspan="' + (selected.length + 1) + '">'
+        + 'Economics · ' + mw + ' MW · PUE ' + pue.toFixed(1) + '</td></tr>';
+  for (const row of econ) {
+    const vals = selected.map(({ c }) => ({ iso: c.iso2, v: row.calc(c) }));
+    const present = vals.filter(x => typeof x.v === 'number');
+    const bestIso = present.length > 1 ? present.reduce((a, b) => b.v < a.v ? b : a).iso : null;
+    html += '<tr><td class="factor-name">' + row.label + '</td>';
+    for (const { iso, v } of vals) {
+      if (typeof v !== 'number') { html += '<td class="value-cell nodata">—</td>'; continue; }
+      const cls = iso === bestIso ? ' best' : '';
+      html += '<td class="value-cell' + cls + '">' + row.fmt(v) + '</td>';
+    }
+    html += '</tr>';
+  }
+
   html += '</tbody></table>';
   body.innerHTML = html;
 }
@@ -1262,11 +1286,15 @@ function applyMarkerRadius() {
   }
   if (max === 0) max = 1;
   const propKey = 'f_' + sizeFid;
+  const sqrtMax = Math.sqrt(max);
+  // Area-proportional (sqrt) scaling so the skewed distribution spreads well
+  // and small markets keep a visible floor (still clickable via the 14px hitbox).
+  const sz = ['sqrt', ['coalesce', ['get', propKey], 0]];
   state.map.setPaintProperty('country-markers', 'circle-radius', [
     'interpolate', ['linear'], ['zoom'],
-    2, ['interpolate', ['linear'], ['coalesce', ['get', propKey], 0], 0, 3,  max, 16],
-    4, ['interpolate', ['linear'], ['coalesce', ['get', propKey], 0], 0, 4,  max, 22],
-    6, ['interpolate', ['linear'], ['coalesce', ['get', propKey], 0], 0, 6,  max, 30],
+    2, ['interpolate', ['linear'], sz, 0, 3.5, sqrtMax, 13],
+    4, ['interpolate', ['linear'], sz, 0, 4.5, sqrtMax, 18],
+    6, ['interpolate', ['linear'], sz, 0, 6,   sqrtMax, 24],
   ]);
 }
 
@@ -2370,6 +2398,9 @@ function wireModelControls() {
         const c = state.markets.find(x => x.iso2 === state.selectedIso);
         if (c) openDetailPanel(c);
       }
+      // Keep the compare drawer's economics rows in sync with the scenario.
+      const drawer = document.getElementById('compare-drawer');
+      if (drawer && !drawer.classList.contains('hidden')) renderCompareDrawer();
     });
   });
 }

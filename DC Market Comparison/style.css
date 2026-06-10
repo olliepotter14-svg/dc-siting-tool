@@ -227,7 +227,7 @@ html, body {
   top: 14px;
   left: calc(var(--sidebar-w) + 14px);
   z-index: 11;
-  background: rgba(16, 20, 28, 0.92);
+  background: rgba(251, 249, 243, 0.94);
   backdrop-filter: blur(8px);
   border: 1px solid var(--border);
   border-radius: var(--radius);
@@ -235,9 +235,28 @@ html, body {
   display: flex;
   flex-direction: column;
   gap: 6px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 16px rgba(40,36,28,0.14);
   min-width: 260px;
 }
+.map-size-note {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 10px;
+  color: var(--text-mid);
+  border-top: 1px solid var(--border);
+  padding-top: 6px;
+}
+.map-size-dots { display: inline-flex; align-items: center; gap: 3px; }
+.map-size-dots i {
+  display: block;
+  border-radius: 50%;
+  background: var(--cyan);
+  opacity: 0.8;
+}
+.map-size-dots i:nth-child(1) { width: 4px; height: 4px; }
+.map-size-dots i:nth-child(2) { width: 7px; height: 7px; }
+.map-size-dots i:nth-child(3) { width: 10px; height: 10px; }
 
 .map-control-row {
   display: flex;
