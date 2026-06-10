@@ -15,11 +15,15 @@
 #   status = 302
 #   force = true
 
-# Clean URL for the EMEA market comparison tool
+# Clean URL for the EMEA market comparison tool.
+# Redirect the bare path to the trailing-slash form so the browser's base URL
+# becomes /markets/ and the page's relative assets (markets.js, style.css,
+# config.js, data/*) resolve via the /markets/* rewrite below — instead of
+# breaking against the site root.
 [[redirects]]
   from = "/markets"
-  to = "/DC Market Comparison/index.html"
-  status = 200
+  to = "/markets/"
+  status = 301
   force = true
 
 [[redirects]]
