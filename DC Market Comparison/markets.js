@@ -2573,6 +2573,7 @@ function hideHoverCard() { if (_hoverCard) _hoverCard.classList.add('hidden'); }
 const TOUR_STEPS = [
   { sel: '.value-prop',         title: 'What this tool does',      body: 'It ranks 45 EMEA markets by how ready they are to host data centres — today’s leaders and the next wave of build-out.', place: 'right' },
   { sel: '#ranking-panel',      title: 'The leaderboard',          body: 'Markets ranked best → worst by the composite score. Hover any row for a quick summary; click for the full breakdown.', place: 'left' },
+  { sel: '#map',                title: 'Click any market',         body: 'Each circle is a market — sized by its live + planned data-centre capacity. Hover for a snapshot, or click a circle (or a leaderboard row) to open its full breakdown: score, costs, demand and the data centres already there.', place: 'left' },
   { sel: '.model-controls',     title: 'Model a data centre',      body: 'Set a facility size (MW) and efficiency (PUE). Every market’s detail panel then estimates its build cost, annual power cost and CO₂ at that scenario — so you can compare the economics like-for-like.', place: 'right' },
   { sel: '.weights-panel',      title: 'Tune it to your strategy', body: 'Drag the weights, or pick a preset (Power, Cost, Sustain…). The ranking and map re-sort instantly.', place: 'right' },
   { sel: '.map-colour-control', title: 'Recolour the map',         body: 'Colour the markets by the composite score or any single factor to see patterns geographically.', place: 'bottom' },
