@@ -2,6 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <!-- When served under the /markets clean-URL rewrite the document base is the
+       site root, so the relative assets below would 404. Point the base at the
+       real folder in that case. No effect when served directly from the folder. -->
+  <script>if(location.pathname.indexOf('/markets')===0){document.write('<base href="/DC%20Market%20Comparison/">');}</script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DC Market Comparison — EMEA Data Centre Market Intelligence</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -10,7 +14,7 @@
   <link href="https://api.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.css" rel="stylesheet" />
   <script src="https://api.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.js"></script>
   <script src="config.js"></script>
-  <link rel="stylesheet" href="style.css?v=69" />
+  <link rel="stylesheet" href="style.css?v=70" />
 </head>
 <body class="mobile-tab-map">
 
@@ -296,6 +300,6 @@
     </div>
   </div>
 
-  <script src="markets.js?v=69"></script>
+  <script src="markets.js?v=70"></script>
 </body>
 </html>
