@@ -2035,9 +2035,7 @@ function renderScorecard(country, comp) {
         continue;
       }
       const rawEntry = factors[fid];
-      const rawStr = c.imputed
-        ? '<span class="sc-imputed" title="No country figure — imputed from ' + (c.imputed === 'region' ? 'regional' : 'global') + ' average">≈ ' + (c.imputed === 'region' ? 'regional' : 'global') + ' avg</span>'
-        : (rawEntry && rawEntry.value != null ? escapeHtml(meta.fmt(rawEntry.value)) : '—');
+      const rawStr = (!c.imputed && rawEntry && rawEntry.value != null) ? escapeHtml(meta.fmt(rawEntry.value)) : '—';
       const norm = Math.round(c.norm);
       const off  = c.weight === 0 ? ' sc-row--off' : '';
       const chip = rankChipHtml(fid, country.iso2, meta.dir);
@@ -2076,13 +2074,9 @@ function renderScorecard(country, comp) {
     + '<div class="scorecard-legend">Each factor’s <b>raw value</b> is scored <b>0–100</b> — where <b>100</b> = the best of all 45 markets and <b>0</b> = the worst — then multiplied by <b>the weight you set in the left panel</b> to build the composite. The <b>#</b> chip is the market’s rank on that factor.</div>'
     + bucketsHtml
     + '<div class="sc-total">Weighted average of the bars above = <b>' + Math.round(comp.score) + ' / 100</b></div>';
-  const impCount = (comp.imputed || []).length;
   const missCount = (comp.missing || []).length;
-  if (impCount || missCount) {
-    let note = [];
-    if (impCount)  note.push('≈ ' + impCount + ' factor' + (impCount === 1 ? '' : 's') + ' imputed from regional average');
-    if (missCount) note.push(missCount + ' excluded (no data anywhere)');
-    build += '<div class="sc-foot-note">' + note.join(' · ') + '</div>';
+  if (missCount) {
+    build += '<div class="sc-foot-note">' + missCount + ' factor' + (missCount === 1 ? '' : 's') + ' excluded (no data)</div>';
   }
   build += '</div>';
   return { readiness, build };
@@ -2247,8 +2241,8 @@ function openDetailPanel(country) {
 
   // ── Demand-side context (explicitly not part of the score) ──
   html += '<div class="detail-context">'
-        + '<div class="detail-section-title">Demand-side context' + whyIcon('demand_2027_twh') + ' <span class="section-tag">not scored</span></div>';
-  html += renderDetailRow(FACTOR_META['demand_2027_twh'].label, factors['demand_2027_twh'], FACTOR_META['demand_2027_twh'].fmt, 'demand_2027_twh', country.iso2, 'neutral');
+        + '<div class="detail-section-title">Demand outlook' + whyIcon('demand_2027_twh') + ' <span class="section-tag">not scored</span></div>';
+  html += demandBlockHtml(country, 'panel');
   html += renderCapacityBar(factors);
   html += '</div>';
 
@@ -2408,6 +2402,29 @@ function bucketScoresFor(iso2) {
   return out;
 }
 
+// Market-demand block: current (2025) → projected (2030) with a growth multiple.
+// This is the "size of the prize" — surfaced prominently so it stands out.
+function demandBlockHtml(country, variant) {
+  const e = country.factors && country.factors.demand_2027_twh;
+  if (!e || e.value == null) return '';
+  const now = e.value_2025, future = e.value;
+  const cls = variant === 'panel' ? 'dm dm--panel' : 'dm';
+  let growth = '';
+  if (now != null && now > 0) {
+    const x = future / now;
+    growth = '<span class="dm-growth">▲ ' + (x >= 10 ? Math.round(x) : x.toFixed(1)) + '×</span>';
+  }
+  const arc = now != null
+    ? '<span class="dm-now">' + Math.round(now).toLocaleString() + '</span>'
+      + '<span class="dm-arrow">→</span>'
+      + '<span class="dm-future">' + Math.round(future).toLocaleString() + '</span>'
+    : '<span class="dm-future">' + Math.round(future).toLocaleString() + '</span>';
+  return '<div class="' + cls + '">'
+    + '<div class="dm-label">Market demand <span class="dm-yrs">2025 → 2030</span></div>'
+    + '<div class="dm-vals">' + arc + ' ' + growth + '</div>'
+    + '</div>';
+}
+
 function marketHoverHtml(country) {
   const comp = state.composite[country.iso2];
   const name = escapeHtml(country.name);
@@ -2432,6 +2449,7 @@ function marketHoverHtml(country) {
     + '<div class="mh-score"><b style="color:' + normColour(score) + '">' + score
     +   '</b><small>/100 readiness · rank ' + comp.rank + ' of ' + comp.total + '</small></div>'
     + '<div class="mh-bar"><i style="width:' + score + '%;background:' + normColour(score) + '"></i></div>'
+    + demandBlockHtml(country, 'hover')
     + tags
     + '<div class="mh-hint">Click for the full breakdown</div>'
     + '</div>';

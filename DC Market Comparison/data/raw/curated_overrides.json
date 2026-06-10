@@ -11,7 +11,8 @@
       "url": "",
       "confidence": "low",
       "note": "Redefined: Total Addressable Broadband Demand 2030 (model units). Was compute demand 2027 (TWh). Informational only (not scored). LOW-confidence on Baltic rows.",
-      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)",
+      "value_2025": 198
     },
     "GB": {
       "value": 477,
@@ -20,7 +21,8 @@
       "url": "",
       "confidence": "low",
       "note": "Redefined: Total Addressable Broadband Demand 2030 (model units). Was compute demand 2027 (TWh). Informational only (not scored). LOW-confidence on Baltic rows.",
-      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)",
+      "value_2025": 239
     },
     "FR": {
       "value": 475,
@@ -29,7 +31,8 @@
       "url": "",
       "confidence": "low",
       "note": "Redefined: Total Addressable Broadband Demand 2030 (model units). Was compute demand 2027 (TWh). Informational only (not scored). LOW-confidence on Baltic rows.",
-      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)",
+      "value_2025": 179
     },
     "IT": {
       "value": 275,
@@ -38,7 +41,8 @@
       "url": "",
       "confidence": "low",
       "note": "Redefined: Total Addressable Broadband Demand 2030 (model units). Was compute demand 2027 (TWh). Informational only (not scored). LOW-confidence on Baltic rows.",
-      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)",
+      "value_2025": 104
     },
     "ES": {
       "value": 329,
@@ -47,7 +51,8 @@
       "url": "",
       "confidence": "low",
       "note": "Redefined: Total Addressable Broadband Demand 2030 (model units). Was compute demand 2027 (TWh). Informational only (not scored). LOW-confidence on Baltic rows.",
-      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)",
+      "value_2025": 118
     },
     "TR": {
       "value": 247,
@@ -56,7 +61,8 @@
       "url": "",
       "confidence": "low",
       "note": "Redefined: Total Addressable Broadband Demand 2030 (model units). Was compute demand 2027 (TWh). Informational only (not scored). LOW-confidence on Baltic rows.",
-      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)",
+      "value_2025": 93
     },
     "NL": {
       "value": 158,
@@ -65,7 +71,8 @@
       "url": "",
       "confidence": "low",
       "note": "Redefined: Total Addressable Broadband Demand 2030 (model units). Was compute demand 2027 (TWh). Informational only (not scored). LOW-confidence on Baltic rows.",
-      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)",
+      "value_2025": 55
     },
     "SA": {
       "value": 398,
@@ -74,7 +81,8 @@
       "url": "",
       "confidence": "low",
       "note": "Redefined: Total Addressable Broadband Demand 2030 (model units). Was compute demand 2027 (TWh). Informational only (not scored). LOW-confidence on Baltic rows.",
-      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)",
+      "value_2025": 147
     },
     "PL": {
       "value": 64,
@@ -83,7 +91,8 @@
       "url": "",
       "confidence": "low",
       "note": "Redefined: Total Addressable Broadband Demand 2030 (model units). Was compute demand 2027 (TWh). Informational only (not scored). LOW-confidence on Baltic rows.",
-      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)",
+      "value_2025": 26
     },
     "CH": {
       "value": 60,
@@ -92,7 +101,8 @@
       "url": "",
       "confidence": "low",
       "note": "Redefined: Total Addressable Broadband Demand 2030 (model units). Was compute demand 2027 (TWh). Informational only (not scored). LOW-confidence on Baltic rows.",
-      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)",
+      "value_2025": 25
     },
     "BE": {
       "value": 62,
@@ -101,7 +111,8 @@
       "url": "",
       "confidence": "low",
       "note": "Redefined: Total Addressable Broadband Demand 2030 (model units). Was compute demand 2027 (TWh). Informational only (not scored). LOW-confidence on Baltic rows.",
-      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)",
+      "value_2025": 25
     },
     "SE": {
       "value": 79,
@@ -110,7 +121,8 @@
       "url": "",
       "confidence": "low",
       "note": "Redefined: Total Addressable Broadband Demand 2030 (model units). Was compute demand 2027 (TWh). Informational only (not scored). LOW-confidence on Baltic rows.",
-      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)",
+      "value_2025": 29
     },
     "IE": {
       "value": 12,
@@ -119,7 +131,8 @@
       "url": "",
       "confidence": "low",
       "note": "Redefined: Total Addressable Broadband Demand 2030 (model units). Was compute demand 2027 (TWh). Informational only (not scored). LOW-confidence on Baltic rows.",
-      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)",
+      "value_2025": 4
     },
     "AE": {
       "value": 136,
@@ -128,7 +141,8 @@
       "url": "",
       "confidence": "low",
       "note": "Redefined: Total Addressable Broadband Demand 2030 (model units). Was compute demand 2027 (TWh). Informational only (not scored). LOW-confidence on Baltic rows.",
-      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)",
+      "value_2025": 41
     },
     "AT": {
       "value": 53,
@@ -137,7 +151,8 @@
       "url": "",
       "confidence": "low",
       "note": "Redefined: Total Addressable Broadband Demand 2030 (model units). Was compute demand 2027 (TWh). Informational only (not scored). LOW-confidence on Baltic rows.",
-      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)",
+      "value_2025": 23
     },
     "NO": {
       "value": 42,
@@ -146,7 +161,8 @@
       "url": "",
       "confidence": "low",
       "note": "Redefined: Total Addressable Broadband Demand 2030 (model units). Was compute demand 2027 (TWh). Informational only (not scored). LOW-confidence on Baltic rows.",
-      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)",
+      "value_2025": 16
     },
     "DK": {
       "value": 45,
@@ -155,7 +171,8 @@
       "url": "",
       "confidence": "low",
       "note": "Redefined: Total Addressable Broadband Demand 2030 (model units). Was compute demand 2027 (TWh). Informational only (not scored). LOW-confidence on Baltic rows.",
-      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)",
+      "value_2025": 20
     },
     "RO": {
       "value": 79,
@@ -164,7 +181,8 @@
       "url": "",
       "confidence": "low",
       "note": "Redefined: Total Addressable Broadband Demand 2030 (model units). Was compute demand 2027 (TWh). Informational only (not scored). LOW-confidence on Baltic rows.",
-      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)",
+      "value_2025": 29
     },
     "CZ": {
       "value": 48,
@@ -173,7 +191,8 @@
       "url": "",
       "confidence": "low",
       "note": "Redefined: Total Addressable Broadband Demand 2030 (model units). Was compute demand 2027 (TWh). Informational only (not scored). LOW-confidence on Baltic rows.",
-      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)",
+      "value_2025": 21
     },
     "EG": {
       "value": 102,
@@ -182,7 +201,8 @@
       "url": "",
       "confidence": "low",
       "note": "Redefined: Total Addressable Broadband Demand 2030 (model units). Was compute demand 2027 (TWh). Informational only (not scored). LOW-confidence on Baltic rows.",
-      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)",
+      "value_2025": 36
     },
     "PT": {
       "value": 67,
@@ -191,7 +211,8 @@
       "url": "",
       "confidence": "low",
       "note": "Redefined: Total Addressable Broadband Demand 2030 (model units). Was compute demand 2027 (TWh). Informational only (not scored). LOW-confidence on Baltic rows.",
-      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)",
+      "value_2025": 24
     },
     "FI": {
       "value": 89,
@@ -201,7 +222,8 @@
       "confidence": "low",
       "note": "Redefined: Total Addressable Broadband Demand 2030 (model units). Was compute demand 2027 (TWh). Informational only (not scored). LOW-confidence on Baltic rows.",
       "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)",
-      "needs_check": true
+      "needs_check": true,
+      "value_2025": 34
     },
     "GR": {
       "value": 49,
@@ -210,7 +232,8 @@
       "url": "",
       "confidence": "low",
       "note": "Redefined: Total Addressable Broadband Demand 2030 (model units). Was compute demand 2027 (TWh). Informational only (not scored). LOW-confidence on Baltic rows.",
-      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)",
+      "value_2025": 18
     },
     "HU": {
       "value": 37,
@@ -219,7 +242,8 @@
       "url": "",
       "confidence": "low",
       "note": "Redefined: Total Addressable Broadband Demand 2030 (model units). Was compute demand 2027 (TWh). Informational only (not scored). LOW-confidence on Baltic rows.",
-      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)",
+      "value_2025": 14
     },
     "QA": {
       "value": 18,
@@ -228,7 +252,8 @@
       "url": "",
       "confidence": "low",
       "note": "Redefined: Total Addressable Broadband Demand 2030 (model units). Was compute demand 2027 (TWh). Informational only (not scored). LOW-confidence on Baltic rows.",
-      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)",
+      "value_2025": 6
     },
     "MA": {
       "value": 86,
@@ -237,7 +262,8 @@
       "url": "",
       "confidence": "low",
       "note": "Redefined: Total Addressable Broadband Demand 2030 (model units). Was compute demand 2027 (TWh). Informational only (not scored). LOW-confidence on Baltic rows.",
-      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)",
+      "value_2025": 24
     },
     "KW": {
       "value": 17,
@@ -246,7 +272,8 @@
       "url": "",
       "confidence": "low",
       "note": "Redefined: Total Addressable Broadband Demand 2030 (model units). Was compute demand 2027 (TWh). Informational only (not scored). LOW-confidence on Baltic rows.",
-      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)",
+      "value_2025": 7
     },
     "SK": {
       "value": 53,
@@ -255,7 +282,8 @@
       "url": "",
       "confidence": "low",
       "note": "Redefined: Total Addressable Broadband Demand 2030 (model units). Was compute demand 2027 (TWh). Informational only (not scored). LOW-confidence on Baltic rows.",
-      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)",
+      "value_2025": 23
     },
     "BG": {
       "value": 29,
@@ -265,7 +293,8 @@
       "confidence": "low",
       "note": "Redefined: Total Addressable Broadband Demand 2030 (model units). Was compute demand 2027 (TWh). Informational only (not scored). LOW-confidence on Baltic rows.",
       "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)",
-      "needs_check": true
+      "needs_check": true,
+      "value_2025": 13
     },
     "OM": {
       "value": 17,
@@ -274,7 +303,8 @@
       "url": "",
       "confidence": "low",
       "note": "Redefined: Total Addressable Broadband Demand 2030 (model units). Was compute demand 2027 (TWh). Informational only (not scored). LOW-confidence on Baltic rows.",
-      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)",
+      "value_2025": 6
     },
     "HR": {
       "value": 17,
@@ -283,7 +313,8 @@
       "url": "",
       "confidence": "low",
       "note": "Redefined: Total Addressable Broadband Demand 2030 (model units). Was compute demand 2027 (TWh). Informational only (not scored). LOW-confidence on Baltic rows.",
-      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)",
+      "value_2025": 7
     },
     "LU": {
       "value": 26,
@@ -292,7 +323,8 @@
       "url": "",
       "confidence": "low",
       "note": "Redefined: Total Addressable Broadband Demand 2030 (model units). Was compute demand 2027 (TWh). Informational only (not scored). LOW-confidence on Baltic rows.",
-      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)",
+      "value_2025": 11
     },
     "RS": {
       "value": 18,
@@ -301,7 +333,8 @@
       "url": "",
       "confidence": "low",
       "note": "Redefined: Total Addressable Broadband Demand 2030 (model units). Was compute demand 2027 (TWh). Informational only (not scored). LOW-confidence on Baltic rows.",
-      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)",
+      "value_2025": 7
     },
     "LT": {
       "value": 49,
@@ -310,7 +343,8 @@
       "url": "",
       "confidence": "low",
       "note": "Redefined: Total Addressable Broadband Demand 2030 (model units). Was compute demand 2027 (TWh). Informational only (not scored). LOW-confidence on Baltic rows.",
-      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)"
+      "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)",
+      "value_2025": 21
     },
     "IS": {
       "value": 8,
@@ -320,7 +354,8 @@
       "confidence": "low",
       "note": "Redefined: Total Addressable Broadband Demand 2030 (model units). Was compute demand 2027 (TWh). Informational only (not scored). LOW-confidence on Baltic rows.",
       "provenance": "photo_inputs_2026 (spreadsheet model, 2026-06-09)",
-      "needs_check": true
+      "needs_check": true,
+      "value_2025": 1
     }
   },
   "grid_connect_years": {

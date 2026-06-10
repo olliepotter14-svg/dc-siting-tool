@@ -137,7 +137,7 @@ EMEA_BBOX = "-30,-40,70,72"
 # Narrowed to >=380kV to keep the response under Overpass's payload limits
 # for the EMEA bbox. Still captures Europe's primary transmission backbone.
 GRID_QUERY = f"""
-[out:json][timeout:180];
+[out:json][timeout:270];
 (
   way["power"="line"]["voltage"~"^(380000|400000|500000|750000)$"]({EMEA_BBOX});
 );
@@ -154,7 +154,7 @@ def fetch_osm_grid() -> dict:
         try:
             print(f"  → {url}")
             req = urllib.request.Request(url, data=body, headers=REQ_HEADERS)
-            with urllib.request.urlopen(req, timeout=150) as resp:
+            with urllib.request.urlopen(req, timeout=290) as resp:
                 doc = json.loads(resp.read().decode("utf-8"))
             break
         except Exception as e:
