@@ -499,8 +499,9 @@ html, body {
 .filter-section {
   padding: 12px 16px;
   border-bottom: 1px solid var(--border);
-  flex-shrink: 0;
-  overflow-y: auto;
+  flex: 1 1 auto;
+  min-height: 0;        /* allow it to shrink inside the fixed sidebar */
+  overflow-y: auto;     /* …and scroll when content exceeds the space */
 }
 
 .filter-section::-webkit-scrollbar { width: 3px; }
