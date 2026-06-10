@@ -26,7 +26,7 @@ const MAP_STYLE   = 'mapbox://styles/mapbox/light-v11';
 const FACTOR_COUNT = 13;            // 11 numeric + live MW + planned MW
 
 // Booking CTA target — swap for your scheduling link (Calendly, etc.).
-const BOOKING_URL = 'mailto:oliverpotter3@hotmail.co.uk?subject=EMEA%20data-centre%20market%20insights';
+const BOOKING_URL = 'https://tidycal.com/naturetechmemos/20-minute-meeting';
 
 /* ──────────────────────────────────────────────────────────────────
    2. App state — single source of truth
