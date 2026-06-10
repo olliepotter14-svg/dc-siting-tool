@@ -42,7 +42,7 @@ const state = {
   latencyAnchorIso:  null,        // F5 — auto-set from state.selectedIso when a country is clicked
   latencyMs:         10,          // F5 — default 10 ms so clicking a country immediately draws a sphere
   colourBy:          null,        // factor key — F17
-  sizeBy:            'demand_2027_twh',  // marker radius scales with addressable demand (size = the prize)
+  sizeBy:            'dc_capacity_total_mw',  // marker radius scales with live + planned DC capacity (MW)
   weights:           {},          // factor_id → 0..10  (F24)
   weightsActive:     true,        // toggle composite scoring globally
   composite:         {},          // iso2 → { score, rank, contributing, missing }  (F24)
