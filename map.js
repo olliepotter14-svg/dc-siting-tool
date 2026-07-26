@@ -45,17 +45,24 @@ const state = {
   allFeatures:      [],
   filteredFeatures: [],
   substations:      [],
+  ixFacilities:     [],       // PeeringDB colo/IX facilities (for drawn-parcel fibre distance)
   activeId:         null,
+  draw:             null,     // MapboxDraw instance (lazy-inited on map load)
+  drawnParcel:      null,     // { geometry, properties } of the last user-drawn polygon
+  drawMode:         false,    // true while the draw tool is armed
   colorMode:        "composite", // "type" | "power" | "composite"
   mwValue:          50,       // numeric MW — any value
   // Scoring weights (raw 0-100 slider values; normalised at use time).
   // Default split mirrors the original baked-in composite: 40/30/20/10.
   weights: { power: 40, permissioning: 30, fibre: 20, buildability: 10 },
+  showSatellite:    false,    // aerial imagery basemap for tracing drawn plots
   showSubstations:  true,
   showPowerlines:   true,
   showFibreRoutes:  false,
   showBtmAssets:    false,
   showEaProjects:   false,
+  showGenerationAssets: false,
+  generationMode:   "dots",   // "dots" | "bars" (3D extrusion, height = capacity)
   areaSearch:       false,    // list filtered to current viewport
   filters: {
     region:           "all",
@@ -64,6 +71,10 @@ const state = {
     excludeFloodZone3: true,   // hard exclude Zone 3 sites by default
   },
 };
+
+// setMwValue is defined inside initUI() (it closes over the DOM); expose a
+// reference so the drawn-parcel flow can drive the MW pipeline from outside.
+let setMwValueRef = null;
 
 // ── Focus mode (lead magnet) ─────────────────────────────────────
 // Usage: ?focus=manchester  — zooms to district, shows CTA banner
@@ -332,20 +343,27 @@ map.on("load", () => {
     fetch("data/uk_fibre_routes.geojson?v=8").then(r => r.json()),
     fetch("data/uk_btm_assets.json?v=1").then(r => r.json()).catch(() => []),
     fetch("data/ea_projects.geojson?v=12").then(r => r.json()).catch(() => ({type:"FeatureCollection",features:[]})),
+    fetch("data/generation_assets.geojson?v=2").then(r => r.json()).catch(() => ({type:"FeatureCollection",features:[]})),
+    fetch("data/uk_peeringdb.json?v=1").then(r => r.json()).catch(() => ({facilities:[]})),
   ])
-  .then(([geojson, subsRaw, powerlines, fibreRoutes, btmAssets, eaProjects]) => {
+  .then(([geojson, subsRaw, powerlines, fibreRoutes, btmAssets, eaProjects, genAssets, peeringdb]) => {
     setLoadingMsg("Building map layers…", "", 95);
     state.allFeatures = geojson.features;
     state.substations = Array.isArray(subsRaw) ? subsRaw
       : subsRaw.substations ?? subsRaw.features ?? subsRaw;
+    state.ixFacilities = (peeringdb && peeringdb.facilities) ? peeringdb.facilities
+      : Array.isArray(peeringdb) ? peeringdb : [];
     initUI();
     applyFilters();
     addMapLayers();
+    addSatelliteLayer();
+    initDrawTool();
     refreshParcelColors();  // apply correct opacity for initial colorMode
     addPowerlineLayer(powerlines);
     addFibreRouteLayer(fibreRoutes);
     addBtmLayer(btmAssets);
     addEaProjectsLayer(eaProjects);
+    addGenerationAssetsLayer(genAssets);
     // Small delay so the map tiles have a moment to render before overlay lifts
     setTimeout(() => {
       hideLoadOverlay();
@@ -993,6 +1011,8 @@ function showDetailPanel(props) {
       <span class="pw-bonus">+${pwBonus}</span>
     </div>` : ""}
 
+    ${props.is_drawn ? renderCapacityBand(props._capacity, props) : ""}
+
     ${renderCostEstimate(props, state.mwValue)}
 
     <div class="detail-section-title" style="margin-top:14px">📐 Site</div>
@@ -1071,14 +1091,26 @@ function initUI() {
     });
     refreshParcelColors();
     applyFilters();
-    if (state.activeId !== null) {
+    if (state.activeId === "__drawn__" && state.drawnParcel) {
+      showDetailPanel(state.drawnParcel.properties);
+    } else if (state.activeId !== null) {
       const feat = state.allFeatures.find(f => f.properties.osm_id === state.activeId);
       if (feat) showDetailPanel(feat.properties);
     }
   }
+  setMwValueRef = setMwValue;   // expose for the drawn-parcel flow
 
   document.querySelectorAll(".mw-btn").forEach(btn => {
     btn.addEventListener("click", () => setMwValue(parseInt(btn.dataset.mw, 10)));
+  });
+
+  // Draw-parcel tool — arm/disarm polygon drawing
+  document.getElementById("draw-parcel-btn")?.addEventListener("click", () => {
+    armDrawMode(!state.drawMode);
+  });
+  // Satellite / aerial imagery toggle (for tracing plot edges)
+  document.getElementById("satellite-btn")?.addEventListener("click", () => {
+    toggleSatellite(!state.showSatellite);
   });
 
   // ── Scoring weight sliders ─────────────────────────────────────
@@ -1160,7 +1192,23 @@ function initUI() {
       } else if (layer === "ea") {
         state.showEaProjects = on;
         if (map.getLayer("ea-projects")) map.setLayoutProperty("ea-projects", "visibility", on ? "visible" : "none");
+      } else if (layer === "generation") {
+        state.showGenerationAssets = on;
+        setGenerationVisibility(on);
+        // Reveal the Dots/Bars mode toggle only while the layer is on
+        const modeWrap = document.getElementById("generation-mode");
+        if (modeWrap) modeWrap.style.display = on ? "flex" : "none";
       }
+    });
+  });
+
+  // Generation Dots/Bars mode toggle
+  document.querySelectorAll("#generation-mode .gen-mode-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      document.querySelectorAll("#generation-mode .gen-mode-btn").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      state.generationMode = btn.dataset.mode;   // "dots" | "bars"
+      if (state.showGenerationAssets) setGenerationVisibility(true);
     });
   });
 
@@ -1407,6 +1455,292 @@ function flyToParcel(geometry) {
 function fmtAcres(a) { return (a == null || isNaN(a)) ? "—" : a >= 100 ? Math.round(a).toLocaleString() : Number(a).toFixed(1); }
 function fmtHa(h)    { return (h == null || isNaN(h)) ? "—" : h >= 100 ? Math.round(h).toLocaleString() : Number(h).toFixed(1); }
 function fmtM(v)     { return v < 1 ? `£${(v * 1000).toFixed(0)}k` : v >= 100 ? `£${Math.round(v)}M` : `£${v.toFixed(1)}M`; }
+
+// ══════════════════════════════════════════════════════════════════
+//  DRAW-A-PARCEL — measure a custom plot, score it client-side, and
+//  estimate the feasible DC project scale. Everything below synthesizes
+//  the same `props` shape a baked parcel carries, so showDetailPanel()
+//  and computeConnectionCosts() render it with zero template changes.
+// ══════════════════════════════════════════════════════════════════
+
+const M2_PER_ACRE = 4046.8564, M2_PER_HA = 10000;
+const BEST_SUB_RADIUS_KM = 25.0;          // mirror enrich_power_scores.py:40
+const URBAN_IX_KM = 8;                     // within this of an IX ⇒ urban/metro site
+
+// Area → feasible IT load. Anchored on the tool's own "~200 acres ≈ 100 MW
+// campus" figure (≈ 2.0 gross acres/MW, generate_slide_brief.py:488), widened
+// into a transparent low/mid/high band. All outputs are labelled indicative.
+const CAPACITY_MODEL = {
+  acresPerMW: { conservative: 2.5, central: 2.0, aggressive: 1.4 },
+  coverage:   { low: 0.55, mid: 0.62, high: 0.70 },   // net developable fraction
+  plotRatio:  0.45,                                    // building footprint ÷ net area
+};
+
+/** Spherical polygon-ring area in m². coords = [[lng,lat], …] (open or closed). */
+function ringAreaM2(coords) {
+  const R = 6378137, rad = Math.PI / 180;
+  let total = 0;
+  for (let i = 0; i < coords.length; i++) {
+    const [x1, y1] = coords[i];
+    const [x2, y2] = coords[(i + 1) % coords.length];
+    total += (x2 - x1) * rad * (2 + Math.sin(y1 * rad) + Math.sin(y2 * rad));
+  }
+  return Math.abs(total * R * R / 2);
+}
+
+function haversineKm(lat1, lng1, lat2, lng2) {
+  const R = 6371, r = Math.PI / 180;
+  const dlat = (lat2 - lat1) * r, dlng = (lng2 - lng1) * r;
+  const a = Math.sin(dlat / 2) ** 2 +
+            Math.cos(lat1 * r) * Math.cos(lat2 * r) * Math.sin(dlng / 2) ** 2;
+  return R * 2 * Math.asin(Math.sqrt(Math.min(1, a)));
+}
+
+/** Distance decay on the power score — mirror enrich_power_scores.py:63-70. */
+function distanceFactor(km) {
+  if (km <= 2)  return 1.00;
+  if (km <= 5)  return 0.95;
+  if (km <= 10) return 0.85;
+  if (km <= 20) return 0.70;
+  if (km <= 35) return 0.50;
+  return 0.30;
+}
+
+/**
+ * Nearest-substation + power props for an arbitrary point, computed from the
+ * already-loaded state.substations (each carries scores_real[mw].total_score,
+ * headroom, queue). Reproduces the offline nearest / best-within-25km logic.
+ */
+function computePowerProps(lat, lng) {
+  const hv = state.substations.filter(s => (s.voltage_kv || 0) >= 132);
+  let nearest = null, nearestD = Infinity;
+  let best = null, bestScore = -1, bestD = Infinity;
+  for (const s of hv) {
+    if (s.lat == null || s.lng == null) continue;
+    const d = haversineKm(lat, lng, s.lat, s.lng);
+    if (d < nearestD) { nearestD = d; nearest = s; }
+    if (d <= BEST_SUB_RADIUS_KM) {
+      const base50 = s.scores_real?.["50"]?.total_score ?? 0;
+      const cand = base50 * distanceFactor(d);
+      if (cand > bestScore) { bestScore = cand; best = s; bestD = d; }
+    }
+  }
+  if (!best) { best = nearest; bestD = nearestD; }     // fall back to nearest if none ≤25km
+  const df = distanceFactor(bestD);
+  const ps = mw => best ? Math.min(100, Math.round((best.scores_real?.[mw]?.total_score ?? 0) * df * 10) / 10) : 0;
+  return {
+    nearest_sub_name:         nearest?.name ?? "—",
+    nearest_sub_dist_km:      isFinite(nearestD) ? +nearestD.toFixed(2) : null,
+    nearest_sub_voltage_kv:   nearest?.voltage_kv ?? null,
+    nearest_sub_headroom_mva: nearest?.estimated_headroom_mva ?? null,
+    sub_queue_pressure_pct:   +(nearest?.real_queue_pressure_pct ?? 0).toFixed(1),
+    best_sub_name:            best?.name ?? null,
+    best_sub_dist_km:         isFinite(bestD) ? +bestD.toFixed(2) : null,
+    power_score_20:  ps("20"), power_score_50: ps("50"), power_score_100: ps("100"),
+  };
+}
+
+/** Nearest internet-exchange / colo facility (PeeringDB) → fibre distance props. */
+function computeFibreProps(lat, lng) {
+  let nearD = Infinity, nearName = null;
+  for (const f of state.ixFacilities) {
+    if (f.lat == null || f.lng == null) continue;
+    const d = haversineKm(lat, lng, f.lat, f.lng);
+    if (d < nearD) { nearD = d; nearName = f.name; }
+  }
+  if (!isFinite(nearD)) return { dist_to_ix_km: null, best_fibre_km: null, nearest_ix_name: null };
+  return {
+    dist_to_ix_km: +nearD.toFixed(2),
+    best_fibre_km: +nearD.toFixed(2),
+    nearest_ix_name: nearName,
+  };
+}
+
+function pickArchetype(mw) {
+  if (mw < 5)   return "Edge / AI-inference (single building)";
+  if (mw < 20)  return "Enterprise / colocation";
+  if (mw < 60)  return "Mid hyperscale (single-phase)";
+  if (mw < 150) return "Large hyperscale campus (multi-building)";
+  return "Full hyperscale / AI-training park";
+}
+
+/** Gross acres → indicative capacity band + campus archetype. */
+function computeCapacity(grossAcres, urban) {
+  const c = CAPACITY_MODEL;
+  const mwLow  = grossAcres / c.acresPerMW.conservative;
+  const mwMid  = grossAcres / c.acresPerMW.central;
+  const mwHigh = grossAcres / c.acresPerMW.aggressive;
+  const netAcresMid = grossAcres * c.coverage.mid;
+  const storeys = urban ? 2 : 1;                        // urban plots build up
+  const gfaM2 = netAcresMid * M2_PER_ACRE * c.plotRatio * storeys;
+  return {
+    grossAcres, netAcresMid, gfaM2, storeys, urban,
+    mwLow, mwMid, mwHigh,
+    archetype: pickArchetype(mwMid),
+    suggestedMw: Math.max(1, Math.round(mwMid)),
+  };
+}
+
+/**
+ * Flood zone + protected designations aren't derivable client-side, so inherit
+ * them from the baked parcel underneath the drawn centroid. Cheap latitude-band
+ * reject before the ray-cast keeps this fast over ~63k features.
+ */
+function inheritConstraints(lng, lat) {
+  const pip = (ring) => {
+    let inside = false;
+    for (let i = 0, j = ring.length - 1; i < ring.length; j = i++) {
+      const xi = ring[i][0], yi = ring[i][1], xj = ring[j][0], yj = ring[j][1];
+      if (((yi > lat) !== (yj > lat)) &&
+          (lng < (xj - xi) * (lat - yi) / (yj - yi) + xi)) inside = !inside;
+    }
+    return inside;
+  };
+  for (const f of state.allFeatures) {
+    const g = f.geometry;
+    if (!g) continue;
+    const polys = g.type === "MultiPolygon" ? g.coordinates : g.type === "Polygon" ? [g.coordinates] : null;
+    if (!polys) continue;
+    const ring0 = polys[0][0];
+    if (!ring0 || !ring0.length) continue;
+    if (Math.abs(ring0[0][1] - lat) > 0.06) continue;   // quick band reject (~6.6km)
+    for (const poly of polys) {
+      if (pip(poly[0])) {
+        const p = f.properties;
+        return {
+          _constraints_inherited: true,
+          _inherited_from: displayName(p),
+          flood_zone:             p.flood_zone ?? 0,
+          hard_excluded:          !!p.hard_excluded,
+          protected_designations: p.protected_designations || [],
+          green_belt:             p.green_belt,
+          grey_belt:              p.grey_belt,
+        };
+      }
+    }
+  }
+  return { _constraints_inherited: false, flood_zone: 0, hard_excluded: false, protected_designations: [] };
+}
+
+/** Assemble the synthetic props object for a drawn polygon ring. */
+function buildDrawnParcelProps(ring) {
+  const areaM2 = ringAreaM2(ring);
+  const acres = areaM2 / M2_PER_ACRE, ha = areaM2 / M2_PER_HA;
+  const [lng, lat] = getCentroid(ring);
+  const power = computePowerProps(lat, lng);
+  const fibre = computeFibreProps(lat, lng);
+  const urban = fibre.dist_to_ix_km != null && fibre.dist_to_ix_km <= URBAN_IX_KM;
+  const cap = computeCapacity(acres, urban);
+  const constraints = inheritConstraints(lng, lat);
+  return {
+    is_drawn: true,
+    osm_id: "__drawn__",
+    name: "Drawn parcel",
+    site_type: "industrial",
+    region: "",
+    area_acres: +acres.toFixed(1),
+    area_ha: +ha.toFixed(1),
+    osm_tag: "user-drawn",
+    // leave permissioning/fibre/buildability null → composite block hides,
+    // panel shows the honest power-only view.
+    permissioning_score: null,
+    fibre_score: null,
+    buildability_score: null,
+    nearest_renewable_km: null,
+    ...power,
+    ...fibre,
+    ...constraints,
+    _capacity: cap,
+  };
+}
+
+// ── Satellite / aerial basemap (for tracing drawn plots) ───────────
+function addSatelliteLayer() {
+  if (map.getSource("mapbox-satellite")) return;
+  map.addSource("mapbox-satellite", { type: "raster", url: "mapbox://mapbox.satellite", tileSize: 256 });
+  // Insert below the parcels so scored parcels/overlays stay on top of imagery.
+  const beforeId = map.getLayer("parcels-fill") ? "parcels-fill" : undefined;
+  map.addLayer({
+    id: "satellite-basemap",
+    type: "raster",
+    source: "mapbox-satellite",
+    layout: { visibility: "none" },
+    paint: { "raster-opacity": 1 },
+  }, beforeId);
+}
+
+function toggleSatellite(on) {
+  state.showSatellite = on;
+  const btn = document.getElementById("satellite-btn");
+  if (btn) btn.classList.toggle("active", on);
+  if (map.getLayer("satellite-basemap"))
+    map.setLayoutProperty("satellite-basemap", "visibility", on ? "visible" : "none");
+}
+
+// ── Draw tool lifecycle ────────────────────────────────────────────
+function initDrawTool() {
+  if (typeof MapboxDraw === "undefined") { console.warn("mapbox-gl-draw not loaded"); return; }
+  state.draw = new MapboxDraw({ displayControlsDefault: false, controls: {}, defaultMode: "simple_select" });
+  map.addControl(state.draw);
+  map.on("draw.create", onDrawComplete);
+  map.on("draw.update", onDrawComplete);
+}
+
+function armDrawMode(on) {
+  if (!state.draw) return;
+  state.drawMode = on;
+  const btn = document.getElementById("draw-parcel-btn");
+  if (btn) btn.classList.toggle("active", on);
+  if (on) {
+    state.draw.deleteAll();
+    state.draw.changeMode("draw_polygon");
+    map.getCanvas().style.cursor = "crosshair";
+  } else {
+    state.draw.changeMode("simple_select");
+    map.getCanvas().style.cursor = "";
+  }
+}
+
+function onDrawComplete(e) {
+  const feature = e.features && e.features[0];
+  if (!feature || feature.geometry.type !== "Polygon") return;
+  const ring = feature.geometry.coordinates[0];
+  if (!ring || ring.length < 4) return;                // need ≥3 distinct vertices
+  const props = buildDrawnParcelProps(ring);
+  state.drawnParcel = { geometry: feature.geometry, properties: props };
+  state.activeId = "__drawn__";
+  armDrawMode(false);
+  // Drive the MW pipeline to the feasible size; the __drawn__ branch in
+  // setMwValue re-renders the panel from state.drawnParcel.
+  if (setMwValueRef) setMwValueRef(props._capacity.suggestedMw);
+  else showDetailPanel(props);
+}
+
+/** Capacity band + archetype block — only rendered for drawn parcels. */
+function renderCapacityBand(cap, props) {
+  if (!cap) return "";
+  const mw = n => n >= 100 ? Math.round(n) : n >= 10 ? n.toFixed(0) : n.toFixed(1);
+  const gfa = cap.gfaM2 >= 10000 ? Math.round(cap.gfaM2 / 1000) + "k m²" : Math.round(cap.gfaM2).toLocaleString() + " m²";
+  const constraintNote = props && props._constraints_inherited
+    ? `<div class="capacity-note">Flood &amp; designation status inherited from adjacent parcel <em>${props._inherited_from}</em>.</div>`
+    : `<div class="capacity-note warn">Flood zone &amp; protected designations <strong>not assessed</strong> for this plot — verify against the EA Flood Map and planning.data.gov.uk.</div>`;
+  return `
+    <div class="detail-section-title" style="margin-top:16px">📊 Feasible DC scale <span class="indicative-tag">indicative</span></div>
+    <div class="capacity-band">
+      <div class="capacity-archetype">${cap.archetype}</div>
+      <div class="capacity-mwrow">
+        <div class="capacity-mw"><span class="cmw-n">${mw(cap.mwLow)}</span><span class="cmw-l">low</span></div>
+        <div class="capacity-mw mid"><span class="cmw-n">${mw(cap.mwMid)}</span><span class="cmw-l">central MW</span></div>
+        <div class="capacity-mw"><span class="cmw-n">${mw(cap.mwHigh)}</span><span class="cmw-l">high</span></div>
+      </div>
+      <div class="capacity-derivation">
+        Net developable ≈ <strong>${cap.netAcresMid.toFixed(1)} ac</strong> (${Math.round(CAPACITY_MODEL.coverage.mid*100)}% of gross) ·
+        building GFA ≈ <strong>${gfa}</strong> at ${cap.storeys} storey${cap.storeys > 1 ? "s" : ""} ·
+        anchored on ~2 ac/MW
+      </div>
+      ${constraintNote}
+    </div>`;
+}
 
 // ── Connection cost estimate ───────────────────────────────────────
 function computeConnectionCosts(props, mw) {
@@ -1894,5 +2228,164 @@ function addEaProjectsLayer(geojson) {
   map.on("mouseleave", "ea-projects", () => {
     map.getCanvas().style.cursor = "";
     eaPopup.remove();
+  });
+}
+
+// ── Generation asset registry layer ───────────────────────────────
+// Physical generation assets (operational + shuttered + under construction)
+// from OSM power plants + REPD. Two render modes off one point source:
+//   • Dots — flat circles, colour = status, radius = capacity.
+//   • Bars — 3D fill-extrusion, HEIGHT = power generation (capacity_mw).
+// Shuttered stations are foregrounded (bright red) — a retired GW-scale
+// plant retains its grid connection, i.e. a private-wire opportunity.
+const GEN_STATUS_COLORS = {
+  shuttered:    "#FF3B4E",  // bright red — retired asset, retained connection
+  mothballed:   "#FF8A00",  // orange — idle but not decommissioned
+  operational:  "#4A6FA5",  // muted steel blue — live, recedes visually
+  construction: "#FFC400",  // amber — being built
+  planned:      "#6B7280",  // grey — consented, not yet built
+};
+const GEN_COLOR_EXPR = [
+  "match", ["get", "status"],
+  "shuttered",    GEN_STATUS_COLORS.shuttered,
+  "mothballed",   GEN_STATUS_COLORS.mothballed,
+  "operational",  GEN_STATUS_COLORS.operational,
+  "construction", GEN_STATUS_COLORS.construction,
+  "planned",      GEN_STATUS_COLORS.planned,
+                  "#9E9E9E",
+];
+
+// Convert each Point asset to a small square Polygon footprint so Mapbox
+// fill-extrusion has geometry to extrude. ~800 m half-width columns.
+function buildAssetFootprints(pointFC) {
+  const HALF_M = 800;
+  const features = (pointFC.features || []).map(f => {
+    const [lng, lat] = f.geometry.coordinates;
+    const dLat = HALF_M / 111320;
+    const dLng = HALF_M / (111320 * Math.cos(lat * Math.PI / 180));
+    const ring = [
+      [lng - dLng, lat - dLat], [lng + dLng, lat - dLat],
+      [lng + dLng, lat + dLat], [lng - dLng, lat + dLat],
+      [lng - dLng, lat - dLat],
+    ];
+    return { type: "Feature", geometry: { type: "Polygon", coordinates: [ring] },
+             properties: f.properties };
+  });
+  return { type: "FeatureCollection", features };
+}
+
+// The map is created with maxBounds, which disables camera pitch. Bars mode
+// needs pitch, so we lift the bounds while tilted and restore them on exit.
+let genSavedBounds = null;
+
+// Show/hide the two generation layers per state, and pitch for 3D bars.
+function setGenerationVisibility(on) {
+  const bars = on && state.generationMode === "bars";
+  const dots = on && state.generationMode === "dots";
+  if (map.getLayer("generation-dots"))
+    map.setLayoutProperty("generation-dots", "visibility", dots ? "visible" : "none");
+  if (map.getLayer("generation-bars"))
+    map.setLayoutProperty("generation-bars", "visibility", bars ? "visible" : "none");
+
+  if (bars) {
+    // Bounds disable tilt, so lift them first. Use setPitch (easeTo's pitch
+    // animation is clamped by the just-cleared bounds and doesn't apply here).
+    if (map.getMaxBounds()) map.setMaxBounds(null);
+    if (Math.abs(map.getPitch() - 50) > 1) map.setPitch(50);
+  } else {
+    // Flatten, then restore the pan/zoom guard (bounds require pitch 0 anyway).
+    if (Math.abs(map.getPitch()) > 1) map.setPitch(0);
+    if (genSavedBounds && !map.getMaxBounds()) map.setMaxBounds(genSavedBounds);
+  }
+}
+
+function addGenerationAssetsLayer(geojson) {
+  if (!geojson || !geojson.features || geojson.features.length === 0) return;
+
+  genSavedBounds = map.getMaxBounds();   // remember bounds so Bars mode can restore them
+
+  map.addSource("generation-assets", { type: "geojson", data: geojson });
+  map.addSource("generation-bars", { type: "geojson", data: buildAssetFootprints(geojson) });
+
+  const capacity = ["coalesce", ["get", "capacity_mw"], 0];
+
+  // ── Dots layer (flat) ─────────────────────────────────────────────
+  map.addLayer({
+    id: "generation-dots", type: "circle", source: "generation-assets",
+    layout: { visibility: (state.showGenerationAssets && state.generationMode === "dots") ? "visible" : "none" },
+    paint: {
+      "circle-radius": ["interpolate", ["linear"], ["zoom"],
+        5,  ["interpolate", ["linear"], capacity, 0, 2, 500, 5, 2000, 9],
+        10, ["interpolate", ["linear"], capacity, 0, 4, 500, 10, 2000, 18]],
+      "circle-color": GEN_COLOR_EXPR,
+      "circle-opacity": 0.85,
+      "circle-stroke-width": ["case", ["==", ["get", "status"], "shuttered"], 1.4, 0.5],
+      "circle-stroke-color": "#0A0E1C",
+    },
+  });
+
+  // ── Bars layer (3D — height = capacity_mw) ────────────────────────
+  map.addLayer({
+    id: "generation-bars", type: "fill-extrusion", source: "generation-bars",
+    layout: { visibility: (state.showGenerationAssets && state.generationMode === "bars") ? "visible" : "none" },
+    paint: {
+      // MW → metres. Small floor so every real asset shows; ~2 GW plants tower.
+      "fill-extrusion-height": ["interpolate", ["linear"], capacity,
+        0, 0, 1, 1500, 50, 4000, 500, 22000, 2000, 55000],
+      "fill-extrusion-base": 0,
+      "fill-extrusion-color": GEN_COLOR_EXPR,
+      "fill-extrusion-opacity": 0.85,
+    },
+  });
+
+  // ── Shared hover popup ────────────────────────────────────────────
+  const genPopup = new mapboxgl.Popup({ closeButton: false, offset: 8, maxWidth: "240px" });
+  const STATUS_LABEL = {
+    shuttered: "Shuttered / decommissioned", mothballed: "Mothballed",
+    operational: "Operational", construction: "Under construction", planned: "Consented",
+  };
+
+  function showGenPopup(e) {
+    map.getCanvas().style.cursor = "pointer";
+    const p = e.features[0].properties;
+    const col = GEN_STATUS_COLORS[p.status] || "#9E9E9E";
+    const cap = (p.capacity_mw != null && p.capacity_mw !== "") ? `${p.capacity_mw} MW` : "capacity unknown";
+    const years = [p.commission_year, p.retire_year].filter(y => y && y !== "null");
+    const yearStr = years.length ? years.join(" – ") : "";
+    let pwNote = "";
+    if (p.status === "shuttered" || p.status === "mothballed") {
+      const hasConn = p.conn_sub && p.conn_sub !== "null";
+      const headroom = (p.conn_headroom_mva != null && p.conn_headroom_mva !== "null")
+        ? `${Math.round(p.conn_headroom_mva)} MVA` : "n/a";
+      const tec = (p.conn_tec_queue_mw != null && p.conn_tec_queue_mw !== "null")
+        ? `${Math.round(p.conn_tec_queue_mw)} MW` : "n/a";
+      const connLine = hasConn
+        ? `<div style="font-size:10px;color:#B0BEC5;margin-top:3px;line-height:1.5">
+             Grid node: <strong style="color:#F0F4FF">${p.conn_sub}</strong> · ${p.conn_kv ?? "?"}kV · ${p.conn_km}km<br>
+             Headroom: <strong style="color:${(p.conn_headroom_mva>0)?"#69F0AE":"#FF8A80"}">${headroom}</strong>
+             &nbsp;·&nbsp; NESO TEC queue: <strong style="color:#B0BEC5">${tec}</strong>
+           </div>`
+        : `<div style="font-size:10px;color:#6B7A99;margin-top:3px">No major grid node within 20km</div>`;
+      pwNote = `<div style="font-size:10px;color:#FF8A80;margin-top:6px;line-height:1.4">⚡ Retained connection — private-wire candidate</div>${connLine}`;
+    }
+    // fill-extrusion clicks report the polygon centroid; use the asset's stored lat/lng
+    const lngLat = (p.lng != null && p.lat != null) ? [p.lng, p.lat] : e.lngLat;
+    genPopup.setLngLat(lngLat)
+      .setHTML(`
+        <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:${col};margin-bottom:5px">
+          ${STATUS_LABEL[p.status] || p.status} · ${p.fuel}
+        </div>
+        <div style="font-size:13px;font-weight:700;color:#F0F4FF;margin-bottom:6px;line-height:1.3">${p.name}</div>
+        <div style="font-size:12px;color:#B0BEC5;font-weight:600">${cap}</div>
+        ${p.operator ? `<div style="font-size:11px;color:#8B92A5;margin-top:2px">${p.operator}</div>` : ""}
+        ${yearStr ? `<div style="font-size:11px;color:#8B92A5">${yearStr}</div>` : ""}
+        ${pwNote}
+        <div style="font-size:10px;color:#4A5068;margin-top:6px">Source: ${p.source === "osm" ? "OpenStreetMap" : "BEIS REPD"}</div>
+      `).addTo(map);
+  }
+
+  ["generation-dots", "generation-bars"].forEach(id => {
+    map.on("mouseenter", id, showGenPopup);
+    map.on("mouseleave", id, () => { map.getCanvas().style.cursor = ""; genPopup.remove(); });
   });
 }

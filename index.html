@@ -9,6 +9,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://api.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.css" rel="stylesheet" />
   <script src="https://api.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.js"></script>
+  <!-- Draw plugin — v1.4.x is the line validated against Mapbox GL JS v3 -->
+  <link href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-draw/v1.4.3/mapbox-gl-draw.css" rel="stylesheet" />
+  <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-draw/v1.4.3/mapbox-gl-draw.js"></script>
   <script src="config.js"></script>
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -59,6 +62,18 @@
         <button class="mw-btn active" data-mw="50">50 MW</button>
         <button class="mw-btn" data-mw="100">100 MW</button>
       </div>
+
+      <!-- Draw a custom parcel (for plots missing from the OSM layer) -->
+      <div class="filter-label mt">Custom site</div>
+      <div class="tool-row">
+        <button id="draw-parcel-btn" class="tool-btn" title="Draw a polygon to measure and analyse a custom plot">
+          <span class="tool-btn-icon">✏️</span><span class="tool-btn-label">Draw parcel</span>
+        </button>
+        <button id="satellite-btn" class="tool-btn tool-btn-sat" title="Toggle aerial imagery to trace real plot edges">
+          <span class="tool-btn-icon">🛰</span><span>Satellite</span>
+        </button>
+      </div>
+      <p class="tool-hint" id="draw-hint">Click points to trace a boundary; double-click to finish. Toggle satellite to trace real plot edges. Get area, feasible MW &amp; grid scoring for the plot.</p>
 
       <!-- Region + Min size — two columns -->
       <div class="filter-2col">
@@ -155,6 +170,12 @@
         <button class="overlay-chip" data-layer="fibre">◎ Fibre</button>
         <button class="overlay-chip" data-layer="btm">◉ HV nodes</button>
         <button class="overlay-chip" data-layer="ea">★ Pipeline projects</button>
+        <button class="overlay-chip" data-layer="generation">▮ Generation assets</button>
+      </div>
+      <div id="generation-mode" class="gen-mode-toggle" style="display:none">
+        <span class="gen-mode-label">Show as</span>
+        <button class="gen-mode-btn active" data-mode="dots">Dots</button>
+        <button class="gen-mode-btn" data-mode="bars">3D bars</button>
       </div>
 
       <button id="reset-filters-btn" class="reset-filters-btn">Reset all filters</button>
@@ -218,6 +239,6 @@
     <input name="district" />
   </form>
 
-  <script src="map.js?v=16"></script>
+  <script src="map.js?v=20"></script>
 </body>
 </html>

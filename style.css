@@ -1027,6 +1027,7 @@ select:hover {
 
 .overlay-chips {
   display: flex;
+  flex-wrap: wrap;
   gap: 5px;
 }
 
@@ -1053,6 +1054,42 @@ select:hover {
 }
 
 .overlay-chip:hover:not(.active) {
+  border-color: rgba(255,255,255,0.15);
+  color: var(--text-hi);
+}
+
+/* Dots / 3D-bars mode toggle for the generation-assets layer */
+.gen-mode-toggle {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 6px;
+}
+.gen-mode-label {
+  font-size: 10px;
+  color: var(--text-mid);
+  margin-right: 2px;
+}
+.gen-mode-btn {
+  flex: 1;
+  padding: 5px 4px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text-mid);
+  font-size: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.15s;
+  font-family: var(--font);
+}
+.gen-mode-btn.active {
+  background: var(--cyan-glow);
+  border-color: var(--border-hi);
+  color: var(--cyan);
+}
+.gen-mode-btn:hover:not(.active) {
   border-color: rgba(255,255,255,0.15);
   color: var(--text-hi);
 }
@@ -1737,3 +1774,125 @@ select:hover {
 #load-detail {
   display: none;
 }
+
+/* ─── Draw-parcel tool ───────────────────────────────────────────── */
+.tool-row {
+  display: flex;
+  gap: 6px;
+}
+.tool-row .tool-btn { flex: 1; }
+.tool-btn-sat { flex: 0 0 auto !important; min-width: 108px; }
+.tool-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 9px 4px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text-mid);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s;
+  font-family: var(--font);
+}
+.tool-btn:hover:not(.active) {
+  border-color: rgba(255,255,255,0.15);
+  color: var(--text-hi);
+}
+.tool-btn.active {
+  background: var(--cyan-glow);
+  border-color: var(--border-hi);
+  color: var(--cyan);
+}
+.tool-btn.active .tool-btn-label::after {
+  content: " — drawing…";
+  font-weight: 500;
+  opacity: 0.8;
+}
+.tool-hint {
+  margin: 6px 2px 0;
+  font-size: 10.5px;
+  line-height: 1.4;
+  color: var(--text-low);
+}
+
+/* ─── Capacity band (drawn-parcel feasibility) ───────────────────── */
+.indicative-tag {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-low);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 1px 5px;
+  margin-left: 6px;
+  vertical-align: middle;
+}
+.capacity-band {
+  background: var(--cyan-faint);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 12px 14px;
+}
+.capacity-archetype {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--cyan);
+  margin-bottom: 10px;
+}
+.capacity-mwrow {
+  display: flex;
+  align-items: stretch;
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+}
+.capacity-mw {
+  flex: 1;
+  background: var(--bg-card);
+  padding: 8px 4px;
+  text-align: center;
+}
+.capacity-mw.mid { background: var(--cyan-glow); }
+.capacity-mw .cmw-n {
+  display: block;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--text-mid);
+  font-variant-numeric: tabular-nums;
+}
+.capacity-mw.mid .cmw-n { color: var(--cyan); font-size: 24px; }
+.capacity-mw .cmw-l {
+  display: block;
+  font-size: 9.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-low);
+  margin-top: 4px;
+}
+.capacity-derivation {
+  font-size: 11px;
+  line-height: 1.5;
+  color: var(--text-mid);
+  margin-top: 10px;
+}
+.capacity-derivation strong { color: var(--text-hi); }
+.capacity-note {
+  font-size: 10.5px;
+  line-height: 1.45;
+  color: var(--text-low);
+  margin-top: 9px;
+  padding-top: 9px;
+  border-top: 1px solid var(--border);
+}
+.capacity-note.warn { color: #E8B04B; }
+.capacity-note strong { color: inherit; }
+.capacity-note em { color: var(--text-mid); font-style: normal; }
