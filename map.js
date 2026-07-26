@@ -51,7 +51,7 @@ const state = {
   drawnParcel:      null,     // { geometry, properties } of the last user-drawn polygon
   drawMode:         false,    // true while the draw tool is armed
   drawFloors:       4,        // storeys assumed for the drawn-parcel capacity model
-  drawHighDensity:  false,    // false = 1.5 kW/m² mainstream, true = 3.0 high-density/AI
+  drawDensity:      3.0,      // IT power density kW/m² white space — legacy 1.5 / mainstream 3.0 / AI 10
   drawIgnoreGrid:   false,    // true = connection already secured, show required power unconstrained
   colorMode:        "composite", // "type" | "power" | "composite"
   mwValue:          50,       // numeric MW — any value
@@ -1141,7 +1141,7 @@ function initUI() {
     }
     const dBtn = e.target.closest("[data-density]");
     if (dBtn && state.drawnParcel) {
-      state.drawHighDensity = dBtn.dataset.density === "high";
+      state.drawDensity = parseFloat(dBtn.dataset.density);
       rerenderDrawnCapacity();
       return;
     }
@@ -1510,16 +1510,33 @@ const M2_PER_ACRE = 4046.8564, M2_PER_HA = 10000;
 const BEST_SUB_RADIUS_KM = 25.0;          // mirror enrich_power_scores.py:40
 const URBAN_IX_KM = 8;                     // within this of an IX ⇒ urban/metro site
 
-// Area → feasible IT load. Anchored on the tool's own "~200 acres ≈ 100 MW
-// campus" figure (≈ 2.0 gross acres/MW, generate_slide_brief.py:488), widened
-// into a transparent low/mid/high band. All outputs are labelled indicative.
+// Capacity-model constants. Chosen to be defensible against public industry
+// sources — full citations are in the exported report's "Sources & assumptions".
 const CAPACITY_MODEL = {
-  acresPerMW: { conservative: 2.5, central: 2.0, aggressive: 1.4 }, // land-based ref
-  coverage:   { low: 0.55, mid: 0.62, high: 0.70 },   // net developable fraction
-  plotRatio:  0.45,                                    // building footprint ÷ net area
-  whiteSpace: 0.50,                                     // IT/white-space ÷ building GFA
-  densityKwM2: { mainstream: 1.5, highDensity: 3.0 },  // IT load per m² of white space
-  pue: 1.3,                                             // facility ÷ IT power (grid supply)
+  // Gross acres per IT MW — LOW-RISE LAND REFERENCE ONLY (primary estimate is
+  // building-bound, below). ~2 IT-ac/MW brackets real mid-size hyperscale
+  // disclosures once put on an IT basis (IT ≈ 0.7× facility): QTS Van Wert
+  // 500 MW/902 ac ≈ 1.8 ac/facility-MW; Meta Lebanon ~1 GW/1,500 ac ≈ 1.5.
+  // NB: not a CBRE/JLL published constant — they frame land via $/acre + density.
+  acresPerMW: { conservative: 2.5, central: 2.0, aggressive: 1.4 },
+  // Net developable ÷ gross site — ENGINEERING ASSUMPTION (no published constant);
+  // remainder = grid compound, cooling/genset yards, SuDS, setbacks, roads.
+  // RICS notes external plant alone is ~30% of gross internal area.
+  coverage:   { low: 0.55, mid: 0.60, high: 0.70 },
+  // Building footprint ÷ net developable — ENGINEERING ASSUMPTION. Real whole-site
+  // coverage spans ~15% (phased greenfield) to ~60% (dense brownfield).
+  plotRatio:  0.45,
+  // White space (data hall) ÷ building GFA. RICS Construction Journal (2023):
+  // net data hall is 40–50% of GIA excl. offices → 45% central (GFA ≈ 2.2× white).
+  whiteSpace: 0.45,
+  // IT load per m² of WHITE SPACE (kW/m²) by generation. Cross-check kW/rack ÷
+  // ~3 m²/rack: legacy ~5 kW/rack→1.5; mainstream ~10 kW/rack→3.0 (JLL Global DC
+  // Outlook 2024, McKinsey 2024 colo avg); AI/GPU 40–130 kW/rack → 10–40 kW/m²
+  // hall, 10 as a conservative blended figure (CBRE N.A. DC Trends H1 2025).
+  densityKwM2: { legacy: 1.5, mainstream: 3.0, ai: 10 },
+  // Facility ÷ IT power (grid supply = IT × PUE). Uptime Global DC Survey 2024:
+  // fleet avg 1.56 (old stock); new efficient UK build 1.2–1.3; Google b-i-c 1.09.
+  pue: 1.3,
   floorsMin: 1, floorsMax: 8, floorsDefault: 4,
 };
 
@@ -1710,8 +1727,7 @@ function buildDrawnParcelProps(ring) {
   const [lng, lat] = getCentroid(ring);
   const power = computePowerProps(lat, lng);
   const fibre = computeFibreProps(lat, lng);
-  const density = state.drawHighDensity
-    ? CAPACITY_MODEL.densityKwM2.highDensity : CAPACITY_MODEL.densityKwM2.mainstream;
+  const density = state.drawDensity;
   const cap = computeCapacity(acres, state.drawFloors, density,
     power.nearest_sub_headroom_mva, power.sub_queue_pressure_pct, state.drawIgnoreGrid);
   const constraints = inheritConstraints(lng, lat);
@@ -1827,7 +1843,7 @@ function renderCapacityBand(cap, props) {
   const gfa = cap.gfaM2 >= 10000 ? Math.round(cap.gfaM2 / 1000) + "k m²" : Math.round(cap.gfaM2).toLocaleString() + " m²";
   const spaceBinds = cap.bindingBy === "space";
   const ignore = cap.ignoreGrid;
-  const density = state.drawHighDensity ? "high" : "main";
+  const d = cap.densityKwM2;
   const constraintNote = props && props._constraints_inherited
     ? `<div class="capacity-note">Flood &amp; designation status inherited from adjacent parcel <em>${props._inherited_from}</em>.</div>`
     : `<div class="capacity-note warn">Flood zone &amp; protected designations <strong>not assessed</strong> for this plot — verify against the EA Flood Map and planning.data.gov.uk.</div>`;
@@ -1867,10 +1883,11 @@ function renderCapacityBand(cap, props) {
           </div>
         </div>
         <div class="cap-ctrl">
-          <span class="cap-ctrl-label">IT density</span>
+          <span class="cap-ctrl-label">IT density kW/m²</span>
           <div class="cap-toggle">
-            <button data-density="main" class="${density === "main" ? "on" : ""}">1.5 kW/m²</button>
-            <button data-density="high" class="${density === "high" ? "on" : ""}">3.0 AI</button>
+            <button data-density="1.5" class="${d === 1.5 ? "on" : ""}" title="Legacy / lightly-loaded (~5 kW/rack)">1.5</button>
+            <button data-density="3" class="${d === 3 ? "on" : ""}" title="Modern mainstream colo (~10 kW/rack)">3.0</button>
+            <button data-density="10" class="${d === 10 ? "on" : ""}" title="High-density / AI, liquid-cooled (40–130 kW/rack)">10·AI</button>
           </div>
         </div>
       </div>
@@ -1898,8 +1915,7 @@ function renderCapacityBand(cap, props) {
 function rerenderDrawnCapacity() {
   if (!state.drawnParcel) return;
   const p = state.drawnParcel.properties;
-  const density = state.drawHighDensity
-    ? CAPACITY_MODEL.densityKwM2.highDensity : CAPACITY_MODEL.densityKwM2.mainstream;
+  const density = state.drawDensity;
   p._capacity = computeCapacity(p.area_acres, state.drawFloors, density,
     p.nearest_sub_headroom_mva, p.sub_queue_pressure_pct, state.drawIgnoreGrid);
   // Preserve scroll so tweaking floors/density doesn't jump the panel to the top.
@@ -1912,7 +1928,8 @@ function rerenderDrawnCapacity() {
 }
 
 // ── Drawn-parcel PDF report + sensitivity analysis ─────────────────
-const REPORT_DENSITIES = [1.0, 1.5, 2.0, 3.0];   // kW/m² of white space
+const REPORT_DENSITIES = [1.5, 3.0, 6.0, 10];   // kW/m² white space: legacy · mainstream · high · AI
+const DENSITY_LABEL = { 1.5: "legacy", 3: "mainstream", 6: "high", 10: "AI" };
 
 /** Building-bound IT load (MW) for a plot at a given floors × density. */
 function itLoadMW(cap, floors, densityKwM2) {
@@ -1986,6 +2003,9 @@ function buildReportHTML(p) {
   .sens td.cur { outline: 2px solid #0b6b78; font-weight: 700; }
   ul { margin: 6px 0; padding-left: 18px; }
   li { margin: 3px 0; }
+  ul.src { color: #3a4658; font-size: 11px; }
+  ul.src li { margin: 5px 0; }
+  .sens thead th .sub { display: block; font-size: 8.5px; color: #8b93a5; font-weight: 400; text-transform: uppercase; letter-spacing: 0.04em; }
   .note { font-size: 10.5px; color: #5c6987; margin-top: 6px; }
   footer { margin-top: 24px; padding-top: 10px; border-top: 1px solid #d5dde3; font-size: 10px; color: #7a869a; line-height: 1.6; }
   @media print { body { -webkit-print-color-adjust: exact; print-color-adjust: exact; } }
@@ -2026,12 +2046,12 @@ function buildReportHTML(p) {
 
   <h2>Sensitivity — IT load (MW) by floors × power density</h2>
   <table class="sens">
-    <thead><tr><th>Floors ↓ / kW/m² →</th>${REPORT_DENSITIES.map(d => `<th>${d}${d === 3 ? " (AI)" : ""}</th>`).join("")}</tr></thead>
+    <thead><tr><th>Floors ↓ / kW/m² →</th>${REPORT_DENSITIES.map(d => `<th>${d}<span class="sub">${DENSITY_LABEL[d] || ""}</span></th>`).join("")}</tr></thead>
     <tbody>${rows.join("")}</tbody>
   </table>
   <p class="note">Each cell shows <strong>IT load MW</strong> with <span style="color:#8b93a5">required grid supply (× ${pue} PUE)</span> beneath.
     ${gridCap != null ? `Shaded cells exceed the indicative grid-bound cap of <strong>${mw(gridCap)} MW</strong> — they need a larger connection than the current grid offer.` : ""}
-    The current selection is outlined. Net developable ${cap.netAcres.toFixed(1)} ac (62% of gross), 45% plot ratio, 50% white space.</p>
+    The current selection is outlined. Net developable ${cap.netAcres.toFixed(1)} ac (${Math.round(CAPACITY_MODEL.coverage.mid * 100)}% of gross), ${Math.round(CAPACITY_MODEL.plotRatio * 100)}% plot ratio, ${Math.round(CAPACITY_MODEL.whiteSpace * 100)}% white space.</p>
 
   <h2>Where the grid becomes the constraint</h2>
   <ul>${crossovers}</ul>
@@ -2039,11 +2059,21 @@ function buildReportHTML(p) {
   <h2>Indicative connection capex (at ${mw(cap.suggestedMw)} MW)</h2>
   <p><strong>${fmtM(costs.total.low)} – ${fmtM(costs.total.high)}</strong> (mid ${fmtM(costs.total.mid)}) — grid cable, substation reinforcement, onsite HV and fibre. See the live tool for the full breakdown.</p>
 
+  <h2>Sources &amp; assumptions</h2>
+  <ul class="src">
+    <li><strong>IT density 1.5 / 3.0 / 10 kW/m²</strong> of white space (legacy / mainstream / AI) — from ~5 / ~10 / 40–130 kW per rack ÷ ~3 m²/rack. JLL Global Data Center Outlook 2024; McKinsey (Oct 2024); CBRE North America Data Center Trends H1 2025.</li>
+    <li><strong>White space = ${Math.round(CAPACITY_MODEL.whiteSpace * 100)}% of GFA</strong> (band 40–50%) — RICS Construction Journal, "Data centre demand &amp; retrofit" (2023). External plant (HVAC/MV/gensets) adds ~30% of GIA, budgeted in the site area.</li>
+    <li><strong>PUE ${pue}</strong> (grid supply = IT × PUE) — Uptime Institute Global Data Center Survey 2024 (fleet avg 1.56; new efficient builds 1.2–1.3; Google best-in-class 1.09).</li>
+    <li><strong>Land ~2 gross acres per IT MW</strong> (low-rise reference only) — real mid-size hyperscale ≈ 0.8–1.8 ac per <em>facility</em>-MW (QTS Van Wert 500 MW/902 ac; Meta Lebanon ~1 GW/1,500 ac) ≈ 1.1–2.5 on an IT basis. Not a CBRE/JLL published constant.</li>
+    <li><strong>Net developable ${Math.round(CAPACITY_MODEL.coverage.mid * 100)}% of gross, ${Math.round(CAPACITY_MODEL.plotRatio * 100)}% plot ratio</strong> — engineering assumptions (no published constant); real site coverage spans ~15% (phased greenfield) to ~60% (dense brownfield).</li>
+  </ul>
+
   <footer>
     Indicative desk assessment generated by the DC Site Finder. Capacity is a modelled estimate, not a design or a
-    connection offer. Building-bound = net developable area × 45% plot ratio × floors × 50% white space × power density;
+    connection offer. Building-bound IT = net developable × ${Math.round(CAPACITY_MODEL.plotRatio * 100)}% plot ratio × floors × ${Math.round(CAPACITY_MODEL.whiteSpace * 100)}% white space × power density;
     required grid supply applies a ${pue} PUE. Grid-bound = nearest-substation headroom discounted for TEC-queue
-    congestion. Flood zone &amp; protected designations ${p._constraints_inherited ? "inherited from an adjacent parcel" : "not assessed"} — verify against the EA Flood Map and planning.data.gov.uk before proceeding.
+    congestion. Building/land ratios are engineering assumptions, not sourced constants — see Sources above for the
+    cited inputs and their ranges. Flood zone &amp; protected designations ${p._constraints_inherited ? "inherited from an adjacent parcel" : "not assessed"} — verify against the EA Flood Map and planning.data.gov.uk before proceeding.
   </footer>
 </body></html>`;
 }
