@@ -52,6 +52,7 @@ const state = {
   drawMode:         false,    // true while the draw tool is armed
   drawFloors:       4,        // storeys assumed for the drawn-parcel capacity model
   drawHighDensity:  false,    // false = 1.5 kW/m² mainstream, true = 3.0 high-density/AI
+  drawIgnoreGrid:   false,    // true = connection already secured, show required power unconstrained
   colorMode:        "composite", // "type" | "power" | "composite"
   mwValue:          50,       // numeric MW — any value
   // Scoring weights (raw 0-100 slider values; normalised at use time).
@@ -1142,6 +1143,16 @@ function initUI() {
     if (dBtn && state.drawnParcel) {
       state.drawHighDensity = dBtn.dataset.density === "high";
       rerenderDrawnCapacity();
+      return;
+    }
+    const gBtn = e.target.closest("[data-grid]");
+    if (gBtn && state.drawnParcel) {
+      state.drawIgnoreGrid = gBtn.dataset.grid === "off";
+      rerenderDrawnCapacity();
+      return;
+    }
+    if (e.target.closest("[data-export]") && state.drawnParcel) {
+      exportDrawnReport();
     }
   });
 
@@ -1508,6 +1519,7 @@ const CAPACITY_MODEL = {
   plotRatio:  0.45,                                    // building footprint ÷ net area
   whiteSpace: 0.50,                                     // IT/white-space ÷ building GFA
   densityKwM2: { mainstream: 1.5, highDensity: 3.0 },  // IT load per m² of white space
+  pue: 1.3,                                             // facility ÷ IT power (grid supply)
   floorsMin: 1, floorsMax: 8, floorsDefault: 4,
 };
 
@@ -1623,26 +1635,27 @@ function gridDeliverableMW(headroomMva, queuePct) {
  * The feasible figure is whichever binds. A land-based (~2 ac/MW low-rise
  * sprawl) figure is kept only as a reference.
  */
-function computeCapacity(grossAcres, floors, densityKwM2, headroomMva, queuePct) {
+function computeCapacity(grossAcres, floors, densityKwM2, headroomMva, queuePct, ignoreGrid) {
   const c = CAPACITY_MODEL;
   floors = Math.max(c.floorsMin, Math.min(c.floorsMax, floors || c.floorsDefault));
-  // Building-bound
+  // Building-bound (IT load)
   const netAcres    = grossAcres * c.coverage.mid;
   const footprintM2 = netAcres * M2_PER_ACRE * c.plotRatio;
   const gfaM2       = footprintM2 * floors;
   const whiteM2     = gfaM2 * c.whiteSpace;
   const buildingMW  = whiteM2 * densityKwM2 / 1000;
+  const requiredSupplyMW = buildingMW * c.pue;             // grid supply at full build-out
   // Grid-bound
   const gridMW = gridDeliverableMW(headroomMva, queuePct);
-  // Binding limit
-  const spaceBinds = gridMW == null || buildingMW <= gridMW;
-  const bindingMW  = gridMW == null ? buildingMW : Math.min(buildingMW, gridMW);
+  // Binding limit — unless the grid is excluded (connection already secured)
+  const gridBinds  = !ignoreGrid && gridMW != null && gridMW < buildingMW;
+  const bindingMW  = gridBinds ? gridMW : buildingMW;
   const mwLandMid  = grossAcres / c.acresPerMW.central;   // low-rise reference
   return {
     grossAcres, netAcres, footprintM2, gfaM2, whiteM2,
-    floors, densityKwM2,
-    buildingMW, gridMW, bindingMW,
-    bindingBy: spaceBinds ? "space" : "grid",
+    floors, densityKwM2, ignoreGrid: !!ignoreGrid,
+    buildingMW, requiredSupplyMW, gridMW, bindingMW,
+    bindingBy: gridBinds ? "grid" : "space",
     mwLandMid,
     archetype: pickArchetype(bindingMW),
     suggestedMw: Math.max(1, Math.round(bindingMW)),
@@ -1700,7 +1713,7 @@ function buildDrawnParcelProps(ring) {
   const density = state.drawHighDensity
     ? CAPACITY_MODEL.densityKwM2.highDensity : CAPACITY_MODEL.densityKwM2.mainstream;
   const cap = computeCapacity(acres, state.drawFloors, density,
-    power.nearest_sub_headroom_mva, power.sub_queue_pressure_pct);
+    power.nearest_sub_headroom_mva, power.sub_queue_pressure_pct, state.drawIgnoreGrid);
   const constraints = inheritConstraints(lng, lat);
   return {
     is_drawn: true,
@@ -1813,28 +1826,33 @@ function renderCapacityBand(cap, props) {
   const mw = n => n == null ? "—" : n >= 100 ? String(Math.round(n)) : n >= 10 ? n.toFixed(0) : n.toFixed(1);
   const gfa = cap.gfaM2 >= 10000 ? Math.round(cap.gfaM2 / 1000) + "k m²" : Math.round(cap.gfaM2).toLocaleString() + " m²";
   const spaceBinds = cap.bindingBy === "space";
+  const ignore = cap.ignoreGrid;
   const density = state.drawHighDensity ? "high" : "main";
   const constraintNote = props && props._constraints_inherited
     ? `<div class="capacity-note">Flood &amp; designation status inherited from adjacent parcel <em>${props._inherited_from}</em>.</div>`
     : `<div class="capacity-note warn">Flood zone &amp; protected designations <strong>not assessed</strong> for this plot — verify against the EA Flood Map and planning.data.gov.uk.</div>`;
-  const limitMsg = cap.gridMW == null
-    ? `Grid headroom unknown — figure is space-bound only.`
-    : spaceBinds
-      ? `<strong>Space-bound</strong> — the building fits less than the grid could deliver (${mw(cap.gridMW)} MW). More floors would raise it until the grid binds.`
-      : `<strong>Grid-bound</strong> — the connection caps you below what the building could hold (${mw(cap.buildingMW)} MW of white space). Extra floors don't help without more power.`;
+  const title = ignore ? "Required power (grid excluded)" : "Feasible DC scale";
+  const gridBindHighlight = !ignore && !spaceBinds;
+  const limitMsg = ignore
+    ? `<strong>Connection secured</strong> — grid limit excluded. Full build-out needs ≈ <strong>${mw(cap.requiredSupplyMW)} MW</strong> grid supply (${mw(cap.buildingMW)} MW IT × ${CAPACITY_MODEL.pue} PUE). Grid-bound ~${mw(cap.gridMW)} MW shown for reference.`
+    : cap.gridMW == null
+      ? `Grid headroom unknown — figure is space-bound only.`
+      : spaceBinds
+        ? `<strong>Space-bound</strong> — the building fits less than the grid could deliver (${mw(cap.gridMW)} MW). More floors would raise it until the grid binds.`
+        : `<strong>Grid-bound</strong> — the connection caps you below what the building could hold (${mw(cap.buildingMW)} MW of white space). Extra floors don't help without more power.`;
   return `
-    <div class="detail-section-title" style="margin-top:16px">📊 Feasible DC scale <span class="indicative-tag">indicative</span></div>
+    <div class="detail-section-title" style="margin-top:16px">📊 ${title} <span class="indicative-tag">indicative</span></div>
     <div class="capacity-band">
       <div class="capacity-archetype">${cap.archetype}</div>
 
       <div class="capacity-dual">
-        <div class="cap-lim ${spaceBinds ? "bind" : ""}">
-          <span class="cap-lim-n">${mw(cap.buildingMW)}</span><span class="cap-lim-u">MW</span>
-          <span class="cap-lim-l">building-bound${spaceBinds ? " ◀ binds" : ""}</span>
+        <div class="cap-lim ${ignore || spaceBinds ? "bind" : ""}">
+          <span class="cap-lim-n">${mw(cap.buildingMW)}</span><span class="cap-lim-u">MW IT</span>
+          <span class="cap-lim-l">building-bound${!ignore && spaceBinds ? " ◀ binds" : ""}</span>
         </div>
-        <div class="cap-lim ${!spaceBinds ? "bind" : ""}">
+        <div class="cap-lim ${gridBindHighlight ? "bind" : ""} ${ignore ? "excluded" : ""}">
           <span class="cap-lim-n">${mw(cap.gridMW)}</span><span class="cap-lim-u">MW</span>
-          <span class="cap-lim-l">grid-bound${!spaceBinds ? " ◀ binds" : ""}</span>
+          <span class="cap-lim-l">grid-bound${gridBindHighlight ? " ◀ binds" : ignore ? " · excluded" : ""}</span>
         </div>
       </div>
       <div class="cap-limit-msg">${limitMsg}</div>
@@ -1856,14 +1874,23 @@ function renderCapacityBand(cap, props) {
           </div>
         </div>
       </div>
+      <div class="cap-ctrl cap-ctrl-full">
+        <span class="cap-ctrl-label">Grid constraint ${ignore ? "— excluded (connection secured)" : ""}</span>
+        <div class="cap-toggle">
+          <button data-grid="on" class="${!ignore ? "on" : ""}">Apply grid limit</button>
+          <button data-grid="off" class="${ignore ? "on" : ""}">Connection secured</button>
+        </div>
+      </div>
 
       <div class="capacity-derivation">
         Net developable ≈ <strong>${cap.netAcres.toFixed(1)} ac</strong> ·
         GFA ≈ <strong>${gfa}</strong> over <strong>${cap.floors}</strong> floor${cap.floors > 1 ? "s" : ""} ·
-        white space ≈ <strong>${Math.round(cap.whiteM2).toLocaleString()} m²</strong> @ ${cap.densityKwM2} kW/m².
-        Low-rise land estimate (~2 ac/MW): <strong>${mw(cap.mwLandMid)} MW</strong>.
+        white space ≈ <strong>${Math.round(cap.whiteM2).toLocaleString()} m²</strong> @ ${cap.densityKwM2} kW/m² →
+        <strong>${mw(cap.buildingMW)} MW IT</strong> / <strong>${mw(cap.requiredSupplyMW)} MW</strong> grid supply (incl. ${CAPACITY_MODEL.pue} PUE).
+        Low-rise land estimate (~2 ac/MW): ${mw(cap.mwLandMid)} MW.
       </div>
       ${constraintNote}
+      <button class="cap-export" data-export="pdf">⭳ Export PDF report — incl. floors × density sensitivity</button>
     </div>`;
 }
 
@@ -1874,7 +1901,7 @@ function rerenderDrawnCapacity() {
   const density = state.drawHighDensity
     ? CAPACITY_MODEL.densityKwM2.highDensity : CAPACITY_MODEL.densityKwM2.mainstream;
   p._capacity = computeCapacity(p.area_acres, state.drawFloors, density,
-    p.nearest_sub_headroom_mva, p.sub_queue_pressure_pct);
+    p.nearest_sub_headroom_mva, p.sub_queue_pressure_pct, state.drawIgnoreGrid);
   // Preserve scroll so tweaking floors/density doesn't jump the panel to the top.
   const panel = document.getElementById("detail-panel");
   const content = document.getElementById("detail-content");
@@ -1882,6 +1909,158 @@ function rerenderDrawnCapacity() {
   showDetailPanel(p);
   if (panel) panel.scrollTop = sp;
   if (content) content.scrollTop = sc;
+}
+
+// ── Drawn-parcel PDF report + sensitivity analysis ─────────────────
+const REPORT_DENSITIES = [1.0, 1.5, 2.0, 3.0];   // kW/m² of white space
+
+/** Building-bound IT load (MW) for a plot at a given floors × density. */
+function itLoadMW(cap, floors, densityKwM2) {
+  const whitePerFloor = cap.whiteM2 / cap.floors;   // m² of white space per floor
+  return whitePerFloor * floors * densityKwM2 / 1000;
+}
+
+/** Floor at which IT load first exceeds the grid cap, for a density (null if never within range). */
+function gridCrossoverFloor(cap, densityKwM2) {
+  if (cap.gridMW == null) return null;
+  for (let f = CAPACITY_MODEL.floorsMin; f <= CAPACITY_MODEL.floorsMax; f++) {
+    if (itLoadMW(cap, f, densityKwM2) > cap.gridMW) return f;
+  }
+  return null;
+}
+
+function buildReportHTML(p) {
+  const cap = p._capacity;
+  const mw = n => n == null ? "—" : n >= 100 ? String(Math.round(n)) : n >= 10 ? n.toFixed(0) : n.toFixed(1);
+  const pue = CAPACITY_MODEL.pue;
+  const gridCap = cap.gridMW;
+  const dateStr = new Date().toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" });
+  const costs = computeConnectionCosts(p, cap.suggestedMw);
+
+  // Sensitivity matrix — floors × density → IT MW
+  const rows = [];
+  for (let f = CAPACITY_MODEL.floorsMin; f <= CAPACITY_MODEL.floorsMax; f++) {
+    const cells = REPORT_DENSITIES.map(d => {
+      const it = itLoadMW(cap, f, d);
+      const overGrid = gridCap != null && it > gridCap;
+      const isCurrent = f === cap.floors && Math.abs(d - cap.densityKwM2) < 0.01;
+      return `<td class="${overGrid ? "over" : ""} ${isCurrent ? "cur" : ""}">${mw(it)}<span class="sub">${mw(it * pue)}</span></td>`;
+    }).join("");
+    rows.push(`<tr><th>${f}</th>${cells}</tr>`);
+  }
+  const crossovers = REPORT_DENSITIES.map(d => {
+    const cf = gridCrossoverFloor(cap, d);
+    return `<li><strong>${d} kW/m²</strong> — grid (${mw(gridCap)} MW) is exceeded ${cf ? `at <strong>${cf} floor${cf > 1 ? "s" : ""}</strong>` : "beyond 8 floors (space always binds)"}.</li>`;
+  }).join("");
+
+  const desigs = (p.protected_designations || []).filter(Boolean).join(", ") || "—";
+  const [lng, lat] = getCentroid(state.drawnParcel.geometry.coordinates[0]);
+
+  return `<!DOCTYPE html><html><head><meta charset="utf-8"><title>DC Site Assessment — Drawn parcel</title>
+<style>
+  @page { size: A4; margin: 16mm; }
+  * { box-sizing: border-box; }
+  body { font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: #14181f; margin: 0 auto; max-width: 820px; padding: 24px 20px; font-size: 12px; line-height: 1.5; }
+  @media print { body { padding: 0; max-width: none; } }
+  h1 { font-size: 21px; margin: 0 0 2px; letter-spacing: -0.01em; }
+  h2 { font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; color: #0b6b78; margin: 22px 0 8px; border-bottom: 1px solid #d5dde3; padding-bottom: 4px; }
+  .sub { color: #5c6987; }
+  .eyebrow { font-size: 10.5px; letter-spacing: 0.16em; text-transform: uppercase; color: #0b6b78; font-weight: 600; }
+  .meta { color: #5c6987; font-size: 11px; margin-top: 4px; }
+  .grid2 { display: flex; gap: 24px; }
+  .grid2 > div { flex: 1; }
+  table { border-collapse: collapse; width: 100%; font-variant-numeric: tabular-nums; }
+  .facts td { padding: 3px 0; }
+  .facts td:first-child { color: #5c6987; width: 48%; }
+  .facts td:last-child { font-weight: 600; text-align: right; }
+  .headline { display: flex; gap: 10px; margin: 8px 0 4px; }
+  .hcard { flex: 1; border: 1px solid #d5dde3; border-radius: 8px; padding: 10px 12px; }
+  .hcard.bind { border-color: #0b6b78; background: #e8f6f8; }
+  .hcard .n { font-size: 22px; font-weight: 700; }
+  .hcard .l { font-size: 10px; text-transform: uppercase; letter-spacing: 0.05em; color: #5c6987; }
+  .sens th, .sens td { border: 1px solid #d5dde3; padding: 6px 8px; text-align: center; }
+  .sens thead th { background: #f1f5f8; font-size: 11px; }
+  .sens tbody th { background: #f1f5f8; }
+  .sens td .sub { display: block; font-size: 9px; color: #8b93a5; }
+  .sens td.over { background: #fdecec; color: #b23; }
+  .sens td.cur { outline: 2px solid #0b6b78; font-weight: 700; }
+  ul { margin: 6px 0; padding-left: 18px; }
+  li { margin: 3px 0; }
+  .note { font-size: 10.5px; color: #5c6987; margin-top: 6px; }
+  footer { margin-top: 24px; padding-top: 10px; border-top: 1px solid #d5dde3; font-size: 10px; color: #7a869a; line-height: 1.6; }
+  @media print { body { -webkit-print-color-adjust: exact; print-color-adjust: exact; } }
+</style></head><body>
+  <p class="eyebrow">DC Site Assessment · Indicative</p>
+  <h1>Drawn parcel — capacity &amp; sensitivity</h1>
+  <p class="meta">${lat.toFixed(4)}, ${lng.toFixed(4)} · ${fmtAcres(p.area_acres)} acres / ${fmtHa(p.area_ha)} ha · Generated ${dateStr}</p>
+
+  <div class="grid2">
+    <div>
+      <h2>Site &amp; grid</h2>
+      <table class="facts">
+        <tr><td>Area</td><td>${fmtAcres(p.area_acres)} ac / ${fmtHa(p.area_ha)} ha</td></tr>
+        <tr><td>Nearest substation</td><td>${p.nearest_sub_name ?? "—"} (${p.nearest_sub_voltage_kv ?? "—"}kV)</td></tr>
+        <tr><td>Distance</td><td>${p.nearest_sub_dist_km != null ? p.nearest_sub_dist_km.toFixed(1) + " km" : "—"}</td></tr>
+        <tr><td>Grid headroom</td><td>${p.nearest_sub_headroom_mva != null ? Math.round(p.nearest_sub_headroom_mva) + " MVA" : "—"}</td></tr>
+        <tr><td>TEC queue pressure</td><td>${Math.round(p.sub_queue_pressure_pct ?? 0)}%</td></tr>
+        <tr><td>Nearest IX / fibre</td><td>${p.nearest_ix_name ?? "—"}${p.dist_to_ix_km != null ? " · " + p.dist_to_ix_km.toFixed(1) + " km" : ""}</td></tr>
+        <tr><td>Flood zone</td><td>${floodZoneLabel(p.flood_zone ?? 0)}</td></tr>
+        <tr><td>Designations</td><td>${desigs}</td></tr>
+      </table>
+    </div>
+    <div>
+      <h2>Feasible scale (${cap.floors} floors · ${cap.densityKwM2} kW/m²)</h2>
+      <div class="headline">
+        <div class="hcard ${cap.bindingBy === "space" ? "bind" : ""}"><div class="n">${mw(cap.buildingMW)}</div><div class="l">MW IT — building-bound</div></div>
+        <div class="hcard ${cap.bindingBy === "grid" ? "bind" : ""}"><div class="n">${mw(cap.gridMW)}</div><div class="l">MW — grid-bound${cap.ignoreGrid ? " (excluded)" : ""}</div></div>
+      </div>
+      <table class="facts">
+        <tr><td>Archetype</td><td>${cap.archetype}</td></tr>
+        <tr><td>Required grid supply</td><td>${mw(cap.requiredSupplyMW)} MW (${pue} PUE)</td></tr>
+        <tr><td>Building GFA</td><td>${Math.round(cap.gfaM2).toLocaleString()} m²</td></tr>
+        <tr><td>White space</td><td>${Math.round(cap.whiteM2).toLocaleString()} m²</td></tr>
+        <tr><td>Binding constraint</td><td>${cap.ignoreGrid ? "Space (grid excluded)" : cap.bindingBy === "grid" ? "Grid" : "Space"}</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <h2>Sensitivity — IT load (MW) by floors × power density</h2>
+  <table class="sens">
+    <thead><tr><th>Floors ↓ / kW/m² →</th>${REPORT_DENSITIES.map(d => `<th>${d}${d === 3 ? " (AI)" : ""}</th>`).join("")}</tr></thead>
+    <tbody>${rows.join("")}</tbody>
+  </table>
+  <p class="note">Each cell shows <strong>IT load MW</strong> with <span style="color:#8b93a5">required grid supply (× ${pue} PUE)</span> beneath.
+    ${gridCap != null ? `Shaded cells exceed the indicative grid-bound cap of <strong>${mw(gridCap)} MW</strong> — they need a larger connection than the current grid offer.` : ""}
+    The current selection is outlined. Net developable ${cap.netAcres.toFixed(1)} ac (62% of gross), 45% plot ratio, 50% white space.</p>
+
+  <h2>Where the grid becomes the constraint</h2>
+  <ul>${crossovers}</ul>
+
+  <h2>Indicative connection capex (at ${mw(cap.suggestedMw)} MW)</h2>
+  <p><strong>${fmtM(costs.total.low)} – ${fmtM(costs.total.high)}</strong> (mid ${fmtM(costs.total.mid)}) — grid cable, substation reinforcement, onsite HV and fibre. See the live tool for the full breakdown.</p>
+
+  <footer>
+    Indicative desk assessment generated by the DC Site Finder. Capacity is a modelled estimate, not a design or a
+    connection offer. Building-bound = net developable area × 45% plot ratio × floors × 50% white space × power density;
+    required grid supply applies a ${pue} PUE. Grid-bound = nearest-substation headroom discounted for TEC-queue
+    congestion. Flood zone &amp; protected designations ${p._constraints_inherited ? "inherited from an adjacent parcel" : "not assessed"} — verify against the EA Flood Map and planning.data.gov.uk before proceeding.
+  </footer>
+</body></html>`;
+}
+
+/** Render the drawn-parcel report into a hidden iframe and open the print dialog (Save as PDF). */
+function exportDrawnReport() {
+  if (!state.drawnParcel) return;
+  const html = buildReportHTML(state.drawnParcel.properties);
+  const existing = document.getElementById("report-frame");
+  if (existing) existing.remove();
+  const iframe = document.createElement("iframe");
+  iframe.id = "report-frame";
+  iframe.setAttribute("style", "position:fixed;right:0;bottom:0;width:0;height:0;border:0;");
+  document.body.appendChild(iframe);
+  const doc = iframe.contentWindow.document;
+  doc.open(); doc.write(html); doc.close();
+  setTimeout(() => { iframe.contentWindow.focus(); iframe.contentWindow.print(); }, 350);
 }
 
 // ── Connection cost estimate ───────────────────────────────────────

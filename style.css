@@ -1861,6 +1861,8 @@ select:hover {
   text-align: center;
 }
 .cap-lim.bind { background: var(--cyan-glow); }
+.cap-lim.excluded { opacity: 0.45; }
+.cap-lim.excluded .cap-lim-n { text-decoration: line-through; }
 .cap-lim-n {
   font-size: 22px;
   font-weight: 700;
@@ -1894,6 +1896,7 @@ select:hover {
   margin-top: 11px;
 }
 .cap-ctrl { flex: 1; }
+.cap-ctrl-full { margin-top: 10px; }
 .cap-ctrl-label {
   display: block;
   font-size: 9.5px;
@@ -1936,6 +1939,21 @@ select:hover {
   font-variant-numeric: tabular-nums;
 }
 .cap-toggle button.on { background: var(--cyan-glow); color: var(--cyan); }
+.cap-export {
+  width: 100%;
+  margin-top: 12px;
+  padding: 9px 8px;
+  background: var(--cyan-glow);
+  border: 1px solid var(--border-hi);
+  border-radius: 6px;
+  color: var(--cyan);
+  font-family: var(--font);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.cap-export:hover { background: rgba(0, 229, 255, 0.22); }
 .capacity-derivation {
   font-size: 11px;
   line-height: 1.5;
