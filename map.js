@@ -50,6 +50,8 @@ const state = {
   draw:             null,     // MapboxDraw instance (lazy-inited on map load)
   drawnParcel:      null,     // { geometry, properties } of the last user-drawn polygon
   drawMode:         false,    // true while the draw tool is armed
+  drawFloors:       4,        // storeys assumed for the drawn-parcel capacity model
+  drawHighDensity:  false,    // false = 1.5 kW/m² mainstream, true = 3.0 high-density/AI
   colorMode:        "composite", // "type" | "power" | "composite"
   mwValue:          50,       // numeric MW — any value
   // Scoring weights (raw 0-100 slider values; normalised at use time).
@@ -1126,6 +1128,22 @@ function initUI() {
   document.getElementById("satellite-btn")?.addEventListener("click", () => {
     toggleSatellite(!state.showSatellite);
   });
+  // Drawn-parcel capacity controls (floors stepper + density toggle) — the
+  // detail panel is re-rendered on every change, so use delegation.
+  document.getElementById("detail-content")?.addEventListener("click", (e) => {
+    const fBtn = e.target.closest("[data-floors-delta]");
+    if (fBtn && state.drawnParcel) {
+      state.drawFloors = Math.max(CAPACITY_MODEL.floorsMin, Math.min(CAPACITY_MODEL.floorsMax,
+        state.drawFloors + parseInt(fBtn.dataset.floorsDelta, 10)));
+      rerenderDrawnCapacity();
+      return;
+    }
+    const dBtn = e.target.closest("[data-density]");
+    if (dBtn && state.drawnParcel) {
+      state.drawHighDensity = dBtn.dataset.density === "high";
+      rerenderDrawnCapacity();
+    }
+  });
 
   // ── Scoring weight sliders ─────────────────────────────────────
   // Each slider feeds state.weights; recompute composite_score_* across
@@ -1485,9 +1503,12 @@ const URBAN_IX_KM = 8;                     // within this of an IX ⇒ urban/met
 // campus" figure (≈ 2.0 gross acres/MW, generate_slide_brief.py:488), widened
 // into a transparent low/mid/high band. All outputs are labelled indicative.
 const CAPACITY_MODEL = {
-  acresPerMW: { conservative: 2.5, central: 2.0, aggressive: 1.4 },
+  acresPerMW: { conservative: 2.5, central: 2.0, aggressive: 1.4 }, // land-based ref
   coverage:   { low: 0.55, mid: 0.62, high: 0.70 },   // net developable fraction
   plotRatio:  0.45,                                    // building footprint ÷ net area
+  whiteSpace: 0.50,                                     // IT/white-space ÷ building GFA
+  densityKwM2: { mainstream: 1.5, highDensity: 3.0 },  // IT load per m² of white space
+  floorsMin: 1, floorsMax: 8, floorsDefault: 4,
 };
 
 /** Spherical polygon-ring area in m². coords = [[lng,lat], …] (open or closed). */
@@ -1578,20 +1599,53 @@ function pickArchetype(mw) {
   return "Full hyperscale / AI-training park";
 }
 
-/** Gross acres → indicative capacity band + campus archetype. */
-function computeCapacity(grossAcres, urban) {
+/**
+ * Indicative power a new connection could realistically draw from the nearest
+ * substation: its headroom discounted by TEC-queue congestion (same queue bands
+ * as the connection-cost model). Returns MW (0 if no headroom).
+ */
+function gridDeliverableMW(headroomMva, queuePct) {
+  if (headroomMva == null || headroomMva <= 0) return 0;
+  const hwMw = headroomMva * 0.95;                      // MVA → MW (≈0.95 pf)
+  let f;                                                // congestion discount
+  if (queuePct == null)      f = 0.50;
+  else if (queuePct <= 50)   f = 1.00;
+  else if (queuePct <= 150)  f = 0.50;
+  else if (queuePct <= 300)  f = 0.25;
+  else                       f = 0.10;                  // severely oversubscribed
+  return hwMw * f;
+}
+
+/**
+ * Capacity for a drawn plot under two independent limits:
+ *  • building-bound — how much IT you can physically fit (scales with floors),
+ *  • grid-bound — how much power the connection can realistically deliver.
+ * The feasible figure is whichever binds. A land-based (~2 ac/MW low-rise
+ * sprawl) figure is kept only as a reference.
+ */
+function computeCapacity(grossAcres, floors, densityKwM2, headroomMva, queuePct) {
   const c = CAPACITY_MODEL;
-  const mwLow  = grossAcres / c.acresPerMW.conservative;
-  const mwMid  = grossAcres / c.acresPerMW.central;
-  const mwHigh = grossAcres / c.acresPerMW.aggressive;
-  const netAcresMid = grossAcres * c.coverage.mid;
-  const storeys = urban ? 2 : 1;                        // urban plots build up
-  const gfaM2 = netAcresMid * M2_PER_ACRE * c.plotRatio * storeys;
+  floors = Math.max(c.floorsMin, Math.min(c.floorsMax, floors || c.floorsDefault));
+  // Building-bound
+  const netAcres    = grossAcres * c.coverage.mid;
+  const footprintM2 = netAcres * M2_PER_ACRE * c.plotRatio;
+  const gfaM2       = footprintM2 * floors;
+  const whiteM2     = gfaM2 * c.whiteSpace;
+  const buildingMW  = whiteM2 * densityKwM2 / 1000;
+  // Grid-bound
+  const gridMW = gridDeliverableMW(headroomMva, queuePct);
+  // Binding limit
+  const spaceBinds = gridMW == null || buildingMW <= gridMW;
+  const bindingMW  = gridMW == null ? buildingMW : Math.min(buildingMW, gridMW);
+  const mwLandMid  = grossAcres / c.acresPerMW.central;   // low-rise reference
   return {
-    grossAcres, netAcresMid, gfaM2, storeys, urban,
-    mwLow, mwMid, mwHigh,
-    archetype: pickArchetype(mwMid),
-    suggestedMw: Math.max(1, Math.round(mwMid)),
+    grossAcres, netAcres, footprintM2, gfaM2, whiteM2,
+    floors, densityKwM2,
+    buildingMW, gridMW, bindingMW,
+    bindingBy: spaceBinds ? "space" : "grid",
+    mwLandMid,
+    archetype: pickArchetype(bindingMW),
+    suggestedMw: Math.max(1, Math.round(bindingMW)),
   };
 }
 
@@ -1643,8 +1697,10 @@ function buildDrawnParcelProps(ring) {
   const [lng, lat] = getCentroid(ring);
   const power = computePowerProps(lat, lng);
   const fibre = computeFibreProps(lat, lng);
-  const urban = fibre.dist_to_ix_km != null && fibre.dist_to_ix_km <= URBAN_IX_KM;
-  const cap = computeCapacity(acres, urban);
+  const density = state.drawHighDensity
+    ? CAPACITY_MODEL.densityKwM2.highDensity : CAPACITY_MODEL.densityKwM2.mainstream;
+  const cap = computeCapacity(acres, state.drawFloors, density,
+    power.nearest_sub_headroom_mva, power.sub_queue_pressure_pct);
   const constraints = inheritConstraints(lng, lat);
   return {
     is_drawn: true,
@@ -1751,30 +1807,81 @@ function onDrawComplete(e) {
   }, 0);
 }
 
-/** Capacity band + archetype block — only rendered for drawn parcels. */
+/** Capacity band — building-bound vs grid-bound, floors control. Drawn parcels only. */
 function renderCapacityBand(cap, props) {
   if (!cap) return "";
-  const mw = n => n >= 100 ? Math.round(n) : n >= 10 ? n.toFixed(0) : n.toFixed(1);
+  const mw = n => n == null ? "—" : n >= 100 ? String(Math.round(n)) : n >= 10 ? n.toFixed(0) : n.toFixed(1);
   const gfa = cap.gfaM2 >= 10000 ? Math.round(cap.gfaM2 / 1000) + "k m²" : Math.round(cap.gfaM2).toLocaleString() + " m²";
+  const spaceBinds = cap.bindingBy === "space";
+  const density = state.drawHighDensity ? "high" : "main";
   const constraintNote = props && props._constraints_inherited
     ? `<div class="capacity-note">Flood &amp; designation status inherited from adjacent parcel <em>${props._inherited_from}</em>.</div>`
     : `<div class="capacity-note warn">Flood zone &amp; protected designations <strong>not assessed</strong> for this plot — verify against the EA Flood Map and planning.data.gov.uk.</div>`;
+  const limitMsg = cap.gridMW == null
+    ? `Grid headroom unknown — figure is space-bound only.`
+    : spaceBinds
+      ? `<strong>Space-bound</strong> — the building fits less than the grid could deliver (${mw(cap.gridMW)} MW). More floors would raise it until the grid binds.`
+      : `<strong>Grid-bound</strong> — the connection caps you below what the building could hold (${mw(cap.buildingMW)} MW of white space). Extra floors don't help without more power.`;
   return `
     <div class="detail-section-title" style="margin-top:16px">📊 Feasible DC scale <span class="indicative-tag">indicative</span></div>
     <div class="capacity-band">
       <div class="capacity-archetype">${cap.archetype}</div>
-      <div class="capacity-mwrow">
-        <div class="capacity-mw"><span class="cmw-n">${mw(cap.mwLow)}</span><span class="cmw-l">low</span></div>
-        <div class="capacity-mw mid"><span class="cmw-n">${mw(cap.mwMid)}</span><span class="cmw-l">central MW</span></div>
-        <div class="capacity-mw"><span class="cmw-n">${mw(cap.mwHigh)}</span><span class="cmw-l">high</span></div>
+
+      <div class="capacity-dual">
+        <div class="cap-lim ${spaceBinds ? "bind" : ""}">
+          <span class="cap-lim-n">${mw(cap.buildingMW)}</span><span class="cap-lim-u">MW</span>
+          <span class="cap-lim-l">building-bound${spaceBinds ? " ◀ binds" : ""}</span>
+        </div>
+        <div class="cap-lim ${!spaceBinds ? "bind" : ""}">
+          <span class="cap-lim-n">${mw(cap.gridMW)}</span><span class="cap-lim-u">MW</span>
+          <span class="cap-lim-l">grid-bound${!spaceBinds ? " ◀ binds" : ""}</span>
+        </div>
       </div>
+      <div class="cap-limit-msg">${limitMsg}</div>
+
+      <div class="cap-controls">
+        <div class="cap-ctrl">
+          <span class="cap-ctrl-label">Floors</span>
+          <div class="cap-stepper">
+            <button data-floors-delta="-1" aria-label="fewer floors" ${cap.floors <= CAPACITY_MODEL.floorsMin ? "disabled" : ""}>−</button>
+            <span class="cap-floors-n">${cap.floors}</span>
+            <button data-floors-delta="1" aria-label="more floors" ${cap.floors >= CAPACITY_MODEL.floorsMax ? "disabled" : ""}>+</button>
+          </div>
+        </div>
+        <div class="cap-ctrl">
+          <span class="cap-ctrl-label">IT density</span>
+          <div class="cap-toggle">
+            <button data-density="main" class="${density === "main" ? "on" : ""}">1.5 kW/m²</button>
+            <button data-density="high" class="${density === "high" ? "on" : ""}">3.0 AI</button>
+          </div>
+        </div>
+      </div>
+
       <div class="capacity-derivation">
-        Net developable ≈ <strong>${cap.netAcresMid.toFixed(1)} ac</strong> (${Math.round(CAPACITY_MODEL.coverage.mid*100)}% of gross) ·
-        building GFA ≈ <strong>${gfa}</strong> at ${cap.storeys} storey${cap.storeys > 1 ? "s" : ""} ·
-        anchored on ~2 ac/MW
+        Net developable ≈ <strong>${cap.netAcres.toFixed(1)} ac</strong> ·
+        GFA ≈ <strong>${gfa}</strong> over <strong>${cap.floors}</strong> floor${cap.floors > 1 ? "s" : ""} ·
+        white space ≈ <strong>${Math.round(cap.whiteM2).toLocaleString()} m²</strong> @ ${cap.densityKwM2} kW/m².
+        Low-rise land estimate (~2 ac/MW): <strong>${mw(cap.mwLandMid)} MW</strong>.
       </div>
       ${constraintNote}
     </div>`;
+}
+
+/** Recompute the drawn parcel's capacity for the current floors/density and re-render. */
+function rerenderDrawnCapacity() {
+  if (!state.drawnParcel) return;
+  const p = state.drawnParcel.properties;
+  const density = state.drawHighDensity
+    ? CAPACITY_MODEL.densityKwM2.highDensity : CAPACITY_MODEL.densityKwM2.mainstream;
+  p._capacity = computeCapacity(p.area_acres, state.drawFloors, density,
+    p.nearest_sub_headroom_mva, p.sub_queue_pressure_pct);
+  // Preserve scroll so tweaking floors/density doesn't jump the panel to the top.
+  const panel = document.getElementById("detail-panel");
+  const content = document.getElementById("detail-content");
+  const sp = panel ? panel.scrollTop : 0, sc = content ? content.scrollTop : 0;
+  showDetailPanel(p);
+  if (panel) panel.scrollTop = sp;
+  if (content) content.scrollTop = sc;
 }
 
 // ── Connection cost estimate ───────────────────────────────────────
