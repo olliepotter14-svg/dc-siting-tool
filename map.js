@@ -357,13 +357,15 @@ map.on("load", () => {
     applyFilters();
     addMapLayers();
     addSatelliteLayer();
-    initDrawTool();
     refreshParcelColors();  // apply correct opacity for initial colorMode
     addPowerlineLayer(powerlines);
     addFibreRouteLayer(fibreRoutes);
     addBtmLayer(btmAssets);
     addEaProjectsLayer(eaProjects);
     addGenerationAssetsLayer(genAssets);
+    // Init draw LAST so mapbox-gl-draw's layers sit on top of every overlay —
+    // otherwise the click vertices / rubber-band line are buried and invisible.
+    initDrawTool();
     // Small delay so the map tiles have a moment to render before overlay lifts
     setTimeout(() => {
       hideLoadOverlay();
@@ -623,6 +625,18 @@ function addMapLayers() {
   });
 
   map.on("click", (e) => {
+    // Don't clear while drawing, or when the click lands on a drawn parcel —
+    // e.g. the double-click that finishes/edits a polygon would otherwise wipe
+    // the freshly-opened analysis panel.
+    if (state.drawMode) return;
+    if (state.draw && state.draw.getMode && state.draw.getMode() !== "simple_select") return;
+    // The double-click that finishes a polygon emits a trailing map click that
+    // lands on a corner (where the fill isn't reliably hit-tested); ignore clears
+    // for a moment after a draw completes so the fresh panel isn't wiped.
+    if (state._drawCompletedAt && Date.now() - state._drawCompletedAt < 600) return;
+    const onDrawFeature = map.queryRenderedFeatures(e.point)
+      .some(f => f.layer && f.layer.id && f.layer.id.startsWith("gl-draw"));
+    if (onDrawFeature) return;
     const hits = map.queryRenderedFeatures(e.point, { layers: ["parcels-fill"] });
     if (!hits.length) clearSelection();
   });
@@ -1681,7 +1695,18 @@ function toggleSatellite(on) {
 function initDrawTool() {
   if (typeof MapboxDraw === "undefined") { console.warn("mapbox-gl-draw not loaded"); return; }
   state.draw = new MapboxDraw({ displayControlsDefault: false, controls: {}, defaultMode: "simple_select" });
-  map.addControl(state.draw);
+  // mapbox-gl-draw defers injecting its render sources/layers until map.loaded()
+  // is true. When basemap tiles are slow or blocked (or we init inside the load
+  // handler) that never happens and the draw layers are silently missing — the
+  // data model works but clicks render nothing. Force loaded() true just for the
+  // addControl call so gl-draw wires up its layers immediately, then restore it.
+  const realLoaded = map.loaded.bind(map);
+  map.loaded = () => true;
+  try {
+    map.addControl(state.draw);
+  } finally {
+    map.loaded = realLoaded;
+  }
   map.on("draw.create", onDrawComplete);
   map.on("draw.update", onDrawComplete);
 }
@@ -1708,12 +1733,22 @@ function onDrawComplete(e) {
   if (!ring || ring.length < 4) return;                // need ≥3 distinct vertices
   const props = buildDrawnParcelProps(ring);
   state.drawnParcel = { geometry: feature.geometry, properties: props };
-  state.activeId = "__drawn__";
-  armDrawMode(false);
-  // Drive the MW pipeline to the feasible size; the __drawn__ branch in
-  // setMwValue re-renders the panel from state.drawnParcel.
-  if (setMwValueRef) setMwValueRef(props._capacity.suggestedMw);
-  else showDetailPanel(props);
+  state._drawCompletedAt = Date.now();
+  // Disarm the tool UI immediately.
+  state.drawMode = false;
+  const btn = document.getElementById("draw-parcel-btn");
+  if (btn) btn.classList.remove("active");
+  map.getCanvas().style.cursor = "";
+  // Defer selection + panel open to the next tick. The finishing double-click
+  // emits trailing map 'click' events that run clearSelection synchronously;
+  // deferring guarantees our panel wins and isn't wiped. Also resets the draw
+  // mode outside the draw.create handler to avoid a stuck draw_polygon state.
+  setTimeout(() => {
+    try { state.draw.changeMode("simple_select"); } catch (_) {}
+    state.activeId = "__drawn__";
+    if (setMwValueRef) setMwValueRef(props._capacity.suggestedMw);
+    else showDetailPanel(props);
+  }, 0);
 }
 
 /** Capacity band + archetype block — only rendered for drawn parcels. */
